@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">modifiedById (required).</param>
         /// <param name="statuses">statuses (required).</param>
         /// <param name="projects">projects (required).</param>
-        public WorkflowApiResult(Guid id = default(Guid), string name = default(string), bool isSystem = default(bool), bool isDefault = default(bool), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime modifiedDate = default(DateTime), Guid modifiedById = default(Guid), List<WorkflowStatusApiResult> statuses = default(List<WorkflowStatusApiResult>), List<WorkflowProjectApiResult> projects = default(List<WorkflowProjectApiResult>))
+        public WorkflowApiResult(Guid id = default, string name = default, bool isSystem = default, bool isDefault = default, DateTime createdDate = default, Guid createdById = default, DateTime modifiedDate = default, Guid modifiedById = default, List<WorkflowStatusApiResult> statuses = default, List<WorkflowProjectApiResult> projects = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

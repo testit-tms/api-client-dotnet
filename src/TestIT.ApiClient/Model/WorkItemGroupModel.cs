@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="key">key.</param>
         /// <param name="size">size (required).</param>
         /// <param name="workItems">workItems (required).</param>
-        public WorkItemGroupModel(Object key = default(Object), int size = default(int), List<WorkItemShortModel> workItems = default(List<WorkItemShortModel>))
+        public WorkItemGroupModel(Object key = default, int size = default, List<WorkItemShortModel> workItems = default)
         {
             this.Size = size;
             // to ensure "workItems" is required (not null)

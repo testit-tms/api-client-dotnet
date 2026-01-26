@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="versionNumber">used for define chronology of workitem state in each version (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="modifiedById">modifiedById.</param>
-        public WorkItemVersionModel(Guid versionId = default(Guid), int versionNumber = default(int), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?))
+        public WorkItemVersionModel(Guid versionId = default, int versionNumber = default, DateTime? modifiedDate = default, Guid? modifiedById = default)
         {
             this.VersionId = versionId;
             this.VersionNumber = versionNumber;
@@ -57,7 +57,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
@@ -76,7 +76,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2025-10-27T11:18:38.258590200+03:00</example>
+        <example>2026-01-22T16:37:35.457742900Z</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
@@ -85,7 +85,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedById
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }

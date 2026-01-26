@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="fieldValue">fieldValue (required).</param>
         /// <param name="displayFieldValue">displayFieldValue (required).</param>
         /// <param name="count">count (required).</param>
-        public TestPlanTestPointsGroupApiResult(Object fieldValue = default(Object), Object displayFieldValue = default(Object), int count = default(int))
+        public TestPlanTestPointsGroupApiResult(Object fieldValue = default, Object displayFieldValue = default, int count = default)
         {
             // to ensure "fieldValue" is required (not null)
             if (fieldValue == null)

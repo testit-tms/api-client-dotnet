@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="customAttributeIds">Collection of attribute IDs.</param>
         /// <param name="name">Custom attributes template name (required).</param>
-        public CustomAttributeTemplatePostModel(List<Guid> customAttributeIds = default(List<Guid>), string name = default(string))
+        public CustomAttributeTemplatePostModel(List<Guid> customAttributeIds = default, string name = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

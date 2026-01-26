@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="name">Name of the status, must be unique (required).</param>
         /// <param name="description">Optional description of the status.</param>
-        public UpdateTestStatusApiModel(string name = default(string), string description = default(string))
+        public UpdateTestStatusApiModel(string name = default, string description = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

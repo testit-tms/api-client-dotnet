@@ -40,7 +40,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="methods">Specifies a webhook methods to search for.</param>
         /// <param name="projectIds">Specifies a webhook project IDs to search for.</param>
         /// <param name="isEnabled">Specifies a webhook deleted status to search for.</param>
-        public SearchWebhooksQueryModel(string name = default(string), List<WebHookEventTypeModel> eventTypes = default(List<WebHookEventTypeModel>), List<RequestTypeModel> methods = default(List<RequestTypeModel>), List<Guid> projectIds = default(List<Guid>), bool? isEnabled = default(bool?))
+        public SearchWebhooksQueryModel(string name = default, List<WebHookEventTypeModel> eventTypes = default, List<RequestTypeModel> methods = default, List<Guid> projectIds = default, bool? isEnabled = default)
         {
             this.Name = name;
             this.EventTypes = eventTypes;

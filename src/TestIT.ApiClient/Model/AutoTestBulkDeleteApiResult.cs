@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="deletedCount">deletedCount (required).</param>
         /// <param name="inProgressCount">inProgressCount (required).</param>
-        public AutoTestBulkDeleteApiResult(int deletedCount = default(int), int inProgressCount = default(int))
+        public AutoTestBulkDeleteApiResult(int deletedCount = default, int inProgressCount = default)
         {
             this.DeletedCount = deletedCount;
             this.InProgressCount = inProgressCount;

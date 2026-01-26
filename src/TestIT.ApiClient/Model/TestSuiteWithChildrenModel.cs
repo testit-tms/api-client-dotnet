@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="id">Unique ID of the entity (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
-        public TestSuiteWithChildrenModel(List<TestSuiteWithChildrenModel> children = default(List<TestSuiteWithChildrenModel>), Guid? testerId = default(Guid?), Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
+        public TestSuiteWithChildrenModel(List<TestSuiteWithChildrenModel> children = default, Guid? testerId = default, Guid? parentId = default, Guid testPlanId = default, string name = default, Guid id = default, bool isDeleted = default)
         {
             this.TestPlanId = testPlanId;
             // to ensure "name" is required (not null)

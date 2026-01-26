@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isGlobal">Specifies an attribute global status to search for.</param>
         /// <param name="types">Specifies an attribute types to search for (required).</param>
         /// <param name="isEnabled">Specifies an attribute enabled status to search for.</param>
-        public ProjectAttributesFilterModel(string name = default(string), bool? isRequired = default(bool?), bool? isGlobal = default(bool?), List<CustomAttributeTypesEnum> types = default(List<CustomAttributeTypesEnum>), bool? isEnabled = default(bool?))
+        public ProjectAttributesFilterModel(string name = default, bool? isRequired = default, bool? isGlobal = default, List<CustomAttributeTypesEnum> types = default, bool? isEnabled = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

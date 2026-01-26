@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="failureCategory">failureCategory (required).</param>
         /// <param name="count">count (required).</param>
-        public AutoTestResultReasonsCountItemModel(AvailableFailureCategory failureCategory = default(AvailableFailureCategory), int count = default(int))
+        public AutoTestResultReasonsCountItemModel(AvailableFailureCategory failureCategory = default, int count = default)
         {
             this.FailureCategory = failureCategory;
             this.Count = count;

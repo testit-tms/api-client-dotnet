@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="value">Value of the external issue field (required).</param>
         /// <param name="externalService">Associated external service with this value (required).</param>
-        public ExternalIssueApiFieldSuggestion(string value = default(string), ExternalIssueExternalServiceApiResult externalService = default(ExternalIssueExternalServiceApiResult))
+        public ExternalIssueApiFieldSuggestion(string value = default, ExternalIssueExternalServiceApiResult externalService = default)
         {
             // to ensure "value" is required (not null)
             if (value == null)

@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="operation"> (optional)</param>
         /// <returns></returns>
-        void ApiV2SectionsIdPatch(Guid id, List<Operation> operation = default(List<Operation>));
+        void ApiV2SectionsIdPatch(Guid id, List<Operation> operation = default);
 
         /// <summary>
         /// Patch section
@@ -49,77 +49,79 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="operation"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2SectionsIdPatchWithHttpInfo(Guid id, List<Operation> operation = default(List<Operation>));
+        ApiResponse<Object> ApiV2SectionsIdPatchWithHttpInfo(Guid id, List<Operation> operation = default);
         /// <summary>
         /// Create section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section properties (listed in request example)    User runs method execution    System creates section property values    System returns section (listed in response example)
+        ///  Use case  User sets section properties (listed in request example)  User runs method execution  System creates section property values  System returns section (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPostModel"> (optional)</param>
         /// <returns>SectionWithStepsModel</returns>
-        SectionWithStepsModel CreateSection(SectionPostModel sectionPostModel = default(SectionPostModel));
+        SectionWithStepsModel CreateSection(SectionPostModel sectionPostModel = default);
 
         /// <summary>
         /// Create section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section properties (listed in request example)    User runs method execution    System creates section property values    System returns section (listed in response example)
+        ///  Use case  User sets section properties (listed in request example)  User runs method execution  System creates section property values  System returns section (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPostModel"> (optional)</param>
         /// <returns>ApiResponse of SectionWithStepsModel</returns>
-        ApiResponse<SectionWithStepsModel> CreateSectionWithHttpInfo(SectionPostModel sectionPostModel = default(SectionPostModel));
+        ApiResponse<SectionWithStepsModel> CreateSectionWithHttpInfo(SectionPostModel sectionPostModel = default);
         /// <summary>
         /// Delete section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search and delete nested sections of the found section    System search and delete workitems related to the found nested sections    System deletes initial section and related workitem    System returns no content response
+        ///  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search and delete nested sections of the found section  System search and delete workitems related to the found nested sections  System deletes initial section and related workitem  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <returns></returns>
+        [Obsolete]
         void DeleteSection(Guid id);
 
         /// <summary>
         /// Delete section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search and delete nested sections of the found section    System search and delete workitems related to the found nested sections    System deletes initial section and related workitem    System returns no content response
+        ///  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search and delete nested sections of the found section  System search and delete workitems related to the found nested sections  System deletes initial section and related workitem  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         ApiResponse<Object> DeleteSectionWithHttpInfo(Guid id);
         /// <summary>
         /// Get section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section internal (guid format) identifier    User runs method execution    System search section by the section identifier    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns section
+        ///  Use case  User sets section internal (guid format) identifier  User runs method execution  System search section by the section identifier  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns section
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <returns>SectionWithStepsModel</returns>
-        SectionWithStepsModel GetSectionById(Guid id, DeletionState? isDeleted = default(DeletionState?));
+        SectionWithStepsModel GetSectionById(Guid id, DeletionState? isDeleted = default);
 
         /// <summary>
         /// Get section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section internal (guid format) identifier    User runs method execution    System search section by the section identifier    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns section
+        ///  Use case  User sets section internal (guid format) identifier  User runs method execution  System search section by the section identifier  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns section
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <returns>ApiResponse of SectionWithStepsModel</returns>
-        ApiResponse<SectionWithStepsModel> GetSectionByIdWithHttpInfo(Guid id, DeletionState? isDeleted = default(DeletionState?));
+        ApiResponse<SectionWithStepsModel> GetSectionByIdWithHttpInfo(Guid id, DeletionState? isDeleted = default);
         /// <summary>
         /// Get section work items
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search work items related to the section    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns work item collection
+        ///  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search work items related to the section  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns work item collection
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
@@ -133,13 +135,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        List<WorkItemShortModel> GetWorkItemsBySectionId(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        List<WorkItemShortModel> GetWorkItemsBySectionId(Guid id, bool? isDeleted = default, List<string> tagNames = default, bool? includeIterations = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
 
         /// <summary>
         /// Get section work items
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search work items related to the section    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns work item collection
+        ///  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search work items related to the section  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns work item collection
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
@@ -153,14 +155,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        ApiResponse<List<WorkItemShortModel>> GetWorkItemsBySectionIdWithHttpInfo(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        ApiResponse<List<WorkItemShortModel>> GetWorkItemsBySectionIdWithHttpInfo(Guid id, bool? isDeleted = default, List<string> tagNames = default, bool? includeIterations = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
         /// <summary>
         /// Move section with all work items into another section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionMoveModel"> (optional)</param>
         /// <returns></returns>
-        void Move(SectionMoveModel sectionMoveModel = default(SectionMoveModel));
+        void Move(SectionMoveModel sectionMoveModel = default);
 
         /// <summary>
         /// Move section with all work items into another section
@@ -171,49 +173,49 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionMoveModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> MoveWithHttpInfo(SectionMoveModel sectionMoveModel = default(SectionMoveModel));
+        ApiResponse<Object> MoveWithHttpInfo(SectionMoveModel sectionMoveModel = default);
         /// <summary>
         /// Rename section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section identifier and new name (listed in request example)    User runs method execution    System search section by the identifier    System updates section name using the new name    System returns no content response
+        ///  Use case  User sets section identifier and new name (listed in request example)  User runs method execution  System search section by the identifier  System updates section name using the new name  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionRenameModel"> (optional)</param>
         /// <returns></returns>
-        void Rename(SectionRenameModel sectionRenameModel = default(SectionRenameModel));
+        void Rename(SectionRenameModel sectionRenameModel = default);
 
         /// <summary>
         /// Rename section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section identifier and new name (listed in request example)    User runs method execution    System search section by the identifier    System updates section name using the new name    System returns no content response
+        ///  Use case  User sets section identifier and new name (listed in request example)  User runs method execution  System search section by the identifier  System updates section name using the new name  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionRenameModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> RenameWithHttpInfo(SectionRenameModel sectionRenameModel = default(SectionRenameModel));
+        ApiResponse<Object> RenameWithHttpInfo(SectionRenameModel sectionRenameModel = default);
         /// <summary>
         /// Update section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section properties (listed in request example)    User runs method execution    System search section by the identifier    System updates section using the property values    System returns no content response
+        ///  Use case  User sets section properties (listed in request example)  User runs method execution  System search section by the identifier  System updates section using the property values  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPutModel"> (optional)</param>
         /// <returns></returns>
-        void UpdateSection(SectionPutModel sectionPutModel = default(SectionPutModel));
+        void UpdateSection(SectionPutModel sectionPutModel = default);
 
         /// <summary>
         /// Update section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section properties (listed in request example)    User runs method execution    System search section by the identifier    System updates section using the property values    System returns no content response
+        ///  Use case  User sets section properties (listed in request example)  User runs method execution  System search section by the identifier  System updates section using the property values  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateSectionWithHttpInfo(SectionPutModel sectionPutModel = default(SectionPutModel));
+        ApiResponse<Object> UpdateSectionWithHttpInfo(SectionPutModel sectionPutModel = default);
         #endregion Synchronous Operations
     }
 
@@ -234,7 +236,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2SectionsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2SectionsIdPatchAsync(Guid id, List<Operation> operation = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Patch section
@@ -247,83 +249,85 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2SectionsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2SectionsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section properties (listed in request example)    User runs method execution    System creates section property values    System returns section (listed in response example)
+        ///  Use case  User sets section properties (listed in request example)  User runs method execution  System creates section property values  System returns section (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionWithStepsModel</returns>
-        System.Threading.Tasks.Task<SectionWithStepsModel> CreateSectionAsync(SectionPostModel sectionPostModel = default(SectionPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SectionWithStepsModel> CreateSectionAsync(SectionPostModel sectionPostModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section properties (listed in request example)    User runs method execution    System creates section property values    System returns section (listed in response example)
+        ///  Use case  User sets section properties (listed in request example)  User runs method execution  System creates section property values  System returns section (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionWithStepsModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SectionWithStepsModel>> CreateSectionWithHttpInfoAsync(SectionPostModel sectionPostModel = default(SectionPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SectionWithStepsModel>> CreateSectionWithHttpInfoAsync(SectionPostModel sectionPostModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search and delete nested sections of the found section    System search and delete workitems related to the found nested sections    System deletes initial section and related workitem    System returns no content response
+        ///  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search and delete nested sections of the found section  System search and delete workitems related to the found nested sections  System deletes initial section and related workitem  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteSectionAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        [Obsolete]
+        System.Threading.Tasks.Task DeleteSectionAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search and delete nested sections of the found section    System search and delete workitems related to the found nested sections    System deletes initial section and related workitem    System returns no content response
+        ///  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search and delete nested sections of the found section  System search and delete workitems related to the found nested sections  System deletes initial section and related workitem  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSectionWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        [Obsolete]
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteSectionWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section internal (guid format) identifier    User runs method execution    System search section by the section identifier    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns section
+        ///  Use case  User sets section internal (guid format) identifier  User runs method execution  System search section by the section identifier  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns section
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionWithStepsModel</returns>
-        System.Threading.Tasks.Task<SectionWithStepsModel> GetSectionByIdAsync(Guid id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<SectionWithStepsModel> GetSectionByIdAsync(Guid id, DeletionState? isDeleted = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section internal (guid format) identifier    User runs method execution    System search section by the section identifier    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns section
+        ///  Use case  User sets section internal (guid format) identifier  User runs method execution  System search section by the section identifier  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns section
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionWithStepsModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<SectionWithStepsModel>> GetSectionByIdWithHttpInfoAsync(Guid id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<SectionWithStepsModel>> GetSectionByIdWithHttpInfoAsync(Guid id, DeletionState? isDeleted = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get section work items
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search work items related to the section    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns work item collection
+        ///  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search work items related to the section  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns work item collection
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
@@ -338,13 +342,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<List<WorkItemShortModel>> GetWorkItemsBySectionIdAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<WorkItemShortModel>> GetWorkItemsBySectionIdAsync(Guid id, bool? isDeleted = default, List<string> tagNames = default, bool? includeIterations = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get section work items
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search work items related to the section    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns work item collection
+        ///  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search work items related to the section  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns work item collection
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
@@ -359,7 +363,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> GetWorkItemsBySectionIdWithHttpInfoAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<WorkItemShortModel>>> GetWorkItemsBySectionIdWithHttpInfoAsync(Guid id, bool? isDeleted = default, List<string> tagNames = default, bool? includeIterations = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Move section with all work items into another section
         /// </summary>
@@ -370,7 +374,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="sectionMoveModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task MoveAsync(SectionMoveModel sectionMoveModel = default(SectionMoveModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task MoveAsync(SectionMoveModel sectionMoveModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Move section with all work items into another section
@@ -382,53 +386,53 @@ namespace TestIT.ApiClient.Api
         /// <param name="sectionMoveModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> MoveWithHttpInfoAsync(SectionMoveModel sectionMoveModel = default(SectionMoveModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> MoveWithHttpInfoAsync(SectionMoveModel sectionMoveModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Rename section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section identifier and new name (listed in request example)    User runs method execution    System search section by the identifier    System updates section name using the new name    System returns no content response
+        ///  Use case  User sets section identifier and new name (listed in request example)  User runs method execution  System search section by the identifier  System updates section name using the new name  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionRenameModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task RenameAsync(SectionRenameModel sectionRenameModel = default(SectionRenameModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task RenameAsync(SectionRenameModel sectionRenameModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Rename section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section identifier and new name (listed in request example)    User runs method execution    System search section by the identifier    System updates section name using the new name    System returns no content response
+        ///  Use case  User sets section identifier and new name (listed in request example)  User runs method execution  System search section by the identifier  System updates section name using the new name  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionRenameModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> RenameWithHttpInfoAsync(SectionRenameModel sectionRenameModel = default(SectionRenameModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> RenameWithHttpInfoAsync(SectionRenameModel sectionRenameModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section properties (listed in request example)    User runs method execution    System search section by the identifier    System updates section using the property values    System returns no content response
+        ///  Use case  User sets section properties (listed in request example)  User runs method execution  System search section by the identifier  System updates section using the property values  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateSectionAsync(SectionPutModel sectionPutModel = default(SectionPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateSectionAsync(SectionPutModel sectionPutModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update section
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets section properties (listed in request example)    User runs method execution    System search section by the identifier    System updates section using the property values    System returns no content response
+        ///  Use case  User sets section properties (listed in request example)  User runs method execution  System search section by the identifier  System updates section using the property values  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSectionWithHttpInfoAsync(SectionPutModel sectionPutModel = default(SectionPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateSectionWithHttpInfoAsync(SectionPutModel sectionPutModel = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -649,7 +653,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="operation"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2SectionsIdPatch(Guid id, List<Operation> operation = default(List<Operation>))
+        public void ApiV2SectionsIdPatch(Guid id, List<Operation> operation = default)
         {
             ApiV2SectionsIdPatchWithHttpInfo(id, operation);
         }
@@ -661,7 +665,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="operation"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2SectionsIdPatchWithHttpInfo(Guid id, List<Operation> operation = default(List<Operation>))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2SectionsIdPatchWithHttpInfo(Guid id, List<Operation> operation = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -709,7 +713,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2SectionsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2SectionsIdPatchAsync(Guid id, List<Operation> operation = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2SectionsIdPatchWithHttpInfoAsync(id, operation, cancellationToken).ConfigureAwait(false);
         }
@@ -722,7 +726,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2SectionsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2SectionsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -766,24 +770,24 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create section   Use case    User sets section properties (listed in request example)    User runs method execution    System creates section property values    System returns section (listed in response example)
+        /// Create section  Use case  User sets section properties (listed in request example)  User runs method execution  System creates section property values  System returns section (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPostModel"> (optional)</param>
         /// <returns>SectionWithStepsModel</returns>
-        public SectionWithStepsModel CreateSection(SectionPostModel sectionPostModel = default(SectionPostModel))
+        public SectionWithStepsModel CreateSection(SectionPostModel sectionPostModel = default)
         {
             TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> localVarResponse = CreateSectionWithHttpInfo(sectionPostModel);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create section   Use case    User sets section properties (listed in request example)    User runs method execution    System creates section property values    System returns section (listed in response example)
+        /// Create section  Use case  User sets section properties (listed in request example)  User runs method execution  System creates section property values  System returns section (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPostModel"> (optional)</param>
         /// <returns>ApiResponse of SectionWithStepsModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> CreateSectionWithHttpInfo(SectionPostModel sectionPostModel = default(SectionPostModel))
+        public TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> CreateSectionWithHttpInfo(SectionPostModel sectionPostModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -823,26 +827,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create section   Use case    User sets section properties (listed in request example)    User runs method execution    System creates section property values    System returns section (listed in response example)
+        /// Create section  Use case  User sets section properties (listed in request example)  User runs method execution  System creates section property values  System returns section (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionWithStepsModel</returns>
-        public async System.Threading.Tasks.Task<SectionWithStepsModel> CreateSectionAsync(SectionPostModel sectionPostModel = default(SectionPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SectionWithStepsModel> CreateSectionAsync(SectionPostModel sectionPostModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> localVarResponse = await CreateSectionWithHttpInfoAsync(sectionPostModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create section   Use case    User sets section properties (listed in request example)    User runs method execution    System creates section property values    System returns section (listed in response example)
+        /// Create section  Use case  User sets section properties (listed in request example)  User runs method execution  System creates section property values  System returns section (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPostModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionWithStepsModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel>> CreateSectionWithHttpInfoAsync(SectionPostModel sectionPostModel = default(SectionPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel>> CreateSectionWithHttpInfoAsync(SectionPostModel sectionPostModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -885,22 +889,24 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete section   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search and delete nested sections of the found section    System search and delete workitems related to the found nested sections    System deletes initial section and related workitem    System returns no content response
+        /// Delete section  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search and delete nested sections of the found section  System search and delete workitems related to the found nested sections  System deletes initial section and related workitem  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <returns></returns>
+        [Obsolete]
         public void DeleteSection(Guid id)
         {
             DeleteSectionWithHttpInfo(id);
         }
 
         /// <summary>
-        /// Delete section   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search and delete nested sections of the found section    System search and delete workitems related to the found nested sections    System deletes initial section and related workitem    System returns no content response
+        /// Delete section  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search and delete nested sections of the found section  System search and delete workitems related to the found nested sections  System deletes initial section and related workitem  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <returns>ApiResponse of Object(void)</returns>
+        [Obsolete]
         public TestIT.ApiClient.Client.ApiResponse<Object> DeleteSectionWithHttpInfo(Guid id)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -940,25 +946,27 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete section   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search and delete nested sections of the found section    System search and delete workitems related to the found nested sections    System deletes initial section and related workitem    System returns no content response
+        /// Delete section  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search and delete nested sections of the found section  System search and delete workitems related to the found nested sections  System deletes initial section and related workitem  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteSectionAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        [Obsolete]
+        public async System.Threading.Tasks.Task DeleteSectionAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
             await DeleteSectionWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Delete section   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search and delete nested sections of the found section    System search and delete workitems related to the found nested sections    System deletes initial section and related workitem    System returns no content response
+        /// Delete section  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search and delete nested sections of the found section  System search and delete workitems related to the found nested sections  System deletes initial section and related workitem  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteSectionWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        [Obsolete]
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteSectionWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1000,26 +1008,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get section   Use case    User sets section internal (guid format) identifier    User runs method execution    System search section by the section identifier    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns section
+        /// Get section  Use case  User sets section internal (guid format) identifier  User runs method execution  System search section by the section identifier  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <returns>SectionWithStepsModel</returns>
-        public SectionWithStepsModel GetSectionById(Guid id, DeletionState? isDeleted = default(DeletionState?))
+        public SectionWithStepsModel GetSectionById(Guid id, DeletionState? isDeleted = default)
         {
             TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> localVarResponse = GetSectionByIdWithHttpInfo(id, isDeleted);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get section   Use case    User sets section internal (guid format) identifier    User runs method execution    System search section by the section identifier    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns section
+        /// Get section  Use case  User sets section internal (guid format) identifier  User runs method execution  System search section by the section identifier  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <returns>ApiResponse of SectionWithStepsModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> GetSectionByIdWithHttpInfo(Guid id, DeletionState? isDeleted = default(DeletionState?))
+        public TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> GetSectionByIdWithHttpInfo(Guid id, DeletionState? isDeleted = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1062,28 +1070,28 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get section   Use case    User sets section internal (guid format) identifier    User runs method execution    System search section by the section identifier    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns section
+        /// Get section  Use case  User sets section internal (guid format) identifier  User runs method execution  System search section by the section identifier  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of SectionWithStepsModel</returns>
-        public async System.Threading.Tasks.Task<SectionWithStepsModel> GetSectionByIdAsync(Guid id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<SectionWithStepsModel> GetSectionByIdAsync(Guid id, DeletionState? isDeleted = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel> localVarResponse = await GetSectionByIdWithHttpInfoAsync(id, isDeleted, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get section   Use case    User sets section internal (guid format) identifier    User runs method execution    System search section by the section identifier    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns section
+        /// Get section  Use case  User sets section internal (guid format) identifier  User runs method execution  System search section by the section identifier  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
         /// <param name="isDeleted"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (SectionWithStepsModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel>> GetSectionByIdWithHttpInfoAsync(Guid id, DeletionState? isDeleted = default(DeletionState?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<SectionWithStepsModel>> GetSectionByIdWithHttpInfoAsync(Guid id, DeletionState? isDeleted = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1129,7 +1137,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get section work items   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search work items related to the section    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns work item collection
+        /// Get section work items  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search work items related to the section  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns work item collection
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
@@ -1143,14 +1151,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        public List<WorkItemShortModel> GetWorkItemsBySectionId(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public List<WorkItemShortModel> GetWorkItemsBySectionId(Guid id, bool? isDeleted = default, List<string> tagNames = default, bool? includeIterations = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = GetWorkItemsBySectionIdWithHttpInfo(id, isDeleted, tagNames, includeIterations, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get section work items   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search work items related to the section    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns work item collection
+        /// Get section work items  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search work items related to the section  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns work item collection
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
@@ -1164,7 +1172,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        public TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> GetWorkItemsBySectionIdWithHttpInfo(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> GetWorkItemsBySectionIdWithHttpInfo(Guid id, bool? isDeleted = default, List<string> tagNames = default, bool? includeIterations = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1235,7 +1243,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get section work items   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search work items related to the section    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns work item collection
+        /// Get section work items  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search work items related to the section  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns work item collection
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
@@ -1250,14 +1258,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemShortModel&gt;</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> GetWorkItemsBySectionIdAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<WorkItemShortModel>> GetWorkItemsBySectionIdAsync(Guid id, bool? isDeleted = default, List<string> tagNames = default, bool? includeIterations = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>> localVarResponse = await GetWorkItemsBySectionIdWithHttpInfoAsync(id, isDeleted, tagNames, includeIterations, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get section work items   Use case    User sets section identifier    User runs method execution    System search section by the identifier    System search work items related to the section    [Optional] If isDeleted flag equals false, deleted work items are not being searched.              If true, deleted work items are also being searched, null for all work items.    System returns work item collection
+        /// Get section work items  Use case  User sets section identifier  User runs method execution  System search section by the identifier  System search work items related to the section  [Optional] If isDeleted flag equals false, deleted work items are not being searched.             If true, deleted work items are also being searched, null for all work items.  System returns work item collection
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Section internal (UUID) identifier</param>
@@ -1272,7 +1280,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemShortModel&gt;)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>>> GetWorkItemsBySectionIdWithHttpInfoAsync(Guid id, bool? isDeleted = default(bool?), List<string> tagNames = default(List<string>), bool? includeIterations = default(bool?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemShortModel>>> GetWorkItemsBySectionIdWithHttpInfoAsync(Guid id, bool? isDeleted = default, List<string> tagNames = default, bool? includeIterations = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1351,7 +1359,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionMoveModel"> (optional)</param>
         /// <returns></returns>
-        public void Move(SectionMoveModel sectionMoveModel = default(SectionMoveModel))
+        public void Move(SectionMoveModel sectionMoveModel = default)
         {
             MoveWithHttpInfo(sectionMoveModel);
         }
@@ -1362,7 +1370,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionMoveModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> MoveWithHttpInfo(SectionMoveModel sectionMoveModel = default(SectionMoveModel))
+        public TestIT.ApiClient.Client.ApiResponse<Object> MoveWithHttpInfo(SectionMoveModel sectionMoveModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1408,7 +1416,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="sectionMoveModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task MoveAsync(SectionMoveModel sectionMoveModel = default(SectionMoveModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task MoveAsync(SectionMoveModel sectionMoveModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await MoveWithHttpInfoAsync(sectionMoveModel, cancellationToken).ConfigureAwait(false);
         }
@@ -1420,7 +1428,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="sectionMoveModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> MoveWithHttpInfoAsync(SectionMoveModel sectionMoveModel = default(SectionMoveModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> MoveWithHttpInfoAsync(SectionMoveModel sectionMoveModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1463,23 +1471,23 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Rename section   Use case    User sets section identifier and new name (listed in request example)    User runs method execution    System search section by the identifier    System updates section name using the new name    System returns no content response
+        /// Rename section  Use case  User sets section identifier and new name (listed in request example)  User runs method execution  System search section by the identifier  System updates section name using the new name  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionRenameModel"> (optional)</param>
         /// <returns></returns>
-        public void Rename(SectionRenameModel sectionRenameModel = default(SectionRenameModel))
+        public void Rename(SectionRenameModel sectionRenameModel = default)
         {
             RenameWithHttpInfo(sectionRenameModel);
         }
 
         /// <summary>
-        /// Rename section   Use case    User sets section identifier and new name (listed in request example)    User runs method execution    System search section by the identifier    System updates section name using the new name    System returns no content response
+        /// Rename section  Use case  User sets section identifier and new name (listed in request example)  User runs method execution  System search section by the identifier  System updates section name using the new name  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionRenameModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> RenameWithHttpInfo(SectionRenameModel sectionRenameModel = default(SectionRenameModel))
+        public TestIT.ApiClient.Client.ApiResponse<Object> RenameWithHttpInfo(SectionRenameModel sectionRenameModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1519,25 +1527,25 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Rename section   Use case    User sets section identifier and new name (listed in request example)    User runs method execution    System search section by the identifier    System updates section name using the new name    System returns no content response
+        /// Rename section  Use case  User sets section identifier and new name (listed in request example)  User runs method execution  System search section by the identifier  System updates section name using the new name  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionRenameModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task RenameAsync(SectionRenameModel sectionRenameModel = default(SectionRenameModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task RenameAsync(SectionRenameModel sectionRenameModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await RenameWithHttpInfoAsync(sectionRenameModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Rename section   Use case    User sets section identifier and new name (listed in request example)    User runs method execution    System search section by the identifier    System updates section name using the new name    System returns no content response
+        /// Rename section  Use case  User sets section identifier and new name (listed in request example)  User runs method execution  System search section by the identifier  System updates section name using the new name  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionRenameModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> RenameWithHttpInfoAsync(SectionRenameModel sectionRenameModel = default(SectionRenameModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> RenameWithHttpInfoAsync(SectionRenameModel sectionRenameModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1580,23 +1588,23 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update section   Use case    User sets section properties (listed in request example)    User runs method execution    System search section by the identifier    System updates section using the property values    System returns no content response
+        /// Update section  Use case  User sets section properties (listed in request example)  User runs method execution  System search section by the identifier  System updates section using the property values  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPutModel"> (optional)</param>
         /// <returns></returns>
-        public void UpdateSection(SectionPutModel sectionPutModel = default(SectionPutModel))
+        public void UpdateSection(SectionPutModel sectionPutModel = default)
         {
             UpdateSectionWithHttpInfo(sectionPutModel);
         }
 
         /// <summary>
-        /// Update section   Use case    User sets section properties (listed in request example)    User runs method execution    System search section by the identifier    System updates section using the property values    System returns no content response
+        /// Update section  Use case  User sets section properties (listed in request example)  User runs method execution  System search section by the identifier  System updates section using the property values  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPutModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateSectionWithHttpInfo(SectionPutModel sectionPutModel = default(SectionPutModel))
+        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateSectionWithHttpInfo(SectionPutModel sectionPutModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1636,25 +1644,25 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update section   Use case    User sets section properties (listed in request example)    User runs method execution    System search section by the identifier    System updates section using the property values    System returns no content response
+        /// Update section  Use case  User sets section properties (listed in request example)  User runs method execution  System search section by the identifier  System updates section using the property values  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateSectionAsync(SectionPutModel sectionPutModel = default(SectionPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateSectionAsync(SectionPutModel sectionPutModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await UpdateSectionWithHttpInfoAsync(sectionPutModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Update section   Use case    User sets section properties (listed in request example)    User runs method execution    System search section by the identifier    System updates section using the property values    System returns no content response
+        /// Update section  Use case  User sets section properties (listed in request example)  User runs method execution  System search section by the identifier  System updates section using the property values  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sectionPutModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateSectionWithHttpInfoAsync(SectionPutModel sectionPutModel = default(SectionPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateSectionWithHttpInfoAsync(SectionPutModel sectionPutModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();

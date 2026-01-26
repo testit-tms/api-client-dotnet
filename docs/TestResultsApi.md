@@ -436,7 +436,7 @@ void (empty response body)
 
 <a id="apiv2testresultsidattachmentsinfoget"></a>
 # **ApiV2TestResultsIdAttachmentsInfoGet**
-> List&lt;AttachmentModel&gt; ApiV2TestResultsIdAttachmentsInfoGet (Guid id)
+> List&lt;AttachmentApiResult&gt; ApiV2TestResultsIdAttachmentsInfoGet (Guid id)
 
 Get test result attachments meta-information
 
@@ -471,7 +471,7 @@ namespace Example
             try
             {
                 // Get test result attachments meta-information
-                List<AttachmentModel> result = apiInstance.ApiV2TestResultsIdAttachmentsInfoGet(id);
+                List<AttachmentApiResult> result = apiInstance.ApiV2TestResultsIdAttachmentsInfoGet(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -492,7 +492,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get test result attachments meta-information
-    ApiResponse<List<AttachmentModel>> response = apiInstance.ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(id);
+    ApiResponse<List<AttachmentApiResult>> response = apiInstance.ApiV2TestResultsIdAttachmentsInfoGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -513,7 +513,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;AttachmentModel&gt;**](AttachmentModel.md)
+[**List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md)
 
 ### Authorization
 
@@ -1072,7 +1072,7 @@ catch (ApiException e)
 
 Upload and link attachment to TestResult
 
-  Use case    User sets testResultId    User attaches a file    System creates attachment and links it to the test result    System returns attachment identifier
+ Use case  User sets testResultId  User attaches a file  System creates attachment and links it to the test result  System returns attachment identifier
 
 ### Example
 ```csharp
@@ -1177,7 +1177,7 @@ void (empty response body)
 
 Remove attachment and unlink from TestResult
 
-  Use case    User sets testResultId and attachmentId    User attaches a file    User runs method execution    System deletes attachment and unlinks it from the test result    System returns attachment identifier
+ Use case  User sets testResultId and attachmentId  User attaches a file  User runs method execution  System deletes attachment and unlinks it from the test result  System returns attachment identifier
 
 ### Example
 ```csharp
@@ -1281,7 +1281,7 @@ void (empty response body)
 
 Get attachment of TestResult
 
-  Use case    User sets attachmentId and testResultId    [Optional] User sets resize configuration    User runs method execution    System search attachments by the attachmentId and the testResultId    [Optional] If resize configuration is set, System resizes the attachment according to the resize                      configuration    [Optional] Otherwise, System does not resize the attachment    System returns attachment as a file
+ Use case  User sets attachmentId and testResultId  [Optional] User sets resize configuration  User runs method execution  System search attachments by the attachmentId and the testResultId  [Optional] If resize configuration is set, System resizes the attachment according to the resize                     configuration  [Optional] Otherwise, System does not resize the attachment  System returns attachment as a file
 
 ### Example
 ```csharp
@@ -1383,7 +1383,7 @@ void (empty response body)
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test result required |  -  |
-| **404** |   File not found    Attachment not found |  -  |
+| **404** |  File not found  Attachment not found |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 
@@ -1391,11 +1391,11 @@ void (empty response body)
 
 <a id="getattachment"></a>
 # **GetAttachment**
-> AttachmentModel GetAttachment (Guid id, Guid attachmentId)
+> AttachmentApiResult GetAttachment (Guid id, Guid attachmentId)
 
 Get Metadata of TestResult's attachment
 
-  Use case    User sets attachmentId and testResultId    User runs method execution    System search attachment by the attachmentId and the testResultId    System returns attachment data
+ Use case  User sets attachmentId and testResultId  User runs method execution  System search attachment by the attachmentId and the testResultId  System returns attachment data
 
 ### Example
 ```csharp
@@ -1429,7 +1429,7 @@ namespace Example
             try
             {
                 // Get Metadata of TestResult's attachment
-                AttachmentModel result = apiInstance.GetAttachment(id, attachmentId);
+                AttachmentApiResult result = apiInstance.GetAttachment(id, attachmentId);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1450,7 +1450,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Metadata of TestResult's attachment
-    ApiResponse<AttachmentModel> response = apiInstance.GetAttachmentWithHttpInfo(id, attachmentId);
+    ApiResponse<AttachmentApiResult> response = apiInstance.GetAttachmentWithHttpInfo(id, attachmentId);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1472,7 +1472,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**AttachmentModel**](AttachmentModel.md)
+[**AttachmentApiResult**](AttachmentApiResult.md)
 
 ### Authorization
 
@@ -1499,11 +1499,11 @@ catch (ApiException e)
 
 <a id="getattachments"></a>
 # **GetAttachments**
-> List&lt;AttachmentModel&gt; GetAttachments (Guid id)
+> List&lt;AttachmentApiResult&gt; GetAttachments (Guid id)
 
 Get all attachments of TestResult
 
-  Use case    User sets testResultId    User runs method execution    System search all attachments of the test result    System returns attachments enumeration
+ Use case  User sets testResultId  User runs method execution  System search all attachments of the test result  System returns attachments enumeration
 
 ### Example
 ```csharp
@@ -1536,7 +1536,7 @@ namespace Example
             try
             {
                 // Get all attachments of TestResult
-                List<AttachmentModel> result = apiInstance.GetAttachments(id);
+                List<AttachmentApiResult> result = apiInstance.GetAttachments(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1557,7 +1557,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get all attachments of TestResult
-    ApiResponse<List<AttachmentModel>> response = apiInstance.GetAttachmentsWithHttpInfo(id);
+    ApiResponse<List<AttachmentApiResult>> response = apiInstance.GetAttachmentsWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1578,7 +1578,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;AttachmentModel&gt;**](AttachmentModel.md)
+[**List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md)
 
 ### Authorization
 

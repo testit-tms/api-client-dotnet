@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItem">workItem (required).</param>
         /// <param name="parameters">parameters (required).</param>
         /// <param name="lastTestResult">lastTestResult.</param>
-        public TestPlanTestPointsSearchApiResult(Guid id = default(Guid), AuditApiResult created = default(AuditApiResult), AuditApiResult modified = default(AuditApiResult), string status = default(string), TestStatusShortApiResult statusModel = default(TestStatusShortApiResult), bool inProgress = default(bool), ConfigurationShortApiResult varConfiguration = default(ConfigurationShortApiResult), UserNameApiResult tester = default(UserNameApiResult), TestPlanTestPointsTestSuiteSearchApiResult testSuite = default(TestPlanTestPointsTestSuiteSearchApiResult), TestPlanTestPointsWorkItemSearchApiResult workItem = default(TestPlanTestPointsWorkItemSearchApiResult), List<ParameterShortApiResult> parameters = default(List<ParameterShortApiResult>), LastTestResultApiResult lastTestResult = default(LastTestResultApiResult))
+        public TestPlanTestPointsSearchApiResult(Guid id = default, AuditApiResult created = default, AuditApiResult modified = default, string status = default, TestStatusShortApiResult statusModel = default, bool inProgress = default, ConfigurationShortApiResult varConfiguration = default, UserNameApiResult tester = default, TestPlanTestPointsTestSuiteSearchApiResult testSuite = default, TestPlanTestPointsWorkItemSearchApiResult workItem = default, List<ParameterShortApiResult> parameters = default, LastTestResultApiResult lastTestResult = default)
         {
             this.Id = id;
             // to ensure "created" is required (not null)

@@ -56,7 +56,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="teardownResults">teardownResults.</param>
         /// <param name="message">message.</param>
         /// <param name="trace">trace.</param>
-        public TestResultUpdateV2Request(List<Guid> failureClassIds = default(List<Guid>), TestResultOutcome? outcome = default(TestResultOutcome?), string statusCode = default(string), string comment = default(string), List<Link> links = default(List<Link>), List<StepResultApiModel> stepResults = default(List<StepResultApiModel>), List<AttachmentUpdateRequest> attachments = default(List<AttachmentUpdateRequest>), long? durationInMs = default(long?), long? duration = default(long?), List<TestResultStepCommentUpdateRequest> stepComments = default(List<TestResultStepCommentUpdateRequest>), List<AutoTestStepResultUpdateRequest> setupResults = default(List<AutoTestStepResultUpdateRequest>), List<AutoTestStepResultUpdateRequest> teardownResults = default(List<AutoTestStepResultUpdateRequest>), string message = default(string), string trace = default(string))
+        public TestResultUpdateV2Request(List<Guid> failureClassIds = default, TestResultOutcome? outcome = default, string statusCode = default, string comment = default, List<Link> links = default, List<StepResultApiModel> stepResults = default, List<AttachmentUpdateRequest> attachments = default, long? durationInMs = default, long? duration = default, List<TestResultStepCommentUpdateRequest> stepComments = default, List<AutoTestStepResultUpdateRequest> setupResults = default, List<AutoTestStepResultUpdateRequest> teardownResults = default, string message = default, string trace = default)
         {
             this.FailureClassIds = failureClassIds;
             this.Outcome = outcome;
@@ -196,9 +196,9 @@ namespace TestIT.ApiClient.Model
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DurationInMs (long?) maximum
-            if (this.DurationInMs > (long?)-9223372036854775616)
+            if (this.DurationInMs > (long?)9223372036854775807)
             {
-                yield return new ValidationResult("Invalid value for DurationInMs, must be a value less than or equal to -9223372036854775616.", new [] { "DurationInMs" });
+                yield return new ValidationResult("Invalid value for DurationInMs, must be a value less than or equal to 9223372036854775807.", new [] { "DurationInMs" });
             }
 
             // DurationInMs (long?) minimum
@@ -208,9 +208,9 @@ namespace TestIT.ApiClient.Model
             }
 
             // Duration (long?) maximum
-            if (this.Duration > (long?)-9223372036854775616)
+            if (this.Duration > (long?)9223372036854775807)
             {
-                yield return new ValidationResult("Invalid value for Duration, must be a value less than or equal to -9223372036854775616.", new [] { "Duration" });
+                yield return new ValidationResult("Invalid value for Duration, must be a value less than or equal to 9223372036854775807.", new [] { "Duration" });
             }
 
             // Duration (long?) minimum

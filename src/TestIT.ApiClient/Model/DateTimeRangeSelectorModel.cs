@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="from">from.</param>
         /// <param name="to">to.</param>
-        public DateTimeRangeSelectorModel(DateTime? from = default(DateTime?), DateTime? to = default(DateTime?))
+        public DateTimeRangeSelectorModel(DateTime? from = default, DateTime? to = default)
         {
             this.From = from;
             this.To = to;

@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">filter (required).</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public AutoTestSelectModel(AutoTestFilterModel filter = default(AutoTestFilterModel), AutoTestsExtractionModel extractionModel = default(AutoTestsExtractionModel))
+        public AutoTestSelectModel(AutoTestFilterModel filter = default, AutoTestsExtractionModel extractionModel = default)
         {
             // to ensure "filter" is required (not null)
             if (filter == null)

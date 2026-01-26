@@ -56,7 +56,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="modifiedById">modifiedById.</param>
-        public AutotestResultReasonShortGetModel(bool isDeleted = default(bool), AvailableFailureCategory failureCategory = default(AvailableFailureCategory), int failureCategoryId = default(int), string name = default(string), int regexCount = default(int), Guid id = default(Guid), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?))
+        public AutotestResultReasonShortGetModel(bool isDeleted = default, AvailableFailureCategory failureCategory = default, int failureCategoryId = default, string name = default, int regexCount = default, Guid id = default, DateTime createdDate = default, Guid createdById = default, DateTime? modifiedDate = default, Guid? modifiedById = default)
         {
             this.IsDeleted = isDeleted;
             this.FailureCategory = failureCategory;

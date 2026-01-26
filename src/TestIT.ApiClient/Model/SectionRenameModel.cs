@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
-        public SectionRenameModel(Guid id = default(Guid), string name = default(string))
+        public SectionRenameModel(Guid id = default, string name = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -57,7 +57,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }

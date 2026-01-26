@@ -36,7 +36,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestSuiteWorkItemsSearchModel" /> class.
         /// </summary>
         /// <param name="tagNames">Collection of tags.</param>
-        /// <param name="entityTypes">Collection of types of work item    Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;.</param>
+        /// <param name="entityTypes">Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;.</param>
         /// <param name="nameOrId">Name or identifier (UUID) of work item.</param>
         /// <param name="includeIds">Collection of identifiers of work items which need to be included in result regardless of filtering.</param>
         /// <param name="excludeIds">Collection of identifiers of work items which need to be excluded from result regardless of filtering.</param>
@@ -64,7 +64,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="excludeTags">Collection of tags to exclude.</param>
         /// <param name="autoTestIds">Collection of identifiers of linked autotests.</param>
         /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
-        public TestSuiteWorkItemsSearchModel(List<string> tagNames = default(List<string>), List<WorkItemEntityTypes> entityTypes = default(List<WorkItemEntityTypes>), string nameOrId = default(string), List<Guid> includeIds = default(List<Guid>), List<Guid> excludeIds = default(List<Guid>), WorkItemExternalMetadataFilterModel externalMetadata = default(WorkItemExternalMetadataFilterModel), List<Guid> projectIds = default(List<Guid>), WorkItemLinkFilterModel links = default(WorkItemLinkFilterModel), string name = default(string), List<Guid> ids = default(List<Guid>), List<long> globalIds = default(List<long>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<WorkItemSourceTypeModel> sourceTypes = default(List<WorkItemSourceTypeModel>), List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), Int32RangeSelectorModel duration = default(Int32RangeSelectorModel), Int64RangeSelectorModel medianDuration = default(Int64RangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>), List<string> excludeTags = default(List<string>), List<Guid> autoTestIds = default(List<Guid>), List<Guid> workItemVersionIds = default(List<Guid>))
+        public TestSuiteWorkItemsSearchModel(List<string> tagNames = default, List<WorkItemEntityTypes> entityTypes = default, string nameOrId = default, List<Guid> includeIds = default, List<Guid> excludeIds = default, WorkItemExternalMetadataFilterModel externalMetadata = default, List<Guid> projectIds = default, WorkItemLinkFilterModel links = default, string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemEntityTypes> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int32RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default)
         {
             this.TagNames = tagNames;
             this.EntityTypes = entityTypes;
@@ -105,9 +105,9 @@ namespace TestIT.ApiClient.Model
         public List<string> TagNames { get; set; }
 
         /// <summary>
-        /// Collection of types of work item    Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;
+        /// Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;
         /// </summary>
-        /// <value>Collection of types of work item    Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;</value>
+        /// <value>Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;</value>
         [DataMember(Name = "entityTypes", EmitDefaultValue = true)]
         public List<WorkItemEntityTypes> EntityTypes { get; set; }
 

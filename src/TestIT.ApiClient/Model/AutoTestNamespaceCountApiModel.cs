@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name.</param>
         /// <param name="count">count (required).</param>
         /// <param name="classes">classes (required).</param>
-        public AutoTestNamespaceCountApiModel(string name = default(string), long count = default(long), List<AutoTestClassCountApiModel> classes = default(List<AutoTestClassCountApiModel>))
+        public AutoTestNamespaceCountApiModel(string name = default, long count = default, List<AutoTestClassCountApiModel> classes = default)
         {
             this.Count = count;
             // to ensure "classes" is required (not null)

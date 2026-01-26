@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="name">name (required).</param>
         /// <param name="iconUrl">iconUrl.</param>
-        public ExternalIssuePriorityModel(string name = default(string), string iconUrl = default(string))
+        public ExternalIssuePriorityModel(string name = default, string iconUrl = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="oldValue">oldValue (required).</param>
         /// <param name="newValue">newValue (required).</param>
-        public BooleanChangedFieldViewModel(bool oldValue = default(bool), bool newValue = default(bool))
+        public BooleanChangedFieldViewModel(bool oldValue = default, bool newValue = default)
         {
             this.OldValue = oldValue;
             this.NewValue = newValue;

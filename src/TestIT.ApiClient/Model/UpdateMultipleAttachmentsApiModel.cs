@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="action">action (required).</param>
         /// <param name="attachmentIds">attachmentIds.</param>
-        public UpdateMultipleAttachmentsApiModel(ActionUpdate action = default(ActionUpdate), List<Guid> attachmentIds = default(List<Guid>))
+        public UpdateMultipleAttachmentsApiModel(ActionUpdate action = default, List<Guid> attachmentIds = default)
         {
             this.Action = action;
             this.AttachmentIds = attachmentIds;

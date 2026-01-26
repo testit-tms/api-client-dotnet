@@ -46,7 +46,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdDate">Specifies a project range of creation date to search for.</param>
         /// <param name="createdByIds">Specifies an autotest creator IDs to search for.</param>
         /// <param name="types">Collection of project types to search for.</param>
-        public ProjectsFilterModel(string name = default(string), bool? isFavorite = default(bool?), bool? isDeleted = default(bool?), Int32RangeSelectorModel testCasesCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel checklistsCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel sharedStepsCount = default(Int32RangeSelectorModel), Int32RangeSelectorModel autotestsCount = default(Int32RangeSelectorModel), List<long> globalIds = default(List<long>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), List<ProjectTypeModel> types = default(List<ProjectTypeModel>))
+        public ProjectsFilterModel(string name = default, bool? isFavorite = default, bool? isDeleted = default, Int32RangeSelectorModel testCasesCount = default, Int32RangeSelectorModel checklistsCount = default, Int32RangeSelectorModel sharedStepsCount = default, Int32RangeSelectorModel autotestsCount = default, List<long> globalIds = default, DateTimeRangeSelectorModel createdDate = default, List<Guid> createdByIds = default, List<ProjectTypeModel> types = default)
         {
             this.Name = name;
             this.IsFavorite = isFavorite;

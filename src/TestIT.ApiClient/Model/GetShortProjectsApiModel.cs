@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="inquiry">inquiry.</param>
         /// <param name="permissionName">permissionName.</param>
         /// <param name="permissionType">permissionType.</param>
-        public GetShortProjectsApiModel(Inquiry inquiry = default(Inquiry), string permissionName = default(string), string permissionType = default(string))
+        public GetShortProjectsApiModel(Inquiry inquiry = default, string permissionName = default, string permissionType = default)
         {
             this.Inquiry = inquiry;
             this.PermissionName = permissionName;

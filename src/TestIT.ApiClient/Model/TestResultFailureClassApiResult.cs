@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestResultFailureClassApiResult" /> class.
         /// </summary>
         /// <param name="failureCategory">failureCategory (required).</param>
-        public TestResultFailureClassApiResult(FailureCategory failureCategory = default(FailureCategory))
+        public TestResultFailureClassApiResult(FailureCategory failureCategory = default)
         {
             this.FailureCategory = failureCategory;
         }

@@ -43,31 +43,31 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">Internal test result identifier (required).</param>
         /// <param name="createdDate">Test result creation date (required).</param>
         /// <param name="modifiedDate">Test result last modification date.</param>
-        /// <param name="userId">Internal identifier of user who stopped test run related to the test result or user who created the test result                If test run was stopped, this property equals identifier of user who stopped it.  Otherwise, the property equals identifier of user who created the test result (required).</param>
+        /// <param name="userId">Internal identifier of user who stopped test run related to the test result or user who created the test result              If test run was stopped, this property equals identifier of user who stopped it. Otherwise, the property equals identifier of user who created the test result (required).</param>
         /// <param name="testRunId">Identifier of test run related to the test result.</param>
         /// <param name="testRunName">Name of test run related to the test result.</param>
         /// <param name="createdByUserName">Username of user who created test run.</param>
         /// <param name="testPlanId">Internal identifier of test plan related to the test result&#39;s test run.</param>
         /// <param name="testPlanGlobalId">Global identifier of test plan related to the test result&#39;s test run.</param>
         /// <param name="testPlanName">Name of test plan related to the test result&#39;s test run.</param>
-        /// <param name="configurationName">Configuration name of test point related to the test result or from test result itself                If test point related to the test result has configuration, this property will be equal to the test point configuration name.  Otherwise, this property will be equal to the test result configuration name.</param>
+        /// <param name="configurationName">Configuration name of test point related to the test result or from test result itself              If test point related to the test result has configuration, this property will be equal to the test point configuration name. Otherwise, this property will be equal to the test result configuration name.</param>
         /// <param name="isAutomated">Boolean flag defines if test point related to the test result is automated or not (required).</param>
-        /// <param name="outcome">Outcome from test result with max modified date or from first created test result                Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.                If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equals to the  worst outcome of the last modified test result. Otherwise, the outcome equals to the outcome of first created test result in the  test run..</param>
+        /// <param name="outcome">Outcome from test result with max modified date or from first created test result              Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.              If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equals to the worst outcome of the last modified test result. Otherwise, the outcome equals to the outcome of first created test result in the test run..</param>
         /// <param name="status">Status from test result with max modified date or from first created test result (required).</param>
-        /// <param name="comment">Test result comment                If any test result related to the test run is linked with autotest, comment will have default value.  Otherwise, the comment equals to the comment of first created test result in the test run.</param>
-        /// <param name="links">Test result links                If any test result related to the test run is linked with autotest, link will be equal to the links of last modified test result.  Otherwise, the links equals to the links of first created test result in the test run..</param>
+        /// <param name="comment">Test result comment              If any test result related to the test run is linked with autotest, comment will have default value. Otherwise, the comment equals to the comment of first created test result in the test run.</param>
+        /// <param name="links">Test result links              If any test result related to the test run is linked with autotest, link will be equal to the links of last modified test result. Otherwise, the links equals to the links of first created test result in the test run..</param>
         /// <param name="startedOn">Start date time from test result or from test run (if test run new state is Running or Completed state).</param>
         /// <param name="completedOn">End date time from test result or from test run (if test run new state is In progress, Stopped or Completed).</param>
         /// <param name="duration">Duration of first created test result in the test run.</param>
         /// <param name="createdById">Unique identifier of user who created first test result in the test run (required).</param>
         /// <param name="modifiedById">Unique identifier of user who applied last modification of first test result in the test run.</param>
-        /// <param name="attachments">Attachments related to the test result                If any test result related to the test run is linked with autotest, attachments will be equal to the attachments of last modified  test result. Otherwise, the attachments equals to the attachments of first created test result in the test run..</param>
+        /// <param name="attachments">Attachments related to the test result              If any test result related to the test run is linked with autotest, attachments will be equal to the attachments of last modified test result. Otherwise, the attachments equals to the attachments of first created test result in the test run..</param>
         /// <param name="workItemVersionId">Unique identifier of workitem version related to the first test result in the test run.</param>
         /// <param name="workItemVersionNumber">Number of workitem version related to the first test result in the test run.</param>
         /// <param name="launchSource">launchSource.</param>
         /// <param name="failureClassIds">Unique identifier of failure classes related to the first test result in the test run (required).</param>
         /// <param name="parameters">Parameters of test result.</param>
-        public TestResultHistoryReportApiResult(Guid id = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid userId = default(Guid), Guid? testRunId = default(Guid?), string testRunName = default(string), string createdByUserName = default(string), Guid? testPlanId = default(Guid?), long? testPlanGlobalId = default(long?), string testPlanName = default(string), string configurationName = default(string), bool isAutomated = default(bool), string outcome = default(string), TestStatusApiResult status = default(TestStatusApiResult), string comment = default(string), List<LinkApiResult> links = default(List<LinkApiResult>), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<AttachmentApiResult> attachments = default(List<AttachmentApiResult>), Guid? workItemVersionId = default(Guid?), int? workItemVersionNumber = default(int?), string launchSource = default(string), List<Guid> failureClassIds = default(List<Guid>), Dictionary<string, string> parameters = default(Dictionary<string, string>))
+        public TestResultHistoryReportApiResult(Guid id = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid userId = default, Guid? testRunId = default, string testRunName = default, string createdByUserName = default, Guid? testPlanId = default, long? testPlanGlobalId = default, string testPlanName = default, string configurationName = default, bool isAutomated = default, string outcome = default, TestStatusApiResult status = default, string comment = default, List<LinkApiResult> links = default, DateTime? startedOn = default, DateTime? completedOn = default, long? duration = default, Guid createdById = default, Guid? modifiedById = default, List<AttachmentApiResult> attachments = default, Guid? workItemVersionId = default, int? workItemVersionNumber = default, string launchSource = default, List<Guid> failureClassIds = default, Dictionary<string, string> parameters = default)
         {
             this.Id = id;
             this.CreatedDate = createdDate;
@@ -130,9 +130,9 @@ namespace TestIT.ApiClient.Model
         public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
-        /// Internal identifier of user who stopped test run related to the test result or user who created the test result                If test run was stopped, this property equals identifier of user who stopped it.  Otherwise, the property equals identifier of user who created the test result
+        /// Internal identifier of user who stopped test run related to the test result or user who created the test result              If test run was stopped, this property equals identifier of user who stopped it. Otherwise, the property equals identifier of user who created the test result
         /// </summary>
-        /// <value>Internal identifier of user who stopped test run related to the test result or user who created the test result                If test run was stopped, this property equals identifier of user who stopped it.  Otherwise, the property equals identifier of user who created the test result</value>
+        /// <value>Internal identifier of user who stopped test run related to the test result or user who created the test result              If test run was stopped, this property equals identifier of user who stopped it. Otherwise, the property equals identifier of user who created the test result</value>
         [DataMember(Name = "userId", IsRequired = true, EmitDefaultValue = true)]
         public Guid UserId { get; set; }
 
@@ -179,9 +179,9 @@ namespace TestIT.ApiClient.Model
         public string TestPlanName { get; set; }
 
         /// <summary>
-        /// Configuration name of test point related to the test result or from test result itself                If test point related to the test result has configuration, this property will be equal to the test point configuration name.  Otherwise, this property will be equal to the test result configuration name
+        /// Configuration name of test point related to the test result or from test result itself              If test point related to the test result has configuration, this property will be equal to the test point configuration name. Otherwise, this property will be equal to the test result configuration name
         /// </summary>
-        /// <value>Configuration name of test point related to the test result or from test result itself                If test point related to the test result has configuration, this property will be equal to the test point configuration name.  Otherwise, this property will be equal to the test result configuration name</value>
+        /// <value>Configuration name of test point related to the test result or from test result itself              If test point related to the test result has configuration, this property will be equal to the test point configuration name. Otherwise, this property will be equal to the test result configuration name</value>
         [DataMember(Name = "configurationName", EmitDefaultValue = true)]
         public string ConfigurationName { get; set; }
 
@@ -193,9 +193,9 @@ namespace TestIT.ApiClient.Model
         public bool IsAutomated { get; set; }
 
         /// <summary>
-        /// Outcome from test result with max modified date or from first created test result                Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.                If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equals to the  worst outcome of the last modified test result. Otherwise, the outcome equals to the outcome of first created test result in the  test run.
+        /// Outcome from test result with max modified date or from first created test result              Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.              If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equals to the worst outcome of the last modified test result. Otherwise, the outcome equals to the outcome of first created test result in the test run.
         /// </summary>
-        /// <value>Outcome from test result with max modified date or from first created test result                Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.                If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equals to the  worst outcome of the last modified test result. Otherwise, the outcome equals to the outcome of first created test result in the  test run.</value>
+        /// <value>Outcome from test result with max modified date or from first created test result              Property can contain one of these values: Passed, Failed, InProgress, Blocked, Skipped.              If any test result related to the test run is linked with autotest and the run has an outcome, the outcome value equals to the worst outcome of the last modified test result. Otherwise, the outcome equals to the outcome of first created test result in the test run.</value>
         [DataMember(Name = "outcome", EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
@@ -207,16 +207,16 @@ namespace TestIT.ApiClient.Model
         public TestStatusApiResult Status { get; set; }
 
         /// <summary>
-        /// Test result comment                If any test result related to the test run is linked with autotest, comment will have default value.  Otherwise, the comment equals to the comment of first created test result in the test run
+        /// Test result comment              If any test result related to the test run is linked with autotest, comment will have default value. Otherwise, the comment equals to the comment of first created test result in the test run
         /// </summary>
-        /// <value>Test result comment                If any test result related to the test run is linked with autotest, comment will have default value.  Otherwise, the comment equals to the comment of first created test result in the test run</value>
+        /// <value>Test result comment              If any test result related to the test run is linked with autotest, comment will have default value. Otherwise, the comment equals to the comment of first created test result in the test run</value>
         [DataMember(Name = "comment", EmitDefaultValue = true)]
         public string Comment { get; set; }
 
         /// <summary>
-        /// Test result links                If any test result related to the test run is linked with autotest, link will be equal to the links of last modified test result.  Otherwise, the links equals to the links of first created test result in the test run.
+        /// Test result links              If any test result related to the test run is linked with autotest, link will be equal to the links of last modified test result. Otherwise, the links equals to the links of first created test result in the test run.
         /// </summary>
-        /// <value>Test result links                If any test result related to the test run is linked with autotest, link will be equal to the links of last modified test result.  Otherwise, the links equals to the links of first created test result in the test run.</value>
+        /// <value>Test result links              If any test result related to the test run is linked with autotest, link will be equal to the links of last modified test result. Otherwise, the links equals to the links of first created test result in the test run.</value>
         [DataMember(Name = "links", EmitDefaultValue = true)]
         public List<LinkApiResult> Links { get; set; }
 
@@ -256,9 +256,9 @@ namespace TestIT.ApiClient.Model
         public Guid? ModifiedById { get; set; }
 
         /// <summary>
-        /// Attachments related to the test result                If any test result related to the test run is linked with autotest, attachments will be equal to the attachments of last modified  test result. Otherwise, the attachments equals to the attachments of first created test result in the test run.
+        /// Attachments related to the test result              If any test result related to the test run is linked with autotest, attachments will be equal to the attachments of last modified test result. Otherwise, the attachments equals to the attachments of first created test result in the test run.
         /// </summary>
-        /// <value>Attachments related to the test result                If any test result related to the test run is linked with autotest, attachments will be equal to the attachments of last modified  test result. Otherwise, the attachments equals to the attachments of first created test result in the test run.</value>
+        /// <value>Attachments related to the test result              If any test result related to the test run is linked with autotest, attachments will be equal to the attachments of last modified test result. Otherwise, the attachments equals to the attachments of first created test result in the test run.</value>
         [DataMember(Name = "attachments", EmitDefaultValue = true)]
         public List<AttachmentApiResult> Attachments { get; set; }
 

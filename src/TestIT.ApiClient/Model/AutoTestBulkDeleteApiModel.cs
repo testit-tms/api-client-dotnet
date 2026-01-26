@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="AutoTestBulkDeleteApiModel" /> class.
         /// </summary>
         /// <param name="autoTestSelect">autoTestSelect (required).</param>
-        public AutoTestBulkDeleteApiModel(AutoTestSelectModel autoTestSelect = default(AutoTestSelectModel))
+        public AutoTestBulkDeleteApiModel(AutoTestSelectModel autoTestSelect = default)
         {
             // to ensure "autoTestSelect" is required (not null)
             if (autoTestSelect == null)

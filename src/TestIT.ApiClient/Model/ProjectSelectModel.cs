@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">filter.</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public ProjectSelectModel(ProjectsFilterModel filter = default(ProjectsFilterModel), ProjectExtractionModel extractionModel = default(ProjectExtractionModel))
+        public ProjectSelectModel(ProjectsFilterModel filter = default, ProjectExtractionModel extractionModel = default)
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;

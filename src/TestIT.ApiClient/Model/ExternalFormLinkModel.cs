@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="name">name (required).</param>
         /// <param name="url">url (required).</param>
-        public ExternalFormLinkModel(string name = default(string), string url = default(string))
+        public ExternalFormLinkModel(string name = default, string url = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

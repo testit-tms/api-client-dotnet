@@ -40,7 +40,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedByIds">Collection of identifiers of users who applied last modification to work item.</param>
         /// <param name="createdDate">Date and time of work item creation.</param>
         /// <param name="modifiedDate">Date and time of work item last modification.</param>
-        public SharedStepReferenceSectionsQueryFilterModel(string name = default(string), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel))
+        public SharedStepReferenceSectionsQueryFilterModel(string name = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default)
         {
             this.Name = name;
             this.CreatedByIds = createdByIds;

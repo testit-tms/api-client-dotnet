@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="oldValue">oldValue.</param>
         /// <param name="newValue">newValue.</param>
-        public AttachmentChangeViewModelArrayChangedFieldViewModel(List<AttachmentChangeViewModel> oldValue = default(List<AttachmentChangeViewModel>), List<AttachmentChangeViewModel> newValue = default(List<AttachmentChangeViewModel>))
+        public AttachmentChangeViewModelArrayChangedFieldViewModel(List<AttachmentChangeViewModel> oldValue = default, List<AttachmentChangeViewModel> newValue = default)
         {
             this.OldValue = oldValue;
             this.NewValue = newValue;

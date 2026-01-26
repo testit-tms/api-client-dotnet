@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="number">number (required).</param>
         /// <param name="action">action (required).</param>
         /// <param name="expected">expected (required).</param>
-        public WorkItemPreviewStepApiModel(int number = default(int), string action = default(string), string expected = default(string))
+        public WorkItemPreviewStepApiModel(int number = default, string action = default, string expected = default)
         {
             this.Number = number;
             // to ensure "action" is required (not null)

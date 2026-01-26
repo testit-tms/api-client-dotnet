@@ -36,7 +36,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestPlanTestPointsExtractionApiModel" /> class.
         /// </summary>
         /// <param name="ids">Extraction parameters for test points.</param>
-        public TestPlanTestPointsExtractionApiModel(GuidExtractionModel ids = default(GuidExtractionModel))
+        public TestPlanTestPointsExtractionApiModel(GuidExtractionModel ids = default)
         {
             this.Ids = ids;
         }

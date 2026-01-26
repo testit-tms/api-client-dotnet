@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="WorkItemLinkUrlApiResult" /> class.
         /// </summary>
         /// <param name="url">url (required).</param>
-        public WorkItemLinkUrlApiResult(string url = default(string))
+        public WorkItemLinkUrlApiResult(string url = default)
         {
             // to ensure "url" is required (not null)
             if (url == null)

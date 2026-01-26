@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">filter.</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public AutoTestSelectApiModel(AutoTestFilterApiModel filter = default(AutoTestFilterApiModel), AutoTestExtractionApiModel extractionModel = default(AutoTestExtractionApiModel))
+        public AutoTestSelectApiModel(AutoTestFilterApiModel filter = default, AutoTestExtractionApiModel extractionModel = default)
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;

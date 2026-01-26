@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="types">types.</param>
         /// <param name="searchUrl">searchUrl.</param>
-        public WorkItemLinkUrlFilterApiModel(List<WorkItemEntityTypes> types = default(List<WorkItemEntityTypes>), string searchUrl = default(string))
+        public WorkItemLinkUrlFilterApiModel(List<WorkItemEntityTypes> types = default, string searchUrl = default)
         {
             this.Types = types;
             this.SearchUrl = searchUrl;

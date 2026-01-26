@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="parameterKeyId">parameterKeyId (required).</param>
         /// <param name="value">Value of the parameter (required).</param>
         /// <param name="name">Key of the parameter (required).</param>
-        public ParameterShortApiResult(Guid id = default(Guid), Guid parameterKeyId = default(Guid), string value = default(string), string name = default(string))
+        public ParameterShortApiResult(Guid id = default, Guid parameterKeyId = default, string value = default, string name = default)
         {
             this.Id = id;
             this.ParameterKeyId = parameterKeyId;

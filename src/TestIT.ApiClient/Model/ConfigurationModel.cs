@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="globalId">globalId (required).</param>
         /// <param name="id">Unique ID of the entity (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
-        public ConfigurationModel(string description = default(string), Dictionary<string, string> parameters = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), long globalId = default(long), Guid id = default(Guid), bool isDeleted = default(bool))
+        public ConfigurationModel(string description = default, Dictionary<string, string> parameters = default, Guid projectId = default, bool isDefault = default, string name = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, Guid id = default, bool isDeleted = default)
         {
             this.ProjectId = projectId;
             this.IsDefault = isDefault;
@@ -88,7 +88,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>This property is used to link configuration with project</value>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
@@ -115,7 +115,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         /*
-        <example>2025-10-27T11:18:38.258590200+03:00</example>
+        <example>2026-01-22T16:37:35.457742900Z</example>
         */
         [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
@@ -124,7 +124,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2025-10-27T11:18:38.258590200+03:00</example>
+        <example>2026-01-22T16:37:35.457742900Z</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
@@ -133,7 +133,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedById
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
@@ -142,7 +142,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedById
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }

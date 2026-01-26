@@ -61,7 +61,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="autoTestsCount">Number of AutoTests run in the test run (required).</param>
         /// <param name="statistics">Statistics of the test run (required).</param>
         /// <param name="testResultsConfigurations">Test results configurations (required).</param>
-        public TestRunShortApiResult(Guid id = default(Guid), string name = default(string), TestRunState state = default(TestRunState), TestStatusApiResult status = default(TestStatusApiResult), DateTime createdDate = default(DateTime), DateTime? startedDate = default(DateTime?), DateTime? completedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), int autoTestsCount = default(int), TestResultsStatisticsApiResult statistics = default(TestResultsStatisticsApiResult), List<ConfigurationShortApiResult> testResultsConfigurations = default(List<ConfigurationShortApiResult>))
+        public TestRunShortApiResult(Guid id = default, string name = default, TestRunState state = default, TestStatusApiResult status = default, DateTime createdDate = default, DateTime? startedDate = default, DateTime? completedDate = default, Guid createdById = default, Guid? modifiedById = default, bool isDeleted = default, int autoTestsCount = default, TestResultsStatisticsApiResult statistics = default, List<ConfigurationShortApiResult> testResultsConfigurations = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

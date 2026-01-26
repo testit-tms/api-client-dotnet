@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="CreateTagApiModel" /> class.
         /// </summary>
         /// <param name="name">Name of the tag (required).</param>
-        public CreateTagApiModel(string name = default(string))
+        public CreateTagApiModel(string name = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

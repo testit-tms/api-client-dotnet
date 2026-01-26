@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="name">name.</param>
-        public UserNameApiResult(Guid id = default(Guid), string name = default(string))
+        public UserNameApiResult(Guid id = default, string name = default)
         {
             this.Id = id;
             this.Name = name;

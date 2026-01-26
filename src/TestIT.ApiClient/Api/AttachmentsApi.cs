@@ -56,7 +56,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <returns></returns>
-        void ApiV2AttachmentsIdGet(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?));
+        void ApiV2AttachmentsIdGet(Guid id, int? width = default, int? height = default, ImageResizeType? resizeType = default, string backgroundColor = default, bool? preview = default);
 
         /// <summary>
         /// Download attachment file
@@ -72,7 +72,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2AttachmentsIdGetWithHttpInfo(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?));
+        ApiResponse<Object> ApiV2AttachmentsIdGetWithHttpInfo(Guid id, int? width = default, int? height = default, ImageResizeType? resizeType = default, string backgroundColor = default, bool? preview = default);
         /// <summary>
         /// Get attachment metadata
         /// </summary>
@@ -111,23 +111,23 @@ namespace TestIT.ApiClient.Api
         /// Upload new attachment file
         /// </summary>
         /// <remarks>
-        /// File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// File size is restricted to 50 MB (52 428 800 bytes)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <returns>AttachmentModel</returns>
-        AttachmentModel ApiV2AttachmentsPost(FileParameter file = default(FileParameter));
+        AttachmentModel ApiV2AttachmentsPost(FileParameter file = default);
 
         /// <summary>
         /// Upload new attachment file
         /// </summary>
         /// <remarks>
-        /// File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// File size is restricted to 50 MB (52 428 800 bytes)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <returns>ApiResponse of AttachmentModel</returns>
-        ApiResponse<AttachmentModel> ApiV2AttachmentsPostWithHttpInfo(FileParameter file = default(FileParameter));
+        ApiResponse<AttachmentModel> ApiV2AttachmentsPostWithHttpInfo(FileParameter file = default);
         #endregion Synchronous Operations
     }
 
@@ -147,7 +147,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2AttachmentsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2AttachmentsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete attachment file
@@ -159,7 +159,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AttachmentsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AttachmentsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Download attachment file
         /// </summary>
@@ -175,7 +175,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2AttachmentsIdGetAsync(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2AttachmentsIdGetAsync(Guid id, int? width = default, int? height = default, ImageResizeType? resizeType = default, string backgroundColor = default, bool? preview = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Download attachment file
@@ -192,7 +192,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AttachmentsIdGetWithHttpInfoAsync(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AttachmentsIdGetWithHttpInfoAsync(Guid id, int? width = default, int? height = default, ImageResizeType? resizeType = default, string backgroundColor = default, bool? preview = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get attachment metadata
         /// </summary>
@@ -203,7 +203,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AttachmentModel</returns>
-        System.Threading.Tasks.Task<AttachmentModel> ApiV2AttachmentsIdMetadataGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AttachmentModel> ApiV2AttachmentsIdMetadataGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get attachment metadata
@@ -215,7 +215,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AttachmentModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AttachmentModel>> ApiV2AttachmentsIdMetadataGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AttachmentModel>> ApiV2AttachmentsIdMetadataGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get size of attachments storage in bytes
         /// </summary>
@@ -225,7 +225,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of long</returns>
-        System.Threading.Tasks.Task<long> ApiV2AttachmentsOccupiedFileStorageSizeGetAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<long> ApiV2AttachmentsOccupiedFileStorageSizeGetAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get size of attachments storage in bytes
@@ -236,30 +236,30 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (long)</returns>
-        System.Threading.Tasks.Task<ApiResponse<long>> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<long>> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Upload new attachment file
         /// </summary>
         /// <remarks>
-        /// File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// File size is restricted to 50 MB (52 428 800 bytes)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AttachmentModel</returns>
-        System.Threading.Tasks.Task<AttachmentModel> ApiV2AttachmentsPostAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AttachmentModel> ApiV2AttachmentsPostAsync(FileParameter file = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Upload new attachment file
         /// </summary>
         /// <remarks>
-        /// File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// File size is restricted to 50 MB (52 428 800 bytes)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AttachmentModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AttachmentModel>> ApiV2AttachmentsPostWithHttpInfoAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AttachmentModel>> ApiV2AttachmentsPostWithHttpInfoAsync(FileParameter file = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -535,7 +535,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2AttachmentsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2AttachmentsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2AttachmentsIdDeleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -547,7 +547,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2AttachmentsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2AttachmentsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -599,7 +599,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <returns></returns>
-        public void ApiV2AttachmentsIdGet(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?))
+        public void ApiV2AttachmentsIdGet(Guid id, int? width = default, int? height = default, ImageResizeType? resizeType = default, string backgroundColor = default, bool? preview = default)
         {
             ApiV2AttachmentsIdGetWithHttpInfo(id, width, height, resizeType, backgroundColor, preview);
         }
@@ -615,7 +615,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundColor">Color of the background if the &#x60;resizeType&#x60; is &#x60;AddBackgroundStripes&#x60; (optional)</param>
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2AttachmentsIdGetWithHttpInfo(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2AttachmentsIdGetWithHttpInfo(Guid id, int? width = default, int? height = default, ImageResizeType? resizeType = default, string backgroundColor = default, bool? preview = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -685,7 +685,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2AttachmentsIdGetAsync(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2AttachmentsIdGetAsync(Guid id, int? width = default, int? height = default, ImageResizeType? resizeType = default, string backgroundColor = default, bool? preview = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2AttachmentsIdGetWithHttpInfoAsync(id, width, height, resizeType, backgroundColor, preview, cancellationToken).ConfigureAwait(false);
         }
@@ -702,7 +702,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="preview">If image must be converted to a preview (lower quality, no animation) (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2AttachmentsIdGetWithHttpInfoAsync(Guid id, int? width = default(int?), int? height = default(int?), ImageResizeType? resizeType = default(ImageResizeType?), string backgroundColor = default(string), bool? preview = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2AttachmentsIdGetWithHttpInfoAsync(Guid id, int? width = default, int? height = default, ImageResizeType? resizeType = default, string backgroundColor = default, bool? preview = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -826,7 +826,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AttachmentModel</returns>
-        public async System.Threading.Tasks.Task<AttachmentModel> ApiV2AttachmentsIdMetadataGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AttachmentModel> ApiV2AttachmentsIdMetadataGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<AttachmentModel> localVarResponse = await ApiV2AttachmentsIdMetadataGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -839,7 +839,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AttachmentModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AttachmentModel>> ApiV2AttachmentsIdMetadataGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AttachmentModel>> ApiV2AttachmentsIdMetadataGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -939,7 +939,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of long</returns>
-        public async System.Threading.Tasks.Task<long> ApiV2AttachmentsOccupiedFileStorageSizeGetAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<long> ApiV2AttachmentsOccupiedFileStorageSizeGetAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<long> localVarResponse = await ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -951,7 +951,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (long)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<long>> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<long>> ApiV2AttachmentsOccupiedFileStorageSizeGetWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -992,24 +992,24 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Upload new attachment file File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <returns>AttachmentModel</returns>
-        public AttachmentModel ApiV2AttachmentsPost(FileParameter file = default(FileParameter))
+        public AttachmentModel ApiV2AttachmentsPost(FileParameter file = default)
         {
             TestIT.ApiClient.Client.ApiResponse<AttachmentModel> localVarResponse = ApiV2AttachmentsPostWithHttpInfo(file);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Upload new attachment file File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <returns>ApiResponse of AttachmentModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<AttachmentModel> ApiV2AttachmentsPostWithHttpInfo(FileParameter file = default(FileParameter))
+        public TestIT.ApiClient.Client.ApiResponse<AttachmentModel> ApiV2AttachmentsPostWithHttpInfo(FileParameter file = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1052,26 +1052,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Upload new attachment file File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AttachmentModel</returns>
-        public async System.Threading.Tasks.Task<AttachmentModel> ApiV2AttachmentsPostAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AttachmentModel> ApiV2AttachmentsPostAsync(FileParameter file = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<AttachmentModel> localVarResponse = await ApiV2AttachmentsPostWithHttpInfoAsync(file, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Upload new attachment file File size is restricted to 1 GB (1 073 741 824 bytes)
+        /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AttachmentModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AttachmentModel>> ApiV2AttachmentsPostWithHttpInfoAsync(FileParameter file = default(FileParameter), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AttachmentModel>> ApiV2AttachmentsPostWithHttpInfoAsync(FileParameter file = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();

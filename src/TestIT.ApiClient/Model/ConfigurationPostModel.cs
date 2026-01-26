@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="projectId">This property is used to link configuration with project (required).</param>
         /// <param name="isDefault">isDefault (required).</param>
         /// <param name="name">name (required).</param>
-        public ConfigurationPostModel(string description = default(string), Dictionary<string, string> parameters = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string))
+        public ConfigurationPostModel(string description = default, Dictionary<string, string> parameters = default, Guid projectId = default, bool isDefault = default, string name = default)
         {
             // to ensure "parameters" is required (not null)
             if (parameters == null)

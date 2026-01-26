@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="projectId">projectId (required).</param>
         /// <param name="externalId">externalId (required).</param>
         /// <param name="globalId">globalId (required).</param>
-        public AutoTestChangeViewModel(Guid id = default(Guid), Guid projectId = default(Guid), string externalId = default(string), long globalId = default(long))
+        public AutoTestChangeViewModel(Guid id = default, Guid projectId = default, string externalId = default, long globalId = default)
         {
             this.Id = id;
             this.ProjectId = projectId;

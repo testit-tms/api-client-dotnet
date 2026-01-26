@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemName">workItemName.</param>
         /// <param name="configurationName">configurationName.</param>
         /// <param name="testResults">testResults (required).</param>
-        public TestPointResultApiResult(Guid? testPointId = default(Guid?), string aggregatedOutcome = default(string), TestStatusApiResult aggregatedStatus = default(TestStatusApiResult), long? workItemGlobalId = default(long?), string workItemName = default(string), string configurationName = default(string), List<TestResultShortApiResult> testResults = default(List<TestResultShortApiResult>))
+        public TestPointResultApiResult(Guid? testPointId = default, string aggregatedOutcome = default, TestStatusApiResult aggregatedStatus = default, long? workItemGlobalId = default, string workItemName = default, string configurationName = default, List<TestResultShortApiResult> testResults = default)
         {
             // to ensure "testResults" is required (not null)
             if (testResults == null)

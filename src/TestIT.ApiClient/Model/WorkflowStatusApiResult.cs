@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">description (required).</param>
         /// <param name="isSystem">isSystem (required).</param>
         /// <param name="priority">priority (required).</param>
-        public WorkflowStatusApiResult(Guid id = default(Guid), string name = default(string), string code = default(string), TestStatusApiType type = default(TestStatusApiType), string description = default(string), bool isSystem = default(bool), int priority = default(int))
+        public WorkflowStatusApiResult(Guid id = default, string name = default, string code = default, TestStatusApiType type = default, string description = default, bool isSystem = default, int priority = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

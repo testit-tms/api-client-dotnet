@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ProjectExternalServicesApiResult" /> class.
         /// </summary>
         /// <param name="data">External services associated with a project (required).</param>
-        public ProjectExternalServicesApiResult(List<ProjectExternalServiceApiResult> data = default(List<ProjectExternalServiceApiResult>))
+        public ProjectExternalServicesApiResult(List<ProjectExternalServiceApiResult> data = default)
         {
             // to ensure "data" is required (not null)
             if (data == null)

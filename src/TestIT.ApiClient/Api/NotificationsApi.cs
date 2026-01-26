@@ -31,28 +31,28 @@ namespace TestIT.ApiClient.Api
         /// Get unread Notifications total in last 7 days
         /// </summary>
         /// <remarks>
-        ///   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
+        ///  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
         /// <returns>int</returns>
-        int ApiV2NotificationsCountGet(bool? isRead = default(bool?));
+        int ApiV2NotificationsCountGet(bool? isRead = default);
 
         /// <summary>
         /// Get unread Notifications total in last 7 days
         /// </summary>
         /// <remarks>
-        ///   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
+        ///  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
         /// <returns>ApiResponse of int</returns>
-        ApiResponse<int> ApiV2NotificationsCountGetWithHttpInfo(bool? isRead = default(bool?));
+        ApiResponse<int> ApiV2NotificationsCountGetWithHttpInfo(bool? isRead = default);
         /// <summary>
         /// Get all Notifications for current User
         /// </summary>
         /// <remarks>
-        ///   Use case    User runs method execution    System returns notifications (listed in the response example)
+        ///  Use case  User runs method execution  System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -62,13 +62,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;NotificationModel&gt;</returns>
-        List<NotificationModel> ApiV2NotificationsGet(NotificationTypeModel? notificationType = default(NotificationTypeModel?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        List<NotificationModel> ApiV2NotificationsGet(NotificationTypeModel? notificationType = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
 
         /// <summary>
         /// Get all Notifications for current User
         /// </summary>
         /// <remarks>
-        ///   Use case    User runs method execution    System returns notifications (listed in the response example)
+        ///  Use case  User runs method execution  System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -78,12 +78,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;NotificationModel&gt;</returns>
-        ApiResponse<List<NotificationModel>> ApiV2NotificationsGetWithHttpInfo(NotificationTypeModel? notificationType = default(NotificationTypeModel?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        ApiResponse<List<NotificationModel>> ApiV2NotificationsGetWithHttpInfo(NotificationTypeModel? notificationType = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
         /// <summary>
         /// Set Notification as read
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
+        ///  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -94,7 +94,7 @@ namespace TestIT.ApiClient.Api
         /// Set Notification as read
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
+        ///  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -104,7 +104,7 @@ namespace TestIT.ApiClient.Api
         /// Set all Notifications as read
         /// </summary>
         /// <remarks>
-        ///   Use case    User runs method execution    System set all notifications as read
+        ///  Use case  User runs method execution  System set all notifications as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
@@ -114,7 +114,7 @@ namespace TestIT.ApiClient.Api
         /// Set all Notifications as read
         /// </summary>
         /// <remarks>
-        ///   Use case    User runs method execution    System set all notifications as read
+        ///  Use case  User runs method execution  System set all notifications as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -123,7 +123,7 @@ namespace TestIT.ApiClient.Api
         /// Search Notifications for current User
         /// </summary>
         /// <remarks>
-        ///   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
+        ///  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -133,13 +133,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="notificationQueryFilterModel"> (optional)</param>
         /// <returns>List&lt;NotificationModel&gt;</returns>
-        List<NotificationModel> ApiV2NotificationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel));
+        List<NotificationModel> ApiV2NotificationsSearchPost(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, NotificationQueryFilterModel notificationQueryFilterModel = default);
 
         /// <summary>
         /// Search Notifications for current User
         /// </summary>
         /// <remarks>
-        ///   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
+        ///  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -149,7 +149,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="notificationQueryFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;NotificationModel&gt;</returns>
-        ApiResponse<List<NotificationModel>> ApiV2NotificationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel));
+        ApiResponse<List<NotificationModel>> ApiV2NotificationsSearchPostWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, NotificationQueryFilterModel notificationQueryFilterModel = default);
         #endregion Synchronous Operations
     }
 
@@ -163,30 +163,30 @@ namespace TestIT.ApiClient.Api
         /// Get unread Notifications total in last 7 days
         /// </summary>
         /// <remarks>
-        ///   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
+        ///  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of int</returns>
-        System.Threading.Tasks.Task<int> ApiV2NotificationsCountGetAsync(bool? isRead = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<int> ApiV2NotificationsCountGetAsync(bool? isRead = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get unread Notifications total in last 7 days
         /// </summary>
         /// <remarks>
-        ///   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
+        ///  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (int)</returns>
-        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2NotificationsCountGetWithHttpInfoAsync(bool? isRead = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<int>> ApiV2NotificationsCountGetWithHttpInfoAsync(bool? isRead = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get all Notifications for current User
         /// </summary>
         /// <remarks>
-        ///   Use case    User runs method execution    System returns notifications (listed in the response example)
+        ///  Use case  User runs method execution  System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -197,13 +197,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;NotificationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsGetAsync(NotificationTypeModel? notificationType = default(NotificationTypeModel?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsGetAsync(NotificationTypeModel? notificationType = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all Notifications for current User
         /// </summary>
         /// <remarks>
-        ///   Use case    User runs method execution    System returns notifications (listed in the response example)
+        ///  Use case  User runs method execution  System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -214,56 +214,56 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;NotificationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<NotificationModel>>> ApiV2NotificationsGetWithHttpInfoAsync(NotificationTypeModel? notificationType = default(NotificationTypeModel?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<NotificationModel>>> ApiV2NotificationsGetWithHttpInfoAsync(NotificationTypeModel? notificationType = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set Notification as read
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
+        ///  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2NotificationsIdReadPostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2NotificationsIdReadPostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Set Notification as read
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
+        ///  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2NotificationsIdReadPostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2NotificationsIdReadPostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set all Notifications as read
         /// </summary>
         /// <remarks>
-        ///   Use case    User runs method execution    System set all notifications as read
+        ///  Use case  User runs method execution  System set all notifications as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2NotificationsReadPostAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2NotificationsReadPostAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Set all Notifications as read
         /// </summary>
         /// <remarks>
-        ///   Use case    User runs method execution    System set all notifications as read
+        ///  Use case  User runs method execution  System set all notifications as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2NotificationsReadPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2NotificationsReadPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search Notifications for current User
         /// </summary>
         /// <remarks>
-        ///   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
+        ///  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -274,13 +274,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="notificationQueryFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;NotificationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsSearchPostAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, NotificationQueryFilterModel notificationQueryFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Search Notifications for current User
         /// </summary>
         /// <remarks>
-        ///   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
+        ///  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -291,7 +291,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="notificationQueryFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;NotificationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<NotificationModel>>> ApiV2NotificationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<NotificationModel>>> ApiV2NotificationsSearchPostWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, NotificationQueryFilterModel notificationQueryFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -506,24 +506,24 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get unread Notifications total in last 7 days   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
+        /// Get unread Notifications total in last 7 days  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
         /// <returns>int</returns>
-        public int ApiV2NotificationsCountGet(bool? isRead = default(bool?))
+        public int ApiV2NotificationsCountGet(bool? isRead = default)
         {
             TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = ApiV2NotificationsCountGetWithHttpInfo(isRead);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get unread Notifications total in last 7 days   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
+        /// Get unread Notifications total in last 7 days  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
         /// <returns>ApiResponse of int</returns>
-        public TestIT.ApiClient.Client.ApiResponse<int> ApiV2NotificationsCountGetWithHttpInfo(bool? isRead = default(bool?))
+        public TestIT.ApiClient.Client.ApiResponse<int> ApiV2NotificationsCountGetWithHttpInfo(bool? isRead = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -565,26 +565,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get unread Notifications total in last 7 days   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
+        /// Get unread Notifications total in last 7 days  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of int</returns>
-        public async System.Threading.Tasks.Task<int> ApiV2NotificationsCountGetAsync(bool? isRead = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<int> ApiV2NotificationsCountGetAsync(bool? isRead = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<int> localVarResponse = await ApiV2NotificationsCountGetWithHttpInfoAsync(isRead, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get unread Notifications total in last 7 days   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
+        /// Get unread Notifications total in last 7 days  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (int)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<int>> ApiV2NotificationsCountGetWithHttpInfoAsync(bool? isRead = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<int>> ApiV2NotificationsCountGetWithHttpInfoAsync(bool? isRead = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -629,7 +629,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all Notifications for current User   Use case    User runs method execution    System returns notifications (listed in the response example)
+        /// Get all Notifications for current User  Use case  User runs method execution  System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -639,14 +639,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;NotificationModel&gt;</returns>
-        public List<NotificationModel> ApiV2NotificationsGet(NotificationTypeModel? notificationType = default(NotificationTypeModel?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public List<NotificationModel> ApiV2NotificationsGet(NotificationTypeModel? notificationType = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<NotificationModel>> localVarResponse = ApiV2NotificationsGetWithHttpInfo(notificationType, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get all Notifications for current User   Use case    User runs method execution    System returns notifications (listed in the response example)
+        /// Get all Notifications for current User  Use case  User runs method execution  System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -656,7 +656,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;NotificationModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<NotificationModel>> ApiV2NotificationsGetWithHttpInfo(NotificationTypeModel? notificationType = default(NotificationTypeModel?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public TestIT.ApiClient.Client.ApiResponse<List<NotificationModel>> ApiV2NotificationsGetWithHttpInfo(NotificationTypeModel? notificationType = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -718,7 +718,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all Notifications for current User   Use case    User runs method execution    System returns notifications (listed in the response example)
+        /// Get all Notifications for current User  Use case  User runs method execution  System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -729,14 +729,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;NotificationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsGetAsync(NotificationTypeModel? notificationType = default(NotificationTypeModel?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsGetAsync(NotificationTypeModel? notificationType = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<NotificationModel>> localVarResponse = await ApiV2NotificationsGetWithHttpInfoAsync(notificationType, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get all Notifications for current User   Use case    User runs method execution    System returns notifications (listed in the response example)
+        /// Get all Notifications for current User  Use case  User runs method execution  System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -747,7 +747,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;NotificationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<NotificationModel>>> ApiV2NotificationsGetWithHttpInfoAsync(NotificationTypeModel? notificationType = default(NotificationTypeModel?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<NotificationModel>>> ApiV2NotificationsGetWithHttpInfoAsync(NotificationTypeModel? notificationType = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -812,7 +812,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set Notification as read   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
+        /// Set Notification as read  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -823,7 +823,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set Notification as read   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
+        /// Set Notification as read  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -867,25 +867,25 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set Notification as read   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
+        /// Set Notification as read  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2NotificationsIdReadPostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2NotificationsIdReadPostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2NotificationsIdReadPostWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Set Notification as read   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
+        /// Set Notification as read  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2NotificationsIdReadPostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2NotificationsIdReadPostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -927,7 +927,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set all Notifications as read   Use case    User runs method execution    System set all notifications as read
+        /// Set all Notifications as read  Use case  User runs method execution  System set all notifications as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
@@ -937,7 +937,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set all Notifications as read   Use case    User runs method execution    System set all notifications as read
+        /// Set all Notifications as read  Use case  User runs method execution  System set all notifications as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -979,23 +979,23 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set all Notifications as read   Use case    User runs method execution    System set all notifications as read
+        /// Set all Notifications as read  Use case  User runs method execution  System set all notifications as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2NotificationsReadPostAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2NotificationsReadPostAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2NotificationsReadPostWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Set all Notifications as read   Use case    User runs method execution    System set all notifications as read
+        /// Set all Notifications as read  Use case  User runs method execution  System set all notifications as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2NotificationsReadPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2NotificationsReadPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1036,7 +1036,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search Notifications for current User   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
+        /// Search Notifications for current User  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1046,14 +1046,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="notificationQueryFilterModel"> (optional)</param>
         /// <returns>List&lt;NotificationModel&gt;</returns>
-        public List<NotificationModel> ApiV2NotificationsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel))
+        public List<NotificationModel> ApiV2NotificationsSearchPost(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, NotificationQueryFilterModel notificationQueryFilterModel = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<NotificationModel>> localVarResponse = ApiV2NotificationsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, notificationQueryFilterModel);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Search Notifications for current User   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
+        /// Search Notifications for current User  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1063,7 +1063,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="notificationQueryFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;NotificationModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<NotificationModel>> ApiV2NotificationsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel))
+        public TestIT.ApiClient.Client.ApiResponse<List<NotificationModel>> ApiV2NotificationsSearchPostWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, NotificationQueryFilterModel notificationQueryFilterModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1123,7 +1123,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search Notifications for current User   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
+        /// Search Notifications for current User  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1134,14 +1134,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="notificationQueryFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;NotificationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<NotificationModel>> ApiV2NotificationsSearchPostAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, NotificationQueryFilterModel notificationQueryFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<NotificationModel>> localVarResponse = await ApiV2NotificationsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, notificationQueryFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Search Notifications for current User   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
+        /// Search Notifications for current User  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1152,7 +1152,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="notificationQueryFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;NotificationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<NotificationModel>>> ApiV2NotificationsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), NotificationQueryFilterModel notificationQueryFilterModel = default(NotificationQueryFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<NotificationModel>>> ApiV2NotificationsSearchPostWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, NotificationQueryFilterModel notificationQueryFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();

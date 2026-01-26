@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="previews">previews (required).</param>
         /// <param name="link">link.</param>
-        public GenerateWorkItemPreviewsApiResult(List<WorkItemPreviewApiModel> previews = default(List<WorkItemPreviewApiModel>), PreviewsIssueLinkApiResult link = default(PreviewsIssueLinkApiResult))
+        public GenerateWorkItemPreviewsApiResult(List<WorkItemPreviewApiModel> previews = default, PreviewsIssueLinkApiResult link = default)
         {
             // to ensure "previews" is required (not null)
             if (previews == null)

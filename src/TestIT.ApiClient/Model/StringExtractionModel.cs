@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="include">include.</param>
         /// <param name="exclude">exclude.</param>
-        public StringExtractionModel(List<string> include = default(List<string>), List<string> exclude = default(List<string>))
+        public StringExtractionModel(List<string> include = default, List<string> exclude = default)
         {
             this.Include = include;
             this.Exclude = exclude;

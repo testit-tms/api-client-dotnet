@@ -39,7 +39,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <returns>List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsProjectIdAttributesTemplatesSearchPost(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel));
+        List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsProjectIdAttributesTemplatesSearchPost(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default);
 
         /// <summary>
         /// Search for custom attributes templates
@@ -56,12 +56,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel));
+        ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default);
         /// <summary>
         /// Delete CustomAttributeTemplate from Project
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
+        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -73,7 +73,7 @@ namespace TestIT.ApiClient.Api
         /// Delete CustomAttributeTemplate from Project
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
+        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -84,7 +84,7 @@ namespace TestIT.ApiClient.Api
         /// Add CustomAttributeTemplate to Project
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
+        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -96,7 +96,7 @@ namespace TestIT.ApiClient.Api
         /// Add CustomAttributeTemplate to Project
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
+        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -128,7 +128,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Search for custom attributes templates
@@ -146,57 +146,57 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProjectCustomAttributeTemplateGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete CustomAttributeTemplate from Project
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
+        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete CustomAttributeTemplate from Project
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
+        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Add CustomAttributeTemplate to Project
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
+        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Add CustomAttributeTemplate to Project
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
+        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -422,7 +422,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <returns>List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        public List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsProjectIdAttributesTemplatesSearchPost(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel))
+        public List<ProjectCustomAttributeTemplateGetModel> ApiV2ProjectsProjectIdAttributesTemplatesSearchPost(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectCustomAttributesTemplatesFilterModel);
             return localVarResponse.Data;
@@ -440,7 +440,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel))
+        public TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfo(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -517,7 +517,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ProjectCustomAttributeTemplateGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ProjectCustomAttributeTemplateGetModel>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>> localVarResponse = await ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, projectCustomAttributesTemplatesFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -536,7 +536,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="projectCustomAttributesTemplatesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ProjectCustomAttributeTemplateGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(string projectId, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default(ProjectCustomAttributesTemplatesFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ProjectCustomAttributeTemplateGetModel>>> ApiV2ProjectsProjectIdAttributesTemplatesSearchPostWithHttpInfoAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectCustomAttributesTemplatesFilterModel projectCustomAttributesTemplatesFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -604,7 +604,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate from Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
+        /// Delete CustomAttributeTemplate from Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -616,7 +616,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate from Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
+        /// Delete CustomAttributeTemplate from Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -666,27 +666,27 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate from Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
+        /// Delete CustomAttributeTemplate from Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfoAsync(projectId, templateId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate from Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
+        /// Delete CustomAttributeTemplate from Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdDeleteWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -733,7 +733,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add CustomAttributeTemplate to Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
+        /// Add CustomAttributeTemplate to Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -745,7 +745,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add CustomAttributeTemplate to Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
+        /// Add CustomAttributeTemplate to Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -795,27 +795,27 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add CustomAttributeTemplate to Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
+        /// Add CustomAttributeTemplate to Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfoAsync(projectId, templateId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Add CustomAttributeTemplate to Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
+        /// Add CustomAttributeTemplate to Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="templateId">CustomAttributeTemplate internal (UUID) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAttributesTemplatesTemplateIdPostWithHttpInfoAsync(string projectId, Guid templateId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)

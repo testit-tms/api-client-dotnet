@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="data">data (required).</param>
         /// <param name="totalCount">totalCount (required).</param>
-        public ExternalIssueApiFieldSuggestionReply(List<ExternalIssueApiFieldSuggestion> data = default(List<ExternalIssueApiFieldSuggestion>), int totalCount = default(int))
+        public ExternalIssueApiFieldSuggestionReply(List<ExternalIssueApiFieldSuggestion> data = default, int totalCount = default)
         {
             // to ensure "data" is required (not null)
             if (data == null)

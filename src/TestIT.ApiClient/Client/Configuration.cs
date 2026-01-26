@@ -33,7 +33,7 @@ namespace TestIT.ApiClient.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "5.2.5";
+        public const string Version = "5.3.0-rc1";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -112,7 +112,7 @@ namespace TestIT.ApiClient.Client
         public Configuration()
         {
             Proxy = null;
-            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/5.2.5/csharp");
+            UserAgent = WebUtility.UrlEncode("OpenAPI-Generator/5.3.0-rc1/csharp");
             BasePath = "http://localhost";
             DefaultHeaders = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
@@ -131,7 +131,7 @@ namespace TestIT.ApiClient.Client
             };
 
             // Setting Timeout has side effects (forces ApiClient creation).
-            Timeout = 100000;
+            Timeout = TimeSpan.FromSeconds(100);
         }
 
         /// <summary>
@@ -215,9 +215,9 @@ namespace TestIT.ApiClient.Client
         public virtual IDictionary<string, string> DefaultHeaders { get; set; }
 
         /// <summary>
-        /// Gets or sets the HTTP timeout (milliseconds) of ApiClient. Default to 100000 milliseconds.
+        /// Gets or sets the HTTP timeout of ApiClient. Defaults to 100 seconds.
         /// </summary>
-        public virtual int Timeout { get; set; }
+        public virtual TimeSpan Timeout { get; set; }
 
         /// <summary>
         /// Gets or sets the proxy
@@ -497,7 +497,7 @@ namespace TestIT.ApiClient.Client
 
                     if (inputVariables.ContainsKey(variable.Key))
                     {
-                        if (((List<string>)serverVariables["enum_values"]).Contains(inputVariables[variable.Key]))
+                        if (!serverVariables.ContainsKey("enum_values") || ((List<string>)serverVariables["enum_values"]).Contains(inputVariables[variable.Key]))
                         {
                             url = url.Replace("{" + variable.Key + "}", inputVariables[variable.Key]);
                         }
@@ -535,7 +535,7 @@ namespace TestIT.ApiClient.Client
             report += "    OS: " + System.Environment.OSVersion + "\n";
             report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: v2.0\n";
-            report += "    SDK Package Version: 5.2.5\n";
+            report += "    SDK Package Version: 5.3.0-rc1\n";
 
             return report;
         }

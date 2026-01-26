@@ -35,7 +35,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <returns></returns>
-        void ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default(TestPlanTestPointsAutoTestsRerunApiModel));
+        void ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default);
 
         /// <summary>
         /// Rerun autotests.
@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default(TestPlanTestPointsAutoTestsRerunApiModel));
+        ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default);
         /// <summary>
         /// Run autotests.
         /// </summary>
@@ -57,7 +57,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <returns>TestRunNameApiResult</returns>
-        TestRunNameApiResult ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default(TestPlanTestPointsAutoTestsRunApiModel));
+        TestRunNameApiResult ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default);
 
         /// <summary>
         /// Run autotests.
@@ -70,7 +70,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <returns>ApiResponse of TestRunNameApiResult</returns>
-        ApiResponse<TestRunNameApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default(TestPlanTestPointsAutoTestsRunApiModel));
+        ApiResponse<TestRunNameApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default);
         #endregion Synchronous Operations
     }
 
@@ -92,7 +92,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default(TestPlanTestPointsAutoTestsRerunApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Rerun autotests.
@@ -106,7 +106,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default(TestPlanTestPointsAutoTestsRerunApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Run autotests.
         /// </summary>
@@ -119,7 +119,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestRunNameApiResult</returns>
-        System.Threading.Tasks.Task<TestRunNameApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default(TestPlanTestPointsAutoTestsRunApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<TestRunNameApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Run autotests.
@@ -133,7 +133,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestRunNameApiResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestRunNameApiResult>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default(TestPlanTestPointsAutoTestsRunApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<TestRunNameApiResult>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -355,7 +355,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default(TestPlanTestPointsAutoTestsRerunApiModel))
+        public void ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default)
         {
             ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfo(projectId, testPlanId, testPlanTestPointsAutoTestsRerunApiModel);
         }
@@ -368,7 +368,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default(TestPlanTestPointsAutoTestsRerunApiModel))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -422,7 +422,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default(TestPlanTestPointsAutoTestsRerunApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfoAsync(projectId, testPlanId, testPlanTestPointsAutoTestsRerunApiModel, cancellationToken).ConfigureAwait(false);
         }
@@ -436,7 +436,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default(TestPlanTestPointsAutoTestsRerunApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -492,7 +492,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <returns>TestRunNameApiResult</returns>
-        public TestRunNameApiResult ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default(TestPlanTestPointsAutoTestsRunApiModel))
+        public TestRunNameApiResult ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default)
         {
             TestIT.ApiClient.Client.ApiResponse<TestRunNameApiResult> localVarResponse = ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfo(projectId, testPlanId, testPlanTestPointsAutoTestsRunApiModel);
             return localVarResponse.Data;
@@ -506,7 +506,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanId"></param>
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <returns>ApiResponse of TestRunNameApiResult</returns>
-        public TestIT.ApiClient.Client.ApiResponse<TestRunNameApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default(TestPlanTestPointsAutoTestsRunApiModel))
+        public TestIT.ApiClient.Client.ApiResponse<TestRunNameApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -560,7 +560,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of TestRunNameApiResult</returns>
-        public async System.Threading.Tasks.Task<TestRunNameApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default(TestPlanTestPointsAutoTestsRunApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestRunNameApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<TestRunNameApiResult> localVarResponse = await ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfoAsync(projectId, testPlanId, testPlanTestPointsAutoTestsRunApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -575,7 +575,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (TestRunNameApiResult)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestRunNameApiResult>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default(TestPlanTestPointsAutoTestsRunApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestRunNameApiResult>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)

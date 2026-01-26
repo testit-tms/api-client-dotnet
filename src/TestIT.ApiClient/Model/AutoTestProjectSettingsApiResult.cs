@@ -46,7 +46,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="flakyTestRunCount">Last test run count for autotest flaky computing (required).</param>
         /// <param name="rerunEnabled">Auto rerun enabled (required).</param>
         /// <param name="rerunAttemptsCount">Auto rerun attempt count (required).</param>
-        public AutoTestProjectSettingsApiResult(Guid projectId = default(Guid), bool isFlakyAuto = default(bool), int flakyStabilityPercentage = default(int), int flakyTestRunCount = default(int), bool rerunEnabled = default(bool), int rerunAttemptsCount = default(int))
+        public AutoTestProjectSettingsApiResult(Guid projectId = default, bool isFlakyAuto = default, int flakyStabilityPercentage = default, int flakyTestRunCount = default, bool rerunEnabled = default, int rerunAttemptsCount = default)
         {
             this.ProjectId = projectId;
             this.IsFlakyAuto = isFlakyAuto;

@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="diffValue">diffValue.</param>
         /// <param name="oldValue">oldValue.</param>
         /// <param name="newValue">newValue.</param>
-        public WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel(List<WorkItemStepChangeViewModel> diffValue = default(List<WorkItemStepChangeViewModel>), List<WorkItemStepChangeViewModel> oldValue = default(List<WorkItemStepChangeViewModel>), List<WorkItemStepChangeViewModel> newValue = default(List<WorkItemStepChangeViewModel>))
+        public WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel(List<WorkItemStepChangeViewModel> diffValue = default, List<WorkItemStepChangeViewModel> oldValue = default, List<WorkItemStepChangeViewModel> newValue = default)
         {
             this.DiffValue = diffValue;
             this.OldValue = oldValue;

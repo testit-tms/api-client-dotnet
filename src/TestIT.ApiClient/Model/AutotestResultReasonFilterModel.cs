@@ -39,7 +39,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name.</param>
         /// <param name="regexCount">regexCount.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public AutotestResultReasonFilterModel(List<AvailableFailureCategory> failureCategories = default(List<AvailableFailureCategory>), string name = default(string), Int32RangeSelectorModel regexCount = default(Int32RangeSelectorModel), bool? isDeleted = default(bool?))
+        public AutotestResultReasonFilterModel(List<AvailableFailureCategory> failureCategories = default, string name = default, Int32RangeSelectorModel regexCount = default, bool? isDeleted = default)
         {
             this.FailureCategories = failureCategories;
             this.Name = name;

@@ -41,10 +41,15 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ReplaceProjectExternalServiceApiModel" /> class.
         /// </summary>
         /// <param name="newExternalServiceId">The unique ID of the new external service that will replace the current one (required).</param>
-        /// <param name="settings">External service settings.</param>
-        public ReplaceProjectExternalServiceApiModel(Guid newExternalServiceId = default(Guid), Object settings = default(Object))
+        /// <param name="settings">External service settings (required).</param>
+        public ReplaceProjectExternalServiceApiModel(Guid newExternalServiceId = default, Object settings = default)
         {
             this.NewExternalServiceId = newExternalServiceId;
+            // to ensure "settings" is required (not null)
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings is a required property for ReplaceProjectExternalServiceApiModel and cannot be null");
+            }
             this.Settings = settings;
         }
 
@@ -59,7 +64,7 @@ namespace TestIT.ApiClient.Model
         /// External service settings
         /// </summary>
         /// <value>External service settings</value>
-        [DataMember(Name = "settings", EmitDefaultValue = true)]
+        [DataMember(Name = "settings", IsRequired = true, EmitDefaultValue = true)]
         public Object Settings { get; set; }
 
         /// <summary>

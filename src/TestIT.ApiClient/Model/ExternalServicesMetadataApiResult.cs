@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ExternalServicesMetadataApiResult" /> class.
         /// </summary>
         /// <param name="data">External services metadata (required).</param>
-        public ExternalServicesMetadataApiResult(List<ExternalServiceMetadataApiResult> data = default(List<ExternalServiceMetadataApiResult>))
+        public ExternalServicesMetadataApiResult(List<ExternalServiceMetadataApiResult> data = default)
         {
             // to ensure "data" is required (not null)
             if (data == null)

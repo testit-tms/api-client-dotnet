@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="status">status.</param>
         /// <param name="statusModel">statusModel.</param>
         /// <param name="lastTestResultId">lastTestResultId.</param>
-        public TestPoint(Guid id = default(Guid), bool isDeleted = default(bool), Guid? testerId = default(Guid?), Guid iterationId = default(Guid), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), Guid testSuiteId = default(Guid), string status = default(string), TestStatusApiResult statusModel = default(TestStatusApiResult), Guid? lastTestResultId = default(Guid?))
+        public TestPoint(Guid id = default, bool isDeleted = default, Guid? testerId = default, Guid iterationId = default, Guid? workItemId = default, Guid? configurationId = default, Guid testSuiteId = default, string status = default, TestStatusApiResult statusModel = default, Guid? lastTestResultId = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;

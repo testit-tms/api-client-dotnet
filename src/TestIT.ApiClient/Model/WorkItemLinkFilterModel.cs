@@ -39,7 +39,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="title">title.</param>
         /// <param name="urls">urls.</param>
         /// <param name="onlyWithoutLinks">onlyWithoutLinks.</param>
-        public WorkItemLinkFilterModel(List<LinkType> types = default(List<LinkType>), string title = default(string), List<string> urls = default(List<string>), bool? onlyWithoutLinks = default(bool?))
+        public WorkItemLinkFilterModel(List<LinkType> types = default, string title = default, List<string> urls = default, bool? onlyWithoutLinks = default)
         {
             this.Types = types;
             this.Title = title;

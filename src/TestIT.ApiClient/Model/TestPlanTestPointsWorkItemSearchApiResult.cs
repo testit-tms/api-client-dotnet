@@ -69,7 +69,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="section">section (required).</param>
         /// <param name="created">created (required).</param>
         /// <param name="modified">modified.</param>
-        public TestPlanTestPointsWorkItemSearchApiResult(Guid id = default(Guid), long globalId = default(long), Guid versionId = default(Guid), int versionNumber = default(int), long? medianDuration = default(long?), bool? isDeleted = default(bool?), int duration = default(int), WorkItemState state = default(WorkItemState), List<string> tags = default(List<string>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), string orderRank = default(string), bool isAutomated = default(bool), string name = default(string), WorkItemPriority priority = default(WorkItemPriority), TestPlanTestPointsSectionSearchApiResult section = default(TestPlanTestPointsSectionSearchApiResult), AuditApiResult created = default(AuditApiResult), AuditApiResult modified = default(AuditApiResult))
+        public TestPlanTestPointsWorkItemSearchApiResult(Guid id = default, long globalId = default, Guid versionId = default, int versionNumber = default, long? medianDuration = default, bool? isDeleted = default, int duration = default, WorkItemState state = default, List<string> tags = default, Dictionary<string, Object> attributes = default, string orderRank = default, bool isAutomated = default, string name = default, WorkItemPriority priority = default, TestPlanTestPointsSectionSearchApiResult section = default, AuditApiResult created = default, AuditApiResult modified = default)
         {
             this.Id = id;
             this.GlobalId = globalId;

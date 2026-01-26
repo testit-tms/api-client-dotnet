@@ -36,7 +36,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="GetAIServiceModelsApiModel" /> class.
         /// </summary>
         /// <param name="inquiry">inquiry.</param>
-        public GetAIServiceModelsApiModel(Inquiry inquiry = default(Inquiry))
+        public GetAIServiceModelsApiModel(Inquiry inquiry = default)
         {
             this.Inquiry = inquiry;
         }

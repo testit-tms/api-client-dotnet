@@ -27,10 +27,10 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// Defines ExternalServiceCategoryApiResult
+    /// Defines ApiExternalServiceCategory
     /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum ExternalServiceCategoryApiResult
+    public enum ApiExternalServiceCategory
     {
         /// <summary>
         /// Enum AI for value: AI

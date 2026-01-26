@@ -36,7 +36,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="SearchWorkflowProjectsApiModel" /> class.
         /// </summary>
         /// <param name="inquiry">inquiry.</param>
-        public SearchWorkflowProjectsApiModel(Inquiry inquiry = default(Inquiry))
+        public SearchWorkflowProjectsApiModel(Inquiry inquiry = default)
         {
             this.Inquiry = inquiry;
         }

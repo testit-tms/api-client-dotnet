@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="values">values (required).</param>
         /// <param name="projectIds">projectIds (required).</param>
-        public ParameterGroupApiResult(Guid parameterKeyId = default(Guid), string name = default(string), Dictionary<string, string> values = default(Dictionary<string, string>), List<Guid> projectIds = default(List<Guid>))
+        public ParameterGroupApiResult(Guid parameterKeyId = default, string name = default, Dictionary<string, string> values = default, List<Guid> projectIds = default)
         {
             this.ParameterKeyId = parameterKeyId;
             // to ensure "name" is required (not null)

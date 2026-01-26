@@ -46,7 +46,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">ID of the user who created the tag (required).</param>
         /// <param name="modifiedDate">Latest modification date of the tag.</param>
         /// <param name="modifiedById">ID of the user who last modified the tag.</param>
-        public TagApiResult(Guid id = default(Guid), string name = default(string), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?))
+        public TagApiResult(Guid id = default, string name = default, DateTime createdDate = default, Guid createdById = default, DateTime? modifiedDate = default, Guid? modifiedById = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

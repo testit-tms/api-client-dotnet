@@ -55,7 +55,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="refreshDate">The last time the test suite&#39;s results were refreshed (required).</param>
         /// <param name="parentId">Unique ID of the parent test suite, if any (required).</param>
         /// <param name="testPlanId">Unique ID of the associated test plan (required).</param>
-        public TestSuiteApiResult(Guid id = default(Guid), string name = default(string), TestSuiteTypeApiResult type = default(TestSuiteTypeApiResult), bool? saveStructure = default(bool?), bool? autoRefresh = default(bool?), DateTime? refreshDate = default(DateTime?), Guid? parentId = default(Guid?), Guid? testPlanId = default(Guid?))
+        public TestSuiteApiResult(Guid id = default, string name = default, TestSuiteTypeApiResult type = default, bool? saveStructure = default, bool? autoRefresh = default, DateTime? refreshDate = default, Guid? parentId = default, Guid? testPlanId = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

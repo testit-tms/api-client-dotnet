@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="testSuiteId">testSuiteId (required).</param>
         /// <param name="testSuiteName">testSuiteName (required).</param>
         /// <param name="value">value (required).</param>
-        public TestPlanGroupByTestSuite(Guid testSuiteId = default(Guid), string testSuiteName = default(string), long value = default(long))
+        public TestPlanGroupByTestSuite(Guid testSuiteId = default, string testSuiteName = default, long value = default)
         {
             this.TestSuiteId = testSuiteId;
             // to ensure "testSuiteName" is required (not null)

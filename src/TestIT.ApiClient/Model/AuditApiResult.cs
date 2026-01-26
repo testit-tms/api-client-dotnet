@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="userId">userId (required).</param>
         /// <param name="userName">userName.</param>
         /// <param name="dateTime">dateTime (required).</param>
-        public AuditApiResult(Guid userId = default(Guid), string userName = default(string), DateTime dateTime = default(DateTime))
+        public AuditApiResult(Guid userId = default, string userName = default, DateTime dateTime = default)
         {
             this.UserId = userId;
             this.DateTime = dateTime;

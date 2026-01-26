@@ -53,7 +53,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">Name of project (required).</param>
         /// <param name="type">Type of the project (required).</param>
         /// <param name="isFavorite">Indicates if the project is marked as favorite (required).</param>
-        public ProjectShortApiResult(Guid id = default(Guid), bool isDeleted = default(bool), long globalId = default(long), string name = default(string), ProjectType type = default(ProjectType), bool isFavorite = default(bool))
+        public ProjectShortApiResult(Guid id = default, bool isDeleted = default, long globalId = default, string name = default, ProjectType type = default, bool isFavorite = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;

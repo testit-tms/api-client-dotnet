@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name.</param>
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="projectIds">projectIds.</param>
-        public ParametersFilterApiModel(string name = default(string), bool? isDeleted = default(bool?), List<Guid?> projectIds = default(List<Guid?>))
+        public ParametersFilterApiModel(string name = default, bool? isDeleted = default, List<Guid?> projectIds = default)
         {
             this.Name = name;
             this.IsDeleted = isDeleted;

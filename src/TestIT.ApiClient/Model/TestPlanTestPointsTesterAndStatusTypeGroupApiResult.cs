@@ -49,8 +49,8 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="userId">userId (required).</param>
         /// <param name="statusType">Collection of possible status types (required).</param>
-        /// <param name="value">value (required).</param>
-        public TestPlanTestPointsTesterAndStatusTypeGroupApiResult(Guid? userId = default(Guid?), TestStatusApiType statusType = default(TestStatusApiType), long value = default(long))
+        /// <param name="statuses">statuses (required).</param>
+        public TestPlanTestPointsTesterAndStatusTypeGroupApiResult(Guid? userId = default, TestStatusApiType statusType = default, List<TestPlanTestPointsStatusCodeGroupApiResult> statuses = default)
         {
             // to ensure "userId" is required (not null)
             if (userId == null)
@@ -59,7 +59,12 @@ namespace TestIT.ApiClient.Model
             }
             this.UserId = userId;
             this.StatusType = statusType;
-            this.Value = value;
+            // to ensure "statuses" is required (not null)
+            if (statuses == null)
+            {
+                throw new ArgumentNullException("statuses is a required property for TestPlanTestPointsTesterAndStatusTypeGroupApiResult and cannot be null");
+            }
+            this.Statuses = statuses;
         }
 
         /// <summary>
@@ -69,10 +74,10 @@ namespace TestIT.ApiClient.Model
         public Guid? UserId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or Sets Statuses
         /// </summary>
-        [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
-        public long Value { get; set; }
+        [DataMember(Name = "statuses", IsRequired = true, EmitDefaultValue = true)]
+        public List<TestPlanTestPointsStatusCodeGroupApiResult> Statuses { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -84,7 +89,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("class TestPlanTestPointsTesterAndStatusTypeGroupApiResult {\n");
             sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("  StatusType: ").Append(StatusType).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  Statuses: ").Append(Statuses).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="autoTestSelect">autoTestSelect (required).</param>
         /// <param name="value">Are autotests flaky (required).</param>
-        public AutoTestFlakyBulkApiModel(AutoTestSelectApiModel autoTestSelect = default(AutoTestSelectApiModel), bool value = default(bool))
+        public AutoTestFlakyBulkApiModel(AutoTestSelectApiModel autoTestSelect = default, bool value = default)
         {
             // to ensure "autoTestSelect" is required (not null)
             if (autoTestSelect == null)

@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="completedDate">completedDate.</param>
         /// <param name="createdByIds">createdByIds.</param>
         /// <param name="modifiedByIds">modifiedByIds.</param>
-        public SearchTestRunsApiModel(string name = default(string), List<TestRunState> states = default(List<TestRunState>), List<string> statusCodes = default(List<string>), DateTimeRangeSelectorModel startedDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel completedDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>))
+        public SearchTestRunsApiModel(string name = default, List<TestRunState> states = default, List<string> statusCodes = default, DateTimeRangeSelectorModel startedDate = default, DateTimeRangeSelectorModel completedDate = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default)
         {
             this.Name = name;
             this.States = states;

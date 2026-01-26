@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="CreateFailureClassRegexApiModel" /> class.
         /// </summary>
         /// <param name="regexText">Failure category regex (required).</param>
-        public CreateFailureClassRegexApiModel(string regexText = default(string))
+        public CreateFailureClassRegexApiModel(string regexText = default)
         {
             // to ensure "regexText" is required (not null)
             if (regexText == null)

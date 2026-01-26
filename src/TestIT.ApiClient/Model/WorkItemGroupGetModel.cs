@@ -49,7 +49,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="selectModel">Model containing options to filter work items.</param>
         /// <param name="groupType">groupType (required).</param>
         /// <param name="customAttributeId">customAttributeId.</param>
-        public WorkItemGroupGetModel(WorkItemLocalSelectModel selectModel = default(WorkItemLocalSelectModel), WorkItemGroupType groupType = default(WorkItemGroupType), Guid? customAttributeId = default(Guid?))
+        public WorkItemGroupGetModel(WorkItemLocalSelectModel selectModel = default, WorkItemGroupType groupType = default, Guid? customAttributeId = default)
         {
             this.GroupType = groupType;
             this.SelectModel = selectModel;

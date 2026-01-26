@@ -71,7 +71,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isAutomated">isAutomated (required).</param>
         /// <param name="sectionId">sectionId (required).</param>
         /// <param name="tags">tags.</param>
-        public SharedStepReferenceModel(Guid id = default(Guid), long globalId = default(long), string name = default(string), string entityTypeName = default(string), bool hasThisSharedStepAsStep = default(bool), bool hasThisSharedStepAsPrecondition = default(bool), bool hasThisSharedStepAsPostcondition = default(bool), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), string state = default(string), WorkItemPriorityModel priority = default(WorkItemPriorityModel), WorkItemSourceTypeModel sourceType = default(WorkItemSourceTypeModel), bool isDeleted = default(bool), Guid versionId = default(Guid), bool isAutomated = default(bool), Guid sectionId = default(Guid), List<TagModel> tags = default(List<TagModel>))
+        public SharedStepReferenceModel(Guid id = default, long globalId = default, string name = default, string entityTypeName = default, bool hasThisSharedStepAsStep = default, bool hasThisSharedStepAsPrecondition = default, bool hasThisSharedStepAsPostcondition = default, Guid createdById = default, Guid? modifiedById = default, DateTime? createdDate = default, DateTime? modifiedDate = default, string state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, bool isDeleted = default, Guid versionId = default, bool isAutomated = default, Guid sectionId = default, List<TagModel> tags = default)
         {
             this.Id = id;
             this.GlobalId = globalId;
@@ -113,7 +113,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
@@ -176,7 +176,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedById
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
@@ -185,7 +185,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedById
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
@@ -194,7 +194,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         /*
-        <example>2025-10-27T11:18:38.258590200+03:00</example>
+        <example>2026-01-22T16:37:35.457742900Z</example>
         */
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
@@ -203,7 +203,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2025-10-27T11:18:38.258590200+03:00</example>
+        <example>2026-01-22T16:37:35.457742900Z</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
@@ -231,7 +231,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
@@ -249,7 +249,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets SectionId
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }

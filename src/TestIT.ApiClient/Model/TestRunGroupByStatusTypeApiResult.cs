@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="type">type (required).</param>
         /// <param name="value">value (required).</param>
-        public TestRunGroupByStatusTypeApiResult(string type = default(string), int value = default(int))
+        public TestRunGroupByStatusTypeApiResult(string type = default, int value = default)
         {
             // to ensure "type" is required (not null)
             if (type == null)

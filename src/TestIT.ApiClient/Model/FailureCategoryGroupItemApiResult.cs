@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="group">Group details.</param>
         /// <param name="items">Group data (required).</param>
-        public FailureCategoryGroupItemApiResult(FailureCategoryGroupApiResult group = default(FailureCategoryGroupApiResult), List<FailureCategoryItemApiResult> items = default(List<FailureCategoryItemApiResult>))
+        public FailureCategoryGroupItemApiResult(FailureCategoryGroupApiResult group = default, List<FailureCategoryItemApiResult> items = default)
         {
             // to ensure "items" is required (not null)
             if (items == null)

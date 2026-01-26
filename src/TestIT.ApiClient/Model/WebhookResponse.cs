@@ -46,7 +46,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="requestMeta">requestMeta (required).</param>
         /// <param name="responseBody">responseBody (required).</param>
         /// <param name="responseMeta">responseMeta (required).</param>
-        public WebhookResponse(string uri = default(string), int statusCode = default(int), string requestBody = default(string), string requestMeta = default(string), string responseBody = default(string), string responseMeta = default(string))
+        public WebhookResponse(string uri = default, int statusCode = default, string requestBody = default, string requestMeta = default, string responseBody = default, string responseMeta = default)
         {
             this.StatusCode = statusCode;
             // to ensure "requestMeta" is required (not null)

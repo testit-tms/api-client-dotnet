@@ -56,7 +56,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="testPlanId">Test plan internal identifier.</param>
         /// <param name="name">Test run name.</param>
         /// <param name="description">Test run description.</param>
-        public TestRunByAutoTestApiResult(Guid id = default(Guid), bool isDeleted = default(bool), TestRunState stateName = default(TestRunState), TestStatusApiResult status = default(TestStatusApiResult), Guid projectId = default(Guid), Guid? testPlanId = default(Guid?), string name = default(string), string description = default(string))
+        public TestRunByAutoTestApiResult(Guid id = default, bool isDeleted = default, TestRunState stateName = default, TestStatusApiResult status = default, Guid projectId = default, Guid? testPlanId = default, string name = default, string description = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;

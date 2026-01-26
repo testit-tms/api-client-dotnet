@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
         /// <param name="regexText">Regex value (required).</param>
         /// <param name="failureClassId">Failure category identifier (required).</param>
-        public FailureClassRegexApiResult(Guid id = default(Guid), bool isDeleted = default(bool), string regexText = default(string), Guid failureClassId = default(Guid))
+        public FailureClassRegexApiResult(Guid id = default, bool isDeleted = default, string regexText = default, Guid failureClassId = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;

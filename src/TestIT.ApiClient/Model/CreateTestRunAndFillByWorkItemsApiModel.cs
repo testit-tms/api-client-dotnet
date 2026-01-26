@@ -49,7 +49,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="links">Collection of links to relate to the test run.</param>
         /// <param name="configurationIds">Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs. (required).</param>
         /// <param name="workItemIds">Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs. (required).</param>
-        public CreateTestRunAndFillByWorkItemsApiModel(Guid projectId = default(Guid), Guid testPlanId = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string), List<AssignAttachmentApiModel> attachments = default(List<AssignAttachmentApiModel>), List<CreateLinkApiModel> links = default(List<CreateLinkApiModel>), List<Guid> configurationIds = default(List<Guid>), List<Guid> workItemIds = default(List<Guid>))
+        public CreateTestRunAndFillByWorkItemsApiModel(Guid projectId = default, Guid testPlanId = default, string name = default, string description = default, string launchSource = default, List<AssignAttachmentApiModel> attachments = default, List<CreateLinkApiModel> links = default, List<Guid> configurationIds = default, List<Guid> workItemIds = default)
         {
             this.ProjectId = projectId;
             this.TestPlanId = testPlanId;

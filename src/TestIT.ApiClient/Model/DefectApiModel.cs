@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="DefectApiModel" /> class.
         /// </summary>
         /// <param name="externalUrl">Link to created issue (required).</param>
-        public DefectApiModel(string externalUrl = default(string))
+        public DefectApiModel(string externalUrl = default)
         {
             // to ensure "externalUrl" is required (not null)
             if (externalUrl == null)

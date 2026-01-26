@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="externalId">externalId (required).</param>
         /// <param name="url">url (required).</param>
         /// <param name="metadata">metadata (required).</param>
-        public ExternalIssueModel(Guid id = default(Guid), string externalId = default(string), string url = default(string), ExternalIssueMetadataModel metadata = default(ExternalIssueMetadataModel))
+        public ExternalIssueModel(Guid id = default, string externalId = default, string url = default, ExternalIssueMetadataModel metadata = default)
         {
             this.Id = id;
             // to ensure "externalId" is required (not null)

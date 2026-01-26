@@ -40,7 +40,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="methods">Specifies a webhook methods to search for.</param>
         /// <param name="projectIds">Specifies a webhook project IDs to search for.</param>
         /// <param name="isEnabled">Specifies a webhook deleted status to search for.</param>
-        public WebhooksDeleteFilterApiModel(string name = default(string), List<WebHookEventTypeRequest> eventTypes = default(List<WebHookEventTypeRequest>), List<RequestTypeApiModel> methods = default(List<RequestTypeApiModel>), List<Guid> projectIds = default(List<Guid>), bool? isEnabled = default(bool?))
+        public WebhooksDeleteFilterApiModel(string name = default, List<WebHookEventTypeRequest> eventTypes = default, List<RequestTypeApiModel> methods = default, List<Guid> projectIds = default, bool? isEnabled = default)
         {
             this.Name = name;
             this.EventTypes = eventTypes;

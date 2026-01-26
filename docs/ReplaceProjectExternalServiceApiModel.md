@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NewExternalServiceId** | **Guid** | The unique ID of the new external service that will replace the current one | 
-**Settings** | **Object** | External service settings | [optional] 
+**Settings** | **Object** | External service settings | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

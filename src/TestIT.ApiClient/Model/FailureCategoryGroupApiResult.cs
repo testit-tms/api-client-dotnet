@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="fieldValue">Group field value.</param>
         /// <param name="displayFieldValue">Group display field value.</param>
         /// <param name="count">Group entries count (required).</param>
-        public FailureCategoryGroupApiResult(Object fieldValue = default(Object), Object displayFieldValue = default(Object), int count = default(int))
+        public FailureCategoryGroupApiResult(Object fieldValue = default, Object displayFieldValue = default, int count = default)
         {
             this.Count = count;
             this.FieldValue = fieldValue;

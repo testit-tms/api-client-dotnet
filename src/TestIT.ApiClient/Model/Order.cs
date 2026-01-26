@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="field">field (required).</param>
         /// <param name="direction">direction (required).</param>
-        public Order(string field = default(string), ListSortDirection direction = default(ListSortDirection))
+        public Order(string field = default, ListSortDirection direction = default)
         {
             // to ensure "field" is required (not null)
             if (field == null)

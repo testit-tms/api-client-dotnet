@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemChangedFields">workItemChangedFields (required).</param>
         /// <param name="createdById">createdById (required).</param>
         /// <param name="createdDate">createdDate.</param>
-        public WorkItemChangeModel(Guid id = default(Guid), Guid workItemId = default(Guid), Guid oldVersionId = default(Guid), Guid newVersionId = default(Guid), WorkItemChangedFieldsViewModel workItemChangedFields = default(WorkItemChangedFieldsViewModel), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
+        public WorkItemChangeModel(Guid id = default, Guid workItemId = default, Guid oldVersionId = default, Guid newVersionId = default, WorkItemChangedFieldsViewModel workItemChangedFields = default, Guid createdById = default, DateTime? createdDate = default)
         {
             this.Id = id;
             this.WorkItemId = workItemId;

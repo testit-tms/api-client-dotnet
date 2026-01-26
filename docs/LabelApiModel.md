@@ -1,9 +1,10 @@
-# TestIT.ApiClient.Model.ExternalServiceCategoryApiResult
+# TestIT.ApiClient.Model.LabelApiModel
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Name** | **string** | Name of the label | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

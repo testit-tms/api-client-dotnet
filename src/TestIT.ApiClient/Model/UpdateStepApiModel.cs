@@ -46,7 +46,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="testData">Test data for step.</param>
         /// <param name="comments">Comments for step.</param>
         /// <param name="workItemId">Unique identifier of workitem which relates to the step.</param>
-        public UpdateStepApiModel(Guid id = default(Guid), string action = default(string), string expected = default(string), string testData = default(string), string comments = default(string), Guid? workItemId = default(Guid?))
+        public UpdateStepApiModel(Guid id = default, string action = default, string expected = default, string testData = default, string comments = default, Guid? workItemId = default)
         {
             this.Id = id;
             this.Action = action;

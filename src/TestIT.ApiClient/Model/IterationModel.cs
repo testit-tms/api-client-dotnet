@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="parameters">parameters.</param>
-        public IterationModel(Guid id = default(Guid), List<ParameterShortModel> parameters = default(List<ParameterShortModel>))
+        public IterationModel(Guid id = default, List<ParameterShortModel> parameters = default)
         {
             this.Id = id;
             this.Parameters = parameters;

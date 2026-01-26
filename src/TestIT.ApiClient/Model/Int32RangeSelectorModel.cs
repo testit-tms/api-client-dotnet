@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="from">from.</param>
         /// <param name="to">to.</param>
-        public Int32RangeSelectorModel(int? from = default(int?), int? to = default(int?))
+        public Int32RangeSelectorModel(int? from = default, int? to = default)
         {
             this.From = from;
             this.To = to;
