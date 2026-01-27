@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="testResultIds">Linked test result IDs (required).</param>
         /// <param name="form">External form definition (required).</param>
-        public GetExternalFormApiResult(List<Guid> testResultIds = default(List<Guid>), ExternalFormModel form = default(ExternalFormModel))
+        public GetExternalFormApiResult(List<Guid> testResultIds = default, ExternalFormModel form = default)
         {
             // to ensure "testResultIds" is required (not null)
             if (testResultIds == null)

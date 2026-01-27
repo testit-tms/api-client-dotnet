@@ -40,13 +40,13 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEmptyTestRunApiModel" /> class.
         /// </summary>
-        /// <param name="projectId">Project unique identifier                This property is to link test run with a project (required).</param>
+        /// <param name="projectId">Project unique identifier              This property is to link test run with a project (required).</param>
         /// <param name="name">Test run name.</param>
         /// <param name="description">Test run description.</param>
         /// <param name="launchSource">Test run launch source.</param>
         /// <param name="attachments">Collection of attachments to relate to the test run.</param>
         /// <param name="links">Collection of links to relate to the test run.</param>
-        public CreateEmptyTestRunApiModel(Guid projectId = default(Guid), string name = default(string), string description = default(string), string launchSource = default(string), List<AssignAttachmentApiModel> attachments = default(List<AssignAttachmentApiModel>), List<CreateLinkApiModel> links = default(List<CreateLinkApiModel>))
+        public CreateEmptyTestRunApiModel(Guid projectId = default, string name = default, string description = default, string launchSource = default, List<AssignAttachmentApiModel> attachments = default, List<CreateLinkApiModel> links = default)
         {
             this.ProjectId = projectId;
             this.Name = name;
@@ -57,9 +57,9 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Project unique identifier                This property is to link test run with a project
+        /// Project unique identifier              This property is to link test run with a project
         /// </summary>
-        /// <value>Project unique identifier                This property is to link test run with a project</value>
+        /// <value>Project unique identifier              This property is to link test run with a project</value>
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
 

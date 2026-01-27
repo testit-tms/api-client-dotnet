@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="id">Unique ID of the entity (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
-        public FilterModel(DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), WorkItemSearchQueryModel data = default(WorkItemSearchQueryModel), Guid projectId = default(Guid), Object fieldsToShow = default(Object), string name = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
+        public FilterModel(DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, WorkItemSearchQueryModel data = default, Guid projectId = default, Object fieldsToShow = default, string name = default, Guid id = default, bool isDeleted = default)
         {
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;

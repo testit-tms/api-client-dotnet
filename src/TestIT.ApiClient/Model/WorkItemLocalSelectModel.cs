@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">Collection of filters to apply to search.</param>
         /// <param name="extractionModel">Rules for different level entities inclusion/exclusion.</param>
-        public WorkItemLocalSelectModel(WorkItemLocalFilterModel filter = default(WorkItemLocalFilterModel), WorkItemExtractionModel extractionModel = default(WorkItemExtractionModel))
+        public WorkItemLocalSelectModel(WorkItemLocalFilterModel filter = default, WorkItemExtractionModel extractionModel = default)
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;

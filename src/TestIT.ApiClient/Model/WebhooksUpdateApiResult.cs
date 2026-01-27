@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="WebhooksUpdateApiResult" /> class.
         /// </summary>
         /// <param name="updatedCount">updatedCount (required).</param>
-        public WebhooksUpdateApiResult(int updatedCount = default(int))
+        public WebhooksUpdateApiResult(int updatedCount = default)
         {
             this.UpdatedCount = updatedCount;
         }

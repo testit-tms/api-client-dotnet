@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="data">data (required).</param>
         /// <param name="totalCount">totalCount (required).</param>
-        public TestStatusApiResultReply(List<TestStatusApiResult> data = default(List<TestStatusApiResult>), int totalCount = default(int))
+        public TestStatusApiResultReply(List<TestStatusApiResult> data = default, int totalCount = default)
         {
             // to ensure "data" is required (not null)
             if (data == null)

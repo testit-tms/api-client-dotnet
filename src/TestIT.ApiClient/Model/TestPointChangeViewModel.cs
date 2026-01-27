@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="userId">userId (required).</param>
         /// <param name="userName">userName.</param>
         /// <param name="testPointCount">testPointCount (required).</param>
-        public TestPointChangeViewModel(Guid userId = default(Guid), string userName = default(string), long testPointCount = default(long))
+        public TestPointChangeViewModel(Guid userId = default, string userName = default, long testPointCount = default)
         {
             this.UserId = userId;
             this.TestPointCount = testPointCount;

@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="currentIndex">Current index (position) of the element in a collection (required).</param>
         /// <param name="totalCount">Total count of elements in a collection (required).</param>
-        public WorkItemIndexApiResult(long currentIndex = default(long), long totalCount = default(long))
+        public WorkItemIndexApiResult(long currentIndex = default, long totalCount = default)
         {
             this.CurrentIndex = currentIndex;
             this.TotalCount = totalCount;

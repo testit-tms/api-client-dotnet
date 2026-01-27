@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="parameters">parameters (required).</param>
         /// <param name="id">Iteration identifier, must be empty for new or changed iteration (required).</param>
-        public AssignIterationApiModel(List<ParameterIterationModel> parameters = default(List<ParameterIterationModel>), Guid id = default(Guid))
+        public AssignIterationApiModel(List<ParameterIterationModel> parameters = default, Guid id = default)
         {
             // to ensure "parameters" is required (not null)
             if (parameters == null)

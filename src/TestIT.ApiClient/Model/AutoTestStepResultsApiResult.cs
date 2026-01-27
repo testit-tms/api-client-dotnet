@@ -51,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="stepResults">stepResults.</param>
         /// <param name="attachments">attachments.</param>
         /// <param name="parameters">parameters.</param>
-        public AutoTestStepResultsApiResult(string title = default(string), string description = default(string), string info = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), AutoTestOutcome? outcome = default(AutoTestOutcome?), List<AutoTestStepResultsApiResult> stepResults = default(List<AutoTestStepResultsApiResult>), List<AttachmentApiResult> attachments = default(List<AttachmentApiResult>), Dictionary<string, string> parameters = default(Dictionary<string, string>))
+        public AutoTestStepResultsApiResult(string title = default, string description = default, string info = default, DateTime? startedOn = default, DateTime? completedOn = default, long? duration = default, AutoTestOutcome? outcome = default, List<AutoTestStepResultsApiResult> stepResults = default, List<AttachmentApiResult> attachments = default, Dictionary<string, string> parameters = default)
         {
             this.Title = title;
             this.Description = description;

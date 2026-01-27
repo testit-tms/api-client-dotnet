@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="failureCategory">failureCategory (required).</param>
         /// <param name="value">value (required).</param>
-        public TestRunGroupByFailureClassApiResult(string failureCategory = default(string), int value = default(int))
+        public TestRunGroupByFailureClassApiResult(string failureCategory = default, int value = default)
         {
             // to ensure "failureCategory" is required (not null)
             if (failureCategory == null)

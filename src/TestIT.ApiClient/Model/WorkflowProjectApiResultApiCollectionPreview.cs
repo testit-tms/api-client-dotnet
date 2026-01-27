@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="data">Preview items (required).</param>
         /// <param name="totalCount">Total count (required).</param>
-        public WorkflowProjectApiResultApiCollectionPreview(List<WorkflowProjectApiResult> data = default(List<WorkflowProjectApiResult>), int totalCount = default(int))
+        public WorkflowProjectApiResultApiCollectionPreview(List<WorkflowProjectApiResult> data = default, int totalCount = default)
         {
             // to ensure "data" is required (not null)
             if (data == null)

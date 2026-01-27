@@ -69,7 +69,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedDate">modifiedDate.</param>
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
-        public WebhookLogApiResult(Guid id = default(Guid), bool isDeleted = default(bool), string webHookName = default(string), WebHookEventType eventType = default(WebHookEventType), Guid webHookId = default(Guid), string requestBody = default(string), string requestMeta = default(string), int responseStatusCode = default(int), string responseBody = default(string), string responseMeta = default(string), Guid projectId = default(Guid), string url = default(string), RequestType requestType = default(RequestType), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?))
+        public WebhookLogApiResult(Guid id = default, bool isDeleted = default, string webHookName = default, WebHookEventType eventType = default, Guid webHookId = default, string requestBody = default, string requestMeta = default, int responseStatusCode = default, string responseBody = default, string responseMeta = default, Guid projectId = default, string url = default, RequestType requestType = default, DateTime? createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;

@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="userId">userId.</param>
         /// <param name="status">status (required).</param>
         /// <param name="value">value (required).</param>
-        public TestPlanGroupByTesterAndStatus(Guid? userId = default(Guid?), string status = default(string), long value = default(long))
+        public TestPlanGroupByTesterAndStatus(Guid? userId = default, string status = default, long value = default)
         {
             // to ensure "status" is required (not null)
             if (status == null)

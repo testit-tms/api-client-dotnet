@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filters">filters (required).</param>
         /// <param name="varOperator">varOperator (required).</param>
-        public CompositeFilter(List<IFilter> filters = default(List<IFilter>), LogicalOperator varOperator = default(LogicalOperator))
+        public CompositeFilter(List<IFilter> filters = default, LogicalOperator varOperator = default)
         {
             // to ensure "filters" is required (not null)
             if (filters == null)

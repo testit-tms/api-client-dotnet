@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="providerId">providerId.</param>
         /// <param name="isActiveStatusByEntity">isActiveStatusByEntity (required).</param>
         /// <param name="userRank">userRank (required).</param>
-        public UserWithRankModel(Guid id = default(Guid), string firstName = default(string), string lastName = default(string), string middleName = default(string), string userName = default(string), string displayName = default(string), string userType = default(string), string avatarUrl = default(string), string avatarMetadata = default(string), bool isDeleted = default(bool), bool isDisabled = default(bool), Guid? providerId = default(Guid?), bool isActiveStatusByEntity = default(bool), UserRankModel userRank = default(UserRankModel))
+        public UserWithRankModel(Guid id = default, string firstName = default, string lastName = default, string middleName = default, string userName = default, string displayName = default, string userType = default, string avatarUrl = default, string avatarMetadata = default, bool isDeleted = default, bool isDisabled = default, Guid? providerId = default, bool isActiveStatusByEntity = default, UserRankModel userRank = default)
         {
             this.Id = id;
             // to ensure "firstName" is required (not null)

@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="statusId">statusId (required).</param>
         /// <param name="priority">priority (required).</param>
-        public WorkflowStatusApiModel(Guid statusId = default(Guid), int priority = default(int))
+        public WorkflowStatusApiModel(Guid statusId = default, int priority = default)
         {
             this.StatusId = statusId;
             this.Priority = priority;

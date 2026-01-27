@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isDeleted">Indicates if the custom attribute template is deleted (required).</param>
         /// <param name="name">Name of the custom attribute template (required).</param>
         /// <param name="customAttributeModels">Attributes of the template (required).</param>
-        public ProjectCustomAttributeTemplateGetModel(Guid id = default(Guid), bool isDeleted = default(bool), string name = default(string), List<CustomAttributeModel> customAttributeModels = default(List<CustomAttributeModel>))
+        public ProjectCustomAttributeTemplateGetModel(Guid id = default, bool isDeleted = default, string name = default, List<CustomAttributeModel> customAttributeModels = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;

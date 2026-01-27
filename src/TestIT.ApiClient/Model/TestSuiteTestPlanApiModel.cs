@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="type">Type of the test suite.</param>
         /// <param name="saveStructure">Indicates if the test suite retains section tree structure.</param>
         /// <param name="workItemsSelector">Model containing options to filter work items (required).</param>
-        public TestSuiteTestPlanApiModel(string name = default(string), List<Guid> configurationIds = default(List<Guid>), TestSuiteType? type = default(TestSuiteType?), bool? saveStructure = default(bool?), WorkItemSelectModel workItemsSelector = default(WorkItemSelectModel))
+        public TestSuiteTestPlanApiModel(string name = default, List<Guid> configurationIds = default, TestSuiteType? type = default, bool? saveStructure = default, WorkItemSelectModel workItemsSelector = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

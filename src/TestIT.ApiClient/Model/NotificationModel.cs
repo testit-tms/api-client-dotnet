@@ -60,7 +60,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemName">workItemName (required).</param>
         /// <param name="attributeName">attributeName.</param>
         /// <param name="createdById">createdById (required).</param>
-        public NotificationModel(Guid id = default(Guid), DateTime? createdDate = default(DateTime?), bool isRead = default(bool), Guid entityId = default(Guid), NotificationTypeModel notificationType = default(NotificationTypeModel), long? projectGlobalId = default(long?), string projectName = default(string), long testPlanGlobalId = default(long), string testPlanName = default(string), long? workitemGlobalId = default(long?), string comment = default(string), string workItemName = default(string), string attributeName = default(string), Guid createdById = default(Guid))
+        public NotificationModel(Guid id = default, DateTime? createdDate = default, bool isRead = default, Guid entityId = default, NotificationTypeModel notificationType = default, long? projectGlobalId = default, string projectName = default, long testPlanGlobalId = default, string testPlanName = default, long? workitemGlobalId = default, string comment = default, string workItemName = default, string attributeName = default, Guid createdById = default)
         {
             this.Id = id;
             this.IsRead = isRead;

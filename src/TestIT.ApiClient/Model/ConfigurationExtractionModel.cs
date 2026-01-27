@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="ids">Extraction parameters for configurations.</param>
         /// <param name="projectIds">Extraction parameters for projects.</param>
-        public ConfigurationExtractionModel(GuidExtractionModel ids = default(GuidExtractionModel), GuidExtractionModel projectIds = default(GuidExtractionModel))
+        public ConfigurationExtractionModel(GuidExtractionModel ids = default, GuidExtractionModel projectIds = default)
         {
             this.Ids = ids;
             this.ProjectIds = projectIds;

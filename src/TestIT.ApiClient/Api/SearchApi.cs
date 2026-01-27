@@ -33,7 +33,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <returns>GlobalSearchResponse</returns>
-        GlobalSearchResponse ApiV2SearchGlobalSearchPost(GlobalSearchRequest globalSearchRequest = default(GlobalSearchRequest));
+        GlobalSearchResponse ApiV2SearchGlobalSearchPost(GlobalSearchRequest globalSearchRequest = default);
 
         /// <summary>
         /// 
@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <returns>ApiResponse of GlobalSearchResponse</returns>
-        ApiResponse<GlobalSearchResponse> ApiV2SearchGlobalSearchPostWithHttpInfo(GlobalSearchRequest globalSearchRequest = default(GlobalSearchRequest));
+        ApiResponse<GlobalSearchResponse> ApiV2SearchGlobalSearchPostWithHttpInfo(GlobalSearchRequest globalSearchRequest = default);
         #endregion Synchronous Operations
     }
 
@@ -64,7 +64,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GlobalSearchResponse</returns>
-        System.Threading.Tasks.Task<GlobalSearchResponse> ApiV2SearchGlobalSearchPostAsync(GlobalSearchRequest globalSearchRequest = default(GlobalSearchRequest), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<GlobalSearchResponse> ApiV2SearchGlobalSearchPostAsync(GlobalSearchRequest globalSearchRequest = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -76,7 +76,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GlobalSearchResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<GlobalSearchResponse>> ApiV2SearchGlobalSearchPostWithHttpInfoAsync(GlobalSearchRequest globalSearchRequest = default(GlobalSearchRequest), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<GlobalSearchResponse>> ApiV2SearchGlobalSearchPostWithHttpInfoAsync(GlobalSearchRequest globalSearchRequest = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -296,7 +296,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <returns>GlobalSearchResponse</returns>
-        public GlobalSearchResponse ApiV2SearchGlobalSearchPost(GlobalSearchRequest globalSearchRequest = default(GlobalSearchRequest))
+        public GlobalSearchResponse ApiV2SearchGlobalSearchPost(GlobalSearchRequest globalSearchRequest = default)
         {
             TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse> localVarResponse = ApiV2SearchGlobalSearchPostWithHttpInfo(globalSearchRequest);
             return localVarResponse.Data;
@@ -308,7 +308,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <returns>ApiResponse of GlobalSearchResponse</returns>
-        public TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse> ApiV2SearchGlobalSearchPostWithHttpInfo(GlobalSearchRequest globalSearchRequest = default(GlobalSearchRequest))
+        public TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse> ApiV2SearchGlobalSearchPostWithHttpInfo(GlobalSearchRequest globalSearchRequest = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -354,7 +354,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GlobalSearchResponse</returns>
-        public async System.Threading.Tasks.Task<GlobalSearchResponse> ApiV2SearchGlobalSearchPostAsync(GlobalSearchRequest globalSearchRequest = default(GlobalSearchRequest), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<GlobalSearchResponse> ApiV2SearchGlobalSearchPostAsync(GlobalSearchRequest globalSearchRequest = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse> localVarResponse = await ApiV2SearchGlobalSearchPostWithHttpInfoAsync(globalSearchRequest, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -367,7 +367,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GlobalSearchResponse)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse>> ApiV2SearchGlobalSearchPostWithHttpInfoAsync(GlobalSearchRequest globalSearchRequest = default(GlobalSearchRequest), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse>> ApiV2SearchGlobalSearchPostWithHttpInfoAsync(GlobalSearchRequest globalSearchRequest = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();

@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="configurations">configurations.</param>
         /// <param name="workItemCount">workItemCount (required).</param>
-        public TestSuiteChangeViewModel(Guid id = default(Guid), string name = default(string), List<ShortConfiguration> configurations = default(List<ShortConfiguration>), long workItemCount = default(long))
+        public TestSuiteChangeViewModel(Guid id = default, string name = default, List<ShortConfiguration> configurations = default, long workItemCount = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

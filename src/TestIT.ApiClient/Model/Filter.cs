@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="varOperator">varOperator (required).</param>
         /// <param name="value">value.</param>
-        public Filter(FilterOperator varOperator = default(FilterOperator), string value = default(string))
+        public Filter(FilterOperator varOperator = default, string value = default)
         {
             this.Operator = varOperator;
             this.Value = value;

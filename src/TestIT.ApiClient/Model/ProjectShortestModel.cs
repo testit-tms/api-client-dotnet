@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="globalId">Global ID of project (required).</param>
         /// <param name="name">Name of project (required).</param>
         /// <param name="type">Type of the project (required).</param>
-        public ProjectShortestModel(Guid id = default(Guid), bool isDeleted = default(bool), long globalId = default(long), string name = default(string), ProjectTypeModel type = default(ProjectTypeModel))
+        public ProjectShortestModel(Guid id = default, bool isDeleted = default, long globalId = default, string name = default, ProjectTypeModel type = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;

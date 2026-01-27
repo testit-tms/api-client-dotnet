@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isRequired">isRequired.</param>
         /// <param name="min">min.</param>
         /// <param name="max">max.</param>
-        public ExternalFormFieldModel(string fieldId = default(string), string fieldName = default(string), string helpText = default(string), string type = default(string), string arrayValuesType = default(string), Object defaultValue = default(Object), bool isCustomValueAllowed = default(bool), string autoCompleteUrl = default(string), string controlType = default(string), double? minLength = default(double?), double? maxLength = default(double?), bool? isRequired = default(bool?), Object min = default(Object), Object max = default(Object))
+        public ExternalFormFieldModel(string fieldId = default, string fieldName = default, string helpText = default, string type = default, string arrayValuesType = default, Object defaultValue = default, bool isCustomValueAllowed = default, string autoCompleteUrl = default, string controlType = default, double? minLength = default, double? maxLength = default, bool? isRequired = default, Object min = default, Object max = default)
         {
             this.IsCustomValueAllowed = isCustomValueAllowed;
             this.FieldId = fieldId;

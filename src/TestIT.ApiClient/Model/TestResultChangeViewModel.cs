@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestResultChangeViewModel" /> class.
         /// </summary>
         /// <param name="testPointCount">testPointCount (required).</param>
-        public TestResultChangeViewModel(long testPointCount = default(long))
+        public TestResultChangeViewModel(long testPointCount = default)
         {
             this.TestPointCount = testPointCount;
         }

@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ParameterIterationModel" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        public ParameterIterationModel(Guid id = default(Guid))
+        public ParameterIterationModel(Guid id = default)
         {
             this.Id = id;
         }
@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>fe5cf7ed-69ec-4bbd-9fd0-ab259c2b6688</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }

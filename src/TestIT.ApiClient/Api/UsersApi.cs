@@ -33,7 +33,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userName"> (optional)</param>
         /// <returns>UserCustomNameValidationResponse</returns>
-        UserCustomNameValidationResponse ApiV2UsersExistsGet(string userName = default(string));
+        UserCustomNameValidationResponse ApiV2UsersExistsGet(string userName = default);
 
         /// <summary>
         /// 
@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userName"> (optional)</param>
         /// <returns>ApiResponse of UserCustomNameValidationResponse</returns>
-        ApiResponse<UserCustomNameValidationResponse> ApiV2UsersExistsGetWithHttpInfo(string userName = default(string));
+        ApiResponse<UserCustomNameValidationResponse> ApiV2UsersExistsGetWithHttpInfo(string userName = default);
         #endregion Synchronous Operations
     }
 
@@ -64,7 +64,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="userName"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserCustomNameValidationResponse</returns>
-        System.Threading.Tasks.Task<UserCustomNameValidationResponse> ApiV2UsersExistsGetAsync(string userName = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<UserCustomNameValidationResponse> ApiV2UsersExistsGetAsync(string userName = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -76,7 +76,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="userName"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserCustomNameValidationResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<UserCustomNameValidationResponse>> ApiV2UsersExistsGetWithHttpInfoAsync(string userName = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<UserCustomNameValidationResponse>> ApiV2UsersExistsGetWithHttpInfoAsync(string userName = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -296,7 +296,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userName"> (optional)</param>
         /// <returns>UserCustomNameValidationResponse</returns>
-        public UserCustomNameValidationResponse ApiV2UsersExistsGet(string userName = default(string))
+        public UserCustomNameValidationResponse ApiV2UsersExistsGet(string userName = default)
         {
             TestIT.ApiClient.Client.ApiResponse<UserCustomNameValidationResponse> localVarResponse = ApiV2UsersExistsGetWithHttpInfo(userName);
             return localVarResponse.Data;
@@ -308,7 +308,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userName"> (optional)</param>
         /// <returns>ApiResponse of UserCustomNameValidationResponse</returns>
-        public TestIT.ApiClient.Client.ApiResponse<UserCustomNameValidationResponse> ApiV2UsersExistsGetWithHttpInfo(string userName = default(string))
+        public TestIT.ApiClient.Client.ApiResponse<UserCustomNameValidationResponse> ApiV2UsersExistsGetWithHttpInfo(string userName = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -356,7 +356,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="userName"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of UserCustomNameValidationResponse</returns>
-        public async System.Threading.Tasks.Task<UserCustomNameValidationResponse> ApiV2UsersExistsGetAsync(string userName = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<UserCustomNameValidationResponse> ApiV2UsersExistsGetAsync(string userName = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<UserCustomNameValidationResponse> localVarResponse = await ApiV2UsersExistsGetWithHttpInfoAsync(userName, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -369,7 +369,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="userName"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (UserCustomNameValidationResponse)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<UserCustomNameValidationResponse>> ApiV2UsersExistsGetWithHttpInfoAsync(string userName = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<UserCustomNameValidationResponse>> ApiV2UsersExistsGetWithHttpInfoAsync(string userName = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();

@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="index">index (required).</param>
         /// <param name="workItemId">workItemId.</param>
         /// <param name="workItem">workItem (required).</param>
-        public WorkItemStepChangeViewModel(string action = default(string), string expected = default(string), string comments = default(string), string testData = default(string), int index = default(int), Guid? workItemId = default(Guid?), SharedStepChangeViewModel workItem = default(SharedStepChangeViewModel))
+        public WorkItemStepChangeViewModel(string action = default, string expected = default, string comments = default, string testData = default, int index = default, Guid? workItemId = default, SharedStepChangeViewModel workItem = default)
         {
             // to ensure "action" is required (not null)
             if (action == null)

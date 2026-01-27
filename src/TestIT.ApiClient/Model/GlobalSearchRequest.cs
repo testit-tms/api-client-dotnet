@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="resourceType">resourceType.</param>
         /// <param name="take">take (required).</param>
         /// <param name="skip">skip (required).</param>
-        public GlobalSearchRequest(string query = default(string), string resourceType = default(string), int take = default(int), int skip = default(int))
+        public GlobalSearchRequest(string query = default, string resourceType = default, int take = default, int skip = default)
         {
             // to ensure "query" is required (not null)
             if (query == null)

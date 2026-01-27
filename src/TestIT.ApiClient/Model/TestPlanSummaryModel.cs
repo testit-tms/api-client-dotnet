@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="defectsCount">defectsCount (required).</param>
         /// <param name="plannedTestPointsDuration">plannedTestPointsDuration (required).</param>
         /// <param name="spentTestPointsDuration">spentTestPointsDuration.</param>
-        public TestPlanSummaryModel(int totalTestPointsCount = default(int), int manualTestPointsCount = default(int), int automatedTestPointsCount = default(int), int completedTestPointsCount = default(int), int defectsCount = default(int), long plannedTestPointsDuration = default(long), long? spentTestPointsDuration = default(long?))
+        public TestPlanSummaryModel(int totalTestPointsCount = default, int manualTestPointsCount = default, int automatedTestPointsCount = default, int completedTestPointsCount = default, int defectsCount = default, long plannedTestPointsDuration = default, long? spentTestPointsDuration = default)
         {
             this.TotalTestPointsCount = totalTestPointsCount;
             this.ManualTestPointsCount = manualTestPointsCount;

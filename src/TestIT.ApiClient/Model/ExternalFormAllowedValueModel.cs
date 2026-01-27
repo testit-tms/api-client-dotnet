@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name.</param>
         /// <param name="parentId">parentId.</param>
         /// <param name="hasChildren">hasChildren (required).</param>
-        public ExternalFormAllowedValueModel(string id = default(string), string name = default(string), string parentId = default(string), bool hasChildren = default(bool))
+        public ExternalFormAllowedValueModel(string id = default, string name = default, string parentId = default, bool hasChildren = default)
         {
             this.HasChildren = hasChildren;
             this.Id = id;

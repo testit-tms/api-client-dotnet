@@ -54,7 +54,13 @@ namespace TestIT.ApiClient.Model
         /// Enum Skipped for value: Skipped
         /// </summary>
         [EnumMember(Value = "Skipped")]
-        Skipped = 4
+        Skipped = 4,
+
+        /// <summary>
+        /// Enum InProgress for value: InProgress
+        /// </summary>
+        [EnumMember(Value = "InProgress")]
+        InProgress = 5
     }
 
 }

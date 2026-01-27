@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="filter">Test results filter..</param>
         /// <param name="extractionModel">Test results extraction model..</param>
         /// <param name="webhookIds">Webhook ids to rerun..</param>
-        public ManualRerunSelectTestResultsApiModel(TestResultsFilterApiModel filter = default(TestResultsFilterApiModel), ManualRerunTestResultApiModel extractionModel = default(ManualRerunTestResultApiModel), List<Guid> webhookIds = default(List<Guid>))
+        public ManualRerunSelectTestResultsApiModel(TestResultsFilterApiModel filter = default, ManualRerunTestResultApiModel extractionModel = default, List<Guid> webhookIds = default)
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;

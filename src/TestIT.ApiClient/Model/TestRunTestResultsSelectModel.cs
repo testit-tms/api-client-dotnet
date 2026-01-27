@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">Collection of filters to apply to search.</param>
         /// <param name="testResultIdsExtractionModel">Rules to include and exclude certain entities in result.</param>
-        public TestRunTestResultsSelectModel(TestResultsLocalFilterModel filter = default(TestResultsLocalFilterModel), GuidExtractionModel testResultIdsExtractionModel = default(GuidExtractionModel))
+        public TestRunTestResultsSelectModel(TestResultsLocalFilterModel filter = default, GuidExtractionModel testResultIdsExtractionModel = default)
         {
             this.Filter = filter;
             this.TestResultIdsExtractionModel = testResultIdsExtractionModel;

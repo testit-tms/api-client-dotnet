@@ -40,7 +40,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="priorities">Priorities of external issues to search for.</param>
         /// <param name="statuses">Statuses of external issues to search for.</param>
         /// <param name="assignees">Assignees of external issues to search for.</param>
-        public WorkItemExternalMetadataFilterApiModel(List<WorkItemExternalMetadataFieldFilterApiModel> ids = default(List<WorkItemExternalMetadataFieldFilterApiModel>), List<WorkItemExternalMetadataFieldFilterApiModel> types = default(List<WorkItemExternalMetadataFieldFilterApiModel>), List<WorkItemExternalMetadataFieldFilterApiModel> priorities = default(List<WorkItemExternalMetadataFieldFilterApiModel>), List<WorkItemExternalMetadataFieldFilterApiModel> statuses = default(List<WorkItemExternalMetadataFieldFilterApiModel>), List<WorkItemExternalMetadataFieldFilterApiModel> assignees = default(List<WorkItemExternalMetadataFieldFilterApiModel>))
+        public WorkItemExternalMetadataFilterApiModel(List<WorkItemExternalMetadataFieldFilterApiModel> ids = default, List<WorkItemExternalMetadataFieldFilterApiModel> types = default, List<WorkItemExternalMetadataFieldFilterApiModel> priorities = default, List<WorkItemExternalMetadataFieldFilterApiModel> statuses = default, List<WorkItemExternalMetadataFieldFilterApiModel> assignees = default)
         {
             this.Ids = ids;
             this.Types = types;

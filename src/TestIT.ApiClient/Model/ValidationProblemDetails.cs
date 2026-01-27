@@ -49,7 +49,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="status">status.</param>
         /// <param name="detail">detail.</param>
         /// <param name="instance">instance.</param>
-        public ValidationProblemDetails(Dictionary<string, List<string>> errors = default(Dictionary<string, List<string>>), string type = default(string), string title = default(string), int? status = default(int?), string detail = default(string), string instance = default(string))
+        public ValidationProblemDetails(Dictionary<string, List<string>> errors = default, string type = default, string title = default, int? status = default, string detail = default, string instance = default)
         {
             // to ensure "errors" is required (not null)
             if (errors == null)

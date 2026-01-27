@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isSystem">isSystem (required).</param>
         /// <param name="code">code (required).</param>
         /// <param name="description">description.</param>
-        public TestStatusModel(Guid id = default(Guid), string name = default(string), TestStatusType type = default(TestStatusType), bool isSystem = default(bool), string code = default(string), string description = default(string))
+        public TestStatusModel(Guid id = default, string name = default, TestStatusType type = default, bool isSystem = default, string code = default, string description = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

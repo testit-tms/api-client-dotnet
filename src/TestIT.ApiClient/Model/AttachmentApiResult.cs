@@ -49,7 +49,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">Unique ID of the attachment creator (required).</param>
         /// <param name="modifiedById">Unique ID of the attachment last editor.</param>
         /// <param name="name">Name of the attachment file (required).</param>
-        public AttachmentApiResult(Guid id = default(Guid), string fileId = default(string), string type = default(string), float size = default(float), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), string name = default(string))
+        public AttachmentApiResult(Guid id = default, string fileId = default, string type = default, float size = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, string name = default)
         {
             this.Id = id;
             // to ensure "fileId" is required (not null)

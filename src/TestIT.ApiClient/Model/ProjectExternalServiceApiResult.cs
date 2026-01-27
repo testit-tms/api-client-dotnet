@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">The name of the external service (required).</param>
         /// <param name="metadata">The metadata associated with the external service (required).</param>
         /// <param name="enabled">Indicates whether the external service is enabled or not (required).</param>
-        public ProjectExternalServiceApiResult(Guid id = default(Guid), string name = default(string), ExternalServiceMetadataApiResult metadata = default(ExternalServiceMetadataApiResult), bool enabled = default(bool))
+        public ProjectExternalServiceApiResult(Guid id = default, string name = default, ExternalServiceMetadataApiResult metadata = default, bool enabled = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="filter">filter.</param>
         /// <param name="extractionModel">extractionModel.</param>
         /// <param name="testerIds">testerIds (required).</param>
-        public TestPlanTestPointsSetTestersApiModel(TestPlanTestPointsSearchApiModel filter = default(TestPlanTestPointsSearchApiModel), TestPlanTestPointsExtractionApiModel extractionModel = default(TestPlanTestPointsExtractionApiModel), List<Guid> testerIds = default(List<Guid>))
+        public TestPlanTestPointsSetTestersApiModel(TestPlanTestPointsSearchApiModel filter = default, TestPlanTestPointsExtractionApiModel extractionModel = default, List<Guid> testerIds = default)
         {
             // to ensure "testerIds" is required (not null)
             if (testerIds == null)

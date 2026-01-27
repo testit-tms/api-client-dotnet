@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 
 Get TestPlans analytics
 
-  Use case    User sets project internal identifier    User sets query params    User runs method execution    System return analytics
+ Use case  User sets project internal identifier  User sets query params  User runs method execution  System return analytics
 
 ### Example
 ```csharp
@@ -230,7 +230,7 @@ catch (ApiException e)
 | **200** | OK |  -  |
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
-| **403** | - Read permission for the project is required  - Delete permission for test plans is required |  -  |
+| **403** | - Read permission for the project is required - Delete permission for test plans is required |  -  |
 | **404** | Not Found |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
@@ -243,7 +243,7 @@ catch (ApiException e)
 
 Checks if TestPlan exists with the specified name exists for the project
 
-  Use case    User sets project internal or global identifier    User runs method execution    System purge delete project workitems
+ Use case  User sets project internal or global identifier  User runs method execution  System purge delete project workitems
 
 ### Example
 ```csharp
@@ -559,7 +559,7 @@ catch (ApiException e)
 
 Get Project TestPlans with analytics
 
-  Use case    User sets project internal or global identifier    User sets request body    User runs method execution    System returns project testplans with analytics
+ Use case  User sets project internal or global identifier  User sets request body  User runs method execution  System returns project testplans with analytics
 
 ### Example
 ```csharp

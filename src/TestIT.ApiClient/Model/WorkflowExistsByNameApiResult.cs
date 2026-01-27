@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="WorkflowExistsByNameApiResult" /> class.
         /// </summary>
         /// <param name="exists">exists (required).</param>
-        public WorkflowExistsByNameApiResult(bool exists = default(bool))
+        public WorkflowExistsByNameApiResult(bool exists = default)
         {
             this.Exists = exists;
         }

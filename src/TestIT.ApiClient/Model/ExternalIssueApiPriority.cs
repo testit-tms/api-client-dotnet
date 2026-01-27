@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="name">Name of external issue priority (required).</param>
         /// <param name="iconUrl">Url to the icon of external issue priority.</param>
-        public ExternalIssueApiPriority(string name = default(string), string iconUrl = default(string))
+        public ExternalIssueApiPriority(string name = default, string iconUrl = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

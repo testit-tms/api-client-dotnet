@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="isDeleted">isDeleted (required).</param>
         /// <param name="autoRefresh">autoRefresh.</param>
-        public TestSuiteV2PutModel(Guid id = default(Guid), Guid? parentId = default(Guid?), string name = default(string), bool isDeleted = default(bool), bool? autoRefresh = default(bool?))
+        public TestSuiteV2PutModel(Guid id = default, Guid? parentId = default, string name = default, bool isDeleted = default, bool? autoRefresh = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

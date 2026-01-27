@@ -39,7 +39,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="eventTypes">Specifies a webhook event types to search for.</param>
         /// <param name="methods">Specifies a webhook methods to search for.</param>
         /// <param name="projectIds">Specifies a webhook project IDs to search for.</param>
-        public WebhooksFilterApiModel(string name = default(string), List<WebHookEventTypeRequest> eventTypes = default(List<WebHookEventTypeRequest>), List<RequestTypeApiModel> methods = default(List<RequestTypeApiModel>), List<Guid> projectIds = default(List<Guid>))
+        public WebhooksFilterApiModel(string name = default, List<WebHookEventTypeRequest> eventTypes = default, List<RequestTypeApiModel> methods = default, List<Guid> projectIds = default)
         {
             this.Name = name;
             this.EventTypes = eventTypes;

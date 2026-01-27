@@ -51,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="code">code (required).</param>
         /// <param name="type">Collection of possible status types (required).</param>
-        public TestStatusShortApiResult(Guid id = default(Guid), string name = default(string), string code = default(string), TestStatusApiType type = default(TestStatusApiType))
+        public TestStatusShortApiResult(Guid id = default, string name = default, string code = default, TestStatusApiType type = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="field">Field of external issue metadata to get (required).</param>
         /// <param name="projectIds">List of project identifiers where external issue is available.</param>
         /// <param name="inquiry">Inquiry.</param>
-        public GetExternalIssueSuggestionsApiModel(ExternalIssueApiField field = default(ExternalIssueApiField), List<Guid> projectIds = default(List<Guid>), Inquiry inquiry = default(Inquiry))
+        public GetExternalIssueSuggestionsApiModel(ExternalIssueApiField field = default, List<Guid> projectIds = default, Inquiry inquiry = default)
         {
             this.Field = field;
             this.ProjectIds = projectIds;

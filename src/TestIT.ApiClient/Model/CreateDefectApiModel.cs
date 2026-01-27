@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="testResultIds">Linked test result IDs (required).</param>
         /// <param name="form">External form definition (required).</param>
-        public CreateDefectApiModel(List<Guid> testResultIds = default(List<Guid>), ExternalFormCreateModel form = default(ExternalFormCreateModel))
+        public CreateDefectApiModel(List<Guid> testResultIds = default, ExternalFormCreateModel form = default)
         {
             // to ensure "testResultIds" is required (not null)
             if (testResultIds == null)

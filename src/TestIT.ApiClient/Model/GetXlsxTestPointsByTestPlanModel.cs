@@ -55,7 +55,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="includeIterations">includeIterations (required).</param>
         /// <param name="customAttributesIds">customAttributesIds.</param>
         /// <param name="configurationIds">configurationIds.</param>
-        public GetXlsxTestPointsByTestPlanModel(bool includeName = default(bool), bool includeSection = default(bool), bool includePriority = default(bool), bool includeSourceType = default(bool), bool includeAutomated = default(bool), bool includeStatus = default(bool), bool includeDuration = default(bool), bool includeCreationDate = default(bool), bool includeAuthor = default(bool), bool includeModificationDate = default(bool), bool includeModifiedBy = default(bool), bool includeTags = default(bool), bool includeIterations = default(bool), List<Guid> customAttributesIds = default(List<Guid>), List<Guid> configurationIds = default(List<Guid>))
+        public GetXlsxTestPointsByTestPlanModel(bool includeName = default, bool includeSection = default, bool includePriority = default, bool includeSourceType = default, bool includeAutomated = default, bool includeStatus = default, bool includeDuration = default, bool includeCreationDate = default, bool includeAuthor = default, bool includeModificationDate = default, bool includeModifiedBy = default, bool includeTags = default, bool includeIterations = default, List<Guid> customAttributesIds = default, List<Guid> configurationIds = default)
         {
             this.IncludeName = includeName;
             this.IncludeSection = includeSection;

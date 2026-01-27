@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="WebhookBulkUpdateApiModel" /> class.
         /// </summary>
         /// <param name="isEnabled">isEnabled (required).</param>
-        public WebhookBulkUpdateApiModel(bool isEnabled = default(bool))
+        public WebhookBulkUpdateApiModel(bool isEnabled = default)
         {
             this.IsEnabled = isEnabled;
         }

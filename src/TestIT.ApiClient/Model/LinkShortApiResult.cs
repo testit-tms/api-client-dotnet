@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="title">title (required).</param>
         /// <param name="url">url (required).</param>
         /// <param name="type">type (required).</param>
-        public LinkShortApiResult(Guid id = default(Guid), string title = default(string), string url = default(string), string type = default(string))
+        public LinkShortApiResult(Guid id = default, string title = default, string url = default, string type = default)
         {
             this.Id = id;
             // to ensure "title" is required (not null)

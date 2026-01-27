@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="title">title (required).</param>
         /// <param name="url">url (required).</param>
-        public PreviewsIssueLinkApiResult(string title = default(string), string url = default(string))
+        public PreviewsIssueLinkApiResult(string title = default, string url = default)
         {
             // to ensure "title" is required (not null)
             if (title == null)

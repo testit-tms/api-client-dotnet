@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="assignee">assignee.</param>
         /// <param name="type">type.</param>
         /// <param name="priority">priority.</param>
-        public ExternalIssueMetadataModel(string id = default(string), string title = default(string), string code = default(string), string description = default(string), string status = default(string), string assignee = default(string), ExternalIssueTypeModel type = default(ExternalIssueTypeModel), ExternalIssuePriorityModel priority = default(ExternalIssuePriorityModel))
+        public ExternalIssueMetadataModel(string id = default, string title = default, string code = default, string description = default, string status = default, string assignee = default, ExternalIssueTypeModel type = default, ExternalIssuePriorityModel priority = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)

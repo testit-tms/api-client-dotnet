@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="group">group (required).</param>
         /// <param name="items">items (required).</param>
-        public TestPlanTestPointsGroupSearchItemApiResult(TestPlanTestPointsGroupApiResult group = default(TestPlanTestPointsGroupApiResult), List<TestPlanTestPointsSearchApiResult> items = default(List<TestPlanTestPointsSearchApiResult>))
+        public TestPlanTestPointsGroupSearchItemApiResult(TestPlanTestPointsGroupApiResult group = default, List<TestPlanTestPointsSearchApiResult> items = default)
         {
             // to ensure "group" is required (not null)
             if (group == null)

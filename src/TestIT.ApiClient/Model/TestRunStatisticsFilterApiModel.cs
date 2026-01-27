@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="failureCategories">Specifies a test result failure categories to search for.</param>
         /// <param name="varNamespace">Specifies a test result namespace to search for.</param>
         /// <param name="className">Specifies a test result class name to search for.</param>
-        public TestRunStatisticsFilterApiModel(List<Guid> configurationIds = default(List<Guid>), List<TestResultOutcome> outcomes = default(List<TestResultOutcome>), List<string> statusCodes = default(List<string>), List<FailureCategoryModel> failureCategories = default(List<FailureCategoryModel>), string varNamespace = default(string), string className = default(string))
+        public TestRunStatisticsFilterApiModel(List<Guid> configurationIds = default, List<TestResultOutcome> outcomes = default, List<string> statusCodes = default, List<FailureCategoryModel> failureCategories = default, string varNamespace = default, string className = default)
         {
             this.ConfigurationIds = configurationIds;
             this.Outcomes = outcomes;

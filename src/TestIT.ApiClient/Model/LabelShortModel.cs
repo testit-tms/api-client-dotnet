@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="globalId">Global ID of the label (required).</param>
         /// <param name="name">Name of the label (required).</param>
-        public LabelShortModel(long globalId = default(long), string name = default(string))
+        public LabelShortModel(long globalId = default, string name = default)
         {
             this.GlobalId = globalId;
             // to ensure "name" is required (not null)

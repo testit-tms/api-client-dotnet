@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="types">types.</param>
         /// <param name="isRead">isRead.</param>
         /// <param name="createdDate">createdDate.</param>
-        public NotificationQueryFilterModel(List<NotificationTypeModel> types = default(List<NotificationTypeModel>), bool? isRead = default(bool?), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel))
+        public NotificationQueryFilterModel(List<NotificationTypeModel> types = default, bool? isRead = default, DateTimeRangeSelectorModel createdDate = default)
         {
             this.Types = types;
             this.IsRead = isRead;

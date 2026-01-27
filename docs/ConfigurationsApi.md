@@ -123,7 +123,7 @@ catch (ApiException e)
 
 <a id="apiv2configurationsdeletebulkpost"></a>
 # **ApiV2ConfigurationsDeleteBulkPost**
-> int ApiV2ConfigurationsDeleteBulkPost (ConfigurationSelectModel configurationSelectModel = null)
+> int ApiV2ConfigurationsDeleteBulkPost (ConfigurationSelectApiModel configurationSelectApiModel = null)
 
 Delete multiple configurations
 
@@ -153,12 +153,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new ConfigurationsApi(httpClient, config, httpClientHandler);
-            var configurationSelectModel = new ConfigurationSelectModel(); // ConfigurationSelectModel |  (optional) 
+            var configurationSelectApiModel = new ConfigurationSelectApiModel(); // ConfigurationSelectApiModel |  (optional) 
 
             try
             {
                 // Delete multiple configurations
-                int result = apiInstance.ApiV2ConfigurationsDeleteBulkPost(configurationSelectModel);
+                int result = apiInstance.ApiV2ConfigurationsDeleteBulkPost(configurationSelectApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -179,7 +179,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Delete multiple configurations
-    ApiResponse<int> response = apiInstance.ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(configurationSelectModel);
+    ApiResponse<int> response = apiInstance.ApiV2ConfigurationsDeleteBulkPostWithHttpInfo(configurationSelectApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -196,7 +196,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **configurationSelectModel** | [**ConfigurationSelectModel**](ConfigurationSelectModel.md) |  | [optional]  |
+| **configurationSelectApiModel** | [**ConfigurationSelectApiModel**](ConfigurationSelectApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -1057,7 +1057,7 @@ catch (ApiException e)
 
 Create Configuration
 
-  Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
+ Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
 
 ### Example
 ```csharp
@@ -1163,7 +1163,7 @@ catch (ApiException e)
 
 Get configuration by internal or global ID
 
-  Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
+ Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
 
 ### Example
 ```csharp

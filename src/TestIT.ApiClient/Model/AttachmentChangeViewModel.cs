@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name.</param>
         /// <param name="type">type.</param>
         /// <param name="size">size (required).</param>
-        public AttachmentChangeViewModel(Guid id = default(Guid), string name = default(string), string type = default(string), float size = default(float))
+        public AttachmentChangeViewModel(Guid id = default, string name = default, string type = default, float size = default)
         {
             this.Id = id;
             this.Size = size;

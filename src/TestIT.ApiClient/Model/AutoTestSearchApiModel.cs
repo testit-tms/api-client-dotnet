@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">Object containing different filters to adjust search.</param>
         /// <param name="includes">Object specifying data to be included.</param>
-        public AutoTestSearchApiModel(AutoTestFilterApiModel filter = default(AutoTestFilterApiModel), AutoTestSearchIncludeApiModel includes = default(AutoTestSearchIncludeApiModel))
+        public AutoTestSearchApiModel(AutoTestFilterApiModel filter = default, AutoTestSearchIncludeApiModel includes = default)
         {
             this.Filter = filter;
             this.Includes = includes;

@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;BackgroundJobGetModel&gt;</returns>
         [Obsolete]
-        List<BackgroundJobGetModel> ApiV2BackgroundJobsGet(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        List<BackgroundJobGetModel> ApiV2BackgroundJobsGet(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
 
         /// <summary>
         /// 
@@ -70,7 +70,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;BackgroundJobGetModel&gt;</returns>
         [Obsolete]
-        ApiResponse<List<BackgroundJobGetModel>> ApiV2BackgroundJobsGetWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        ApiResponse<List<BackgroundJobGetModel>> ApiV2BackgroundJobsGetWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
         /// <summary>
         /// Cancel current user background job
         /// </summary>
@@ -136,7 +136,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="backgroundJobFilterModel"> (optional)</param>
         /// <returns>List&lt;BackgroundJobGetModel&gt;</returns>
-        List<BackgroundJobGetModel> ApiV2BackgroundJobsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), BackgroundJobFilterModel backgroundJobFilterModel = default(BackgroundJobFilterModel));
+        List<BackgroundJobGetModel> ApiV2BackgroundJobsSearchPost(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, BackgroundJobFilterModel backgroundJobFilterModel = default);
 
         /// <summary>
         /// Search for user background jobs
@@ -152,7 +152,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="backgroundJobFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;BackgroundJobGetModel&gt;</returns>
-        ApiResponse<List<BackgroundJobGetModel>> ApiV2BackgroundJobsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), BackgroundJobFilterModel backgroundJobFilterModel = default(BackgroundJobFilterModel));
+        ApiResponse<List<BackgroundJobGetModel>> ApiV2BackgroundJobsSearchPostWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, BackgroundJobFilterModel backgroundJobFilterModel = default);
         #endregion Synchronous Operations
     }
 
@@ -171,7 +171,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2BackgroundJobsCompletedDeleteAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2BackgroundJobsCompletedDeleteAsync(System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete all completed background jobs
@@ -182,7 +182,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2BackgroundJobsCompletedDeleteWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2BackgroundJobsCompletedDeleteWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -198,7 +198,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;BackgroundJobGetModel&gt;</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<List<BackgroundJobGetModel>> ApiV2BackgroundJobsGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<BackgroundJobGetModel>> ApiV2BackgroundJobsGetAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -215,7 +215,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;BackgroundJobGetModel&gt;)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<List<BackgroundJobGetModel>>> ApiV2BackgroundJobsGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<BackgroundJobGetModel>>> ApiV2BackgroundJobsGetWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Cancel current user background job
         /// </summary>
@@ -226,7 +226,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2BackgroundJobsIdCancelPostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2BackgroundJobsIdCancelPostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Cancel current user background job
@@ -238,7 +238,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2BackgroundJobsIdCancelPostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2BackgroundJobsIdCancelPostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get background job by ID
         /// </summary>
@@ -249,7 +249,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique ID of the background job</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BackgroundJobGetModel</returns>
-        System.Threading.Tasks.Task<BackgroundJobGetModel> ApiV2BackgroundJobsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<BackgroundJobGetModel> ApiV2BackgroundJobsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get background job by ID
@@ -261,7 +261,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique ID of the background job</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BackgroundJobGetModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BackgroundJobGetModel>> ApiV2BackgroundJobsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<BackgroundJobGetModel>> ApiV2BackgroundJobsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get background job status by job ID
         /// </summary>
@@ -272,7 +272,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique ID of the background job</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BackgroundJobState</returns>
-        System.Threading.Tasks.Task<BackgroundJobState> ApiV2BackgroundJobsIdStatusGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<BackgroundJobState> ApiV2BackgroundJobsIdStatusGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get background job status by job ID
@@ -284,7 +284,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique ID of the background job</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BackgroundJobState)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BackgroundJobState>> ApiV2BackgroundJobsIdStatusGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<BackgroundJobState>> ApiV2BackgroundJobsIdStatusGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search for user background jobs
         /// </summary>
@@ -300,7 +300,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundJobFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;BackgroundJobGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<BackgroundJobGetModel>> ApiV2BackgroundJobsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), BackgroundJobFilterModel backgroundJobFilterModel = default(BackgroundJobFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<BackgroundJobGetModel>> ApiV2BackgroundJobsSearchPostAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, BackgroundJobFilterModel backgroundJobFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Search for user background jobs
@@ -317,7 +317,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundJobFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;BackgroundJobGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<BackgroundJobGetModel>>> ApiV2BackgroundJobsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), BackgroundJobFilterModel backgroundJobFilterModel = default(BackgroundJobFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<BackgroundJobGetModel>>> ApiV2BackgroundJobsSearchPostWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, BackgroundJobFilterModel backgroundJobFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -589,7 +589,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2BackgroundJobsCompletedDeleteAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2BackgroundJobsCompletedDeleteAsync(System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2BackgroundJobsCompletedDeleteWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
         }
@@ -600,7 +600,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2BackgroundJobsCompletedDeleteWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2BackgroundJobsCompletedDeleteWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -651,7 +651,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;BackgroundJobGetModel&gt;</returns>
         [Obsolete]
-        public List<BackgroundJobGetModel> ApiV2BackgroundJobsGet(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public List<BackgroundJobGetModel> ApiV2BackgroundJobsGet(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<BackgroundJobGetModel>> localVarResponse = ApiV2BackgroundJobsGetWithHttpInfo(skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
@@ -668,7 +668,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;BackgroundJobGetModel&gt;</returns>
         [Obsolete]
-        public TestIT.ApiClient.Client.ApiResponse<List<BackgroundJobGetModel>> ApiV2BackgroundJobsGetWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public TestIT.ApiClient.Client.ApiResponse<List<BackgroundJobGetModel>> ApiV2BackgroundJobsGetWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -737,7 +737,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;BackgroundJobGetModel&gt;</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<List<BackgroundJobGetModel>> ApiV2BackgroundJobsGetAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<BackgroundJobGetModel>> ApiV2BackgroundJobsGetAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<BackgroundJobGetModel>> localVarResponse = await ApiV2BackgroundJobsGetWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -755,7 +755,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;BackgroundJobGetModel&gt;)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<BackgroundJobGetModel>>> ApiV2BackgroundJobsGetWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<BackgroundJobGetModel>>> ApiV2BackgroundJobsGetWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -877,7 +877,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2BackgroundJobsIdCancelPostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2BackgroundJobsIdCancelPostAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2BackgroundJobsIdCancelPostWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -889,7 +889,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2BackgroundJobsIdCancelPostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2BackgroundJobsIdCancelPostWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -993,7 +993,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique ID of the background job</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BackgroundJobGetModel</returns>
-        public async System.Threading.Tasks.Task<BackgroundJobGetModel> ApiV2BackgroundJobsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<BackgroundJobGetModel> ApiV2BackgroundJobsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<BackgroundJobGetModel> localVarResponse = await ApiV2BackgroundJobsIdGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1006,7 +1006,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique ID of the background job</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BackgroundJobGetModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<BackgroundJobGetModel>> ApiV2BackgroundJobsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<BackgroundJobGetModel>> ApiV2BackgroundJobsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1110,7 +1110,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique ID of the background job</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of BackgroundJobState</returns>
-        public async System.Threading.Tasks.Task<BackgroundJobState> ApiV2BackgroundJobsIdStatusGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<BackgroundJobState> ApiV2BackgroundJobsIdStatusGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<BackgroundJobState> localVarResponse = await ApiV2BackgroundJobsIdStatusGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1123,7 +1123,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique ID of the background job</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (BackgroundJobState)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<BackgroundJobState>> ApiV2BackgroundJobsIdStatusGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<BackgroundJobState>> ApiV2BackgroundJobsIdStatusGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1175,7 +1175,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="backgroundJobFilterModel"> (optional)</param>
         /// <returns>List&lt;BackgroundJobGetModel&gt;</returns>
-        public List<BackgroundJobGetModel> ApiV2BackgroundJobsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), BackgroundJobFilterModel backgroundJobFilterModel = default(BackgroundJobFilterModel))
+        public List<BackgroundJobGetModel> ApiV2BackgroundJobsSearchPost(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, BackgroundJobFilterModel backgroundJobFilterModel = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<BackgroundJobGetModel>> localVarResponse = ApiV2BackgroundJobsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, backgroundJobFilterModel);
             return localVarResponse.Data;
@@ -1192,7 +1192,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="backgroundJobFilterModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;BackgroundJobGetModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<BackgroundJobGetModel>> ApiV2BackgroundJobsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), BackgroundJobFilterModel backgroundJobFilterModel = default(BackgroundJobFilterModel))
+        public TestIT.ApiClient.Client.ApiResponse<List<BackgroundJobGetModel>> ApiV2BackgroundJobsSearchPostWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, BackgroundJobFilterModel backgroundJobFilterModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1263,7 +1263,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundJobFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;BackgroundJobGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<BackgroundJobGetModel>> ApiV2BackgroundJobsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), BackgroundJobFilterModel backgroundJobFilterModel = default(BackgroundJobFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<BackgroundJobGetModel>> ApiV2BackgroundJobsSearchPostAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, BackgroundJobFilterModel backgroundJobFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<BackgroundJobGetModel>> localVarResponse = await ApiV2BackgroundJobsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, backgroundJobFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1281,7 +1281,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="backgroundJobFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;BackgroundJobGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<BackgroundJobGetModel>>> ApiV2BackgroundJobsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), BackgroundJobFilterModel backgroundJobFilterModel = default(BackgroundJobFilterModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<BackgroundJobGetModel>>> ApiV2BackgroundJobsSearchPostWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, BackgroundJobFilterModel backgroundJobFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();

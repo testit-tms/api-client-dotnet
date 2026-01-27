@@ -49,7 +49,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="levelAvatarEnabled">levelAvatarEnabled (required).</param>
         /// <param name="succeededTestPoints">succeededTestPoints (required).</param>
         /// <param name="incompleteTestPoints">incompleteTestPoints (required).</param>
-        public UserRankModel(int score = default(int), int workItemsCreated = default(int), int passedTestPoints = default(int), int failedTestPoints = default(int), int skippedTestPoints = default(int), int blockedTestPoints = default(int), bool levelAvatarEnabled = default(bool), int succeededTestPoints = default(int), int incompleteTestPoints = default(int))
+        public UserRankModel(int score = default, int workItemsCreated = default, int passedTestPoints = default, int failedTestPoints = default, int skippedTestPoints = default, int blockedTestPoints = default, bool levelAvatarEnabled = default, int succeededTestPoints = default, int incompleteTestPoints = default)
         {
             this.Score = score;
             this.WorkItemsCreated = workItemsCreated;

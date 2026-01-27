@@ -61,7 +61,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="lastTestResultStatusCodes">lastTestResultStatusCodes.</param>
         /// <param name="externalKey">externalKey.</param>
         /// <param name="lastTestResultConfigurationIds">lastTestResultConfigurationIds.</param>
-        public AutoTestFilterModel(List<Guid> projectIds = default(List<Guid>), List<string> externalIds = default(List<string>), List<long> globalIds = default(List<long>), string name = default(string), bool? isFlaky = default(bool?), bool? mustBeApproved = default(bool?), Int64RangeSelectorModel stabilityPercentage = default(Int64RangeSelectorModel), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), List<Guid> modifiedByIds = default(List<Guid>), bool? isDeleted = default(bool?), string varNamespace = default(string), bool? isEmptyNamespace = default(bool?), string className = default(string), bool? isEmptyClassName = default(bool?), AutotestResultOutcome? lastTestResultOutcome = default(AutotestResultOutcome?), List<string> lastTestResultStatusCodes = default(List<string>), string externalKey = default(string), List<Guid> lastTestResultConfigurationIds = default(List<Guid>))
+        /// <param name="tags">tags.</param>
+        public AutoTestFilterModel(List<Guid> projectIds = default, List<string> externalIds = default, List<long> globalIds = default, string name = default, bool? isFlaky = default, bool? mustBeApproved = default, Int64RangeSelectorModel stabilityPercentage = default, DateTimeRangeSelectorModel createdDate = default, List<Guid> createdByIds = default, DateTimeRangeSelectorModel modifiedDate = default, List<Guid> modifiedByIds = default, bool? isDeleted = default, string varNamespace = default, bool? isEmptyNamespace = default, string className = default, bool? isEmptyClassName = default, AutotestResultOutcome? lastTestResultOutcome = default, List<string> lastTestResultStatusCodes = default, string externalKey = default, List<Guid> lastTestResultConfigurationIds = default, List<string> tags = default)
         {
             this.ProjectIds = projectIds;
             this.ExternalIds = externalIds;
@@ -83,6 +84,7 @@ namespace TestIT.ApiClient.Model
             this.LastTestResultStatusCodes = lastTestResultStatusCodes;
             this.ExternalKey = externalKey;
             this.LastTestResultConfigurationIds = lastTestResultConfigurationIds;
+            this.Tags = tags;
         }
 
         /// <summary>
@@ -200,6 +202,12 @@ namespace TestIT.ApiClient.Model
         public List<Guid> LastTestResultConfigurationIds { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tags
+        /// </summary>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -227,6 +235,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  LastTestResultStatusCodes: ").Append(LastTestResultStatusCodes).Append("\n");
             sb.Append("  ExternalKey: ").Append(ExternalKey).Append("\n");
             sb.Append("  LastTestResultConfigurationIds: ").Append(LastTestResultConfigurationIds).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

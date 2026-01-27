@@ -40,7 +40,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="newAttributeName">newAttributeName.</param>
         /// <param name="oldValue">oldValue.</param>
         /// <param name="newValue">newValue.</param>
-        public CustomAttributeChangeModel(string type = default(string), string oldAttributeName = default(string), string newAttributeName = default(string), Object oldValue = default(Object), Object newValue = default(Object))
+        public CustomAttributeChangeModel(string type = default, string oldAttributeName = default, string newAttributeName = default, Object oldValue = default, Object newValue = default)
         {
             this.Type = type;
             this.OldAttributeName = oldAttributeName;

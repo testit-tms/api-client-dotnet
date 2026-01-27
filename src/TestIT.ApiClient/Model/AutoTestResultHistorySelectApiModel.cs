@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="launchSource">launchSource.</param>
         /// <param name="userIds">userIds.</param>
         /// <param name="duration">duration.</param>
-        public AutoTestResultHistorySelectApiModel(List<AutotestResultOutcome> outcomes = default(List<AutotestResultOutcome>), List<string> statusCodes = default(List<string>), List<Guid> testPlanIds = default(List<Guid>), List<Guid> testRunIds = default(List<Guid>), List<Guid> configurationIds = default(List<Guid>), string launchSource = default(string), List<Guid> userIds = default(List<Guid>), Int64RangeSelectorModel duration = default(Int64RangeSelectorModel))
+        public AutoTestResultHistorySelectApiModel(List<AutotestResultOutcome> outcomes = default, List<string> statusCodes = default, List<Guid> testPlanIds = default, List<Guid> testRunIds = default, List<Guid> configurationIds = default, string launchSource = default, List<Guid> userIds = default, Int64RangeSelectorModel duration = default)
         {
             this.Outcomes = outcomes;
             this.StatusCodes = statusCodes;

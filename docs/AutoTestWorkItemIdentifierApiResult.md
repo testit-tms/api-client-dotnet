@@ -1,0 +1,11 @@
+# TestIT.ApiClient.Model.AutoTestWorkItemIdentifierApiResult
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | **Guid** | WorkItem unique internal identifier | 
+**GlobalId** | **long** | WorkItem Global unique identifier | 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

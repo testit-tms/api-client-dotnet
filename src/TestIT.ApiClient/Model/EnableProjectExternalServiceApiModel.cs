@@ -35,9 +35,19 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EnableProjectExternalServiceApiModel" /> class.
         /// </summary>
-        /// <param name="settings">External service settings.</param>
-        public EnableProjectExternalServiceApiModel(Object settings = default(Object))
+        [JsonConstructorAttribute]
+        protected EnableProjectExternalServiceApiModel() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="EnableProjectExternalServiceApiModel" /> class.
+        /// </summary>
+        /// <param name="settings">External service settings (required).</param>
+        public EnableProjectExternalServiceApiModel(Object settings = default)
         {
+            // to ensure "settings" is required (not null)
+            if (settings == null)
+            {
+                throw new ArgumentNullException("settings is a required property for EnableProjectExternalServiceApiModel and cannot be null");
+            }
             this.Settings = settings;
         }
 
@@ -45,7 +55,7 @@ namespace TestIT.ApiClient.Model
         /// External service settings
         /// </summary>
         /// <value>External service settings</value>
-        [DataMember(Name = "settings", EmitDefaultValue = true)]
+        [DataMember(Name = "settings", IsRequired = true, EmitDefaultValue = true)]
         public Object Settings { get; set; }
 
         /// <summary>

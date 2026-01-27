@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="projectIds">projectIds.</param>
         /// <param name="workItemIds">workItemIds.</param>
         /// <param name="linkUrls">linkUrls.</param>
-        public WorkItemLinkExtractionApiModel(GuidExtractionModel projectIds = default(GuidExtractionModel), GuidExtractionModel workItemIds = default(GuidExtractionModel), StringExtractionModel linkUrls = default(StringExtractionModel))
+        public WorkItemLinkExtractionApiModel(GuidExtractionModel projectIds = default, GuidExtractionModel workItemIds = default, StringExtractionModel linkUrls = default)
         {
             this.ProjectIds = projectIds;
             this.WorkItemIds = workItemIds;

@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="stepId">stepId (required).</param>
         /// <param name="parentStepId">parentStepId.</param>
         /// <param name="attachments">attachments (required).</param>
-        public TestResultStepCommentUpdateRequest(Guid id = default(Guid), string text = default(string), Guid stepId = default(Guid), Guid? parentStepId = default(Guid?), List<AttachmentUpdateRequest> attachments = default(List<AttachmentUpdateRequest>))
+        public TestResultStepCommentUpdateRequest(Guid id = default, string text = default, Guid stepId = default, Guid? parentStepId = default, List<AttachmentUpdateRequest> attachments = default)
         {
             this.Id = id;
             // to ensure "text" is required (not null)

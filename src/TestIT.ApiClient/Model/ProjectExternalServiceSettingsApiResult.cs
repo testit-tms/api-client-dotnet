@@ -36,7 +36,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ProjectExternalServiceSettingsApiResult" /> class.
         /// </summary>
         /// <param name="settings">External service settings.</param>
-        public ProjectExternalServiceSettingsApiResult(Object settings = default(Object))
+        public ProjectExternalServiceSettingsApiResult(Object settings = default)
         {
             this.Settings = settings;
         }

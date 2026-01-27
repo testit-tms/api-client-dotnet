@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">Test run description.</param>
         /// <param name="attachmentUpdateScheme">Set of attachment ids.</param>
         /// <param name="linkUpdateScheme">Set of links.</param>
-        public UpdateMultipleTestRunsApiModel(TestRunSelectApiModel selectModel = default(TestRunSelectApiModel), string description = default(string), UpdateMultipleAttachmentsApiModel attachmentUpdateScheme = default(UpdateMultipleAttachmentsApiModel), UpdateMultipleLinksApiModel linkUpdateScheme = default(UpdateMultipleLinksApiModel))
+        public UpdateMultipleTestRunsApiModel(TestRunSelectApiModel selectModel = default, string description = default, UpdateMultipleAttachmentsApiModel attachmentUpdateScheme = default, UpdateMultipleLinksApiModel linkUpdateScheme = default)
         {
             // to ensure "selectModel" is required (not null)
             if (selectModel == null)

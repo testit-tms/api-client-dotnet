@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="diffValue">diffValue.</param>
         /// <param name="oldValue">oldValue.</param>
         /// <param name="newValue">newValue.</param>
-        public StringChangedFieldWithDiffsViewModel(string diffValue = default(string), string oldValue = default(string), string newValue = default(string))
+        public StringChangedFieldWithDiffsViewModel(string diffValue = default, string oldValue = default, string newValue = default)
         {
             this.DiffValue = diffValue;
             this.OldValue = oldValue;

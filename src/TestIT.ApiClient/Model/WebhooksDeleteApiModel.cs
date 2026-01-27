@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">filter (required).</param>
         /// <param name="extractor">extractor (required).</param>
-        public WebhooksDeleteApiModel(WebhooksDeleteFilterApiModel filter = default(WebhooksDeleteFilterApiModel), WebhooksExtractionApiModel extractor = default(WebhooksExtractionApiModel))
+        public WebhooksDeleteApiModel(WebhooksDeleteFilterApiModel filter = default, WebhooksExtractionApiModel extractor = default)
         {
             // to ensure "filter" is required (not null)
             if (filter == null)

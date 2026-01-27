@@ -46,7 +46,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="hasInfo">hasInfo (required).</param>
         /// <param name="id">id (required).</param>
         /// <param name="type">type (required).</param>
-        public WorkItemLinkChangeViewModel(string description = default(string), string url = default(string), string title = default(string), bool hasInfo = default(bool), Guid id = default(Guid), string type = default(string))
+        public WorkItemLinkChangeViewModel(string description = default, string url = default, string title = default, bool hasInfo = default, Guid id = default, string type = default)
         {
             // to ensure "description" is required (not null)
             if (description == null)

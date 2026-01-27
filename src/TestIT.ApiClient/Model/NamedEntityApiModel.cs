@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="name">Entity name. (required).</param>
         /// <param name="id">Entity Id. (required).</param>
-        public NamedEntityApiModel(string name = default(string), Guid id = default(Guid))
+        public NamedEntityApiModel(string name = default, Guid id = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

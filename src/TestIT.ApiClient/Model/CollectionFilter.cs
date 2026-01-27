@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="varOperator">varOperator (required).</param>
         /// <param name="filter">filter (required).</param>
-        public CollectionFilter(CollectionOperator varOperator = default(CollectionOperator), IFilter filter = default(IFilter))
+        public CollectionFilter(CollectionOperator varOperator = default, IFilter filter = default)
         {
             this.Operator = varOperator;
             // to ensure "filter" is required (not null)

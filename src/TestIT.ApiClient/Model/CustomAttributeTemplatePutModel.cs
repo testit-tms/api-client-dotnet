@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">Unique ID of the attribute template (required).</param>
         /// <param name="customAttributeIds">Collection of attribute IDs.</param>
         /// <param name="name">Custom attributes template name (required).</param>
-        public CustomAttributeTemplatePutModel(Guid id = default(Guid), List<Guid> customAttributeIds = default(List<Guid>), string name = default(string))
+        public CustomAttributeTemplatePutModel(Guid id = default, List<Guid> customAttributeIds = default, string name = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">filter (required).</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public WorkItemSelectApiModel(WorkItemFilterApiModel filter = default(WorkItemFilterApiModel), WorkItemExtractionApiModel extractionModel = default(WorkItemExtractionApiModel))
+        public WorkItemSelectApiModel(WorkItemFilterApiModel filter = default, WorkItemExtractionApiModel extractionModel = default)
         {
             // to ensure "filter" is required (not null)
             if (filter == null)

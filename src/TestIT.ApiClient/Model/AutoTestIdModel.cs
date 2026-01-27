@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="AutoTestIdModel" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        public AutoTestIdModel(Guid id = default(Guid))
+        public AutoTestIdModel(Guid id = default)
         {
             this.Id = id;
         }

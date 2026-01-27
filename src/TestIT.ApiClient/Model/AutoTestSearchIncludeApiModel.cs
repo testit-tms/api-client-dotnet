@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="includeSteps">If autotest steps will be included.</param>
         /// <param name="includeLinks">If autotest links will be included.</param>
         /// <param name="includeLabels">If autotest labels will be included.</param>
-        public AutoTestSearchIncludeApiModel(bool? includeSteps = default(bool?), bool? includeLinks = default(bool?), bool? includeLabels = default(bool?))
+        public AutoTestSearchIncludeApiModel(bool? includeSteps = default, bool? includeLinks = default, bool? includeLabels = default)
         {
             this.IncludeSteps = includeSteps;
             this.IncludeLinks = includeLinks;

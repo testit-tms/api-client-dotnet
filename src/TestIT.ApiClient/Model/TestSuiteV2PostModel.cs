@@ -53,7 +53,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="type">Type of the test suite.</param>
         /// <param name="saveStructure">Indicates if the test suite retains section tree structure.</param>
         /// <param name="autoRefresh">Indicates if scheduled auto refresh is enabled for the test suite.</param>
-        public TestSuiteV2PostModel(Guid? parentId = default(Guid?), Guid testPlanId = default(Guid), string name = default(string), TestSuiteType? type = default(TestSuiteType?), bool? saveStructure = default(bool?), bool? autoRefresh = default(bool?))
+        public TestSuiteV2PostModel(Guid? parentId = default, Guid testPlanId = default, string name = default, TestSuiteType? type = default, bool? saveStructure = default, bool? autoRefresh = default)
         {
             this.TestPlanId = testPlanId;
             // to ensure "name" is required (not null)

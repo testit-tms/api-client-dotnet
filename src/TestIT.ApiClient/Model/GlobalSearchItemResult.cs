@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="globalId">globalId.</param>
         /// <param name="name">name (required).</param>
         /// <param name="projectGlobalId">projectGlobalId (required).</param>
-        public GlobalSearchItemResult(string resourceType = default(string), Guid resourceId = default(Guid), long? globalId = default(long?), string name = default(string), long projectGlobalId = default(long))
+        public GlobalSearchItemResult(string resourceType = default, Guid resourceId = default, long? globalId = default, string name = default, long projectGlobalId = default)
         {
             // to ensure "resourceType" is required (not null)
             if (resourceType == null)

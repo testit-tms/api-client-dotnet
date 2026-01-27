@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="CustomAttributeValidationResult" /> class.
         /// </summary>
         /// <param name="exists">exists (required).</param>
-        public CustomAttributeValidationResult(bool exists = default(bool))
+        public CustomAttributeValidationResult(bool exists = default)
         {
             this.Exists = exists;
         }

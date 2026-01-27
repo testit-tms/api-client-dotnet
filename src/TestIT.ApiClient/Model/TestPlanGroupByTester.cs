@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="userId">userId.</param>
         /// <param name="value">value (required).</param>
-        public TestPlanGroupByTester(Guid? userId = default(Guid?), long value = default(long))
+        public TestPlanGroupByTester(Guid? userId = default, long value = default)
         {
             this.Value = value;
             this.UserId = userId;

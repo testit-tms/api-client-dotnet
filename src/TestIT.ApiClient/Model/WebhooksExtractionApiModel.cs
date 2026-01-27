@@ -36,7 +36,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="WebhooksExtractionApiModel" /> class.
         /// </summary>
         /// <param name="ids">ids.</param>
-        public WebhooksExtractionApiModel(GuidExtractionModel ids = default(GuidExtractionModel))
+        public WebhooksExtractionApiModel(GuidExtractionModel ids = default)
         {
             this.Ids = ids;
         }

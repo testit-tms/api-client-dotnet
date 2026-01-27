@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">Identifier of external service (required).</param>
         /// <param name="name">Name of external service (required).</param>
-        public ExternalIssueExternalServiceApiResult(Guid id = default(Guid), string name = default(string))
+        public ExternalIssueExternalServiceApiResult(Guid id = default, string name = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

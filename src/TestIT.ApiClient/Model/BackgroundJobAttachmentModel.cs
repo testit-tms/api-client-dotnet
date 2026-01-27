@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="type">type (required).</param>
         /// <param name="size">size (required).</param>
-        public BackgroundJobAttachmentModel(Guid id = default(Guid), string name = default(string), string type = default(string), float size = default(float))
+        public BackgroundJobAttachmentModel(Guid id = default, string name = default, string type = default, float size = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

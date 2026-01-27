@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="results">results (required).</param>
         /// <param name="moreResultsAvailable">moreResultsAvailable (required).</param>
         /// <param name="availableResourceTypes">availableResourceTypes (required).</param>
-        public GlobalSearchResponse(List<GlobalSearchItemResult> results = default(List<GlobalSearchItemResult>), bool moreResultsAvailable = default(bool), List<string> availableResourceTypes = default(List<string>))
+        public GlobalSearchResponse(List<GlobalSearchItemResult> results = default, bool moreResultsAvailable = default, List<string> availableResourceTypes = default)
         {
             // to ensure "results" is required (not null)
             if (results == null)

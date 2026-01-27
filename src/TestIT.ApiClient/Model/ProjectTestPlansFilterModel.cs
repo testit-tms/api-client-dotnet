@@ -49,9 +49,10 @@ namespace TestIT.ApiClient.Model
         /// <param name="startDate">startDate.</param>
         /// <param name="endDate">endDate.</param>
         /// <param name="tagNames">tagNames.</param>
+        /// <param name="excludeTagNames">excludeTagNames.</param>
         /// <param name="attributes">attributes.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public ProjectTestPlansFilterModel(string name = default(string), string description = default(string), string build = default(string), string productName = default(string), List<TestPlanStatusModel> status = default(List<TestPlanStatusModel>), List<long> globalIds = default(List<long>), bool? isLocked = default(bool?), DateTimeRangeSelectorModel lockedDate = default(DateTimeRangeSelectorModel), List<bool?> automaticDurationTimer = default(List<bool?>), List<Guid> createdByIds = default(List<Guid>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel startDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel endDate = default(DateTimeRangeSelectorModel), List<string> tagNames = default(List<string>), Dictionary<string, List<string>> attributes = default(Dictionary<string, List<string>>), bool? isDeleted = default(bool?))
+        public ProjectTestPlansFilterModel(string name = default, string description = default, string build = default, string productName = default, List<TestPlanStatusModel> status = default, List<long> globalIds = default, bool? isLocked = default, DateTimeRangeSelectorModel lockedDate = default, List<bool?> automaticDurationTimer = default, List<Guid> createdByIds = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel startDate = default, DateTimeRangeSelectorModel endDate = default, List<string> tagNames = default, List<string> excludeTagNames = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default)
         {
             this.Name = name;
             this.Description = description;
@@ -67,6 +68,7 @@ namespace TestIT.ApiClient.Model
             this.StartDate = startDate;
             this.EndDate = endDate;
             this.TagNames = tagNames;
+            this.ExcludeTagNames = excludeTagNames;
             this.Attributes = attributes;
             this.IsDeleted = isDeleted;
         }
@@ -156,6 +158,12 @@ namespace TestIT.ApiClient.Model
         public List<string> TagNames { get; set; }
 
         /// <summary>
+        /// Gets or Sets ExcludeTagNames
+        /// </summary>
+        [DataMember(Name = "excludeTagNames", EmitDefaultValue = true)]
+        public List<string> ExcludeTagNames { get; set; }
+
+        /// <summary>
         /// Gets or Sets Attributes
         /// </summary>
         [DataMember(Name = "attributes", EmitDefaultValue = true)]
@@ -189,6 +197,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  StartDate: ").Append(StartDate).Append("\n");
             sb.Append("  EndDate: ").Append(EndDate).Append("\n");
             sb.Append("  TagNames: ").Append(TagNames).Append("\n");
+            sb.Append("  ExcludeTagNames: ").Append(ExcludeTagNames).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("}\n");

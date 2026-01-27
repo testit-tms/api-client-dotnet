@@ -43,7 +43,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="externalServiceId">externalServiceId (required).</param>
         /// <param name="taskKey">taskKey (required).</param>
         /// <param name="sectionId">sectionId (required).</param>
-        public GenerateWorkItemPreviewsApiModel(Guid externalServiceId = default(Guid), string taskKey = default(string), Guid sectionId = default(Guid))
+        /// <param name="temperature">temperature (required).</param>
+        /// <param name="previewLimit">previewLimit (required).</param>
+        public GenerateWorkItemPreviewsApiModel(Guid externalServiceId = default, string taskKey = default, Guid sectionId = default, float temperature = default, int previewLimit = default)
         {
             this.ExternalServiceId = externalServiceId;
             // to ensure "taskKey" is required (not null)
@@ -53,6 +55,8 @@ namespace TestIT.ApiClient.Model
             }
             this.TaskKey = taskKey;
             this.SectionId = sectionId;
+            this.Temperature = temperature;
+            this.PreviewLimit = previewLimit;
         }
 
         /// <summary>
@@ -74,6 +78,18 @@ namespace TestIT.ApiClient.Model
         public Guid SectionId { get; set; }
 
         /// <summary>
+        /// Gets or Sets Temperature
+        /// </summary>
+        [DataMember(Name = "temperature", IsRequired = true, EmitDefaultValue = true)]
+        public float Temperature { get; set; }
+
+        /// <summary>
+        /// Gets or Sets PreviewLimit
+        /// </summary>
+        [DataMember(Name = "previewLimit", IsRequired = true, EmitDefaultValue = true)]
+        public int PreviewLimit { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -84,6 +100,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ExternalServiceId: ").Append(ExternalServiceId).Append("\n");
             sb.Append("  TaskKey: ").Append(TaskKey).Append("\n");
             sb.Append("  SectionId: ").Append(SectionId).Append("\n");
+            sb.Append("  Temperature: ").Append(Temperature).Append("\n");
+            sb.Append("  PreviewLimit: ").Append(PreviewLimit).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -108,6 +126,30 @@ namespace TestIT.ApiClient.Model
             if (this.TaskKey != null && this.TaskKey.Length < 1)
             {
                 yield return new ValidationResult("Invalid value for TaskKey, length must be greater than 1.", new [] { "TaskKey" });
+            }
+
+            // Temperature (float) maximum
+            if (this.Temperature > (float)1)
+            {
+                yield return new ValidationResult("Invalid value for Temperature, must be a value less than or equal to 1.", new [] { "Temperature" });
+            }
+
+            // Temperature (float) minimum
+            if (this.Temperature < (float)0)
+            {
+                yield return new ValidationResult("Invalid value for Temperature, must be a value greater than or equal to 0.", new [] { "Temperature" });
+            }
+
+            // PreviewLimit (int) maximum
+            if (this.PreviewLimit > (int)30)
+            {
+                yield return new ValidationResult("Invalid value for PreviewLimit, must be a value less than or equal to 30.", new [] { "PreviewLimit" });
+            }
+
+            // PreviewLimit (int) minimum
+            if (this.PreviewLimit < (int)1)
+            {
+                yield return new ValidationResult("Invalid value for PreviewLimit, must be a value greater than or equal to 1.", new [] { "PreviewLimit" });
             }
 
             yield break;

@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="field">field (required).</param>
         /// <param name="displayField">displayField.</param>
-        public TestPlanTestPointsGroupApiModel(string field = default(string), string displayField = default(string))
+        public TestPlanTestPointsGroupApiModel(string field = default, string displayField = default)
         {
             // to ensure "field" is required (not null)
             if (field == null)

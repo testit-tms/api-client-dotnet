@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="sharedStepVersionId">sharedStepVersionId.</param>
         /// <param name="sharedStepResults">sharedStepResults.</param>
         /// <param name="comment">comment.</param>
-        public StepResultApiModel(Guid stepId = default(Guid), string outcome = default(string), Guid? sharedStepVersionId = default(Guid?), List<SharedStepResultApiModel> sharedStepResults = default(List<SharedStepResultApiModel>), StepCommentApiModel comment = default(StepCommentApiModel))
+        public StepResultApiModel(Guid stepId = default, string outcome = default, Guid? sharedStepVersionId = default, List<SharedStepResultApiModel> sharedStepResults = default, StepCommentApiModel comment = default)
         {
             this.StepId = stepId;
             // to ensure "outcome" is required (not null)

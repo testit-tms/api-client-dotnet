@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>The category of the external service</value>
         [DataMember(Name = "category", IsRequired = true, EmitDefaultValue = true)]
-        public ExternalServiceCategoryApiResult Category { get; set; }
+        public ApiExternalServiceCategory Category { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ExternalServiceMetadataApiResult" /> class.
         /// </summary>
@@ -51,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="code">The code of the external service (required).</param>
         /// <param name="iconUrl">The icon URL of the external service (required).</param>
         /// <param name="category">The category of the external service (required).</param>
-        public ExternalServiceMetadataApiResult(string name = default(string), string code = default(string), string iconUrl = default(string), ExternalServiceCategoryApiResult category = default(ExternalServiceCategoryApiResult))
+        public ExternalServiceMetadataApiResult(string name = default, string code = default, string iconUrl = default, ApiExternalServiceCategory category = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

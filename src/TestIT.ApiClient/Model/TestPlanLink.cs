@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">createdById.</param>
         /// <param name="comment">comment.</param>
         /// <param name="info">info.</param>
-        public TestPlanLink(LinkModel bugLink = default(LinkModel), long? workItemGlobalId = default(long?), string workItemName = default(string), string configurationName = default(string), Guid? createdById = default(Guid?), string comment = default(string), ExternalLinkModel info = default(ExternalLinkModel))
+        public TestPlanLink(LinkModel bugLink = default, long? workItemGlobalId = default, string workItemName = default, string configurationName = default, Guid? createdById = default, string comment = default, ExternalLinkModel info = default)
         {
             this.BugLink = bugLink;
             this.WorkItemGlobalId = workItemGlobalId;

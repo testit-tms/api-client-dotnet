@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="newAttributeName">newAttributeName (required).</param>
         /// <param name="oldValue">oldValue (required).</param>
         /// <param name="newValue">newValue (required).</param>
-        public WorkItemChangedAttributeViewModel(string type = default(string), string oldAttributeName = default(string), string newAttributeName = default(string), Object oldValue = default(Object), Object newValue = default(Object))
+        public WorkItemChangedAttributeViewModel(string type = default, string oldAttributeName = default, string newAttributeName = default, Object oldValue = default, Object newValue = default)
         {
             // to ensure "type" is required (not null)
             if (type == null)

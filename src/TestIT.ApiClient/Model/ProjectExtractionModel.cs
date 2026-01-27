@@ -36,7 +36,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ProjectExtractionModel" /> class.
         /// </summary>
         /// <param name="ids">ids.</param>
-        public ProjectExtractionModel(GuidExtractionModel ids = default(GuidExtractionModel))
+        public ProjectExtractionModel(GuidExtractionModel ids = default)
         {
             this.Ids = ids;
         }

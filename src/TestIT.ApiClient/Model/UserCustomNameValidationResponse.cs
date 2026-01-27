@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="UserCustomNameValidationResponse" /> class.
         /// </summary>
         /// <param name="exists">exists (required).</param>
-        public UserCustomNameValidationResponse(bool exists = default(bool))
+        public UserCustomNameValidationResponse(bool exists = default)
         {
             this.Exists = exists;
         }

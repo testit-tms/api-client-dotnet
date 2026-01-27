@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="globalId">globalId (required).</param>
         /// <param name="name">name (required).</param>
         /// <param name="steps">steps (required).</param>
-        public SharedStepChangeViewModel(Guid id = default(Guid), long globalId = default(long), string name = default(string), List<WorkItemStepChangeViewModel> steps = default(List<WorkItemStepChangeViewModel>))
+        public SharedStepChangeViewModel(Guid id = default, long globalId = default, string name = default, List<WorkItemStepChangeViewModel> steps = default)
         {
             this.Id = id;
             this.GlobalId = globalId;

@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="outcome">outcome (required).</param>
         /// <param name="status">status (required).</param>
         /// <param name="runNumber">runNumber (required).</param>
-        public RerunTestResultApiResult(Guid id = default(Guid), string outcome = default(string), TestStatusApiResult status = default(TestStatusApiResult), int runNumber = default(int))
+        public RerunTestResultApiResult(Guid id = default, string outcome = default, TestStatusApiResult status = default, int runNumber = default)
         {
             this.Id = id;
             // to ensure "outcome" is required (not null)

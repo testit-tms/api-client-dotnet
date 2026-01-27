@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="skip">skip (required).</param>
         /// <param name="take">take (required).</param>
-        public Page(int skip = default(int), int take = default(int))
+        public Page(int skip = default, int take = default)
         {
             this.Skip = skip;
             this.Take = take;

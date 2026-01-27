@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="title">Step name. (required).</param>
         /// <param name="description">Detailed step description. It appears when the step is unfolded..</param>
         /// <param name="steps">Includes a nested step inside another step. The maximum nesting level is 15..</param>
-        public AutoTestStepModel(string title = default(string), string description = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>))
+        public AutoTestStepModel(string title = default, string description = default, List<AutoTestStepModel> steps = default)
         {
             // to ensure "title" is required (not null)
             if (title == null)

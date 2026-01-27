@@ -33,7 +33,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="autoTestBulkDeleteApiModel"> (optional)</param>
         /// <returns>AutoTestBulkDeleteApiResult</returns>
-        AutoTestBulkDeleteApiResult ApiV2AutoTestsDelete(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default(AutoTestBulkDeleteApiModel));
+        AutoTestBulkDeleteApiResult ApiV2AutoTestsDelete(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default);
 
         /// <summary>
         /// Delete autotests
@@ -44,12 +44,12 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="autoTestBulkDeleteApiModel"> (optional)</param>
         /// <returns>ApiResponse of AutoTestBulkDeleteApiResult</returns>
-        ApiResponse<AutoTestBulkDeleteApiResult> ApiV2AutoTestsDeleteWithHttpInfo(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default(AutoTestBulkDeleteApiModel));
+        ApiResponse<AutoTestBulkDeleteApiResult> ApiV2AutoTestsDeleteWithHttpInfo(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default);
         /// <summary>
         /// Set \&quot;Flaky\&quot; status for multiple autotests
         /// </summary>
         /// <remarks>
-        /// User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// User permissions for project: - Read only - Execute - Write - Full control
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -59,13 +59,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="autoTestFlakyBulkApiModel"> (optional)</param>
         /// <returns></returns>
-        void ApiV2AutoTestsFlakyBulkPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default(AutoTestFlakyBulkApiModel));
+        void ApiV2AutoTestsFlakyBulkPost(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default);
 
         /// <summary>
         /// Set \&quot;Flaky\&quot; status for multiple autotests
         /// </summary>
         /// <remarks>
-        /// User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// User permissions for project: - Read only - Execute - Write - Full control
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -75,7 +75,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="autoTestFlakyBulkApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2AutoTestsFlakyBulkPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default(AutoTestFlakyBulkApiModel));
+        ApiResponse<Object> ApiV2AutoTestsFlakyBulkPostWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default);
         /// <summary>
         /// Patch auto test
         /// </summary>
@@ -86,7 +86,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Global Id of auto test</param>
         /// <param name="operation"> (optional)</param>
         /// <returns></returns>
-        void ApiV2AutoTestsIdPatch(Guid id, List<Operation> operation = default(List<Operation>));
+        void ApiV2AutoTestsIdPatch(Guid id, List<Operation> operation = default);
 
         /// <summary>
         /// Patch auto test
@@ -98,12 +98,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Global Id of auto test</param>
         /// <param name="operation"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2AutoTestsIdPatchWithHttpInfo(Guid id, List<Operation> operation = default(List<Operation>));
+        ApiResponse<Object> ApiV2AutoTestsIdPatchWithHttpInfo(Guid id, List<Operation> operation = default);
         /// <summary>
         /// Get test results history for autotest
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets getTestResultHistoryReportQuery (listed in the example)    User runs method execution    System search for test results using filters set by user in getTestResultHistoryReportQuery and id    System returns the enumeration of test results
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets getTestResultHistoryReportQuery (listed in the example)  User runs method execution  System search for test results using filters set by user in getTestResultHistoryReportQuery and id  System returns the enumeration of test results
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest identifier</param>
@@ -114,13 +114,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
         /// <returns>List&lt;AutoTestResultHistoryApiResult&gt;</returns>
-        List<AutoTestResultHistoryApiResult> ApiV2AutoTestsIdTestResultsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel));
+        List<AutoTestResultHistoryApiResult> ApiV2AutoTestsIdTestResultsSearchPost(string id, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default);
 
         /// <summary>
         /// Get test results history for autotest
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets getTestResultHistoryReportQuery (listed in the example)    User runs method execution    System search for test results using filters set by user in getTestResultHistoryReportQuery and id    System returns the enumeration of test results
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets getTestResultHistoryReportQuery (listed in the example)  User runs method execution  System search for test results using filters set by user in getTestResultHistoryReportQuery and id  System returns the enumeration of test results
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest identifier</param>
@@ -131,12 +131,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestResultHistoryApiResult&gt;</returns>
-        ApiResponse<List<AutoTestResultHistoryApiResult>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel));
+        ApiResponse<List<AutoTestResultHistoryApiResult>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(string id, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default);
         /// <summary>
         /// Get identifiers of changed linked work items
         /// </summary>
         /// <remarks>
-        /// User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// User permissions for project: - Read only - Execute - Write - Full control
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -147,7 +147,7 @@ namespace TestIT.ApiClient.Api
         /// Get identifiers of changed linked work items
         /// </summary>
         /// <remarks>
-        /// User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// User permissions for project: - Read only - Execute - Write - Full control
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -157,7 +157,7 @@ namespace TestIT.ApiClient.Api
         /// Approve changes to work items linked to autotest
         /// </summary>
         /// <remarks>
-        /// User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// User permissions for project: - Read only - Execute - Write - Full control
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -169,7 +169,7 @@ namespace TestIT.ApiClient.Api
         /// Approve changes to work items linked to autotest
         /// </summary>
         /// <remarks>
-        /// User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// User permissions for project: - Read only - Execute - Write - Full control
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -187,7 +187,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="autoTestSearchApiModel"> (optional)</param>
         /// <returns>List&lt;AutoTestApiResult&gt;</returns>
-        List<AutoTestApiResult> ApiV2AutoTestsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestSearchApiModel autoTestSearchApiModel = default(AutoTestSearchApiModel));
+        List<AutoTestApiResult> ApiV2AutoTestsSearchPost(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestSearchApiModel autoTestSearchApiModel = default);
 
         /// <summary>
         /// Search for autotests
@@ -203,54 +203,54 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="autoTestSearchApiModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestApiResult&gt;</returns>
-        ApiResponse<List<AutoTestApiResult>> ApiV2AutoTestsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestSearchApiModel autoTestSearchApiModel = default(AutoTestSearchApiModel));
+        ApiResponse<List<AutoTestApiResult>> ApiV2AutoTestsSearchPostWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestSearchApiModel autoTestSearchApiModel = default);
         /// <summary>
         /// Create autotest
         /// </summary>
         /// <remarks>
-        ///   This method creates a new autotest.    To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.    Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
+        ///  This method creates a new autotest.  To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
-        /// <returns>AutoTestModel</returns>
-        AutoTestModel CreateAutoTest(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel));
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
+        /// <returns>AutoTestApiResult</returns>
+        AutoTestApiResult CreateAutoTest(AutoTestCreateApiModel autoTestCreateApiModel = default);
 
         /// <summary>
         /// Create autotest
         /// </summary>
         /// <remarks>
-        ///   This method creates a new autotest.    To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.    Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
+        ///  This method creates a new autotest.  To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
-        /// <returns>ApiResponse of AutoTestModel</returns>
-        ApiResponse<AutoTestModel> CreateAutoTestWithHttpInfo(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel));
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
+        /// <returns>ApiResponse of AutoTestApiResult</returns>
+        ApiResponse<AutoTestApiResult> CreateAutoTestWithHttpInfo(AutoTestCreateApiModel autoTestCreateApiModel = default);
         /// <summary>
         /// Create multiple autotests
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest parameters (listed in the example) and runs method execution    System creates autotest    [Optional] If steps enumeration is set, system creates step items and relates them to autotest    [Optional] If setup enumeration is set, system creates setup items and relates them to autotest    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest    [Optional] If label enumeration is set, system creates labels and relates them to autotest    [Optional] If link enumeration is set, system creates links and relates them to autotest    System returns autotest model (example listed in response parameters)
+        ///  Use case  User sets autotest parameters (listed in the example) and runs method execution  System creates autotest  [Optional] If steps enumeration is set, system creates step items and relates them to autotest  [Optional] If setup enumeration is set, system creates setup items and relates them to autotest  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest  [Optional] If label enumeration is set, system creates labels and relates them to autotest  [Optional] If link enumeration is set, system creates links and relates them to autotest  System returns autotest model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
-        /// <returns>List&lt;AutoTestModel&gt;</returns>
-        List<AutoTestModel> CreateMultiple(List<AutoTestPostModel> autoTestPostModel = default(List<AutoTestPostModel>));
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
+        /// <returns>List&lt;AutoTestApiResult&gt;</returns>
+        List<AutoTestApiResult> CreateMultiple(List<AutoTestCreateApiModel> autoTestCreateApiModel = default);
 
         /// <summary>
         /// Create multiple autotests
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest parameters (listed in the example) and runs method execution    System creates autotest    [Optional] If steps enumeration is set, system creates step items and relates them to autotest    [Optional] If setup enumeration is set, system creates setup items and relates them to autotest    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest    [Optional] If label enumeration is set, system creates labels and relates them to autotest    [Optional] If link enumeration is set, system creates links and relates them to autotest    System returns autotest model (example listed in response parameters)
+        ///  Use case  User sets autotest parameters (listed in the example) and runs method execution  System creates autotest  [Optional] If steps enumeration is set, system creates step items and relates them to autotest  [Optional] If setup enumeration is set, system creates setup items and relates them to autotest  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest  [Optional] If label enumeration is set, system creates labels and relates them to autotest  [Optional] If link enumeration is set, system creates links and relates them to autotest  System returns autotest model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
-        ApiResponse<List<AutoTestModel>> CreateMultipleWithHttpInfo(List<AutoTestPostModel> autoTestPostModel = default(List<AutoTestPostModel>));
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;AutoTestApiResult&gt;</returns>
+        ApiResponse<List<AutoTestApiResult>> CreateMultipleWithHttpInfo(List<AutoTestCreateApiModel> autoTestCreateApiModel = default);
         /// <summary>
         /// Delete autotest
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier and runs method execution    System finds the autotest by the identifier    System deletes autotest and returns no content response
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier and runs method execution  System finds the autotest by the identifier  System deletes autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
@@ -261,7 +261,7 @@ namespace TestIT.ApiClient.Api
         /// Delete autotest
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier and runs method execution    System finds the autotest by the identifier    System deletes autotest and returns no content response
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier and runs method execution  System finds the autotest by the identifier  System deletes autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
@@ -271,25 +271,25 @@ namespace TestIT.ApiClient.Api
         /// Unlink autotest from work item
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    [Optional] User sets workitem internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it              from autotest.    [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.    System returns no content response
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  [Optional] User sets workitem internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it             from autotest.  [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemId">Work item internal (UUID) or global (integer) identifier (optional)</param>
         /// <returns></returns>
-        void DeleteAutoTestLinkFromWorkItem(string id, string workItemId = default(string));
+        void DeleteAutoTestLinkFromWorkItem(string id, string workItemId = default);
 
         /// <summary>
         /// Unlink autotest from work item
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    [Optional] User sets workitem internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it              from autotest.    [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.    System returns no content response
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  [Optional] User sets workitem internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it             from autotest.  [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemId">Work item internal (UUID) or global (integer) identifier (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> DeleteAutoTestLinkFromWorkItemWithHttpInfo(string id, string workItemId = default(string));
+        ApiResponse<Object> DeleteAutoTestLinkFromWorkItemWithHttpInfo(string id, string workItemId = default);
         /// <summary>
         /// 
         /// </summary>
@@ -322,7 +322,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;AutoTestModel&gt;</returns>
         [Obsolete]
-        List<AutoTestModel> GetAllAutoTests(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string varNamespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        List<AutoTestModel> GetAllAutoTests(Guid? projectId = default, string externalId = default, long? globalId = default, string varNamespace = default, bool? isNamespaceNull = default, bool? includeEmptyNamespaces = default, string className = default, bool? isClassnameNull = default, bool? includeEmptyClassNames = default, bool? isDeleted = default, bool? deleted = default, List<string> labels = default, int? stabilityMinimal = default, int? minStability = default, int? stabilityMaximal = default, int? maxStability = default, bool? isFlaky = default, bool? flaky = default, bool? includeSteps = default, bool? includeLabels = default, string externalKey = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
 
         /// <summary>
         /// 
@@ -359,54 +359,54 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
         [Obsolete]
-        ApiResponse<List<AutoTestModel>> GetAllAutoTestsWithHttpInfo(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string varNamespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        ApiResponse<List<AutoTestModel>> GetAllAutoTestsWithHttpInfo(Guid? projectId = default, string externalId = default, long? globalId = default, string varNamespace = default, bool? isNamespaceNull = default, bool? includeEmptyNamespaces = default, string className = default, bool? isClassnameNull = default, bool? includeEmptyClassNames = default, bool? isDeleted = default, bool? deleted = default, List<string> labels = default, int? stabilityMinimal = default, int? minStability = default, int? stabilityMaximal = default, int? maxStability = default, bool? isFlaky = default, bool? flaky = default, bool? includeSteps = default, bool? includeLabels = default, string externalKey = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
         /// <summary>
         /// Get average autotest duration
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System calculates pass average duration and fail average duration of autotest from all related test results    System returns pass average duration and fail average duration for autotest
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System calculates pass average duration and fail average duration of autotest from all related test results  System returns pass average duration and fail average duration for autotest
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <returns>AutoTestAverageDurationModel</returns>
-        AutoTestAverageDurationModel GetAutoTestAverageDuration(string id);
+        /// <returns>AutoTestAverageDurationApiResult</returns>
+        AutoTestAverageDurationApiResult GetAutoTestAverageDuration(string id);
 
         /// <summary>
         /// Get average autotest duration
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System calculates pass average duration and fail average duration of autotest from all related test results    System returns pass average duration and fail average duration for autotest
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System calculates pass average duration and fail average duration of autotest from all related test results  System returns pass average duration and fail average duration for autotest
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <returns>ApiResponse of AutoTestAverageDurationModel</returns>
-        ApiResponse<AutoTestAverageDurationModel> GetAutoTestAverageDurationWithHttpInfo(string id);
+        /// <returns>ApiResponse of AutoTestAverageDurationApiResult</returns>
+        ApiResponse<AutoTestAverageDurationApiResult> GetAutoTestAverageDurationWithHttpInfo(string id);
         /// <summary>
         /// Get autotest by internal or global ID
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal or global identifier and runs method execution    System returns autotest, which internal or global identifier equals the identifier value set in the previous action
+        ///  Use case  User sets autotest internal or global identifier and runs method execution  System returns autotest, which internal or global identifier equals the identifier value set in the previous action
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <returns>AutoTestModel</returns>
-        AutoTestModel GetAutoTestById(string id);
+        /// <returns>AutoTestApiResult</returns>
+        AutoTestApiResult GetAutoTestById(string id);
 
         /// <summary>
         /// Get autotest by internal or global ID
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal or global identifier and runs method execution    System returns autotest, which internal or global identifier equals the identifier value set in the previous action
+        ///  Use case  User sets autotest internal or global identifier and runs method execution  System returns autotest, which internal or global identifier equals the identifier value set in the previous action
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <returns>ApiResponse of AutoTestModel</returns>
-        ApiResponse<AutoTestModel> GetAutoTestByIdWithHttpInfo(string id);
+        /// <returns>ApiResponse of AutoTestApiResult</returns>
+        ApiResponse<AutoTestApiResult> GetAutoTestByIdWithHttpInfo(string id);
         /// <summary>
         /// Get autotest chronology
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search all test results related to autotest (with default limit equal 100)    System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending    System returns test result chronology for autotest
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search all test results related to autotest (with default limit equal 100)  System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending  System returns test result chronology for autotest
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
@@ -418,7 +418,7 @@ namespace TestIT.ApiClient.Api
         /// Get autotest chronology
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search all test results related to autotest (with default limit equal 100)    System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending    System returns test result chronology for autotest
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search all test results related to autotest (with default limit equal 100)  System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending  System returns test result chronology for autotest
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
@@ -429,7 +429,7 @@ namespace TestIT.ApiClient.Api
         /// Get completed tests runs for autotests
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search for all test runs related to the autotest    System returns the enumeration of test runs
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search for all test runs related to the autotest  System returns the enumeration of test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
@@ -440,7 +440,7 @@ namespace TestIT.ApiClient.Api
         /// Get completed tests runs for autotests
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search for all test runs related to the autotest    System returns the enumeration of test runs
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search for all test runs related to the autotest  System returns the enumeration of test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
@@ -450,92 +450,92 @@ namespace TestIT.ApiClient.Api
         /// Get work items linked to autotest
         /// </summary>
         /// <remarks>
-        ///   This method links an autotest to a test case or a checklist.              A manual test case with a linked automated work item is marked in the test management system as an autotest.              You can run it from graphical user interface (GUI). To do that:    1. Open the project in GUI.                2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.                3. Select the autotest(s) you want to run using checkboxes.                4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
+        ///  This method links an autotest to a test case or a checklist.             A manual test case with a linked automated work item is marked in the test management system as an autotest.             You can run it from graphical user interface (GUI). To do that:  1. Open the project in GUI.              2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.              3. Select the autotest(s) you want to run using checkboxes.              4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID.</param>
+        /// <param name="id">Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID.</param>
         /// <param name="isDeleted">Specifies that a test is deleted or still relevant. (optional)</param>
         /// <param name="isWorkItemDeleted">OBSOLETE: Use &#x60;isDeleted&#x60; instead (optional, default to false)</param>
-        /// <returns>List&lt;WorkItemIdentifierModel&gt;</returns>
-        List<WorkItemIdentifierModel> GetWorkItemsLinkedToAutoTest(string id, bool? isDeleted = default(bool?), bool? isWorkItemDeleted = default(bool?));
+        /// <returns>List&lt;AutoTestWorkItemIdentifierApiResult&gt;</returns>
+        List<AutoTestWorkItemIdentifierApiResult> GetWorkItemsLinkedToAutoTest(string id, bool? isDeleted = default, bool? isWorkItemDeleted = default);
 
         /// <summary>
         /// Get work items linked to autotest
         /// </summary>
         /// <remarks>
-        ///   This method links an autotest to a test case or a checklist.              A manual test case with a linked automated work item is marked in the test management system as an autotest.              You can run it from graphical user interface (GUI). To do that:    1. Open the project in GUI.                2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.                3. Select the autotest(s) you want to run using checkboxes.                4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
+        ///  This method links an autotest to a test case or a checklist.             A manual test case with a linked automated work item is marked in the test management system as an autotest.             You can run it from graphical user interface (GUI). To do that:  1. Open the project in GUI.              2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.              3. Select the autotest(s) you want to run using checkboxes.              4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID.</param>
+        /// <param name="id">Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID.</param>
         /// <param name="isDeleted">Specifies that a test is deleted or still relevant. (optional)</param>
         /// <param name="isWorkItemDeleted">OBSOLETE: Use &#x60;isDeleted&#x60; instead (optional, default to false)</param>
-        /// <returns>ApiResponse of List&lt;WorkItemIdentifierModel&gt;</returns>
-        ApiResponse<List<WorkItemIdentifierModel>> GetWorkItemsLinkedToAutoTestWithHttpInfo(string id, bool? isDeleted = default(bool?), bool? isWorkItemDeleted = default(bool?));
+        /// <returns>ApiResponse of List&lt;AutoTestWorkItemIdentifierApiResult&gt;</returns>
+        ApiResponse<List<AutoTestWorkItemIdentifierApiResult>> GetWorkItemsLinkedToAutoTestWithHttpInfo(string id, bool? isDeleted = default, bool? isWorkItemDeleted = default);
         /// <summary>
         /// Link autotest with work items
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets work item internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    System finds the work item by the work item identifier    System relates the work item with the autotest and returns no content response
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets work item internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  System finds the work item by the work item identifier  System relates the work item with the autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemIdApiModel"> (optional)</param>
         /// <returns></returns>
-        void LinkAutoTestToWorkItem(string id, WorkItemIdApiModel workItemIdApiModel = default(WorkItemIdApiModel));
+        void LinkAutoTestToWorkItem(string id, WorkItemIdApiModel workItemIdApiModel = default);
 
         /// <summary>
         /// Link autotest with work items
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets work item internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    System finds the work item by the work item identifier    System relates the work item with the autotest and returns no content response
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets work item internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  System finds the work item by the work item identifier  System relates the work item with the autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemIdApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> LinkAutoTestToWorkItemWithHttpInfo(string id, WorkItemIdApiModel workItemIdApiModel = default(WorkItemIdApiModel));
+        ApiResponse<Object> LinkAutoTestToWorkItemWithHttpInfo(string id, WorkItemIdApiModel workItemIdApiModel = default);
         /// <summary>
         /// Update autotest
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        ///  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <returns></returns>
-        void UpdateAutoTest(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel));
+        void UpdateAutoTest(AutoTestUpdateApiModel autoTestUpdateApiModel = default);
 
         /// <summary>
         /// Update autotest
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        ///  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateAutoTestWithHttpInfo(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel));
+        ApiResponse<Object> UpdateAutoTestWithHttpInfo(AutoTestUpdateApiModel autoTestUpdateApiModel = default);
         /// <summary>
         /// Update multiple autotests
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        ///  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <returns></returns>
-        void UpdateMultiple(List<AutoTestPutModel> autoTestPutModel = default(List<AutoTestPutModel>));
+        void UpdateMultiple(List<AutoTestUpdateApiModel> autoTestUpdateApiModel = default);
 
         /// <summary>
         /// Update multiple autotests
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        ///  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateMultipleWithHttpInfo(List<AutoTestPutModel> autoTestPutModel = default(List<AutoTestPutModel>));
+        ApiResponse<Object> UpdateMultipleWithHttpInfo(List<AutoTestUpdateApiModel> autoTestUpdateApiModel = default);
         #endregion Synchronous Operations
     }
 
@@ -555,7 +555,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestBulkDeleteApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AutoTestBulkDeleteApiResult</returns>
-        System.Threading.Tasks.Task<AutoTestBulkDeleteApiResult> ApiV2AutoTestsDeleteAsync(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default(AutoTestBulkDeleteApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<AutoTestBulkDeleteApiResult> ApiV2AutoTestsDeleteAsync(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete autotests
@@ -567,12 +567,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestBulkDeleteApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AutoTestBulkDeleteApiResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AutoTestBulkDeleteApiResult>> ApiV2AutoTestsDeleteWithHttpInfoAsync(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default(AutoTestBulkDeleteApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<AutoTestBulkDeleteApiResult>> ApiV2AutoTestsDeleteWithHttpInfoAsync(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Set \&quot;Flaky\&quot; status for multiple autotests
         /// </summary>
         /// <remarks>
-        /// User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// User permissions for project: - Read only - Execute - Write - Full control
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -583,13 +583,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestFlakyBulkApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2AutoTestsFlakyBulkPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default(AutoTestFlakyBulkApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2AutoTestsFlakyBulkPostAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Set \&quot;Flaky\&quot; status for multiple autotests
         /// </summary>
         /// <remarks>
-        /// User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// User permissions for project: - Read only - Execute - Write - Full control
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -600,7 +600,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestFlakyBulkApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AutoTestsFlakyBulkPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default(AutoTestFlakyBulkApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AutoTestsFlakyBulkPostWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Patch auto test
         /// </summary>
@@ -612,7 +612,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2AutoTestsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2AutoTestsIdPatchAsync(Guid id, List<Operation> operation = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Patch auto test
@@ -625,12 +625,12 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AutoTestsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AutoTestsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get test results history for autotest
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets getTestResultHistoryReportQuery (listed in the example)    User runs method execution    System search for test results using filters set by user in getTestResultHistoryReportQuery and id    System returns the enumeration of test results
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets getTestResultHistoryReportQuery (listed in the example)  User runs method execution  System search for test results using filters set by user in getTestResultHistoryReportQuery and id  System returns the enumeration of test results
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest identifier</param>
@@ -642,13 +642,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestResultHistoryApiResult&gt;</returns>
-        System.Threading.Tasks.Task<List<AutoTestResultHistoryApiResult>> ApiV2AutoTestsIdTestResultsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<AutoTestResultHistoryApiResult>> ApiV2AutoTestsIdTestResultsSearchPostAsync(string id, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get test results history for autotest
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets getTestResultHistoryReportQuery (listed in the example)    User runs method execution    System search for test results using filters set by user in getTestResultHistoryReportQuery and id    System returns the enumeration of test results
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets getTestResultHistoryReportQuery (listed in the example)  User runs method execution  System search for test results using filters set by user in getTestResultHistoryReportQuery and id  System returns the enumeration of test results
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest identifier</param>
@@ -660,55 +660,55 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestResultHistoryApiResult&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<AutoTestResultHistoryApiResult>>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<AutoTestResultHistoryApiResult>>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(string id, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get identifiers of changed linked work items
         /// </summary>
         /// <remarks>
-        /// User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// User permissions for project: - Read only - Execute - Write - Full control
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        System.Threading.Tasks.Task<List<Guid>> ApiV2AutoTestsIdWorkItemsChangedIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<Guid>> ApiV2AutoTestsIdWorkItemsChangedIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get identifiers of changed linked work items
         /// </summary>
         /// <remarks>
-        /// User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// User permissions for project: - Read only - Execute - Write - Full control
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2AutoTestsIdWorkItemsChangedIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<Guid>>> ApiV2AutoTestsIdWorkItemsChangedIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Approve changes to work items linked to autotest
         /// </summary>
         /// <remarks>
-        /// User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// User permissions for project: - Read only - Execute - Write - Full control
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="workItemId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePostAsync(Guid id, Guid workItemId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePostAsync(Guid id, Guid workItemId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Approve changes to work items linked to autotest
         /// </summary>
         /// <remarks>
-        /// User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// User permissions for project: - Read only - Execute - Write - Full control
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="workItemId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePostWithHttpInfoAsync(Guid id, Guid workItemId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePostWithHttpInfoAsync(Guid id, Guid workItemId, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search for autotests
         /// </summary>
@@ -724,7 +724,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestSearchApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestApiResult&gt;</returns>
-        System.Threading.Tasks.Task<List<AutoTestApiResult>> ApiV2AutoTestsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestSearchApiModel autoTestSearchApiModel = default(AutoTestSearchApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<AutoTestApiResult>> ApiV2AutoTestsSearchPostAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestSearchApiModel autoTestSearchApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Search for autotests
@@ -741,101 +741,101 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestSearchApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestApiResult&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<AutoTestApiResult>>> ApiV2AutoTestsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestSearchApiModel autoTestSearchApiModel = default(AutoTestSearchApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<AutoTestApiResult>>> ApiV2AutoTestsSearchPostWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestSearchApiModel autoTestSearchApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create autotest
         /// </summary>
         /// <remarks>
-        ///   This method creates a new autotest.    To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.    Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
+        ///  This method creates a new autotest.  To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of AutoTestModel</returns>
-        System.Threading.Tasks.Task<AutoTestModel> CreateAutoTestAsync(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of AutoTestApiResult</returns>
+        System.Threading.Tasks.Task<AutoTestApiResult> CreateAutoTestAsync(AutoTestCreateApiModel autoTestCreateApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create autotest
         /// </summary>
         /// <remarks>
-        ///   This method creates a new autotest.    To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.    Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
+        ///  This method creates a new autotest.  To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (AutoTestModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AutoTestModel>> CreateAutoTestWithHttpInfoAsync(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (AutoTestApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AutoTestApiResult>> CreateAutoTestWithHttpInfoAsync(AutoTestCreateApiModel autoTestCreateApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create multiple autotests
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest parameters (listed in the example) and runs method execution    System creates autotest    [Optional] If steps enumeration is set, system creates step items and relates them to autotest    [Optional] If setup enumeration is set, system creates setup items and relates them to autotest    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest    [Optional] If label enumeration is set, system creates labels and relates them to autotest    [Optional] If link enumeration is set, system creates links and relates them to autotest    System returns autotest model (example listed in response parameters)
+        ///  Use case  User sets autotest parameters (listed in the example) and runs method execution  System creates autotest  [Optional] If steps enumeration is set, system creates step items and relates them to autotest  [Optional] If setup enumeration is set, system creates setup items and relates them to autotest  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest  [Optional] If label enumeration is set, system creates labels and relates them to autotest  [Optional] If link enumeration is set, system creates links and relates them to autotest  System returns autotest model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
-        System.Threading.Tasks.Task<List<AutoTestModel>> CreateMultipleAsync(List<AutoTestPostModel> autoTestPostModel = default(List<AutoTestPostModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;AutoTestApiResult&gt;</returns>
+        System.Threading.Tasks.Task<List<AutoTestApiResult>> CreateMultipleAsync(List<AutoTestCreateApiModel> autoTestCreateApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Create multiple autotests
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest parameters (listed in the example) and runs method execution    System creates autotest    [Optional] If steps enumeration is set, system creates step items and relates them to autotest    [Optional] If setup enumeration is set, system creates setup items and relates them to autotest    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest    [Optional] If label enumeration is set, system creates labels and relates them to autotest    [Optional] If link enumeration is set, system creates links and relates them to autotest    System returns autotest model (example listed in response parameters)
+        ///  Use case  User sets autotest parameters (listed in the example) and runs method execution  System creates autotest  [Optional] If steps enumeration is set, system creates step items and relates them to autotest  [Optional] If setup enumeration is set, system creates setup items and relates them to autotest  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest  [Optional] If label enumeration is set, system creates labels and relates them to autotest  [Optional] If link enumeration is set, system creates links and relates them to autotest  System returns autotest model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> CreateMultipleWithHttpInfoAsync(List<AutoTestPostModel> autoTestPostModel = default(List<AutoTestPostModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;AutoTestApiResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<AutoTestApiResult>>> CreateMultipleWithHttpInfoAsync(List<AutoTestCreateApiModel> autoTestCreateApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete autotest
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier and runs method execution    System finds the autotest by the identifier    System deletes autotest and returns no content response
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier and runs method execution  System finds the autotest by the identifier  System deletes autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteAutoTestAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteAutoTestAsync(string id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete autotest
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier and runs method execution    System finds the autotest by the identifier    System deletes autotest and returns no content response
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier and runs method execution  System finds the autotest by the identifier  System deletes autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAutoTestWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAutoTestWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Unlink autotest from work item
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    [Optional] User sets workitem internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it              from autotest.    [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.    System returns no content response
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  [Optional] User sets workitem internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it             from autotest.  [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemId">Work item internal (UUID) or global (integer) identifier (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task DeleteAutoTestLinkFromWorkItemAsync(string id, string workItemId = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task DeleteAutoTestLinkFromWorkItemAsync(string id, string workItemId = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Unlink autotest from work item
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    [Optional] User sets workitem internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it              from autotest.    [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.    System returns no content response
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  [Optional] User sets workitem internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it             from autotest.  [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemId">Work item internal (UUID) or global (integer) identifier (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAutoTestLinkFromWorkItemWithHttpInfoAsync(string id, string workItemId = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAutoTestLinkFromWorkItemWithHttpInfoAsync(string id, string workItemId = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -872,7 +872,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<List<AutoTestModel>> GetAllAutoTestsAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string varNamespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<AutoTestModel>> GetAllAutoTestsAsync(Guid? projectId = default, string externalId = default, long? globalId = default, string varNamespace = default, bool? isNamespaceNull = default, bool? includeEmptyNamespaces = default, string className = default, bool? isClassnameNull = default, bool? includeEmptyClassNames = default, bool? isDeleted = default, bool? deleted = default, List<string> labels = default, int? stabilityMinimal = default, int? minStability = default, int? stabilityMaximal = default, int? maxStability = default, bool? isFlaky = default, bool? flaky = default, bool? includeSteps = default, bool? includeLabels = default, string externalKey = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -910,199 +910,199 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> GetAllAutoTestsWithHttpInfoAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string varNamespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> GetAllAutoTestsWithHttpInfoAsync(Guid? projectId = default, string externalId = default, long? globalId = default, string varNamespace = default, bool? isNamespaceNull = default, bool? includeEmptyNamespaces = default, string className = default, bool? isClassnameNull = default, bool? includeEmptyClassNames = default, bool? isDeleted = default, bool? deleted = default, List<string> labels = default, int? stabilityMinimal = default, int? minStability = default, int? stabilityMaximal = default, int? maxStability = default, bool? isFlaky = default, bool? flaky = default, bool? includeSteps = default, bool? includeLabels = default, string externalKey = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get average autotest duration
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System calculates pass average duration and fail average duration of autotest from all related test results    System returns pass average duration and fail average duration for autotest
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System calculates pass average duration and fail average duration of autotest from all related test results  System returns pass average duration and fail average duration for autotest
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of AutoTestAverageDurationModel</returns>
-        System.Threading.Tasks.Task<AutoTestAverageDurationModel> GetAutoTestAverageDurationAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of AutoTestAverageDurationApiResult</returns>
+        System.Threading.Tasks.Task<AutoTestAverageDurationApiResult> GetAutoTestAverageDurationAsync(string id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get average autotest duration
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System calculates pass average duration and fail average duration of autotest from all related test results    System returns pass average duration and fail average duration for autotest
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System calculates pass average duration and fail average duration of autotest from all related test results  System returns pass average duration and fail average duration for autotest
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (AutoTestAverageDurationModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AutoTestAverageDurationModel>> GetAutoTestAverageDurationWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (AutoTestAverageDurationApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AutoTestAverageDurationApiResult>> GetAutoTestAverageDurationWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get autotest by internal or global ID
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal or global identifier and runs method execution    System returns autotest, which internal or global identifier equals the identifier value set in the previous action
+        ///  Use case  User sets autotest internal or global identifier and runs method execution  System returns autotest, which internal or global identifier equals the identifier value set in the previous action
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of AutoTestModel</returns>
-        System.Threading.Tasks.Task<AutoTestModel> GetAutoTestByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of AutoTestApiResult</returns>
+        System.Threading.Tasks.Task<AutoTestApiResult> GetAutoTestByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get autotest by internal or global ID
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal or global identifier and runs method execution    System returns autotest, which internal or global identifier equals the identifier value set in the previous action
+        ///  Use case  User sets autotest internal or global identifier and runs method execution  System returns autotest, which internal or global identifier equals the identifier value set in the previous action
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (AutoTestModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<AutoTestModel>> GetAutoTestByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (AutoTestApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<AutoTestApiResult>> GetAutoTestByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get autotest chronology
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search all test results related to autotest (with default limit equal 100)    System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending    System returns test result chronology for autotest
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search all test results related to autotest (with default limit equal 100)  System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending  System returns test result chronology for autotest
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestResultChronologyModel&gt;</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<List<TestResultChronologyModel>> GetAutoTestChronologyAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestResultChronologyModel>> GetAutoTestChronologyAsync(string id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get autotest chronology
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search all test results related to autotest (with default limit equal 100)    System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending    System returns test result chronology for autotest
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search all test results related to autotest (with default limit equal 100)  System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending  System returns test result chronology for autotest
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestResultChronologyModel&gt;)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<List<TestResultChronologyModel>>> GetAutoTestChronologyWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestResultChronologyModel>>> GetAutoTestChronologyWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get completed tests runs for autotests
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search for all test runs related to the autotest    System returns the enumeration of test runs
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search for all test runs related to the autotest  System returns the enumeration of test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestRunByAutoTestApiResult&gt;</returns>
-        System.Threading.Tasks.Task<List<TestRunByAutoTestApiResult>> GetTestRunsAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<TestRunByAutoTestApiResult>> GetTestRunsAsync(string id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get completed tests runs for autotests
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search for all test runs related to the autotest    System returns the enumeration of test runs
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search for all test runs related to the autotest  System returns the enumeration of test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestRunByAutoTestApiResult&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TestRunByAutoTestApiResult>>> GetTestRunsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<TestRunByAutoTestApiResult>>> GetTestRunsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get work items linked to autotest
         /// </summary>
         /// <remarks>
-        ///   This method links an autotest to a test case or a checklist.              A manual test case with a linked automated work item is marked in the test management system as an autotest.              You can run it from graphical user interface (GUI). To do that:    1. Open the project in GUI.                2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.                3. Select the autotest(s) you want to run using checkboxes.                4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
+        ///  This method links an autotest to a test case or a checklist.             A manual test case with a linked automated work item is marked in the test management system as an autotest.             You can run it from graphical user interface (GUI). To do that:  1. Open the project in GUI.              2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.              3. Select the autotest(s) you want to run using checkboxes.              4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID.</param>
+        /// <param name="id">Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID.</param>
         /// <param name="isDeleted">Specifies that a test is deleted or still relevant. (optional)</param>
         /// <param name="isWorkItemDeleted">OBSOLETE: Use &#x60;isDeleted&#x60; instead (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;WorkItemIdentifierModel&gt;</returns>
-        System.Threading.Tasks.Task<List<WorkItemIdentifierModel>> GetWorkItemsLinkedToAutoTestAsync(string id, bool? isDeleted = default(bool?), bool? isWorkItemDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of List&lt;AutoTestWorkItemIdentifierApiResult&gt;</returns>
+        System.Threading.Tasks.Task<List<AutoTestWorkItemIdentifierApiResult>> GetWorkItemsLinkedToAutoTestAsync(string id, bool? isDeleted = default, bool? isWorkItemDeleted = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get work items linked to autotest
         /// </summary>
         /// <remarks>
-        ///   This method links an autotest to a test case or a checklist.              A manual test case with a linked automated work item is marked in the test management system as an autotest.              You can run it from graphical user interface (GUI). To do that:    1. Open the project in GUI.                2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.                3. Select the autotest(s) you want to run using checkboxes.                4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
+        ///  This method links an autotest to a test case or a checklist.             A manual test case with a linked automated work item is marked in the test management system as an autotest.             You can run it from graphical user interface (GUI). To do that:  1. Open the project in GUI.              2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.              3. Select the autotest(s) you want to run using checkboxes.              4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID.</param>
+        /// <param name="id">Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID.</param>
         /// <param name="isDeleted">Specifies that a test is deleted or still relevant. (optional)</param>
         /// <param name="isWorkItemDeleted">OBSOLETE: Use &#x60;isDeleted&#x60; instead (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;WorkItemIdentifierModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WorkItemIdentifierModel>>> GetWorkItemsLinkedToAutoTestWithHttpInfoAsync(string id, bool? isDeleted = default(bool?), bool? isWorkItemDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (List&lt;AutoTestWorkItemIdentifierApiResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<AutoTestWorkItemIdentifierApiResult>>> GetWorkItemsLinkedToAutoTestWithHttpInfoAsync(string id, bool? isDeleted = default, bool? isWorkItemDeleted = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Link autotest with work items
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets work item internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    System finds the work item by the work item identifier    System relates the work item with the autotest and returns no content response
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets work item internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  System finds the work item by the work item identifier  System relates the work item with the autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemIdApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task LinkAutoTestToWorkItemAsync(string id, WorkItemIdApiModel workItemIdApiModel = default(WorkItemIdApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task LinkAutoTestToWorkItemAsync(string id, WorkItemIdApiModel workItemIdApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Link autotest with work items
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets work item internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    System finds the work item by the work item identifier    System relates the work item with the autotest and returns no content response
+        ///  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets work item internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  System finds the work item by the work item identifier  System relates the work item with the autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemIdApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> LinkAutoTestToWorkItemWithHttpInfoAsync(string id, WorkItemIdApiModel workItemIdApiModel = default(WorkItemIdApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> LinkAutoTestToWorkItemWithHttpInfoAsync(string id, WorkItemIdApiModel workItemIdApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update autotest
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        ///  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateAutoTestAsync(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateAutoTestAsync(AutoTestUpdateApiModel autoTestUpdateApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update autotest
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        ///  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateAutoTestWithHttpInfoAsync(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateAutoTestWithHttpInfoAsync(AutoTestUpdateApiModel autoTestUpdateApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update multiple autotests
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        ///  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateMultipleAsync(List<AutoTestPutModel> autoTestPutModel = default(List<AutoTestPutModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task UpdateMultipleAsync(List<AutoTestUpdateApiModel> autoTestUpdateApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Update multiple autotests
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        ///  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateMultipleWithHttpInfoAsync(List<AutoTestPutModel> autoTestPutModel = default(List<AutoTestPutModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateMultipleWithHttpInfoAsync(List<AutoTestUpdateApiModel> autoTestUpdateApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -1322,7 +1322,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="autoTestBulkDeleteApiModel"> (optional)</param>
         /// <returns>AutoTestBulkDeleteApiResult</returns>
-        public AutoTestBulkDeleteApiResult ApiV2AutoTestsDelete(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default(AutoTestBulkDeleteApiModel))
+        public AutoTestBulkDeleteApiResult ApiV2AutoTestsDelete(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default)
         {
             TestIT.ApiClient.Client.ApiResponse<AutoTestBulkDeleteApiResult> localVarResponse = ApiV2AutoTestsDeleteWithHttpInfo(autoTestBulkDeleteApiModel);
             return localVarResponse.Data;
@@ -1334,7 +1334,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="autoTestBulkDeleteApiModel"> (optional)</param>
         /// <returns>ApiResponse of AutoTestBulkDeleteApiResult</returns>
-        public TestIT.ApiClient.Client.ApiResponse<AutoTestBulkDeleteApiResult> ApiV2AutoTestsDeleteWithHttpInfo(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default(AutoTestBulkDeleteApiModel))
+        public TestIT.ApiClient.Client.ApiResponse<AutoTestBulkDeleteApiResult> ApiV2AutoTestsDeleteWithHttpInfo(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1380,7 +1380,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestBulkDeleteApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of AutoTestBulkDeleteApiResult</returns>
-        public async System.Threading.Tasks.Task<AutoTestBulkDeleteApiResult> ApiV2AutoTestsDeleteAsync(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default(AutoTestBulkDeleteApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<AutoTestBulkDeleteApiResult> ApiV2AutoTestsDeleteAsync(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<AutoTestBulkDeleteApiResult> localVarResponse = await ApiV2AutoTestsDeleteWithHttpInfoAsync(autoTestBulkDeleteApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -1393,7 +1393,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestBulkDeleteApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (AutoTestBulkDeleteApiResult)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AutoTestBulkDeleteApiResult>> ApiV2AutoTestsDeleteWithHttpInfoAsync(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default(AutoTestBulkDeleteApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AutoTestBulkDeleteApiResult>> ApiV2AutoTestsDeleteWithHttpInfoAsync(AutoTestBulkDeleteApiModel autoTestBulkDeleteApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1436,7 +1436,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set \&quot;Flaky\&quot; status for multiple autotests User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// Set \&quot;Flaky\&quot; status for multiple autotests User permissions for project: - Read only - Execute - Write - Full control
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1446,13 +1446,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="autoTestFlakyBulkApiModel"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2AutoTestsFlakyBulkPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default(AutoTestFlakyBulkApiModel))
+        public void ApiV2AutoTestsFlakyBulkPost(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default)
         {
             ApiV2AutoTestsFlakyBulkPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, autoTestFlakyBulkApiModel);
         }
 
         /// <summary>
-        /// Set \&quot;Flaky\&quot; status for multiple autotests User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// Set \&quot;Flaky\&quot; status for multiple autotests User permissions for project: - Read only - Execute - Write - Full control
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1462,7 +1462,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="autoTestFlakyBulkApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2AutoTestsFlakyBulkPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default(AutoTestFlakyBulkApiModel))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2AutoTestsFlakyBulkPostWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1522,7 +1522,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set \&quot;Flaky\&quot; status for multiple autotests User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// Set \&quot;Flaky\&quot; status for multiple autotests User permissions for project: - Read only - Execute - Write - Full control
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1533,13 +1533,13 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestFlakyBulkApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2AutoTestsFlakyBulkPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default(AutoTestFlakyBulkApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2AutoTestsFlakyBulkPostAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2AutoTestsFlakyBulkPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, autoTestFlakyBulkApiModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Set \&quot;Flaky\&quot; status for multiple autotests User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// Set \&quot;Flaky\&quot; status for multiple autotests User permissions for project: - Read only - Execute - Write - Full control
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1550,7 +1550,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestFlakyBulkApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2AutoTestsFlakyBulkPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default(AutoTestFlakyBulkApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2AutoTestsFlakyBulkPostWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestFlakyBulkApiModel autoTestFlakyBulkApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1619,7 +1619,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Global Id of auto test</param>
         /// <param name="operation"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2AutoTestsIdPatch(Guid id, List<Operation> operation = default(List<Operation>))
+        public void ApiV2AutoTestsIdPatch(Guid id, List<Operation> operation = default)
         {
             ApiV2AutoTestsIdPatchWithHttpInfo(id, operation);
         }
@@ -1631,7 +1631,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Global Id of auto test</param>
         /// <param name="operation"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2AutoTestsIdPatchWithHttpInfo(Guid id, List<Operation> operation = default(List<Operation>))
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2AutoTestsIdPatchWithHttpInfo(Guid id, List<Operation> operation = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1679,7 +1679,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2AutoTestsIdPatchAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2AutoTestsIdPatchAsync(Guid id, List<Operation> operation = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2AutoTestsIdPatchWithHttpInfoAsync(id, operation, cancellationToken).ConfigureAwait(false);
         }
@@ -1692,7 +1692,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="operation"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2AutoTestsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default(List<Operation>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2AutoTestsIdPatchWithHttpInfoAsync(Guid id, List<Operation> operation = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1736,7 +1736,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test results history for autotest   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets getTestResultHistoryReportQuery (listed in the example)    User runs method execution    System search for test results using filters set by user in getTestResultHistoryReportQuery and id    System returns the enumeration of test results
+        /// Get test results history for autotest  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets getTestResultHistoryReportQuery (listed in the example)  User runs method execution  System search for test results using filters set by user in getTestResultHistoryReportQuery and id  System returns the enumeration of test results
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest identifier</param>
@@ -1747,14 +1747,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
         /// <returns>List&lt;AutoTestResultHistoryApiResult&gt;</returns>
-        public List<AutoTestResultHistoryApiResult> ApiV2AutoTestsIdTestResultsSearchPost(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel))
+        public List<AutoTestResultHistoryApiResult> ApiV2AutoTestsIdTestResultsSearchPost(string id, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultHistoryApiResult>> localVarResponse = ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(id, skip, take, orderBy, searchField, searchValue, autoTestResultHistorySelectApiModel);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get test results history for autotest   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets getTestResultHistoryReportQuery (listed in the example)    User runs method execution    System search for test results using filters set by user in getTestResultHistoryReportQuery and id    System returns the enumeration of test results
+        /// Get test results history for autotest  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets getTestResultHistoryReportQuery (listed in the example)  User runs method execution  System search for test results using filters set by user in getTestResultHistoryReportQuery and id  System returns the enumeration of test results
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest identifier</param>
@@ -1765,7 +1765,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestResultHistoryApiResult&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultHistoryApiResult>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel))
+        public TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultHistoryApiResult>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfo(string id, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1830,7 +1830,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test results history for autotest   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets getTestResultHistoryReportQuery (listed in the example)    User runs method execution    System search for test results using filters set by user in getTestResultHistoryReportQuery and id    System returns the enumeration of test results
+        /// Get test results history for autotest  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets getTestResultHistoryReportQuery (listed in the example)  User runs method execution  System search for test results using filters set by user in getTestResultHistoryReportQuery and id  System returns the enumeration of test results
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest identifier</param>
@@ -1842,14 +1842,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestResultHistoryApiResult&gt;</returns>
-        public async System.Threading.Tasks.Task<List<AutoTestResultHistoryApiResult>> ApiV2AutoTestsIdTestResultsSearchPostAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<AutoTestResultHistoryApiResult>> ApiV2AutoTestsIdTestResultsSearchPostAsync(string id, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultHistoryApiResult>> localVarResponse = await ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(id, skip, take, orderBy, searchField, searchValue, autoTestResultHistorySelectApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get test results history for autotest   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets getTestResultHistoryReportQuery (listed in the example)    User runs method execution    System search for test results using filters set by user in getTestResultHistoryReportQuery and id    System returns the enumeration of test results
+        /// Get test results history for autotest  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets getTestResultHistoryReportQuery (listed in the example)  User runs method execution  System search for test results using filters set by user in getTestResultHistoryReportQuery and id  System returns the enumeration of test results
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest identifier</param>
@@ -1861,7 +1861,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestResultHistorySelectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestResultHistoryApiResult&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultHistoryApiResult>>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(string id, int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default(AutoTestResultHistorySelectApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestResultHistoryApiResult>>> ApiV2AutoTestsIdTestResultsSearchPostWithHttpInfoAsync(string id, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestResultHistorySelectApiModel autoTestResultHistorySelectApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -1929,7 +1929,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get identifiers of changed linked work items User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// Get identifiers of changed linked work items User permissions for project: - Read only - Execute - Write - Full control
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1941,7 +1941,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get identifiers of changed linked work items User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// Get identifiers of changed linked work items User permissions for project: - Read only - Execute - Write - Full control
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1985,26 +1985,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get identifiers of changed linked work items User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// Get identifiers of changed linked work items User permissions for project: - Read only - Execute - Write - Full control
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;Guid&gt;</returns>
-        public async System.Threading.Tasks.Task<List<Guid>> ApiV2AutoTestsIdWorkItemsChangedIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<Guid>> ApiV2AutoTestsIdWorkItemsChangedIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<Guid>> localVarResponse = await ApiV2AutoTestsIdWorkItemsChangedIdGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get identifiers of changed linked work items User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// Get identifiers of changed linked work items User permissions for project: - Read only - Execute - Write - Full control
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;Guid&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<Guid>>> ApiV2AutoTestsIdWorkItemsChangedIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<Guid>>> ApiV2AutoTestsIdWorkItemsChangedIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2046,7 +2046,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Approve changes to work items linked to autotest User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// Approve changes to work items linked to autotest User permissions for project: - Read only - Execute - Write - Full control
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2058,7 +2058,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Approve changes to work items linked to autotest User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// Approve changes to work items linked to autotest User permissions for project: - Read only - Execute - Write - Full control
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2104,27 +2104,27 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Approve changes to work items linked to autotest User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// Approve changes to work items linked to autotest User permissions for project: - Read only - Execute - Write - Full control
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="workItemId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePostAsync(Guid id, Guid workItemId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePostAsync(Guid id, Guid workItemId, System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePostWithHttpInfoAsync(id, workItemId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Approve changes to work items linked to autotest User permissions for project:  - Read only  - Execute  - Write  - Full control
+        /// Approve changes to work items linked to autotest User permissions for project: - Read only - Execute - Write - Full control
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="workItemId"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePostWithHttpInfoAsync(Guid id, Guid workItemId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2AutoTestsIdWorkItemsChangedWorkItemIdApprovePostWithHttpInfoAsync(Guid id, Guid workItemId, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2177,7 +2177,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="autoTestSearchApiModel"> (optional)</param>
         /// <returns>List&lt;AutoTestApiResult&gt;</returns>
-        public List<AutoTestApiResult> ApiV2AutoTestsSearchPost(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestSearchApiModel autoTestSearchApiModel = default(AutoTestSearchApiModel))
+        public List<AutoTestApiResult> ApiV2AutoTestsSearchPost(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestSearchApiModel autoTestSearchApiModel = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<AutoTestApiResult>> localVarResponse = ApiV2AutoTestsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, autoTestSearchApiModel);
             return localVarResponse.Data;
@@ -2194,7 +2194,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="autoTestSearchApiModel"> (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestApiResult&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<AutoTestApiResult>> ApiV2AutoTestsSearchPostWithHttpInfo(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestSearchApiModel autoTestSearchApiModel = default(AutoTestSearchApiModel))
+        public TestIT.ApiClient.Client.ApiResponse<List<AutoTestApiResult>> ApiV2AutoTestsSearchPostWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestSearchApiModel autoTestSearchApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2265,7 +2265,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestSearchApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestApiResult&gt;</returns>
-        public async System.Threading.Tasks.Task<List<AutoTestApiResult>> ApiV2AutoTestsSearchPostAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestSearchApiModel autoTestSearchApiModel = default(AutoTestSearchApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<AutoTestApiResult>> ApiV2AutoTestsSearchPostAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestSearchApiModel autoTestSearchApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<AutoTestApiResult>> localVarResponse = await ApiV2AutoTestsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, autoTestSearchApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -2283,7 +2283,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="autoTestSearchApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestApiResult&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestApiResult>>> ApiV2AutoTestsSearchPostWithHttpInfoAsync(int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), AutoTestSearchApiModel autoTestSearchApiModel = default(AutoTestSearchApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestApiResult>>> ApiV2AutoTestsSearchPostWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, AutoTestSearchApiModel autoTestSearchApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2346,24 +2346,24 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create autotest   This method creates a new autotest.    To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.    Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
+        /// Create autotest  This method creates a new autotest.  To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
-        /// <returns>AutoTestModel</returns>
-        public AutoTestModel CreateAutoTest(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel))
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
+        /// <returns>AutoTestApiResult</returns>
+        public AutoTestApiResult CreateAutoTest(AutoTestCreateApiModel autoTestCreateApiModel = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<AutoTestModel> localVarResponse = CreateAutoTestWithHttpInfo(autoTestPostModel);
+            TestIT.ApiClient.Client.ApiResponse<AutoTestApiResult> localVarResponse = CreateAutoTestWithHttpInfo(autoTestCreateApiModel);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create autotest   This method creates a new autotest.    To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.    Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
+        /// Create autotest  This method creates a new autotest.  To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
-        /// <returns>ApiResponse of AutoTestModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<AutoTestModel> CreateAutoTestWithHttpInfo(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel))
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
+        /// <returns>ApiResponse of AutoTestApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<AutoTestApiResult> CreateAutoTestWithHttpInfo(AutoTestCreateApiModel autoTestCreateApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2382,7 +2382,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = autoTestPostModel;
+            localVarRequestOptions.Data = autoTestCreateApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2391,7 +2391,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<AutoTestModel>("/api/v2/autoTests", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<AutoTestApiResult>("/api/v2/autoTests", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2403,26 +2403,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create autotest   This method creates a new autotest.    To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.    Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
+        /// Create autotest  This method creates a new autotest.  To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of AutoTestModel</returns>
-        public async System.Threading.Tasks.Task<AutoTestModel> CreateAutoTestAsync(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of AutoTestApiResult</returns>
+        public async System.Threading.Tasks.Task<AutoTestApiResult> CreateAutoTestAsync(AutoTestCreateApiModel autoTestCreateApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<AutoTestModel> localVarResponse = await CreateAutoTestWithHttpInfoAsync(autoTestPostModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<AutoTestApiResult> localVarResponse = await CreateAutoTestWithHttpInfoAsync(autoTestCreateApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create autotest   This method creates a new autotest.    To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.    Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
+        /// Create autotest  This method creates a new autotest.  To add an autotest to the test plan, link it to a work item using the &#x60;POST /api/v2/autoTests/{autoTestId}/workItems&#x60; method.  Use the &#x60;POST /api/v2/testRuns/byAutoTests&#x60; method to run autotest outside the test plan.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (AutoTestModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AutoTestModel>> CreateAutoTestWithHttpInfoAsync(AutoTestPostModel autoTestPostModel = default(AutoTestPostModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (AutoTestApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AutoTestApiResult>> CreateAutoTestWithHttpInfoAsync(AutoTestCreateApiModel autoTestCreateApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2443,7 +2443,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = autoTestPostModel;
+            localVarRequestOptions.Data = autoTestCreateApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2453,7 +2453,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<AutoTestModel>("/api/v2/autoTests", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<AutoTestApiResult>("/api/v2/autoTests", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2465,24 +2465,24 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create multiple autotests   Use case    User sets autotest parameters (listed in the example) and runs method execution    System creates autotest    [Optional] If steps enumeration is set, system creates step items and relates them to autotest    [Optional] If setup enumeration is set, system creates setup items and relates them to autotest    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest    [Optional] If label enumeration is set, system creates labels and relates them to autotest    [Optional] If link enumeration is set, system creates links and relates them to autotest    System returns autotest model (example listed in response parameters)
+        /// Create multiple autotests  Use case  User sets autotest parameters (listed in the example) and runs method execution  System creates autotest  [Optional] If steps enumeration is set, system creates step items and relates them to autotest  [Optional] If setup enumeration is set, system creates setup items and relates them to autotest  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest  [Optional] If label enumeration is set, system creates labels and relates them to autotest  [Optional] If link enumeration is set, system creates links and relates them to autotest  System returns autotest model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
-        /// <returns>List&lt;AutoTestModel&gt;</returns>
-        public List<AutoTestModel> CreateMultiple(List<AutoTestPostModel> autoTestPostModel = default(List<AutoTestPostModel>))
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
+        /// <returns>List&lt;AutoTestApiResult&gt;</returns>
+        public List<AutoTestApiResult> CreateMultiple(List<AutoTestCreateApiModel> autoTestCreateApiModel = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>> localVarResponse = CreateMultipleWithHttpInfo(autoTestPostModel);
+            TestIT.ApiClient.Client.ApiResponse<List<AutoTestApiResult>> localVarResponse = CreateMultipleWithHttpInfo(autoTestCreateApiModel);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create multiple autotests   Use case    User sets autotest parameters (listed in the example) and runs method execution    System creates autotest    [Optional] If steps enumeration is set, system creates step items and relates them to autotest    [Optional] If setup enumeration is set, system creates setup items and relates them to autotest    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest    [Optional] If label enumeration is set, system creates labels and relates them to autotest    [Optional] If link enumeration is set, system creates links and relates them to autotest    System returns autotest model (example listed in response parameters)
+        /// Create multiple autotests  Use case  User sets autotest parameters (listed in the example) and runs method execution  System creates autotest  [Optional] If steps enumeration is set, system creates step items and relates them to autotest  [Optional] If setup enumeration is set, system creates setup items and relates them to autotest  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest  [Optional] If label enumeration is set, system creates labels and relates them to autotest  [Optional] If link enumeration is set, system creates links and relates them to autotest  System returns autotest model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>> CreateMultipleWithHttpInfo(List<AutoTestPostModel> autoTestPostModel = default(List<AutoTestPostModel>))
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;AutoTestApiResult&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<AutoTestApiResult>> CreateMultipleWithHttpInfo(List<AutoTestCreateApiModel> autoTestCreateApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -2501,7 +2501,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = autoTestPostModel;
+            localVarRequestOptions.Data = autoTestCreateApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2510,7 +2510,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<AutoTestModel>>("/api/v2/autoTests/bulk", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<AutoTestApiResult>>("/api/v2/autoTests/bulk", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -2522,26 +2522,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create multiple autotests   Use case    User sets autotest parameters (listed in the example) and runs method execution    System creates autotest    [Optional] If steps enumeration is set, system creates step items and relates them to autotest    [Optional] If setup enumeration is set, system creates setup items and relates them to autotest    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest    [Optional] If label enumeration is set, system creates labels and relates them to autotest    [Optional] If link enumeration is set, system creates links and relates them to autotest    System returns autotest model (example listed in response parameters)
+        /// Create multiple autotests  Use case  User sets autotest parameters (listed in the example) and runs method execution  System creates autotest  [Optional] If steps enumeration is set, system creates step items and relates them to autotest  [Optional] If setup enumeration is set, system creates setup items and relates them to autotest  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest  [Optional] If label enumeration is set, system creates labels and relates them to autotest  [Optional] If link enumeration is set, system creates links and relates them to autotest  System returns autotest model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<AutoTestModel>> CreateMultipleAsync(List<AutoTestPostModel> autoTestPostModel = default(List<AutoTestPostModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;AutoTestApiResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<AutoTestApiResult>> CreateMultipleAsync(List<AutoTestCreateApiModel> autoTestCreateApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>> localVarResponse = await CreateMultipleWithHttpInfoAsync(autoTestPostModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<AutoTestApiResult>> localVarResponse = await CreateMultipleWithHttpInfoAsync(autoTestCreateApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Create multiple autotests   Use case    User sets autotest parameters (listed in the example) and runs method execution    System creates autotest    [Optional] If steps enumeration is set, system creates step items and relates them to autotest    [Optional] If setup enumeration is set, system creates setup items and relates them to autotest    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest    [Optional] If label enumeration is set, system creates labels and relates them to autotest    [Optional] If link enumeration is set, system creates links and relates them to autotest    System returns autotest model (example listed in response parameters)
+        /// Create multiple autotests  Use case  User sets autotest parameters (listed in the example) and runs method execution  System creates autotest  [Optional] If steps enumeration is set, system creates step items and relates them to autotest  [Optional] If setup enumeration is set, system creates setup items and relates them to autotest  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest  [Optional] If label enumeration is set, system creates labels and relates them to autotest  [Optional] If link enumeration is set, system creates links and relates them to autotest  System returns autotest model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPostModel"> (optional)</param>
+        /// <param name="autoTestCreateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>>> CreateMultipleWithHttpInfoAsync(List<AutoTestPostModel> autoTestPostModel = default(List<AutoTestPostModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;AutoTestApiResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestApiResult>>> CreateMultipleWithHttpInfoAsync(List<AutoTestCreateApiModel> autoTestCreateApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -2562,7 +2562,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = autoTestPostModel;
+            localVarRequestOptions.Data = autoTestCreateApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -2572,7 +2572,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<AutoTestModel>>("/api/v2/autoTests/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<AutoTestApiResult>>("/api/v2/autoTests/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -2584,7 +2584,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete autotest   Use case    User sets autotest internal (guid format) or global (integer format) identifier and runs method execution    System finds the autotest by the identifier    System deletes autotest and returns no content response
+        /// Delete autotest  Use case  User sets autotest internal (guid format) or global (integer format) identifier and runs method execution  System finds the autotest by the identifier  System deletes autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
@@ -2595,7 +2595,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete autotest   Use case    User sets autotest internal (guid format) or global (integer format) identifier and runs method execution    System finds the autotest by the identifier    System deletes autotest and returns no content response
+        /// Delete autotest  Use case  User sets autotest internal (guid format) or global (integer format) identifier and runs method execution  System finds the autotest by the identifier  System deletes autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
@@ -2643,25 +2643,25 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete autotest   Use case    User sets autotest internal (guid format) or global (integer format) identifier and runs method execution    System finds the autotest by the identifier    System deletes autotest and returns no content response
+        /// Delete autotest  Use case  User sets autotest internal (guid format) or global (integer format) identifier and runs method execution  System finds the autotest by the identifier  System deletes autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteAutoTestAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteAutoTestAsync(string id, System.Threading.CancellationToken cancellationToken = default)
         {
             await DeleteAutoTestWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Delete autotest   Use case    User sets autotest internal (guid format) or global (integer format) identifier and runs method execution    System finds the autotest by the identifier    System deletes autotest and returns no content response
+        /// Delete autotest  Use case  User sets autotest internal (guid format) or global (integer format) identifier and runs method execution  System finds the autotest by the identifier  System deletes autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteAutoTestWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteAutoTestWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2707,25 +2707,25 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Unlink autotest from work item   Use case    User sets autotest internal (guid format) or global (integer format) identifier    [Optional] User sets workitem internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it              from autotest.    [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.    System returns no content response
+        /// Unlink autotest from work item  Use case  User sets autotest internal (guid format) or global (integer format) identifier  [Optional] User sets workitem internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it             from autotest.  [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemId">Work item internal (UUID) or global (integer) identifier (optional)</param>
         /// <returns></returns>
-        public void DeleteAutoTestLinkFromWorkItem(string id, string workItemId = default(string))
+        public void DeleteAutoTestLinkFromWorkItem(string id, string workItemId = default)
         {
             DeleteAutoTestLinkFromWorkItemWithHttpInfo(id, workItemId);
         }
 
         /// <summary>
-        /// Unlink autotest from work item   Use case    User sets autotest internal (guid format) or global (integer format) identifier    [Optional] User sets workitem internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it              from autotest.    [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.    System returns no content response
+        /// Unlink autotest from work item  Use case  User sets autotest internal (guid format) or global (integer format) identifier  [Optional] User sets workitem internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it             from autotest.  [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemId">Work item internal (UUID) or global (integer) identifier (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> DeleteAutoTestLinkFromWorkItemWithHttpInfo(string id, string workItemId = default(string))
+        public TestIT.ApiClient.Client.ApiResponse<Object> DeleteAutoTestLinkFromWorkItemWithHttpInfo(string id, string workItemId = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2772,27 +2772,27 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Unlink autotest from work item   Use case    User sets autotest internal (guid format) or global (integer format) identifier    [Optional] User sets workitem internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it              from autotest.    [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.    System returns no content response
+        /// Unlink autotest from work item  Use case  User sets autotest internal (guid format) or global (integer format) identifier  [Optional] User sets workitem internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it             from autotest.  [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemId">Work item internal (UUID) or global (integer) identifier (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task DeleteAutoTestLinkFromWorkItemAsync(string id, string workItemId = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task DeleteAutoTestLinkFromWorkItemAsync(string id, string workItemId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await DeleteAutoTestLinkFromWorkItemWithHttpInfoAsync(id, workItemId, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Unlink autotest from work item   Use case    User sets autotest internal (guid format) or global (integer format) identifier    [Optional] User sets workitem internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it              from autotest.    [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.    System returns no content response
+        /// Unlink autotest from work item  Use case  User sets autotest internal (guid format) or global (integer format) identifier  [Optional] User sets workitem internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it             from autotest.  [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemId">Work item internal (UUID) or global (integer) identifier (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteAutoTestLinkFromWorkItemWithHttpInfoAsync(string id, string workItemId = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteAutoTestLinkFromWorkItemWithHttpInfoAsync(string id, string workItemId = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -2873,7 +2873,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;AutoTestModel&gt;</returns>
         [Obsolete]
-        public List<AutoTestModel> GetAllAutoTests(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string varNamespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public List<AutoTestModel> GetAllAutoTests(Guid? projectId = default, string externalId = default, long? globalId = default, string varNamespace = default, bool? isNamespaceNull = default, bool? includeEmptyNamespaces = default, string className = default, bool? isClassnameNull = default, bool? includeEmptyClassNames = default, bool? isDeleted = default, bool? deleted = default, List<string> labels = default, int? stabilityMinimal = default, int? minStability = default, int? stabilityMaximal = default, int? maxStability = default, bool? isFlaky = default, bool? flaky = default, bool? includeSteps = default, bool? includeLabels = default, string externalKey = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>> localVarResponse = GetAllAutoTestsWithHttpInfo(projectId, externalId, globalId, varNamespace, isNamespaceNull, includeEmptyNamespaces, className, isClassnameNull, includeEmptyClassNames, isDeleted, deleted, labels, stabilityMinimal, minStability, stabilityMaximal, maxStability, isFlaky, flaky, includeSteps, includeLabels, externalKey, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
@@ -2911,7 +2911,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
         [Obsolete]
-        public TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>> GetAllAutoTestsWithHttpInfo(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string varNamespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>> GetAllAutoTestsWithHttpInfo(Guid? projectId = default, string externalId = default, long? globalId = default, string varNamespace = default, bool? isNamespaceNull = default, bool? includeEmptyNamespaces = default, string className = default, bool? isClassnameNull = default, bool? includeEmptyClassNames = default, bool? isDeleted = default, bool? deleted = default, List<string> labels = default, int? stabilityMinimal = default, int? minStability = default, int? stabilityMaximal = default, int? maxStability = default, bool? isFlaky = default, bool? flaky = default, bool? includeSteps = default, bool? includeLabels = default, string externalKey = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -3085,7 +3085,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<List<AutoTestModel>> GetAllAutoTestsAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string varNamespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<AutoTestModel>> GetAllAutoTestsAsync(Guid? projectId = default, string externalId = default, long? globalId = default, string varNamespace = default, bool? isNamespaceNull = default, bool? includeEmptyNamespaces = default, string className = default, bool? isClassnameNull = default, bool? includeEmptyClassNames = default, bool? isDeleted = default, bool? deleted = default, List<string> labels = default, int? stabilityMinimal = default, int? minStability = default, int? stabilityMaximal = default, int? maxStability = default, bool? isFlaky = default, bool? flaky = default, bool? includeSteps = default, bool? includeLabels = default, string externalKey = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>> localVarResponse = await GetAllAutoTestsWithHttpInfoAsync(projectId, externalId, globalId, varNamespace, isNamespaceNull, includeEmptyNamespaces, className, isClassnameNull, includeEmptyClassNames, isDeleted, deleted, labels, stabilityMinimal, minStability, stabilityMaximal, maxStability, isFlaky, flaky, includeSteps, includeLabels, externalKey, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -3124,7 +3124,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>>> GetAllAutoTestsWithHttpInfoAsync(Guid? projectId = default(Guid?), string externalId = default(string), long? globalId = default(long?), string varNamespace = default(string), bool? isNamespaceNull = default(bool?), bool? includeEmptyNamespaces = default(bool?), string className = default(string), bool? isClassnameNull = default(bool?), bool? includeEmptyClassNames = default(bool?), bool? isDeleted = default(bool?), bool? deleted = default(bool?), List<string> labels = default(List<string>), int? stabilityMinimal = default(int?), int? minStability = default(int?), int? stabilityMaximal = default(int?), int? maxStability = default(int?), bool? isFlaky = default(bool?), bool? flaky = default(bool?), bool? includeSteps = default(bool?), bool? includeLabels = default(bool?), string externalKey = default(string), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>>> GetAllAutoTestsWithHttpInfoAsync(Guid? projectId = default, string externalId = default, long? globalId = default, string varNamespace = default, bool? isNamespaceNull = default, bool? includeEmptyNamespaces = default, string className = default, bool? isClassnameNull = default, bool? includeEmptyClassNames = default, bool? isDeleted = default, bool? deleted = default, List<string> labels = default, int? stabilityMinimal = default, int? minStability = default, int? stabilityMaximal = default, int? maxStability = default, bool? isFlaky = default, bool? flaky = default, bool? includeSteps = default, bool? includeLabels = default, string externalKey = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -3269,24 +3269,24 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get average autotest duration   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System calculates pass average duration and fail average duration of autotest from all related test results    System returns pass average duration and fail average duration for autotest
+        /// Get average autotest duration  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System calculates pass average duration and fail average duration of autotest from all related test results  System returns pass average duration and fail average duration for autotest
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <returns>AutoTestAverageDurationModel</returns>
-        public AutoTestAverageDurationModel GetAutoTestAverageDuration(string id)
+        /// <returns>AutoTestAverageDurationApiResult</returns>
+        public AutoTestAverageDurationApiResult GetAutoTestAverageDuration(string id)
         {
-            TestIT.ApiClient.Client.ApiResponse<AutoTestAverageDurationModel> localVarResponse = GetAutoTestAverageDurationWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<AutoTestAverageDurationApiResult> localVarResponse = GetAutoTestAverageDurationWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get average autotest duration   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System calculates pass average duration and fail average duration of autotest from all related test results    System returns pass average duration and fail average duration for autotest
+        /// Get average autotest duration  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System calculates pass average duration and fail average duration of autotest from all related test results  System returns pass average duration and fail average duration for autotest
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <returns>ApiResponse of AutoTestAverageDurationModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<AutoTestAverageDurationModel> GetAutoTestAverageDurationWithHttpInfo(string id)
+        /// <returns>ApiResponse of AutoTestAverageDurationApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<AutoTestAverageDurationApiResult> GetAutoTestAverageDurationWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3317,7 +3317,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<AutoTestAverageDurationModel>("/api/v2/autoTests/{id}/averageDuration", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<AutoTestAverageDurationApiResult>("/api/v2/autoTests/{id}/averageDuration", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3329,26 +3329,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get average autotest duration   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System calculates pass average duration and fail average duration of autotest from all related test results    System returns pass average duration and fail average duration for autotest
+        /// Get average autotest duration  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System calculates pass average duration and fail average duration of autotest from all related test results  System returns pass average duration and fail average duration for autotest
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of AutoTestAverageDurationModel</returns>
-        public async System.Threading.Tasks.Task<AutoTestAverageDurationModel> GetAutoTestAverageDurationAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of AutoTestAverageDurationApiResult</returns>
+        public async System.Threading.Tasks.Task<AutoTestAverageDurationApiResult> GetAutoTestAverageDurationAsync(string id, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<AutoTestAverageDurationModel> localVarResponse = await GetAutoTestAverageDurationWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<AutoTestAverageDurationApiResult> localVarResponse = await GetAutoTestAverageDurationWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get average autotest duration   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System calculates pass average duration and fail average duration of autotest from all related test results    System returns pass average duration and fail average duration for autotest
+        /// Get average autotest duration  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System calculates pass average duration and fail average duration of autotest from all related test results  System returns pass average duration and fail average duration for autotest
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (AutoTestAverageDurationModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AutoTestAverageDurationModel>> GetAutoTestAverageDurationWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (AutoTestAverageDurationApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AutoTestAverageDurationApiResult>> GetAutoTestAverageDurationWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3382,7 +3382,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<AutoTestAverageDurationModel>("/api/v2/autoTests/{id}/averageDuration", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AutoTestAverageDurationApiResult>("/api/v2/autoTests/{id}/averageDuration", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3394,24 +3394,24 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get autotest by internal or global ID   Use case    User sets autotest internal or global identifier and runs method execution    System returns autotest, which internal or global identifier equals the identifier value set in the previous action
+        /// Get autotest by internal or global ID  Use case  User sets autotest internal or global identifier and runs method execution  System returns autotest, which internal or global identifier equals the identifier value set in the previous action
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <returns>AutoTestModel</returns>
-        public AutoTestModel GetAutoTestById(string id)
+        /// <returns>AutoTestApiResult</returns>
+        public AutoTestApiResult GetAutoTestById(string id)
         {
-            TestIT.ApiClient.Client.ApiResponse<AutoTestModel> localVarResponse = GetAutoTestByIdWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<AutoTestApiResult> localVarResponse = GetAutoTestByIdWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get autotest by internal or global ID   Use case    User sets autotest internal or global identifier and runs method execution    System returns autotest, which internal or global identifier equals the identifier value set in the previous action
+        /// Get autotest by internal or global ID  Use case  User sets autotest internal or global identifier and runs method execution  System returns autotest, which internal or global identifier equals the identifier value set in the previous action
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
-        /// <returns>ApiResponse of AutoTestModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<AutoTestModel> GetAutoTestByIdWithHttpInfo(string id)
+        /// <returns>ApiResponse of AutoTestApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<AutoTestApiResult> GetAutoTestByIdWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3442,7 +3442,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<AutoTestModel>("/api/v2/autoTests/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<AutoTestApiResult>("/api/v2/autoTests/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3454,26 +3454,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get autotest by internal or global ID   Use case    User sets autotest internal or global identifier and runs method execution    System returns autotest, which internal or global identifier equals the identifier value set in the previous action
+        /// Get autotest by internal or global ID  Use case  User sets autotest internal or global identifier and runs method execution  System returns autotest, which internal or global identifier equals the identifier value set in the previous action
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of AutoTestModel</returns>
-        public async System.Threading.Tasks.Task<AutoTestModel> GetAutoTestByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of AutoTestApiResult</returns>
+        public async System.Threading.Tasks.Task<AutoTestApiResult> GetAutoTestByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<AutoTestModel> localVarResponse = await GetAutoTestByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<AutoTestApiResult> localVarResponse = await GetAutoTestByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get autotest by internal or global ID   Use case    User sets autotest internal or global identifier and runs method execution    System returns autotest, which internal or global identifier equals the identifier value set in the previous action
+        /// Get autotest by internal or global ID  Use case  User sets autotest internal or global identifier and runs method execution  System returns autotest, which internal or global identifier equals the identifier value set in the previous action
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (AutoTestModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AutoTestModel>> GetAutoTestByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (AutoTestApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<AutoTestApiResult>> GetAutoTestByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3507,7 +3507,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<AutoTestModel>("/api/v2/autoTests/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<AutoTestApiResult>("/api/v2/autoTests/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3519,7 +3519,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get autotest chronology   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search all test results related to autotest (with default limit equal 100)    System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending    System returns test result chronology for autotest
+        /// Get autotest chronology  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search all test results related to autotest (with default limit equal 100)  System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending  System returns test result chronology for autotest
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
@@ -3532,7 +3532,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get autotest chronology   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search all test results related to autotest (with default limit equal 100)    System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending    System returns test result chronology for autotest
+        /// Get autotest chronology  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search all test results related to autotest (with default limit equal 100)  System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending  System returns test result chronology for autotest
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
@@ -3581,28 +3581,28 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get autotest chronology   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search all test results related to autotest (with default limit equal 100)    System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending    System returns test result chronology for autotest
+        /// Get autotest chronology  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search all test results related to autotest (with default limit equal 100)  System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending  System returns test result chronology for autotest
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestResultChronologyModel&gt;</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<List<TestResultChronologyModel>> GetAutoTestChronologyAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestResultChronologyModel>> GetAutoTestChronologyAsync(string id, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<TestResultChronologyModel>> localVarResponse = await GetAutoTestChronologyWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get autotest chronology   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search all test results related to autotest (with default limit equal 100)    System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending    System returns test result chronology for autotest
+        /// Get autotest chronology  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search all test results related to autotest (with default limit equal 100)  System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending  System returns test result chronology for autotest
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestResultChronologyModel&gt;)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestResultChronologyModel>>> GetAutoTestChronologyWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestResultChronologyModel>>> GetAutoTestChronologyWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3648,7 +3648,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get completed tests runs for autotests   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search for all test runs related to the autotest    System returns the enumeration of test runs
+        /// Get completed tests runs for autotests  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search for all test runs related to the autotest  System returns the enumeration of test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
@@ -3660,7 +3660,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get completed tests runs for autotests   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search for all test runs related to the autotest    System returns the enumeration of test runs
+        /// Get completed tests runs for autotests  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search for all test runs related to the autotest  System returns the enumeration of test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
@@ -3708,26 +3708,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get completed tests runs for autotests   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search for all test runs related to the autotest    System returns the enumeration of test runs
+        /// Get completed tests runs for autotests  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search for all test runs related to the autotest  System returns the enumeration of test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;TestRunByAutoTestApiResult&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TestRunByAutoTestApiResult>> GetTestRunsAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<TestRunByAutoTestApiResult>> GetTestRunsAsync(string id, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<TestRunByAutoTestApiResult>> localVarResponse = await GetTestRunsWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get completed tests runs for autotests   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search for all test runs related to the autotest    System returns the enumeration of test runs
+        /// Get completed tests runs for autotests  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search for all test runs related to the autotest  System returns the enumeration of test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;TestRunByAutoTestApiResult&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestRunByAutoTestApiResult>>> GetTestRunsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<TestRunByAutoTestApiResult>>> GetTestRunsWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3773,28 +3773,28 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get work items linked to autotest   This method links an autotest to a test case or a checklist.              A manual test case with a linked automated work item is marked in the test management system as an autotest.              You can run it from graphical user interface (GUI). To do that:    1. Open the project in GUI.                2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.                3. Select the autotest(s) you want to run using checkboxes.                4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
+        /// Get work items linked to autotest  This method links an autotest to a test case or a checklist.             A manual test case with a linked automated work item is marked in the test management system as an autotest.             You can run it from graphical user interface (GUI). To do that:  1. Open the project in GUI.              2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.              3. Select the autotest(s) you want to run using checkboxes.              4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID.</param>
+        /// <param name="id">Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID.</param>
         /// <param name="isDeleted">Specifies that a test is deleted or still relevant. (optional)</param>
         /// <param name="isWorkItemDeleted">OBSOLETE: Use &#x60;isDeleted&#x60; instead (optional, default to false)</param>
-        /// <returns>List&lt;WorkItemIdentifierModel&gt;</returns>
-        public List<WorkItemIdentifierModel> GetWorkItemsLinkedToAutoTest(string id, bool? isDeleted = default(bool?), bool? isWorkItemDeleted = default(bool?))
+        /// <returns>List&lt;AutoTestWorkItemIdentifierApiResult&gt;</returns>
+        public List<AutoTestWorkItemIdentifierApiResult> GetWorkItemsLinkedToAutoTest(string id, bool? isDeleted = default, bool? isWorkItemDeleted = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<WorkItemIdentifierModel>> localVarResponse = GetWorkItemsLinkedToAutoTestWithHttpInfo(id, isDeleted, isWorkItemDeleted);
+            TestIT.ApiClient.Client.ApiResponse<List<AutoTestWorkItemIdentifierApiResult>> localVarResponse = GetWorkItemsLinkedToAutoTestWithHttpInfo(id, isDeleted, isWorkItemDeleted);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get work items linked to autotest   This method links an autotest to a test case or a checklist.              A manual test case with a linked automated work item is marked in the test management system as an autotest.              You can run it from graphical user interface (GUI). To do that:    1. Open the project in GUI.                2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.                3. Select the autotest(s) you want to run using checkboxes.                4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
+        /// Get work items linked to autotest  This method links an autotest to a test case or a checklist.             A manual test case with a linked automated work item is marked in the test management system as an autotest.             You can run it from graphical user interface (GUI). To do that:  1. Open the project in GUI.              2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.              3. Select the autotest(s) you want to run using checkboxes.              4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID.</param>
+        /// <param name="id">Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID.</param>
         /// <param name="isDeleted">Specifies that a test is deleted or still relevant. (optional)</param>
         /// <param name="isWorkItemDeleted">OBSOLETE: Use &#x60;isDeleted&#x60; instead (optional, default to false)</param>
-        /// <returns>ApiResponse of List&lt;WorkItemIdentifierModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<WorkItemIdentifierModel>> GetWorkItemsLinkedToAutoTestWithHttpInfo(string id, bool? isDeleted = default(bool?), bool? isWorkItemDeleted = default(bool?))
+        /// <returns>ApiResponse of List&lt;AutoTestWorkItemIdentifierApiResult&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<AutoTestWorkItemIdentifierApiResult>> GetWorkItemsLinkedToAutoTestWithHttpInfo(string id, bool? isDeleted = default, bool? isWorkItemDeleted = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3833,7 +3833,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<WorkItemIdentifierModel>>("/api/v2/autoTests/{id}/workItems", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<AutoTestWorkItemIdentifierApiResult>>("/api/v2/autoTests/{id}/workItems", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3845,30 +3845,30 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get work items linked to autotest   This method links an autotest to a test case or a checklist.              A manual test case with a linked automated work item is marked in the test management system as an autotest.              You can run it from graphical user interface (GUI). To do that:    1. Open the project in GUI.                2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.                3. Select the autotest(s) you want to run using checkboxes.                4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
+        /// Get work items linked to autotest  This method links an autotest to a test case or a checklist.             A manual test case with a linked automated work item is marked in the test management system as an autotest.             You can run it from graphical user interface (GUI). To do that:  1. Open the project in GUI.              2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.              3. Select the autotest(s) you want to run using checkboxes.              4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID.</param>
+        /// <param name="id">Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID.</param>
         /// <param name="isDeleted">Specifies that a test is deleted or still relevant. (optional)</param>
         /// <param name="isWorkItemDeleted">OBSOLETE: Use &#x60;isDeleted&#x60; instead (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;WorkItemIdentifierModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WorkItemIdentifierModel>> GetWorkItemsLinkedToAutoTestAsync(string id, bool? isDeleted = default(bool?), bool? isWorkItemDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of List&lt;AutoTestWorkItemIdentifierApiResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<AutoTestWorkItemIdentifierApiResult>> GetWorkItemsLinkedToAutoTestAsync(string id, bool? isDeleted = default, bool? isWorkItemDeleted = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<WorkItemIdentifierModel>> localVarResponse = await GetWorkItemsLinkedToAutoTestWithHttpInfoAsync(id, isDeleted, isWorkItemDeleted, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<AutoTestWorkItemIdentifierApiResult>> localVarResponse = await GetWorkItemsLinkedToAutoTestWithHttpInfoAsync(id, isDeleted, isWorkItemDeleted, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get work items linked to autotest   This method links an autotest to a test case or a checklist.              A manual test case with a linked automated work item is marked in the test management system as an autotest.              You can run it from graphical user interface (GUI). To do that:    1. Open the project in GUI.                2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.                3. Select the autotest(s) you want to run using checkboxes.                4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
+        /// Get work items linked to autotest  This method links an autotest to a test case or a checklist.             A manual test case with a linked automated work item is marked in the test management system as an autotest.             You can run it from graphical user interface (GUI). To do that:  1. Open the project in GUI.              2. Go to &lt;b&gt;Test plans&lt;/b&gt; section and switch to the &lt;b&gt;Execution&lt;/b&gt; tab.              3. Select the autotest(s) you want to run using checkboxes.              4. In the toolbar above the test list, click &lt;b&gt;Run autotests&lt;/b&gt;.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID.</param>
+        /// <param name="id">Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID.</param>
         /// <param name="isDeleted">Specifies that a test is deleted or still relevant. (optional)</param>
         /// <param name="isWorkItemDeleted">OBSOLETE: Use &#x60;isDeleted&#x60; instead (optional, default to false)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;WorkItemIdentifierModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemIdentifierModel>>> GetWorkItemsLinkedToAutoTestWithHttpInfoAsync(string id, bool? isDeleted = default(bool?), bool? isWorkItemDeleted = default(bool?), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (List&lt;AutoTestWorkItemIdentifierApiResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestWorkItemIdentifierApiResult>>> GetWorkItemsLinkedToAutoTestWithHttpInfoAsync(string id, bool? isDeleted = default, bool? isWorkItemDeleted = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3910,7 +3910,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<WorkItemIdentifierModel>>("/api/v2/autoTests/{id}/workItems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<AutoTestWorkItemIdentifierApiResult>>("/api/v2/autoTests/{id}/workItems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3922,25 +3922,25 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Link autotest with work items   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets work item internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    System finds the work item by the work item identifier    System relates the work item with the autotest and returns no content response
+        /// Link autotest with work items  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets work item internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  System finds the work item by the work item identifier  System relates the work item with the autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemIdApiModel"> (optional)</param>
         /// <returns></returns>
-        public void LinkAutoTestToWorkItem(string id, WorkItemIdApiModel workItemIdApiModel = default(WorkItemIdApiModel))
+        public void LinkAutoTestToWorkItem(string id, WorkItemIdApiModel workItemIdApiModel = default)
         {
             LinkAutoTestToWorkItemWithHttpInfo(id, workItemIdApiModel);
         }
 
         /// <summary>
-        /// Link autotest with work items   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets work item internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    System finds the work item by the work item identifier    System relates the work item with the autotest and returns no content response
+        /// Link autotest with work items  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets work item internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  System finds the work item by the work item identifier  System relates the work item with the autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemIdApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> LinkAutoTestToWorkItemWithHttpInfo(string id, WorkItemIdApiModel workItemIdApiModel = default(WorkItemIdApiModel))
+        public TestIT.ApiClient.Client.ApiResponse<Object> LinkAutoTestToWorkItemWithHttpInfo(string id, WorkItemIdApiModel workItemIdApiModel = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -3985,27 +3985,27 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Link autotest with work items   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets work item internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    System finds the work item by the work item identifier    System relates the work item with the autotest and returns no content response
+        /// Link autotest with work items  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets work item internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  System finds the work item by the work item identifier  System relates the work item with the autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemIdApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task LinkAutoTestToWorkItemAsync(string id, WorkItemIdApiModel workItemIdApiModel = default(WorkItemIdApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task LinkAutoTestToWorkItemAsync(string id, WorkItemIdApiModel workItemIdApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             await LinkAutoTestToWorkItemWithHttpInfoAsync(id, workItemIdApiModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Link autotest with work items   Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets work item internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    System finds the work item by the work item identifier    System relates the work item with the autotest and returns no content response
+        /// Link autotest with work items  Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets work item internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  System finds the work item by the work item identifier  System relates the work item with the autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Autotest internal (UUID) or global (integer) identifier</param>
         /// <param name="workItemIdApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> LinkAutoTestToWorkItemWithHttpInfoAsync(string id, WorkItemIdApiModel workItemIdApiModel = default(WorkItemIdApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> LinkAutoTestToWorkItemWithHttpInfoAsync(string id, WorkItemIdApiModel workItemIdApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4053,23 +4053,23 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update autotest   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        /// Update autotest  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <returns></returns>
-        public void UpdateAutoTest(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel))
+        public void UpdateAutoTest(AutoTestUpdateApiModel autoTestUpdateApiModel = default)
         {
-            UpdateAutoTestWithHttpInfo(autoTestPutModel);
+            UpdateAutoTestWithHttpInfo(autoTestUpdateApiModel);
         }
 
         /// <summary>
-        /// Update autotest   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        /// Update autotest  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateAutoTestWithHttpInfo(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel))
+        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateAutoTestWithHttpInfo(AutoTestUpdateApiModel autoTestUpdateApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -4088,7 +4088,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = autoTestPutModel;
+            localVarRequestOptions.Data = autoTestUpdateApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4109,25 +4109,25 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update autotest   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        /// Update autotest  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateAutoTestAsync(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateAutoTestAsync(AutoTestUpdateApiModel autoTestUpdateApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await UpdateAutoTestWithHttpInfoAsync(autoTestPutModel, cancellationToken).ConfigureAwait(false);
+            await UpdateAutoTestWithHttpInfoAsync(autoTestUpdateApiModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Update autotest   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        /// Update autotest  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateAutoTestWithHttpInfoAsync(AutoTestPutModel autoTestPutModel = default(AutoTestPutModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateAutoTestWithHttpInfoAsync(AutoTestUpdateApiModel autoTestUpdateApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -4148,7 +4148,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = autoTestPutModel;
+            localVarRequestOptions.Data = autoTestUpdateApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4170,23 +4170,23 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update multiple autotests   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        /// Update multiple autotests  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <returns></returns>
-        public void UpdateMultiple(List<AutoTestPutModel> autoTestPutModel = default(List<AutoTestPutModel>))
+        public void UpdateMultiple(List<AutoTestUpdateApiModel> autoTestUpdateApiModel = default)
         {
-            UpdateMultipleWithHttpInfo(autoTestPutModel);
+            UpdateMultipleWithHttpInfo(autoTestUpdateApiModel);
         }
 
         /// <summary>
-        /// Update multiple autotests   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        /// Update multiple autotests  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateMultipleWithHttpInfo(List<AutoTestPutModel> autoTestPutModel = default(List<AutoTestPutModel>))
+        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateMultipleWithHttpInfo(List<AutoTestUpdateApiModel> autoTestUpdateApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -4205,7 +4205,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = autoTestPutModel;
+            localVarRequestOptions.Data = autoTestUpdateApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -4226,25 +4226,25 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update multiple autotests   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        /// Update multiple autotests  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateMultipleAsync(List<AutoTestPutModel> autoTestPutModel = default(List<AutoTestPutModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task UpdateMultipleAsync(List<AutoTestUpdateApiModel> autoTestUpdateApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await UpdateMultipleWithHttpInfoAsync(autoTestPutModel, cancellationToken).ConfigureAwait(false);
+            await UpdateMultipleWithHttpInfoAsync(autoTestUpdateApiModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Update multiple autotests   Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+        /// Update multiple autotests  Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="autoTestPutModel"> (optional)</param>
+        /// <param name="autoTestUpdateApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateMultipleWithHttpInfoAsync(List<AutoTestPutModel> autoTestPutModel = default(List<AutoTestPutModel>), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateMultipleWithHttpInfoAsync(List<AutoTestUpdateApiModel> autoTestUpdateApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -4265,7 +4265,7 @@ namespace TestIT.ApiClient.Api
             var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
-            localVarRequestOptions.Data = autoTestPutModel;
+            localVarRequestOptions.Data = autoTestUpdateApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))

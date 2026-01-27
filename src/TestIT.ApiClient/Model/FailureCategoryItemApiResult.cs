@@ -58,7 +58,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="regexCount">Regexes count (required).</param>
         /// <param name="projects">Projects names (required).</param>
         /// <param name="projectIds">Projects identifiers (required).</param>
-        public FailureCategoryItemApiResult(Guid id = default(Guid), string name = default(string), FailureCategory failureCategory = default(FailureCategory), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), int failureCategoryId = default(int), int regexCount = default(int), List<ProjectNameApiResult> projects = default(List<ProjectNameApiResult>), List<Guid> projectIds = default(List<Guid>))
+        public FailureCategoryItemApiResult(Guid id = default, string name = default, FailureCategory failureCategory = default, DateTime createdDate = default, Guid createdById = default, DateTime? modifiedDate = default, Guid? modifiedById = default, int failureCategoryId = default, int regexCount = default, List<ProjectNameApiResult> projects = default, List<Guid> projectIds = default)
         {
             this.Id = id;
             this.FailureCategory = failureCategory;

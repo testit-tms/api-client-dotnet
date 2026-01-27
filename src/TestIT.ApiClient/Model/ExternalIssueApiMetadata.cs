@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="assignee">Assignee of external issue in external service.</param>
         /// <param name="type">Type of external issue in external service.</param>
         /// <param name="priority">Priority of external issue in external service.</param>
-        public ExternalIssueApiMetadata(string id = default(string), string title = default(string), string code = default(string), string description = default(string), string status = default(string), string assignee = default(string), ExternalIssueApiType type = default(ExternalIssueApiType), ExternalIssueApiPriority priority = default(ExternalIssueApiPriority))
+        public ExternalIssueApiMetadata(string id = default, string title = default, string code = default, string description = default, string status = default, string assignee = default, ExternalIssueApiType type = default, ExternalIssueApiPriority priority = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)

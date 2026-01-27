@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">Regex unique identifier (required).</param>
         /// <param name="regexText">Regex value (required).</param>
-        public UpdateFailureClassRegexApiModel(Guid id = default(Guid), string regexText = default(string))
+        public UpdateFailureClassRegexApiModel(Guid id = default, string regexText = default)
         {
             this.Id = id;
             // to ensure "regexText" is required (not null)

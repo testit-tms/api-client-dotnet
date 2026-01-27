@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="countGroupByStatus">countGroupByStatus (required).</param>
         /// <param name="countGroupByStatusType">countGroupByStatusType (required).</param>
         /// <param name="countGroupByFailureClass">countGroupByFailureClass (required).</param>
-        public TestRunAnalyticApiResult(List<TestRunGroupByStatusApiResult> countGroupByStatus = default(List<TestRunGroupByStatusApiResult>), List<TestRunGroupByStatusTypeApiResult> countGroupByStatusType = default(List<TestRunGroupByStatusTypeApiResult>), List<TestRunGroupByFailureClassApiResult> countGroupByFailureClass = default(List<TestRunGroupByFailureClassApiResult>))
+        public TestRunAnalyticApiResult(List<TestRunGroupByStatusApiResult> countGroupByStatus = default, List<TestRunGroupByStatusTypeApiResult> countGroupByStatusType = default, List<TestRunGroupByFailureClassApiResult> countGroupByFailureClass = default)
         {
             // to ensure "countGroupByStatus" is required (not null)
             if (countGroupByStatus == null)

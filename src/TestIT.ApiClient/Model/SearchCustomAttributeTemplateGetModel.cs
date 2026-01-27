@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="projectShortestModels">projectShortestModels (required).</param>
         /// <param name="customAttributeModels">customAttributeModels (required).</param>
-        public SearchCustomAttributeTemplateGetModel(Guid id = default(Guid), bool isDeleted = default(bool), string name = default(string), List<ProjectShortestModel> projectShortestModels = default(List<ProjectShortestModel>), List<CustomAttributeModel> customAttributeModels = default(List<CustomAttributeModel>))
+        public SearchCustomAttributeTemplateGetModel(Guid id = default, bool isDeleted = default, string name = default, List<ProjectShortestModel> projectShortestModels = default, List<CustomAttributeModel> customAttributeModels = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;

@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdDate">createdDate (required).</param>
         /// <param name="autoTest">autoTest.</param>
         /// <param name="attachments">attachments (required).</param>
-        public TestResultShortApiResult(Guid id = default(Guid), string outcome = default(string), TestStatusApiResult status = default(TestStatusApiResult), string traces = default(string), string failureType = default(string), string message = default(string), TestPointShortApiResult testPoint = default(TestPointShortApiResult), DateTime createdDate = default(DateTime), AutoTestShortApiResult autoTest = default(AutoTestShortApiResult), List<AttachmentApiResult> attachments = default(List<AttachmentApiResult>))
+        public TestResultShortApiResult(Guid id = default, string outcome = default, TestStatusApiResult status = default, string traces = default, string failureType = default, string message = default, TestPointShortApiResult testPoint = default, DateTime createdDate = default, AutoTestShortApiResult autoTest = default, List<AttachmentApiResult> attachments = default)
         {
             this.Id = id;
             // to ensure "outcome" is required (not null)

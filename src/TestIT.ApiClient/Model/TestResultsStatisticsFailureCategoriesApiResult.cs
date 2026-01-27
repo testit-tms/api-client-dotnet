@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="infrastructureDefect">Number of test results which outcomes were caused by some infrastructure defect (required).</param>
         /// <param name="productDefect">Number of test results which outcomes were caused by some tested product defect (required).</param>
         /// <param name="testDefect">Number of test results which outcomes were caused by test itself (required).</param>
-        public TestResultsStatisticsFailureCategoriesApiResult(int infrastructureDefect = default(int), int productDefect = default(int), int testDefect = default(int))
+        public TestResultsStatisticsFailureCategoriesApiResult(int infrastructureDefect = default, int productDefect = default, int testDefect = default)
         {
             this.InfrastructureDefect = infrastructureDefect;
             this.ProductDefect = productDefect;

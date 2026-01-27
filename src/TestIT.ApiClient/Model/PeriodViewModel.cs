@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="startDate">startDate.</param>
         /// <param name="endDate">endDate.</param>
-        public PeriodViewModel(DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?))
+        public PeriodViewModel(DateTime? startDate = default, DateTime? endDate = default)
         {
             this.StartDate = startDate;
             this.EndDate = endDate;

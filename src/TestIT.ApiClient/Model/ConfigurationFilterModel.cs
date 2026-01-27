@@ -39,7 +39,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">Filter to search by name (case-insensitive, partial match).</param>
         /// <param name="isDeleted">Is configurations deleted or existing.</param>
         /// <param name="globalIds">Collection of global (integer) identifiers to filter configurations.</param>
-        public ConfigurationFilterModel(List<Guid> projectIds = default(List<Guid>), string name = default(string), bool? isDeleted = default(bool?), List<long> globalIds = default(List<long>))
+        public ConfigurationFilterModel(List<Guid> projectIds = default, string name = default, bool? isDeleted = default, List<long> globalIds = default)
         {
             this.ProjectIds = projectIds;
             this.Name = name;

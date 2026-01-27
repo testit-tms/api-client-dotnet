@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="AttachmentPutModel" /> class.
         /// </summary>
         /// <param name="id">Unique ID of the attachment (required).</param>
-        public AttachmentPutModel(Guid id = default(Guid))
+        public AttachmentPutModel(Guid id = default)
         {
             this.Id = id;
         }

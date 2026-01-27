@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="description">description (required).</param>
         /// <param name="steps">steps (required).</param>
-        public WorkItemPreviewApiModel(string name = default(string), string description = default(string), List<WorkItemPreviewStepApiModel> steps = default(List<WorkItemPreviewStepApiModel>))
+        public WorkItemPreviewApiModel(string name = default, string description = default, List<WorkItemPreviewStepApiModel> steps = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

@@ -40,7 +40,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isDeleted">isDeleted.</param>
         /// <param name="startDate">startDate.</param>
         /// <param name="endDate">endDate.</param>
-        public BackgroundJobFilterModel(List<BackgroundJobType> types = default(List<BackgroundJobType>), List<BackgroundJobState> states = default(List<BackgroundJobState>), bool? isDeleted = default(bool?), DateTimeRangeSelectorModel startDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel endDate = default(DateTimeRangeSelectorModel))
+        public BackgroundJobFilterModel(List<BackgroundJobType> types = default, List<BackgroundJobState> states = default, bool? isDeleted = default, DateTimeRangeSelectorModel startDate = default, DateTimeRangeSelectorModel endDate = default)
         {
             this.Types = types;
             this.States = states;

@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isDeleted">Indicates if the attributes option is deleted (required).</param>
         /// <param name="value">Value of the attribute option.</param>
         /// <param name="isDefault">Indicates if the attribute option is used by default (required).</param>
-        public CustomAttributeOptionModel(Guid id = default(Guid), bool isDeleted = default(bool), string value = default(string), bool isDefault = default(bool))
+        public CustomAttributeOptionModel(Guid id = default, bool isDeleted = default, string value = default, bool isDefault = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;

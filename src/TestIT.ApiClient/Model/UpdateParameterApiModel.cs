@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">Key of the parameter (required).</param>
         /// <param name="value">Value of the parameter (required).</param>
         /// <param name="projectIds">List of projects where parameter should be available.</param>
-        public UpdateParameterApiModel(Guid id = default(Guid), string name = default(string), string value = default(string), List<Guid> projectIds = default(List<Guid>))
+        public UpdateParameterApiModel(Guid id = default, string name = default, string value = default, List<Guid> projectIds = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

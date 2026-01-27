@@ -50,9 +50,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="duration">Expected or actual duration of the test run execution in milliseconds..</param>
         /// <param name="outcome">Specifies the result of the autotest execution..</param>
         /// <param name="stepResults">Nested step results. The maximum nesting level is 15..</param>
-        /// <param name="attachments">/// &lt;summary&gt;  Specifies an attachment GUID. Multiple values can be sent.  &lt;/summary&gt;.</param>
+        /// <param name="attachments">/// &lt;summary&gt; Specifies an attachment GUID. Multiple values can be sent. &lt;/summary&gt;.</param>
         /// <param name="parameters">\&quot;&lt;b&gt;parameter&lt;/b&gt;\&quot;: \&quot;&lt;b&gt;value&lt;/b&gt;\&quot; pair with arbitrary custom parameters. Multiple parameters can be sent..</param>
-        public AttachmentPutModelAutoTestStepResultsModel(string title = default(string), string description = default(string), string info = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), AvailableTestResultOutcome? outcome = default(AvailableTestResultOutcome?), List<AttachmentPutModelAutoTestStepResultsModel> stepResults = default(List<AttachmentPutModelAutoTestStepResultsModel>), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>), Dictionary<string, string> parameters = default(Dictionary<string, string>))
+        public AttachmentPutModelAutoTestStepResultsModel(string title = default, string description = default, string info = default, DateTime? startedOn = default, DateTime? completedOn = default, long? duration = default, AvailableTestResultOutcome? outcome = default, List<AttachmentPutModelAutoTestStepResultsModel> stepResults = default, List<AttachmentPutModel> attachments = default, Dictionary<string, string> parameters = default)
         {
             this.Title = title;
             this.Description = description;
@@ -116,9 +116,9 @@ namespace TestIT.ApiClient.Model
         public List<AttachmentPutModelAutoTestStepResultsModel> StepResults { get; set; }
 
         /// <summary>
-        /// /// &lt;summary&gt;  Specifies an attachment GUID. Multiple values can be sent.  &lt;/summary&gt;
+        /// /// &lt;summary&gt; Specifies an attachment GUID. Multiple values can be sent. &lt;/summary&gt;
         /// </summary>
-        /// <value>/// &lt;summary&gt;  Specifies an attachment GUID. Multiple values can be sent.  &lt;/summary&gt;</value>
+        /// <value>/// &lt;summary&gt; Specifies an attachment GUID. Multiple values can be sent. &lt;/summary&gt;</value>
         [DataMember(Name = "attachments", EmitDefaultValue = true)]
         public List<AttachmentPutModel> Attachments { get; set; }
 

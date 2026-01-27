@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">Collection of filters to apply to search (required).</param>
         /// <param name="extractionModel">Rules for different level entities inclusion/exclusion.</param>
-        public WorkItemSelectModel(WorkItemFilterModel filter = default(WorkItemFilterModel), WorkItemExtractionModel extractionModel = default(WorkItemExtractionModel))
+        public WorkItemSelectModel(WorkItemFilterModel filter = default, WorkItemExtractionModel extractionModel = default)
         {
             // to ensure "filter" is required (not null)
             if (filter == null)

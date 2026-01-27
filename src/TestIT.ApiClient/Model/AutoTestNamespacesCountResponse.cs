@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="AutoTestNamespacesCountResponse" /> class.
         /// </summary>
         /// <param name="namespaces">namespaces (required).</param>
-        public AutoTestNamespacesCountResponse(List<AutoTestNamespaceCountApiModel> namespaces = default(List<AutoTestNamespaceCountApiModel>))
+        public AutoTestNamespacesCountResponse(List<AutoTestNamespaceCountApiModel> namespaces = default)
         {
             // to ensure "namespaces" is required (not null)
             if (namespaces == null)

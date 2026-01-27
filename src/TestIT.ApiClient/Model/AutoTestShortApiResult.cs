@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="externalId">externalId (required).</param>
         /// <param name="globalId">globalId (required).</param>
-        public AutoTestShortApiResult(Guid id = default(Guid), Guid projectId = default(Guid), string name = default(string), string externalId = default(string), long globalId = default(long))
+        public AutoTestShortApiResult(Guid id = default, Guid projectId = default, string name = default, string externalId = default, long globalId = default)
         {
             this.Id = id;
             this.ProjectId = projectId;

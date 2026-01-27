@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="title">title (required).</param>
         /// <param name="type">type.</param>
         /// <param name="url">url (required).</param>
-        public LinkShortModel(Guid id = default(Guid), string title = default(string), string type = default(string), string url = default(string))
+        public LinkShortModel(Guid id = default, string title = default, string type = default, string url = default)
         {
             this.Id = id;
             // to ensure "title" is required (not null)

@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="oldValue">oldValue.</param>
         /// <param name="newValue">newValue.</param>
-        public StringChangedFieldViewModel(string oldValue = default(string), string newValue = default(string))
+        public StringChangedFieldViewModel(string oldValue = default, string newValue = default)
         {
             this.OldValue = oldValue;
             this.NewValue = newValue;

@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">id (required).</param>
         /// <param name="isDeleted">isDeleted (required).</param>
         /// <param name="name">Custom attributes template name (required).</param>
-        public CustomAttributeTemplateModel(Guid id = default(Guid), bool isDeleted = default(bool), string name = default(string))
+        public CustomAttributeTemplateModel(Guid id = default, bool isDeleted = default, string name = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;
@@ -59,7 +59,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>fe5cf7ed-69ec-4bbd-9fd0-ab259c2b6688</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }

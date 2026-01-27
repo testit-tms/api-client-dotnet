@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdDate">createdDate (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        public WorkItemCommentModel(Guid id = default(Guid), string text = default(string), UserWithRankModel user = default(UserWithRankModel), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?))
+        public WorkItemCommentModel(Guid id = default, string text = default, UserWithRankModel user = default, Guid createdById = default, Guid? modifiedById = default, DateTime createdDate = default, DateTime? modifiedDate = default)
         {
             this.Id = id;
             // to ensure "text" is required (not null)

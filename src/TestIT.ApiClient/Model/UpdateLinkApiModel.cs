@@ -53,7 +53,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">Link description..</param>
         /// <param name="type">Specifies the type of the link..</param>
         /// <param name="hasInfo">Flag defines if link relates to integrated jira service (required).</param>
-        public UpdateLinkApiModel(Guid? id = default(Guid?), string title = default(string), string url = default(string), string description = default(string), LinkType? type = default(LinkType?), bool hasInfo = default(bool))
+        public UpdateLinkApiModel(Guid? id = default, string title = default, string url = default, string description = default, LinkType? type = default, bool hasInfo = default)
         {
             // to ensure "url" is required (not null)
             if (url == null)

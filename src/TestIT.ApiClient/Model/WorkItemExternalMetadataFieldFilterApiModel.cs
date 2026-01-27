@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="value">Value of the field (required).</param>
         /// <param name="externalServiceId">Identifier of external service which is source of this value (required).</param>
-        public WorkItemExternalMetadataFieldFilterApiModel(string value = default(string), Guid externalServiceId = default(Guid))
+        public WorkItemExternalMetadataFieldFilterApiModel(string value = default, Guid externalServiceId = default)
         {
             // to ensure "value" is required (not null)
             if (value == null)

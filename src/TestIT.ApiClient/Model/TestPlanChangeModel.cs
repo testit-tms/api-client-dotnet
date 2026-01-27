@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="testPlanChangedFields">testPlanChangedFields (required).</param>
         /// <param name="createdById">createdById (required).</param>
         /// <param name="createdDate">createdDate.</param>
-        public TestPlanChangeModel(Guid id = default(Guid), Guid testPlanId = default(Guid), TestPlanChangedFieldsViewModel testPlanChangedFields = default(TestPlanChangedFieldsViewModel), Guid createdById = default(Guid), DateTime? createdDate = default(DateTime?))
+        public TestPlanChangeModel(Guid id = default, Guid testPlanId = default, TestPlanChangedFieldsViewModel testPlanChangedFields = default, Guid createdById = default, DateTime? createdDate = default)
         {
             this.Id = id;
             this.TestPlanId = testPlanId;

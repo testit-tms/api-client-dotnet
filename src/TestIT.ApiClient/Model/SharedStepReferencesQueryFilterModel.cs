@@ -42,12 +42,12 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedByIds">Collection of identifiers of users who applied last modification to work item.</param>
         /// <param name="states">Collection of states of work item.</param>
         /// <param name="priorities">Collection of priorities of work item.</param>
-        /// <param name="entityTypes">Collection of types of work item    Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;.</param>
+        /// <param name="entityTypes">Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;.</param>
         /// <param name="createdDate">Date and time of work item creation.</param>
         /// <param name="modifiedDate">Date and time of work item last modification.</param>
         /// <param name="isAutomated">Is result must consist of only manual/automated work items.</param>
         /// <param name="tags">Collection of tags.</param>
-        public SharedStepReferencesQueryFilterModel(string name = default(string), List<long> globalIds = default(List<long>), List<Guid> sectionIds = default(List<Guid>), List<Guid> createdByIds = default(List<Guid>), List<Guid> modifiedByIds = default(List<Guid>), List<WorkItemStates> states = default(List<WorkItemStates>), List<WorkItemPriorityModel> priorities = default(List<WorkItemPriorityModel>), List<string> entityTypes = default(List<string>), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), DateTimeRangeSelectorModel modifiedDate = default(DateTimeRangeSelectorModel), bool? isAutomated = default(bool?), List<string> tags = default(List<string>))
+        public SharedStepReferencesQueryFilterModel(string name = default, List<long> globalIds = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<string> entityTypes = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, bool? isAutomated = default, List<string> tags = default)
         {
             this.Name = name;
             this.GlobalIds = globalIds;
@@ -113,9 +113,9 @@ namespace TestIT.ApiClient.Model
         public List<WorkItemPriorityModel> Priorities { get; set; }
 
         /// <summary>
-        /// Collection of types of work item    Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;
+        /// Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;
         /// </summary>
-        /// <value>Collection of types of work item    Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;</value>
+        /// <value>Collection of types of work item  Allowed values: &#x60;TestCases&#x60;, &#x60;CheckLists&#x60;, &#x60;SharedSteps&#x60;</value>
         [DataMember(Name = "entityTypes", EmitDefaultValue = true)]
         public List<string> EntityTypes { get; set; }
 

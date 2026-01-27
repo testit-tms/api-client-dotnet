@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="previews">previews (required).</param>
         /// <param name="attributes">attributes.</param>
         /// <param name="link">link.</param>
-        public CreateWorkItemPreviewsApiModel(Guid sectionId = default(Guid), List<WorkItemPreviewApiModel> previews = default(List<WorkItemPreviewApiModel>), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), PreviewsIssueLinkApiModel link = default(PreviewsIssueLinkApiModel))
+        public CreateWorkItemPreviewsApiModel(Guid sectionId = default, List<WorkItemPreviewApiModel> previews = default, Dictionary<string, Object> attributes = default, PreviewsIssueLinkApiModel link = default)
         {
             this.SectionId = sectionId;
             // to ensure "previews" is required (not null)

@@ -56,7 +56,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="parentId">Unique ID of the parent test suite, if any (required).</param>
         /// <param name="testPlanId">Unique ID of the associated test plan (required).</param>
         /// <param name="children">Collection of child test suites.</param>
-        public TestSuiteHierarchyApiResult(Guid id = default(Guid), string name = default(string), TestSuiteTypeApiResult type = default(TestSuiteTypeApiResult), bool? saveStructure = default(bool?), bool? autoRefresh = default(bool?), DateTime? refreshDate = default(DateTime?), Guid? parentId = default(Guid?), Guid? testPlanId = default(Guid?), List<TestSuiteHierarchyApiResult> children = default(List<TestSuiteHierarchyApiResult>))
+        public TestSuiteHierarchyApiResult(Guid id = default, string name = default, TestSuiteTypeApiResult type = default, bool? saveStructure = default, bool? autoRefresh = default, DateTime? refreshDate = default, Guid? parentId = default, Guid? testPlanId = default, List<TestSuiteHierarchyApiResult> children = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

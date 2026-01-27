@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="links">links.</param>
         /// <param name="workItemVersionId">workItemVersionId (required).</param>
         /// <param name="attachments">attachments.</param>
-        public LastTestResultModel(Guid id = default(Guid), Guid testRunId = default(Guid), Guid? autoTestId = default(Guid?), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), Guid workItemVersionId = default(Guid), List<AttachmentModel> attachments = default(List<AttachmentModel>))
+        public LastTestResultModel(Guid id = default, Guid testRunId = default, Guid? autoTestId = default, string comment = default, List<LinkModel> links = default, Guid workItemVersionId = default, List<AttachmentModel> attachments = default)
         {
             this.Id = id;
             this.TestRunId = testRunId;
