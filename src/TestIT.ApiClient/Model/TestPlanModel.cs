@@ -109,7 +109,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Set when test plan is starter (status changed to: In Progress)</value>
         /*
-        <example>2026-01-22T16:37:35.457742900Z</example>
+        <example>2026-01-27T08:20:39.308832200Z</example>
         */
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
@@ -119,7 +119,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>set when test plan status is completed (status changed to: Completed)</value>
         /*
-        <example>2026-01-22T16:37:35.457742900Z</example>
+        <example>2026-01-27T08:20:39.308832200Z</example>
         */
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
@@ -128,7 +128,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         /*
-        <example>2026-01-22T16:37:35.457742900Z</example>
+        <example>2026-01-27T08:20:39.308832200Z</example>
         */
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
@@ -137,7 +137,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2026-01-22T16:37:35.457742900Z</example>
+        <example>2026-01-27T08:20:39.308832200Z</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
@@ -146,7 +146,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedById
         /// </summary>
         /*
-        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
+        <example>fe5cf7ed-69ec-4bbd-9fd0-ab259c2b6688</example>
         */
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
@@ -155,7 +155,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedById
         /// </summary>
         /*
-        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
+        <example>fe5cf7ed-69ec-4bbd-9fd0-ab259c2b6688</example>
         */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
@@ -183,7 +183,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets LockedDate
         /// </summary>
         /*
-        <example>2026-01-22T16:37:35.457742900Z</example>
+        <example>2026-01-27T08:20:39.308832200Z</example>
         */
         [DataMember(Name = "lockedDate", EmitDefaultValue = true)]
         public DateTime? LockedDate { get; set; }
@@ -192,7 +192,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
+        <example>fe5cf7ed-69ec-4bbd-9fd0-ab259c2b6688</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
@@ -223,7 +223,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Used for analytics</value>
         /*
-        <example>2026-01-22T16:37:35.457742900Z</example>
+        <example>2026-01-27T08:20:39.308832200Z</example>
         */
         [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
@@ -233,7 +233,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Used for analytics</value>
         /*
-        <example>2026-01-22T16:37:35.457742900Z</example>
+        <example>2026-01-27T08:20:39.308832200Z</example>
         */
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }
@@ -260,7 +260,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ProjectId
         /// </summary>
         /*
-        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
+        <example>fe5cf7ed-69ec-4bbd-9fd0-ab259c2b6688</example>
         */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }

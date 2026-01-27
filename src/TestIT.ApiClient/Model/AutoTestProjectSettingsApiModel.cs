@@ -45,13 +45,22 @@ namespace TestIT.ApiClient.Model
         /// <param name="flakyTestRunCount">Last test run count for autotest flaky computing (default to 100).</param>
         /// <param name="rerunEnabled">Auto rerun enabled (required).</param>
         /// <param name="rerunAttemptsCount">Auto rerun attempt count (required).</param>
-        public AutoTestProjectSettingsApiModel(bool isFlakyAuto = false, int flakyStabilityPercentage = 100, int flakyTestRunCount = 100, bool rerunEnabled = default, int rerunAttemptsCount = default)
+        /// <param name="workItemUpdatingEnabled">Autotest to work item updating enabled (default to false).</param>
+        /// <param name="workItemUpdatingFields">Autotest to work item updating fields (required).</param>
+        public AutoTestProjectSettingsApiModel(bool isFlakyAuto = false, int flakyStabilityPercentage = 100, int flakyTestRunCount = 100, bool rerunEnabled = default, int rerunAttemptsCount = default, bool workItemUpdatingEnabled = false, WorkItemUpdatingFieldsApiModel workItemUpdatingFields = default)
         {
             this.RerunEnabled = rerunEnabled;
             this.RerunAttemptsCount = rerunAttemptsCount;
+            // to ensure "workItemUpdatingFields" is required (not null)
+            if (workItemUpdatingFields == null)
+            {
+                throw new ArgumentNullException("workItemUpdatingFields is a required property for AutoTestProjectSettingsApiModel and cannot be null");
+            }
+            this.WorkItemUpdatingFields = workItemUpdatingFields;
             this.IsFlakyAuto = isFlakyAuto;
             this.FlakyStabilityPercentage = flakyStabilityPercentage;
             this.FlakyTestRunCount = flakyTestRunCount;
+            this.WorkItemUpdatingEnabled = workItemUpdatingEnabled;
         }
 
         /// <summary>
@@ -90,6 +99,20 @@ namespace TestIT.ApiClient.Model
         public int RerunAttemptsCount { get; set; }
 
         /// <summary>
+        /// Autotest to work item updating enabled
+        /// </summary>
+        /// <value>Autotest to work item updating enabled</value>
+        [DataMember(Name = "workItemUpdatingEnabled", EmitDefaultValue = true)]
+        public bool WorkItemUpdatingEnabled { get; set; }
+
+        /// <summary>
+        /// Autotest to work item updating fields
+        /// </summary>
+        /// <value>Autotest to work item updating fields</value>
+        [DataMember(Name = "workItemUpdatingFields", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemUpdatingFieldsApiModel WorkItemUpdatingFields { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -102,6 +125,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  FlakyTestRunCount: ").Append(FlakyTestRunCount).Append("\n");
             sb.Append("  RerunEnabled: ").Append(RerunEnabled).Append("\n");
             sb.Append("  RerunAttemptsCount: ").Append(RerunAttemptsCount).Append("\n");
+            sb.Append("  WorkItemUpdatingEnabled: ").Append(WorkItemUpdatingEnabled).Append("\n");
+            sb.Append("  WorkItemUpdatingFields: ").Append(WorkItemUpdatingFields).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

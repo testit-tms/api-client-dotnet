@@ -24,270 +24,250 @@ namespace TestIT.ApiClient.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IProjectTestPlanTestPointsApiSync : IApiAccessor
+    public interface IProjectFailureCategoriesApiSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get test points analytics.
+        /// Get failure categories with support for filtering, sorting and grouping
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAnalyticsApiModel"> (optional)</param>
-        /// <returns>TestPlanTestPointsAnalyticsApiResult</returns>
-        TestPlanTestPointsAnalyticsApiResult ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPost(string projectId, Guid testPlanId, TestPlanTestPointsAnalyticsApiModel testPlanTestPointsAnalyticsApiModel = default);
+        /// <param name="failureCategoryGroupSearchApiModel"> (optional)</param>
+        /// <returns>ProjectFailureCategoryGroupItemApiResultReply</returns>
+        ProjectFailureCategoryGroupItemApiResultReply ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPost(string projectId, FailureCategoryGroupSearchApiModel failureCategoryGroupSearchApiModel = default);
 
         /// <summary>
-        /// Get test points analytics.
+        /// Get failure categories with support for filtering, sorting and grouping
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAnalyticsApiModel"> (optional)</param>
-        /// <returns>ApiResponse of TestPlanTestPointsAnalyticsApiResult</returns>
-        ApiResponse<TestPlanTestPointsAnalyticsApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAnalyticsApiModel testPlanTestPointsAnalyticsApiModel = default);
+        /// <param name="failureCategoryGroupSearchApiModel"> (optional)</param>
+        /// <returns>ApiResponse of ProjectFailureCategoryGroupItemApiResultReply</returns>
+        ApiResponse<ProjectFailureCategoryGroupItemApiResultReply> ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPostWithHttpInfo(string projectId, FailureCategoryGroupSearchApiModel failureCategoryGroupSearchApiModel = default);
         /// <summary>
-        /// Rerun autotests.
+        /// Delete failure category
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        void ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default);
+        void ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDelete(string projectId, Guid id);
 
         /// <summary>
-        /// Rerun autotests.
+        /// Delete failure category
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
+        /// <param name="id"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default);
+        ApiResponse<Object> ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDeleteWithHttpInfo(string projectId, Guid id);
         /// <summary>
-        /// Run autotests.
+        /// Get failure category by ID
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
-        /// <returns>TestRunNameApiResult</returns>
-        TestRunNameApiResult ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default);
+        /// <param name="id"></param>
+        /// <returns>ProjectDetailedFailureCategoryApiResult</returns>
+        ProjectDetailedFailureCategoryApiResult ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGet(string projectId, Guid id);
 
         /// <summary>
-        /// Run autotests.
+        /// Get failure category by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
-        /// <returns>ApiResponse of TestRunNameApiResult</returns>
-        ApiResponse<TestRunNameApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default);
+        /// <param name="id"></param>
+        /// <returns>ApiResponse of ProjectDetailedFailureCategoryApiResult</returns>
+        ApiResponse<ProjectDetailedFailureCategoryApiResult> ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGetWithHttpInfo(string projectId, Guid id);
         /// <summary>
-        /// Search test points in test plan.
+        /// Create failure category
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsApiModel"> (optional)</param>
-        /// <returns>TestPlanTestPointsGroupSearchApiResult</returns>
-        TestPlanTestPointsGroupSearchApiResult ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPost(string projectId, Guid testPlanId, TestPlanTestPointsApiModel testPlanTestPointsApiModel = default);
+        /// <param name="createProjectFailureCategoryApiModel"> (optional)</param>
+        /// <returns>ProjectDetailedFailureCategoryApiResult</returns>
+        ProjectDetailedFailureCategoryApiResult ApiV2ProjectsProjectIdAutotestsFailureCategoriesPost(string projectId, CreateProjectFailureCategoryApiModel createProjectFailureCategoryApiModel = default);
 
         /// <summary>
-        /// Search test points in test plan.
+        /// Create failure category
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsApiModel"> (optional)</param>
-        /// <returns>ApiResponse of TestPlanTestPointsGroupSearchApiResult</returns>
-        ApiResponse<TestPlanTestPointsGroupSearchApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsApiModel testPlanTestPointsApiModel = default);
+        /// <param name="createProjectFailureCategoryApiModel"> (optional)</param>
+        /// <returns>ApiResponse of ProjectDetailedFailureCategoryApiResult</returns>
+        ApiResponse<ProjectDetailedFailureCategoryApiResult> ApiV2ProjectsProjectIdAutotestsFailureCategoriesPostWithHttpInfo(string projectId, CreateProjectFailureCategoryApiModel createProjectFailureCategoryApiModel = default);
         /// <summary>
-        /// Distribute test points between the users.
+        /// Update failure category
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsSetTestersApiModel"> (optional)</param>
+        /// <param name="updateFailureCategoryProjectApiModel"> (optional)</param>
         /// <returns></returns>
-        void ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPost(string projectId, Guid testPlanId, TestPlanTestPointsSetTestersApiModel testPlanTestPointsSetTestersApiModel = default);
+        void ApiV2ProjectsProjectIdAutotestsFailureCategoriesPut(string projectId, UpdateFailureCategoryProjectApiModel updateFailureCategoryProjectApiModel = default);
 
         /// <summary>
-        /// Distribute test points between the users.
+        /// Update failure category
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsSetTestersApiModel"> (optional)</param>
+        /// <param name="updateFailureCategoryProjectApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsSetTestersApiModel testPlanTestPointsSetTestersApiModel = default);
+        ApiResponse<Object> ApiV2ProjectsProjectIdAutotestsFailureCategoriesPutWithHttpInfo(string projectId, UpdateFailureCategoryProjectApiModel updateFailureCategoryProjectApiModel = default);
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IProjectTestPlanTestPointsApiAsync : IApiAccessor
+    public interface IProjectFailureCategoriesApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
-        /// Get test points analytics.
+        /// Get failure categories with support for filtering, sorting and grouping
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAnalyticsApiModel"> (optional)</param>
+        /// <param name="failureCategoryGroupSearchApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestPlanTestPointsAnalyticsApiResult</returns>
-        System.Threading.Tasks.Task<TestPlanTestPointsAnalyticsApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAnalyticsApiModel testPlanTestPointsAnalyticsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ProjectFailureCategoryGroupItemApiResultReply</returns>
+        System.Threading.Tasks.Task<ProjectFailureCategoryGroupItemApiResultReply> ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPostAsync(string projectId, FailureCategoryGroupSearchApiModel failureCategoryGroupSearchApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Get test points analytics.
+        /// Get failure categories with support for filtering, sorting and grouping
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAnalyticsApiModel"> (optional)</param>
+        /// <param name="failureCategoryGroupSearchApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestPlanTestPointsAnalyticsApiResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestPlanTestPointsAnalyticsApiResult>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAnalyticsApiModel testPlanTestPointsAnalyticsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ProjectFailureCategoryGroupItemApiResultReply)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ProjectFailureCategoryGroupItemApiResultReply>> ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPostWithHttpInfoAsync(string projectId, FailureCategoryGroupSearchApiModel failureCategoryGroupSearchApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Rerun autotests.
+        /// Delete failure category
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDeleteAsync(string projectId, Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Rerun autotests.
+        /// Delete failure category
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDeleteWithHttpInfoAsync(string projectId, Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Run autotests.
+        /// Get failure category by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestRunNameApiResult</returns>
-        System.Threading.Tasks.Task<TestRunNameApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ProjectDetailedFailureCategoryApiResult</returns>
+        System.Threading.Tasks.Task<ProjectDetailedFailureCategoryApiResult> ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGetAsync(string projectId, Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Run autotests.
+        /// Get failure category by ID
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestRunNameApiResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestRunNameApiResult>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ProjectDetailedFailureCategoryApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ProjectDetailedFailureCategoryApiResult>> ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGetWithHttpInfoAsync(string projectId, Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Search test points in test plan.
+        /// Create failure category
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsApiModel"> (optional)</param>
+        /// <param name="createProjectFailureCategoryApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestPlanTestPointsGroupSearchApiResult</returns>
-        System.Threading.Tasks.Task<TestPlanTestPointsGroupSearchApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsApiModel testPlanTestPointsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ProjectDetailedFailureCategoryApiResult</returns>
+        System.Threading.Tasks.Task<ProjectDetailedFailureCategoryApiResult> ApiV2ProjectsProjectIdAutotestsFailureCategoriesPostAsync(string projectId, CreateProjectFailureCategoryApiModel createProjectFailureCategoryApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Search test points in test plan.
+        /// Create failure category
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsApiModel"> (optional)</param>
+        /// <param name="createProjectFailureCategoryApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestPlanTestPointsGroupSearchApiResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestPlanTestPointsGroupSearchApiResult>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsApiModel testPlanTestPointsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ProjectDetailedFailureCategoryApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ProjectDetailedFailureCategoryApiResult>> ApiV2ProjectsProjectIdAutotestsFailureCategoriesPostWithHttpInfoAsync(string projectId, CreateProjectFailureCategoryApiModel createProjectFailureCategoryApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
-        /// Distribute test points between the users.
+        /// Update failure category
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsSetTestersApiModel"> (optional)</param>
+        /// <param name="updateFailureCategoryProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsSetTestersApiModel testPlanTestPointsSetTestersApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task ApiV2ProjectsProjectIdAutotestsFailureCategoriesPutAsync(string projectId, UpdateFailureCategoryProjectApiModel updateFailureCategoryProjectApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// Distribute test points between the users.
+        /// Update failure category
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsSetTestersApiModel"> (optional)</param>
+        /// <param name="updateFailureCategoryProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsSetTestersApiModel testPlanTestPointsSetTestersApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdAutotestsFailureCategoriesPutWithHttpInfoAsync(string projectId, UpdateFailureCategoryProjectApiModel updateFailureCategoryProjectApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IProjectTestPlanTestPointsApi : IProjectTestPlanTestPointsApiSync, IProjectTestPlanTestPointsApiAsync
+    public interface IProjectFailureCategoriesApi : IProjectFailureCategoriesApiSync, IProjectFailureCategoriesApiAsync
     {
 
     }
@@ -295,29 +275,29 @@ namespace TestIT.ApiClient.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ProjectTestPlanTestPointsApi : IDisposable, IProjectTestPlanTestPointsApi
+    public partial class ProjectFailureCategoriesApi : IDisposable, IProjectFailureCategoriesApi
     {
         private TestIT.ApiClient.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectTestPlanTestPointsApi"/> class.
+        /// Initializes a new instance of the <see cref="ProjectFailureCategoriesApi"/> class.
         /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
         /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
         /// <returns></returns>
-        public ProjectTestPlanTestPointsApi() : this((string)null)
+        public ProjectFailureCategoriesApi() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectTestPlanTestPointsApi"/> class.
+        /// Initializes a new instance of the <see cref="ProjectFailureCategoriesApi"/> class.
         /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
         /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
         /// <param name="basePath">The target service's base path in URL format.</param>
         /// <exception cref="ArgumentException"></exception>
         /// <returns></returns>
-        public ProjectTestPlanTestPointsApi(string basePath)
+        public ProjectFailureCategoriesApi(string basePath)
         {
             this.Configuration = TestIT.ApiClient.Client.Configuration.MergeConfigurations(
                 TestIT.ApiClient.Client.GlobalConfiguration.Instance,
@@ -330,14 +310,14 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectTestPlanTestPointsApi"/> class using Configuration object.
+        /// Initializes a new instance of the <see cref="ProjectFailureCategoriesApi"/> class using Configuration object.
         /// **IMPORTANT** This will also create an instance of HttpClient, which is less than ideal.
         /// It's better to reuse the <see href="https://docs.microsoft.com/en-us/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#issues-with-the-original-httpclient-class-available-in-net">HttpClient and HttpClientHandler</see>.
         /// </summary>
         /// <param name="configuration">An instance of Configuration.</param>
         /// <exception cref="ArgumentNullException"></exception>
         /// <returns></returns>
-        public ProjectTestPlanTestPointsApi(TestIT.ApiClient.Client.Configuration configuration)
+        public ProjectFailureCategoriesApi(TestIT.ApiClient.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -352,7 +332,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectTestPlanTestPointsApi"/> class.
+        /// Initializes a new instance of the <see cref="ProjectFailureCategoriesApi"/> class.
         /// </summary>
         /// <param name="client">An instance of HttpClient.</param>
         /// <param name="handler">An optional instance of HttpClientHandler that is used by HttpClient.</param>
@@ -362,12 +342,12 @@ namespace TestIT.ApiClient.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public ProjectTestPlanTestPointsApi(HttpClient client, HttpClientHandler handler = null) : this(client, (string)null, handler)
+        public ProjectFailureCategoriesApi(HttpClient client, HttpClientHandler handler = null) : this(client, (string)null, handler)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectTestPlanTestPointsApi"/> class.
+        /// Initializes a new instance of the <see cref="ProjectFailureCategoriesApi"/> class.
         /// </summary>
         /// <param name="client">An instance of HttpClient.</param>
         /// <param name="basePath">The target service's base path in URL format.</param>
@@ -379,7 +359,7 @@ namespace TestIT.ApiClient.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public ProjectTestPlanTestPointsApi(HttpClient client, string basePath, HttpClientHandler handler = null)
+        public ProjectFailureCategoriesApi(HttpClient client, string basePath, HttpClientHandler handler = null)
         {
             if (client == null) throw new ArgumentNullException("client");
 
@@ -394,7 +374,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectTestPlanTestPointsApi"/> class using Configuration object.
+        /// Initializes a new instance of the <see cref="ProjectFailureCategoriesApi"/> class using Configuration object.
         /// </summary>
         /// <param name="client">An instance of HttpClient.</param>
         /// <param name="configuration">An instance of Configuration.</param>
@@ -405,7 +385,7 @@ namespace TestIT.ApiClient.Api
         /// Some configuration settings will not be applied without passing an HttpClientHandler.
         /// The features affected are: Setting and Retrieving Cookies, Client Certificates, Proxy settings.
         /// </remarks>
-        public ProjectTestPlanTestPointsApi(HttpClient client, TestIT.ApiClient.Client.Configuration configuration, HttpClientHandler handler = null)
+        public ProjectFailureCategoriesApi(HttpClient client, TestIT.ApiClient.Client.Configuration configuration, HttpClientHandler handler = null)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
             if (client == null) throw new ArgumentNullException("client");
@@ -421,14 +401,14 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ProjectTestPlanTestPointsApi"/> class
+        /// Initializes a new instance of the <see cref="ProjectFailureCategoriesApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
         /// <exception cref="ArgumentNullException"></exception>
-        public ProjectTestPlanTestPointsApi(TestIT.ApiClient.Client.ISynchronousClient client, TestIT.ApiClient.Client.IAsynchronousClient asyncClient, TestIT.ApiClient.Client.IReadableConfiguration configuration)
+        public ProjectFailureCategoriesApi(TestIT.ApiClient.Client.ISynchronousClient client, TestIT.ApiClient.Client.IAsynchronousClient asyncClient, TestIT.ApiClient.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -495,32 +475,30 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test points analytics. 
+        /// Get failure categories with support for filtering, sorting and grouping 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAnalyticsApiModel"> (optional)</param>
-        /// <returns>TestPlanTestPointsAnalyticsApiResult</returns>
-        public TestPlanTestPointsAnalyticsApiResult ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPost(string projectId, Guid testPlanId, TestPlanTestPointsAnalyticsApiModel testPlanTestPointsAnalyticsApiModel = default)
+        /// <param name="failureCategoryGroupSearchApiModel"> (optional)</param>
+        /// <returns>ProjectFailureCategoryGroupItemApiResultReply</returns>
+        public ProjectFailureCategoryGroupItemApiResultReply ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPost(string projectId, FailureCategoryGroupSearchApiModel failureCategoryGroupSearchApiModel = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<TestPlanTestPointsAnalyticsApiResult> localVarResponse = ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPostWithHttpInfo(projectId, testPlanId, testPlanTestPointsAnalyticsApiModel);
+            TestIT.ApiClient.Client.ApiResponse<ProjectFailureCategoryGroupItemApiResultReply> localVarResponse = ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPostWithHttpInfo(projectId, failureCategoryGroupSearchApiModel);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get test points analytics. 
+        /// Get failure categories with support for filtering, sorting and grouping 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAnalyticsApiModel"> (optional)</param>
-        /// <returns>ApiResponse of TestPlanTestPointsAnalyticsApiResult</returns>
-        public TestIT.ApiClient.Client.ApiResponse<TestPlanTestPointsAnalyticsApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAnalyticsApiModel testPlanTestPointsAnalyticsApiModel = default)
+        /// <param name="failureCategoryGroupSearchApiModel"> (optional)</param>
+        /// <returns>ApiResponse of ProjectFailureCategoryGroupItemApiResultReply</returns>
+        public TestIT.ApiClient.Client.ApiResponse<ProjectFailureCategoryGroupItemApiResultReply> ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPostWithHttpInfo(string projectId, FailureCategoryGroupSearchApiModel failureCategoryGroupSearchApiModel = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlanTestPointsApi->ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectFailureCategoriesApi->ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPost");
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -540,8 +518,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("testPlanId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(testPlanId)); // path parameter
-            localVarRequestOptions.Data = testPlanTestPointsAnalyticsApiModel;
+            localVarRequestOptions.Data = failureCategoryGroupSearchApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -550,11 +527,11 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TestPlanTestPointsAnalyticsApiResult>("/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/analytics", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ProjectFailureCategoryGroupItemApiResultReply>("/api/v2/projects/{projectId}/autotests/failure-categories/grouping-search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPost", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -562,34 +539,32 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test points analytics. 
+        /// Get failure categories with support for filtering, sorting and grouping 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAnalyticsApiModel"> (optional)</param>
+        /// <param name="failureCategoryGroupSearchApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestPlanTestPointsAnalyticsApiResult</returns>
-        public async System.Threading.Tasks.Task<TestPlanTestPointsAnalyticsApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAnalyticsApiModel testPlanTestPointsAnalyticsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ProjectFailureCategoryGroupItemApiResultReply</returns>
+        public async System.Threading.Tasks.Task<ProjectFailureCategoryGroupItemApiResultReply> ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPostAsync(string projectId, FailureCategoryGroupSearchApiModel failureCategoryGroupSearchApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<TestPlanTestPointsAnalyticsApiResult> localVarResponse = await ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPostWithHttpInfoAsync(projectId, testPlanId, testPlanTestPointsAnalyticsApiModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<ProjectFailureCategoryGroupItemApiResultReply> localVarResponse = await ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPostWithHttpInfoAsync(projectId, failureCategoryGroupSearchApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get test points analytics. 
+        /// Get failure categories with support for filtering, sorting and grouping 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAnalyticsApiModel"> (optional)</param>
+        /// <param name="failureCategoryGroupSearchApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestPlanTestPointsAnalyticsApiResult)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestPlanTestPointsAnalyticsApiResult>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAnalyticsApiModel testPlanTestPointsAnalyticsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ProjectFailureCategoryGroupItemApiResultReply)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ProjectFailureCategoryGroupItemApiResultReply>> ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPostWithHttpInfoAsync(string projectId, FailureCategoryGroupSearchApiModel failureCategoryGroupSearchApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlanTestPointsApi->ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectFailureCategoriesApi->ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPost");
 
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -611,8 +586,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("testPlanId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(testPlanId)); // path parameter
-            localVarRequestOptions.Data = testPlanTestPointsAnalyticsApiModel;
+            localVarRequestOptions.Data = failureCategoryGroupSearchApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -622,11 +596,11 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TestPlanTestPointsAnalyticsApiResult>("/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/analytics", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ProjectFailureCategoryGroupItemApiResultReply>("/api/v2/projects/{projectId}/autotests/failure-categories/grouping-search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAnalyticsPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdAutotestsFailureCategoriesGroupingSearchPost", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -634,36 +608,33 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Rerun autotests. 
+        /// Delete failure category 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
+        /// <param name="id"></param>
         /// <returns></returns>
-        public void ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default)
+        public void ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDelete(string projectId, Guid id)
         {
-            ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfo(projectId, testPlanId, testPlanTestPointsAutoTestsRerunApiModel);
+            ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDeleteWithHttpInfo(projectId, id);
         }
 
         /// <summary>
-        /// Rerun autotests. 
+        /// Delete failure category 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
+        /// <param name="id"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default)
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDeleteWithHttpInfo(string projectId, Guid id)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlanTestPointsApi->ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectFailureCategoriesApi->ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDelete");
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json"
             };
 
             // to determine the Accept header
@@ -678,8 +649,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("testPlanId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(testPlanId)); // path parameter
-            localVarRequestOptions.Data = testPlanTestPointsAutoTestsRerunApiModel;
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -688,11 +658,11 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/rerun", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Delete<Object>("/api/v2/projects/{projectId}/autotests/failure-categories/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDelete", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -700,39 +670,36 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Rerun autotests. 
+        /// Delete failure category 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDeleteAsync(string projectId, Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
-            await ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfoAsync(projectId, testPlanId, testPlanTestPointsAutoTestsRerunApiModel, cancellationToken).ConfigureAwait(false);
+            await ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDeleteWithHttpInfoAsync(projectId, id, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Rerun autotests. 
+        /// Delete failure category 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRerunApiModel"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRerunApiModel testPlanTestPointsAutoTestsRerunApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDeleteWithHttpInfoAsync(string projectId, Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlanTestPointsApi->ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectFailureCategoriesApi->ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDelete");
 
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json"
             };
 
             // to determine the Accept header
@@ -748,8 +715,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("testPlanId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(testPlanId)); // path parameter
-            localVarRequestOptions.Data = testPlanTestPointsAutoTestsRerunApiModel;
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -759,11 +725,11 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/rerun", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.DeleteAsync<Object>("/api/v2/projects/{projectId}/autotests/failure-categories/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRerunPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdDelete", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -771,37 +737,34 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Run autotests. 
+        /// Get failure category by ID 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
-        /// <returns>TestRunNameApiResult</returns>
-        public TestRunNameApiResult ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default)
+        /// <param name="id"></param>
+        /// <returns>ProjectDetailedFailureCategoryApiResult</returns>
+        public ProjectDetailedFailureCategoryApiResult ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGet(string projectId, Guid id)
         {
-            TestIT.ApiClient.Client.ApiResponse<TestRunNameApiResult> localVarResponse = ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfo(projectId, testPlanId, testPlanTestPointsAutoTestsRunApiModel);
+            TestIT.ApiClient.Client.ApiResponse<ProjectDetailedFailureCategoryApiResult> localVarResponse = ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGetWithHttpInfo(projectId, id);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Run autotests. 
+        /// Get failure category by ID 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
-        /// <returns>ApiResponse of TestRunNameApiResult</returns>
-        public TestIT.ApiClient.Client.ApiResponse<TestRunNameApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default)
+        /// <param name="id"></param>
+        /// <returns>ApiResponse of ProjectDetailedFailureCategoryApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<ProjectDetailedFailureCategoryApiResult> ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGetWithHttpInfo(string projectId, Guid id)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlanTestPointsApi->ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectFailureCategoriesApi->ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGet");
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json"
             };
 
             // to determine the Accept header
@@ -816,8 +779,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("testPlanId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(testPlanId)); // path parameter
-            localVarRequestOptions.Data = testPlanTestPointsAutoTestsRunApiModel;
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -826,11 +788,11 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TestRunNameApiResult>("/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/run", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<ProjectDetailedFailureCategoryApiResult>("/api/v2/projects/{projectId}/autotests/failure-categories/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGet", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -838,40 +800,37 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Run autotests. 
+        /// Get failure category by ID 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestRunNameApiResult</returns>
-        public async System.Threading.Tasks.Task<TestRunNameApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ProjectDetailedFailureCategoryApiResult</returns>
+        public async System.Threading.Tasks.Task<ProjectDetailedFailureCategoryApiResult> ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGetAsync(string projectId, Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<TestRunNameApiResult> localVarResponse = await ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfoAsync(projectId, testPlanId, testPlanTestPointsAutoTestsRunApiModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<ProjectDetailedFailureCategoryApiResult> localVarResponse = await ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGetWithHttpInfoAsync(projectId, id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Run autotests. 
+        /// Get failure category by ID 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsAutoTestsRunApiModel"> (optional)</param>
+        /// <param name="id"></param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestRunNameApiResult)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestRunNameApiResult>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsAutoTestsRunApiModel testPlanTestPointsAutoTestsRunApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ProjectDetailedFailureCategoryApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ProjectDetailedFailureCategoryApiResult>> ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGetWithHttpInfoAsync(string projectId, Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlanTestPointsApi->ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectFailureCategoriesApi->ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGet");
 
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json"
             };
 
             // to determine the Accept header
@@ -887,8 +846,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("testPlanId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(testPlanId)); // path parameter
-            localVarRequestOptions.Data = testPlanTestPointsAutoTestsRunApiModel;
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -898,11 +856,11 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TestRunNameApiResult>("/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/autotests/run", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<ProjectDetailedFailureCategoryApiResult>("/api/v2/projects/{projectId}/autotests/failure-categories/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsAutotestsRunPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdAutotestsFailureCategoriesIdGet", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -910,32 +868,30 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search test points in test plan. 
+        /// Create failure category 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsApiModel"> (optional)</param>
-        /// <returns>TestPlanTestPointsGroupSearchApiResult</returns>
-        public TestPlanTestPointsGroupSearchApiResult ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPost(string projectId, Guid testPlanId, TestPlanTestPointsApiModel testPlanTestPointsApiModel = default)
+        /// <param name="createProjectFailureCategoryApiModel"> (optional)</param>
+        /// <returns>ProjectDetailedFailureCategoryApiResult</returns>
+        public ProjectDetailedFailureCategoryApiResult ApiV2ProjectsProjectIdAutotestsFailureCategoriesPost(string projectId, CreateProjectFailureCategoryApiModel createProjectFailureCategoryApiModel = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<TestPlanTestPointsGroupSearchApiResult> localVarResponse = ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPostWithHttpInfo(projectId, testPlanId, testPlanTestPointsApiModel);
+            TestIT.ApiClient.Client.ApiResponse<ProjectDetailedFailureCategoryApiResult> localVarResponse = ApiV2ProjectsProjectIdAutotestsFailureCategoriesPostWithHttpInfo(projectId, createProjectFailureCategoryApiModel);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Search test points in test plan. 
+        /// Create failure category 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsApiModel"> (optional)</param>
-        /// <returns>ApiResponse of TestPlanTestPointsGroupSearchApiResult</returns>
-        public TestIT.ApiClient.Client.ApiResponse<TestPlanTestPointsGroupSearchApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsApiModel testPlanTestPointsApiModel = default)
+        /// <param name="createProjectFailureCategoryApiModel"> (optional)</param>
+        /// <returns>ApiResponse of ProjectDetailedFailureCategoryApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<ProjectDetailedFailureCategoryApiResult> ApiV2ProjectsProjectIdAutotestsFailureCategoriesPostWithHttpInfo(string projectId, CreateProjectFailureCategoryApiModel createProjectFailureCategoryApiModel = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlanTestPointsApi->ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectFailureCategoriesApi->ApiV2ProjectsProjectIdAutotestsFailureCategoriesPost");
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -955,8 +911,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("testPlanId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(testPlanId)); // path parameter
-            localVarRequestOptions.Data = testPlanTestPointsApiModel;
+            localVarRequestOptions.Data = createProjectFailureCategoryApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -965,11 +920,11 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TestPlanTestPointsGroupSearchApiResult>("/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/grouping-search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ProjectDetailedFailureCategoryApiResult>("/api/v2/projects/{projectId}/autotests/failure-categories", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdAutotestsFailureCategoriesPost", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -977,34 +932,32 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search test points in test plan. 
+        /// Create failure category 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsApiModel"> (optional)</param>
+        /// <param name="createProjectFailureCategoryApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestPlanTestPointsGroupSearchApiResult</returns>
-        public async System.Threading.Tasks.Task<TestPlanTestPointsGroupSearchApiResult> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsApiModel testPlanTestPointsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ProjectDetailedFailureCategoryApiResult</returns>
+        public async System.Threading.Tasks.Task<ProjectDetailedFailureCategoryApiResult> ApiV2ProjectsProjectIdAutotestsFailureCategoriesPostAsync(string projectId, CreateProjectFailureCategoryApiModel createProjectFailureCategoryApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<TestPlanTestPointsGroupSearchApiResult> localVarResponse = await ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPostWithHttpInfoAsync(projectId, testPlanId, testPlanTestPointsApiModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<ProjectDetailedFailureCategoryApiResult> localVarResponse = await ApiV2ProjectsProjectIdAutotestsFailureCategoriesPostWithHttpInfoAsync(projectId, createProjectFailureCategoryApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Search test points in test plan. 
+        /// Create failure category 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsApiModel"> (optional)</param>
+        /// <param name="createProjectFailureCategoryApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestPlanTestPointsGroupSearchApiResult)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestPlanTestPointsGroupSearchApiResult>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsApiModel testPlanTestPointsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ProjectDetailedFailureCategoryApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ProjectDetailedFailureCategoryApiResult>> ApiV2ProjectsProjectIdAutotestsFailureCategoriesPostWithHttpInfoAsync(string projectId, CreateProjectFailureCategoryApiModel createProjectFailureCategoryApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlanTestPointsApi->ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectFailureCategoriesApi->ApiV2ProjectsProjectIdAutotestsFailureCategoriesPost");
 
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1026,8 +979,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("testPlanId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(testPlanId)); // path parameter
-            localVarRequestOptions.Data = testPlanTestPointsApiModel;
+            localVarRequestOptions.Data = createProjectFailureCategoryApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1037,11 +989,11 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TestPlanTestPointsGroupSearchApiResult>("/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/grouping-search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ProjectDetailedFailureCategoryApiResult>("/api/v2/projects/{projectId}/autotests/failure-categories", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsGroupingSearchPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdAutotestsFailureCategoriesPost", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1049,31 +1001,29 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Distribute test points between the users. 
+        /// Update failure category 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsSetTestersApiModel"> (optional)</param>
+        /// <param name="updateFailureCategoryProjectApiModel"> (optional)</param>
         /// <returns></returns>
-        public void ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPost(string projectId, Guid testPlanId, TestPlanTestPointsSetTestersApiModel testPlanTestPointsSetTestersApiModel = default)
+        public void ApiV2ProjectsProjectIdAutotestsFailureCategoriesPut(string projectId, UpdateFailureCategoryProjectApiModel updateFailureCategoryProjectApiModel = default)
         {
-            ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPostWithHttpInfo(projectId, testPlanId, testPlanTestPointsSetTestersApiModel);
+            ApiV2ProjectsProjectIdAutotestsFailureCategoriesPutWithHttpInfo(projectId, updateFailureCategoryProjectApiModel);
         }
 
         /// <summary>
-        /// Distribute test points between the users. 
+        /// Update failure category 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsSetTestersApiModel"> (optional)</param>
+        /// <param name="updateFailureCategoryProjectApiModel"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPostWithHttpInfo(string projectId, Guid testPlanId, TestPlanTestPointsSetTestersApiModel testPlanTestPointsSetTestersApiModel = default)
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdAutotestsFailureCategoriesPutWithHttpInfo(string projectId, UpdateFailureCategoryProjectApiModel updateFailureCategoryProjectApiModel = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlanTestPointsApi->ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectFailureCategoriesApi->ApiV2ProjectsProjectIdAutotestsFailureCategoriesPut");
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1093,8 +1043,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("testPlanId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(testPlanId)); // path parameter
-            localVarRequestOptions.Data = testPlanTestPointsSetTestersApiModel;
+            localVarRequestOptions.Data = updateFailureCategoryProjectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1103,11 +1052,11 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<Object>("/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/testers", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Put<Object>("/api/v2/projects/{projectId}/autotests/failure-categories", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdAutotestsFailureCategoriesPut", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1115,33 +1064,31 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Distribute test points between the users. 
+        /// Update failure category 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsSetTestersApiModel"> (optional)</param>
+        /// <param name="updateFailureCategoryProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPostAsync(string projectId, Guid testPlanId, TestPlanTestPointsSetTestersApiModel testPlanTestPointsSetTestersApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdAutotestsFailureCategoriesPutAsync(string projectId, UpdateFailureCategoryProjectApiModel updateFailureCategoryProjectApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            await ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPostWithHttpInfoAsync(projectId, testPlanId, testPlanTestPointsSetTestersApiModel, cancellationToken).ConfigureAwait(false);
+            await ApiV2ProjectsProjectIdAutotestsFailureCategoriesPutWithHttpInfoAsync(projectId, updateFailureCategoryProjectApiModel, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Distribute test points between the users. 
+        /// Update failure category 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
-        /// <param name="testPlanId"></param>
-        /// <param name="testPlanTestPointsSetTestersApiModel"> (optional)</param>
+        /// <param name="updateFailureCategoryProjectApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPostWithHttpInfoAsync(string projectId, Guid testPlanId, TestPlanTestPointsSetTestersApiModel testPlanTestPointsSetTestersApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdAutotestsFailureCategoriesPutWithHttpInfoAsync(string projectId, UpdateFailureCategoryProjectApiModel updateFailureCategoryProjectApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
-                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectTestPlanTestPointsApi->ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPost");
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectFailureCategoriesApi->ApiV2ProjectsProjectIdAutotestsFailureCategoriesPut");
 
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1163,8 +1110,7 @@ namespace TestIT.ApiClient.Api
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
-            localVarRequestOptions.PathParameters.Add("testPlanId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(testPlanId)); // path parameter
-            localVarRequestOptions.Data = testPlanTestPointsSetTestersApiModel;
+            localVarRequestOptions.Data = updateFailureCategoryProjectApiModel;
 
             // authentication (Bearer or PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
@@ -1174,11 +1120,11 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/projects/{projectId}/test-plans/{testPlanId}/test-points/testers", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/api/v2/projects/{projectId}/autotests/failure-categories", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdTestPlansTestPlanIdTestPointsTestersPost", localVarResponse);
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdAutotestsFailureCategoriesPut", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

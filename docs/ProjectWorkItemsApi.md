@@ -4,12 +4,218 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
+| [**ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPost**](ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemspreviewsbulkpost) | **POST** /api/v2/projects/{projectId}/work-items/previews/bulk |  |
+| [**ApiV2ProjectsProjectIdWorkItemsPreviewsPost**](ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemspreviewspost) | **POST** /api/v2/projects/{projectId}/work-items/previews |  |
 | [**ApiV2ProjectsProjectIdWorkItemsSearchGroupedPost**](ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchgroupedpost) | **POST** /api/v2/projects/{projectId}/workItems/search/grouped | Search for work items and group results by attribute |
 | [**ApiV2ProjectsProjectIdWorkItemsSearchIdPost**](ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchidpost) | **POST** /api/v2/projects/{projectId}/workItems/search/id | Search for work items and extract IDs only |
 | [**ApiV2ProjectsProjectIdWorkItemsSearchPost**](ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchpost) | **POST** /api/v2/projects/{projectId}/workItems/search | Search for work items |
 | [**ApiV2ProjectsProjectIdWorkItemsSearchWorkItemIdIndexPost**](ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemssearchworkitemidindexpost) | **POST** /api/v2/projects/{projectId}/workItems/search/{workItemId}/index | Get work item index (position) in a collection by its id. |
 | [**ApiV2ProjectsProjectIdWorkItemsTagsGet**](ProjectWorkItemsApi.md#apiv2projectsprojectidworkitemstagsget) | **GET** /api/v2/projects/{projectId}/workItems/tags | Get WorkItems Tags |
 | [**GetWorkItemsByProjectId**](ProjectWorkItemsApi.md#getworkitemsbyprojectid) | **GET** /api/v2/projects/{projectId}/workItems | Get project work items |
+
+<a id="apiv2projectsprojectidworkitemspreviewsbulkpost"></a>
+# **ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPost**
+> void ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPost (string projectId, CreateWorkItemPreviewsApiModel createWorkItemPreviewsApiModel = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectWorkItemsApi(httpClient, config, httpClientHandler);
+            var projectId = "projectId_example";  // string | Internal (UUID) or global (integer) identifier
+            var createWorkItemPreviewsApiModel = new CreateWorkItemPreviewsApiModel(); // CreateWorkItemPreviewsApiModel |  (optional) 
+
+            try
+            {
+                apiInstance.ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPost(projectId, createWorkItemPreviewsApiModel);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectWorkItemsApi.ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    apiInstance.ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPostWithHttpInfo(projectId, createWorkItemPreviewsApiModel);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectWorkItemsApi.ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectId** | **string** | Internal (UUID) or global (integer) identifier |  |
+| **createWorkItemPreviewsApiModel** | [**CreateWorkItemPreviewsApiModel**](CreateWorkItemPreviewsApiModel.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2projectsprojectidworkitemspreviewspost"></a>
+# **ApiV2ProjectsProjectIdWorkItemsPreviewsPost**
+> GenerateWorkItemPreviewsApiResult ApiV2ProjectsProjectIdWorkItemsPreviewsPost (string projectId, GenerateWorkItemPreviewsApiModel generateWorkItemPreviewsApiModel = null)
+
+
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2ProjectsProjectIdWorkItemsPreviewsPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Bearer or PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new ProjectWorkItemsApi(httpClient, config, httpClientHandler);
+            var projectId = "projectId_example";  // string | Internal (UUID) or global (integer) identifier
+            var generateWorkItemPreviewsApiModel = new GenerateWorkItemPreviewsApiModel(); // GenerateWorkItemPreviewsApiModel |  (optional) 
+
+            try
+            {
+                GenerateWorkItemPreviewsApiResult result = apiInstance.ApiV2ProjectsProjectIdWorkItemsPreviewsPost(projectId, generateWorkItemPreviewsApiModel);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling ProjectWorkItemsApi.ApiV2ProjectsProjectIdWorkItemsPreviewsPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2ProjectsProjectIdWorkItemsPreviewsPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    ApiResponse<GenerateWorkItemPreviewsApiResult> response = apiInstance.ApiV2ProjectsProjectIdWorkItemsPreviewsPostWithHttpInfo(projectId, generateWorkItemPreviewsApiModel);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling ProjectWorkItemsApi.ApiV2ProjectsProjectIdWorkItemsPreviewsPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **projectId** | **string** | Internal (UUID) or global (integer) identifier |  |
+| **generateWorkItemPreviewsApiModel** | [**GenerateWorkItemPreviewsApiModel**](GenerateWorkItemPreviewsApiModel.md) |  | [optional]  |
+
+### Return type
+
+[**GenerateWorkItemPreviewsApiResult**](GenerateWorkItemPreviewsApiResult.md)
+
+### Authorization
+
+[Bearer or PrivateToken](../README.md#Bearer or PrivateToken)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Forbidden |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="apiv2projectsprojectidworkitemssearchgroupedpost"></a>
 # **ApiV2ProjectsProjectIdWorkItemsSearchGroupedPost**

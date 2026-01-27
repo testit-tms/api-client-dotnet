@@ -3,9 +3,12 @@
 # Using 7.19.0
 #npm install @openapitools/openapi-generator-cli -g
 
+# Настройка переменных
+FILE_NAME=dynamic.swagger.json
+NEW_VERSION="5.4.0-rc1"
 
-if [ ! -f ".swagger/swagger.json" ]; then
-    echo "Ошибка: .swagger/swagger.json не найден!"
+if [ ! -f ".swagger/$FILE_NAME" ]; then
+    echo "Ошибка: .swagger/$FILE_NAME не найден!"
     exit 1
 fi
 
@@ -14,9 +17,6 @@ if [ ! -f "genConfig.yml" ]; then
     exit 1
 fi
 
-# Настройка переменных
-FILE_NAME=swagger.json
-NEW_VERSION="5.3.0-rc1"
 
 echo "Начало генерации .NET API клиента..."
 
