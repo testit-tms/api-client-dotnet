@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">Description of the project.</param>
         /// <param name="isFavorite">Indicates if the project is marked as favorite.</param>
         /// <param name="workflowId">Identifier of the workflow project should use.</param>
-        public CreateProjectApiModel(string name = default(string), string description = default(string), bool? isFavorite = default(bool?), Guid? workflowId = default(Guid?))
+        public CreateProjectApiModel(string name = default, string description = default, bool? isFavorite = default, Guid? workflowId = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="id">Unique ID of the entity (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
-        public WorkItemLikeModel(Guid workItemId = default(Guid), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), Guid id = default(Guid), bool isDeleted = default(bool))
+        public WorkItemLikeModel(Guid workItemId = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, Guid id = default, bool isDeleted = default)
         {
             this.WorkItemId = workItemId;
             this.CreatedDate = createdDate;

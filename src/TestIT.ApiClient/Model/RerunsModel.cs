@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="rerunCount">rerunCount (required).</param>
         /// <param name="rerunTestResults">rerunTestResults (required).</param>
-        public RerunsModel(int rerunCount = default(int), List<RerunTestResultModel> rerunTestResults = default(List<RerunTestResultModel>))
+        public RerunsModel(int rerunCount = default, List<RerunTestResultModel> rerunTestResults = default)
         {
             this.RerunCount = rerunCount;
             // to ensure "rerunTestResults" is required (not null)

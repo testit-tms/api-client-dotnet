@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="webhookIds">Webhook ids to run. (required).</param>
         /// <param name="build">Specifies the test run build..</param>
         /// <param name="resetNotActualAutomatedTestPoints">Reset test point status when actual work item does not automated. (required).</param>
-        public TestPlanTestPointsAutoTestsRunApiModel(TestPlanTestPointsSearchApiModel filter = default(TestPlanTestPointsSearchApiModel), TestPlanTestPointsExtractionApiModel extractionModel = default(TestPlanTestPointsExtractionApiModel), List<Guid> webhookIds = default(List<Guid>), string build = default(string), bool resetNotActualAutomatedTestPoints = default(bool))
+        public TestPlanTestPointsAutoTestsRunApiModel(TestPlanTestPointsSearchApiModel filter = default, TestPlanTestPointsExtractionApiModel extractionModel = default, List<Guid> webhookIds = default, string build = default, bool resetNotActualAutomatedTestPoints = default)
         {
             // to ensure "webhookIds" is required (not null)
             if (webhookIds == null)

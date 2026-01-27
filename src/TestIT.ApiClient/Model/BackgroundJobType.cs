@@ -51,82 +51,100 @@ namespace TestIT.ApiClient.Model
         ExportXlsxTestPointsByTestPlan = 3,
 
         /// <summary>
+        /// Enum ExportXlsxWorkItemLinks for value: ExportXlsxWorkItemLinks
+        /// </summary>
+        [EnumMember(Value = "ExportXlsxWorkItemLinks")]
+        ExportXlsxWorkItemLinks = 4,
+
+        /// <summary>
         /// Enum ExportJsonProject for value: ExportJsonProject
         /// </summary>
         [EnumMember(Value = "ExportJsonProject")]
-        ExportJsonProject = 4,
+        ExportJsonProject = 5,
 
         /// <summary>
         /// Enum ExportZipProject for value: ExportZipProject
         /// </summary>
         [EnumMember(Value = "ExportZipProject")]
-        ExportZipProject = 5,
+        ExportZipProject = 6,
 
         /// <summary>
         /// Enum ExportJsonProjectWithTestPlans for value: ExportJsonProjectWithTestPlans
         /// </summary>
         [EnumMember(Value = "ExportJsonProjectWithTestPlans")]
-        ExportJsonProjectWithTestPlans = 6,
+        ExportJsonProjectWithTestPlans = 7,
 
         /// <summary>
         /// Enum ExportZipProjectWithTestPlans for value: ExportZipProjectWithTestPlans
         /// </summary>
         [EnumMember(Value = "ExportZipProjectWithTestPlans")]
-        ExportZipProjectWithTestPlans = 7,
+        ExportZipProjectWithTestPlans = 8,
 
         /// <summary>
         /// Enum ImportJsonProject for value: ImportJsonProject
         /// </summary>
         [EnumMember(Value = "ImportJsonProject")]
-        ImportJsonProject = 8,
+        ImportJsonProject = 9,
 
         /// <summary>
         /// Enum ImportZipProject for value: ImportZipProject
         /// </summary>
         [EnumMember(Value = "ImportZipProject")]
-        ImportZipProject = 9,
+        ImportZipProject = 10,
 
         /// <summary>
         /// Enum ImportXlsxProject for value: ImportXlsxProject
         /// </summary>
         [EnumMember(Value = "ImportXlsxProject")]
-        ImportXlsxProject = 10,
+        ImportXlsxProject = 11,
 
         /// <summary>
         /// Enum ImportTestRailXmlProject for value: ImportTestRailXmlProject
         /// </summary>
         [EnumMember(Value = "ImportTestRailXmlProject")]
-        ImportTestRailXmlProject = 11,
+        ImportTestRailXmlProject = 12,
 
         /// <summary>
         /// Enum PurgeProject for value: PurgeProject
         /// </summary>
         [EnumMember(Value = "PurgeProject")]
-        PurgeProject = 12,
+        PurgeProject = 13,
 
         /// <summary>
         /// Enum ExportProjects for value: ExportProjects
         /// </summary>
         [EnumMember(Value = "ExportProjects")]
-        ExportProjects = 13,
+        ExportProjects = 14,
 
         /// <summary>
         /// Enum ImportProjects for value: ImportProjects
         /// </summary>
         [EnumMember(Value = "ImportProjects")]
-        ImportProjects = 14,
+        ImportProjects = 15,
 
         /// <summary>
         /// Enum PurgeEntities for value: PurgeEntities
         /// </summary>
         [EnumMember(Value = "PurgeEntities")]
-        PurgeEntities = 15,
+        PurgeEntities = 16,
 
         /// <summary>
         /// Enum DeleteCompletedJobs for value: DeleteCompletedJobs
         /// </summary>
         [EnumMember(Value = "DeleteCompletedJobs")]
-        DeleteCompletedJobs = 16
+        DeleteCompletedJobs = 17,
+
+        /// <summary>
+        /// Enum CopySections for value: CopySections
+        /// </summary>
+        [EnumMember(Value = "CopySections")]
+        CopySections = 18,
+
+        /// <summary>
+        /// Enum DeleteSection for value: DeleteSection
+        /// </summary>
+        [EnumMember(Value = "DeleteSection")]
+        DeleteSection = 19
     }
 
 }

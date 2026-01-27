@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="oldParentId">Unique ID of the section&#39;s current parent section (required).</param>
         /// <param name="parentId">Unique ID of the section&#39;s target parent section (required).</param>
         /// <param name="nextSectionId">Unique ID of the section&#39;s following section.</param>
-        public SectionMoveModel(Guid id = default(Guid), Guid oldParentId = default(Guid), Guid parentId = default(Guid), Guid? nextSectionId = default(Guid?))
+        public SectionMoveModel(Guid id = default, Guid oldParentId = default, Guid parentId = default, Guid? nextSectionId = default)
         {
             this.Id = id;
             this.OldParentId = oldParentId;

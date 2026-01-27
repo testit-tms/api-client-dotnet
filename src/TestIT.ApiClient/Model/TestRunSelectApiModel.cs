@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">filter (required).</param>
         /// <param name="extractionModel">Rules for different level entities inclusion/exclusion (required).</param>
-        public TestRunSelectApiModel(TestRunFilterApiModel filter = default(TestRunFilterApiModel), TestRunExtractionApiModel extractionModel = default(TestRunExtractionApiModel))
+        public TestRunSelectApiModel(TestRunFilterApiModel filter = default, TestRunExtractionApiModel extractionModel = default)
         {
             // to ensure "filter" is required (not null)
             if (filter == null)

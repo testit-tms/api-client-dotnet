@@ -48,18 +48,23 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TestPlanTestPointsStatusTypeGroupApiResult" /> class.
         /// </summary>
         /// <param name="statusType">Collection of possible status types (required).</param>
-        /// <param name="value">value (required).</param>
-        public TestPlanTestPointsStatusTypeGroupApiResult(TestStatusApiType statusType = default(TestStatusApiType), long value = default(long))
+        /// <param name="statuses">statuses (required).</param>
+        public TestPlanTestPointsStatusTypeGroupApiResult(TestStatusApiType statusType = default, List<TestPlanTestPointsStatusCodeGroupApiResult> statuses = default)
         {
             this.StatusType = statusType;
-            this.Value = value;
+            // to ensure "statuses" is required (not null)
+            if (statuses == null)
+            {
+                throw new ArgumentNullException("statuses is a required property for TestPlanTestPointsStatusTypeGroupApiResult and cannot be null");
+            }
+            this.Statuses = statuses;
         }
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Gets or Sets Statuses
         /// </summary>
-        [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
-        public long Value { get; set; }
+        [DataMember(Name = "statuses", IsRequired = true, EmitDefaultValue = true)]
+        public List<TestPlanTestPointsStatusCodeGroupApiResult> Statuses { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,7 +75,7 @@ namespace TestIT.ApiClient.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class TestPlanTestPointsStatusTypeGroupApiResult {\n");
             sb.Append("  StatusType: ").Append(StatusType).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  Statuses: ").Append(Statuses).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

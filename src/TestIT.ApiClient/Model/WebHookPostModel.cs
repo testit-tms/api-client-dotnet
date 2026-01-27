@@ -68,7 +68,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="shouldReplaceParameters">Indicates if the webhook injects parameters (required).</param>
         /// <param name="shouldEscapeParameters">Indicates if the webhook escapes invalid characters in parameters (required).</param>
         /// <param name="name">Name of the webhook (required).</param>
-        public WebHookPostModel(Guid projectId = default(Guid), WebHookEventTypeModel eventType = default(WebHookEventTypeModel), string description = default(string), string url = default(string), RequestTypeModel requestType = default(RequestTypeModel), bool shouldSendBody = default(bool), Dictionary<string, string> headers = default(Dictionary<string, string>), Dictionary<string, string> queryParameters = default(Dictionary<string, string>), bool isEnabled = default(bool), bool shouldSendCustomBody = default(bool), string customBody = default(string), bool shouldReplaceParameters = default(bool), bool shouldEscapeParameters = default(bool), string name = default(string))
+        public WebHookPostModel(Guid projectId = default, WebHookEventTypeModel eventType = default, string description = default, string url = default, RequestTypeModel requestType = default, bool shouldSendBody = default, Dictionary<string, string> headers = default, Dictionary<string, string> queryParameters = default, bool isEnabled = default, bool shouldSendCustomBody = default, string customBody = default, bool shouldReplaceParameters = default, bool shouldEscapeParameters = default, string name = default)
         {
             this.ProjectId = projectId;
             this.EventType = eventType;

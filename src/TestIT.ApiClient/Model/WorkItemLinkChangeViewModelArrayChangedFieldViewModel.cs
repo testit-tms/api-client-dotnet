@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="oldValue">oldValue.</param>
         /// <param name="newValue">newValue.</param>
-        public WorkItemLinkChangeViewModelArrayChangedFieldViewModel(List<WorkItemLinkChangeViewModel> oldValue = default(List<WorkItemLinkChangeViewModel>), List<WorkItemLinkChangeViewModel> newValue = default(List<WorkItemLinkChangeViewModel>))
+        public WorkItemLinkChangeViewModelArrayChangedFieldViewModel(List<WorkItemLinkChangeViewModel> oldValue = default, List<WorkItemLinkChangeViewModel> newValue = default)
         {
             this.OldValue = oldValue;
             this.NewValue = newValue;

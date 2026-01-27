@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">Filters to select tags.</param>
         /// <param name="extractionModel">Filters to extract tags.</param>
-        public SelectTagsApiModel(TagsFilterApiModel filter = default(TagsFilterApiModel), TagsExtractionApiModel extractionModel = default(TagsExtractionApiModel))
+        public SelectTagsApiModel(TagsFilterApiModel filter = default, TagsExtractionApiModel extractionModel = default)
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;

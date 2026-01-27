@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="name">Name of external issue type (required).</param>
         /// <param name="iconUrl">Url to the icon of external issue type.</param>
-        public ExternalIssueApiType(string name = default(string), string iconUrl = default(string))
+        public ExternalIssueApiType(string name = default, string iconUrl = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

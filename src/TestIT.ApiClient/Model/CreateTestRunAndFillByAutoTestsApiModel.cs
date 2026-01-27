@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="launchSource">Specifies the test run launch source..</param>
         /// <param name="attachments">Collection of attachment ids to relate to the test run.</param>
         /// <param name="links">Collection of links to relate to the test run.</param>
-        public CreateTestRunAndFillByAutoTestsApiModel(Guid projectId = default(Guid), string name = default(string), List<Guid> configurationIds = default(List<Guid>), List<string> autoTestExternalIds = default(List<string>), string description = default(string), string launchSource = default(string), List<AssignAttachmentApiModel> attachments = default(List<AssignAttachmentApiModel>), List<CreateLinkApiModel> links = default(List<CreateLinkApiModel>))
+        public CreateTestRunAndFillByAutoTestsApiModel(Guid projectId = default, string name = default, List<Guid> configurationIds = default, List<string> autoTestExternalIds = default, string description = default, string launchSource = default, List<AssignAttachmentApiModel> attachments = default, List<CreateLinkApiModel> links = default)
         {
             this.ProjectId = projectId;
             // to ensure "configurationIds" is required (not null)

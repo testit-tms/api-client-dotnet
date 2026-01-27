@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">Model id (required).</param>
         /// <param name="name">Model Name (required).</param>
-        public AIServiceModelApiResult(string id = default(string), string name = default(string))
+        public AIServiceModelApiResult(string id = default, string name = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)

@@ -39,7 +39,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="projectIds">projectIds.</param>
         /// <param name="customAttributeTypes">customAttributeTypes.</param>
         /// <param name="isDeleted">isDeleted.</param>
-        public CustomAttributeTemplateSearchQueryModel(string name = default(string), List<Guid> projectIds = default(List<Guid>), List<CustomAttributeTypesEnum> customAttributeTypes = default(List<CustomAttributeTypesEnum>), bool? isDeleted = default(bool?))
+        public CustomAttributeTemplateSearchQueryModel(string name = default, List<Guid> projectIds = default, List<CustomAttributeTypesEnum> customAttributeTypes = default, bool? isDeleted = default)
         {
             this.Name = name;
             this.ProjectIds = projectIds;

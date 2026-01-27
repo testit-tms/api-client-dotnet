@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">Test run id. (required).</param>
         /// <param name="name">Test run name. (required).</param>
-        public TestRunNameApiResult(Guid id = default(Guid), string name = default(string))
+        public TestRunNameApiResult(Guid id = default, string name = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)

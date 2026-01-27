@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="WorkflowProjectApiResult" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        public WorkflowProjectApiResult(Guid id = default(Guid))
+        public WorkflowProjectApiResult(Guid id = default)
         {
             this.Id = id;
         }

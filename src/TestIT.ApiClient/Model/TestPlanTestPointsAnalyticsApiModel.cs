@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">filter.</param>
         /// <param name="extractionModel">extractionModel.</param>
-        public TestPlanTestPointsAnalyticsApiModel(TestPlanTestPointsSearchApiModel filter = default(TestPlanTestPointsSearchApiModel), TestPlanTestPointsExtractionApiModel extractionModel = default(TestPlanTestPointsExtractionApiModel))
+        public TestPlanTestPointsAnalyticsApiModel(TestPlanTestPointsSearchApiModel filter = default, TestPlanTestPointsExtractionApiModel extractionModel = default)
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;

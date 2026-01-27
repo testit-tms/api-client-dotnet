@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="projectId">This property is used to link configuration with project (required).</param>
         /// <param name="parameterIds">parameterIds (required).</param>
-        public ConfigurationByParametersModel(Guid projectId = default(Guid), List<Guid> parameterIds = default(List<Guid>))
+        public ConfigurationByParametersModel(Guid projectId = default, List<Guid> parameterIds = default)
         {
             this.ProjectId = projectId;
             // to ensure "parameterIds" is required (not null)
@@ -58,7 +58,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>This property is used to link configuration with project</value>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }

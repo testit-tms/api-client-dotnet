@@ -49,7 +49,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="requestType">Request method of the webhook (required).</param>
         /// <param name="url">Request URL of the webhook (required).</param>
-        public WebHookTestModel(RequestTypeModel requestType = default(RequestTypeModel), string url = default(string))
+        public WebHookTestModel(RequestTypeModel requestType = default, string url = default)
         {
             this.RequestType = requestType;
             // to ensure "url" is required (not null)

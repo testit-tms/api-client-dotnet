@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="text">Text of the comment (required).</param>
         /// <param name="id">Unique ID of the comment (required).</param>
-        public WorkItemCommentPutModel(string text = default(string), Guid id = default(Guid))
+        public WorkItemCommentPutModel(string text = default, Guid id = default)
         {
             // to ensure "text" is required (not null)
             if (text == null)

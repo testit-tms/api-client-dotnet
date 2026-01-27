@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="outcome">outcome.</param>
         /// <param name="count">count (required).</param>
-        public TestResultChronologyModel(string outcome = default(string), int count = default(int))
+        public TestResultChronologyModel(string outcome = default, int count = default)
         {
             this.Count = count;
             this.Outcome = outcome;

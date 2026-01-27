@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="order">order (required).</param>
         /// <param name="page">page.</param>
-        public TestPlanTestPointsInquiryApiModel(List<Order> order = default(List<Order>), Page page = default(Page))
+        public TestPlanTestPointsInquiryApiModel(List<Order> order = default, Page page = default)
         {
             // to ensure "order" is required (not null)
             if (order == null)

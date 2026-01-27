@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isDefault">isDefault (required).</param>
         /// <param name="statuses">statuses (required).</param>
         /// <param name="projectIds">projectIds (required).</param>
-        public UpdateWorkflowApiModel(string name = default(string), bool isDefault = default(bool), List<WorkflowStatusApiModel> statuses = default(List<WorkflowStatusApiModel>), List<Guid> projectIds = default(List<Guid>))
+        public UpdateWorkflowApiModel(string name = default, bool isDefault = default, List<WorkflowStatusApiModel> statuses = default, List<Guid> projectIds = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

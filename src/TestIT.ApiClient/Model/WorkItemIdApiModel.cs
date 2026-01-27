@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="WorkItemIdApiModel" /> class.
         /// </summary>
         /// <param name="id">Work Item ID or Global ID (required).</param>
-        public WorkItemIdApiModel(string id = default(string))
+        public WorkItemIdApiModel(string id = default)
         {
             // to ensure "id" is required (not null)
             if (id == null)

@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="SearchExternalIssuesApiModel" /> class.
         /// </summary>
         /// <param name="url">Url of external issue (required).</param>
-        public SearchExternalIssuesApiModel(string url = default(string))
+        public SearchExternalIssuesApiModel(string url = default)
         {
             // to ensure "url" is required (not null)
             if (url == null)

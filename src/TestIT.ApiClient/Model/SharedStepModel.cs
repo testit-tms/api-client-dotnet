@@ -45,7 +45,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">name (required).</param>
         /// <param name="steps">steps (required).</param>
         /// <param name="isDeleted">isDeleted (required).</param>
-        public SharedStepModel(Guid versionId = default(Guid), long globalId = default(long), string name = default(string), List<StepModel> steps = default(List<StepModel>), bool isDeleted = default(bool))
+        public SharedStepModel(Guid versionId = default, long globalId = default, string name = default, List<StepModel> steps = default, bool isDeleted = default)
         {
             this.VersionId = versionId;
             this.GlobalId = globalId;
@@ -68,7 +68,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets VersionId
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }

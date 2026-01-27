@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="fields">fields (required).</param>
         /// <param name="links">links (required).</param>
         /// <param name="values">values (required).</param>
-        public ExternalFormCreateModel(Dictionary<string, List<ExternalFormAllowedValueModel>> possibleValues = default(Dictionary<string, List<ExternalFormAllowedValueModel>>), List<ExternalFormFieldModel> fields = default(List<ExternalFormFieldModel>), List<ExternalFormLinkModel> links = default(List<ExternalFormLinkModel>), Dictionary<string, Object> values = default(Dictionary<string, Object>))
+        public ExternalFormCreateModel(Dictionary<string, List<ExternalFormAllowedValueModel>> possibleValues = default, List<ExternalFormFieldModel> fields = default, List<ExternalFormLinkModel> links = default, Dictionary<string, Object> values = default)
         {
             // to ensure "possibleValues" is required (not null)
             if (possibleValues == null)

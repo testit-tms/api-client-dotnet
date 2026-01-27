@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="DemoProjectApiResult" /> class.
         /// </summary>
         /// <param name="jobId">Job ID (required).</param>
-        public DemoProjectApiResult(Guid jobId = default(Guid))
+        public DemoProjectApiResult(Guid jobId = default)
         {
             this.JobId = jobId;
         }

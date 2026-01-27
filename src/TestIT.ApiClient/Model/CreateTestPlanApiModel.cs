@@ -51,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="hasAutomaticDurationTimer">Boolean flag defines if test plan has automatic duration timer.</param>
         /// <param name="attributes">Key value pair of test plan custom attributes (required).</param>
         /// <param name="testSuite">testSuite.</param>
-        public CreateTestPlanApiModel(List<TagApiModel> tags = default(List<TagApiModel>), string name = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string description = default(string), string build = default(string), Guid projectId = default(Guid), string productName = default(string), bool? hasAutomaticDurationTimer = default(bool?), Dictionary<string, Object> attributes = default(Dictionary<string, Object>), TestSuiteTestPlanApiModel testSuite = default(TestSuiteTestPlanApiModel))
+        public CreateTestPlanApiModel(List<TagApiModel> tags = default, string name = default, DateTime? startDate = default, DateTime? endDate = default, string description = default, string build = default, Guid projectId = default, string productName = default, bool? hasAutomaticDurationTimer = default, Dictionary<string, Object> attributes = default, TestSuiteTestPlanApiModel testSuite = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

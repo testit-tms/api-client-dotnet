@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">Specifies a tag name to search for.</param>
         /// <param name="createdDate">Specifies a tag range of creation date to search for.</param>
         /// <param name="createdByIds">Specifies a tag creator IDs to search for.</param>
-        public TagsFilterApiModel(string name = default(string), DateTimeRangeSelectorModel createdDate = default(DateTimeRangeSelectorModel), List<Guid> createdByIds = default(List<Guid>))
+        public TagsFilterApiModel(string name = default, DateTimeRangeSelectorModel createdDate = default, List<Guid> createdByIds = default)
         {
             this.Name = name;
             this.CreatedDate = createdDate;

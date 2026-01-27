@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="automatedTestPointsInProgressCount">automatedTestPointsInProgressCount (required).</param>
         /// <param name="automatedTestPointsFailedCount">automatedTestPointsFailedCount (required).</param>
         /// <param name="manualTestPointsCount">manualTestPointsCount (required).</param>
-        public TestPlanTestPointsSearchStatusCountersApiResult(int automatedTestPointsCount = default(int), int automatedTestPointsInProgressCount = default(int), int automatedTestPointsFailedCount = default(int), int manualTestPointsCount = default(int))
+        public TestPlanTestPointsSearchStatusCountersApiResult(int automatedTestPointsCount = default, int automatedTestPointsInProgressCount = default, int automatedTestPointsFailedCount = default, int manualTestPointsCount = default)
         {
             this.AutomatedTestPointsCount = automatedTestPointsCount;
             this.AutomatedTestPointsInProgressCount = automatedTestPointsInProgressCount;

@@ -45,13 +45,13 @@ namespace TestIT.ApiClient.Model
         /// <param name="testerId">Tester who is responded for the test unique internal identifier.</param>
         /// <param name="workItemId">Workitem to which test point relates unique identifier.</param>
         /// <param name="configurationId">Configuration to which test point relates unique identifier.</param>
-        /// <param name="status">Test point status    Applies one of these values: Blocked, NoResults, Failed, Passed.</param>
+        /// <param name="status">Test point status  Applies one of these values: Blocked, NoResults, Failed, Passed.</param>
         /// <param name="statusModel">Test point status (required).</param>
         /// <param name="lastTestResultId">Last test result unique identifier.</param>
         /// <param name="iterationId">Iteration unique identifier (required).</param>
         /// <param name="workItemMedianDuration">Median duration of work item the test point represents.</param>
         /// <param name="testSuiteId">Test suite to which test point relates unique identifier (required).</param>
-        public TestPointShortApiResult(Guid id = default(Guid), bool isDeleted = default(bool), Guid? testerId = default(Guid?), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), string status = default(string), TestStatusApiResult statusModel = default(TestStatusApiResult), Guid? lastTestResultId = default(Guid?), Guid iterationId = default(Guid), long? workItemMedianDuration = default(long?), Guid testSuiteId = default(Guid))
+        public TestPointShortApiResult(Guid id = default, bool isDeleted = default, Guid? testerId = default, Guid? workItemId = default, Guid? configurationId = default, string status = default, TestStatusApiResult statusModel = default, Guid? lastTestResultId = default, Guid iterationId = default, long? workItemMedianDuration = default, Guid testSuiteId = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;
@@ -107,9 +107,9 @@ namespace TestIT.ApiClient.Model
         public Guid? ConfigurationId { get; set; }
 
         /// <summary>
-        /// Test point status    Applies one of these values: Blocked, NoResults, Failed, Passed
+        /// Test point status  Applies one of these values: Blocked, NoResults, Failed, Passed
         /// </summary>
-        /// <value>Test point status    Applies one of these values: Blocked, NoResults, Failed, Passed</value>
+        /// <value>Test point status  Applies one of these values: Blocked, NoResults, Failed, Passed</value>
         /*
         <example>NoResult</example>
         */

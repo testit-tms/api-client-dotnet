@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="oldValue">oldValue.</param>
         /// <param name="newValue">newValue.</param>
-        public PeriodViewModelChangedFieldViewModel(PeriodViewModel oldValue = default(PeriodViewModel), PeriodViewModel newValue = default(PeriodViewModel))
+        public PeriodViewModelChangedFieldViewModel(PeriodViewModel oldValue = default, PeriodViewModel newValue = default)
         {
             this.OldValue = oldValue;
             this.NewValue = newValue;

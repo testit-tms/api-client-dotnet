@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="customAttributeTypes">Collection of attribute types.</param>
         /// <param name="isGlobal">Indicates whether the attribute is available across all projects.</param>
         /// <param name="isDeleted">Indicates whether the attribute is deleted.</param>
-        public CustomAttributeSearchQueryModel(string name = default(string), List<Guid> projectIds = default(List<Guid>), List<Guid> customAttributeIds = default(List<Guid>), List<CustomAttributeTypesEnum> customAttributeTypes = default(List<CustomAttributeTypesEnum>), bool? isGlobal = default(bool?), bool? isDeleted = default(bool?))
+        public CustomAttributeSearchQueryModel(string name = default, List<Guid> projectIds = default, List<Guid> customAttributeIds = default, List<CustomAttributeTypesEnum> customAttributeTypes = default, bool? isGlobal = default, bool? isDeleted = default)
         {
             this.Name = name;
             this.ProjectIds = projectIds;

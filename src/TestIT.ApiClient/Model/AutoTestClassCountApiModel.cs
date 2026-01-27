@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="name">name.</param>
         /// <param name="count">count (required).</param>
-        public AutoTestClassCountApiModel(string name = default(string), long count = default(long))
+        public AutoTestClassCountApiModel(string name = default, long count = default)
         {
             this.Count = count;
             this.Name = name;

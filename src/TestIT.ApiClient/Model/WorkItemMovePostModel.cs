@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="newSectionId">newSectionId (required).</param>
         /// <param name="oldSectionId">oldSectionId.</param>
         /// <param name="nextWorkItemId">nextWorkItemId.</param>
-        public WorkItemMovePostModel(Guid id = default(Guid), Guid newSectionId = default(Guid), Guid? oldSectionId = default(Guid?), Guid? nextWorkItemId = default(Guid?))
+        public WorkItemMovePostModel(Guid id = default, Guid newSectionId = default, Guid? oldSectionId = default, Guid? nextWorkItemId = default)
         {
             this.Id = id;
             this.NewSectionId = newSectionId;

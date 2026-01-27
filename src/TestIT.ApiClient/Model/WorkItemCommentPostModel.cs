@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="text">text (required).</param>
         /// <param name="workItemId">workItemId (required).</param>
-        public WorkItemCommentPostModel(string text = default(string), Guid workItemId = default(Guid))
+        public WorkItemCommentPostModel(string text = default, Guid workItemId = default)
         {
             // to ensure "text" is required (not null)
             if (text == null)

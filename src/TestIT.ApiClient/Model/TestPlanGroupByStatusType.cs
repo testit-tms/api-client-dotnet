@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="statusType">statusType (required).</param>
         /// <param name="value">value (required).</param>
-        public TestPlanGroupByStatusType(TestStatusType statusType = default(TestStatusType), long value = default(long))
+        public TestPlanGroupByStatusType(TestStatusType statusType = default, long value = default)
         {
             this.StatusType = statusType;
             this.Value = value;

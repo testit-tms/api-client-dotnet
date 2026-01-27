@@ -44,11 +44,11 @@ namespace TestIT.ApiClient.Model
         /// <param name="testerId">Tester who is responded for the test unique internal identifier.</param>
         /// <param name="workItemId">Workitem to which test point relates unique identifier.</param>
         /// <param name="configurationId">Configuration to which test point relates unique identifier.</param>
-        /// <param name="status">Test point status    Applies one of these values: Blocked, NoResults, Failed, Passed.</param>
+        /// <param name="status">Test point status  Applies one of these values: Blocked, NoResults, Failed, Passed.</param>
         /// <param name="lastTestResultId">Last test result unique identifier.</param>
         /// <param name="iterationId">Iteration unique identifier (required).</param>
         /// <param name="workItemMedianDuration">Median duration of work item the test point represents.</param>
-        public TestPointByTestSuiteModel(Guid id = default(Guid), Guid? testerId = default(Guid?), Guid? workItemId = default(Guid?), Guid? configurationId = default(Guid?), string status = default(string), Guid? lastTestResultId = default(Guid?), Guid iterationId = default(Guid), long? workItemMedianDuration = default(long?))
+        public TestPointByTestSuiteModel(Guid id = default, Guid? testerId = default, Guid? workItemId = default, Guid? configurationId = default, string status = default, Guid? lastTestResultId = default, Guid iterationId = default, long? workItemMedianDuration = default)
         {
             this.Id = id;
             this.IterationId = iterationId;
@@ -89,9 +89,9 @@ namespace TestIT.ApiClient.Model
         public Guid? ConfigurationId { get; set; }
 
         /// <summary>
-        /// Test point status    Applies one of these values: Blocked, NoResults, Failed, Passed
+        /// Test point status  Applies one of these values: Blocked, NoResults, Failed, Passed
         /// </summary>
-        /// <value>Test point status    Applies one of these values: Blocked, NoResults, Failed, Passed</value>
+        /// <value>Test point status  Applies one of these values: Blocked, NoResults, Failed, Passed</value>
         /*
         <example>NoResult</example>
         */

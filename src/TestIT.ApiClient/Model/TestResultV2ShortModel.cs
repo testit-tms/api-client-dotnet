@@ -59,7 +59,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="attachments">attachments.</param>
         /// <param name="parameters">parameters.</param>
         /// <param name="properties">properties.</param>
-        public TestResultV2ShortModel(Guid id = default(Guid), Guid configurationId = default(Guid), Guid workItemVersionId = default(Guid), Guid? autoTestId = default(Guid?), string message = default(string), string traces = default(string), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), Guid? runByUserId = default(Guid?), Guid? stoppedByUserId = default(Guid?), Guid? testPointId = default(Guid?), TestPointShortModel testPoint = default(TestPointShortModel), Guid testRunId = default(Guid), string outcome = default(string), string comment = default(string), List<LinkModel> links = default(List<LinkModel>), List<AttachmentModel> attachments = default(List<AttachmentModel>), Dictionary<string, string> parameters = default(Dictionary<string, string>), Dictionary<string, string> properties = default(Dictionary<string, string>))
+        public TestResultV2ShortModel(Guid id = default, Guid configurationId = default, Guid workItemVersionId = default, Guid? autoTestId = default, string message = default, string traces = default, DateTime? startedOn = default, DateTime? completedOn = default, Guid? runByUserId = default, Guid? stoppedByUserId = default, Guid? testPointId = default, TestPointShortModel testPoint = default, Guid testRunId = default, string outcome = default, string comment = default, List<LinkModel> links = default, List<AttachmentModel> attachments = default, Dictionary<string, string> parameters = default, Dictionary<string, string> properties = default)
         {
             this.Id = id;
             this.ConfigurationId = configurationId;
@@ -91,7 +91,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
@@ -100,7 +100,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ConfigurationId
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "configurationId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ConfigurationId { get; set; }
@@ -109,7 +109,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets WorkItemVersionId
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "workItemVersionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkItemVersionId { get; set; }
@@ -118,7 +118,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets AutoTestId
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "autoTestId", EmitDefaultValue = true)]
         public Guid? AutoTestId { get; set; }
@@ -127,7 +127,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Message
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "message", EmitDefaultValue = true)]
         public string Message { get; set; }
@@ -145,7 +145,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets StartedOn
         /// </summary>
         /*
-        <example>2025-10-27T11:18:38.258590200+03:00</example>
+        <example>2026-01-22T16:37:35.457742900Z</example>
         */
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
@@ -154,7 +154,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CompletedOn
         /// </summary>
         /*
-        <example>2025-10-27T11:18:38.258590200+03:00</example>
+        <example>2026-01-22T16:37:35.457742900Z</example>
         */
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
@@ -163,7 +163,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets RunByUserId
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "runByUserId", EmitDefaultValue = true)]
         public Guid? RunByUserId { get; set; }
@@ -172,7 +172,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets StoppedByUserId
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "stoppedByUserId", EmitDefaultValue = true)]
         public Guid? StoppedByUserId { get; set; }
@@ -181,7 +181,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets TestPointId
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "testPointId", EmitDefaultValue = true)]
         public Guid? TestPointId { get; set; }
@@ -196,7 +196,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets TestRunId
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "testRunId", IsRequired = true, EmitDefaultValue = true)]
         public Guid TestRunId { get; set; }

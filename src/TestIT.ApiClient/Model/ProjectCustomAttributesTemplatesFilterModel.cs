@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="name">Name of custom attribute template.</param>
         /// <param name="customAttributeTypes">Collection of custom attributes types.</param>
-        public ProjectCustomAttributesTemplatesFilterModel(string name = default(string), List<CustomAttributeTypesEnum> customAttributeTypes = default(List<CustomAttributeTypesEnum>))
+        public ProjectCustomAttributesTemplatesFilterModel(string name = default, List<CustomAttributeTypesEnum> customAttributeTypes = default)
         {
             this.Name = name;
             this.CustomAttributeTypes = customAttributeTypes;

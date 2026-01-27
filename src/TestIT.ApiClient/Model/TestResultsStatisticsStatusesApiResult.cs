@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="skipped">Number of test results which did not run and were skipped (required).</param>
         /// <param name="blocked">Number of test results which cannot be launched (required).</param>
         /// <param name="incomplete">Number of test results which are incomplete (required).</param>
-        public TestResultsStatisticsStatusesApiResult(int inProgress = default(int), int passed = default(int), int succeeded = default(int), int failed = default(int), int skipped = default(int), int blocked = default(int), int incomplete = default(int))
+        public TestResultsStatisticsStatusesApiResult(int inProgress = default, int passed = default, int succeeded = default, int failed = default, int skipped = default, int blocked = default, int incomplete = default)
         {
             this.InProgress = inProgress;
             this.Passed = passed;

@@ -40,7 +40,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="testData">testData.</param>
         /// <param name="comments">comments.</param>
         /// <param name="workItemId">workItemId.</param>
-        public StepPostModel(string action = default(string), string expected = default(string), string testData = default(string), string comments = default(string), Guid? workItemId = default(Guid?))
+        public StepPostModel(string action = default, string expected = default, string testData = default, string comments = default, Guid? workItemId = default)
         {
             this.Action = action;
             this.Expected = expected;
@@ -89,7 +89,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets WorkItemId
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "workItemId", EmitDefaultValue = true)]
         public Guid? WorkItemId { get; set; }

@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">id (required).</param>
         /// <param name="outcome">outcome.</param>
         /// <param name="runNumber">runNumber (required).</param>
-        public RerunTestResultModel(Guid id = default(Guid), string outcome = default(string), int runNumber = default(int))
+        public RerunTestResultModel(Guid id = default, string outcome = default, int runNumber = default)
         {
             this.Id = id;
             this.RunNumber = runNumber;

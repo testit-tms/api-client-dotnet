@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="configurationId">Unique ID of configuration which the test result uses (required).</param>
         /// <param name="configurationName">Name of configuration which the test result uses (required).</param>
         /// <param name="outcome">Outcome of the test result.</param>
-        /// <param name="status">status.</param>
+        /// <param name="status">status (required).</param>
         /// <param name="resultReasons">Collection of result reasons which the test result have (required).</param>
         /// <param name="comment">Comment to the test result.</param>
         /// <param name="date">Date when the test result was completed or started or created (required).</param>
@@ -60,7 +60,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="links">Collection of links attached to the test result (required).</param>
         /// <param name="attachments">Collection of files attached to the test result (required).</param>
         /// <param name="rerunCompletedCount">Run count (required).</param>
-        public TestResultShortResponse(Guid id = default(Guid), string name = default(string), long autotestGlobalId = default(long), string autotestExternalId = default(string), Guid testRunId = default(Guid), Guid configurationId = default(Guid), string configurationName = default(string), string outcome = default(string), TestStatusApiResult status = default(TestStatusApiResult), List<AutoTestResultReasonShort> resultReasons = default(List<AutoTestResultReasonShort>), string comment = default(string), DateTime date = default(DateTime), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?), DateTime? startedOn = default(DateTime?), DateTime? completedOn = default(DateTime?), long? duration = default(long?), List<LinkShort> links = default(List<LinkShort>), List<AttachmentApiResult> attachments = default(List<AttachmentApiResult>), int rerunCompletedCount = default(int))
+        public TestResultShortResponse(Guid id = default, string name = default, long autotestGlobalId = default, string autotestExternalId = default, Guid testRunId = default, Guid configurationId = default, string configurationName = default, string outcome = default, TestStatusApiResult status = default, List<AutoTestResultReasonShort> resultReasons = default, string comment = default, DateTime date = default, DateTime createdDate = default, DateTime? modifiedDate = default, DateTime? startedOn = default, DateTime? completedOn = default, long? duration = default, List<LinkShort> links = default, List<AttachmentApiResult> attachments = default, int rerunCompletedCount = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -78,6 +78,12 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("configurationName is a required property for TestResultShortResponse and cannot be null");
             }
             this.ConfigurationName = configurationName;
+            // to ensure "status" is required (not null)
+            if (status == null)
+            {
+                throw new ArgumentNullException("status is a required property for TestResultShortResponse and cannot be null");
+            }
+            this.Status = status;
             // to ensure "resultReasons" is required (not null)
             if (resultReasons == null)
             {
@@ -101,7 +107,6 @@ namespace TestIT.ApiClient.Model
             this.RerunCompletedCount = rerunCompletedCount;
             this.AutotestExternalId = autotestExternalId;
             this.Outcome = outcome;
-            this.Status = status;
             this.Comment = comment;
             this.ModifiedDate = modifiedDate;
             this.StartedOn = startedOn;
@@ -169,7 +174,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name = "status", EmitDefaultValue = true)]
+        [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
         public TestStatusApiResult Status { get; set; }
 
         /// <summary>

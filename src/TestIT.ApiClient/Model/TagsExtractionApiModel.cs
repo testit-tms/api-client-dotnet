@@ -36,7 +36,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TagsExtractionApiModel" /> class.
         /// </summary>
         /// <param name="ids">Specifies tags unique ID&#39;s to search for.</param>
-        public TagsExtractionApiModel(GuidExtractionModel ids = default(GuidExtractionModel))
+        public TagsExtractionApiModel(GuidExtractionModel ids = default)
         {
             this.Ids = ids;
         }

@@ -57,7 +57,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">Failure category last modifier identifier.</param>
         /// <param name="failureClassRegexes">Failure category regexes (required).</param>
         /// <param name="projectsCount">Projects relations count (required).</param>
-        public ProjectDetailedFailureCategoryApiResult(Guid id = default(Guid), string name = default(string), bool isDeleted = default(bool), FailureCategory failureCategory = default(FailureCategory), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), List<FailureClassRegexApiResult> failureClassRegexes = default(List<FailureClassRegexApiResult>), int projectsCount = default(int))
+        public ProjectDetailedFailureCategoryApiResult(Guid id = default, string name = default, bool isDeleted = default, FailureCategory failureCategory = default, DateTime createdDate = default, Guid createdById = default, DateTime? modifiedDate = default, Guid? modifiedById = default, List<FailureClassRegexApiResult> failureClassRegexes = default, int projectsCount = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;

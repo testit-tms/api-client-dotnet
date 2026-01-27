@@ -33,7 +33,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
         /// <returns>ExternalIssueApiFieldSuggestionReply</returns>
-        ExternalIssueApiFieldSuggestionReply ApiV2ExternalIssuesSuggestionsPost(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default(GetExternalIssueSuggestionsApiModel));
+        ExternalIssueApiFieldSuggestionReply ApiV2ExternalIssuesSuggestionsPost(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default);
 
         /// <summary>
         /// Returns list of suggestions from available external issues
@@ -44,7 +44,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
         /// <returns>ApiResponse of ExternalIssueApiFieldSuggestionReply</returns>
-        ApiResponse<ExternalIssueApiFieldSuggestionReply> ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default(GetExternalIssueSuggestionsApiModel));
+        ApiResponse<ExternalIssueApiFieldSuggestionReply> ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default);
         #endregion Synchronous Operations
     }
 
@@ -64,7 +64,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ExternalIssueApiFieldSuggestionReply</returns>
-        System.Threading.Tasks.Task<ExternalIssueApiFieldSuggestionReply> ApiV2ExternalIssuesSuggestionsPostAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default(GetExternalIssueSuggestionsApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ExternalIssueApiFieldSuggestionReply> ApiV2ExternalIssuesSuggestionsPostAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Returns list of suggestions from available external issues
@@ -76,7 +76,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ExternalIssueApiFieldSuggestionReply)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalIssueApiFieldSuggestionReply>> ApiV2ExternalIssuesSuggestionsPostWithHttpInfoAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default(GetExternalIssueSuggestionsApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<ExternalIssueApiFieldSuggestionReply>> ApiV2ExternalIssuesSuggestionsPostWithHttpInfoAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -296,7 +296,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
         /// <returns>ExternalIssueApiFieldSuggestionReply</returns>
-        public ExternalIssueApiFieldSuggestionReply ApiV2ExternalIssuesSuggestionsPost(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default(GetExternalIssueSuggestionsApiModel))
+        public ExternalIssueApiFieldSuggestionReply ApiV2ExternalIssuesSuggestionsPost(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default)
         {
             TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionReply> localVarResponse = ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(getExternalIssueSuggestionsApiModel);
             return localVarResponse.Data;
@@ -308,7 +308,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
         /// <returns>ApiResponse of ExternalIssueApiFieldSuggestionReply</returns>
-        public TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionReply> ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default(GetExternalIssueSuggestionsApiModel))
+        public TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionReply> ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -354,7 +354,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ExternalIssueApiFieldSuggestionReply</returns>
-        public async System.Threading.Tasks.Task<ExternalIssueApiFieldSuggestionReply> ApiV2ExternalIssuesSuggestionsPostAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default(GetExternalIssueSuggestionsApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<ExternalIssueApiFieldSuggestionReply> ApiV2ExternalIssuesSuggestionsPostAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionReply> localVarResponse = await ApiV2ExternalIssuesSuggestionsPostWithHttpInfoAsync(getExternalIssueSuggestionsApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -367,7 +367,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (ExternalIssueApiFieldSuggestionReply)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionReply>> ApiV2ExternalIssuesSuggestionsPostWithHttpInfoAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default(GetExternalIssueSuggestionsApiModel), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionReply>> ApiV2ExternalIssuesSuggestionsPostWithHttpInfoAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();

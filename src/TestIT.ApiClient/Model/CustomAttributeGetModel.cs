@@ -55,7 +55,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isEnabled">Indicates if the attribute is enabled (required).</param>
         /// <param name="isRequired">Indicates if the attribute is mandatory to specify (required).</param>
         /// <param name="isGlobal">Indicates if the attribute is available across all projects (required).</param>
-        public CustomAttributeGetModel(Guid id = default(Guid), List<CustomAttributeOptionModel> options = default(List<CustomAttributeOptionModel>), CustomAttributeTypesEnum type = default(CustomAttributeTypesEnum), bool isDeleted = default(bool), string name = default(string), bool isEnabled = default(bool), bool isRequired = default(bool), bool isGlobal = default(bool))
+        public CustomAttributeGetModel(Guid id = default, List<CustomAttributeOptionModel> options = default, CustomAttributeTypesEnum type = default, bool isDeleted = default, string name = default, bool isEnabled = default, bool isRequired = default, bool isGlobal = default)
         {
             this.Id = id;
             // to ensure "options" is required (not null)

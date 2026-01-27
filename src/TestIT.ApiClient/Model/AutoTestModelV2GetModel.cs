@@ -58,7 +58,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="externalKey">externalKey.</param>
         /// <param name="id">Unique ID of the entity (required).</param>
         /// <param name="isDeleted">Indicates if the entity is deleted (required).</param>
-        public AutoTestModelV2GetModel(string externalId = default(string), List<LinkModel> links = default(List<LinkModel>), Guid projectId = default(Guid), string name = default(string), string varNamespace = default(string), string classname = default(string), List<AutoTestStepModel> steps = default(List<AutoTestStepModel>), List<AutoTestStepModel> setup = default(List<AutoTestStepModel>), List<AutoTestStepModel> teardown = default(List<AutoTestStepModel>), long globalId = default(long), DateTime? createdDate = default(DateTime?), DateTime? modifiedDate = default(DateTime?), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), List<LabelShortModel> labels = default(List<LabelShortModel>), string externalKey = default(string), Guid id = default(Guid), bool isDeleted = default(bool))
+        public AutoTestModelV2GetModel(string externalId = default, List<LinkModel> links = default, Guid projectId = default, string name = default, string varNamespace = default, string classname = default, List<AutoTestStepModel> steps = default, List<AutoTestStepModel> setup = default, List<AutoTestStepModel> teardown = default, long globalId = default, DateTime? createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, List<LabelShortModel> labels = default, string externalKey = default, Guid id = default, bool isDeleted = default)
         {
             // to ensure "externalId" is required (not null)
             if (externalId == null)
@@ -111,7 +111,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>This property is used to link autotest with project</value>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
@@ -174,7 +174,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         /*
-        <example>2025-10-27T11:18:38.258590200+03:00</example>
+        <example>2026-01-22T16:37:35.457742900Z</example>
         */
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
@@ -183,7 +183,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2025-10-27T11:18:38.258590200+03:00</example>
+        <example>2026-01-22T16:37:35.457742900Z</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
@@ -192,7 +192,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedById
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
@@ -201,7 +201,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedById
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }

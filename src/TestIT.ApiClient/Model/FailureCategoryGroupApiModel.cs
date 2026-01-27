@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="field">Group field (required).</param>
         /// <param name="displayField">Group display field.</param>
-        public FailureCategoryGroupApiModel(string field = default(string), string displayField = default(string))
+        public FailureCategoryGroupApiModel(string field = default, string displayField = default)
         {
             // to ensure "field" is required (not null)
             if (field == null)

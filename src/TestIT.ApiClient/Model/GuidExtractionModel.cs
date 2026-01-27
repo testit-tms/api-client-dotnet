@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="include">include.</param>
         /// <param name="exclude">exclude.</param>
-        public GuidExtractionModel(List<Guid> include = default(List<Guid>), List<Guid> exclude = default(List<Guid>))
+        public GuidExtractionModel(List<Guid> include = default, List<Guid> exclude = default)
         {
             this.Include = include;
             this.Exclude = exclude;

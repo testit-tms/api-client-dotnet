@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="oldValue">oldValue (required).</param>
         /// <param name="newValue">newValue (required).</param>
-        public Int64ChangedFieldViewModel(long oldValue = default(long), long newValue = default(long))
+        public Int64ChangedFieldViewModel(long oldValue = default, long newValue = default)
         {
             this.OldValue = oldValue;
             this.NewValue = newValue;

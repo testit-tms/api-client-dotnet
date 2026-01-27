@@ -39,7 +39,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="path">path.</param>
         /// <param name="op">op.</param>
         /// <param name="from">from.</param>
-        public Operation(Object value = default(Object), string path = default(string), string op = default(string), string from = default(string))
+        public Operation(Object value = default, string path = default, string op = default, string from = default)
         {
             this.Value = value;
             this.Path = path;

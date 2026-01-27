@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;WebhookLogApiResult&gt;</returns>
-        List<WebhookLogApiResult> ApiV2WebhooksLogsGet(Guid? projectId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        List<WebhookLogApiResult> ApiV2WebhooksLogsGet(Guid? projectId = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
 
         /// <summary>
         /// Get last webhook logs
@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;WebhookLogApiResult&gt;</returns>
-        ApiResponse<List<WebhookLogApiResult>> ApiV2WebhooksLogsGetWithHttpInfo(Guid? projectId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string));
+        ApiResponse<List<WebhookLogApiResult>> ApiV2WebhooksLogsGetWithHttpInfo(Guid? projectId = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
         /// <summary>
         /// Delete webhook log by ID
         /// </summary>
@@ -115,7 +115,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WebhookLogApiResult&gt;</returns>
-        System.Threading.Tasks.Task<List<WebhookLogApiResult>> ApiV2WebhooksLogsGetAsync(Guid? projectId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<WebhookLogApiResult>> ApiV2WebhooksLogsGetAsync(Guid? projectId = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get last webhook logs
@@ -132,7 +132,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WebhookLogApiResult&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WebhookLogApiResult>>> ApiV2WebhooksLogsGetWithHttpInfoAsync(Guid? projectId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<WebhookLogApiResult>>> ApiV2WebhooksLogsGetWithHttpInfoAsync(Guid? projectId = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Delete webhook log by ID
         /// </summary>
@@ -143,7 +143,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task ApiV2WebhooksLogsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task ApiV2WebhooksLogsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Delete webhook log by ID
@@ -155,7 +155,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WebhooksLogsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WebhooksLogsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get webhook log by ID
         /// </summary>
@@ -166,7 +166,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookLogApiResult</returns>
-        System.Threading.Tasks.Task<WebhookLogApiResult> ApiV2WebhooksLogsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<WebhookLogApiResult> ApiV2WebhooksLogsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get webhook log by ID
@@ -178,7 +178,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookLogApiResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WebhookLogApiResult>> ApiV2WebhooksLogsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<WebhookLogApiResult>> ApiV2WebhooksLogsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -403,7 +403,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>List&lt;WebhookLogApiResult&gt;</returns>
-        public List<WebhookLogApiResult> ApiV2WebhooksLogsGet(Guid? projectId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public List<WebhookLogApiResult> ApiV2WebhooksLogsGet(Guid? projectId = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<WebhookLogApiResult>> localVarResponse = ApiV2WebhooksLogsGetWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
@@ -420,7 +420,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <returns>ApiResponse of List&lt;WebhookLogApiResult&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<WebhookLogApiResult>> ApiV2WebhooksLogsGetWithHttpInfo(Guid? projectId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string))
+        public TestIT.ApiClient.Client.ApiResponse<List<WebhookLogApiResult>> ApiV2WebhooksLogsGetWithHttpInfo(Guid? projectId = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -493,7 +493,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WebhookLogApiResult&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WebhookLogApiResult>> ApiV2WebhooksLogsGetAsync(Guid? projectId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<WebhookLogApiResult>> ApiV2WebhooksLogsGetAsync(Guid? projectId = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<WebhookLogApiResult>> localVarResponse = await ApiV2WebhooksLogsGetWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -511,7 +511,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WebhookLogApiResult&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WebhookLogApiResult>>> ApiV2WebhooksLogsGetWithHttpInfoAsync(Guid? projectId = default(Guid?), int? skip = default(int?), int? take = default(int?), string orderBy = default(string), string searchField = default(string), string searchValue = default(string), System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WebhookLogApiResult>>> ApiV2WebhooksLogsGetWithHttpInfoAsync(Guid? projectId = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -637,7 +637,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task ApiV2WebhooksLogsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task ApiV2WebhooksLogsIdDeleteAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
             await ApiV2WebhooksLogsIdDeleteWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
         }
@@ -649,7 +649,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2WebhooksLogsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2WebhooksLogsIdDeleteWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -753,7 +753,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of WebhookLogApiResult</returns>
-        public async System.Threading.Tasks.Task<WebhookLogApiResult> ApiV2WebhooksLogsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<WebhookLogApiResult> ApiV2WebhooksLogsIdGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<WebhookLogApiResult> localVarResponse = await ApiV2WebhooksLogsIdGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
@@ -766,7 +766,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Webhook log unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WebhookLogApiResult)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WebhookLogApiResult>> ApiV2WebhooksLogsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WebhookLogApiResult>> ApiV2WebhooksLogsIdGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();

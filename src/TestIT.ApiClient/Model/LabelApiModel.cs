@@ -27,44 +27,36 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// AutoTestAverageDurationModel
+    /// LabelApiModel
     /// </summary>
-    [DataContract(Name = "AutoTestAverageDurationModel")]
-    public partial class AutoTestAverageDurationModel : IValidatableObject
+    [DataContract(Name = "LabelApiModel")]
+    public partial class LabelApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestAverageDurationModel" /> class.
+        /// Initializes a new instance of the <see cref="LabelApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected AutoTestAverageDurationModel() { }
+        protected LabelApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestAverageDurationModel" /> class.
+        /// Initializes a new instance of the <see cref="LabelApiModel" /> class.
         /// </summary>
-        /// <param name="passedAverageDuration">passedAverageDuration (required).</param>
-        /// <param name="failedAverageDuration">failedAverageDuration (required).</param>
-        public AutoTestAverageDurationModel(double passedAverageDuration = default(double), double failedAverageDuration = default(double))
+        /// <param name="name">Name of the label (required).</param>
+        public LabelApiModel(string name = default)
         {
-            this.PassedAverageDuration = passedAverageDuration;
-            this.FailedAverageDuration = failedAverageDuration;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for LabelApiModel and cannot be null");
+            }
+            this.Name = name;
         }
 
         /// <summary>
-        /// Gets or Sets PassedAverageDuration
+        /// Name of the label
         /// </summary>
-        /*
-        <example>2.5555</example>
-        */
-        [DataMember(Name = "passedAverageDuration", IsRequired = true, EmitDefaultValue = true)]
-        public double PassedAverageDuration { get; set; }
-
-        /// <summary>
-        /// Gets or Sets FailedAverageDuration
-        /// </summary>
-        /*
-        <example>2.5555</example>
-        */
-        [DataMember(Name = "failedAverageDuration", IsRequired = true, EmitDefaultValue = true)]
-        public double FailedAverageDuration { get; set; }
+        /// <value>Name of the label</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        public string Name { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -73,9 +65,8 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AutoTestAverageDurationModel {\n");
-            sb.Append("  PassedAverageDuration: ").Append(PassedAverageDuration).Append("\n");
-            sb.Append("  FailedAverageDuration: ").Append(FailedAverageDuration).Append("\n");
+            sb.Append("class LabelApiModel {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -96,6 +87,12 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
+            }
+
             yield break;
         }
     }

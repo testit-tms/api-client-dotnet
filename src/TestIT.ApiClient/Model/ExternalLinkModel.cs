@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="priorityIconUrl">priorityIconUrl.</param>
         /// <param name="statusName">statusName.</param>
         /// <param name="assigneeDisplayName">assigneeDisplayName.</param>
-        public ExternalLinkModel(string url = default(string), string title = default(string), string issueTypeName = default(string), string issueTypeIconUrl = default(string), string priorityName = default(string), string priorityIconUrl = default(string), string statusName = default(string), string assigneeDisplayName = default(string))
+        public ExternalLinkModel(string url = default, string title = default, string issueTypeName = default, string issueTypeIconUrl = default, string priorityName = default, string priorityIconUrl = default, string statusName = default, string assigneeDisplayName = default)
         {
             this.Url = url;
             this.Title = title;

@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="oldValue">oldValue (required).</param>
         /// <param name="newValue">newValue (required).</param>
-        public GuidChangedFieldViewModel(Guid oldValue = default(Guid), Guid newValue = default(Guid))
+        public GuidChangedFieldViewModel(Guid oldValue = default, Guid newValue = default)
         {
             this.OldValue = oldValue;
             this.NewValue = newValue;

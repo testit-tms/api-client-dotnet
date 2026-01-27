@@ -63,7 +63,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="endDate">endDate.</param>
         /// <param name="error">error.</param>
         /// <param name="attachments">attachments (required).</param>
-        public BackgroundJobGetModel(Guid id = default(Guid), string jobId = default(string), BackgroundJobType jobType = default(BackgroundJobType), BackgroundJobState state = default(BackgroundJobState), bool isDeleted = default(bool), long progress = default(long), DateTime createdDate = default(DateTime), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), string error = default(string), List<BackgroundJobAttachmentModel> attachments = default(List<BackgroundJobAttachmentModel>))
+        public BackgroundJobGetModel(Guid id = default, string jobId = default, BackgroundJobType jobType = default, BackgroundJobState state = default, bool isDeleted = default, long progress = default, DateTime createdDate = default, DateTime? startDate = default, DateTime? endDate = default, string error = default, List<BackgroundJobAttachmentModel> attachments = default)
         {
             this.Id = id;
             // to ensure "jobId" is required (not null)

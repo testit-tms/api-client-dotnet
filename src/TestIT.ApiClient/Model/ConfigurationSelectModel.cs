@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="filter">Configuration filters collection.</param>
         /// <param name="extractionModel">Rules for configurations extraction.</param>
-        public ConfigurationSelectModel(ConfigurationFilterModel filter = default(ConfigurationFilterModel), ConfigurationExtractionModel extractionModel = default(ConfigurationExtractionModel))
+        public ConfigurationSelectModel(ConfigurationFilterModel filter = default, ConfigurationExtractionModel extractionModel = default)
         {
             this.Filter = filter;
             this.ExtractionModel = extractionModel;

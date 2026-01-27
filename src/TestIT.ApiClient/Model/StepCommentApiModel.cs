@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdDate">createdDate (required).</param>
         /// <param name="modifiedDate">modifiedDate.</param>
-        public StepCommentApiModel(Guid id = default(Guid), string text = default(string), Guid stepId = default(Guid), Guid? parentStepId = default(Guid?), List<AttachmentApiResult> attachments = default(List<AttachmentApiResult>), Guid testResultId = default(Guid), Guid createdById = default(Guid), Guid? modifiedById = default(Guid?), DateTime createdDate = default(DateTime), DateTime? modifiedDate = default(DateTime?))
+        public StepCommentApiModel(Guid id = default, string text = default, Guid stepId = default, Guid? parentStepId = default, List<AttachmentApiResult> attachments = default, Guid testResultId = default, Guid createdById = default, Guid? modifiedById = default, DateTime createdDate = default, DateTime? modifiedDate = default)
         {
             this.Id = id;
             this.StepId = stepId;

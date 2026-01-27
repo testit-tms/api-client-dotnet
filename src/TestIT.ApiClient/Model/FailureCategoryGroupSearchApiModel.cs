@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="inquiry">Inquiry details (required).</param>
         /// <param name="group">Group details.</param>
-        public FailureCategoryGroupSearchApiModel(Inquiry inquiry = default(Inquiry), FailureCategoryGroupApiModel group = default(FailureCategoryGroupApiModel))
+        public FailureCategoryGroupSearchApiModel(Inquiry inquiry = default, FailureCategoryGroupApiModel group = default)
         {
             // to ensure "inquiry" is required (not null)
             if (inquiry == null)

@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="action">action (required).</param>
         /// <param name="links">links.</param>
-        public UpdateMultipleLinksApiModel(ActionUpdate action = default(ActionUpdate), List<CreateLinkApiModel> links = default(List<CreateLinkApiModel>))
+        public UpdateMultipleLinksApiModel(ActionUpdate action = default, List<CreateLinkApiModel> links = default)
         {
             this.Action = action;
             this.Links = links;

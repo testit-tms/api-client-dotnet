@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="TagShortApiResult" /> class.
         /// </summary>
         /// <param name="name">Name of the tag (required).</param>
-        public TagShortApiResult(string name = default(string))
+        public TagShortApiResult(string name = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

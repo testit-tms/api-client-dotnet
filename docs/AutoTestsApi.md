@@ -135,7 +135,7 @@ catch (ApiException e)
 
 Set \"Flaky\" status for multiple autotests
 
-User permissions for project:  - Read only  - Execute  - Write  - Full control
+User permissions for project: - Read only - Execute - Write - Full control
 
 ### Example
 ```csharp
@@ -351,7 +351,7 @@ void (empty response body)
 
 Get test results history for autotest
 
-  Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets getTestResultHistoryReportQuery (listed in the example)    User runs method execution    System search for test results using filters set by user in getTestResultHistoryReportQuery and id    System returns the enumeration of test results
+ Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets getTestResultHistoryReportQuery (listed in the example)  User runs method execution  System search for test results using filters set by user in getTestResultHistoryReportQuery and id  System returns the enumeration of test results
 
 ### Example
 ```csharp
@@ -469,7 +469,7 @@ catch (ApiException e)
 
 Get identifiers of changed linked work items
 
-User permissions for project:  - Read only  - Execute  - Write  - Full control
+User permissions for project: - Read only - Execute - Write - Full control
 
 ### Example
 ```csharp
@@ -575,7 +575,7 @@ catch (ApiException e)
 
 Approve changes to work items linked to autotest
 
-User permissions for project:  - Read only  - Execute  - Write  - Full control
+User permissions for project: - Read only - Execute - Write - Full control
 
 ### Example
 ```csharp
@@ -789,11 +789,11 @@ catch (ApiException e)
 
 <a id="createautotest"></a>
 # **CreateAutoTest**
-> AutoTestModel CreateAutoTest (AutoTestPostModel autoTestPostModel = null)
+> AutoTestApiResult CreateAutoTest (AutoTestCreateApiModel autoTestCreateApiModel = null)
 
 Create autotest
 
-  This method creates a new autotest.    To add an autotest to the test plan, link it to a work item using the `POST /api/v2/autoTests/{autoTestId}/workItems` method.    Use the `POST /api/v2/testRuns/byAutoTests` method to run autotest outside the test plan.
+ This method creates a new autotest.  To add an autotest to the test plan, link it to a work item using the `POST /api/v2/autoTests/{autoTestId}/workItems` method.  Use the `POST /api/v2/testRuns/byAutoTests` method to run autotest outside the test plan.
 
 ### Example
 ```csharp
@@ -821,12 +821,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AutoTestsApi(httpClient, config, httpClientHandler);
-            var autoTestPostModel = new AutoTestPostModel(); // AutoTestPostModel |  (optional) 
+            var autoTestCreateApiModel = new AutoTestCreateApiModel(); // AutoTestCreateApiModel |  (optional) 
 
             try
             {
                 // Create autotest
-                AutoTestModel result = apiInstance.CreateAutoTest(autoTestPostModel);
+                AutoTestApiResult result = apiInstance.CreateAutoTest(autoTestCreateApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -847,7 +847,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create autotest
-    ApiResponse<AutoTestModel> response = apiInstance.CreateAutoTestWithHttpInfo(autoTestPostModel);
+    ApiResponse<AutoTestApiResult> response = apiInstance.CreateAutoTestWithHttpInfo(autoTestCreateApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -864,11 +864,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **autoTestPostModel** | [**AutoTestPostModel**](AutoTestPostModel.md) |  | [optional]  |
+| **autoTestCreateApiModel** | [**AutoTestCreateApiModel**](AutoTestCreateApiModel.md) |  | [optional]  |
 
 ### Return type
 
-[**AutoTestModel**](AutoTestModel.md)
+[**AutoTestApiResult**](AutoTestApiResult.md)
 
 ### Authorization
 
@@ -884,22 +884,22 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** |   - Name cannot be empty or contain only white space characters    - External ID cannot be empty or contain only white space characters    - Namespace cannot be empty or contain only white space characters    - Classname cannot be empty or contain only white space characters    - Steps cannot be &#x60;null&#x60;    - Steps nesting level is more than 15    - Invalid URI |  -  |
+| **400** |  - Name cannot be empty or contain only white space characters  - External ID cannot be empty or contain only white space characters  - Namespace cannot be empty or contain only white space characters  - Classname cannot be empty or contain only white space characters  - Steps cannot be &#x60;null&#x60;  - Steps nesting level is more than 15  - Invalid URI |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for autotests is required |  -  |
 | **404** | Project with provided ID cannot be found |  -  |
 | **409** | Autotest with the same external ID already exists is the project |  -  |
-| **422** |   - Labels have duplicates    - Labels begin with &#x60;::&#x60;    - Labels with the same base have different values |  -  |
+| **422** |  - Labels have duplicates  - Labels begin with &#x60;::&#x60;  - Labels with the same base have different values |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="createmultiple"></a>
 # **CreateMultiple**
-> List&lt;AutoTestModel&gt; CreateMultiple (List<AutoTestPostModel> autoTestPostModel = null)
+> List&lt;AutoTestApiResult&gt; CreateMultiple (List<AutoTestCreateApiModel> autoTestCreateApiModel = null)
 
 Create multiple autotests
 
-  Use case    User sets autotest parameters (listed in the example) and runs method execution    System creates autotest    [Optional] If steps enumeration is set, system creates step items and relates them to autotest    [Optional] If setup enumeration is set, system creates setup items and relates them to autotest    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest    [Optional] If label enumeration is set, system creates labels and relates them to autotest    [Optional] If link enumeration is set, system creates links and relates them to autotest    System returns autotest model (example listed in response parameters)
+ Use case  User sets autotest parameters (listed in the example) and runs method execution  System creates autotest  [Optional] If steps enumeration is set, system creates step items and relates them to autotest  [Optional] If setup enumeration is set, system creates setup items and relates them to autotest  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest  [Optional] If label enumeration is set, system creates labels and relates them to autotest  [Optional] If link enumeration is set, system creates links and relates them to autotest  System returns autotest model (example listed in response parameters)
 
 ### Example
 ```csharp
@@ -927,12 +927,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AutoTestsApi(httpClient, config, httpClientHandler);
-            var autoTestPostModel = new List<AutoTestPostModel>(); // List<AutoTestPostModel> |  (optional) 
+            var autoTestCreateApiModel = new List<AutoTestCreateApiModel>(); // List<AutoTestCreateApiModel> |  (optional) 
 
             try
             {
                 // Create multiple autotests
-                List<AutoTestModel> result = apiInstance.CreateMultiple(autoTestPostModel);
+                List<AutoTestApiResult> result = apiInstance.CreateMultiple(autoTestCreateApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -953,7 +953,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create multiple autotests
-    ApiResponse<List<AutoTestModel>> response = apiInstance.CreateMultipleWithHttpInfo(autoTestPostModel);
+    ApiResponse<List<AutoTestApiResult>> response = apiInstance.CreateMultipleWithHttpInfo(autoTestCreateApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -970,11 +970,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **autoTestPostModel** | [**List&lt;AutoTestPostModel&gt;**](AutoTestPostModel.md) |  | [optional]  |
+| **autoTestCreateApiModel** | [**List&lt;AutoTestCreateApiModel&gt;**](AutoTestCreateApiModel.md) |  | [optional]  |
 
 ### Return type
 
-[**List&lt;AutoTestModel&gt;**](AutoTestModel.md)
+[**List&lt;AutoTestApiResult&gt;**](AutoTestApiResult.md)
 
 ### Authorization
 
@@ -990,12 +990,12 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** |   - Name cannot be empty or contain only white space characters    - External ID cannot be empty or contain only white space characters    - Namespace cannot be empty or contain only white space characters    - Classname cannot be empty or contain only white space characters    - Steps cannot be &#x60;null&#x60;    - Steps nesting level is more than 15    - Invalid URI |  -  |
+| **400** |  - Name cannot be empty or contain only white space characters  - External ID cannot be empty or contain only white space characters  - Namespace cannot be empty or contain only white space characters  - Classname cannot be empty or contain only white space characters  - Steps cannot be &#x60;null&#x60;  - Steps nesting level is more than 15  - Invalid URI |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for autotests is required |  -  |
 | **404** | Project with provided ID cannot be found |  -  |
 | **409** | Autotest with the same external ID already exists is the project |  -  |
-| **422** |   - Labels have duplicates    - Labels begin with &#x60;::&#x60;    - Labels with the same base have different values |  -  |
+| **422** |  - Labels have duplicates  - Labels begin with &#x60;::&#x60;  - Labels with the same base have different values |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1005,7 +1005,7 @@ catch (ApiException e)
 
 Delete autotest
 
-  Use case    User sets autotest internal (guid format) or global (integer format) identifier and runs method execution    System finds the autotest by the identifier    System deletes autotest and returns no content response
+ Use case  User sets autotest internal (guid format) or global (integer format) identifier and runs method execution  System finds the autotest by the identifier  System deletes autotest and returns no content response
 
 ### Example
 ```csharp
@@ -1107,7 +1107,7 @@ void (empty response body)
 
 Unlink autotest from work item
 
-  Use case    User sets autotest internal (guid format) or global (integer format) identifier    [Optional] User sets workitem internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it              from autotest.    [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.    System returns no content response
+ Use case  User sets autotest internal (guid format) or global (integer format) identifier  [Optional] User sets workitem internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  [Optional] if workitem id is set by User, System finds the workitem by the workitem identifier and unlinks it             from autotest.  [Optional] Otherwise, if workitem id is not specified, System unlinks all workitems linked to autotest.  System returns no content response
 
 ### Example
 ```csharp
@@ -1199,7 +1199,7 @@ void (empty response body)
 | **400** | Work item ID is invalid |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for autotests is required |  -  |
-| **404** |   - Autotest with provided ID cannot be found    - Work item with provided ID cannot be found |  -  |
+| **404** |  - Autotest with provided ID cannot be found  - Work item with provided ID cannot be found |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 
@@ -1359,11 +1359,11 @@ catch (ApiException e)
 
 <a id="getautotestaverageduration"></a>
 # **GetAutoTestAverageDuration**
-> AutoTestAverageDurationModel GetAutoTestAverageDuration (string id)
+> AutoTestAverageDurationApiResult GetAutoTestAverageDuration (string id)
 
 Get average autotest duration
 
-  Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System calculates pass average duration and fail average duration of autotest from all related test results    System returns pass average duration and fail average duration for autotest
+ Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System calculates pass average duration and fail average duration of autotest from all related test results  System returns pass average duration and fail average duration for autotest
 
 ### Example
 ```csharp
@@ -1396,7 +1396,7 @@ namespace Example
             try
             {
                 // Get average autotest duration
-                AutoTestAverageDurationModel result = apiInstance.GetAutoTestAverageDuration(id);
+                AutoTestAverageDurationApiResult result = apiInstance.GetAutoTestAverageDuration(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1417,7 +1417,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get average autotest duration
-    ApiResponse<AutoTestAverageDurationModel> response = apiInstance.GetAutoTestAverageDurationWithHttpInfo(id);
+    ApiResponse<AutoTestAverageDurationApiResult> response = apiInstance.GetAutoTestAverageDurationWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1438,7 +1438,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**AutoTestAverageDurationModel**](AutoTestAverageDurationModel.md)
+[**AutoTestAverageDurationApiResult**](AutoTestAverageDurationApiResult.md)
 
 ### Authorization
 
@@ -1465,11 +1465,11 @@ catch (ApiException e)
 
 <a id="getautotestbyid"></a>
 # **GetAutoTestById**
-> AutoTestModel GetAutoTestById (string id)
+> AutoTestApiResult GetAutoTestById (string id)
 
 Get autotest by internal or global ID
 
-  Use case    User sets autotest internal or global identifier and runs method execution    System returns autotest, which internal or global identifier equals the identifier value set in the previous action
+ Use case  User sets autotest internal or global identifier and runs method execution  System returns autotest, which internal or global identifier equals the identifier value set in the previous action
 
 ### Example
 ```csharp
@@ -1502,7 +1502,7 @@ namespace Example
             try
             {
                 // Get autotest by internal or global ID
-                AutoTestModel result = apiInstance.GetAutoTestById(id);
+                AutoTestApiResult result = apiInstance.GetAutoTestById(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1523,7 +1523,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get autotest by internal or global ID
-    ApiResponse<AutoTestModel> response = apiInstance.GetAutoTestByIdWithHttpInfo(id);
+    ApiResponse<AutoTestApiResult> response = apiInstance.GetAutoTestByIdWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1544,7 +1544,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**AutoTestModel**](AutoTestModel.md)
+[**AutoTestApiResult**](AutoTestApiResult.md)
 
 ### Authorization
 
@@ -1575,7 +1575,7 @@ catch (ApiException e)
 
 Get autotest chronology
 
-  Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search all test results related to autotest (with default limit equal 100)    System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending    System returns test result chronology for autotest
+ Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search all test results related to autotest (with default limit equal 100)  System orders the test results by CompletedOn property descending and then orders by CreatedDate property descending  System returns test result chronology for autotest
 
 ### Example
 ```csharp
@@ -1681,7 +1681,7 @@ catch (ApiException e)
 
 Get completed tests runs for autotests
 
-  Use case    User sets autotest internal (guid format) or global (integer format) identifier    User runs method execution    System search for all test runs related to the autotest    System returns the enumeration of test runs
+ Use case  User sets autotest internal (guid format) or global (integer format) identifier  User runs method execution  System search for all test runs related to the autotest  System returns the enumeration of test runs
 
 ### Example
 ```csharp
@@ -1783,11 +1783,11 @@ catch (ApiException e)
 
 <a id="getworkitemslinkedtoautotest"></a>
 # **GetWorkItemsLinkedToAutoTest**
-> List&lt;WorkItemIdentifierModel&gt; GetWorkItemsLinkedToAutoTest (string id, bool? isDeleted = null, bool? isWorkItemDeleted = null)
+> List&lt;AutoTestWorkItemIdentifierApiResult&gt; GetWorkItemsLinkedToAutoTest (string id, bool? isDeleted = null, bool? isWorkItemDeleted = null)
 
 Get work items linked to autotest
 
-  This method links an autotest to a test case or a checklist.              A manual test case with a linked automated work item is marked in the test management system as an autotest.              You can run it from graphical user interface (GUI). To do that:    1. Open the project in GUI.                2. Go to <b>Test plans</b> section and switch to the <b>Execution</b> tab.                3. Select the autotest(s) you want to run using checkboxes.                4. In the toolbar above the test list, click <b>Run autotests</b>.
+ This method links an autotest to a test case or a checklist.             A manual test case with a linked automated work item is marked in the test management system as an autotest.             You can run it from graphical user interface (GUI). To do that:  1. Open the project in GUI.              2. Go to <b>Test plans</b> section and switch to the <b>Execution</b> tab.              3. Select the autotest(s) you want to run using checkboxes.              4. In the toolbar above the test list, click <b>Run autotests</b>.
 
 ### Example
 ```csharp
@@ -1815,14 +1815,14 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AutoTestsApi(httpClient, config, httpClientHandler);
-            var id = "id_example";  // string | Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID.
+            var id = "id_example";  // string | Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID.
             var isDeleted = true;  // bool? | Specifies that a test is deleted or still relevant. (optional) 
             var isWorkItemDeleted = false;  // bool? | OBSOLETE: Use `isDeleted` instead (optional)  (default to false)
 
             try
             {
                 // Get work items linked to autotest
-                List<WorkItemIdentifierModel> result = apiInstance.GetWorkItemsLinkedToAutoTest(id, isDeleted, isWorkItemDeleted);
+                List<AutoTestWorkItemIdentifierApiResult> result = apiInstance.GetWorkItemsLinkedToAutoTest(id, isDeleted, isWorkItemDeleted);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1843,7 +1843,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get work items linked to autotest
-    ApiResponse<List<WorkItemIdentifierModel>> response = apiInstance.GetWorkItemsLinkedToAutoTestWithHttpInfo(id, isDeleted, isWorkItemDeleted);
+    ApiResponse<List<AutoTestWorkItemIdentifierApiResult>> response = apiInstance.GetWorkItemsLinkedToAutoTestWithHttpInfo(id, isDeleted, isWorkItemDeleted);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -1860,13 +1860,13 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Specifies the autotest entity ID.    You can copy it from the address bar in your web browser or use autotest GUID. |  |
+| **id** | **string** | Specifies the autotest entity ID.  You can copy it from the address bar in your web browser or use autotest GUID. |  |
 | **isDeleted** | **bool?** | Specifies that a test is deleted or still relevant. | [optional]  |
 | **isWorkItemDeleted** | **bool?** | OBSOLETE: Use &#x60;isDeleted&#x60; instead | [optional] [default to false] |
 
 ### Return type
 
-[**List&lt;WorkItemIdentifierModel&gt;**](WorkItemIdentifierModel.md)
+[**List&lt;AutoTestWorkItemIdentifierApiResult&gt;**](AutoTestWorkItemIdentifierApiResult.md)
 
 ### Authorization
 
@@ -1897,7 +1897,7 @@ catch (ApiException e)
 
 Link autotest with work items
 
-  Use case    User sets autotest internal (guid format) or global (integer format) identifier    User sets work item internal (guid format) or global (integer format) identifier    User runs method execution    System finds the autotest by the autotest identifier    System finds the work item by the work item identifier    System relates the work item with the autotest and returns no content response
+ Use case  User sets autotest internal (guid format) or global (integer format) identifier  User sets work item internal (guid format) or global (integer format) identifier  User runs method execution  System finds the autotest by the autotest identifier  System finds the work item by the work item identifier  System relates the work item with the autotest and returns no content response
 
 ### Example
 ```csharp
@@ -1986,10 +1986,10 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **400** |   - Autotest cannot be linked to shared steps    - Autotest cannot be linked to work item from other project    - Work item ID is invalid |  -  |
+| **400** |  - Autotest cannot be linked to shared steps  - Autotest cannot be linked to work item from other project  - Work item ID is invalid |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for autotests is required |  -  |
-| **404** |   - Autotest with provided ID cannot be found    - Work item with provided ID cannot be found |  -  |
+| **404** |  - Autotest with provided ID cannot be found  - Work item with provided ID cannot be found |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 
@@ -1997,11 +1997,11 @@ void (empty response body)
 
 <a id="updateautotest"></a>
 # **UpdateAutoTest**
-> void UpdateAutoTest (AutoTestPutModel autoTestPutModel = null)
+> void UpdateAutoTest (AutoTestUpdateApiModel autoTestUpdateApiModel = null)
 
 Update autotest
 
-  Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+ Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
 
 ### Example
 ```csharp
@@ -2029,12 +2029,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AutoTestsApi(httpClient, config, httpClientHandler);
-            var autoTestPutModel = new AutoTestPutModel(); // AutoTestPutModel |  (optional) 
+            var autoTestUpdateApiModel = new AutoTestUpdateApiModel(); // AutoTestUpdateApiModel |  (optional) 
 
             try
             {
                 // Update autotest
-                apiInstance.UpdateAutoTest(autoTestPutModel);
+                apiInstance.UpdateAutoTest(autoTestUpdateApiModel);
             }
             catch (ApiException  e)
             {
@@ -2054,7 +2054,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update autotest
-    apiInstance.UpdateAutoTestWithHttpInfo(autoTestPutModel);
+    apiInstance.UpdateAutoTestWithHttpInfo(autoTestUpdateApiModel);
 }
 catch (ApiException e)
 {
@@ -2068,7 +2068,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **autoTestPutModel** | [**AutoTestPutModel**](AutoTestPutModel.md) |  | [optional]  |
+| **autoTestUpdateApiModel** | [**AutoTestUpdateApiModel**](AutoTestUpdateApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -2088,23 +2088,23 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** |   - Name cannot be empty or contain only white space characters    - External ID cannot be empty or contain only white space characters    - Namespace cannot be empty or contain only white space characters    - Classname cannot be empty or contain only white space characters    - Steps cannot be &#x60;null&#x60;    - Steps nesting level is more than 15    - Invalid URI |  -  |
+| **400** |  - Name cannot be empty or contain only white space characters  - External ID cannot be empty or contain only white space characters  - Namespace cannot be empty or contain only white space characters  - Classname cannot be empty or contain only white space characters  - Steps cannot be &#x60;null&#x60;  - Steps nesting level is more than 15  - Invalid URI |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for autotests is required |  -  |
-| **404** |   - Autotests with provided ID cannot be found    - Project with provided ID cannot be found    - Link with provided ID cannot be found    - Label with provided ID cannot be found |  -  |
+| **404** |  - Autotests with provided ID cannot be found  - Project with provided ID cannot be found  - Link with provided ID cannot be found  - Label with provided ID cannot be found |  -  |
 | **409** | Autotest with the same external ID already exists is the project |  -  |
-| **422** |   - Project ID cannot be changed    - Labels have duplicates    - Labels begin with &#x60;::&#x60;    - Labels with the same base have different values |  -  |
+| **422** |  - Project ID cannot be changed  - Labels have duplicates  - Labels begin with &#x60;::&#x60;  - Labels with the same base have different values |  -  |
 | **204** | Success |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a id="updatemultiple"></a>
 # **UpdateMultiple**
-> void UpdateMultiple (List<AutoTestPutModel> autoTestPutModel = null)
+> void UpdateMultiple (List<AutoTestUpdateApiModel> autoTestUpdateApiModel = null)
 
 Update multiple autotests
 
-  Use case    User sets autotest updated parameters values (listed in the example) and runs method execution    System finds the autotest by the identifier    System updates autotest parameters    [Optional] If steps enumeration is set, system creates step items, relates them to autotest              and deletes relations with current steps( if exist)    [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest              and deletes relations with current Setup items (if exist)    [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest              and deletes relations with current teardown items (if exist)    [Optional] If label enumeration is set, system creates labels and relates them to autotest              and deletes relations with current Labels (if exist)    [Optional] If link enumeration is set, system creates links and relates them to autotest              and deletes relations with current Links (if exist)    System updates autotest and returns no content response
+ Use case  User sets autotest updated parameters values (listed in the example) and runs method execution  System finds the autotest by the identifier  System updates autotest parameters  [Optional] If steps enumeration is set, system creates step items, relates them to autotest             and deletes relations with current steps( if exist)  [Optional] If Setup enumeration is set, system creates setup items and relates them to autotest             and deletes relations with current Setup items (if exist)  [Optional] If teardown enumeration is set, system creates teardown items and relates them to autotest             and deletes relations with current teardown items (if exist)  [Optional] If label enumeration is set, system creates labels and relates them to autotest             and deletes relations with current Labels (if exist)  [Optional] If link enumeration is set, system creates links and relates them to autotest             and deletes relations with current Links (if exist)  System updates autotest and returns no content response
 
 ### Example
 ```csharp
@@ -2132,12 +2132,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new AutoTestsApi(httpClient, config, httpClientHandler);
-            var autoTestPutModel = new List<AutoTestPutModel>(); // List<AutoTestPutModel> |  (optional) 
+            var autoTestUpdateApiModel = new List<AutoTestUpdateApiModel>(); // List<AutoTestUpdateApiModel> |  (optional) 
 
             try
             {
                 // Update multiple autotests
-                apiInstance.UpdateMultiple(autoTestPutModel);
+                apiInstance.UpdateMultiple(autoTestUpdateApiModel);
             }
             catch (ApiException  e)
             {
@@ -2157,7 +2157,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update multiple autotests
-    apiInstance.UpdateMultipleWithHttpInfo(autoTestPutModel);
+    apiInstance.UpdateMultipleWithHttpInfo(autoTestUpdateApiModel);
 }
 catch (ApiException e)
 {
@@ -2171,7 +2171,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **autoTestPutModel** | [**List&lt;AutoTestPutModel&gt;**](AutoTestPutModel.md) |  | [optional]  |
+| **autoTestUpdateApiModel** | [**List&lt;AutoTestUpdateApiModel&gt;**](AutoTestUpdateApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -2191,12 +2191,12 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **400** |   - Name cannot be empty or contain only white space characters    - External ID cannot be empty or contain only white space characters    - Namespace cannot be empty or contain only white space characters    - Classname cannot be empty or contain only white space characters    - Steps cannot be &#x60;null&#x60;    - Steps nesting level is more than 15    - Invalid URI |  -  |
+| **400** |  - Name cannot be empty or contain only white space characters  - External ID cannot be empty or contain only white space characters  - Namespace cannot be empty or contain only white space characters  - Classname cannot be empty or contain only white space characters  - Steps cannot be &#x60;null&#x60;  - Steps nesting level is more than 15  - Invalid URI |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for autotests is required |  -  |
-| **404** |   - Autotests with provided ID cannot be found    - Project with provided ID cannot be found    - Link with provided ID cannot be found    - Label with provided ID cannot be found |  -  |
+| **404** |  - Autotests with provided ID cannot be found  - Project with provided ID cannot be found  - Link with provided ID cannot be found  - Label with provided ID cannot be found |  -  |
 | **409** | Autotest with the same external ID already exists is the project |  -  |
-| **422** |   - Project ID cannot be changed    - Labels have duplicates    - Labels begin with &#x60;::&#x60;    - Labels with the same base have different values |  -  |
+| **422** |  - Project ID cannot be changed  - Labels have duplicates  - Labels begin with &#x60;::&#x60;  - Labels with the same base have different values |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -53,7 +53,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">Link description..</param>
         /// <param name="type">Specifies the type of the link..</param>
         /// <param name="hasInfo">hasInfo (required).</param>
-        public LinkPutModel(Guid? id = default(Guid?), string title = default(string), string url = default(string), string description = default(string), LinkType? type = default(LinkType?), bool hasInfo = default(bool))
+        public LinkPutModel(Guid? id = default, string title = default, string url = default, string description = default, LinkType? type = default, bool hasInfo = default)
         {
             // to ensure "url" is required (not null)
             if (url == null)
@@ -72,7 +72,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public Guid? Id { get; set; }

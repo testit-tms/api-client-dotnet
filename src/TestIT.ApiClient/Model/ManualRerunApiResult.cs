@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ManualRerunApiResult" /> class.
         /// </summary>
         /// <param name="testResultsCount">testResultsCount (required).</param>
-        public ManualRerunApiResult(int testResultsCount = default(int))
+        public ManualRerunApiResult(int testResultsCount = default)
         {
             this.TestResultsCount = testResultsCount;
         }

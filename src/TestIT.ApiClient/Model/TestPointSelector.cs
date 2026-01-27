@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="configurationId">Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs. (required).</param>
         /// <param name="workItemIds">Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs. (required).</param>
-        public TestPointSelector(Guid configurationId = default(Guid), List<Guid> workItemIds = default(List<Guid>))
+        public TestPointSelector(Guid configurationId = default, List<Guid> workItemIds = default)
         {
             this.ConfigurationId = configurationId;
             // to ensure "workItemIds" is required (not null)

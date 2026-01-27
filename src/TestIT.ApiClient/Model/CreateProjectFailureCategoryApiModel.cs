@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">Failure category name (required).</param>
         /// <param name="failureCategory">Category type (required).</param>
         /// <param name="failureClassRegexes">Failure category regexes.</param>
-        public CreateProjectFailureCategoryApiModel(string name = default(string), FailureCategory failureCategory = default(FailureCategory), List<CreateFailureClassRegexApiModel> failureClassRegexes = default(List<CreateFailureClassRegexApiModel>))
+        public CreateProjectFailureCategoryApiModel(string name = default, FailureCategory failureCategory = default, List<CreateFailureClassRegexApiModel> failureClassRegexes = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

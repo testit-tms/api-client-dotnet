@@ -38,7 +38,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="filter">filter.</param>
         /// <param name="group">group.</param>
         /// <param name="inquiry">inquiry.</param>
-        public TestPlanTestPointsApiModel(TestPlanTestPointsSearchApiModel filter = default(TestPlanTestPointsSearchApiModel), TestPlanTestPointsGroupApiModel group = default(TestPlanTestPointsGroupApiModel), TestPlanTestPointsInquiryApiModel inquiry = default(TestPlanTestPointsInquiryApiModel))
+        public TestPlanTestPointsApiModel(TestPlanTestPointsSearchApiModel filter = default, TestPlanTestPointsGroupApiModel group = default, TestPlanTestPointsInquiryApiModel inquiry = default)
         {
             this.Filter = filter;
             this.Group = group;

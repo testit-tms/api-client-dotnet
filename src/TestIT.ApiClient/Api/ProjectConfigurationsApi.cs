@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Get project configurations
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all configurations related to project    System returns array of found configurations (listed in response model)
+        ///  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all configurations related to project  System returns array of found configurations (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Api
         /// Get project configurations
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all configurations related to project    System returns array of found configurations (listed in response model)
+        ///  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all configurations related to project  System returns array of found configurations (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -61,25 +61,25 @@ namespace TestIT.ApiClient.Api
         /// Get project configurations
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all configurations related to project    System returns array of found configurations (listed in response model)
+        ///  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all configurations related to project  System returns array of found configurations (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ConfigurationModel>> GetConfigurationsByProjectIdAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<List<ConfigurationModel>> GetConfigurationsByProjectIdAsync(string projectId, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get project configurations
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all configurations related to project    System returns array of found configurations (listed in response model)
+        ///  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all configurations related to project  System returns array of found configurations (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> GetConfigurationsByProjectIdWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        System.Threading.Tasks.Task<ApiResponse<List<ConfigurationModel>>> GetConfigurationsByProjectIdWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -294,7 +294,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project configurations   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all configurations related to project    System returns array of found configurations (listed in response model)
+        /// Get project configurations  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all configurations related to project  System returns array of found configurations (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -306,7 +306,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project configurations   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all configurations related to project    System returns array of found configurations (listed in response model)
+        /// Get project configurations  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all configurations related to project  System returns array of found configurations (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -354,26 +354,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project configurations   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all configurations related to project    System returns array of found configurations (listed in response model)
+        /// Get project configurations  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all configurations related to project  System returns array of found configurations (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;ConfigurationModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ConfigurationModel>> GetConfigurationsByProjectIdAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<List<ConfigurationModel>> GetConfigurationsByProjectIdAsync(string projectId, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>> localVarResponse = await GetConfigurationsByProjectIdWithHttpInfoAsync(projectId, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get project configurations   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all configurations related to project    System returns array of found configurations (listed in response model)
+        /// Get project configurations  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all configurations related to project  System returns array of found configurations (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;ConfigurationModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>>> GetConfigurationsByProjectIdWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ConfigurationModel>>> GetConfigurationsByProjectIdWithHttpInfoAsync(string projectId, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)

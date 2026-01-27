@@ -47,13 +47,13 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributePostModel" /> class.
         /// </summary>
-        /// <param name="options">Collection of attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
+        /// <param name="options">Collection of attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
         /// <param name="type">Type of attribute (required).</param>
         /// <param name="name">Name of the attribute (required).</param>
         /// <param name="isEnabled">Indicates if the attribute is enabled (required).</param>
         /// <param name="isRequired">Indicates if the attribute value is mandatory to specify (required).</param>
         /// <param name="isGlobal">Indicates if the attribute is available across all projects (required).</param>
-        public CustomAttributePostModel(List<CustomAttributeOptionPostModel> options = default(List<CustomAttributeOptionPostModel>), CustomAttributeTypesEnum type = default(CustomAttributeTypesEnum), string name = default(string), bool isEnabled = default(bool), bool isRequired = default(bool), bool isGlobal = default(bool))
+        public CustomAttributePostModel(List<CustomAttributeOptionPostModel> options = default, CustomAttributeTypesEnum type = default, string name = default, bool isEnabled = default, bool isRequired = default, bool isGlobal = default)
         {
             this.Type = type;
             // to ensure "name" is required (not null)
@@ -69,9 +69,9 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Collection of attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
+        /// Collection of attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
         /// </summary>
-        /// <value>Collection of attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
+        /// <value>Collection of attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
         [DataMember(Name = "options", EmitDefaultValue = true)]
         public List<CustomAttributeOptionPostModel> Options { get; set; }
 

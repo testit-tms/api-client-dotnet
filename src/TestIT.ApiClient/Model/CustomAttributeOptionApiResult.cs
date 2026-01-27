@@ -27,45 +27,58 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// WorkItemIdentifierModel
+    /// CustomAttributeOptionApiResult
     /// </summary>
-    [DataContract(Name = "WorkItemIdentifierModel")]
-    public partial class WorkItemIdentifierModel : IValidatableObject
+    [DataContract(Name = "CustomAttributeOptionApiResult")]
+    public partial class CustomAttributeOptionApiResult : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemIdentifierModel" /> class.
+        /// Initializes a new instance of the <see cref="CustomAttributeOptionApiResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WorkItemIdentifierModel() { }
+        protected CustomAttributeOptionApiResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemIdentifierModel" /> class.
+        /// Initializes a new instance of the <see cref="CustomAttributeOptionApiResult" /> class.
         /// </summary>
-        /// <param name="id">Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format (required).</param>
-        /// <param name="globalId">globalId (required).</param>
-        public WorkItemIdentifierModel(Guid id = default(Guid), long globalId = default(long))
+        /// <param name="id">Unique ID of the attribute option (required).</param>
+        /// <param name="isDeleted">Indicates if the attributes option is deleted (required).</param>
+        /// <param name="value">Value of the attribute option.</param>
+        /// <param name="isDefault">Indicates if the attribute option is used by default (required).</param>
+        public CustomAttributeOptionApiResult(Guid id = default, bool isDeleted = default, string value = default, bool isDefault = default)
         {
             this.Id = id;
-            this.GlobalId = globalId;
+            this.IsDeleted = isDeleted;
+            this.IsDefault = isDefault;
+            this.Value = value;
         }
 
         /// <summary>
-        /// Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format
+        /// Unique ID of the attribute option
         /// </summary>
-        /// <value>Used for search WorkItem. Internal identifier has a Guid data format. Global identifier has an integer data format</value>
-        /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
-        */
+        /// <value>Unique ID of the attribute option</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets GlobalId
+        /// Indicates if the attributes option is deleted
         /// </summary>
-        /*
-        <example>1000</example>
-        */
-        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
-        public long GlobalId { get; set; }
+        /// <value>Indicates if the attributes option is deleted</value>
+        [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsDeleted { get; set; }
+
+        /// <summary>
+        /// Value of the attribute option
+        /// </summary>
+        /// <value>Value of the attribute option</value>
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public string Value { get; set; }
+
+        /// <summary>
+        /// Indicates if the attribute option is used by default
+        /// </summary>
+        /// <value>Indicates if the attribute option is used by default</value>
+        [DataMember(Name = "isDefault", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsDefault { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -74,9 +87,11 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WorkItemIdentifierModel {\n");
+            sb.Append("class CustomAttributeOptionApiResult {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
+            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
+            sb.Append("  IsDefault: ").Append(IsDefault).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

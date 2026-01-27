@@ -41,7 +41,7 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="SearchWorkItemLinkUrlsApiResult" /> class.
         /// </summary>
         /// <param name="data">data (required).</param>
-        public SearchWorkItemLinkUrlsApiResult(List<WorkItemLinkUrlApiResult> data = default(List<WorkItemLinkUrlApiResult>))
+        public SearchWorkItemLinkUrlsApiResult(List<WorkItemLinkUrlApiResult> data = default)
         {
             // to ensure "data" is required (not null)
             if (data == null)

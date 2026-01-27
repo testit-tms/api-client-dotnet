@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="preconditionSteps">preconditionSteps.</param>
         /// <param name="postconditionSteps">postconditionSteps.</param>
         /// <param name="attachments">attachments (required).</param>
-        public SectionPutModel(Guid id = default(Guid), string name = default(string), Guid projectId = default(Guid), Guid? parentId = default(Guid?), List<StepPutModel> preconditionSteps = default(List<StepPutModel>), List<StepPutModel> postconditionSteps = default(List<StepPutModel>), List<AttachmentPutModel> attachments = default(List<AttachmentPutModel>))
+        public SectionPutModel(Guid id = default, string name = default, Guid projectId = default, Guid? parentId = default, List<StepPutModel> preconditionSteps = default, List<StepPutModel> postconditionSteps = default, List<AttachmentPutModel> attachments = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -78,7 +78,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Name
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
@@ -87,7 +87,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ProjectId
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
@@ -96,7 +96,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ParentId
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "parentId", EmitDefaultValue = true)]
         public Guid? ParentId { get; set; }

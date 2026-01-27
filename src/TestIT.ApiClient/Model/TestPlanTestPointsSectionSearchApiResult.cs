@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">id (required).</param>
         /// <param name="orderRank">orderRank (required).</param>
         /// <param name="name">name.</param>
-        public TestPlanTestPointsSectionSearchApiResult(Guid id = default(Guid), string orderRank = default(string), string name = default(string))
+        public TestPlanTestPointsSectionSearchApiResult(Guid id = default, string orderRank = default, string name = default)
         {
             this.Id = id;
             // to ensure "orderRank" is required (not null)

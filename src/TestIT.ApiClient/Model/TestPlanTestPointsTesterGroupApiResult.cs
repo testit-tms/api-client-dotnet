@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="userId">userId (required).</param>
         /// <param name="value">value (required).</param>
-        public TestPlanTestPointsTesterGroupApiResult(Guid? userId = default(Guid?), long value = default(long))
+        public TestPlanTestPointsTesterGroupApiResult(Guid? userId = default, long value = default)
         {
             // to ensure "userId" is required (not null)
             if (userId == null)

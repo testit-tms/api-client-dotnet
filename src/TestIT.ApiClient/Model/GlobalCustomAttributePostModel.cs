@@ -50,9 +50,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">Name of attribute (required).</param>
         /// <param name="isEnabled">Indicates whether the attribute is available.</param>
         /// <param name="isRequired">Indicates whether the attribute value is mandatory to specify.</param>
-        /// <param name="options">Collection of attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
+        /// <param name="options">Collection of attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
         /// <param name="type">Type of attribute (required).</param>
-        public GlobalCustomAttributePostModel(string name = default(string), bool? isEnabled = default(bool?), bool? isRequired = default(bool?), List<CustomAttributeOptionPostModel> options = default(List<CustomAttributeOptionPostModel>), CustomAttributeTypesEnum type = default(CustomAttributeTypesEnum))
+        public GlobalCustomAttributePostModel(string name = default, bool? isEnabled = default, bool? isRequired = default, List<CustomAttributeOptionPostModel> options = default, CustomAttributeTypesEnum type = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)
@@ -88,9 +88,9 @@ namespace TestIT.ApiClient.Model
         public bool? IsRequired { get; set; }
 
         /// <summary>
-        /// Collection of attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
+        /// Collection of attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
         /// </summary>
-        /// <value>Collection of attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
+        /// <value>Collection of attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
         [DataMember(Name = "options", EmitDefaultValue = true)]
         public List<CustomAttributeOptionPostModel> Options { get; set; }
 

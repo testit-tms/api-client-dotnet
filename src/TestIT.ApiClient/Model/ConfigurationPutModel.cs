@@ -46,7 +46,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="projectId">This property is used to link configuration with project (required).</param>
         /// <param name="isDefault">isDefault (required).</param>
         /// <param name="name">name (required).</param>
-        public ConfigurationPutModel(Guid id = default(Guid), string description = default(string), Dictionary<string, string> parameters = default(Dictionary<string, string>), Guid projectId = default(Guid), bool isDefault = default(bool), string name = default(string))
+        public ConfigurationPutModel(Guid id = default, string description = default, Dictionary<string, string> parameters = default, Guid projectId = default, bool isDefault = default, string name = default)
         {
             this.Id = id;
             // to ensure "parameters" is required (not null)
@@ -70,7 +70,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>f227dd23-3343-4352-9c44-2f77031ccf1e</example>
+        <example>d8129f4b-bbca-498d-a674-b4f3d257efc3</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }

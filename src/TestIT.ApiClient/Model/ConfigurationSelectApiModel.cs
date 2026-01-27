@@ -27,36 +27,35 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// LabelPostModel
+    /// ConfigurationSelectApiModel
     /// </summary>
-    [DataContract(Name = "LabelPostModel")]
-    public partial class LabelPostModel : IValidatableObject
+    [DataContract(Name = "ConfigurationSelectApiModel")]
+    public partial class ConfigurationSelectApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="LabelPostModel" /> class.
+        /// Initializes a new instance of the <see cref="ConfigurationSelectApiModel" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected LabelPostModel() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="LabelPostModel" /> class.
-        /// </summary>
-        /// <param name="name">Name of the label (required).</param>
-        public LabelPostModel(string name = default(string))
+        /// <param name="filter">Configuration filters collection.</param>
+        /// <param name="extractionModel">Rules for configurations extraction.</param>
+        public ConfigurationSelectApiModel(ConfigurationFilterApiModel filter = default, ConfigurationExtractionApiModel extractionModel = default)
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for LabelPostModel and cannot be null");
-            }
-            this.Name = name;
+            this.Filter = filter;
+            this.ExtractionModel = extractionModel;
         }
 
         /// <summary>
-        /// Name of the label
+        /// Configuration filters collection
         /// </summary>
-        /// <value>Name of the label</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
+        /// <value>Configuration filters collection</value>
+        [DataMember(Name = "filter", EmitDefaultValue = true)]
+        public ConfigurationFilterApiModel Filter { get; set; }
+
+        /// <summary>
+        /// Rules for configurations extraction
+        /// </summary>
+        /// <value>Rules for configurations extraction</value>
+        [DataMember(Name = "extractionModel", EmitDefaultValue = true)]
+        public ConfigurationExtractionApiModel ExtractionModel { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,8 +64,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class LabelPostModel {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("class ConfigurationSelectApiModel {\n");
+            sb.Append("  Filter: ").Append(Filter).Append("\n");
+            sb.Append("  ExtractionModel: ").Append(ExtractionModel).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,12 +87,6 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Name (string) minLength
-            if (this.Name != null && this.Name.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
-            }
-
             yield break;
         }
     }

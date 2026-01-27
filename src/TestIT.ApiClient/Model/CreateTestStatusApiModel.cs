@@ -51,7 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="type">Type of the status (required).</param>
         /// <param name="code">Code of the status, must be unique (required).</param>
         /// <param name="description">Optional description of the status.</param>
-        public CreateTestStatusApiModel(string name = default(string), TestStatusApiType type = default(TestStatusApiType), string code = default(string), string description = default(string))
+        public CreateTestStatusApiModel(string name = default, TestStatusApiType type = default, string code = default, string description = default)
         {
             // to ensure "name" is required (not null)
             if (name == null)

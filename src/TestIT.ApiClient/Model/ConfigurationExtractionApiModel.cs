@@ -27,36 +27,35 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// AutoTestNamespaceModel
+    /// ConfigurationExtractionApiModel
     /// </summary>
-    [DataContract(Name = "AutoTestNamespaceModel")]
-    public partial class AutoTestNamespaceModel : IValidatableObject
+    [DataContract(Name = "ConfigurationExtractionApiModel")]
+    public partial class ConfigurationExtractionApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AutoTestNamespaceModel" /> class.
+        /// Initializes a new instance of the <see cref="ConfigurationExtractionApiModel" /> class.
         /// </summary>
-        /// <param name="name">name.</param>
-        /// <param name="classes">classes.</param>
-        public AutoTestNamespaceModel(string name = default(string), List<string> classes = default(List<string>))
+        /// <param name="ids">Extraction parameters for configurations.</param>
+        /// <param name="projectIds">Extraction parameters for projects.</param>
+        public ConfigurationExtractionApiModel(GuidExtractionModel ids = default, GuidExtractionModel projectIds = default)
         {
-            this.Name = name;
-            this.Classes = classes;
+            this.Ids = ids;
+            this.ProjectIds = projectIds;
         }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Extraction parameters for configurations
         /// </summary>
-        /*
-        <example>WebApi.Core.Tests</example>
-        */
-        [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; set; }
+        /// <value>Extraction parameters for configurations</value>
+        [DataMember(Name = "ids", EmitDefaultValue = true)]
+        public GuidExtractionModel Ids { get; set; }
 
         /// <summary>
-        /// Gets or Sets Classes
+        /// Extraction parameters for projects
         /// </summary>
-        [DataMember(Name = "classes", EmitDefaultValue = true)]
-        public List<string> Classes { get; set; }
+        /// <value>Extraction parameters for projects</value>
+        [DataMember(Name = "projectIds", EmitDefaultValue = true)]
+        public GuidExtractionModel ProjectIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,9 +64,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class AutoTestNamespaceModel {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Classes: ").Append(Classes).Append("\n");
+            sb.Append("class ConfigurationExtractionApiModel {\n");
+            sb.Append("  Ids: ").Append(Ids).Append("\n");
+            sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

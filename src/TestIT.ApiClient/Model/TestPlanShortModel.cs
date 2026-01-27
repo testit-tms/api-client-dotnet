@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">id (required).</param>
         /// <param name="projectId">projectId (required).</param>
         /// <param name="name">name (required).</param>
-        public TestPlanShortModel(Guid id = default(Guid), Guid projectId = default(Guid), string name = default(string))
+        public TestPlanShortModel(Guid id = default, Guid projectId = default, string name = default)
         {
             this.Id = id;
             this.ProjectId = projectId;

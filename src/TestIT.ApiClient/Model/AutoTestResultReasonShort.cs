@@ -48,7 +48,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="failureCategory">failureCategory (required).</param>
         /// <param name="name">name (required).</param>
-        public AutoTestResultReasonShort(FailureCategoryModel failureCategory = default(FailureCategoryModel), string name = default(string))
+        public AutoTestResultReasonShort(FailureCategoryModel failureCategory = default, string name = default)
         {
             this.FailureCategory = failureCategory;
             // to ensure "name" is required (not null)

@@ -50,7 +50,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="isDeleted">isDeleted (required).</param>
         /// <param name="projectIds">projectIds (required).</param>
-        public ParameterApiResult(Guid id = default(Guid), Guid parameterKeyId = default(Guid), string name = default(string), string value = default(string), DateTime createdDate = default(DateTime), Guid createdById = default(Guid), DateTime? modifiedDate = default(DateTime?), Guid? modifiedById = default(Guid?), bool isDeleted = default(bool), List<Guid> projectIds = default(List<Guid>))
+        public ParameterApiResult(Guid id = default, Guid parameterKeyId = default, string name = default, string value = default, DateTime createdDate = default, Guid createdById = default, DateTime? modifiedDate = default, Guid? modifiedById = default, bool isDeleted = default, List<Guid> projectIds = default)
         {
             this.Id = id;
             this.ParameterKeyId = parameterKeyId;

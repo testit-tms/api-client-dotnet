@@ -40,7 +40,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="links">Collection of links to be assigned to test results.</param>
         /// <param name="comment">Comment to be added to test results.</param>
         /// <param name="attachmentIds">Unique IDs of files to be attached to test results.</param>
-        public TestRunTestResultsPartialBulkSetModel(TestRunTestResultsSelectModel selector = default(TestRunTestResultsSelectModel), List<Guid> resultReasonIds = default(List<Guid>), List<LinkPostModel> links = default(List<LinkPostModel>), string comment = default(string), List<Guid> attachmentIds = default(List<Guid>))
+        public TestRunTestResultsPartialBulkSetModel(TestRunTestResultsSelectModel selector = default, List<Guid> resultReasonIds = default, List<LinkPostModel> links = default, string comment = default, List<Guid> attachmentIds = default)
         {
             this.Selector = selector;
             this.ResultReasonIds = resultReasonIds;

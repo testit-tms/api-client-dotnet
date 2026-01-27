@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">Custom attribute internal unique identifier (required).</param>
         /// <param name="isEnabled">Flag that defines if custom attribute is enabled (required).</param>
         /// <param name="isRequired">Flag that defines if custom attribute is required (required).</param>
-        public CustomAttributeTestPlanProjectRelationPutModel(Guid id = default(Guid), bool isEnabled = default(bool), bool isRequired = default(bool))
+        public CustomAttributeTestPlanProjectRelationPutModel(Guid id = default, bool isEnabled = default, bool isRequired = default)
         {
             this.Id = id;
             this.IsEnabled = isEnabled;

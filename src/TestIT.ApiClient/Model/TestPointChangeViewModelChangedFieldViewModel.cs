@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="oldValue">oldValue.</param>
         /// <param name="newValue">newValue.</param>
-        public TestPointChangeViewModelChangedFieldViewModel(TestPointChangeViewModel oldValue = default(TestPointChangeViewModel), TestPointChangeViewModel newValue = default(TestPointChangeViewModel))
+        public TestPointChangeViewModelChangedFieldViewModel(TestPointChangeViewModel oldValue = default, TestPointChangeViewModel newValue = default)
         {
             this.OldValue = oldValue;
             this.NewValue = newValue;

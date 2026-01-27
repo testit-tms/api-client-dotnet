@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="data">data (required).</param>
         /// <param name="totalCount">totalCount (required).</param>
         /// <param name="statusCounters">statusCounters (required).</param>
-        public TestPlanTestPointsGroupSearchApiResult(List<TestPlanTestPointsGroupSearchItemApiResult> data = default(List<TestPlanTestPointsGroupSearchItemApiResult>), int totalCount = default(int), TestPlanTestPointsSearchStatusCountersApiResult statusCounters = default(TestPlanTestPointsSearchStatusCountersApiResult))
+        public TestPlanTestPointsGroupSearchApiResult(List<TestPlanTestPointsGroupSearchItemApiResult> data = default, int totalCount = default, TestPlanTestPointsSearchStatusCountersApiResult statusCounters = default)
         {
             // to ensure "data" is required (not null)
             if (data == null)

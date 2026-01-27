@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="value">Value of the attribute option.</param>
         /// <param name="isDefault">Indicates if the attribute option is used by default (required).</param>
-        public CustomAttributeOptionPostModel(string value = default(string), bool isDefault = default(bool))
+        public CustomAttributeOptionPostModel(string value = default, bool isDefault = default)
         {
             this.IsDefault = isDefault;
             this.Value = value;
