@@ -3,9 +3,13 @@
 # Using 7.19.0
 #npm install @openapitools/openapi-generator-cli -g
 
+# Настройка переменных
+FILE_NAME="swagger5.6.json"
+NEW_VERSION="5.4.0-TMS-5.6"
+GENERATOR="openapi-generator-cli.jar"
 
-if [ ! -f ".swagger/swagger.json" ]; then
-    echo "Ошибка: .swagger/swagger.json не найден!"
+if [ ! -f ".swagger/$FILE_NAME" ]; then
+    echo "Ошибка: .swagger/$FILE_NAME не найден!"
     exit 1
 fi
 
@@ -13,10 +17,6 @@ if [ ! -f "genConfig.yml" ]; then
     echo "Ошибка: genConfig.yml не найден!"
     exit 1
 fi
-
-# Настройка переменных
-FILE_NAME=swagger.json
-NEW_VERSION="5.3.0-rc1"
 
 echo "Начало генерации .NET API клиента..."
 
@@ -34,8 +34,7 @@ rm -rf new
 
 # Генерация .NET API клиента
 echo "Генерация .NET API клиента..."
-
-openapi-generator-cli generate \
+java -jar .vendor/$GENERATOR generate \
   -i .swagger/$FILE_NAME \
   -g csharp \
   -o new \
