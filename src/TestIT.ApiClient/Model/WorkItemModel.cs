@@ -96,7 +96,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="tags">tags (required).</param>
         /// <param name="links">links (required).</param>
         /// <param name="name">name (required).</param>
-        public WorkItemModel(Guid versionId = default, long medianDuration = default, bool isDeleted = default, Guid projectId = default, WorkItemEntityTypes entityTypeName = default, bool isAutomated = default, List<AutoTestModel> autoTests = default, List<AttachmentModel> attachments = default, List<StepModel> sectionPreconditionSteps = default, List<StepModel> sectionPostconditionSteps = default, int versionNumber = default, List<IterationModel> iterations = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, List<ExternalIssueModel> externalIssues = default, Guid id = default, Guid sectionId = default, string description = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, List<StepModel> steps = default, List<StepModel> preconditionSteps = default, List<StepModel> postconditionSteps = default, int duration = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<LinkModel> links = default, string name = default)
+        public WorkItemModel(Guid versionId = default, long medianDuration = default, bool isDeleted = default, Guid projectId = default, WorkItemEntityTypes entityTypeName = default, bool isAutomated = default, List<AutoTestModel> autoTests = default, List<AttachmentModel> attachments = default, List<StepModel> sectionPreconditionSteps = default, List<StepModel> sectionPostconditionSteps = default, int versionNumber = default, List<IterationModel> iterations = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, List<ExternalIssueModel> externalIssues = default, Guid id = default, Guid sectionId = default, string description = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, List<StepModel> steps = default, List<StepModel> preconditionSteps = default, List<StepModel> postconditionSteps = default, long duration = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<LinkModel> links = default, string name = default)
         {
             this.VersionId = versionId;
             this.MedianDuration = medianDuration;
@@ -177,7 +177,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>used for versioning changes in workitem</value>
         /*
-        <example>6c5d69d1-862a-4f6f-bfb8-76a45e79983d</example>
+        <example>a58827bc-4fbb-4b8d-8ddc-bfaa97dbd0d5</example>
         */
         [DataMember(Name = "versionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid VersionId { get; set; }
@@ -205,7 +205,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ProjectId
         /// </summary>
         /*
-        <example>6c5d69d1-862a-4f6f-bfb8-76a45e79983d</example>
+        <example>a58827bc-4fbb-4b8d-8ddc-bfaa97dbd0d5</example>
         */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }
@@ -263,7 +263,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         /*
-        <example>2026-01-27T08:59:39.923000100Z</example>
+        <example>2026-02-05T15:13:18.657476900Z</example>
         */
         [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
@@ -272,7 +272,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2026-01-27T08:59:39.923000100Z</example>
+        <example>2026-02-05T15:13:18.657476900Z</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
@@ -281,7 +281,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedById
         /// </summary>
         /*
-        <example>6c5d69d1-862a-4f6f-bfb8-76a45e79983d</example>
+        <example>a58827bc-4fbb-4b8d-8ddc-bfaa97dbd0d5</example>
         */
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
@@ -290,7 +290,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedById
         /// </summary>
         /*
-        <example>6c5d69d1-862a-4f6f-bfb8-76a45e79983d</example>
+        <example>a58827bc-4fbb-4b8d-8ddc-bfaa97dbd0d5</example>
         */
         [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
         public Guid? ModifiedById { get; set; }
@@ -314,7 +314,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>6c5d69d1-862a-4f6f-bfb8-76a45e79983d</example>
+        <example>a58827bc-4fbb-4b8d-8ddc-bfaa97dbd0d5</example>
         */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
@@ -323,7 +323,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets SectionId
         /// </summary>
         /*
-        <example>6c5d69d1-862a-4f6f-bfb8-76a45e79983d</example>
+        <example>a58827bc-4fbb-4b8d-8ddc-bfaa97dbd0d5</example>
         */
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
@@ -362,7 +362,7 @@ namespace TestIT.ApiClient.Model
         <example>10000</example>
         */
         [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
-        public int Duration { get; set; }
+        public long Duration { get; set; }
 
         /// <summary>
         /// Gets or Sets Attributes
@@ -451,14 +451,14 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Duration (int) maximum
-            if (this.Duration > (int)86400000)
+            // Duration (long) maximum
+            if (this.Duration > (long)86400000)
             {
                 yield return new ValidationResult("Invalid value for Duration, must be a value less than or equal to 86400000.", new [] { "Duration" });
             }
 
-            // Duration (int) minimum
-            if (this.Duration < (int)0)
+            // Duration (long) minimum
+            if (this.Duration < (long)0)
             {
                 yield return new ValidationResult("Invalid value for Duration, must be a value greater than or equal to 0.", new [] { "Duration" });
             }

@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 **FlakyTestRunCount** | **int** | Last test run count for autotest flaky computing | 
 **RerunEnabled** | **bool** | Auto rerun enabled | 
 **RerunAttemptsCount** | **int** | Auto rerun attempt count | 
+**WorkItemUpdatingEnabled** | **bool** | Autotest to work item updating enabled | 
+**WorkItemUpdatingFields** | [**WorkItemUpdatingFieldsApiResult**](WorkItemUpdatingFieldsApiResult.md) | Autotest to work item updating fields | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

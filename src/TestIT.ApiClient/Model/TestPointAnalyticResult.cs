@@ -43,12 +43,11 @@ namespace TestIT.ApiClient.Model
         /// <param name="countGroupByStatus">countGroupByStatus (required).</param>
         /// <param name="sumGroupByTester">sumGroupByTester (required).</param>
         /// <param name="countGroupByTester">countGroupByTester (required).</param>
-        /// <param name="countGroupByTestSuite">countGroupByTestSuite (required).</param>
         /// <param name="countGroupByTesterAndStatus">countGroupByTesterAndStatus (required).</param>
         /// <param name="countGroupByStatusCode">countGroupByStatusCode (required).</param>
         /// <param name="countGroupByTesterAndStatusCode">countGroupByTesterAndStatusCode (required).</param>
         /// <param name="countGroupByStatusType">countGroupByStatusType (required).</param>
-        public TestPointAnalyticResult(List<TestPlanGroupByStatus> countGroupByStatus = default, List<TestPlanGroupByTester> sumGroupByTester = default, List<TestPlanGroupByTester> countGroupByTester = default, List<TestPlanGroupByTestSuite> countGroupByTestSuite = default, List<TestPlanGroupByTesterAndStatus> countGroupByTesterAndStatus = default, List<TestPlanGroupByStatusCode> countGroupByStatusCode = default, List<TestPlanGroupByTesterAndStatusCode> countGroupByTesterAndStatusCode = default, List<TestPlanGroupByStatusType> countGroupByStatusType = default)
+        public TestPointAnalyticResult(List<TestPlanGroupByStatus> countGroupByStatus = default, List<TestPlanGroupByTester> sumGroupByTester = default, List<TestPlanGroupByTester> countGroupByTester = default, List<TestPlanGroupByTesterAndStatus> countGroupByTesterAndStatus = default, List<TestPlanGroupByStatusCode> countGroupByStatusCode = default, List<TestPlanGroupByTesterAndStatusCode> countGroupByTesterAndStatusCode = default, List<TestPlanGroupByStatusType> countGroupByStatusType = default)
         {
             // to ensure "countGroupByStatus" is required (not null)
             if (countGroupByStatus == null)
@@ -68,12 +67,6 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("countGroupByTester is a required property for TestPointAnalyticResult and cannot be null");
             }
             this.CountGroupByTester = countGroupByTester;
-            // to ensure "countGroupByTestSuite" is required (not null)
-            if (countGroupByTestSuite == null)
-            {
-                throw new ArgumentNullException("countGroupByTestSuite is a required property for TestPointAnalyticResult and cannot be null");
-            }
-            this.CountGroupByTestSuite = countGroupByTestSuite;
             // to ensure "countGroupByTesterAndStatus" is required (not null)
             if (countGroupByTesterAndStatus == null)
             {
@@ -120,12 +113,6 @@ namespace TestIT.ApiClient.Model
         public List<TestPlanGroupByTester> CountGroupByTester { get; set; }
 
         /// <summary>
-        /// Gets or Sets CountGroupByTestSuite
-        /// </summary>
-        [DataMember(Name = "countGroupByTestSuite", IsRequired = true, EmitDefaultValue = true)]
-        public List<TestPlanGroupByTestSuite> CountGroupByTestSuite { get; set; }
-
-        /// <summary>
         /// Gets or Sets CountGroupByTesterAndStatus
         /// </summary>
         [DataMember(Name = "countGroupByTesterAndStatus", IsRequired = true, EmitDefaultValue = true)]
@@ -161,7 +148,6 @@ namespace TestIT.ApiClient.Model
             sb.Append("  CountGroupByStatus: ").Append(CountGroupByStatus).Append("\n");
             sb.Append("  SumGroupByTester: ").Append(SumGroupByTester).Append("\n");
             sb.Append("  CountGroupByTester: ").Append(CountGroupByTester).Append("\n");
-            sb.Append("  CountGroupByTestSuite: ").Append(CountGroupByTestSuite).Append("\n");
             sb.Append("  CountGroupByTesterAndStatus: ").Append(CountGroupByTesterAndStatus).Append("\n");
             sb.Append("  CountGroupByStatusCode: ").Append(CountGroupByStatusCode).Append("\n");
             sb.Append("  CountGroupByTesterAndStatusCode: ").Append(CountGroupByTesterAndStatusCode).Append("\n");

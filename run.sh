@@ -4,9 +4,9 @@
 #npm install @openapitools/openapi-generator-cli -g
 
 # Настройка переменных
-FILE_NAME="swagger5.6.json"
-NEW_VERSION="5.4.0-TMS-5.6"
-GENERATOR="openapi-generator-cli.jar"
+FILE_NAME="cloud-swagger.json"
+NEW_VERSION="5.5.0"
+GENERATOR="openapi-generator-cli-7.18.0.jar"
 
 if [ ! -f ".swagger/$FILE_NAME" ]; then
     echo "Ошибка: .swagger/$FILE_NAME не найден!"

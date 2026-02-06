@@ -75,7 +75,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="attachments">attachments (required).</param>
         /// <param name="iterations">Collection of parameter id sets.</param>
         /// <param name="autoTests">Collection of autotest internal ids.</param>
-        public UpdateWorkItemApiModel(Guid id = default, Guid sectionId = default, string description = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel? sourceType = default, List<UpdateStepApiModel> steps = default, List<UpdateStepApiModel> preconditionSteps = default, List<UpdateStepApiModel> postconditionSteps = default, int duration = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<UpdateLinkApiModel> links = default, string name = default, List<AssignAttachmentApiModel> attachments = default, List<AssignIterationApiModel> iterations = default, List<AutoTestIdModel> autoTests = default)
+        public UpdateWorkItemApiModel(Guid id = default, Guid sectionId = default, string description = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel? sourceType = default, List<UpdateStepApiModel> steps = default, List<UpdateStepApiModel> preconditionSteps = default, List<UpdateStepApiModel> postconditionSteps = default, long duration = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<UpdateLinkApiModel> links = default, string name = default, List<AssignAttachmentApiModel> attachments = default, List<AssignIterationApiModel> iterations = default, List<AutoTestIdModel> autoTests = default)
         {
             this.Id = id;
             this.SectionId = sectionId;
@@ -183,7 +183,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Workitem duration in milliseconds</value>
         [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
-        public int Duration { get; set; }
+        public long Duration { get; set; }
 
         /// <summary>
         /// Key value pair of custom workitem attributes
@@ -278,14 +278,14 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Duration (int) maximum
-            if (this.Duration > (int)86400000)
+            // Duration (long) maximum
+            if (this.Duration > (long)86400000)
             {
                 yield return new ValidationResult("Invalid value for Duration, must be a value less than or equal to 86400000.", new [] { "Duration" });
             }
 
-            // Duration (int) minimum
-            if (this.Duration < (int)0)
+            // Duration (long) minimum
+            if (this.Duration < (long)0)
             {
                 yield return new ValidationResult("Invalid value for Duration, must be a value greater than or equal to 0.", new [] { "Duration" });
             }

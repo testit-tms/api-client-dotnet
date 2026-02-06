@@ -69,7 +69,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="stabilityPercentage">stabilityPercentage.</param>
         /// <param name="links">links.</param>
         /// <param name="labels">labels.</param>
-        public AutoTestApiResult(Guid id = default, Guid projectId = default, string externalId = default, string name = default, string varNamespace = default, string classname = default, List<AutoTestStepApiResult> steps = default, List<AutoTestStepApiResult> setup = default, List<AutoTestStepApiResult> teardown = default, string title = default, string description = default, bool isFlaky = default, string externalKey = default, long globalId = default, bool isDeleted = default, bool mustBeApproved = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, Guid? lastTestRunId = default, string lastTestRunName = default, Guid? lastTestResultId = default, ConfigurationShortApiResult lastTestResultConfiguration = default, string lastTestResultOutcome = default, TestStatusApiResult lastTestResultStatus = default, long? stabilityPercentage = default, List<LinkApiResult> links = default, List<LabelApiResult> labels = default)
+        /// <param name="tags">tags.</param>
+        public AutoTestApiResult(Guid id = default, Guid projectId = default, string externalId = default, string name = default, string varNamespace = default, string classname = default, List<AutoTestStepApiResult> steps = default, List<AutoTestStepApiResult> setup = default, List<AutoTestStepApiResult> teardown = default, string title = default, string description = default, bool isFlaky = default, string externalKey = default, long globalId = default, bool isDeleted = default, bool mustBeApproved = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, Guid? lastTestRunId = default, string lastTestRunName = default, Guid? lastTestResultId = default, ConfigurationShortApiResult lastTestResultConfiguration = default, string lastTestResultOutcome = default, TestStatusApiResult lastTestResultStatus = default, long? stabilityPercentage = default, List<LinkApiResult> links = default, List<LabelApiResult> labels = default, List<string> tags = default)
         {
             this.Id = id;
             this.ProjectId = projectId;
@@ -105,6 +106,7 @@ namespace TestIT.ApiClient.Model
             this.StabilityPercentage = stabilityPercentage;
             this.Links = links;
             this.Labels = labels;
+            this.Tags = tags;
         }
 
         /// <summary>
@@ -282,6 +284,12 @@ namespace TestIT.ApiClient.Model
         public List<LabelApiResult> Labels { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tags
+        /// </summary>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -318,6 +326,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  StabilityPercentage: ").Append(StabilityPercentage).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
