@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Name of the work item | 
 **Description** | **string** | Description of the work item | [optional] 
 **EntityTypeName** | **WorkItemEntityTypeApiModel** | Type of entity associated with this work item | 
-**Duration** | **int** | Duration of the work item in milliseconds | 
+**Duration** | **long** | Duration of the work item in milliseconds | 
 **State** | **WorkItemStateApiModel** | State of the work item | 
 **Priority** | **WorkItemPriorityApiModel** | Priority level of the work item | 
 **Attributes** | **Dictionary&lt;string, Object&gt;** | Set of custom attributes associated with the work item | 

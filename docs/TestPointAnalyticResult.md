@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **CountGroupByStatus** | [**List&lt;TestPlanGroupByStatus&gt;**](TestPlanGroupByStatus.md) |  | 
 **SumGroupByTester** | [**List&lt;TestPlanGroupByTester&gt;**](TestPlanGroupByTester.md) |  | 
 **CountGroupByTester** | [**List&lt;TestPlanGroupByTester&gt;**](TestPlanGroupByTester.md) |  | 
-**CountGroupByTestSuite** | [**List&lt;TestPlanGroupByTestSuite&gt;**](TestPlanGroupByTestSuite.md) |  | 
 **CountGroupByTesterAndStatus** | [**List&lt;TestPlanGroupByTesterAndStatus&gt;**](TestPlanGroupByTesterAndStatus.md) |  | 
 **CountGroupByStatusCode** | [**List&lt;TestPlanGroupByStatusCode&gt;**](TestPlanGroupByStatusCode.md) |  | 
 **CountGroupByTesterAndStatusCode** | [**List&lt;TestPlanGroupByTesterAndStatusCode&gt;**](TestPlanGroupByTesterAndStatusCode.md) |  | 

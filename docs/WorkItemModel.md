@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **Steps** | [**List&lt;StepModel&gt;**](StepModel.md) |  | 
 **PreconditionSteps** | [**List&lt;StepModel&gt;**](StepModel.md) |  | 
 **PostconditionSteps** | [**List&lt;StepModel&gt;**](StepModel.md) |  | 
-**Duration** | **int** |  | 
+**Duration** | **long** |  | 
 **Attributes** | **Dictionary&lt;string, Object&gt;** |  | 
 **Tags** | [**List&lt;TagModel&gt;**](TagModel.md) |  | 
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) |  | 

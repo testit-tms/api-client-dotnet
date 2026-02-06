@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Steps** | [**List&lt;UpdateStepApiModel&gt;**](UpdateStepApiModel.md) | Collection of workitem steps | 
 **PreconditionSteps** | [**List&lt;UpdateStepApiModel&gt;**](UpdateStepApiModel.md) | Collection of workitem precondtion steps | 
 **PostconditionSteps** | [**List&lt;UpdateStepApiModel&gt;**](UpdateStepApiModel.md) | Collection of workitem postcondition steps | 
-**Duration** | **int** | Workitem duration in milliseconds | 
+**Duration** | **long** | Workitem duration in milliseconds | 
 **Attributes** | **Dictionary&lt;string, Object&gt;** | Key value pair of custom workitem attributes | 
 **Tags** | [**List&lt;TagModel&gt;**](TagModel.md) | Collection of workitem tags | 
 **Links** | [**List&lt;UpdateLinkApiModel&gt;**](UpdateLinkApiModel.md) | Collection of workitem links | 

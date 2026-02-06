@@ -85,7 +85,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="tagNames">Array of tag names of Work Item.</param>
         /// <param name="iterations">Set of iterations related to Work Item (required).</param>
         /// <param name="links">Set of links related to Work Item (required).</param>
-        public WorkItemShortModel(Guid id = default, Guid versionId = default, int versionNumber = default, string name = default, string entityTypeName = default, Guid projectId = default, Guid sectionId = default, string sectionName = default, bool isAutomated = default, long globalId = default, int duration = default, long? medianDuration = default, Dictionary<string, Object> attributes = default, Guid createdById = default, Guid? modifiedById = default, DateTime? createdDate = default, DateTime? modifiedDate = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, bool isDeleted = default, List<string> tagNames = default, List<IterationModel> iterations = default, List<LinkShortModel> links = default)
+        public WorkItemShortModel(Guid id = default, Guid versionId = default, int versionNumber = default, string name = default, string entityTypeName = default, Guid projectId = default, Guid sectionId = default, string sectionName = default, bool isAutomated = default, long globalId = default, long duration = default, long? medianDuration = default, Dictionary<string, Object> attributes = default, Guid createdById = default, Guid? modifiedById = default, DateTime? createdDate = default, DateTime? modifiedDate = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, bool isDeleted = default, List<string> tagNames = default, List<IterationModel> iterations = default, List<LinkShortModel> links = default)
         {
             this.Id = id;
             this.VersionId = versionId;
@@ -222,7 +222,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Work Item duration</value>
         [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
-        public int Duration { get; set; }
+        public long Duration { get; set; }
 
         /// <summary>
         /// Work Item median duration

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **SectionName** | **string** | Section name of Work Item | 
 **IsAutomated** | **bool** | Boolean flag determining whether Work Item is automated | 
 **GlobalId** | **long** | Work Item global identifier | 
-**Duration** | **int** | Work Item duration | 
+**Duration** | **long** | Work Item duration | 
 **MedianDuration** | **long?** | Work Item median duration | [optional] 
 **Attributes** | **Dictionary&lt;string, Object&gt;** | Work Item attributes | [optional] 
 **CreatedById** | **Guid** | Unique identifier of user who created Work Item | 

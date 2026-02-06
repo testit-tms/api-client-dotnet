@@ -456,4 +456,4 @@ new/
 README-NEW.md
 *.bak
 *.backup
-.swagger
+.swagger_

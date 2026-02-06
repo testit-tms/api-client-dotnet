@@ -89,7 +89,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets WorkItemId
         /// </summary>
         /*
-        <example>6c5d69d1-862a-4f6f-bfb8-76a45e79983d</example>
+        <example>a58827bc-4fbb-4b8d-8ddc-bfaa97dbd0d5</example>
         */
         [DataMember(Name = "workItemId", EmitDefaultValue = true)]
         public Guid? WorkItemId { get; set; }

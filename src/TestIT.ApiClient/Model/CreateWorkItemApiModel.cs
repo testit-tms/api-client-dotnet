@@ -78,7 +78,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="autoTests">Automated tests associated with the work item.</param>
         /// <param name="attachments">Files attached to the work item.</param>
         /// <param name="links">Set of links related to the work item (required).</param>
-        public CreateWorkItemApiModel(Guid projectId = default, Guid? sectionId = default, string name = default, string description = default, WorkItemEntityTypeApiModel entityTypeName = default, int duration = default, WorkItemStateApiModel state = default, WorkItemPriorityApiModel priority = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<CreateStepApiModel> preconditionSteps = default, List<CreateStepApiModel> steps = default, List<CreateStepApiModel> postconditionSteps = default, List<AssignIterationApiModel> iterations = default, List<AutoTestIdModel> autoTests = default, List<AssignAttachmentApiModel> attachments = default, List<CreateLinkApiModel> links = default)
+        public CreateWorkItemApiModel(Guid projectId = default, Guid? sectionId = default, string name = default, string description = default, WorkItemEntityTypeApiModel entityTypeName = default, long duration = default, WorkItemStateApiModel state = default, WorkItemPriorityApiModel priority = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<CreateStepApiModel> preconditionSteps = default, List<CreateStepApiModel> steps = default, List<CreateStepApiModel> postconditionSteps = default, List<AssignIterationApiModel> iterations = default, List<AutoTestIdModel> autoTests = default, List<AssignAttachmentApiModel> attachments = default, List<CreateLinkApiModel> links = default)
         {
             this.ProjectId = projectId;
             // to ensure "name" is required (not null)
@@ -167,7 +167,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Duration of the work item in milliseconds</value>
         [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
-        public int Duration { get; set; }
+        public long Duration { get; set; }
 
         /// <summary>
         /// Set of custom attributes associated with the work item
@@ -289,14 +289,14 @@ namespace TestIT.ApiClient.Model
                 yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
             }
 
-            // Duration (int) maximum
-            if (this.Duration > (int)86400000)
+            // Duration (long) maximum
+            if (this.Duration > (long)86400000)
             {
                 yield return new ValidationResult("Invalid value for Duration, must be a value less than or equal to 86400000.", new [] { "Duration" });
             }
 
-            // Duration (int) minimum
-            if (this.Duration < (int)0)
+            // Duration (long) minimum
+            if (this.Duration < (long)0)
             {
                 yield return new ValidationResult("Invalid value for Duration, must be a value greater than or equal to 0.", new [] { "Duration" });
             }

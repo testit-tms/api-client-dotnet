@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **LastTestResultStatusCodes** | **List&lt;string&gt;** |  | [optional] 
 **ExternalKey** | **string** |  | [optional] 
 **LastTestResultConfigurationIds** | **List&lt;Guid&gt;** |  | [optional] 
+**Tags** | **List&lt;string&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
