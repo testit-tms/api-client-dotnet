@@ -72,7 +72,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Id
         /// </summary>
         /*
-        <example>a58827bc-4fbb-4b8d-8ddc-bfaa97dbd0d5</example>
+        <example>39d127a1-a511-473f-8b21-f75b747a9420</example>
         */
         [DataMember(Name = "id", EmitDefaultValue = true)]
         public Guid? Id { get; set; }

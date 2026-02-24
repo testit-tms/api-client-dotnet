@@ -114,7 +114,7 @@ void (empty response body)
 
 <a id="apiv2workitemscommentspost"></a>
 # **ApiV2WorkItemsCommentsPost**
-> WorkItemCommentModel ApiV2WorkItemsCommentsPost (WorkItemCommentPostModel workItemCommentPostModel = null)
+> WorkItemCommentApiResult ApiV2WorkItemsCommentsPost (CreateWorkItemCommentApiModel createWorkItemCommentApiModel = null)
 
 Create WorkItem comment
 
@@ -146,12 +146,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsCommentsApi(httpClient, config, httpClientHandler);
-            var workItemCommentPostModel = new WorkItemCommentPostModel(); // WorkItemCommentPostModel |  (optional) 
+            var createWorkItemCommentApiModel = new CreateWorkItemCommentApiModel(); // CreateWorkItemCommentApiModel |  (optional) 
 
             try
             {
                 // Create WorkItem comment
-                WorkItemCommentModel result = apiInstance.ApiV2WorkItemsCommentsPost(workItemCommentPostModel);
+                WorkItemCommentApiResult result = apiInstance.ApiV2WorkItemsCommentsPost(createWorkItemCommentApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -172,7 +172,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Create WorkItem comment
-    ApiResponse<WorkItemCommentModel> response = apiInstance.ApiV2WorkItemsCommentsPostWithHttpInfo(workItemCommentPostModel);
+    ApiResponse<WorkItemCommentApiResult> response = apiInstance.ApiV2WorkItemsCommentsPostWithHttpInfo(createWorkItemCommentApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -189,11 +189,11 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **workItemCommentPostModel** | [**WorkItemCommentPostModel**](WorkItemCommentPostModel.md) |  | [optional]  |
+| **createWorkItemCommentApiModel** | [**CreateWorkItemCommentApiModel**](CreateWorkItemCommentApiModel.md) |  | [optional]  |
 
 ### Return type
 
-[**WorkItemCommentModel**](WorkItemCommentModel.md)
+[**WorkItemCommentApiResult**](WorkItemCommentApiResult.md)
 
 ### Authorization
 
@@ -220,7 +220,7 @@ catch (ApiException e)
 
 <a id="apiv2workitemscommentsput"></a>
 # **ApiV2WorkItemsCommentsPut**
-> void ApiV2WorkItemsCommentsPut (WorkItemCommentPutModel workItemCommentPutModel = null)
+> void ApiV2WorkItemsCommentsPut (UpdateWorkItemCommentApiModel updateWorkItemCommentApiModel = null)
 
 Update work item comment
 
@@ -250,12 +250,12 @@ namespace Example
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsCommentsApi(httpClient, config, httpClientHandler);
-            var workItemCommentPutModel = new WorkItemCommentPutModel(); // WorkItemCommentPutModel |  (optional) 
+            var updateWorkItemCommentApiModel = new UpdateWorkItemCommentApiModel(); // UpdateWorkItemCommentApiModel |  (optional) 
 
             try
             {
                 // Update work item comment
-                apiInstance.ApiV2WorkItemsCommentsPut(workItemCommentPutModel);
+                apiInstance.ApiV2WorkItemsCommentsPut(updateWorkItemCommentApiModel);
             }
             catch (ApiException  e)
             {
@@ -275,7 +275,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Update work item comment
-    apiInstance.ApiV2WorkItemsCommentsPutWithHttpInfo(workItemCommentPutModel);
+    apiInstance.ApiV2WorkItemsCommentsPutWithHttpInfo(updateWorkItemCommentApiModel);
 }
 catch (ApiException e)
 {
@@ -289,7 +289,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **workItemCommentPutModel** | [**WorkItemCommentPutModel**](WorkItemCommentPutModel.md) |  | [optional]  |
+| **updateWorkItemCommentApiModel** | [**UpdateWorkItemCommentApiModel**](UpdateWorkItemCommentApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -424,7 +424,7 @@ catch (ApiException e)
 
 <a id="apiv2workitemsidcommentsget"></a>
 # **ApiV2WorkItemsIdCommentsGet**
-> List&lt;WorkItemCommentModel&gt; ApiV2WorkItemsIdCommentsGet (string id)
+> List&lt;WorkItemCommentApiResult&gt; ApiV2WorkItemsIdCommentsGet (string id)
 
 Get work item comments
 
@@ -459,7 +459,7 @@ namespace Example
             try
             {
                 // Get work item comments
-                List<WorkItemCommentModel> result = apiInstance.ApiV2WorkItemsIdCommentsGet(id);
+                List<WorkItemCommentApiResult> result = apiInstance.ApiV2WorkItemsIdCommentsGet(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -480,7 +480,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get work item comments
-    ApiResponse<List<WorkItemCommentModel>> response = apiInstance.ApiV2WorkItemsIdCommentsGetWithHttpInfo(id);
+    ApiResponse<List<WorkItemCommentApiResult>> response = apiInstance.ApiV2WorkItemsIdCommentsGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -501,7 +501,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;WorkItemCommentModel&gt;**](WorkItemCommentModel.md)
+[**List&lt;WorkItemCommentApiResult&gt;**](WorkItemCommentApiResult.md)
 
 ### Authorization
 

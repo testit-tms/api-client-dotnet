@@ -27,31 +27,38 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// WorkItemCommentPutModel
+    /// UpdateWorkItemCommentApiModel
     /// </summary>
-    [DataContract(Name = "WorkItemCommentPutModel")]
-    public partial class WorkItemCommentPutModel : IValidatableObject
+    [DataContract(Name = "UpdateWorkItemCommentApiModel")]
+    public partial class UpdateWorkItemCommentApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemCommentPutModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateWorkItemCommentApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WorkItemCommentPutModel() { }
+        protected UpdateWorkItemCommentApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemCommentPutModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateWorkItemCommentApiModel" /> class.
         /// </summary>
+        /// <param name="id">ID of the comment (required).</param>
         /// <param name="text">Text of the comment (required).</param>
-        /// <param name="id">Unique ID of the comment (required).</param>
-        public WorkItemCommentPutModel(string text = default, Guid id = default)
+        public UpdateWorkItemCommentApiModel(Guid id = default, string text = default)
         {
+            this.Id = id;
             // to ensure "text" is required (not null)
             if (text == null)
             {
-                throw new ArgumentNullException("text is a required property for WorkItemCommentPutModel and cannot be null");
+                throw new ArgumentNullException("text is a required property for UpdateWorkItemCommentApiModel and cannot be null");
             }
             this.Text = text;
-            this.Id = id;
         }
+
+        /// <summary>
+        /// ID of the comment
+        /// </summary>
+        /// <value>ID of the comment</value>
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public Guid Id { get; set; }
 
         /// <summary>
         /// Text of the comment
@@ -61,22 +68,15 @@ namespace TestIT.ApiClient.Model
         public string Text { get; set; }
 
         /// <summary>
-        /// Unique ID of the comment
-        /// </summary>
-        /// <value>Unique ID of the comment</value>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public Guid Id { get; set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WorkItemCommentPutModel {\n");
-            sb.Append("  Text: ").Append(Text).Append("\n");
+            sb.Append("class UpdateWorkItemCommentApiModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

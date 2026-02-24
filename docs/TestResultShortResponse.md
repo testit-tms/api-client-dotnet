@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Name** | **string** | Name of autotest represented by the test result | 
 **AutotestGlobalId** | **long** | Global ID of autotest represented by the test result | 
 **AutotestExternalId** | **string** | External ID of autotest represented by the test result | [optional] 
+**AutoTestTags** | **List&lt;string&gt;** | Tags of the autotest represented by the test result | 
 **TestRunId** | **Guid** | Unique ID of test run where the test result is located | 
 **ConfigurationId** | **Guid** | Unique ID of configuration which the test result uses | 
 **ConfigurationName** | **string** | Name of configuration which the test result uses | 

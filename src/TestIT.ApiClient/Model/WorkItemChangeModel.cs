@@ -46,8 +46,10 @@ namespace TestIT.ApiClient.Model
         /// <param name="newVersionId">newVersionId (required).</param>
         /// <param name="workItemChangedFields">workItemChangedFields (required).</param>
         /// <param name="createdById">createdById (required).</param>
-        /// <param name="createdDate">createdDate.</param>
-        public WorkItemChangeModel(Guid id = default, Guid workItemId = default, Guid oldVersionId = default, Guid newVersionId = default, WorkItemChangedFieldsViewModel workItemChangedFields = default, Guid createdById = default, DateTime? createdDate = default)
+        /// <param name="createdDate">createdDate (required).</param>
+        /// <param name="modifiedById">modifiedById.</param>
+        /// <param name="modifiedDate">modifiedDate.</param>
+        public WorkItemChangeModel(Guid id = default, Guid workItemId = default, Guid oldVersionId = default, Guid newVersionId = default, WorkItemChangedFieldsViewModel workItemChangedFields = default, Guid createdById = default, DateTime createdDate = default, Guid? modifiedById = default, DateTime? modifiedDate = default)
         {
             this.Id = id;
             this.WorkItemId = workItemId;
@@ -61,6 +63,8 @@ namespace TestIT.ApiClient.Model
             this.WorkItemChangedFields = workItemChangedFields;
             this.CreatedById = createdById;
             this.CreatedDate = createdDate;
+            this.ModifiedById = modifiedById;
+            this.ModifiedDate = modifiedDate;
         }
 
         /// <summary>
@@ -102,8 +106,20 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets CreatedDate
         /// </summary>
-        [DataMember(Name = "createdDate", EmitDefaultValue = true)]
-        public DateTime? CreatedDate { get; set; }
+        [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
+        public DateTime CreatedDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedById
+        /// </summary>
+        [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
+        public Guid? ModifiedById { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ModifiedDate
+        /// </summary>
+        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
+        public DateTime? ModifiedDate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -120,6 +136,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  WorkItemChangedFields: ").Append(WorkItemChangedFields).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
+            sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
+            sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

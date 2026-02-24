@@ -27,43 +27,45 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// RerunsModel
+    /// CreateWorkItemCommentApiModel
     /// </summary>
-    [DataContract(Name = "RerunsModel")]
-    public partial class RerunsModel : IValidatableObject
+    [DataContract(Name = "CreateWorkItemCommentApiModel")]
+    public partial class CreateWorkItemCommentApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RerunsModel" /> class.
+        /// Initializes a new instance of the <see cref="CreateWorkItemCommentApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected RerunsModel() { }
+        protected CreateWorkItemCommentApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="RerunsModel" /> class.
+        /// Initializes a new instance of the <see cref="CreateWorkItemCommentApiModel" /> class.
         /// </summary>
-        /// <param name="rerunCount">rerunCount (required).</param>
-        /// <param name="rerunTestResults">rerunTestResults (required).</param>
-        public RerunsModel(int rerunCount = default, List<RerunTestResultModel> rerunTestResults = default)
+        /// <param name="workItemId">ID of work item to comment (required).</param>
+        /// <param name="text">Text of the comment (required).</param>
+        public CreateWorkItemCommentApiModel(Guid workItemId = default, string text = default)
         {
-            this.RerunCount = rerunCount;
-            // to ensure "rerunTestResults" is required (not null)
-            if (rerunTestResults == null)
+            this.WorkItemId = workItemId;
+            // to ensure "text" is required (not null)
+            if (text == null)
             {
-                throw new ArgumentNullException("rerunTestResults is a required property for RerunsModel and cannot be null");
+                throw new ArgumentNullException("text is a required property for CreateWorkItemCommentApiModel and cannot be null");
             }
-            this.RerunTestResults = rerunTestResults;
+            this.Text = text;
         }
 
         /// <summary>
-        /// Gets or Sets RerunCount
+        /// ID of work item to comment
         /// </summary>
-        [DataMember(Name = "rerunCount", IsRequired = true, EmitDefaultValue = true)]
-        public int RerunCount { get; set; }
+        /// <value>ID of work item to comment</value>
+        [DataMember(Name = "workItemId", IsRequired = true, EmitDefaultValue = true)]
+        public Guid WorkItemId { get; set; }
 
         /// <summary>
-        /// Gets or Sets RerunTestResults
+        /// Text of the comment
         /// </summary>
-        [DataMember(Name = "rerunTestResults", IsRequired = true, EmitDefaultValue = true)]
-        public List<RerunTestResultModel> RerunTestResults { get; set; }
+        /// <value>Text of the comment</value>
+        [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
+        public string Text { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -72,9 +74,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class RerunsModel {\n");
-            sb.Append("  RerunCount: ").Append(RerunCount).Append("\n");
-            sb.Append("  RerunTestResults: ").Append(RerunTestResults).Append("\n");
+            sb.Append("class CreateWorkItemCommentApiModel {\n");
+            sb.Append("  WorkItemId: ").Append(WorkItemId).Append("\n");
+            sb.Append("  Text: ").Append(Text).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -95,6 +97,18 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Text (string) maxLength
+            if (this.Text != null && this.Text.Length > 1024)
+            {
+                yield return new ValidationResult("Invalid value for Text, length must be less than 1024.", new [] { "Text" });
+            }
+
+            // Text (string) minLength
+            if (this.Text != null && this.Text.Length < 1)
+            {
+                yield return new ValidationResult("Invalid value for Text, length must be greater than 1.", new [] { "Text" });
+            }
+
             yield break;
         }
     }

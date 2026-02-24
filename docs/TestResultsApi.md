@@ -746,7 +746,7 @@ void (empty response body)
 
 <a id="apiv2testresultsidrerunsget"></a>
 # **ApiV2TestResultsIdRerunsGet**
-> RerunsModel ApiV2TestResultsIdRerunsGet (Guid id)
+> RerunsApiResult ApiV2TestResultsIdRerunsGet (Guid id)
 
 Get reruns
 
@@ -781,7 +781,7 @@ namespace Example
             try
             {
                 // Get reruns
-                RerunsModel result = apiInstance.ApiV2TestResultsIdRerunsGet(id);
+                RerunsApiResult result = apiInstance.ApiV2TestResultsIdRerunsGet(id);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -802,7 +802,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get reruns
-    ApiResponse<RerunsModel> response = apiInstance.ApiV2TestResultsIdRerunsGetWithHttpInfo(id);
+    ApiResponse<RerunsApiResult> response = apiInstance.ApiV2TestResultsIdRerunsGetWithHttpInfo(id);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -823,7 +823,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**RerunsModel**](RerunsModel.md)
+[**RerunsApiResult**](RerunsApiResult.md)
 
 ### Authorization
 

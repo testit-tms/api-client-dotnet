@@ -58,7 +58,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>This property is used to link configuration with project</value>
         /*
-        <example>a58827bc-4fbb-4b8d-8ddc-bfaa97dbd0d5</example>
+        <example>39d127a1-a511-473f-8b21-f75b747a9420</example>
         */
         [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ProjectId { get; set; }

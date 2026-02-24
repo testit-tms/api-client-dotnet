@@ -196,9 +196,9 @@ namespace TestIT.ApiClient.Model
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
             // DurationInMs (long?) maximum
-            if (this.DurationInMs > (long?)9223372036854775807)
+            if (this.DurationInMs > (long?)86400000)
             {
-                yield return new ValidationResult("Invalid value for DurationInMs, must be a value less than or equal to 9223372036854775807.", new [] { "DurationInMs" });
+                yield return new ValidationResult("Invalid value for DurationInMs, must be a value less than or equal to 86400000.", new [] { "DurationInMs" });
             }
 
             // DurationInMs (long?) minimum
@@ -208,9 +208,9 @@ namespace TestIT.ApiClient.Model
             }
 
             // Duration (long?) maximum
-            if (this.Duration > (long?)9223372036854775807)
+            if (this.Duration > (long?)86400000)
             {
-                yield return new ValidationResult("Invalid value for Duration, must be a value less than or equal to 9223372036854775807.", new [] { "Duration" });
+                yield return new ValidationResult("Invalid value for Duration, must be a value less than or equal to 86400000.", new [] { "Duration" });
             }
 
             // Duration (long?) minimum

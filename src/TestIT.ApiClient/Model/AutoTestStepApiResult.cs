@@ -73,6 +73,11 @@ namespace TestIT.ApiClient.Model
         /// Includes a nested step inside another step. The maximum nesting level is 15.
         /// </summary>
         /// <value>Includes a nested step inside another step. The maximum nesting level is 15.</value>
+        /*
+        <example>
+            [{ &quot;title&quot;: &quot;string&quot;, &quot;description&quot;: &quot;string&quot;, &quot;steps&quot;: [{ &quot;title&quot;: &quot;string&quot;, &quot;description&quot;: &quot;string&quot;, }], }]
+            </example>
+        */
         [DataMember(Name = "steps", EmitDefaultValue = true)]
         public List<AutoTestStepApiResult> Steps { get; set; }
 
