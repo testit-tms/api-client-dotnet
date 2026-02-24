@@ -44,6 +44,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">Name of autotest represented by the test result (required).</param>
         /// <param name="autotestGlobalId">Global ID of autotest represented by the test result (required).</param>
         /// <param name="autotestExternalId">External ID of autotest represented by the test result.</param>
+        /// <param name="autoTestTags">Tags of the autotest represented by the test result (required).</param>
         /// <param name="testRunId">Unique ID of test run where the test result is located (required).</param>
         /// <param name="configurationId">Unique ID of configuration which the test result uses (required).</param>
         /// <param name="configurationName">Name of configuration which the test result uses (required).</param>
@@ -60,7 +61,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="links">Collection of links attached to the test result (required).</param>
         /// <param name="attachments">Collection of files attached to the test result (required).</param>
         /// <param name="rerunCompletedCount">Run count (required).</param>
-        public TestResultShortResponse(Guid id = default, string name = default, long autotestGlobalId = default, string autotestExternalId = default, Guid testRunId = default, Guid configurationId = default, string configurationName = default, string outcome = default, TestStatusApiResult status = default, List<AutoTestResultReasonShort> resultReasons = default, string comment = default, DateTime date = default, DateTime createdDate = default, DateTime? modifiedDate = default, DateTime? startedOn = default, DateTime? completedOn = default, long? duration = default, List<LinkShort> links = default, List<AttachmentApiResult> attachments = default, int rerunCompletedCount = default)
+        public TestResultShortResponse(Guid id = default, string name = default, long autotestGlobalId = default, string autotestExternalId = default, List<string> autoTestTags = default, Guid testRunId = default, Guid configurationId = default, string configurationName = default, string outcome = default, TestStatusApiResult status = default, List<AutoTestResultReasonShort> resultReasons = default, string comment = default, DateTime date = default, DateTime createdDate = default, DateTime? modifiedDate = default, DateTime? startedOn = default, DateTime? completedOn = default, long? duration = default, List<LinkShort> links = default, List<AttachmentApiResult> attachments = default, int rerunCompletedCount = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -70,6 +71,12 @@ namespace TestIT.ApiClient.Model
             }
             this.Name = name;
             this.AutotestGlobalId = autotestGlobalId;
+            // to ensure "autoTestTags" is required (not null)
+            if (autoTestTags == null)
+            {
+                throw new ArgumentNullException("autoTestTags is a required property for TestResultShortResponse and cannot be null");
+            }
+            this.AutoTestTags = autoTestTags;
             this.TestRunId = testRunId;
             this.ConfigurationId = configurationId;
             // to ensure "configurationName" is required (not null)
@@ -141,6 +148,13 @@ namespace TestIT.ApiClient.Model
         /// <value>External ID of autotest represented by the test result</value>
         [DataMember(Name = "autotestExternalId", EmitDefaultValue = true)]
         public string AutotestExternalId { get; set; }
+
+        /// <summary>
+        /// Tags of the autotest represented by the test result
+        /// </summary>
+        /// <value>Tags of the autotest represented by the test result</value>
+        [DataMember(Name = "autoTestTags", IsRequired = true, EmitDefaultValue = true)]
+        public List<string> AutoTestTags { get; set; }
 
         /// <summary>
         /// Unique ID of test run where the test result is located
@@ -267,6 +281,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  AutotestGlobalId: ").Append(AutotestGlobalId).Append("\n");
             sb.Append("  AutotestExternalId: ").Append(AutotestExternalId).Append("\n");
+            sb.Append("  AutoTestTags: ").Append(AutoTestTags).Append("\n");
             sb.Append("  TestRunId: ").Append(TestRunId).Append("\n");
             sb.Append("  ConfigurationId: ").Append(ConfigurationId).Append("\n");
             sb.Append("  ConfigurationName: ").Append(ConfigurationName).Append("\n");

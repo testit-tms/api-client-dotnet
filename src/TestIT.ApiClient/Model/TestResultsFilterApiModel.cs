@@ -42,6 +42,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="varNamespace">Specifies a test result namespace to search for.</param>
         /// <param name="className">Specifies a test result class name to search for.</param>
         /// <param name="autoTestGlobalIds">Specifies an autotest global IDs to search results for.</param>
+        /// <param name="autoTestTags">Specifies autotest tags to include in the search..</param>
+        /// <param name="excludeAutoTestTags">Specifies autotest tags to exclude from the search..</param>
         /// <param name="name">Specifies an autotest name to search results for.</param>
         /// <param name="createdDate">Specifies a test result creation date and time range to search for.</param>
         /// <param name="modifiedDate">Specifies a test result modified date and time range to search for.</param>
@@ -50,7 +52,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="duration">Specifies a test result duration range to search for.</param>
         /// <param name="resultReasons">Specifies result reasons for searching test results.</param>
         /// <param name="testRunIds">Specifies a test result test run IDs to search for.</param>
-        public TestResultsFilterApiModel(List<Guid> configurationIds = default, List<TestResultOutcome> outcomes = default, List<string> statusCodes = default, List<FailureCategoryModel> failureCategories = default, string varNamespace = default, string className = default, List<long> autoTestGlobalIds = default, string name = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, DateTimeRangeSelectorModel startedOn = default, DateTimeRangeSelectorModel completedOn = default, Int64RangeSelectorModel duration = default, List<string> resultReasons = default, List<Guid> testRunIds = default)
+        public TestResultsFilterApiModel(List<Guid> configurationIds = default, List<TestResultOutcome> outcomes = default, List<string> statusCodes = default, List<FailureCategoryModel> failureCategories = default, string varNamespace = default, string className = default, List<long> autoTestGlobalIds = default, List<string> autoTestTags = default, List<string> excludeAutoTestTags = default, string name = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, DateTimeRangeSelectorModel startedOn = default, DateTimeRangeSelectorModel completedOn = default, Int64RangeSelectorModel duration = default, List<string> resultReasons = default, List<Guid> testRunIds = default)
         {
             this.ConfigurationIds = configurationIds;
             this.Outcomes = outcomes;
@@ -59,6 +61,8 @@ namespace TestIT.ApiClient.Model
             this.Namespace = varNamespace;
             this.ClassName = className;
             this.AutoTestGlobalIds = autoTestGlobalIds;
+            this.AutoTestTags = autoTestTags;
+            this.ExcludeAutoTestTags = excludeAutoTestTags;
             this.Name = name;
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
@@ -118,6 +122,20 @@ namespace TestIT.ApiClient.Model
         /// <value>Specifies an autotest global IDs to search results for</value>
         [DataMember(Name = "autoTestGlobalIds", EmitDefaultValue = true)]
         public List<long> AutoTestGlobalIds { get; set; }
+
+        /// <summary>
+        /// Specifies autotest tags to include in the search.
+        /// </summary>
+        /// <value>Specifies autotest tags to include in the search.</value>
+        [DataMember(Name = "autoTestTags", EmitDefaultValue = true)]
+        public List<string> AutoTestTags { get; set; }
+
+        /// <summary>
+        /// Specifies autotest tags to exclude from the search.
+        /// </summary>
+        /// <value>Specifies autotest tags to exclude from the search.</value>
+        [DataMember(Name = "excludeAutoTestTags", EmitDefaultValue = true)]
+        public List<string> ExcludeAutoTestTags { get; set; }
 
         /// <summary>
         /// Specifies an autotest name to search results for
@@ -190,6 +208,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Namespace: ").Append(Namespace).Append("\n");
             sb.Append("  ClassName: ").Append(ClassName).Append("\n");
             sb.Append("  AutoTestGlobalIds: ").Append(AutoTestGlobalIds).Append("\n");
+            sb.Append("  AutoTestTags: ").Append(AutoTestTags).Append("\n");
+            sb.Append("  ExcludeAutoTestTags: ").Append(ExcludeAutoTestTags).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");

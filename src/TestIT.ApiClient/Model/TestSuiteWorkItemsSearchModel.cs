@@ -40,9 +40,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="nameOrId">Name or identifier (UUID) of work item.</param>
         /// <param name="includeIds">Collection of identifiers of work items which need to be included in result regardless of filtering.</param>
         /// <param name="excludeIds">Collection of identifiers of work items which need to be excluded from result regardless of filtering.</param>
-        /// <param name="externalMetadata">Specifies work item filter by its external metadata.</param>
         /// <param name="projectIds">Collection of project identifiers.</param>
-        /// <param name="links">Specifies a work item filter by its links.</param>
         /// <param name="name">Name of work item.</param>
         /// <param name="ids">Specifies a work item unique IDs to search for.</param>
         /// <param name="globalIds">Collection of global (integer) identifiers.</param>
@@ -64,16 +62,16 @@ namespace TestIT.ApiClient.Model
         /// <param name="excludeTags">Collection of tags to exclude.</param>
         /// <param name="autoTestIds">Collection of identifiers of linked autotests.</param>
         /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
-        public TestSuiteWorkItemsSearchModel(List<string> tagNames = default, List<WorkItemEntityTypes> entityTypes = default, string nameOrId = default, List<Guid> includeIds = default, List<Guid> excludeIds = default, WorkItemExternalMetadataFilterModel externalMetadata = default, List<Guid> projectIds = default, WorkItemLinkFilterModel links = default, string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemEntityTypes> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int32RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default)
+        /// <param name="links">Specifies a work item filter by its links.</param>
+        /// <param name="externalMetadata">Specifies work item filter by its external metadata.</param>
+        public TestSuiteWorkItemsSearchModel(List<string> tagNames = default, List<WorkItemEntityTypes> entityTypes = default, string nameOrId = default, List<Guid> includeIds = default, List<Guid> excludeIds = default, List<Guid> projectIds = default, string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemEntityTypes> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int32RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default, WorkItemLinkFilterModel links = default, WorkItemExternalMetadataFilterModel externalMetadata = default)
         {
             this.TagNames = tagNames;
             this.EntityTypes = entityTypes;
             this.NameOrId = nameOrId;
             this.IncludeIds = includeIds;
             this.ExcludeIds = excludeIds;
-            this.ExternalMetadata = externalMetadata;
             this.ProjectIds = projectIds;
-            this.Links = links;
             this.Name = name;
             this.Ids = ids;
             this.GlobalIds = globalIds;
@@ -95,6 +93,8 @@ namespace TestIT.ApiClient.Model
             this.ExcludeTags = excludeTags;
             this.AutoTestIds = autoTestIds;
             this.WorkItemVersionIds = workItemVersionIds;
+            this.Links = links;
+            this.ExternalMetadata = externalMetadata;
         }
 
         /// <summary>
@@ -133,25 +133,11 @@ namespace TestIT.ApiClient.Model
         public List<Guid> ExcludeIds { get; set; }
 
         /// <summary>
-        /// Specifies work item filter by its external metadata
-        /// </summary>
-        /// <value>Specifies work item filter by its external metadata</value>
-        [DataMember(Name = "externalMetadata", EmitDefaultValue = true)]
-        public WorkItemExternalMetadataFilterModel ExternalMetadata { get; set; }
-
-        /// <summary>
         /// Collection of project identifiers
         /// </summary>
         /// <value>Collection of project identifiers</value>
         [DataMember(Name = "projectIds", EmitDefaultValue = true)]
         public List<Guid> ProjectIds { get; set; }
-
-        /// <summary>
-        /// Specifies a work item filter by its links
-        /// </summary>
-        /// <value>Specifies a work item filter by its links</value>
-        [DataMember(Name = "links", EmitDefaultValue = true)]
-        public WorkItemLinkFilterModel Links { get; set; }
 
         /// <summary>
         /// Name of work item
@@ -301,6 +287,20 @@ namespace TestIT.ApiClient.Model
         public List<Guid> WorkItemVersionIds { get; set; }
 
         /// <summary>
+        /// Specifies a work item filter by its links
+        /// </summary>
+        /// <value>Specifies a work item filter by its links</value>
+        [DataMember(Name = "links", EmitDefaultValue = true)]
+        public WorkItemLinkFilterModel Links { get; set; }
+
+        /// <summary>
+        /// Specifies work item filter by its external metadata
+        /// </summary>
+        /// <value>Specifies work item filter by its external metadata</value>
+        [DataMember(Name = "externalMetadata", EmitDefaultValue = true)]
+        public WorkItemExternalMetadataFilterModel ExternalMetadata { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -313,9 +313,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  NameOrId: ").Append(NameOrId).Append("\n");
             sb.Append("  IncludeIds: ").Append(IncludeIds).Append("\n");
             sb.Append("  ExcludeIds: ").Append(ExcludeIds).Append("\n");
-            sb.Append("  ExternalMetadata: ").Append(ExternalMetadata).Append("\n");
             sb.Append("  ProjectIds: ").Append(ProjectIds).Append("\n");
-            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Ids: ").Append(Ids).Append("\n");
             sb.Append("  GlobalIds: ").Append(GlobalIds).Append("\n");
@@ -337,6 +335,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ExcludeTags: ").Append(ExcludeTags).Append("\n");
             sb.Append("  AutoTestIds: ").Append(AutoTestIds).Append("\n");
             sb.Append("  WorkItemVersionIds: ").Append(WorkItemVersionIds).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  ExternalMetadata: ").Append(ExternalMetadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

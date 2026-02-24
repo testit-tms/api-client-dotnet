@@ -63,7 +63,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="externalKey">Specifies an autotest external key to search for.</param>
         /// <param name="lastTestResultConfigurationIds">Specifies an autotest configuration IDs of the last test result to search for.</param>
         /// <param name="tags">Specifies an autotest tags to search for.</param>
-        public AutoTestFilterApiModel(List<Guid> projectIds = default, List<string> externalIds = default, List<long> globalIds = default, string name = default, bool? isFlaky = default, bool? mustBeApproved = default, Int64RangeSelectorModel stabilityPercentage = default, DateTimeRangeSelectorModel createdDate = default, List<Guid> createdByIds = default, DateTimeRangeSelectorModel modifiedDate = default, List<Guid> modifiedByIds = default, bool? isDeleted = default, string varNamespace = default, bool? isEmptyNamespace = default, string className = default, bool? isEmptyClassName = default, AutotestResultOutcome? lastTestResultOutcome = default, List<string> lastTestResultStatusCodes = default, string externalKey = default, List<Guid> lastTestResultConfigurationIds = default, List<string> tags = default)
+        /// <param name="excludeTags">Specifies an autotest tags to exclude.</param>
+        public AutoTestFilterApiModel(List<Guid> projectIds = default, List<string> externalIds = default, List<long> globalIds = default, string name = default, bool? isFlaky = default, bool? mustBeApproved = default, Int64RangeSelectorModel stabilityPercentage = default, DateTimeRangeSelectorModel createdDate = default, List<Guid> createdByIds = default, DateTimeRangeSelectorModel modifiedDate = default, List<Guid> modifiedByIds = default, bool? isDeleted = default, string varNamespace = default, bool? isEmptyNamespace = default, string className = default, bool? isEmptyClassName = default, AutotestResultOutcome? lastTestResultOutcome = default, List<string> lastTestResultStatusCodes = default, string externalKey = default, List<Guid> lastTestResultConfigurationIds = default, List<string> tags = default, List<string> excludeTags = default)
         {
             this.ProjectIds = projectIds;
             this.ExternalIds = externalIds;
@@ -86,6 +87,7 @@ namespace TestIT.ApiClient.Model
             this.ExternalKey = externalKey;
             this.LastTestResultConfigurationIds = lastTestResultConfigurationIds;
             this.Tags = tags;
+            this.ExcludeTags = excludeTags;
         }
 
         /// <summary>
@@ -229,6 +231,13 @@ namespace TestIT.ApiClient.Model
         public List<string> Tags { get; set; }
 
         /// <summary>
+        /// Specifies an autotest tags to exclude
+        /// </summary>
+        /// <value>Specifies an autotest tags to exclude</value>
+        [DataMember(Name = "excludeTags", EmitDefaultValue = true)]
+        public List<string> ExcludeTags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -257,6 +266,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ExternalKey: ").Append(ExternalKey).Append("\n");
             sb.Append("  LastTestResultConfigurationIds: ").Append(LastTestResultConfigurationIds).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
+            sb.Append("  ExcludeTags: ").Append(ExcludeTags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -168,8 +168,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
-        /// <returns>RerunsModel</returns>
-        RerunsModel ApiV2TestResultsIdRerunsGet(Guid id);
+        /// <returns>RerunsApiResult</returns>
+        RerunsApiResult ApiV2TestResultsIdRerunsGet(Guid id);
 
         /// <summary>
         /// Get reruns
@@ -179,8 +179,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
-        /// <returns>ApiResponse of RerunsModel</returns>
-        ApiResponse<RerunsModel> ApiV2TestResultsIdRerunsGetWithHttpInfo(Guid id);
+        /// <returns>ApiResponse of RerunsApiResult</returns>
+        ApiResponse<RerunsApiResult> ApiV2TestResultsIdRerunsGetWithHttpInfo(Guid id);
         /// <summary>
         /// Search for test results
         /// </summary>
@@ -539,8 +539,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of RerunsModel</returns>
-        System.Threading.Tasks.Task<RerunsModel> ApiV2TestResultsIdRerunsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of RerunsApiResult</returns>
+        System.Threading.Tasks.Task<RerunsApiResult> ApiV2TestResultsIdRerunsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get reruns
@@ -551,8 +551,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (RerunsModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<RerunsModel>> ApiV2TestResultsIdRerunsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (RerunsApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<RerunsApiResult>> ApiV2TestResultsIdRerunsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search for test results
         /// </summary>
@@ -1809,10 +1809,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
-        /// <returns>RerunsModel</returns>
-        public RerunsModel ApiV2TestResultsIdRerunsGet(Guid id)
+        /// <returns>RerunsApiResult</returns>
+        public RerunsApiResult ApiV2TestResultsIdRerunsGet(Guid id)
         {
-            TestIT.ApiClient.Client.ApiResponse<RerunsModel> localVarResponse = ApiV2TestResultsIdRerunsGetWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<RerunsApiResult> localVarResponse = ApiV2TestResultsIdRerunsGetWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
@@ -1821,8 +1821,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
-        /// <returns>ApiResponse of RerunsModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<RerunsModel> ApiV2TestResultsIdRerunsGetWithHttpInfo(Guid id)
+        /// <returns>ApiResponse of RerunsApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<RerunsApiResult> ApiV2TestResultsIdRerunsGetWithHttpInfo(Guid id)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1849,7 +1849,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<RerunsModel>("/api/v2/testResults/{id}/reruns", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<RerunsApiResult>("/api/v2/testResults/{id}/reruns", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1866,10 +1866,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of RerunsModel</returns>
-        public async System.Threading.Tasks.Task<RerunsModel> ApiV2TestResultsIdRerunsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of RerunsApiResult</returns>
+        public async System.Threading.Tasks.Task<RerunsApiResult> ApiV2TestResultsIdRerunsGetAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<RerunsModel> localVarResponse = await ApiV2TestResultsIdRerunsGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<RerunsApiResult> localVarResponse = await ApiV2TestResultsIdRerunsGetWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1879,8 +1879,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test result unique ID</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (RerunsModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<RerunsModel>> ApiV2TestResultsIdRerunsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (RerunsApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<RerunsApiResult>> ApiV2TestResultsIdRerunsGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1910,7 +1910,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<RerunsModel>("/api/v2/testResults/{id}/reruns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<RerunsApiResult>("/api/v2/testResults/{id}/reruns", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

@@ -734,9 +734,7 @@ namespace TestIT.ApiClient.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
+                "application/json"
             };
 
             var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -795,9 +793,7 @@ namespace TestIT.ApiClient.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
+                "application/json"
             };
 
 
@@ -852,10 +848,7 @@ namespace TestIT.ApiClient.Api
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -917,10 +910,7 @@ namespace TestIT.ApiClient.Api
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -982,17 +972,12 @@ namespace TestIT.ApiClient.Api
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
+                "application/json"
             };
 
             var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1050,17 +1035,12 @@ namespace TestIT.ApiClient.Api
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
+                "application/json"
             };
 
 
@@ -1116,10 +1096,7 @@ namespace TestIT.ApiClient.Api
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1181,10 +1158,7 @@ namespace TestIT.ApiClient.Api
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
@@ -1252,9 +1226,7 @@ namespace TestIT.ApiClient.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
+                "application/json"
             };
 
             var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1317,9 +1289,7 @@ namespace TestIT.ApiClient.Api
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
+                "application/json"
             };
 
 
@@ -1373,17 +1343,12 @@ namespace TestIT.ApiClient.Api
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
+                "application/json"
             };
 
             var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1438,17 +1403,12 @@ namespace TestIT.ApiClient.Api
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
+                "application/json"
             };
 
 
@@ -1502,17 +1462,12 @@ namespace TestIT.ApiClient.Api
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json",
-                "application/json",
-                "text/json",
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
+                "application/json"
             };
 
             var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
@@ -1567,17 +1522,12 @@ namespace TestIT.ApiClient.Api
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
             string[] _contentTypes = new string[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/*+json"
+                "application/json"
             };
 
             // to determine the Accept header
             string[] _accepts = new string[] {
-                "text/plain",
-                "application/json",
-                "text/json"
+                "application/json"
             };
 
 

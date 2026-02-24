@@ -27,88 +27,81 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// WorkItemCommentModel
+    /// WorkItemCommentApiResult
     /// </summary>
-    [DataContract(Name = "WorkItemCommentModel")]
-    public partial class WorkItemCommentModel : IValidatableObject
+    [DataContract(Name = "WorkItemCommentApiResult")]
+    public partial class WorkItemCommentApiResult : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemCommentModel" /> class.
+        /// Initializes a new instance of the <see cref="WorkItemCommentApiResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WorkItemCommentModel() { }
+        protected WorkItemCommentApiResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorkItemCommentModel" /> class.
+        /// Initializes a new instance of the <see cref="WorkItemCommentApiResult" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
-        /// <param name="text">text (required).</param>
-        /// <param name="user">user (required).</param>
-        /// <param name="createdById">createdById (required).</param>
-        /// <param name="modifiedById">modifiedById.</param>
-        /// <param name="createdDate">createdDate (required).</param>
-        /// <param name="modifiedDate">modifiedDate.</param>
-        public WorkItemCommentModel(Guid id = default, string text = default, UserWithRankModel user = default, Guid createdById = default, Guid? modifiedById = default, DateTime createdDate = default, DateTime? modifiedDate = default)
+        /// <param name="id">ID of the comment (required).</param>
+        /// <param name="text">Text of the comment (required).</param>
+        /// <param name="createdById">ID of user created comment (required).</param>
+        /// <param name="modifiedById">ID of user modified comment (required).</param>
+        /// <param name="createdDate">Comment created date (required).</param>
+        /// <param name="modifiedDate">Comment modified date (required).</param>
+        public WorkItemCommentApiResult(Guid id = default, string text = default, Guid createdById = default, Guid modifiedById = default, DateTime createdDate = default, DateTime modifiedDate = default)
         {
             this.Id = id;
             // to ensure "text" is required (not null)
             if (text == null)
             {
-                throw new ArgumentNullException("text is a required property for WorkItemCommentModel and cannot be null");
+                throw new ArgumentNullException("text is a required property for WorkItemCommentApiResult and cannot be null");
             }
             this.Text = text;
-            // to ensure "user" is required (not null)
-            if (user == null)
-            {
-                throw new ArgumentNullException("user is a required property for WorkItemCommentModel and cannot be null");
-            }
-            this.User = user;
             this.CreatedById = createdById;
-            this.CreatedDate = createdDate;
             this.ModifiedById = modifiedById;
+            this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// ID of the comment
         /// </summary>
+        /// <value>ID of the comment</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Text
+        /// Text of the comment
         /// </summary>
+        /// <value>Text of the comment</value>
         [DataMember(Name = "text", IsRequired = true, EmitDefaultValue = true)]
         public string Text { get; set; }
 
         /// <summary>
-        /// Gets or Sets User
+        /// ID of user created comment
         /// </summary>
-        [DataMember(Name = "user", IsRequired = true, EmitDefaultValue = true)]
-        public UserWithRankModel User { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CreatedById
-        /// </summary>
+        /// <value>ID of user created comment</value>
         [DataMember(Name = "createdById", IsRequired = true, EmitDefaultValue = true)]
         public Guid CreatedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedById
+        /// ID of user modified comment
         /// </summary>
-        [DataMember(Name = "modifiedById", EmitDefaultValue = true)]
-        public Guid? ModifiedById { get; set; }
+        /// <value>ID of user modified comment</value>
+        [DataMember(Name = "modifiedById", IsRequired = true, EmitDefaultValue = true)]
+        public Guid ModifiedById { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedDate
+        /// Comment created date
         /// </summary>
+        /// <value>Comment created date</value>
         [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
 
         /// <summary>
-        /// Gets or Sets ModifiedDate
+        /// Comment modified date
         /// </summary>
-        [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
-        public DateTime? ModifiedDate { get; set; }
+        /// <value>Comment modified date</value>
+        [DataMember(Name = "modifiedDate", IsRequired = true, EmitDefaultValue = true)]
+        public DateTime ModifiedDate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -117,10 +110,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class WorkItemCommentModel {\n");
+            sb.Append("class WorkItemCommentApiResult {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Text: ").Append(Text).Append("\n");
-            sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");

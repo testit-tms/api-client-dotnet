@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **Namespace** | **string** | Specifies a test result namespace to search for | [optional] 
 **ClassName** | **string** | Specifies a test result class name to search for | [optional] 
 **AutoTestGlobalIds** | **List&lt;long&gt;** | Specifies an autotest global IDs to search results for | [optional] 
+**AutoTestTags** | **List&lt;string&gt;** | Specifies autotest tags to include in the search. | [optional] 
+**ExcludeAutoTestTags** | **List&lt;string&gt;** | Specifies autotest tags to exclude from the search. | [optional] 
 **Name** | **string** | Specifies an autotest name to search results for | [optional] 
 **CreatedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a test result creation date and time range to search for | [optional] 
 **ModifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a test result modified date and time range to search for | [optional] 

@@ -10,7 +10,9 @@ Name | Type | Description | Notes
 **NewVersionId** | **Guid** |  | 
 **WorkItemChangedFields** | [**WorkItemChangedFieldsViewModel**](WorkItemChangedFieldsViewModel.md) |  | 
 **CreatedById** | **Guid** |  | 
-**CreatedDate** | **DateTime?** |  | [optional] 
+**CreatedDate** | **DateTime** |  | 
+**ModifiedById** | **Guid?** |  | [optional] 
+**ModifiedDate** | **DateTime?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

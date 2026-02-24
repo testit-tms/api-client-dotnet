@@ -27,46 +27,43 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// RerunTestResultModel
+    /// RerunsApiResult
     /// </summary>
-    [DataContract(Name = "RerunTestResultModel")]
-    public partial class RerunTestResultModel : IValidatableObject
+    [DataContract(Name = "RerunsApiResult")]
+    public partial class RerunsApiResult : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="RerunTestResultModel" /> class.
+        /// Initializes a new instance of the <see cref="RerunsApiResult" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected RerunTestResultModel() { }
+        protected RerunsApiResult() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="RerunTestResultModel" /> class.
+        /// Initializes a new instance of the <see cref="RerunsApiResult" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
-        /// <param name="outcome">outcome.</param>
-        /// <param name="runNumber">runNumber (required).</param>
-        public RerunTestResultModel(Guid id = default, string outcome = default, int runNumber = default)
+        /// <param name="rerunCount">rerunCount (required).</param>
+        /// <param name="rerunTestResults">rerunTestResults (required).</param>
+        public RerunsApiResult(int rerunCount = default, List<RerunTestResultApiResult> rerunTestResults = default)
         {
-            this.Id = id;
-            this.RunNumber = runNumber;
-            this.Outcome = outcome;
+            this.RerunCount = rerunCount;
+            // to ensure "rerunTestResults" is required (not null)
+            if (rerunTestResults == null)
+            {
+                throw new ArgumentNullException("rerunTestResults is a required property for RerunsApiResult and cannot be null");
+            }
+            this.RerunTestResults = rerunTestResults;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets RerunCount
         /// </summary>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public Guid Id { get; set; }
+        [DataMember(Name = "rerunCount", IsRequired = true, EmitDefaultValue = true)]
+        public int RerunCount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Outcome
+        /// Gets or Sets RerunTestResults
         /// </summary>
-        [DataMember(Name = "outcome", EmitDefaultValue = true)]
-        public string Outcome { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RunNumber
-        /// </summary>
-        [DataMember(Name = "runNumber", IsRequired = true, EmitDefaultValue = true)]
-        public int RunNumber { get; set; }
+        [DataMember(Name = "rerunTestResults", IsRequired = true, EmitDefaultValue = true)]
+        public List<RerunTestResultApiResult> RerunTestResults { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -75,10 +72,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class RerunTestResultModel {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Outcome: ").Append(Outcome).Append("\n");
-            sb.Append("  RunNumber: ").Append(RunNumber).Append("\n");
+            sb.Append("class RerunsApiResult {\n");
+            sb.Append("  RerunCount: ").Append(RerunCount).Append("\n");
+            sb.Append("  RerunTestResults: ").Append(RerunTestResults).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -56,7 +56,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="excludeTags">Collection of tags to exclude.</param>
         /// <param name="autoTestIds">Collection of identifiers of linked autotests.</param>
         /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
-        public WorkItemLocalFilterModel(string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemEntityTypes> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int32RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default)
+        /// <param name="links">Specifies a work item filter by its links.</param>
+        /// <param name="externalMetadata">Specifies work item filter by its external metadata.</param>
+        public WorkItemLocalFilterModel(string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemEntityTypes> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int32RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default, WorkItemLinkFilterModel links = default, WorkItemExternalMetadataFilterModel externalMetadata = default)
         {
             this.Name = name;
             this.Ids = ids;
@@ -79,6 +81,8 @@ namespace TestIT.ApiClient.Model
             this.ExcludeTags = excludeTags;
             this.AutoTestIds = autoTestIds;
             this.WorkItemVersionIds = workItemVersionIds;
+            this.Links = links;
+            this.ExternalMetadata = externalMetadata;
         }
 
         /// <summary>
@@ -229,6 +233,20 @@ namespace TestIT.ApiClient.Model
         public List<Guid> WorkItemVersionIds { get; set; }
 
         /// <summary>
+        /// Specifies a work item filter by its links
+        /// </summary>
+        /// <value>Specifies a work item filter by its links</value>
+        [DataMember(Name = "links", EmitDefaultValue = true)]
+        public WorkItemLinkFilterModel Links { get; set; }
+
+        /// <summary>
+        /// Specifies work item filter by its external metadata
+        /// </summary>
+        /// <value>Specifies work item filter by its external metadata</value>
+        [DataMember(Name = "externalMetadata", EmitDefaultValue = true)]
+        public WorkItemExternalMetadataFilterModel ExternalMetadata { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -257,6 +275,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ExcludeTags: ").Append(ExcludeTags).Append("\n");
             sb.Append("  AutoTestIds: ").Append(AutoTestIds).Append("\n");
             sb.Append("  WorkItemVersionIds: ").Append(WorkItemVersionIds).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  ExternalMetadata: ").Append(ExternalMetadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
