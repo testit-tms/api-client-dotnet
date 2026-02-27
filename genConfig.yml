@@ -2,5 +2,5 @@ targetFramework: "netstandard2.0"
 packageName: "TestIT.ApiClient"
 library: "httpclient"
 apiName: Api
-packageVersion: 5.5.1
+packageVersion: 5.5.2
 hideGenerationTimestamp: true
