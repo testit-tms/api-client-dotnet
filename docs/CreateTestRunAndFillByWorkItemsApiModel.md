@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **LaunchSource** | **string** | Specifies the test run launch source. | [optional] 
 **Attachments** | [**List&lt;AssignAttachmentApiModel&gt;**](AssignAttachmentApiModel.md) | Collection of attachment ids to relate to the test run | [optional] 
 **Links** | [**List&lt;CreateLinkApiModel&gt;**](CreateLinkApiModel.md) | Collection of links to relate to the test run | [optional] 
+**Tags** | **List&lt;string&gt;** | Collection of tags to assign to the test run | [optional] 
 **ConfigurationIds** | **List&lt;Guid&gt;** | Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs. | 
 **WorkItemIds** | **List&lt;Guid&gt;** | Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs. | 
 

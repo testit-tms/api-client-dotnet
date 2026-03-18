@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **FailureCategory** | [**List&lt;FailureCategory&gt;**](FailureCategory.md) | Specifies failure categories | [optional] 
 **CompletedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a test run range of completed date to search for | [optional] 
 **TestResultsConfigurationIds** | **List&lt;Guid&gt;** | Specifies a test result configuration IDs to search for | [optional] 
+**Tags** | **List&lt;string&gt;** | Specifies a test run tags to search for | [optional] 
+**ExcludeTags** | **List&lt;string&gt;** | Specifies a test run excluded tags to search for | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

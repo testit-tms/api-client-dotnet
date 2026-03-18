@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Description** | **string** | Test run description | [optional] 
 **AttachmentUpdateScheme** | [**UpdateMultipleAttachmentsApiModel**](UpdateMultipleAttachmentsApiModel.md) | Set of attachment ids | [optional] 
 **LinkUpdateScheme** | [**UpdateMultipleLinksApiModel**](UpdateMultipleLinksApiModel.md) | Set of links | [optional] 
+**TagUpdateScheme** | [**UpdateMultipleTagsApiModel**](UpdateMultipleTagsApiModel.md) | Set of tags | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

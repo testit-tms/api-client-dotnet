@@ -61,7 +61,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="autoTestsCount">Number of AutoTests run in the test run (required).</param>
         /// <param name="statistics">Statistics of the test run (required).</param>
         /// <param name="testResultsConfigurations">Test results configurations (required).</param>
-        public TestRunShortApiResult(Guid id = default, string name = default, TestRunState state = default, TestStatusApiResult status = default, DateTime createdDate = default, DateTime? startedDate = default, DateTime? completedDate = default, Guid createdById = default, Guid? modifiedById = default, bool isDeleted = default, int autoTestsCount = default, TestResultsStatisticsApiResult statistics = default, List<ConfigurationShortApiResult> testResultsConfigurations = default)
+        /// <param name="tags">Collection of tags associated with the test run (required).</param>
+        public TestRunShortApiResult(Guid id = default, string name = default, TestRunState state = default, TestStatusApiResult status = default, DateTime createdDate = default, DateTime? startedDate = default, DateTime? completedDate = default, Guid createdById = default, Guid? modifiedById = default, bool isDeleted = default, int autoTestsCount = default, TestResultsStatisticsApiResult statistics = default, List<ConfigurationShortApiResult> testResultsConfigurations = default, List<string> tags = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -93,6 +94,12 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("testResultsConfigurations is a required property for TestRunShortApiResult and cannot be null");
             }
             this.TestResultsConfigurations = testResultsConfigurations;
+            // to ensure "tags" is required (not null)
+            if (tags == null)
+            {
+                throw new ArgumentNullException("tags is a required property for TestRunShortApiResult and cannot be null");
+            }
+            this.Tags = tags;
             this.StartedDate = startedDate;
             this.CompletedDate = completedDate;
             this.ModifiedById = modifiedById;
@@ -183,6 +190,13 @@ namespace TestIT.ApiClient.Model
         public List<ConfigurationShortApiResult> TestResultsConfigurations { get; set; }
 
         /// <summary>
+        /// Collection of tags associated with the test run
+        /// </summary>
+        /// <value>Collection of tags associated with the test run</value>
+        [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = true)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -203,6 +217,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  AutoTestsCount: ").Append(AutoTestsCount).Append("\n");
             sb.Append("  Statistics: ").Append(Statistics).Append("\n");
             sb.Append("  TestResultsConfigurations: ").Append(TestResultsConfigurations).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -48,7 +48,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="launchSource">Specifies the test run launch source..</param>
         /// <param name="attachments">Collection of attachment ids to relate to the test run.</param>
         /// <param name="links">Collection of links to relate to the test run.</param>
-        public CreateTestRunAndFillByAutoTestsApiModel(Guid projectId = default, string name = default, List<Guid> configurationIds = default, List<string> autoTestExternalIds = default, string description = default, string launchSource = default, List<AssignAttachmentApiModel> attachments = default, List<CreateLinkApiModel> links = default)
+        /// <param name="tags">Collection of tags to assign to the test run.</param>
+        public CreateTestRunAndFillByAutoTestsApiModel(Guid projectId = default, string name = default, List<Guid> configurationIds = default, List<string> autoTestExternalIds = default, string description = default, string launchSource = default, List<AssignAttachmentApiModel> attachments = default, List<CreateLinkApiModel> links = default, List<string> tags = default)
         {
             this.ProjectId = projectId;
             // to ensure "configurationIds" is required (not null)
@@ -68,6 +69,7 @@ namespace TestIT.ApiClient.Model
             this.LaunchSource = launchSource;
             this.Attachments = attachments;
             this.Links = links;
+            this.Tags = tags;
         }
 
         /// <summary>
@@ -127,6 +129,13 @@ namespace TestIT.ApiClient.Model
         public List<CreateLinkApiModel> Links { get; set; }
 
         /// <summary>
+        /// Collection of tags to assign to the test run
+        /// </summary>
+        /// <value>Collection of tags to assign to the test run</value>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -142,6 +151,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  LaunchSource: ").Append(LaunchSource).Append("\n");
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -27,36 +27,54 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// TagApiModel
+    /// OpenIdConnectionClientShortModel
     /// </summary>
-    [DataContract(Name = "TagApiModel")]
-    public partial class TagApiModel : IValidatableObject
+    [DataContract(Name = "OpenIdConnectionClientShortModel")]
+    public partial class OpenIdConnectionClientShortModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TagApiModel" /> class.
+        /// Initializes a new instance of the <see cref="OpenIdConnectionClientShortModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected TagApiModel() { }
+        protected OpenIdConnectionClientShortModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="TagApiModel" /> class.
+        /// Initializes a new instance of the <see cref="OpenIdConnectionClientShortModel" /> class.
         /// </summary>
-        /// <param name="name">Name of the tag (required).</param>
-        public TagApiModel(string name = default)
+        /// <param name="id">id (required).</param>
+        /// <param name="name">name.</param>
+        /// <param name="isEnabled">isEnabled (required).</param>
+        /// <param name="settings">settings.</param>
+        public OpenIdConnectionClientShortModel(Guid id = default, string name = default, bool isEnabled = default, OpenIdConnectionSettingsShortClientModel settings = default)
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for TagApiModel and cannot be null");
-            }
+            this.Id = id;
+            this.IsEnabled = isEnabled;
             this.Name = name;
+            this.Settings = settings;
         }
 
         /// <summary>
-        /// Name of the tag
+        /// Gets or Sets Id
         /// </summary>
-        /// <value>Name of the tag</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
+        public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Name
+        /// </summary>
+        [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsEnabled
+        /// </summary>
+        [DataMember(Name = "isEnabled", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsEnabled { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Settings
+        /// </summary>
+        [DataMember(Name = "settings", EmitDefaultValue = true)]
+        public OpenIdConnectionSettingsShortClientModel Settings { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,8 +83,11 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TagApiModel {\n");
+            sb.Append("class OpenIdConnectionClientShortModel {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  IsEnabled: ").Append(IsEnabled).Append("\n");
+            sb.Append("  Settings: ").Append(Settings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,18 +108,6 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Name (string) maxLength
-            if (this.Name != null && this.Name.Length > 255)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
-            }
-
-            // Name (string) minLength
-            if (this.Name != null && this.Name.Length < 0)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
-            }
-
             yield break;
         }
     }

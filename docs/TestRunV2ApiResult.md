@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **CustomParameters** | **Dictionary&lt;string, string&gt;** | Customers test run parameters | [optional] 
 **Webhooks** | [**List&lt;NamedEntityApiModel&gt;**](NamedEntityApiModel.md) | Enabled webhooks | 
 **RunCount** | **int** | Run count | 
+**Tags** | **List&lt;string&gt;** | Collection of tags associated with the test run | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

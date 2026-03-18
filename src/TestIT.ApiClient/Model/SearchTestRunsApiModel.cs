@@ -42,7 +42,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="completedDate">completedDate.</param>
         /// <param name="createdByIds">createdByIds.</param>
         /// <param name="modifiedByIds">modifiedByIds.</param>
-        public SearchTestRunsApiModel(string name = default, List<TestRunState> states = default, List<string> statusCodes = default, DateTimeRangeSelectorModel startedDate = default, DateTimeRangeSelectorModel completedDate = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default)
+        /// <param name="tags">tags.</param>
+        /// <param name="excludeTags">excludeTags.</param>
+        public SearchTestRunsApiModel(string name = default, List<TestRunState> states = default, List<string> statusCodes = default, DateTimeRangeSelectorModel startedDate = default, DateTimeRangeSelectorModel completedDate = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<string> tags = default, List<string> excludeTags = default)
         {
             this.Name = name;
             this.States = states;
@@ -51,6 +53,8 @@ namespace TestIT.ApiClient.Model
             this.CompletedDate = completedDate;
             this.CreatedByIds = createdByIds;
             this.ModifiedByIds = modifiedByIds;
+            this.Tags = tags;
+            this.ExcludeTags = excludeTags;
         }
 
         /// <summary>
@@ -97,6 +101,18 @@ namespace TestIT.ApiClient.Model
         public List<Guid> ModifiedByIds { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tags
+        /// </summary>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExcludeTags
+        /// </summary>
+        [DataMember(Name = "excludeTags", EmitDefaultValue = true)]
+        public List<string> ExcludeTags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -111,6 +127,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  CompletedDate: ").Append(CompletedDate).Append("\n");
             sb.Append("  CreatedByIds: ").Append(CreatedByIds).Append("\n");
             sb.Append("  ModifiedByIds: ").Append(ModifiedByIds).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
+            sb.Append("  ExcludeTags: ").Append(ExcludeTags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

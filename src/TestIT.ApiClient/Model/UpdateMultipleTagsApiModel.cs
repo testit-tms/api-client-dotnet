@@ -27,36 +27,40 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// TagApiModel
+    /// UpdateMultipleTagsApiModel
     /// </summary>
-    [DataContract(Name = "TagApiModel")]
-    public partial class TagApiModel : IValidatableObject
+    [DataContract(Name = "UpdateMultipleTagsApiModel")]
+    public partial class UpdateMultipleTagsApiModel : IValidatableObject
     {
+
         /// <summary>
-        /// Initializes a new instance of the <see cref="TagApiModel" /> class.
+        /// The action that specifies which operation should be performed on the supplied tags.
+        /// </summary>
+        /// <value>The action that specifies which operation should be performed on the supplied tags.</value>
+        [DataMember(Name = "action", IsRequired = true, EmitDefaultValue = true)]
+        public ActionUpdate Action { get; set; }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UpdateMultipleTagsApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected TagApiModel() { }
+        protected UpdateMultipleTagsApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="TagApiModel" /> class.
+        /// Initializes a new instance of the <see cref="UpdateMultipleTagsApiModel" /> class.
         /// </summary>
-        /// <param name="name">Name of the tag (required).</param>
-        public TagApiModel(string name = default)
+        /// <param name="action">The action that specifies which operation should be performed on the supplied tags. (required).</param>
+        /// <param name="tags">The collection of tag names to be processed..</param>
+        public UpdateMultipleTagsApiModel(ActionUpdate action = default, List<TagApiModel> tags = default)
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for TagApiModel and cannot be null");
-            }
-            this.Name = name;
+            this.Action = action;
+            this.Tags = tags;
         }
 
         /// <summary>
-        /// Name of the tag
+        /// The collection of tag names to be processed.
         /// </summary>
-        /// <value>Name of the tag</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
+        /// <value>The collection of tag names to be processed.</value>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<TagApiModel> Tags { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,8 +69,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TagApiModel {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("class UpdateMultipleTagsApiModel {\n");
+            sb.Append("  Action: ").Append(Action).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,18 +92,6 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Name (string) maxLength
-            if (this.Name != null && this.Name.Length > 255)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
-            }
-
-            // Name (string) minLength
-            if (this.Name != null && this.Name.Length < 0)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
-            }
-
             yield break;
         }
     }

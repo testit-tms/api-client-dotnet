@@ -27,36 +27,33 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// TagApiModel
+    /// OpenIdConnectionSettingsShortClientModel
     /// </summary>
-    [DataContract(Name = "TagApiModel")]
-    public partial class TagApiModel : IValidatableObject
+    [DataContract(Name = "OpenIdConnectionSettingsShortClientModel")]
+    public partial class OpenIdConnectionSettingsShortClientModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="TagApiModel" /> class.
+        /// Initializes a new instance of the <see cref="OpenIdConnectionSettingsShortClientModel" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected TagApiModel() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TagApiModel" /> class.
-        /// </summary>
-        /// <param name="name">Name of the tag (required).</param>
-        public TagApiModel(string name = default)
+        /// <param name="authority">authority.</param>
+        /// <param name="imageUrl">imageUrl.</param>
+        public OpenIdConnectionSettingsShortClientModel(string authority = default, string imageUrl = default)
         {
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for TagApiModel and cannot be null");
-            }
-            this.Name = name;
+            this.Authority = authority;
+            this.ImageUrl = imageUrl;
         }
 
         /// <summary>
-        /// Name of the tag
+        /// Gets or Sets Authority
         /// </summary>
-        /// <value>Name of the tag</value>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
+        [DataMember(Name = "authority", EmitDefaultValue = true)]
+        public string Authority { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ImageUrl
+        /// </summary>
+        [DataMember(Name = "imageUrl", EmitDefaultValue = true)]
+        public string ImageUrl { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -65,8 +62,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class TagApiModel {\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("class OpenIdConnectionSettingsShortClientModel {\n");
+            sb.Append("  Authority: ").Append(Authority).Append("\n");
+            sb.Append("  ImageUrl: ").Append(ImageUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -87,18 +85,6 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // Name (string) maxLength
-            if (this.Name != null && this.Name.Length > 255)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
-            }
-
-            // Name (string) minLength
-            if (this.Name != null && this.Name.Length < 0)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
-            }
-
             yield break;
         }
     }
