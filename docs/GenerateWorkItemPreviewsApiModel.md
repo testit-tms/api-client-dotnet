@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExternalServiceId** | **Guid** |  | 
-**TaskKey** | **string** |  | 
-**SectionId** | **Guid** |  | 
-**Temperature** | **float** |  | 
-**PreviewLimit** | **int** |  | 
+**ExternalServiceId** | **Guid** | The ID of the external AI service to be used for generation. | 
+**TaskKey** | **string** | The key of the issue in an issue tracker (e.g., JIRA-123). | [optional] 
+**IssueKey** | **string** | The key of the issue in an issue tracker (e.g., JIRA-123). | [optional] 
+**UserContext** | **string** | Additional user context or description of the issue if no issue key is provided. | [optional] 
+**Temperature** | **float** | Controls randomness of the AI model output. | 
+**PreviewLimit** | **int** | Number of work item previews to generate. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -34,9 +34,9 @@ namespace TestIT.ApiClient.Model
     {
 
         /// <summary>
-        /// Collection of possible status types
+        /// Type of the test status (e.g., Passed, Failed).
         /// </summary>
-        /// <value>Collection of possible status types</value>
+        /// <value>Type of the test status (e.g., Passed, Failed).</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public TestStatusApiType Type { get; set; }
         /// <summary>
@@ -47,45 +47,48 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TestStatusShortApiResult" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
-        /// <param name="name">name (required).</param>
-        /// <param name="code">code (required).</param>
-        /// <param name="type">Collection of possible status types (required).</param>
-        public TestStatusShortApiResult(Guid id = default, string name = default, string code = default, TestStatusApiType type = default)
+        /// <param name="id">Identifier of the test status. (required).</param>
+        /// <param name="code">Code representing the test status. (required).</param>
+        /// <param name="name">Name of the test status. (required).</param>
+        /// <param name="type">Type of the test status (e.g., Passed, Failed). (required).</param>
+        public TestStatusShortApiResult(Guid id = default, string code = default, string name = default, TestStatusApiType type = default)
         {
             this.Id = id;
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for TestStatusShortApiResult and cannot be null");
-            }
-            this.Name = name;
             // to ensure "code" is required (not null)
             if (code == null)
             {
                 throw new ArgumentNullException("code is a required property for TestStatusShortApiResult and cannot be null");
             }
             this.Code = code;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for TestStatusShortApiResult and cannot be null");
+            }
+            this.Name = name;
             this.Type = type;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Identifier of the test status.
         /// </summary>
+        /// <value>Identifier of the test status.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Code representing the test status.
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Code
-        /// </summary>
+        /// <value>Code representing the test status.</value>
         [DataMember(Name = "code", IsRequired = true, EmitDefaultValue = true)]
         public string Code { get; set; }
+
+        /// <summary>
+        /// Name of the test status.
+        /// </summary>
+        /// <value>Name of the test status.</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        public string Name { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -96,8 +99,8 @@ namespace TestIT.ApiClient.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class TestStatusShortApiResult {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Code: ").Append(Code).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
