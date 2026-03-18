@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **VersionNumber** | **int** |  | 
 **MedianDuration** | **long?** |  | [optional] 
 **IsDeleted** | **bool?** |  | [optional] 
-**Duration** | **int** |  | 
+**Duration** | **long** |  | 
 **State** | **WorkItemState** |  | 
 **Tags** | **List&lt;string&gt;** |  | 
 **Attributes** | **Dictionary&lt;string, Object&gt;** |  | 

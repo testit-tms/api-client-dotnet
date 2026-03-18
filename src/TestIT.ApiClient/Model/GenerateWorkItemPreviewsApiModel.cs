@@ -40,52 +40,62 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GenerateWorkItemPreviewsApiModel" /> class.
         /// </summary>
-        /// <param name="externalServiceId">externalServiceId (required).</param>
-        /// <param name="taskKey">taskKey (required).</param>
-        /// <param name="sectionId">sectionId (required).</param>
-        /// <param name="temperature">temperature (required).</param>
-        /// <param name="previewLimit">previewLimit (required).</param>
-        public GenerateWorkItemPreviewsApiModel(Guid externalServiceId = default, string taskKey = default, Guid sectionId = default, float temperature = default, int previewLimit = default)
+        /// <param name="externalServiceId">The ID of the external AI service to be used for generation. (required).</param>
+        /// <param name="taskKey">The key of the issue in an issue tracker (e.g., JIRA-123)..</param>
+        /// <param name="issueKey">The key of the issue in an issue tracker (e.g., JIRA-123)..</param>
+        /// <param name="userContext">Additional user context or description of the issue if no issue key is provided..</param>
+        /// <param name="temperature">Controls randomness of the AI model output. (required).</param>
+        /// <param name="previewLimit">Number of work item previews to generate. (required).</param>
+        public GenerateWorkItemPreviewsApiModel(Guid externalServiceId = default, string taskKey = default, string issueKey = default, string userContext = default, float temperature = default, int previewLimit = default)
         {
             this.ExternalServiceId = externalServiceId;
-            // to ensure "taskKey" is required (not null)
-            if (taskKey == null)
-            {
-                throw new ArgumentNullException("taskKey is a required property for GenerateWorkItemPreviewsApiModel and cannot be null");
-            }
-            this.TaskKey = taskKey;
-            this.SectionId = sectionId;
             this.Temperature = temperature;
             this.PreviewLimit = previewLimit;
+            this.TaskKey = taskKey;
+            this.IssueKey = issueKey;
+            this.UserContext = userContext;
         }
 
         /// <summary>
-        /// Gets or Sets ExternalServiceId
+        /// The ID of the external AI service to be used for generation.
         /// </summary>
+        /// <value>The ID of the external AI service to be used for generation.</value>
         [DataMember(Name = "externalServiceId", IsRequired = true, EmitDefaultValue = true)]
         public Guid ExternalServiceId { get; set; }
 
         /// <summary>
-        /// Gets or Sets TaskKey
+        /// The key of the issue in an issue tracker (e.g., JIRA-123).
         /// </summary>
-        [DataMember(Name = "taskKey", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>The key of the issue in an issue tracker (e.g., JIRA-123).</value>
+        [DataMember(Name = "taskKey", EmitDefaultValue = true)]
+        [Obsolete]
         public string TaskKey { get; set; }
 
         /// <summary>
-        /// Gets or Sets SectionId
+        /// The key of the issue in an issue tracker (e.g., JIRA-123).
         /// </summary>
-        [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid SectionId { get; set; }
+        /// <value>The key of the issue in an issue tracker (e.g., JIRA-123).</value>
+        [DataMember(Name = "issueKey", EmitDefaultValue = true)]
+        public string IssueKey { get; set; }
 
         /// <summary>
-        /// Gets or Sets Temperature
+        /// Additional user context or description of the issue if no issue key is provided.
         /// </summary>
+        /// <value>Additional user context or description of the issue if no issue key is provided.</value>
+        [DataMember(Name = "userContext", EmitDefaultValue = true)]
+        public string UserContext { get; set; }
+
+        /// <summary>
+        /// Controls randomness of the AI model output.
+        /// </summary>
+        /// <value>Controls randomness of the AI model output.</value>
         [DataMember(Name = "temperature", IsRequired = true, EmitDefaultValue = true)]
         public float Temperature { get; set; }
 
         /// <summary>
-        /// Gets or Sets PreviewLimit
+        /// Number of work item previews to generate.
         /// </summary>
+        /// <value>Number of work item previews to generate.</value>
         [DataMember(Name = "previewLimit", IsRequired = true, EmitDefaultValue = true)]
         public int PreviewLimit { get; set; }
 
@@ -99,7 +109,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("class GenerateWorkItemPreviewsApiModel {\n");
             sb.Append("  ExternalServiceId: ").Append(ExternalServiceId).Append("\n");
             sb.Append("  TaskKey: ").Append(TaskKey).Append("\n");
-            sb.Append("  SectionId: ").Append(SectionId).Append("\n");
+            sb.Append("  IssueKey: ").Append(IssueKey).Append("\n");
+            sb.Append("  UserContext: ").Append(UserContext).Append("\n");
             sb.Append("  Temperature: ").Append(Temperature).Append("\n");
             sb.Append("  PreviewLimit: ").Append(PreviewLimit).Append("\n");
             sb.Append("}\n");
@@ -122,10 +133,40 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
-            // TaskKey (string) minLength
-            if (this.TaskKey != null && this.TaskKey.Length < 1)
+            // TaskKey (string) maxLength
+            if (this.TaskKey != null && this.TaskKey.Length > 255)
             {
-                yield return new ValidationResult("Invalid value for TaskKey, length must be greater than 1.", new [] { "TaskKey" });
+                yield return new ValidationResult("Invalid value for TaskKey, length must be less than 255.", new [] { "TaskKey" });
+            }
+
+            // TaskKey (string) minLength
+            if (this.TaskKey != null && this.TaskKey.Length < 0)
+            {
+                yield return new ValidationResult("Invalid value for TaskKey, length must be greater than 0.", new [] { "TaskKey" });
+            }
+
+            // IssueKey (string) maxLength
+            if (this.IssueKey != null && this.IssueKey.Length > 255)
+            {
+                yield return new ValidationResult("Invalid value for IssueKey, length must be less than 255.", new [] { "IssueKey" });
+            }
+
+            // IssueKey (string) minLength
+            if (this.IssueKey != null && this.IssueKey.Length < 0)
+            {
+                yield return new ValidationResult("Invalid value for IssueKey, length must be greater than 0.", new [] { "IssueKey" });
+            }
+
+            // UserContext (string) maxLength
+            if (this.UserContext != null && this.UserContext.Length > 30000)
+            {
+                yield return new ValidationResult("Invalid value for UserContext, length must be less than 30000.", new [] { "UserContext" });
+            }
+
+            // UserContext (string) minLength
+            if (this.UserContext != null && this.UserContext.Length < 0)
+            {
+                yield return new ValidationResult("Invalid value for UserContext, length must be greater than 0.", new [] { "UserContext" });
             }
 
             // Temperature (float) maximum

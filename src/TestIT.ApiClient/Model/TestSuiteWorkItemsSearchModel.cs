@@ -64,7 +64,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
         /// <param name="links">Specifies a work item filter by its links.</param>
         /// <param name="externalMetadata">Specifies work item filter by its external metadata.</param>
-        public TestSuiteWorkItemsSearchModel(List<string> tagNames = default, List<WorkItemEntityTypes> entityTypes = default, string nameOrId = default, List<Guid> includeIds = default, List<Guid> excludeIds = default, List<Guid> projectIds = default, string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemEntityTypes> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int32RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default, WorkItemLinkFilterModel links = default, WorkItemExternalMetadataFilterModel externalMetadata = default)
+        public TestSuiteWorkItemsSearchModel(List<string> tagNames = default, List<WorkItemEntityTypes> entityTypes = default, string nameOrId = default, List<Guid> includeIds = default, List<Guid> excludeIds = default, List<Guid> projectIds = default, string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemEntityTypes> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int64RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default, WorkItemLinkFilterModel links = default, WorkItemExternalMetadataFilterModel externalMetadata = default)
         {
             this.TagNames = tagNames;
             this.EntityTypes = entityTypes;
@@ -242,7 +242,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Specifies a work item duration range to search for</value>
         [DataMember(Name = "duration", EmitDefaultValue = true)]
-        public Int32RangeSelectorModel Duration { get; set; }
+        public Int64RangeSelectorModel Duration { get; set; }
 
         /// <summary>
         /// Specifies a work item median duration range to search for

@@ -69,7 +69,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="section">section (required).</param>
         /// <param name="created">created (required).</param>
         /// <param name="modified">modified.</param>
-        public TestPlanTestPointsWorkItemSearchApiResult(Guid id = default, long globalId = default, Guid versionId = default, int versionNumber = default, long? medianDuration = default, bool? isDeleted = default, int duration = default, WorkItemState state = default, List<string> tags = default, Dictionary<string, Object> attributes = default, string orderRank = default, bool isAutomated = default, string name = default, WorkItemPriority priority = default, TestPlanTestPointsSectionSearchApiResult section = default, AuditApiResult created = default, AuditApiResult modified = default)
+        public TestPlanTestPointsWorkItemSearchApiResult(Guid id = default, long globalId = default, Guid versionId = default, int versionNumber = default, long? medianDuration = default, bool? isDeleted = default, long duration = default, WorkItemState state = default, List<string> tags = default, Dictionary<string, Object> attributes = default, string orderRank = default, bool isAutomated = default, string name = default, WorkItemPriority priority = default, TestPlanTestPointsSectionSearchApiResult section = default, AuditApiResult created = default, AuditApiResult modified = default)
         {
             this.Id = id;
             this.GlobalId = globalId;
@@ -155,7 +155,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Duration
         /// </summary>
         [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
-        public int Duration { get; set; }
+        public long Duration { get; set; }
 
         /// <summary>
         /// Gets or Sets Tags

@@ -40,8 +40,8 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ConfigurationShortApiResult" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
-        /// <param name="name">name (required).</param>
+        /// <param name="id">Identifier of the configuration. (required).</param>
+        /// <param name="name">Name of the configuration. (required).</param>
         public ConfigurationShortApiResult(Guid id = default, string name = default)
         {
             this.Id = id;
@@ -54,14 +54,16 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Identifier of the configuration.
         /// </summary>
+        /// <value>Identifier of the configuration.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the configuration.
         /// </summary>
+        /// <value>Name of the configuration.</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 

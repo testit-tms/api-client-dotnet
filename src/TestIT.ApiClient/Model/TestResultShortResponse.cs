@@ -61,7 +61,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="links">Collection of links attached to the test result (required).</param>
         /// <param name="attachments">Collection of files attached to the test result (required).</param>
         /// <param name="rerunCompletedCount">Run count (required).</param>
-        public TestResultShortResponse(Guid id = default, string name = default, long autotestGlobalId = default, string autotestExternalId = default, List<string> autoTestTags = default, Guid testRunId = default, Guid configurationId = default, string configurationName = default, string outcome = default, TestStatusApiResult status = default, List<AutoTestResultReasonShort> resultReasons = default, string comment = default, DateTime date = default, DateTime createdDate = default, DateTime? modifiedDate = default, DateTime? startedOn = default, DateTime? completedOn = default, long? duration = default, List<LinkShort> links = default, List<AttachmentApiResult> attachments = default, int rerunCompletedCount = default)
+        public TestResultShortResponse(Guid id = default, string name = default, long autotestGlobalId = default, string autotestExternalId = default, List<string> autoTestTags = default, Guid testRunId = default, Guid configurationId = default, string configurationName = default, string outcome = default, TestStatusApiResult status = default, List<AutoTestResultReasonShort> resultReasons = default, string comment = default, DateTime date = default, DateTime createdDate = default, DateTime? modifiedDate = default, DateTime? startedOn = default, DateTime? completedOn = default, long? duration = default, List<TestResultLinkApiResult> links = default, List<AttachmentApiResult> attachments = default, int rerunCompletedCount = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -253,7 +253,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Collection of links attached to the test result</value>
         [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = true)]
-        public List<LinkShort> Links { get; set; }
+        public List<TestResultLinkApiResult> Links { get; set; }
 
         /// <summary>
         /// Collection of files attached to the test result

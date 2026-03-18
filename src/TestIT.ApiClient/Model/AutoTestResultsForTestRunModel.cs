@@ -40,6 +40,13 @@ namespace TestIT.ApiClient.Model
         [DataMember(Name = "outcome", EmitDefaultValue = true)]
         [Obsolete]
         public AvailableTestResultOutcome? Outcome { get; set; }
+
+        /// <summary>
+        /// Specifies type of result status of the autotest execution.
+        /// </summary>
+        /// <value>Specifies type of result status of the autotest execution.</value>
+        [DataMember(Name = "statusType", EmitDefaultValue = true)]
+        public TestStatusType? StatusType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestResultsForTestRunModel" /> class.
         /// </summary>
@@ -53,7 +60,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="failureReasonNames">Specifies the cause of autotest failure..</param>
         /// <param name="autoTestExternalId">Specifies the external ID of the autotest, which was specified when the test run was created. (required).</param>
         /// <param name="outcome">Specifies the result of the autotest execution..</param>
-        /// <param name="statusCode">Specifies the result of the autotest execution..</param>
+        /// <param name="statusCode">Specifies code of result status of the autotest execution..</param>
+        /// <param name="statusType">Specifies type of result status of the autotest execution..</param>
         /// <param name="message">A comment for the result..</param>
         /// <param name="traces">An extended comment or a stack trace..</param>
         /// <param name="startedOn">Test run start date..</param>
@@ -65,7 +73,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="stepResults">Specifies the results of individual steps..</param>
         /// <param name="setupResults">Specifies the results of setup steps. For information on supported values, see the &#x60;stepResults&#x60; parameter above..</param>
         /// <param name="teardownResults">Specifies the results of the teardown steps. For information on supported values, see the &#x60;stepResults&#x60; parameter above..</param>
-        public AutoTestResultsForTestRunModel(Guid configurationId = default, List<LinkPostModel> links = default, List<FailureCategoryModel> failureReasonNames = default, string autoTestExternalId = default, AvailableTestResultOutcome? outcome = default, string statusCode = default, string message = default, string traces = default, DateTime? startedOn = default, DateTime? completedOn = default, long? duration = default, List<AttachmentPutModel> attachments = default, Dictionary<string, string> parameters = default, Dictionary<string, string> properties = default, List<AttachmentPutModelAutoTestStepResultsModel> stepResults = default, List<AttachmentPutModelAutoTestStepResultsModel> setupResults = default, List<AttachmentPutModelAutoTestStepResultsModel> teardownResults = default)
+        public AutoTestResultsForTestRunModel(Guid configurationId = default, List<LinkPostModel> links = default, List<FailureCategoryModel> failureReasonNames = default, string autoTestExternalId = default, AvailableTestResultOutcome? outcome = default, string statusCode = default, TestStatusType? statusType = default, string message = default, string traces = default, DateTime? startedOn = default, DateTime? completedOn = default, long? duration = default, List<AttachmentPutModel> attachments = default, Dictionary<string, string> parameters = default, Dictionary<string, string> properties = default, List<AttachmentPutModelAutoTestStepResultsModel> stepResults = default, List<AttachmentPutModelAutoTestStepResultsModel> setupResults = default, List<AttachmentPutModelAutoTestStepResultsModel> teardownResults = default)
         {
             this.ConfigurationId = configurationId;
             // to ensure "autoTestExternalId" is required (not null)
@@ -78,6 +86,7 @@ namespace TestIT.ApiClient.Model
             this.FailureReasonNames = failureReasonNames;
             this.Outcome = outcome;
             this.StatusCode = statusCode;
+            this.StatusType = statusType;
             this.Message = message;
             this.Traces = traces;
             this.StartedOn = startedOn;
@@ -120,9 +129,9 @@ namespace TestIT.ApiClient.Model
         public string AutoTestExternalId { get; set; }
 
         /// <summary>
-        /// Specifies the result of the autotest execution.
+        /// Specifies code of result status of the autotest execution.
         /// </summary>
-        /// <value>Specifies the result of the autotest execution.</value>
+        /// <value>Specifies code of result status of the autotest execution.</value>
         [DataMember(Name = "statusCode", EmitDefaultValue = true)]
         public string StatusCode { get; set; }
 
@@ -217,6 +226,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  AutoTestExternalId: ").Append(AutoTestExternalId).Append("\n");
             sb.Append("  Outcome: ").Append(Outcome).Append("\n");
             sb.Append("  StatusCode: ").Append(StatusCode).Append("\n");
+            sb.Append("  StatusType: ").Append(StatusType).Append("\n");
             sb.Append("  Message: ").Append(Message).Append("\n");
             sb.Append("  Traces: ").Append(Traces).Append("\n");
             sb.Append("  StartedOn: ").Append(StartedOn).Append("\n");

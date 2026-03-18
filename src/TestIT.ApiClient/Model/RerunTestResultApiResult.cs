@@ -40,11 +40,11 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RerunTestResultApiResult" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
-        /// <param name="outcome">outcome (required).</param>
-        /// <param name="status">status (required).</param>
-        /// <param name="runNumber">runNumber (required).</param>
-        public RerunTestResultApiResult(Guid id = default, string outcome = default, TestStatusApiResult status = default, int runNumber = default)
+        /// <param name="id">Identifier of the rerun result. (required).</param>
+        /// <param name="outcome">Status of the autotest run. (required).</param>
+        /// <param name="status">Status of the autotest run. (required).</param>
+        /// <param name="runNumber">Number of the run (e.g., 1 for the first attempt). (required).</param>
+        public RerunTestResultApiResult(Guid id = default, string outcome = default, TestStatusShortApiResult status = default, int runNumber = default)
         {
             this.Id = id;
             // to ensure "outcome" is required (not null)
@@ -63,26 +63,30 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Identifier of the rerun result.
         /// </summary>
+        /// <value>Identifier of the rerun result.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets Outcome
+        /// Status of the autotest run.
         /// </summary>
+        /// <value>Status of the autotest run.</value>
         [DataMember(Name = "outcome", IsRequired = true, EmitDefaultValue = true)]
         public string Outcome { get; set; }
 
         /// <summary>
-        /// Gets or Sets Status
+        /// Status of the autotest run.
         /// </summary>
+        /// <value>Status of the autotest run.</value>
         [DataMember(Name = "status", IsRequired = true, EmitDefaultValue = true)]
-        public TestStatusApiResult Status { get; set; }
+        public TestStatusShortApiResult Status { get; set; }
 
         /// <summary>
-        /// Gets or Sets RunNumber
+        /// Number of the run (e.g., 1 for the first attempt).
         /// </summary>
+        /// <value>Number of the run (e.g., 1 for the first attempt).</value>
         [DataMember(Name = "runNumber", IsRequired = true, EmitDefaultValue = true)]
         public int RunNumber { get; set; }
 

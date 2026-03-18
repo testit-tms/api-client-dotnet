@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **StartedOn** | **DateTime?** | Date when the test result has been started | [optional] 
 **CompletedOn** | **DateTime?** | Date when the test result has been completed | [optional] 
 **Duration** | **long?** | Time which it took to run the test | [optional] 
-**Links** | [**List&lt;LinkShort&gt;**](LinkShort.md) | Collection of links attached to the test result | 
+**Links** | [**List&lt;TestResultLinkApiResult&gt;**](TestResultLinkApiResult.md) | Collection of links attached to the test result | 
 **Attachments** | [**List&lt;AttachmentApiResult&gt;**](AttachmentApiResult.md) | Collection of files attached to the test result | 
 **RerunCompletedCount** | **int** | Run count | 
 

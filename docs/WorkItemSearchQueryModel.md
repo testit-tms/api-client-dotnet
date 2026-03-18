@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **Types** | [**List&lt;WorkItemEntityTypes&gt;**](WorkItemEntityTypes.md) | Collection of types of work item | [optional] 
 **CreatedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of creation date to search for | [optional] 
 **ModifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of last modification date to search for | [optional] 
-**Duration** | [**Int32RangeSelectorModel**](Int32RangeSelectorModel.md) | Specifies a work item duration range to search for | [optional] 
+**Duration** | [**Int64RangeSelectorModel**](Int64RangeSelectorModel.md) | Specifies a work item duration range to search for | [optional] 
 **MedianDuration** | [**Int64RangeSelectorModel**](Int64RangeSelectorModel.md) | Specifies a work item median duration range to search for | [optional] 
 **IsAutomated** | **bool?** | Is result must consist of only manual/automated work items | [optional] 
 **Tags** | **List&lt;string&gt;** | Collection of tags | [optional] 
