@@ -45,7 +45,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="webhookIds">Webhook ids to run. (required).</param>
         /// <param name="build">Specifies the test run build..</param>
         /// <param name="resetNotActualAutomatedTestPoints">Reset test point status when actual work item does not automated. (required).</param>
-        public TestPlanTestPointsAutoTestsRunApiModel(TestPlanTestPointsSearchApiModel filter = default, TestPlanTestPointsExtractionApiModel extractionModel = default, List<Guid> webhookIds = default, string build = default, bool resetNotActualAutomatedTestPoints = default)
+        /// <param name="tags">Tags of the test run..</param>
+        public TestPlanTestPointsAutoTestsRunApiModel(TestPlanTestPointsSearchApiModel filter = default, TestPlanTestPointsExtractionApiModel extractionModel = default, List<Guid> webhookIds = default, string build = default, bool resetNotActualAutomatedTestPoints = default, List<string> tags = default)
         {
             // to ensure "webhookIds" is required (not null)
             if (webhookIds == null)
@@ -57,6 +58,7 @@ namespace TestIT.ApiClient.Model
             this.Filter = filter;
             this.ExtractionModel = extractionModel;
             this.Build = build;
+            this.Tags = tags;
         }
 
         /// <summary>
@@ -95,6 +97,13 @@ namespace TestIT.ApiClient.Model
         public bool ResetNotActualAutomatedTestPoints { get; set; }
 
         /// <summary>
+        /// Tags of the test run.
+        /// </summary>
+        /// <value>Tags of the test run.</value>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -107,6 +116,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  WebhookIds: ").Append(WebhookIds).Append("\n");
             sb.Append("  Build: ").Append(Build).Append("\n");
             sb.Append("  ResetNotActualAutomatedTestPoints: ").Append(ResetNotActualAutomatedTestPoints).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

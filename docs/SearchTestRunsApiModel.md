@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **CompletedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) |  | [optional] 
 **CreatedByIds** | **List&lt;Guid&gt;** |  | [optional] 
 **ModifiedByIds** | **List&lt;Guid&gt;** |  | [optional] 
+**Tags** | **List&lt;string&gt;** |  | [optional] 
+**ExcludeTags** | **List&lt;string&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -50,7 +50,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="failureCategory">Specifies failure categories.</param>
         /// <param name="completedDate">Specifies a test run range of completed date to search for.</param>
         /// <param name="testResultsConfigurationIds">Specifies a test result configuration IDs to search for.</param>
-        public TestRunFilterApiModel(List<Guid> projectIds = default, string name = default, List<TestRunState> states = default, List<string> statusCodes = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel startedDate = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, bool? isDeleted = default, Int32RangeSelectorModel autoTestsCount = default, List<TestResultOutcome> testResultsOutcome = default, List<string> testResultsStatusCodes = default, List<FailureCategory> failureCategory = default, DateTimeRangeSelectorModel completedDate = default, List<Guid> testResultsConfigurationIds = default)
+        /// <param name="tags">Specifies a test run tags to search for.</param>
+        /// <param name="excludeTags">Specifies a test run excluded tags to search for.</param>
+        public TestRunFilterApiModel(List<Guid> projectIds = default, string name = default, List<TestRunState> states = default, List<string> statusCodes = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel startedDate = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, bool? isDeleted = default, Int32RangeSelectorModel autoTestsCount = default, List<TestResultOutcome> testResultsOutcome = default, List<string> testResultsStatusCodes = default, List<FailureCategory> failureCategory = default, DateTimeRangeSelectorModel completedDate = default, List<Guid> testResultsConfigurationIds = default, List<string> tags = default, List<string> excludeTags = default)
         {
             this.ProjectIds = projectIds;
             this.Name = name;
@@ -67,6 +69,8 @@ namespace TestIT.ApiClient.Model
             this.FailureCategory = failureCategory;
             this.CompletedDate = completedDate;
             this.TestResultsConfigurationIds = testResultsConfigurationIds;
+            this.Tags = tags;
+            this.ExcludeTags = excludeTags;
         }
 
         /// <summary>
@@ -177,6 +181,20 @@ namespace TestIT.ApiClient.Model
         public List<Guid> TestResultsConfigurationIds { get; set; }
 
         /// <summary>
+        /// Specifies a test run tags to search for
+        /// </summary>
+        /// <value>Specifies a test run tags to search for</value>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
+        /// Specifies a test run excluded tags to search for
+        /// </summary>
+        /// <value>Specifies a test run excluded tags to search for</value>
+        [DataMember(Name = "excludeTags", EmitDefaultValue = true)]
+        public List<string> ExcludeTags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -199,6 +217,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  FailureCategory: ").Append(FailureCategory).Append("\n");
             sb.Append("  CompletedDate: ").Append(CompletedDate).Append("\n");
             sb.Append("  TestResultsConfigurationIds: ").Append(TestResultsConfigurationIds).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
+            sb.Append("  ExcludeTags: ").Append(ExcludeTags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

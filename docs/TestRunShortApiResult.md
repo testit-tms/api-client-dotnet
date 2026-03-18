@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **AutoTestsCount** | **int** | Number of AutoTests run in the test run | 
 **Statistics** | [**TestResultsStatisticsApiResult**](TestResultsStatisticsApiResult.md) | Statistics of the test run | 
 **TestResultsConfigurations** | [**List&lt;ConfigurationShortApiResult&gt;**](ConfigurationShortApiResult.md) | Test results configurations | 
+**Tags** | **List&lt;string&gt;** | Collection of tags associated with the test run | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

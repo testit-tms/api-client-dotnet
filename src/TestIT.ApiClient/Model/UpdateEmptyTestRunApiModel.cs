@@ -46,7 +46,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="launchSource">Test run launch source              Once launch source is specified it cannot be updated.</param>
         /// <param name="attachments">Collection of attachments related to the test run.</param>
         /// <param name="links">Collection of links related to the test run.</param>
-        public UpdateEmptyTestRunApiModel(Guid id = default, string name = default, string description = default, string launchSource = default, List<AssignAttachmentApiModel> attachments = default, List<UpdateLinkApiModel> links = default)
+        /// <param name="tags">Collection of tags to assign to the test run.</param>
+        public UpdateEmptyTestRunApiModel(Guid id = default, string name = default, string description = default, string launchSource = default, List<AssignAttachmentApiModel> attachments = default, List<UpdateLinkApiModel> links = default, List<string> tags = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -59,6 +60,7 @@ namespace TestIT.ApiClient.Model
             this.LaunchSource = launchSource;
             this.Attachments = attachments;
             this.Links = links;
+            this.Tags = tags;
         }
 
         /// <summary>
@@ -104,6 +106,13 @@ namespace TestIT.ApiClient.Model
         public List<UpdateLinkApiModel> Links { get; set; }
 
         /// <summary>
+        /// Collection of tags to assign to the test run
+        /// </summary>
+        /// <value>Collection of tags to assign to the test run</value>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -117,6 +126,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  LaunchSource: ").Append(LaunchSource).Append("\n");
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

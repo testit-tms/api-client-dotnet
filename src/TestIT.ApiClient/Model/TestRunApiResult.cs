@@ -73,7 +73,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="createdByUserName">createdByUserName.</param>
-        public TestRunApiResult(Guid id = default, bool isDeleted = default, DateTime? startedDate = default, DateTime? completedDate = default, string build = default, string description = default, TestRunState stateName = default, TestStatusApiResult status = default, Guid projectId = default, Guid? testPlanId = default, Guid? runByUserId = default, Guid? stoppedByUserId = default, string name = default, string launchSource = default, List<AutoTestApiResult> autoTests = default, int autoTestsCount = default, List<Guid> testSuiteIds = default, bool isAutomated = default, TestRunAnalyticApiResult analytic = default, List<TestResultApiResult> testResults = default, TestPlanApiResult testPlan = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, string createdByUserName = default)
+        /// <param name="tags">tags (required).</param>
+        public TestRunApiResult(Guid id = default, bool isDeleted = default, DateTime? startedDate = default, DateTime? completedDate = default, string build = default, string description = default, TestRunState stateName = default, TestStatusApiResult status = default, Guid projectId = default, Guid? testPlanId = default, Guid? runByUserId = default, Guid? stoppedByUserId = default, string name = default, string launchSource = default, List<AutoTestApiResult> autoTests = default, int autoTestsCount = default, List<Guid> testSuiteIds = default, bool isAutomated = default, TestRunAnalyticApiResult analytic = default, List<TestResultApiResult> testResults = default, TestPlanApiResult testPlan = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, string createdByUserName = default, List<string> tags = default)
         {
             this.Id = id;
             this.IsDeleted = isDeleted;
@@ -119,6 +120,12 @@ namespace TestIT.ApiClient.Model
             this.TestResults = testResults;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
+            // to ensure "tags" is required (not null)
+            if (tags == null)
+            {
+                throw new ArgumentNullException("tags is a required property for TestRunApiResult and cannot be null");
+            }
+            this.Tags = tags;
             this.StartedDate = startedDate;
             this.CompletedDate = completedDate;
             this.Description = description;
@@ -286,6 +293,12 @@ namespace TestIT.ApiClient.Model
         public string CreatedByUserName { get; set; }
 
         /// <summary>
+        /// Gets or Sets Tags
+        /// </summary>
+        [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = true)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -319,6 +332,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  CreatedByUserName: ").Append(CreatedByUserName).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

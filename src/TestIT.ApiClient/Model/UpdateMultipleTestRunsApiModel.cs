@@ -44,7 +44,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">Test run description.</param>
         /// <param name="attachmentUpdateScheme">Set of attachment ids.</param>
         /// <param name="linkUpdateScheme">Set of links.</param>
-        public UpdateMultipleTestRunsApiModel(TestRunSelectApiModel selectModel = default, string description = default, UpdateMultipleAttachmentsApiModel attachmentUpdateScheme = default, UpdateMultipleLinksApiModel linkUpdateScheme = default)
+        /// <param name="tagUpdateScheme">Set of tags.</param>
+        public UpdateMultipleTestRunsApiModel(TestRunSelectApiModel selectModel = default, string description = default, UpdateMultipleAttachmentsApiModel attachmentUpdateScheme = default, UpdateMultipleLinksApiModel linkUpdateScheme = default, UpdateMultipleTagsApiModel tagUpdateScheme = default)
         {
             // to ensure "selectModel" is required (not null)
             if (selectModel == null)
@@ -55,6 +56,7 @@ namespace TestIT.ApiClient.Model
             this.Description = description;
             this.AttachmentUpdateScheme = attachmentUpdateScheme;
             this.LinkUpdateScheme = linkUpdateScheme;
+            this.TagUpdateScheme = tagUpdateScheme;
         }
 
         /// <summary>
@@ -86,6 +88,13 @@ namespace TestIT.ApiClient.Model
         public UpdateMultipleLinksApiModel LinkUpdateScheme { get; set; }
 
         /// <summary>
+        /// Set of tags
+        /// </summary>
+        /// <value>Set of tags</value>
+        [DataMember(Name = "tagUpdateScheme", EmitDefaultValue = true)]
+        public UpdateMultipleTagsApiModel TagUpdateScheme { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -97,6 +106,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  AttachmentUpdateScheme: ").Append(AttachmentUpdateScheme).Append("\n");
             sb.Append("  LinkUpdateScheme: ").Append(LinkUpdateScheme).Append("\n");
+            sb.Append("  TagUpdateScheme: ").Append(TagUpdateScheme).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

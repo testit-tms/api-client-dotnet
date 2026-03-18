@@ -69,7 +69,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="customParameters">Customers test run parameters.</param>
         /// <param name="webhooks">Enabled webhooks (required).</param>
         /// <param name="runCount">Run count (required).</param>
-        public TestRunV2ApiResult(Guid id = default, string name = default, string description = default, string launchSource = default, DateTime? startedOn = default, DateTime? completedOn = default, TestRunState stateName = default, TestStatusApiResult status = default, Guid projectId = default, Guid? testPlanId = default, List<TestResultV2GetModel> testResults = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, string createdByUserName = default, List<AttachmentApiResult> attachments = default, List<LinkApiResult> links = default, Dictionary<string, string> customParameters = default, List<NamedEntityApiModel> webhooks = default, int runCount = default)
+        /// <param name="tags">Collection of tags associated with the test run (required).</param>
+        public TestRunV2ApiResult(Guid id = default, string name = default, string description = default, string launchSource = default, DateTime? startedOn = default, DateTime? completedOn = default, TestRunState stateName = default, TestStatusApiResult status = default, Guid projectId = default, Guid? testPlanId = default, List<TestResultV2GetModel> testResults = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, string createdByUserName = default, List<AttachmentApiResult> attachments = default, List<LinkApiResult> links = default, Dictionary<string, string> customParameters = default, List<NamedEntityApiModel> webhooks = default, int runCount = default, List<string> tags = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -107,6 +108,12 @@ namespace TestIT.ApiClient.Model
             }
             this.Webhooks = webhooks;
             this.RunCount = runCount;
+            // to ensure "tags" is required (not null)
+            if (tags == null)
+            {
+                throw new ArgumentNullException("tags is a required property for TestRunV2ApiResult and cannot be null");
+            }
+            this.Tags = tags;
             this.Description = description;
             this.LaunchSource = launchSource;
             this.StartedOn = startedOn;
@@ -260,6 +267,13 @@ namespace TestIT.ApiClient.Model
         public int RunCount { get; set; }
 
         /// <summary>
+        /// Collection of tags associated with the test run
+        /// </summary>
+        /// <value>Collection of tags associated with the test run</value>
+        [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = true)]
+        public List<string> Tags { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -288,6 +302,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  CustomParameters: ").Append(CustomParameters).Append("\n");
             sb.Append("  Webhooks: ").Append(Webhooks).Append("\n");
             sb.Append("  RunCount: ").Append(RunCount).Append("\n");
+            sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
