@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **AutoTests** | [**List&lt;AutoTestIdModel&gt;**](AutoTestIdModel.md) | Automated tests associated with the work item | [optional] 
 **Attachments** | [**List&lt;AssignAttachmentApiModel&gt;**](AssignAttachmentApiModel.md) | Files attached to the work item | [optional] 
 **Links** | [**List&lt;CreateLinkApiModel&gt;**](CreateLinkApiModel.md) | Set of links related to the work item | 
+**Parameters** | [**List&lt;WorkItemParameterKeyApiModel&gt;**](WorkItemParameterKeyApiModel.md) | Set of parameter keys related to the work item | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

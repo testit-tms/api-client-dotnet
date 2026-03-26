@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **ModifiedById** | **Guid?** |  | [optional] 
 **GlobalId** | **long** |  | 
 **ExternalIssues** | [**List&lt;ExternalIssueModel&gt;**](ExternalIssueModel.md) |  | 
+**Parameters** | [**List&lt;WorkItemParameterKeyModel&gt;**](WorkItemParameterKeyModel.md) |  | 
 **Id** | **Guid** |  | 
 **SectionId** | **Guid** |  | 
 **Description** | **string** |  | [optional] 

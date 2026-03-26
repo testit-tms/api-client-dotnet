@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **ModifiedById** | **Guid?** | Unique ID of the project last editor | [optional] 
 **GlobalId** | **long** | Global ID of the project | 
 **Type** | **ProjectTypeModel** | Type of the project | 
-**WorkflowId** | **Guid** |  | 
+**WorkflowId** | **Guid** | Identifier of current workflow | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
