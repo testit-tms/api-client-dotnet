@@ -64,7 +64,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">Unique ID of the project last editor.</param>
         /// <param name="globalId">Global ID of the project (required).</param>
         /// <param name="type">Type of the project (required).</param>
-        /// <param name="workflowId">workflowId (required).</param>
+        /// <param name="workflowId">Identifier of current workflow (required).</param>
         public ProjectModel(Guid id = default, string description = default, string name = default, bool isFavorite = default, List<CustomAttributeModel> attributesScheme = default, List<CustomAttributeModel> testPlansAttributesScheme = default, int? testCasesCount = default, int? sharedStepsCount = default, int? checkListsCount = default, int? autoTestsCount = default, bool isDeleted = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, ProjectTypeModel type = default, Guid workflowId = default)
         {
             this.Id = id;
@@ -205,8 +205,9 @@ namespace TestIT.ApiClient.Model
         public long GlobalId { get; set; }
 
         /// <summary>
-        /// Gets or Sets WorkflowId
+        /// Identifier of current workflow
         /// </summary>
+        /// <value>Identifier of current workflow</value>
         [DataMember(Name = "workflowId", IsRequired = true, EmitDefaultValue = true)]
         public Guid WorkflowId { get; set; }
 

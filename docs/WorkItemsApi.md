@@ -2217,7 +2217,7 @@ catch (ApiException e)
 
 <a id="getworkitembyid"></a>
 # **GetWorkItemById**
-> WorkItemModel GetWorkItemById (string id, Guid? versionId = null, int? versionNumber = null)
+> WorkItemApiResult GetWorkItemById (string id, Guid? versionId = null, int? versionNumber = null)
 
 Get Test Case, Checklist or Shared Step by Id or GlobalId
 
@@ -2256,7 +2256,7 @@ namespace Example
             try
             {
                 // Get Test Case, Checklist or Shared Step by Id or GlobalId
-                WorkItemModel result = apiInstance.GetWorkItemById(id, versionId, versionNumber);
+                WorkItemApiResult result = apiInstance.GetWorkItemById(id, versionId, versionNumber);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -2277,7 +2277,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Get Test Case, Checklist or Shared Step by Id or GlobalId
-    ApiResponse<WorkItemModel> response = apiInstance.GetWorkItemByIdWithHttpInfo(id, versionId, versionNumber);
+    ApiResponse<WorkItemApiResult> response = apiInstance.GetWorkItemByIdWithHttpInfo(id, versionId, versionNumber);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -2300,7 +2300,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**WorkItemModel**](WorkItemModel.md)
+[**WorkItemApiResult**](WorkItemApiResult.md)
 
 ### Authorization
 

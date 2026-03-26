@@ -539,8 +539,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
-        /// <returns>WorkItemModel</returns>
-        WorkItemModel GetWorkItemById(string id, Guid? versionId = default, int? versionNumber = default);
+        /// <returns>WorkItemApiResult</returns>
+        WorkItemApiResult GetWorkItemById(string id, Guid? versionId = default, int? versionNumber = default);
 
         /// <summary>
         /// Get Test Case, Checklist or Shared Step by Id or GlobalId
@@ -552,8 +552,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
-        /// <returns>ApiResponse of WorkItemModel</returns>
-        ApiResponse<WorkItemModel> GetWorkItemByIdWithHttpInfo(string id, Guid? versionId = default, int? versionNumber = default);
+        /// <returns>ApiResponse of WorkItemApiResult</returns>
+        ApiResponse<WorkItemApiResult> GetWorkItemByIdWithHttpInfo(string id, Guid? versionId = default, int? versionNumber = default);
         /// <summary>
         /// Get WorkItem chronology by Id or GlobalId
         /// </summary>
@@ -1233,8 +1233,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkItemModel</returns>
-        System.Threading.Tasks.Task<WorkItemModel> GetWorkItemByIdAsync(string id, Guid? versionId = default, int? versionNumber = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of WorkItemApiResult</returns>
+        System.Threading.Tasks.Task<WorkItemApiResult> GetWorkItemByIdAsync(string id, Guid? versionId = default, int? versionNumber = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get Test Case, Checklist or Shared Step by Id or GlobalId
@@ -1247,8 +1247,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkItemModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkItemModel>> GetWorkItemByIdWithHttpInfoAsync(string id, Guid? versionId = default, int? versionNumber = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (WorkItemApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WorkItemApiResult>> GetWorkItemByIdWithHttpInfoAsync(string id, Guid? versionId = default, int? versionNumber = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get WorkItem chronology by Id or GlobalId
         /// </summary>
@@ -4504,10 +4504,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
-        /// <returns>WorkItemModel</returns>
-        public WorkItemModel GetWorkItemById(string id, Guid? versionId = default, int? versionNumber = default)
+        /// <returns>WorkItemApiResult</returns>
+        public WorkItemApiResult GetWorkItemById(string id, Guid? versionId = default, int? versionNumber = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<WorkItemModel> localVarResponse = GetWorkItemByIdWithHttpInfo(id, versionId, versionNumber);
+            TestIT.ApiClient.Client.ApiResponse<WorkItemApiResult> localVarResponse = GetWorkItemByIdWithHttpInfo(id, versionId, versionNumber);
             return localVarResponse.Data;
         }
 
@@ -4518,8 +4518,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
-        /// <returns>ApiResponse of WorkItemModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<WorkItemModel> GetWorkItemByIdWithHttpInfo(string id, Guid? versionId = default, int? versionNumber = default)
+        /// <returns>ApiResponse of WorkItemApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<WorkItemApiResult> GetWorkItemByIdWithHttpInfo(string id, Guid? versionId = default, int? versionNumber = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4558,7 +4558,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<WorkItemModel>("/api/v2/workItems/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<WorkItemApiResult>("/api/v2/workItems/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -4577,10 +4577,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkItemModel</returns>
-        public async System.Threading.Tasks.Task<WorkItemModel> GetWorkItemByIdAsync(string id, Guid? versionId = default, int? versionNumber = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of WorkItemApiResult</returns>
+        public async System.Threading.Tasks.Task<WorkItemApiResult> GetWorkItemByIdAsync(string id, Guid? versionId = default, int? versionNumber = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<WorkItemModel> localVarResponse = await GetWorkItemByIdWithHttpInfoAsync(id, versionId, versionNumber, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<WorkItemApiResult> localVarResponse = await GetWorkItemByIdWithHttpInfoAsync(id, versionId, versionNumber, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -4592,8 +4592,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkItemModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemModel>> GetWorkItemByIdWithHttpInfoAsync(string id, Guid? versionId = default, int? versionNumber = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (WorkItemApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkItemApiResult>> GetWorkItemByIdWithHttpInfoAsync(string id, Guid? versionId = default, int? versionNumber = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4635,7 +4635,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<WorkItemModel>("/api/v2/workItems/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<WorkItemApiResult>("/api/v2/workItems/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

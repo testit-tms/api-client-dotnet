@@ -82,6 +82,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="globalId">globalId (required).</param>
         /// <param name="externalIssues">externalIssues (required).</param>
+        /// <param name="parameters">parameters (required).</param>
         /// <param name="id">id (required).</param>
         /// <param name="sectionId">sectionId (required).</param>
         /// <param name="description">description.</param>
@@ -96,7 +97,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="tags">tags (required).</param>
         /// <param name="links">links (required).</param>
         /// <param name="name">name (required).</param>
-        public WorkItemModel(Guid versionId = default, long medianDuration = default, bool isDeleted = default, Guid projectId = default, WorkItemEntityTypes entityTypeName = default, bool isAutomated = default, List<AutoTestModel> autoTests = default, List<AttachmentModel> attachments = default, List<StepModel> sectionPreconditionSteps = default, List<StepModel> sectionPostconditionSteps = default, int versionNumber = default, List<IterationModel> iterations = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, List<ExternalIssueModel> externalIssues = default, Guid id = default, Guid sectionId = default, string description = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, List<StepModel> steps = default, List<StepModel> preconditionSteps = default, List<StepModel> postconditionSteps = default, long duration = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<LinkModel> links = default, string name = default)
+        public WorkItemModel(Guid versionId = default, long medianDuration = default, bool isDeleted = default, Guid projectId = default, WorkItemEntityTypes entityTypeName = default, bool isAutomated = default, List<AutoTestModel> autoTests = default, List<AttachmentModel> attachments = default, List<StepModel> sectionPreconditionSteps = default, List<StepModel> sectionPostconditionSteps = default, int versionNumber = default, List<IterationModel> iterations = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, List<ExternalIssueModel> externalIssues = default, List<WorkItemParameterKeyModel> parameters = default, Guid id = default, Guid sectionId = default, string description = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, List<StepModel> steps = default, List<StepModel> preconditionSteps = default, List<StepModel> postconditionSteps = default, long duration = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<LinkModel> links = default, string name = default)
         {
             this.VersionId = versionId;
             this.MedianDuration = medianDuration;
@@ -114,6 +115,12 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("externalIssues is a required property for WorkItemModel and cannot be null");
             }
             this.ExternalIssues = externalIssues;
+            // to ensure "parameters" is required (not null)
+            if (parameters == null)
+            {
+                throw new ArgumentNullException("parameters is a required property for WorkItemModel and cannot be null");
+            }
+            this.Parameters = parameters;
             this.Id = id;
             this.SectionId = sectionId;
             this.State = state;
@@ -311,6 +318,12 @@ namespace TestIT.ApiClient.Model
         public List<ExternalIssueModel> ExternalIssues { get; set; }
 
         /// <summary>
+        /// Gets or Sets Parameters
+        /// </summary>
+        [DataMember(Name = "parameters", IsRequired = true, EmitDefaultValue = true)]
+        public List<WorkItemParameterKeyModel> Parameters { get; set; }
+
+        /// <summary>
         /// Gets or Sets Id
         /// </summary>
         /*
@@ -417,6 +430,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
             sb.Append("  ExternalIssues: ").Append(ExternalIssues).Append("\n");
+            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  SectionId: ").Append(SectionId).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");

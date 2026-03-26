@@ -95,12 +95,13 @@ namespace TestIT.ApiClient.Model
         /// <param name="attachments">Files attached to the work item (required).</param>
         /// <param name="links">Set of links related to the work item (required).</param>
         /// <param name="externalIssues">Set of external issues related to the work item (required).</param>
+        /// <param name="parameters">Set of parameters related to the work item (required).</param>
         /// <param name="createdDate">Creation date of the work item (required).</param>
         /// <param name="createdById">Unique identifier of the work item creator (required).</param>
         /// <param name="modifiedDate">Modification date of the work item.</param>
         /// <param name="modifiedById">Unique identifier of the work item modifier.</param>
         /// <param name="isDeleted">Indicates whether the work item is marked as deleted (required).</param>
-        public WorkItemApiResult(Guid id = default, long globalId = default, Guid versionId = default, int versionNumber = default, Guid projectId = default, Guid sectionId = default, string name = default, string description = default, WorkItemSourceTypeApiModel sourceType = default, WorkItemEntityTypeApiModel entityTypeName = default, int duration = default, long medianDuration = default, WorkItemStateApiModel state = default, WorkItemPriorityApiModel priority = default, bool isAutomated = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<StepModel> sectionPreconditionSteps = default, List<StepModel> sectionPostconditionSteps = default, List<StepModel> preconditionSteps = default, List<StepModel> steps = default, List<StepModel> postconditionSteps = default, List<IterationModel> iterations = default, List<AutoTestModel> autoTests = default, List<AttachmentModel> attachments = default, List<LinkModel> links = default, List<ExternalIssueApiResult> externalIssues = default, DateTime createdDate = default, Guid createdById = default, DateTime? modifiedDate = default, Guid? modifiedById = default, bool isDeleted = default)
+        public WorkItemApiResult(Guid id = default, long globalId = default, Guid versionId = default, int versionNumber = default, Guid projectId = default, Guid sectionId = default, string name = default, string description = default, WorkItemSourceTypeApiModel sourceType = default, WorkItemEntityTypeApiModel entityTypeName = default, int duration = default, long medianDuration = default, WorkItemStateApiModel state = default, WorkItemPriorityApiModel priority = default, bool isAutomated = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<StepModel> sectionPreconditionSteps = default, List<StepModel> sectionPostconditionSteps = default, List<StepModel> preconditionSteps = default, List<StepModel> steps = default, List<StepModel> postconditionSteps = default, List<IterationModel> iterations = default, List<AutoTestModel> autoTests = default, List<AttachmentModel> attachments = default, List<LinkModel> links = default, List<ExternalIssueApiResult> externalIssues = default, List<WorkItemParameterKeyApiResult> parameters = default, DateTime createdDate = default, Guid createdById = default, DateTime? modifiedDate = default, Guid? modifiedById = default, bool isDeleted = default)
         {
             this.Id = id;
             this.GlobalId = globalId;
@@ -193,6 +194,12 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("externalIssues is a required property for WorkItemApiResult and cannot be null");
             }
             this.ExternalIssues = externalIssues;
+            // to ensure "parameters" is required (not null)
+            if (parameters == null)
+            {
+                throw new ArgumentNullException("parameters is a required property for WorkItemApiResult and cannot be null");
+            }
+            this.Parameters = parameters;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
             this.IsDeleted = isDeleted;
@@ -362,6 +369,13 @@ namespace TestIT.ApiClient.Model
         public List<ExternalIssueApiResult> ExternalIssues { get; set; }
 
         /// <summary>
+        /// Set of parameters related to the work item
+        /// </summary>
+        /// <value>Set of parameters related to the work item</value>
+        [DataMember(Name = "parameters", IsRequired = true, EmitDefaultValue = true)]
+        public List<WorkItemParameterKeyApiResult> Parameters { get; set; }
+
+        /// <summary>
         /// Creation date of the work item
         /// </summary>
         /// <value>Creation date of the work item</value>
@@ -431,6 +445,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  ExternalIssues: ").Append(ExternalIssues).Append("\n");
+            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedDate: ").Append(ModifiedDate).Append("\n");

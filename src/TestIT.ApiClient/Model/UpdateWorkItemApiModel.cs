@@ -75,7 +75,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="attachments">attachments (required).</param>
         /// <param name="iterations">Collection of parameter id sets.</param>
         /// <param name="autoTests">Collection of autotest internal ids.</param>
-        public UpdateWorkItemApiModel(Guid id = default, Guid sectionId = default, string description = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel? sourceType = default, List<UpdateStepApiModel> steps = default, List<UpdateStepApiModel> preconditionSteps = default, List<UpdateStepApiModel> postconditionSteps = default, long duration = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<UpdateLinkApiModel> links = default, string name = default, List<AssignAttachmentApiModel> attachments = default, List<AssignIterationApiModel> iterations = default, List<AutoTestIdModel> autoTests = default)
+        /// <param name="parameters">Set of parameter keys related to the work item.</param>
+        public UpdateWorkItemApiModel(Guid id = default, Guid sectionId = default, string description = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel? sourceType = default, List<UpdateStepApiModel> steps = default, List<UpdateStepApiModel> preconditionSteps = default, List<UpdateStepApiModel> postconditionSteps = default, long duration = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<UpdateLinkApiModel> links = default, string name = default, List<AssignAttachmentApiModel> attachments = default, List<AssignIterationApiModel> iterations = default, List<AutoTestIdModel> autoTests = default, List<WorkItemParameterKeyApiModel> parameters = default)
         {
             this.Id = id;
             this.SectionId = sectionId;
@@ -134,6 +135,7 @@ namespace TestIT.ApiClient.Model
             this.SourceType = sourceType;
             this.Iterations = iterations;
             this.AutoTests = autoTests;
+            this.Parameters = parameters;
         }
 
         /// <summary>
@@ -234,6 +236,13 @@ namespace TestIT.ApiClient.Model
         public List<AutoTestIdModel> AutoTests { get; set; }
 
         /// <summary>
+        /// Set of parameter keys related to the work item
+        /// </summary>
+        /// <value>Set of parameter keys related to the work item</value>
+        [DataMember(Name = "parameters", EmitDefaultValue = true)]
+        public List<WorkItemParameterKeyApiModel> Parameters { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -258,6 +267,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  Iterations: ").Append(Iterations).Append("\n");
             sb.Append("  AutoTests: ").Append(AutoTests).Append("\n");
+            sb.Append("  Parameters: ").Append(Parameters).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
