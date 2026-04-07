@@ -27,41 +27,51 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// ParameterIterationModel
+    /// RoleApiModel
     /// </summary>
-    [DataContract(Name = "ParameterIterationModel")]
-    public partial class ParameterIterationModel : IValidatableObject
+    [DataContract(Name = "RoleApiModel")]
+    public partial class RoleApiModel : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ParameterIterationModel" /> class.
+        /// Initializes a new instance of the <see cref="RoleApiModel" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected ParameterIterationModel() { }
+        protected RoleApiModel() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="ParameterIterationModel" /> class.
+        /// Initializes a new instance of the <see cref="RoleApiModel" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="sharedStepId">sharedStepId.</param>
-        public ParameterIterationModel(Guid id = default, Guid? sharedStepId = default)
+        /// <param name="name">name (required).</param>
+        /// <param name="isSystem">isSystem (required).</param>
+        public RoleApiModel(Guid id = default, string name = default, bool isSystem = default)
         {
             this.Id = id;
-            this.SharedStepId = sharedStepId;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for RoleApiModel and cannot be null");
+            }
+            this.Name = name;
+            this.IsSystem = isSystem;
         }
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        /*
-        <example>39d127a1-a511-473f-8b21-f75b747a9420</example>
-        */
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets SharedStepId
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "sharedStepId", EmitDefaultValue = true)]
-        public Guid? SharedStepId { get; set; }
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsSystem
+        /// </summary>
+        [DataMember(Name = "isSystem", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsSystem { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,9 +80,10 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class ParameterIterationModel {\n");
+            sb.Append("class RoleApiModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  SharedStepId: ").Append(SharedStepId).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  IsSystem: ").Append(IsSystem).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

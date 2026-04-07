@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | 
-**Title** | **string** |  | 
+**Title** | **string** |  | [optional] 
 **Type** | **string** |  | [optional] 
 **Url** | **string** |  | 
 

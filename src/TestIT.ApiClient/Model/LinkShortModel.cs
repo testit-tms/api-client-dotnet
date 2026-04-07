@@ -41,24 +41,19 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="LinkShortModel" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        /// <param name="title">title (required).</param>
+        /// <param name="title">title.</param>
         /// <param name="type">type.</param>
         /// <param name="url">url (required).</param>
         public LinkShortModel(Guid id = default, string title = default, string type = default, string url = default)
         {
             this.Id = id;
-            // to ensure "title" is required (not null)
-            if (title == null)
-            {
-                throw new ArgumentNullException("title is a required property for LinkShortModel and cannot be null");
-            }
-            this.Title = title;
             // to ensure "url" is required (not null)
             if (url == null)
             {
                 throw new ArgumentNullException("url is a required property for LinkShortModel and cannot be null");
             }
             this.Url = url;
+            this.Title = title;
             this.Type = type;
         }
 
@@ -71,7 +66,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name = "title", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
 
         /// <summary>

@@ -27,31 +27,45 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// DemoProjectApiResult
+    /// RoleApiModelApiCollection
     /// </summary>
-    [DataContract(Name = "DemoProjectApiResult")]
-    public partial class DemoProjectApiResult : IValidatableObject
+    [DataContract(Name = "RoleApiModelApiCollection")]
+    public partial class RoleApiModelApiCollection : IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="DemoProjectApiResult" /> class.
+        /// Initializes a new instance of the <see cref="RoleApiModelApiCollection" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected DemoProjectApiResult() { }
+        protected RoleApiModelApiCollection() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="DemoProjectApiResult" /> class.
+        /// Initializes a new instance of the <see cref="RoleApiModelApiCollection" /> class.
         /// </summary>
-        /// <param name="jobId">Job ID (required).</param>
-        public DemoProjectApiResult(Guid jobId = default)
+        /// <param name="data">Items (required).</param>
+        /// <param name="totalCount">Total count (required).</param>
+        public RoleApiModelApiCollection(List<RoleApiModel> data = default, long totalCount = default)
         {
-            this.JobId = jobId;
+            // to ensure "data" is required (not null)
+            if (data == null)
+            {
+                throw new ArgumentNullException("data is a required property for RoleApiModelApiCollection and cannot be null");
+            }
+            this.Data = data;
+            this.TotalCount = totalCount;
         }
 
         /// <summary>
-        /// Job ID
+        /// Items
         /// </summary>
-        /// <value>Job ID</value>
-        [DataMember(Name = "jobId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid JobId { get; set; }
+        /// <value>Items</value>
+        [DataMember(Name = "data", IsRequired = true, EmitDefaultValue = true)]
+        public List<RoleApiModel> Data { get; set; }
+
+        /// <summary>
+        /// Total count
+        /// </summary>
+        /// <value>Total count</value>
+        [DataMember(Name = "totalCount", IsRequired = true, EmitDefaultValue = true)]
+        public long TotalCount { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,8 +74,9 @@ namespace TestIT.ApiClient.Model
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("class DemoProjectApiResult {\n");
-            sb.Append("  JobId: ").Append(JobId).Append("\n");
+            sb.Append("class RoleApiModelApiCollection {\n");
+            sb.Append("  Data: ").Append(Data).Append("\n");
+            sb.Append("  TotalCount: ").Append(TotalCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
