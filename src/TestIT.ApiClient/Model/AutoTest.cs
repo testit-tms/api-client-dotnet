@@ -68,7 +68,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="lastTestResultConfiguration">Configuration of the autotest last test result.</param>
         /// <param name="lastTestResultOutcome">Outcome of the autotest last test result.</param>
         /// <param name="stabilityPercentage">Stability percentage of the autotest.</param>
-        public AutoTest(string externalId = default, List<Link> links = default, Guid projectId = default, string name = default, string varNamespace = default, string classname = default, List<AutoTestStep> steps = default, List<AutoTestStep> setup = default, List<AutoTestStep> teardown = default, string title = default, string description = default, List<Label> labels = default, bool? isFlaky = default, string externalKey = default, long globalId = default, bool isDeleted = default, bool mustBeApproved = default, Guid id = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, Guid? lastTestRunId = default, string lastTestRunName = default, Guid? lastTestResultId = default, ConfigurationShort lastTestResultConfiguration = default, string lastTestResultOutcome = default, int? stabilityPercentage = default)
+        public AutoTest(string externalId = default, List<LinkApiResult> links = default, Guid projectId = default, string name = default, string varNamespace = default, string classname = default, List<AutoTestStep> steps = default, List<AutoTestStep> setup = default, List<AutoTestStep> teardown = default, string title = default, string description = default, List<Label> labels = default, bool? isFlaky = default, string externalKey = default, long globalId = default, bool isDeleted = default, bool mustBeApproved = default, Guid id = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, Guid? lastTestRunId = default, string lastTestRunName = default, Guid? lastTestResultId = default, ConfigurationShort lastTestResultConfiguration = default, string lastTestResultOutcome = default, int? stabilityPercentage = default)
         {
             // to ensure "externalId" is required (not null)
             if (externalId == null)
@@ -122,7 +122,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Collection of the autotest links</value>
         [DataMember(Name = "links", EmitDefaultValue = true)]
-        public List<Link> Links { get; set; }
+        public List<LinkApiResult> Links { get; set; }
 
         /// <summary>
         /// Unique ID of the autotest project

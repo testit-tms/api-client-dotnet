@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **States** | [**List&lt;WorkItemStates&gt;**](WorkItemStates.md) | Collection of states of work item | [optional] 
 **Priorities** | [**List&lt;WorkItemPriorityModel&gt;**](WorkItemPriorityModel.md) | Collection of priorities of work item | [optional] 
 **SourceTypes** | [**List&lt;WorkItemSourceTypeModel&gt;**](WorkItemSourceTypeModel.md) | Source type of work item (manual creation or AI generated) | [optional] 
-**Types** | [**List&lt;WorkItemEntityTypes&gt;**](WorkItemEntityTypes.md) | Collection of types of work item | [optional] 
+**Types** | [**List&lt;WorkItemTypeModel&gt;**](WorkItemTypeModel.md) | Collection of types of work item | [optional] 
 **CreatedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of creation date to search for | [optional] 
 **ModifiedDate** | [**DateTimeRangeSelectorModel**](DateTimeRangeSelectorModel.md) | Specifies a work item range of last modification date to search for | [optional] 
 **Duration** | [**Int32RangeSelectorModel**](Int32RangeSelectorModel.md) | Specifies a work item duration range to search for | [optional] 

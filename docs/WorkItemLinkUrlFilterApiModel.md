@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Types** | [**List&lt;WorkItemEntityTypes&gt;**](WorkItemEntityTypes.md) |  | [optional] 
+**Types** | [**List&lt;WorkItemTypeModel&gt;**](WorkItemTypeModel.md) |  | [optional] 
 **SearchUrl** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

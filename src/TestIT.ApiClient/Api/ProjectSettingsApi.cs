@@ -380,10 +380,16 @@ namespace TestIT.ApiClient.Api
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.Data = autoTestProjectSettingsApiModel;
 
-            // authentication (Bearer or PrivateToken) required
+            // authentication (PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Session Cookie) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
             }
 
             // make the HTTP request
@@ -447,10 +453,16 @@ namespace TestIT.ApiClient.Api
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
             localVarRequestOptions.Data = autoTestProjectSettingsApiModel;
 
-            // authentication (Bearer or PrivateToken) required
+            // authentication (PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Session Cookie) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
             }
 
             // make the HTTP request
@@ -508,10 +520,16 @@ namespace TestIT.ApiClient.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
 
-            // authentication (Bearer or PrivateToken) required
+            // authentication (PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Session Cookie) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
             }
 
             // make the HTTP request
@@ -572,10 +590,16 @@ namespace TestIT.ApiClient.Api
 
             localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
 
-            // authentication (Bearer or PrivateToken) required
+            // authentication (PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Session Cookie) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
             }
 
             // make the HTTP request

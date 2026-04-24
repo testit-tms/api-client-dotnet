@@ -81,7 +81,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemVersionNumber">workItemVersionNumber.</param>
         /// <param name="parameters">parameters.</param>
         /// <param name="properties">properties.</param>
-        public TestResultResponse(Guid id = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, List<StepCommentApiModel> stepComments = default, List<Guid> failureClassIds = default, TestResultOutcome? outcome = default, TestStatusApiResult status = default, string comment = default, List<Link> links = default, List<StepResultApiModel> stepResults = default, List<AttachmentApiResult> attachments = default, Guid? autoTestId = default, Guid configurationId = default, DateTime? startedOn = default, DateTime? completedOn = default, long? durationInMs = default, string traces = default, string failureType = default, string message = default, Guid? runByUserId = default, Guid? stoppedByUserId = default, Guid testPointId = default, Guid testRunId = default, TestPoint testPoint = default, AutoTest autoTest = default, List<AutoTestStepResult> autoTestStepResults = default, List<AutoTestStepResult> setupResults = default, List<AutoTestStepResult> teardownResults = default, Guid workItemVersionId = default, int? workItemVersionNumber = default, Dictionary<string, string> parameters = default, Dictionary<string, string> properties = default)
+        public TestResultResponse(Guid id = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, List<StepCommentApiModel> stepComments = default, List<Guid> failureClassIds = default, TestResultOutcome? outcome = default, TestStatusApiResult status = default, string comment = default, List<LinkApiResult> links = default, List<StepResultApiModel> stepResults = default, List<AttachmentApiResult> attachments = default, Guid? autoTestId = default, Guid configurationId = default, DateTime? startedOn = default, DateTime? completedOn = default, long? durationInMs = default, string traces = default, string failureType = default, string message = default, Guid? runByUserId = default, Guid? stoppedByUserId = default, Guid testPointId = default, Guid testRunId = default, TestPoint testPoint = default, AutoTest autoTest = default, List<AutoTestStepResult> autoTestStepResults = default, List<AutoTestStepResult> setupResults = default, List<AutoTestStepResult> teardownResults = default, Guid workItemVersionId = default, int? workItemVersionNumber = default, Dictionary<string, string> parameters = default, Dictionary<string, string> properties = default)
         {
             this.Id = id;
             this.CreatedDate = createdDate;
@@ -182,7 +182,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name = "links", EmitDefaultValue = true)]
-        public List<Link> Links { get; set; }
+        public List<LinkApiResult> Links { get; set; }
 
         /// <summary>
         /// Gets or Sets StepResults

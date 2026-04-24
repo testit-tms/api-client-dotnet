@@ -37,7 +37,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="types">types.</param>
         /// <param name="searchUrl">searchUrl.</param>
-        public WorkItemLinkUrlFilterApiModel(List<WorkItemEntityTypes> types = default, string searchUrl = default)
+        public WorkItemLinkUrlFilterApiModel(List<WorkItemTypeModel> types = default, string searchUrl = default)
         {
             this.Types = types;
             this.SearchUrl = searchUrl;
@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Types
         /// </summary>
         [DataMember(Name = "types", EmitDefaultValue = true)]
-        public List<WorkItemEntityTypes> Types { get; set; }
+        public List<WorkItemTypeModel> Types { get; set; }
 
         /// <summary>
         /// Gets or Sets SearchUrl

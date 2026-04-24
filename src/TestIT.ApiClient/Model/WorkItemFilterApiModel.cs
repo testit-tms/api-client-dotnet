@@ -62,7 +62,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
         /// <param name="links">Specifies a work item filter by its links.</param>
         /// <param name="externalMetadata">Specifies work item filter by its external metadata.</param>
-        public WorkItemFilterApiModel(string nameOrId = default, List<Guid> includeIds = default, List<Guid> excludeIds = default, List<Guid> projectIds = default, string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemEntityTypes> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int32RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default, WorkItemLinkFilterApiModel links = default, WorkItemExternalMetadataFilterApiModel externalMetadata = default)
+        public WorkItemFilterApiModel(string nameOrId = default, List<Guid> includeIds = default, List<Guid> excludeIds = default, List<Guid> projectIds = default, string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemTypeModel> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int32RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default, WorkItemLinkFilterApiModel links = default, WorkItemExternalMetadataFilterApiModel externalMetadata = default)
         {
             this.NameOrId = nameOrId;
             this.IncludeIds = includeIds;
@@ -203,7 +203,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Collection of types of work item</value>
         [DataMember(Name = "types", EmitDefaultValue = true)]
-        public List<WorkItemEntityTypes> Types { get; set; }
+        public List<WorkItemTypeModel> Types { get; set; }
 
         /// <summary>
         /// Specifies a work item range of creation date to search for

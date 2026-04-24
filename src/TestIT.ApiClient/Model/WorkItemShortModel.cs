@@ -34,6 +34,13 @@ namespace TestIT.ApiClient.Model
     {
 
         /// <summary>
+        /// Work Item type. Possible values: CheckLists, SharedSteps, TestCases
+        /// </summary>
+        /// <value>Work Item type. Possible values: CheckLists, SharedSteps, TestCases</value>
+        [DataMember(Name = "entityTypeName", IsRequired = true, EmitDefaultValue = true)]
+        public WorkItemTypeModel EntityTypeName { get; set; }
+
+        /// <summary>
         /// The current state of Work Item
         /// </summary>
         /// <value>The current state of Work Item</value>
@@ -85,7 +92,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="tagNames">Array of tag names of Work Item.</param>
         /// <param name="iterations">Set of iterations related to Work Item (required).</param>
         /// <param name="links">Set of links related to Work Item (required).</param>
-        public WorkItemShortModel(Guid id = default, Guid versionId = default, int versionNumber = default, string name = default, string entityTypeName = default, Guid projectId = default, Guid sectionId = default, string sectionName = default, bool isAutomated = default, long globalId = default, long duration = default, long? medianDuration = default, Dictionary<string, Object> attributes = default, Guid createdById = default, Guid? modifiedById = default, DateTime? createdDate = default, DateTime? modifiedDate = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, bool isDeleted = default, List<string> tagNames = default, List<IterationModel> iterations = default, List<LinkShortModel> links = default)
+        public WorkItemShortModel(Guid id = default, Guid versionId = default, int versionNumber = default, string name = default, WorkItemTypeModel entityTypeName = default, Guid projectId = default, Guid sectionId = default, string sectionName = default, bool isAutomated = default, long globalId = default, long duration = default, long? medianDuration = default, Dictionary<string, Object> attributes = default, Guid createdById = default, Guid? modifiedById = default, DateTime? createdDate = default, DateTime? modifiedDate = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, bool isDeleted = default, List<string> tagNames = default, List<IterationModel> iterations = default, List<LinkShortModel> links = default)
         {
             this.Id = id;
             this.VersionId = versionId;
@@ -96,11 +103,6 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("name is a required property for WorkItemShortModel and cannot be null");
             }
             this.Name = name;
-            // to ensure "entityTypeName" is required (not null)
-            if (entityTypeName == null)
-            {
-                throw new ArgumentNullException("entityTypeName is a required property for WorkItemShortModel and cannot be null");
-            }
             this.EntityTypeName = entityTypeName;
             this.ProjectId = projectId;
             this.SectionId = sectionId;
@@ -168,16 +170,6 @@ namespace TestIT.ApiClient.Model
         */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
-
-        /// <summary>
-        /// Work Item type. Possible values: CheckLists, SharedSteps, TestCases
-        /// </summary>
-        /// <value>Work Item type. Possible values: CheckLists, SharedSteps, TestCases</value>
-        /*
-        <example>TestCases</example>
-        */
-        [DataMember(Name = "entityTypeName", IsRequired = true, EmitDefaultValue = true)]
-        public string EntityTypeName { get; set; }
 
         /// <summary>
         /// Project unique identifier
@@ -350,12 +342,6 @@ namespace TestIT.ApiClient.Model
             if (this.Name != null && this.Name.Length < 1)
             {
                 yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
-            }
-
-            // EntityTypeName (string) minLength
-            if (this.EntityTypeName != null && this.EntityTypeName.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for EntityTypeName, length must be greater than 1.", new [] { "EntityTypeName" });
             }
 
             // SectionName (string) minLength

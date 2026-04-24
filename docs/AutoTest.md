@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ExternalId** | **string** | External ID of the autotest | 
-**Links** | [**List&lt;Link&gt;**](Link.md) | Collection of the autotest links | [optional] 
+**Links** | [**List&lt;LinkApiResult&gt;**](LinkApiResult.md) | Collection of the autotest links | [optional] 
 **ProjectId** | **Guid** | Unique ID of the autotest project | 
 **Name** | **string** | Name of the autotest | 
 **Namespace** | **string** | Name of the autotest namespace | [optional] 

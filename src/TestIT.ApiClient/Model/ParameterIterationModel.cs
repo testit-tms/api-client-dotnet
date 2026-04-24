@@ -41,9 +41,11 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ParameterIterationModel" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
-        public ParameterIterationModel(Guid id = default)
+        /// <param name="sharedStepId">sharedStepId.</param>
+        public ParameterIterationModel(Guid id = default, Guid? sharedStepId = default)
         {
             this.Id = id;
+            this.SharedStepId = sharedStepId;
         }
 
         /// <summary>
@@ -56,6 +58,12 @@ namespace TestIT.ApiClient.Model
         public Guid Id { get; set; }
 
         /// <summary>
+        /// Gets or Sets SharedStepId
+        /// </summary>
+        [DataMember(Name = "sharedStepId", EmitDefaultValue = true)]
+        public Guid? SharedStepId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -64,6 +72,7 @@ namespace TestIT.ApiClient.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ParameterIterationModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  SharedStepId: ").Append(SharedStepId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

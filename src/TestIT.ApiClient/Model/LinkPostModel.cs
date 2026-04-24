@@ -37,8 +37,8 @@ namespace TestIT.ApiClient.Model
         /// Specifies the type of the link.
         /// </summary>
         /// <value>Specifies the type of the link.</value>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
-        public LinkType? Type { get; set; }
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        public LinkType Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkPostModel" /> class.
         /// </summary>
@@ -50,9 +50,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="title">Link name..</param>
         /// <param name="url">Address can be specified without protocol, but necessarily with the domain. (required).</param>
         /// <param name="description">Link description..</param>
-        /// <param name="type">Specifies the type of the link..</param>
+        /// <param name="type">Specifies the type of the link. (required).</param>
         /// <param name="hasInfo">hasInfo (required).</param>
-        public LinkPostModel(string title = default, string url = default, string description = default, LinkType? type = default, bool hasInfo = default)
+        public LinkPostModel(string title = default, string url = default, string description = default, LinkType type = default, bool hasInfo = default)
         {
             // to ensure "url" is required (not null)
             if (url == null)
@@ -60,10 +60,10 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("url is a required property for LinkPostModel and cannot be null");
             }
             this.Url = url;
+            this.Type = type;
             this.HasInfo = hasInfo;
             this.Title = title;
             this.Description = description;
-            this.Type = type;
         }
 
         /// <summary>

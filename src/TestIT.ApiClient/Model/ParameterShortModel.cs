@@ -41,11 +41,12 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="ParameterShortModel" /> class.
         /// </summary>
         /// <param name="id">id (required).</param>
+        /// <param name="sharedStepId">sharedStepId.</param>
         /// <param name="parameterKeyId">parameterKeyId (required).</param>
         /// <param name="value">Value of the parameter (required).</param>
         /// <param name="name">Key of the parameter (required).</param>
         /// <param name="projectIds">projectIds (required).</param>
-        public ParameterShortModel(Guid id = default, Guid parameterKeyId = default, string value = default, string name = default, List<Guid> projectIds = default)
+        public ParameterShortModel(Guid id = default, Guid? sharedStepId = default, Guid parameterKeyId = default, string value = default, string name = default, List<Guid> projectIds = default)
         {
             this.Id = id;
             this.ParameterKeyId = parameterKeyId;
@@ -67,6 +68,7 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("projectIds is a required property for ParameterShortModel and cannot be null");
             }
             this.ProjectIds = projectIds;
+            this.SharedStepId = sharedStepId;
         }
 
         /// <summary>
@@ -74,6 +76,12 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SharedStepId
+        /// </summary>
+        [DataMember(Name = "sharedStepId", EmitDefaultValue = true)]
+        public Guid? SharedStepId { get; set; }
 
         /// <summary>
         /// Gets or Sets ParameterKeyId
@@ -110,6 +118,7 @@ namespace TestIT.ApiClient.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class ParameterShortModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  SharedStepId: ").Append(SharedStepId).Append("\n");
             sb.Append("  ParameterKeyId: ").Append(ParameterKeyId).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");

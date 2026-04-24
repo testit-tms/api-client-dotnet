@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Description** | **string** | Description of the project | [optional] 
 **Name** | **string** | Name of the project | 
 **IsFavorite** | **bool** | Indicates if the project is marked as favorite | 
+**WorkItemsCount** | **int** | Number of test cases in the project | 
 **TestCasesCount** | **int?** | Number of test cases in the project | [optional] 
 **SharedStepsCount** | **int?** | Number of shared steps in the project | [optional] 
 **CheckListsCount** | **int?** | Number of checklists in the project | [optional] 
