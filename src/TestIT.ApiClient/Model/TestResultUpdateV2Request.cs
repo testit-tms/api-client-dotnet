@@ -63,7 +63,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="teardownResults">teardownResults.</param>
         /// <param name="message">message.</param>
         /// <param name="trace">trace.</param>
-        public TestResultUpdateV2Request(List<Guid> failureClassIds = default, TestResultOutcome? outcome = default, string statusCode = default, TestStatusType? statusType = default, string comment = default, List<Link> links = default, List<StepResultApiModel> stepResults = default, List<AttachmentUpdateRequest> attachments = default, long? durationInMs = default, long? duration = default, List<TestResultStepCommentUpdateRequest> stepComments = default, List<AutoTestStepResultUpdateRequest> setupResults = default, List<AutoTestStepResultUpdateRequest> teardownResults = default, string message = default, string trace = default)
+        public TestResultUpdateV2Request(List<Guid> failureClassIds = default, TestResultOutcome? outcome = default, string statusCode = default, TestStatusType? statusType = default, string comment = default, List<CreateLinkApiModel> links = default, List<StepResultApiModel> stepResults = default, List<AttachmentUpdateRequest> attachments = default, long? durationInMs = default, long? duration = default, List<TestResultStepCommentUpdateRequest> stepComments = default, List<AutoTestStepResultUpdateRequest> setupResults = default, List<AutoTestStepResultUpdateRequest> teardownResults = default, string message = default, string trace = default)
         {
             this.FailureClassIds = failureClassIds;
             this.Outcome = outcome;
@@ -104,7 +104,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name = "links", EmitDefaultValue = true)]
-        public List<Link> Links { get; set; }
+        public List<CreateLinkApiModel> Links { get; set; }
 
         /// <summary>
         /// Gets or Sets StepResults

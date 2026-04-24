@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **StatusCode** | **string** |  | [optional] 
 **StatusType** | **TestStatusType** |  | [optional] 
 **Comment** | **string** |  | [optional] 
-**Links** | [**List&lt;Link&gt;**](Link.md) |  | [optional] 
+**Links** | [**List&lt;CreateLinkApiModel&gt;**](CreateLinkApiModel.md) |  | [optional] 
 **StepResults** | [**List&lt;StepResultApiModel&gt;**](StepResultApiModel.md) |  | [optional] 
 **Attachments** | [**List&lt;AttachmentUpdateRequest&gt;**](AttachmentUpdateRequest.md) |  | [optional] 
 **DurationInMs** | **long?** |  | [optional] 

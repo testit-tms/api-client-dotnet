@@ -51,6 +51,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">Description of the project.</param>
         /// <param name="name">Name of the project (required).</param>
         /// <param name="isFavorite">Indicates if the project is marked as favorite (required).</param>
+        /// <param name="workItemsCount">Number of test cases in the project (required).</param>
         /// <param name="testCasesCount">Number of test cases in the project.</param>
         /// <param name="sharedStepsCount">Number of shared steps in the project.</param>
         /// <param name="checkListsCount">Number of checklists in the project.</param>
@@ -63,7 +64,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="globalId">Global ID of the project (required).</param>
         /// <param name="type">Type of the project (required).</param>
         /// <param name="workflowId">workflowId (required).</param>
-        public ProjectShortModel(Guid id = default, string description = default, string name = default, bool isFavorite = default, int? testCasesCount = default, int? sharedStepsCount = default, int? checkListsCount = default, int? autoTestsCount = default, bool isDeleted = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, ProjectTypeModel type = default, Guid workflowId = default)
+        public ProjectShortModel(Guid id = default, string description = default, string name = default, bool isFavorite = default, int workItemsCount = default, int? testCasesCount = default, int? sharedStepsCount = default, int? checkListsCount = default, int? autoTestsCount = default, bool isDeleted = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, ProjectTypeModel type = default, Guid workflowId = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -73,6 +74,7 @@ namespace TestIT.ApiClient.Model
             }
             this.Name = name;
             this.IsFavorite = isFavorite;
+            this.WorkItemsCount = workItemsCount;
             this.IsDeleted = isDeleted;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
@@ -115,6 +117,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Indicates if the project is marked as favorite</value>
         [DataMember(Name = "isFavorite", IsRequired = true, EmitDefaultValue = true)]
         public bool IsFavorite { get; set; }
+
+        /// <summary>
+        /// Number of test cases in the project
+        /// </summary>
+        /// <value>Number of test cases in the project</value>
+        [DataMember(Name = "workItemsCount", IsRequired = true, EmitDefaultValue = true)]
+        public int WorkItemsCount { get; set; }
 
         /// <summary>
         /// Number of test cases in the project
@@ -204,6 +213,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsFavorite: ").Append(IsFavorite).Append("\n");
+            sb.Append("  WorkItemsCount: ").Append(WorkItemsCount).Append("\n");
             sb.Append("  TestCasesCount: ").Append(TestCasesCount).Append("\n");
             sb.Append("  SharedStepsCount: ").Append(SharedStepsCount).Append("\n");
             sb.Append("  CheckListsCount: ").Append(CheckListsCount).Append("\n");

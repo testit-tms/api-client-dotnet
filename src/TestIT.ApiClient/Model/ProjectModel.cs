@@ -53,6 +53,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="isFavorite">Indicates if the project is marked as favorite (required).</param>
         /// <param name="attributesScheme">Collection of the project attributes.</param>
         /// <param name="testPlansAttributesScheme">Collection of the project test plans attributes.</param>
+        /// <param name="workItemsCount">Number of work items in the project (required).</param>
         /// <param name="testCasesCount">Number of test cases in the project.</param>
         /// <param name="sharedStepsCount">Number of shared steps in the project.</param>
         /// <param name="checkListsCount">Number of checklists in the project.</param>
@@ -65,7 +66,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="globalId">Global ID of the project (required).</param>
         /// <param name="type">Type of the project (required).</param>
         /// <param name="workflowId">Identifier of current workflow (required).</param>
-        public ProjectModel(Guid id = default, string description = default, string name = default, bool isFavorite = default, List<CustomAttributeModel> attributesScheme = default, List<CustomAttributeModel> testPlansAttributesScheme = default, int? testCasesCount = default, int? sharedStepsCount = default, int? checkListsCount = default, int? autoTestsCount = default, bool isDeleted = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, ProjectTypeModel type = default, Guid workflowId = default)
+        public ProjectModel(Guid id = default, string description = default, string name = default, bool isFavorite = default, List<CustomAttributeModel> attributesScheme = default, List<CustomAttributeModel> testPlansAttributesScheme = default, int workItemsCount = default, int? testCasesCount = default, int? sharedStepsCount = default, int? checkListsCount = default, int? autoTestsCount = default, bool isDeleted = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, ProjectTypeModel type = default, Guid workflowId = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -75,6 +76,7 @@ namespace TestIT.ApiClient.Model
             }
             this.Name = name;
             this.IsFavorite = isFavorite;
+            this.WorkItemsCount = workItemsCount;
             this.IsDeleted = isDeleted;
             this.CreatedDate = createdDate;
             this.CreatedById = createdById;
@@ -133,6 +135,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Collection of the project test plans attributes</value>
         [DataMember(Name = "testPlansAttributesScheme", EmitDefaultValue = true)]
         public List<CustomAttributeModel> TestPlansAttributesScheme { get; set; }
+
+        /// <summary>
+        /// Number of work items in the project
+        /// </summary>
+        /// <value>Number of work items in the project</value>
+        [DataMember(Name = "workItemsCount", IsRequired = true, EmitDefaultValue = true)]
+        public int WorkItemsCount { get; set; }
 
         /// <summary>
         /// Number of test cases in the project
@@ -225,6 +234,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  IsFavorite: ").Append(IsFavorite).Append("\n");
             sb.Append("  AttributesScheme: ").Append(AttributesScheme).Append("\n");
             sb.Append("  TestPlansAttributesScheme: ").Append(TestPlansAttributesScheme).Append("\n");
+            sb.Append("  WorkItemsCount: ").Append(WorkItemsCount).Append("\n");
             sb.Append("  TestCasesCount: ").Append(TestCasesCount).Append("\n");
             sb.Append("  SharedStepsCount: ").Append(SharedStepsCount).Append("\n");
             sb.Append("  CheckListsCount: ").Append(CheckListsCount).Append("\n");

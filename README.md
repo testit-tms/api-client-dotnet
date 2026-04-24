@@ -604,7 +604,6 @@ Class | Method | HTTP request | Description
  - [Model.LabelShortModel](docs/LabelShortModel.md)
  - [Model.LastTestResultApiResult](docs/LastTestResultApiResult.md)
  - [Model.LastTestResultModel](docs/LastTestResultModel.md)
- - [Model.Link](docs/Link.md)
  - [Model.LinkApiResult](docs/LinkApiResult.md)
  - [Model.LinkCreateApiModel](docs/LinkCreateApiModel.md)
  - [Model.LinkModel](docs/LinkModel.md)
@@ -866,7 +865,6 @@ Class | Method | HTTP request | Description
  - [Model.WorkItemChangedFieldsViewModel](docs/WorkItemChangedFieldsViewModel.md)
  - [Model.WorkItemCommentApiResult](docs/WorkItemCommentApiResult.md)
  - [Model.WorkItemEntityTypeApiModel](docs/WorkItemEntityTypeApiModel.md)
- - [Model.WorkItemEntityTypes](docs/WorkItemEntityTypes.md)
  - [Model.WorkItemExternalMetadataFieldFilterApiModel](docs/WorkItemExternalMetadataFieldFilterApiModel.md)
  - [Model.WorkItemExternalMetadataFieldFilterModel](docs/WorkItemExternalMetadataFieldFilterModel.md)
  - [Model.WorkItemExternalMetadataFilterApiModel](docs/WorkItemExternalMetadataFilterApiModel.md)
@@ -913,6 +911,7 @@ Class | Method | HTTP request | Description
  - [Model.WorkItemStates](docs/WorkItemStates.md)
  - [Model.WorkItemStepChangeViewModel](docs/WorkItemStepChangeViewModel.md)
  - [Model.WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel](docs/WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel.md)
+ - [Model.WorkItemTypeModel](docs/WorkItemTypeModel.md)
  - [Model.WorkItemUpdatingFieldsApiModel](docs/WorkItemUpdatingFieldsApiModel.md)
  - [Model.WorkItemUpdatingFieldsApiResult](docs/WorkItemUpdatingFieldsApiResult.md)
  - [Model.WorkItemVersionModel](docs/WorkItemVersionModel.md)
@@ -932,10 +931,17 @@ Class | Method | HTTP request | Description
 
 
 Authentication schemes defined for the API:
-<a id="Bearer or PrivateToken"></a>
-### Bearer or PrivateToken
+<a id="PrivateToken"></a>
+### PrivateToken
 
 - **Type**: API key
 - **API key parameter name**: Authorization
 - **Location**: HTTP header
+
+<a id="Session Cookie"></a>
+### Session Cookie
+
+- **Type**: API key
+- **API key parameter name**: backoffice
+- **Location**: 
 

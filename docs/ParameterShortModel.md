@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | 
+**SharedStepId** | **Guid?** |  | [optional] 
 **ParameterKeyId** | **Guid** |  | 
 **Value** | **string** | Value of the parameter | 
 **Name** | **string** | Key of the parameter | 

@@ -27,10 +27,10 @@ using OpenAPIDateConverter = TestIT.ApiClient.Client.OpenAPIDateConverter;
 namespace TestIT.ApiClient.Model
 {
     /// <summary>
-    /// Defines WorkItemEntityTypes
+    /// Defines WorkItemTypeModel
     /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
-    public enum WorkItemEntityTypes
+    public enum WorkItemTypeModel
     {
         /// <summary>
         /// Enum TestCases for value: TestCases

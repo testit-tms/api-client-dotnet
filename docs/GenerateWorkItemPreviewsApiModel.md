@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ExternalServiceId** | **Guid** | The ID of the external AI service to be used for generation. | 
-**TaskKey** | **string** | The key of the issue in an issue tracker (e.g., JIRA-123). | [optional] 
 **IssueKey** | **string** | The key of the issue in an issue tracker (e.g., JIRA-123). | [optional] 
 **UserContext** | **string** | Additional user context or description of the issue if no issue key is provided. | [optional] 
 **Temperature** | **float** | Controls randomness of the AI model output. | 

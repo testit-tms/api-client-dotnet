@@ -33,6 +33,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <returns>GlobalSearchResponse</returns>
+        [Obsolete]
         GlobalSearchResponse ApiV2SearchGlobalSearchPost(GlobalSearchRequest globalSearchRequest = default);
 
         /// <summary>
@@ -44,6 +45,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <returns>ApiResponse of GlobalSearchResponse</returns>
+        [Obsolete]
         ApiResponse<GlobalSearchResponse> ApiV2SearchGlobalSearchPostWithHttpInfo(GlobalSearchRequest globalSearchRequest = default);
         #endregion Synchronous Operations
     }
@@ -64,6 +66,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GlobalSearchResponse</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<GlobalSearchResponse> ApiV2SearchGlobalSearchPostAsync(GlobalSearchRequest globalSearchRequest = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
@@ -76,6 +79,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GlobalSearchResponse)</returns>
+        [Obsolete]
         System.Threading.Tasks.Task<ApiResponse<GlobalSearchResponse>> ApiV2SearchGlobalSearchPostWithHttpInfoAsync(GlobalSearchRequest globalSearchRequest = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
@@ -296,6 +300,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <returns>GlobalSearchResponse</returns>
+        [Obsolete]
         public GlobalSearchResponse ApiV2SearchGlobalSearchPost(GlobalSearchRequest globalSearchRequest = default)
         {
             TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse> localVarResponse = ApiV2SearchGlobalSearchPostWithHttpInfo(globalSearchRequest);
@@ -308,6 +313,7 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <returns>ApiResponse of GlobalSearchResponse</returns>
+        [Obsolete]
         public TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse> ApiV2SearchGlobalSearchPostWithHttpInfo(GlobalSearchRequest globalSearchRequest = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -329,10 +335,16 @@ namespace TestIT.ApiClient.Api
 
             localVarRequestOptions.Data = globalSearchRequest;
 
-            // authentication (Bearer or PrivateToken) required
+            // authentication (PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Session Cookie) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
             }
 
             // make the HTTP request
@@ -354,6 +366,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of GlobalSearchResponse</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<GlobalSearchResponse> ApiV2SearchGlobalSearchPostAsync(GlobalSearchRequest globalSearchRequest = default, System.Threading.CancellationToken cancellationToken = default)
         {
             TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse> localVarResponse = await ApiV2SearchGlobalSearchPostWithHttpInfoAsync(globalSearchRequest, cancellationToken).ConfigureAwait(false);
@@ -367,6 +380,7 @@ namespace TestIT.ApiClient.Api
         /// <param name="globalSearchRequest"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (GlobalSearchResponse)</returns>
+        [Obsolete]
         public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<GlobalSearchResponse>> ApiV2SearchGlobalSearchPostWithHttpInfoAsync(GlobalSearchRequest globalSearchRequest = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
@@ -390,10 +404,16 @@ namespace TestIT.ApiClient.Api
 
             localVarRequestOptions.Data = globalSearchRequest;
 
-            // authentication (Bearer or PrivateToken) required
+            // authentication (PrivateToken) required
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Session Cookie) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
             }
 
             // make the HTTP request

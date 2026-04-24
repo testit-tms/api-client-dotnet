@@ -37,8 +37,8 @@ namespace TestIT.ApiClient.Model
         /// Specifies the type of the link.
         /// </summary>
         /// <value>Specifies the type of the link.</value>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
-        public LinkType? Type { get; set; }
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        public LinkType Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateLinkApiModel" /> class.
         /// </summary>
@@ -51,9 +51,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="title">Link name..</param>
         /// <param name="url">Address can be specified without protocol, but necessarily with the domain. (required).</param>
         /// <param name="description">Link description..</param>
-        /// <param name="type">Specifies the type of the link..</param>
+        /// <param name="type">Specifies the type of the link. (required).</param>
         /// <param name="hasInfo">Flag defines if link relates to integrated jira service (required).</param>
-        public UpdateLinkApiModel(Guid? id = default, string title = default, string url = default, string description = default, LinkType? type = default, bool hasInfo = default)
+        public UpdateLinkApiModel(Guid? id = default, string title = default, string url = default, string description = default, LinkType type = default, bool hasInfo = default)
         {
             // to ensure "url" is required (not null)
             if (url == null)
@@ -61,11 +61,11 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("url is a required property for UpdateLinkApiModel and cannot be null");
             }
             this.Url = url;
+            this.Type = type;
             this.HasInfo = hasInfo;
             this.Id = id;
             this.Title = title;
             this.Description = description;
-            this.Type = type;
         }
 
         /// <summary>
