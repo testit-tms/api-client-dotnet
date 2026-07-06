@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Delete WorkItem comment
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
+        ///   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Api
         /// Delete WorkItem comment
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
+        ///   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Api
         /// Create WorkItem comment
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
+        ///   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -63,7 +63,7 @@ namespace TestIT.ApiClient.Api
         /// Create WorkItem comment
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
+        ///   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -136,7 +136,7 @@ namespace TestIT.ApiClient.Api
         /// Delete WorkItem comment
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
+        ///   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -148,7 +148,7 @@ namespace TestIT.ApiClient.Api
         /// Delete WorkItem comment
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
+        ///   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -159,7 +159,7 @@ namespace TestIT.ApiClient.Api
         /// Create WorkItem comment
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
+        ///   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -171,7 +171,7 @@ namespace TestIT.ApiClient.Api
         /// Create WorkItem comment
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
+        ///   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -461,7 +461,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete WorkItem comment  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
+        /// Delete WorkItem comment   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -472,7 +472,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete WorkItem comment  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
+        /// Delete WorkItem comment   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -502,11 +502,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -522,7 +522,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete WorkItem comment  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
+        /// Delete WorkItem comment   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -534,7 +534,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete WorkItem comment  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
+        /// Delete WorkItem comment   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -567,11 +567,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -588,7 +588,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create WorkItem comment  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
+        /// Create WorkItem comment   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -600,7 +600,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create WorkItem comment  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
+        /// Create WorkItem comment   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -631,11 +631,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -651,7 +651,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create WorkItem comment  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
+        /// Create WorkItem comment   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -664,7 +664,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create WorkItem comment  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
+        /// Create WorkItem comment   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -698,11 +698,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -761,11 +761,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -827,11 +827,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -894,11 +894,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -964,11 +964,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1031,11 +1031,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1101,11 +1101,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request

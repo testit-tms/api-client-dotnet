@@ -111,7 +111,7 @@ namespace TestIT.ApiClient.Api
         /// Upload new attachment file
         /// </summary>
         /// <remarks>
-        /// File size is restricted to 50 MB (52 428 800 bytes)
+        /// File size is restricted to 1 GB (1 073 741 824 bytes)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -122,7 +122,7 @@ namespace TestIT.ApiClient.Api
         /// Upload new attachment file
         /// </summary>
         /// <remarks>
-        /// File size is restricted to 50 MB (52 428 800 bytes)
+        /// File size is restricted to 1 GB (1 073 741 824 bytes)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -241,7 +241,7 @@ namespace TestIT.ApiClient.Api
         /// Upload new attachment file
         /// </summary>
         /// <remarks>
-        /// File size is restricted to 50 MB (52 428 800 bytes)
+        /// File size is restricted to 1 GB (1 073 741 824 bytes)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -253,7 +253,7 @@ namespace TestIT.ApiClient.Api
         /// Upload new attachment file
         /// </summary>
         /// <remarks>
-        /// File size is restricted to 50 MB (52 428 800 bytes)
+        /// File size is restricted to 1 GB (1 073 741 824 bytes)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -515,11 +515,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -580,11 +580,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -672,11 +672,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -767,11 +767,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -830,11 +830,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -896,11 +896,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -956,11 +956,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1019,11 +1019,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1040,7 +1040,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
+        /// Upload new attachment file File size is restricted to 1 GB (1 073 741 824 bytes)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -1052,7 +1052,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
+        /// Upload new attachment file File size is restricted to 1 GB (1 073 741 824 bytes)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -1086,11 +1086,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1106,7 +1106,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
+        /// Upload new attachment file File size is restricted to 1 GB (1 073 741 824 bytes)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -1119,7 +1119,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Upload new attachment file File size is restricted to 50 MB (52 428 800 bytes)
+        /// Upload new attachment file File size is restricted to 1 GB (1 073 741 824 bytes)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="file"> (optional)</param>
@@ -1156,11 +1156,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request

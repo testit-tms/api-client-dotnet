@@ -468,11 +468,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -567,11 +567,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -629,11 +629,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -694,11 +694,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -757,11 +757,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -823,11 +823,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request

@@ -4,8 +4,8 @@
 #npm install @openapitools/openapi-generator-cli -g
 
 # Настройка переменных
-FILE_NAME="cloud-swagger.json"
-NEW_VERSION="5.5.6"
+FILE_NAME="swagger-v2-5.8.json"
+NEW_VERSION="5.6.0-TMS-5.8"
 GENERATOR="openapi-generator-cli-7.18.0.jar"
 
 if [ ! -f ".swagger/$FILE_NAME" ]; then

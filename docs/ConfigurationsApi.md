@@ -44,10 +44,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -104,7 +104,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -152,10 +152,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -212,7 +212,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -260,10 +260,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -316,7 +316,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -366,10 +366,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -424,7 +424,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -472,10 +472,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -528,7 +528,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -576,10 +576,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -632,7 +632,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -680,10 +680,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -740,7 +740,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -788,10 +788,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -844,7 +844,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -892,10 +892,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -952,7 +952,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1000,10 +1000,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1070,7 +1070,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1097,7 +1097,7 @@ catch (ApiException e)
 
 Create Configuration
 
- Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
+  Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
 
 ### Example
 ```csharp
@@ -1120,10 +1120,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1180,7 +1180,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1207,7 +1207,7 @@ catch (ApiException e)
 
 Get configuration by internal or global ID
 
- Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
+  Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
 
 ### Example
 ```csharp
@@ -1230,10 +1230,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1290,7 +1290,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 

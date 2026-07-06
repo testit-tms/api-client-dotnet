@@ -11,11 +11,13 @@ All URIs are relative to *http://localhost*
 | [**ApiV2WorkItemsIdLikePost**](WorkItemsApi.md#apiv2workitemsidlikepost) | **POST** /api/v2/workItems/{id}/like | Set like to WorkItem |
 | [**ApiV2WorkItemsIdLikesCountGet**](WorkItemsApi.md#apiv2workitemsidlikescountget) | **GET** /api/v2/workItems/{id}/likes/count | Get likes count of WorkItem |
 | [**ApiV2WorkItemsIdLikesGet**](WorkItemsApi.md#apiv2workitemsidlikesget) | **GET** /api/v2/workItems/{id}/likes | Get likes of WorkItem |
+| [**ApiV2WorkItemsIdPatch**](WorkItemsApi.md#apiv2workitemsidpatch) | **PATCH** /api/v2/workItems/{id} | Patch Test Case, Checklist or Shared Step |
 | [**ApiV2WorkItemsIdTestResultsHistoryGet**](WorkItemsApi.md#apiv2workitemsidtestresultshistoryget) | **GET** /api/v2/workItems/{id}/testResults/history | Get test results history of WorkItem |
 | [**ApiV2WorkItemsIdVersionVersionIdActualPost**](WorkItemsApi.md#apiv2workitemsidversionversionidactualpost) | **POST** /api/v2/workItems/{id}/version/{versionId}/actual | Set WorkItem as actual |
 | [**ApiV2WorkItemsLinksUrlsSearchPost**](WorkItemsApi.md#apiv2workitemslinksurlssearchpost) | **POST** /api/v2/workItems/links/urls/search |  |
 | [**ApiV2WorkItemsMovePost**](WorkItemsApi.md#apiv2workitemsmovepost) | **POST** /api/v2/workItems/move | Move WorkItem to another section |
 | [**ApiV2WorkItemsPost**](WorkItemsApi.md#apiv2workitemspost) | **POST** /api/v2/workItems | Creates work item |
+| [**ApiV2WorkItemsPut**](WorkItemsApi.md#apiv2workitemsput) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step |
 | [**ApiV2WorkItemsSearchPost**](WorkItemsApi.md#apiv2workitemssearchpost) | **POST** /api/v2/workItems/search | Search for work items |
 | [**ApiV2WorkItemsSharedStepIdReferencesSectionsPost**](WorkItemsApi.md#apiv2workitemssharedstepidreferencessectionspost) | **POST** /api/v2/workItems/{sharedStepId}/references/sections | Get SharedStep references in sections |
 | [**ApiV2WorkItemsSharedStepIdReferencesWorkItemsPost**](WorkItemsApi.md#apiv2workitemssharedstepidreferencesworkitemspost) | **POST** /api/v2/workItems/{sharedStepId}/references/workItems | Get SharedStep references in work items |
@@ -29,7 +31,6 @@ All URIs are relative to *http://localhost*
 | [**GetWorkItemVersions**](WorkItemsApi.md#getworkitemversions) | **GET** /api/v2/workItems/{id}/versions | Get WorkItem versions |
 | [**PurgeWorkItem**](WorkItemsApi.md#purgeworkitem) | **POST** /api/v2/workItems/{id}/purge | Permanently delete test case, checklist or shared steps from archive |
 | [**RestoreWorkItem**](WorkItemsApi.md#restoreworkitem) | **POST** /api/v2/workItems/{id}/restore | Restore test case, checklist or shared steps from archive |
-| [**UpdateWorkItem**](WorkItemsApi.md#updateworkitem) | **PUT** /api/v2/workItems | Update Test Case, Checklist or Shared Step |
 
 <a id="apiv2workitemsidattachmentspost"></a>
 # **ApiV2WorkItemsIdAttachmentsPost**
@@ -37,7 +38,7 @@ All URIs are relative to *http://localhost*
 
 Upload and link attachment to WorkItem
 
- Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
+  Use case    User sets workItemId    User attaches a file    System creates attachment and links it to the work item    System returns attachment identifier
 
 ### Example
 ```csharp
@@ -60,10 +61,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -118,7 +119,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -146,7 +147,7 @@ void (empty response body)
 
 Transform CheckList to TestCase
 
- Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
+  Use case    User sets checklist identifier    User runs method execution    System transform CheckList to TestCase
 
 ### Example
 ```csharp
@@ -169,10 +170,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -229,7 +230,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -256,7 +257,7 @@ catch (ApiException e)
 
 Get change history of WorkItem
 
- Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
+  Use case    User sets work item identifier    User runs method execution    System return change history of WorkItem
 
 ### Example
 ```csharp
@@ -279,10 +280,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -349,7 +350,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -376,7 +377,7 @@ catch (ApiException e)
 
 Delete like from WorkItem
 
- Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
+  Use case    User sets WorkItem identifier    User runs method execution    System delete like from WorkItem
 
 ### Example
 ```csharp
@@ -399,10 +400,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -455,7 +456,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -482,7 +483,7 @@ void (empty response body)
 
 Set like to WorkItem
 
- Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
+  Use case    User sets WorkItem identifier    User runs method execution    System set like to WorkItem
 
 ### Example
 ```csharp
@@ -505,10 +506,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -561,7 +562,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -588,7 +589,7 @@ void (empty response body)
 
 Get likes count of WorkItem
 
- Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
+  Use case    User sets WorkItem identifier    User runs method execution    System return likes count of WorkItem
 
 ### Example
 ```csharp
@@ -611,10 +612,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -671,7 +672,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -698,7 +699,7 @@ catch (ApiException e)
 
 Get likes of WorkItem
 
- Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
+  Use case    User sets WorkItem identifier    User runs method execution    System return likes of WorkItem
 
 ### Example
 ```csharp
@@ -721,10 +722,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -781,7 +782,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -802,13 +803,121 @@ catch (ApiException e)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+<a id="apiv2workitemsidpatch"></a>
+# **ApiV2WorkItemsIdPatch**
+> void ApiV2WorkItemsIdPatch (string id, List<Operation> operation = null)
+
+Patch Test Case, Checklist or Shared Step
+
+See <a href=\"https://www.rfc-editor.org/rfc/rfc6902\" target=\"_blank\">RFC 6902: JavaScript Object Notation (JSON) Patch</a> for details
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2WorkItemsIdPatchExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("session", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
+            var operation = new List<Operation>(); // List<Operation> |  (optional) 
+
+            try
+            {
+                // Patch Test Case, Checklist or Shared Step
+                apiInstance.ApiV2WorkItemsIdPatch(id, operation);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkItemsApi.ApiV2WorkItemsIdPatch: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2WorkItemsIdPatchWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Patch Test Case, Checklist or Shared Step
+    apiInstance.ApiV2WorkItemsIdPatchWithHttpInfo(id, operation);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkItemsApi.ApiV2WorkItemsIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
+| **operation** | [**List&lt;Operation&gt;**](Operation.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for test library required |  -  |
+| **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 <a id="apiv2workitemsidtestresultshistoryget"></a>
 # **ApiV2WorkItemsIdTestResultsHistoryGet**
 > List&lt;TestResultHistoryReportApiResult&gt; ApiV2WorkItemsIdTestResultsHistoryGet (Guid id, DateTime? from = null, DateTime? to = null, List<Guid> configurationIds = null, List<Guid> testPlanIds = null, List<Guid> userIds = null, List<string> outcomes = null, List<string> statusCodes = null, bool? isAutomated = null, bool? automated = null, List<Guid> testRunIds = null, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null)
 
 Get test results history of WorkItem
 
- Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
+  Use case    User sets WorkItem identifier    User runs method execution    System return test results history of WorkItem
 
 ### Example
 ```csharp
@@ -831,10 +940,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -921,7 +1030,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -948,7 +1057,7 @@ catch (ApiException e)
 
 Set WorkItem as actual
 
- Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
+  Use case    User sets work item identifier    User runs method execution    System set WorkItem as actual
 
 ### Example
 ```csharp
@@ -971,10 +1080,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1033,7 +1142,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1081,10 +1190,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1149,7 +1258,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1176,7 +1285,7 @@ catch (ApiException e)
 
 Move WorkItem to another section
 
- Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
+  Use case    User sets WorkItem identifier    User runs method execution    System move WorkItem to another section
 
 ### Example
 ```csharp
@@ -1199,10 +1308,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1259,7 +1368,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1307,10 +1416,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1367,7 +1476,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1383,6 +1492,112 @@ catch (ApiException e)
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2workitemsput"></a>
+# **ApiV2WorkItemsPut**
+> void ApiV2WorkItemsPut (UpdateWorkItemApiModel updateWorkItemApiModel = null)
+
+Update Test Case, Checklist or Shared Step
+
+  Use case    User sets work item properties (listed in request parameters)    User runs method execution    System updates work item by identifier    System returns updated work item model (listed in response parameters)
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2WorkItemsPutExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("session", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
+            var updateWorkItemApiModel = new UpdateWorkItemApiModel(); // UpdateWorkItemApiModel |  (optional) 
+
+            try
+            {
+                // Update Test Case, Checklist or Shared Step
+                apiInstance.ApiV2WorkItemsPut(updateWorkItemApiModel);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling WorkItemsApi.ApiV2WorkItemsPut: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2WorkItemsPutWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Update Test Case, Checklist or Shared Step
+    apiInstance.ApiV2WorkItemsPutWithHttpInfo(updateWorkItemApiModel);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling WorkItemsApi.ApiV2WorkItemsPutWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **updateWorkItemApiModel** | [**UpdateWorkItemApiModel**](UpdateWorkItemApiModel.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | Successful operation |  -  |
+| **400** |   Field is required    Priority is not a valid    duration should be a positive number    should be empty for CheckList    There is no option in ProjectAttributesScheme with such Id    Attribute value must be a valid guid for options scheme |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for test library required |  -  |
+| **404** |   WorkItem not found    Can&#39;t find section    Can&#39;t attributesScheme    Can&#39;t attribute    AutoTestIds not exist in project |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 
@@ -1415,10 +1630,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1485,7 +1700,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1512,7 +1727,7 @@ catch (ApiException e)
 
 Get SharedStep references in sections
 
- Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+  Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
 
 ### Example
 ```csharp
@@ -1535,10 +1750,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1607,7 +1822,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1634,7 +1849,7 @@ catch (ApiException e)
 
 Get SharedStep references in work items
 
- Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+  Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
 
 ### Example
 ```csharp
@@ -1657,10 +1872,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1729,7 +1944,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1756,7 +1971,7 @@ catch (ApiException e)
 
 Get SharedStep references
 
- Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+  Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
 
 ### Example
 ```csharp
@@ -1779,10 +1994,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1839,7 +2054,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1866,7 +2081,7 @@ catch (ApiException e)
 
 Delete all links AutoTests from WorkItem by Id or GlobalId
 
- Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
+  Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search and delete all autotests, related to found work item    System returns no content response
 
 ### Example
 ```csharp
@@ -1889,16 +2104,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or global(integer format) identifier\"
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
 
             try
             {
@@ -1937,7 +2152,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or global(integer format) identifier\&quot; |  |
+| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
 
 ### Return type
 
@@ -1945,7 +2160,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1973,7 +2188,7 @@ void (empty response body)
 
 Delete Test Case, Checklist or Shared Step by Id or GlobalId
 
- Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
+  Use case    User sets work item identifier    User runs method execution    System deletes work item    System returns no content response
 
 ### Example
 ```csharp
@@ -1996,16 +2211,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or global(integer format) identifier\"
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
 
             try
             {
@@ -2044,7 +2259,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or global(integer format) identifier\&quot; |  |
+| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
 
 ### Return type
 
@@ -2052,7 +2267,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2079,7 +2294,7 @@ void (empty response body)
 
 Get all AutoTests linked to WorkItem by Id or GlobalId
 
- Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
+  Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search all autotests, related to found work item    System returns list of found autotests
 
 ### Example
 ```csharp
@@ -2102,16 +2317,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or global(integer format) identifier\"
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
 
             try
             {
@@ -2154,7 +2369,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or global(integer format) identifier\&quot; |  |
+| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
 
 ### Return type
 
@@ -2162,7 +2377,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2210,16 +2425,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or global(integer format) identifier\"
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
             var versionId = 00000000-0000-0000-0000-000000000000;  // Guid? | WorkItem version (guid format) identifier (optional) 
             var versionNumber = 0;  // int? | WorkItem version number (0 is the last version)\" (optional) 
 
@@ -2264,7 +2479,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or global(integer format) identifier\&quot; |  |
+| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
 | **versionId** | **Guid?** | WorkItem version (guid format) identifier | [optional]  |
 | **versionNumber** | **int?** | WorkItem version number (0 is the last version)\&quot; | [optional]  |
 
@@ -2274,7 +2489,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2301,7 +2516,7 @@ catch (ApiException e)
 
 Get Test Case, Checklist or Shared Step by Id or GlobalId
 
- Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
+  Use case    User sets work item identifier    [Optional] User sets work item version identifier    [Optional] User sets work item version number    User runs method execution    System search work item by identifier    [Optional] if User sets work item version identifier, system search work item version by identifier.    [Optional] if user sets work item version number, system search work item version by number    Otherwise, system search last work item version    System returns work item
 
 ### Example
 ```csharp
@@ -2324,16 +2539,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or global(integer format) identifier\"
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
             var versionId = 00000000-0000-0000-0000-000000000000;  // Guid? | WorkItem version (guid format) identifier\" (optional) 
             var versionNumber = 0;  // int? | WorkItem version number (0 is the last version)\" (optional) 
 
@@ -2378,7 +2593,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or global(integer format) identifier\&quot; |  |
+| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
 | **versionId** | **Guid?** | WorkItem version (guid format) identifier\&quot; | [optional]  |
 | **versionNumber** | **int?** | WorkItem version number (0 is the last version)\&quot; | [optional]  |
 
@@ -2388,7 +2603,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2415,7 +2630,7 @@ catch (ApiException e)
 
 Get WorkItem chronology by Id or GlobalId
 
- Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
+  Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search test results of all autotests, related to found work item    System sort results by CompletedOn ascending, then by CreatedDate ascending    System returns sorted collection of test results
 
 ### Example
 ```csharp
@@ -2438,10 +2653,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -2498,7 +2713,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2525,7 +2740,7 @@ catch (ApiException e)
 
 Get WorkItem versions
 
- Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
+  Use case    User sets work item identifier    [Optional] User sets work item version identifier    User runs method execution    System search work item by identifier    [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item    System returns array of work item version models (listed in response example)
 
 ### Example
 ```csharp
@@ -2548,18 +2763,18 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or global(integer format) identifier\"
-            var workItemVersionId = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid? | WorkItem version (guid format) identifier\" (optional) 
-            var versionNumber = 1;  // int? | WorkItem version (integer format) number\" (optional) 
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | WorkItem internal (guid format) or  global(integer format) identifier\"
+            var workItemVersionId = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid? | WorkItem version (guid format)  identifier\" (optional) 
+            var versionNumber = 1;  // int? | WorkItem version (integer format)  number\" (optional) 
 
             try
             {
@@ -2602,9 +2817,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | WorkItem internal (guid format) or global(integer format) identifier\&quot; |  |
-| **workItemVersionId** | **Guid?** | WorkItem version (guid format) identifier\&quot; | [optional]  |
-| **versionNumber** | **int?** | WorkItem version (integer format) number\&quot; | [optional]  |
+| **id** | **string** | WorkItem internal (guid format) or  global(integer format) identifier\&quot; |  |
+| **workItemVersionId** | **Guid?** | WorkItem version (guid format)  identifier\&quot; | [optional]  |
+| **versionNumber** | **int?** | WorkItem version (integer format)  number\&quot; | [optional]  |
 
 ### Return type
 
@@ -2612,7 +2827,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2660,10 +2875,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -2716,7 +2931,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2764,10 +2979,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -2820,7 +3035,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2836,112 +3051,6 @@ void (empty response body)
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for the archive is required |  -  |
 | **404** | Not Found |  -  |
-| **409** | Conflict |  -  |
-| **422** | Unprocessable Entity |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a id="updateworkitem"></a>
-# **UpdateWorkItem**
-> void UpdateWorkItem (UpdateWorkItemApiModel updateWorkItemApiModel = null)
-
-Update Test Case, Checklist or Shared Step
-
- Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
-
-### Example
-```csharp
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Net.Http;
-using TestIT.ApiClient.Api;
-using TestIT.ApiClient.Client;
-using TestIT.ApiClient.Model;
-
-namespace Example
-{
-    public class UpdateWorkItemExample
-    {
-        public static void Main()
-        {
-            Configuration config = new Configuration();
-            config.BasePath = "http://localhost";
-            // Configure API key authorization: PrivateToken
-            config.AddApiKey("Authorization", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
-
-            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
-            HttpClient httpClient = new HttpClient();
-            HttpClientHandler httpClientHandler = new HttpClientHandler();
-            var apiInstance = new WorkItemsApi(httpClient, config, httpClientHandler);
-            var updateWorkItemApiModel = new UpdateWorkItemApiModel(); // UpdateWorkItemApiModel |  (optional) 
-
-            try
-            {
-                // Update Test Case, Checklist or Shared Step
-                apiInstance.UpdateWorkItem(updateWorkItemApiModel);
-            }
-            catch (ApiException  e)
-            {
-                Debug.Print("Exception when calling WorkItemsApi.UpdateWorkItem: " + e.Message);
-                Debug.Print("Status Code: " + e.ErrorCode);
-                Debug.Print(e.StackTrace);
-            }
-        }
-    }
-}
-```
-
-#### Using the UpdateWorkItemWithHttpInfo variant
-This returns an ApiResponse object which contains the response data, status code and headers.
-
-```csharp
-try
-{
-    // Update Test Case, Checklist or Shared Step
-    apiInstance.UpdateWorkItemWithHttpInfo(updateWorkItemApiModel);
-}
-catch (ApiException e)
-{
-    Debug.Print("Exception when calling WorkItemsApi.UpdateWorkItemWithHttpInfo: " + e.Message);
-    Debug.Print("Status Code: " + e.ErrorCode);
-    Debug.Print(e.StackTrace);
-}
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-|------|------|-------------|-------|
-| **updateWorkItemApiModel** | [**UpdateWorkItemApiModel**](UpdateWorkItemApiModel.md) |  | [optional]  |
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **204** | Successful operation |  -  |
-| **400** |  Field is required  Priority is not a valid  duration should be a positive number  should be empty for CheckList  There is no option in ProjectAttributesScheme with such Id  Attribute value must be a valid guid for options scheme |  -  |
-| **401** | Unauthorized |  -  |
-| **403** | Update permission for test library required |  -  |
-| **404** |  WorkItem not found  Can&#39;t find section  Can&#39;t attributesScheme  Can&#39;t attribute  AutoTestIds not exist in project |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 

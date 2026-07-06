@@ -16,7 +16,7 @@ All URIs are relative to *http://localhost*
 
 Add attributes to project's test plans
 
- Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
+  Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
 
 ### Example
 ```csharp
@@ -39,10 +39,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -97,7 +97,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -109,7 +109,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **400** |  Attributes must be global |  -  |
+| **400** |   Attributes must be global |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for project settings is required |  -  |
 | **404** | Not Found |  -  |
@@ -124,7 +124,7 @@ void (empty response body)
 
 Delete attribute from project's test plans
 
- Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+  Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
 
 ### Example
 ```csharp
@@ -147,10 +147,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -205,7 +205,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -232,7 +232,7 @@ void (empty response body)
 
 Get project's test plan attributes
 
- Use case  User runs method execution  System returns project for test plans attributes by project identifier
+  Use case    User runs method execution    System returns project for test plans attributes by project identifier
 
 ### Example
 ```csharp
@@ -255,10 +255,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -315,7 +315,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -363,10 +363,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -435,7 +435,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -462,7 +462,7 @@ catch (ApiException e)
 
 Update attribute of project's test plans
 
- Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+  Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
 
 ### Example
 ```csharp
@@ -485,10 +485,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -543,7 +543,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 

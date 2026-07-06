@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Get unread Notifications total in last 7 days
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
+        ///   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Api
         /// Get unread Notifications total in last 7 days
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
+        ///   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Api
         /// Get all Notifications for current User
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns notifications (listed in the response example)
+        ///   Use case    User runs method execution    System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -68,7 +68,7 @@ namespace TestIT.ApiClient.Api
         /// Get all Notifications for current User
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns notifications (listed in the response example)
+        ///   Use case    User runs method execution    System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -83,7 +83,7 @@ namespace TestIT.ApiClient.Api
         /// Set Notification as read
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
+        ///   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -94,7 +94,7 @@ namespace TestIT.ApiClient.Api
         /// Set Notification as read
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
+        ///   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -104,7 +104,7 @@ namespace TestIT.ApiClient.Api
         /// Set all Notifications as read
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System set all notifications as read
+        ///   Use case    User runs method execution    System set all notifications as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
@@ -114,7 +114,7 @@ namespace TestIT.ApiClient.Api
         /// Set all Notifications as read
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System set all notifications as read
+        ///   Use case    User runs method execution    System set all notifications as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -123,7 +123,7 @@ namespace TestIT.ApiClient.Api
         /// Search Notifications for current User
         /// </summary>
         /// <remarks>
-        ///  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
+        ///   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -139,7 +139,7 @@ namespace TestIT.ApiClient.Api
         /// Search Notifications for current User
         /// </summary>
         /// <remarks>
-        ///  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
+        ///   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -163,7 +163,7 @@ namespace TestIT.ApiClient.Api
         /// Get unread Notifications total in last 7 days
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
+        ///   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
@@ -175,7 +175,7 @@ namespace TestIT.ApiClient.Api
         /// Get unread Notifications total in last 7 days
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
+        ///   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
@@ -186,7 +186,7 @@ namespace TestIT.ApiClient.Api
         /// Get all Notifications for current User
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns notifications (listed in the response example)
+        ///   Use case    User runs method execution    System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -203,7 +203,7 @@ namespace TestIT.ApiClient.Api
         /// Get all Notifications for current User
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns notifications (listed in the response example)
+        ///   Use case    User runs method execution    System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -219,7 +219,7 @@ namespace TestIT.ApiClient.Api
         /// Set Notification as read
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
+        ///   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -231,7 +231,7 @@ namespace TestIT.ApiClient.Api
         /// Set Notification as read
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
+        ///   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -242,7 +242,7 @@ namespace TestIT.ApiClient.Api
         /// Set all Notifications as read
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System set all notifications as read
+        ///   Use case    User runs method execution    System set all notifications as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -253,7 +253,7 @@ namespace TestIT.ApiClient.Api
         /// Set all Notifications as read
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System set all notifications as read
+        ///   Use case    User runs method execution    System set all notifications as read
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -263,7 +263,7 @@ namespace TestIT.ApiClient.Api
         /// Search Notifications for current User
         /// </summary>
         /// <remarks>
-        ///  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
+        ///   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -280,7 +280,7 @@ namespace TestIT.ApiClient.Api
         /// Search Notifications for current User
         /// </summary>
         /// <remarks>
-        ///  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
+        ///   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -506,7 +506,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get unread Notifications total in last 7 days  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
+        /// Get unread Notifications total in last 7 days   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
@@ -518,7 +518,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get unread Notifications total in last 7 days  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
+        /// Get unread Notifications total in last 7 days   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
@@ -551,11 +551,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -571,7 +571,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get unread Notifications total in last 7 days  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
+        /// Get unread Notifications total in last 7 days   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
@@ -584,7 +584,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get unread Notifications total in last 7 days  Use case  User runs method execution  System returns unread notifications total (listed in the response example)
+        /// Get unread Notifications total in last 7 days   Use case    User runs method execution    System returns unread notifications total (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isRead"> (optional)</param>
@@ -620,11 +620,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -641,7 +641,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all Notifications for current User  Use case  User runs method execution  System returns notifications (listed in the response example)
+        /// Get all Notifications for current User   Use case    User runs method execution    System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -658,7 +658,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all Notifications for current User  Use case  User runs method execution  System returns notifications (listed in the response example)
+        /// Get all Notifications for current User   Use case    User runs method execution    System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -716,11 +716,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -736,7 +736,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all Notifications for current User  Use case  User runs method execution  System returns notifications (listed in the response example)
+        /// Get all Notifications for current User   Use case    User runs method execution    System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -754,7 +754,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all Notifications for current User  Use case  User runs method execution  System returns notifications (listed in the response example)
+        /// Get all Notifications for current User   Use case    User runs method execution    System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="notificationType"> (optional)</param>
@@ -815,11 +815,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -836,7 +836,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set Notification as read  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
+        /// Set Notification as read   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -847,7 +847,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set Notification as read  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
+        /// Set Notification as read   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -877,11 +877,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -897,7 +897,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set Notification as read  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
+        /// Set Notification as read   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -909,7 +909,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set Notification as read  Use case  User sets notification internal (guid format) identifier  User runs method execution  System set notification as read
+        /// Set Notification as read   Use case    User sets notification internal (guid format) identifier    User runs method execution    System set notification as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -942,11 +942,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -963,7 +963,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set all Notifications as read  Use case  User runs method execution  System set all notifications as read
+        /// Set all Notifications as read   Use case    User runs method execution    System set all notifications as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
@@ -973,7 +973,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set all Notifications as read  Use case  User runs method execution  System set all notifications as read
+        /// Set all Notifications as read   Use case    User runs method execution    System set all notifications as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -1001,11 +1001,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1021,7 +1021,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set all Notifications as read  Use case  User runs method execution  System set all notifications as read
+        /// Set all Notifications as read   Use case    User runs method execution    System set all notifications as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1032,7 +1032,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set all Notifications as read  Use case  User runs method execution  System set all notifications as read
+        /// Set all Notifications as read   Use case    User runs method execution    System set all notifications as read
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1063,11 +1063,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1084,7 +1084,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search Notifications for current User  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
+        /// Search Notifications for current User   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1101,7 +1101,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search Notifications for current User  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
+        /// Search Notifications for current User   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1157,11 +1157,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1177,7 +1177,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search Notifications for current User  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
+        /// Search Notifications for current User   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1195,7 +1195,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search Notifications for current User  Use case  User set filter and runs method execution  System returns notifications (listed in the response example)
+        /// Search Notifications for current User   Use case    User set filter and runs method execution    System returns notifications (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1254,11 +1254,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request

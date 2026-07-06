@@ -37,10 +37,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -93,7 +93,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -141,10 +141,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -207,7 +207,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -255,10 +255,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -315,7 +315,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -363,10 +363,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -418,7 +418,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -445,7 +445,7 @@ This endpoint does not need any parameter.
 
 Upload new attachment file
 
-File size is restricted to 50 MB (52 428 800 bytes)
+File size is restricted to 1 GB (1 073 741 824 bytes)
 
 ### Example
 ```csharp
@@ -468,10 +468,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -528,7 +528,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -540,7 +540,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** |  - Invalid file contents  - Invalid HTTP headers |  -  |
+| **400** |   - Invalid file contents    - Invalid HTTP headers |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |

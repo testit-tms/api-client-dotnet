@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**ApiV2TestRunsDelete**](TestRunsApi.md#apiv2testrunsdelete) | **DELETE** /api/v2/testRuns | Delete multiple test runs |
 | [**ApiV2TestRunsIdAutoTestsNamespacesGet**](TestRunsApi.md#apiv2testrunsidautotestsnamespacesget) | **GET** /api/v2/testRuns/{id}/autoTestsNamespaces | Get autotest classes and namespaces in test run |
 | [**ApiV2TestRunsIdDelete**](TestRunsApi.md#apiv2testrunsiddelete) | **DELETE** /api/v2/testRuns/{id} | Delete test run |
+| [**ApiV2TestRunsIdPatch**](TestRunsApi.md#apiv2testrunsidpatch) | **PATCH** /api/v2/testRuns/{id} | Patch test run |
 | [**ApiV2TestRunsIdPurgePost**](TestRunsApi.md#apiv2testrunsidpurgepost) | **POST** /api/v2/testRuns/{id}/purge | Permanently delete test run from archive |
 | [**ApiV2TestRunsIdRerunsPost**](TestRunsApi.md#apiv2testrunsidrerunspost) | **POST** /api/v2/testRuns/{id}/reruns | Manual autotests rerun in test run |
 | [**ApiV2TestRunsIdRestorePost**](TestRunsApi.md#apiv2testrunsidrestorepost) | **POST** /api/v2/testRuns/{id}/restore | Restore test run from the archive |
@@ -35,7 +36,7 @@ All URIs are relative to *http://localhost*
 
 Delete multiple test runs
 
- Use case  User sets selection parameters of test runs  System search and delete collection of test runs  System returns the number of deleted test runs
+  Use case    User sets selection parameters of test runs    System search and delete collection of test runs    System returns the number of deleted test runs
 
 ### Example
 ```csharp
@@ -58,10 +59,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -118,7 +119,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -130,7 +131,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | OK |  -  |
-| **400** |  - ID is not valid  - Project was archived and cannot be edited anymore |  -  |
+| **400** |   - ID is not valid    - Project was archived and cannot be edited anymore |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Not Found |  -  |
@@ -166,10 +167,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -226,7 +227,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -253,7 +254,7 @@ catch (ApiException e)
 
 Delete test run
 
- Use case  User sets test run internal (guid format) identifier  System search and delete test run
+  Use case    User sets test run internal (guid format) identifier    System search and delete test run
 
 ### Example
 ```csharp
@@ -276,10 +277,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -332,7 +333,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -344,10 +345,118 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **400** |  - ID is not valid  - Project was archived and cannot be edited anymore |  -  |
+| **400** |   - ID is not valid    - Project was archived and cannot be edited anymore |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Forbidden |  -  |
 | **404** | Test run with provided ID cannot be found |  -  |
+| **409** | Conflict |  -  |
+| **422** | Unprocessable Entity |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="apiv2testrunsidpatch"></a>
+# **ApiV2TestRunsIdPatch**
+> void ApiV2TestRunsIdPatch (Guid id, List<Operation> operation = null)
+
+Patch test run
+
+See <a href=\"https://www.rfc-editor.org/rfc/rfc6902\" target=\"_blank\">RFC 6902: JavaScript Object Notation (JSON) Patch</a> for details
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Net.Http;
+using TestIT.ApiClient.Api;
+using TestIT.ApiClient.Client;
+using TestIT.ApiClient.Model;
+
+namespace Example
+{
+    public class ApiV2TestRunsIdPatchExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: PrivateToken
+            config.AddApiKey("Authorization", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Authorization", "Bearer");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("session", "Bearer");
+
+            // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
+            HttpClient httpClient = new HttpClient();
+            HttpClientHandler httpClientHandler = new HttpClientHandler();
+            var apiInstance = new TestRunsApi(httpClient, config, httpClientHandler);
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // Guid | Test Run internal identifier (GUID format)
+            var operation = new List<Operation>(); // List<Operation> |  (optional) 
+
+            try
+            {
+                // Patch test run
+                apiInstance.ApiV2TestRunsIdPatch(id, operation);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsIdPatch: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the ApiV2TestRunsIdPatchWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Patch test run
+    apiInstance.ApiV2TestRunsIdPatchWithHttpInfo(id, operation);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling TestRunsApi.ApiV2TestRunsIdPatchWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **id** | **Guid** | Test Run internal identifier (GUID format) |  |
+| **operation** | [**List&lt;Operation&gt;**](Operation.md) |  | [optional]  |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **204** | No Content |  -  |
+| **400** | Bad Request |  -  |
+| **401** | Unauthorized |  -  |
+| **403** | Update permission for test library required |  -  |
+| **404** | Not Found |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 
@@ -359,7 +468,7 @@ void (empty response body)
 
 Permanently delete test run from archive
 
- Use case  User sets archived test run internal (guid format) identifier  System search and purge archived test run
+  Use case    User sets archived test run internal (guid format) identifier    System search and purge archived test run
 
 ### Example
 ```csharp
@@ -382,10 +491,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -438,7 +547,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -450,7 +559,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **400** |  - ID is not valid |  -  |
+| **400** |   - ID is not valid |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Delete permission for archived test runs is required |  -  |
 | **404** | Not Found |  -  |
@@ -486,10 +595,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -548,7 +657,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -575,7 +684,7 @@ catch (ApiException e)
 
 Restore test run from the archive
 
- Use case  User sets archived test run internal (guid format) identifier  System search and restore test run
+  Use case    User sets archived test run internal (guid format) identifier    System search and restore test run
 
 ### Example
 ```csharp
@@ -598,10 +707,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -654,7 +763,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -666,7 +775,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **400** |  - ID is not valid  - Project was archived and cannot be edited anymore |  -  |
+| **400** |   - ID is not valid    - Project was archived and cannot be edited anymore |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for archive is required |  -  |
 | **404** | Not Found |  -  |
@@ -702,10 +811,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -764,7 +873,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -812,10 +921,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -872,7 +981,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -920,10 +1029,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -978,7 +1087,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1026,10 +1135,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1086,7 +1195,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1113,7 +1222,7 @@ catch (ApiException e)
 
 Permanently delete multiple test runs from archive
 
- Use case  User sets selection parameters of archived test runs  System search and delete collection of archived test runs  System returns the number of deleted archived test runs
+  Use case    User sets selection parameters of archived test runs    System search and delete collection of archived test runs    System returns the number of deleted archived test runs
 
 ### Example
 ```csharp
@@ -1136,10 +1245,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1196,7 +1305,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1223,7 +1332,7 @@ catch (ApiException e)
 
 Restore multiple test runs from the archive
 
- Use case  User sets selection parameters of archived test runs  System search and restore collection of archived test runs  System returns the number of restored test runs
+  Use case    User sets selection parameters of archived test runs    System search and restore collection of archived test runs    System returns the number of restored test runs
 
 ### Example
 ```csharp
@@ -1246,10 +1355,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1306,7 +1415,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1354,10 +1463,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1424,7 +1533,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1472,10 +1581,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1528,7 +1637,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1555,7 +1664,7 @@ void (empty response body)
 
 Complete TestRun
 
- Use case  User sets test run identifier  User runs method execution  System completes test run  System returns no content response
+  Use case    User sets test run identifier    User runs method execution    System completes test run    System returns no content response
 
 ### Example
 ```csharp
@@ -1578,10 +1687,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1634,7 +1743,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1646,10 +1755,10 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** |  Field is required  the StateName is already Stopped  the StateName is already Completed |  -  |
+| **400** |   Field is required    the StateName is already Stopped    the StateName is already Completed |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
-| **404** |  Can&#39;t find a TestRun with id! |  -  |
+| **404** |   Can&#39;t find a TestRun with id! |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 
@@ -1661,7 +1770,7 @@ void (empty response body)
 
 Create test runs based on autotests and configurations
 
-This method creates a test run based on an autotest and a configuration. The difference between the `POST /api/v2/testRuns/byWorkItems` and `POST /api/v2/testRuns/byConfigurations` methods is that in this method there is no need to create a test plan and work items (test cases and checklists).
+This method creates a test run based on an autotest and a configuration.  The difference between the `POST /api/v2/testRuns/byWorkItems` and `POST /api/v2/testRuns/byConfigurations` methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
 
 ### Example
 ```csharp
@@ -1684,10 +1793,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1744,7 +1853,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1756,7 +1865,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** |  - Field is required  - Configuration does not exist in the project  - Autotest does not exist in the project  - Test run must be automated  - Project ID is invalid  - Autotest external IDs are required  - Configuration IDs are required |  -  |
+| **400** |   - Field is required    - Configuration does not exist in the project    - Autotest does not exist in the project    - Test run must be automated    - Project ID is invalid    - Autotest external IDs are required    - Configuration IDs are required |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test results is required |  -  |
 | **404** | Some autotests do not exist |  -  |
@@ -1771,7 +1880,7 @@ catch (ApiException e)
 
 Create test runs picking the needed test points
 
-This method creates a test run based on a combination of a configuration and a work item(test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated. This method is different from the `POST /api/v2/testRuns/byWorkItems` method because of the ability to send a jagged array within the \"<b>testPointSelectors</b>\" parameter.
+This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the `POST /api/v2/testRuns/byWorkItems` method because of the ability to send a  jagged array within the \"<b>testPointSelectors</b>\" parameter.
 
 ### Example
 ```csharp
@@ -1794,10 +1903,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1854,7 +1963,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1866,7 +1975,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** |  - Field is required  - Test run cannot be created with deleted test points  - Test suites with IDs [ids] is archived  - Configurations with IDs [ids] is archived  - Test run cannot be created with non-automated test point  - Test run must be automated  - Some work items do not exist  - Project ID is invalid  - Test point selectors are required  - Some work item IDs are invalid  - Some configuration IDs are invalid |  -  |
+| **400** |   - Field is required    - Test run cannot be created with deleted test points    - Test suites with IDs [ids] is archived    - Configurations with IDs [ids] is archived    - Test run cannot be created with non-automated test point    - Test run must be automated    - Some work items do not exist    - Project ID is invalid    - Test point selectors are required    - Some work item IDs are invalid    - Some configuration IDs are invalid |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test results is required |  -  |
 | **404** | Some test points do not exists |  -  |
@@ -1881,7 +1990,7 @@ catch (ApiException e)
 
 Create test run based on configurations and work items
 
-This method creates a test run based on a combination of configuration and work item (test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated.
+This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
 
 ### Example
 ```csharp
@@ -1904,10 +2013,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1964,7 +2073,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1976,7 +2085,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** |  - Field is required  - Test run cannot be created with deleted test points  - Test suites with IDs [ids] is archived  - Configurations with IDs [ids] is archived  - Test run cannot be created with non-automated test point  - Some work items do not exist  - Project ID is invalid |  -  |
+| **400** |   - Field is required    - Test run cannot be created with deleted test points    - Test suites with IDs [ids] is archived    - Configurations with IDs [ids] is archived    - Test run cannot be created with non-automated test point    - Some work items do not exist    - Project ID is invalid |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test results is required |  -  |
 | **404** | Some test points, work items or configurations do not exist |  -  |
@@ -1991,7 +2100,7 @@ catch (ApiException e)
 
 Create empty TestRun
 
- Use case  User sets test run model (listed in the request example)  User runs method execution  System creates test run  System returns test run model
+  Use case    User sets test run model (listed in the request example)    User runs method execution    System creates test run    System returns test run model
 
 ### Example
 ```csharp
@@ -2014,10 +2123,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -2074,7 +2183,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2086,7 +2195,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Successful operation |  -  |
-| **400** |  Field is required  TestRun must be automated  ProjectId is not a valid! |  -  |
+| **400** |   Field is required    TestRun must be automated    ProjectId is not a valid! |  -  |
 | **401** | TestRunTesterRequirement permission required |  -  |
 | **403** | Update permission for test result required |  -  |
 | **404** | Can&#39;t find a TestRun with id &#x3D; testRunId |  -  |
@@ -2101,7 +2210,7 @@ catch (ApiException e)
 
 Get TestRun by Id
 
- Use case  User sets test run identifier  User runs method execution  System finds test run  System returns test run
+  Use case    User sets test run identifier    User runs method execution    System finds test run    System returns test run
 
 ### Example
 ```csharp
@@ -2124,10 +2233,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -2184,7 +2293,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2199,7 +2308,7 @@ catch (ApiException e)
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test result required |  -  |
-| **404** |  TestRun with ID &#39;{id}&#39; does not exist. |  -  |
+| **404** |   TestRun with ID &#39;{id}&#39; does not exist. |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 
@@ -2234,10 +2343,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -2296,7 +2405,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2308,12 +2417,12 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Successful operation |  -  |
-| **400** |  - Field is required  - Body is invalid  - Test points are required  - Duration must be a positive number  - Outcome is not defined  - Test run is stopped |  -  |
+| **400** |   - Field is required    - Body is invalid    - Test points are required    - Duration must be a positive number    - Outcome is not defined    - Test run is stopped |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test results is required |  -  |
-| **404** |  - Test run with provided ID was not found  - Test point was not found  - Autotest with provided external ID was not found |  -  |
+| **404** |   - Test run with provided ID was not found    - Test point was not found    - Autotest with provided external ID was not found |  -  |
 | **409** | Conflict |  -  |
-| **422** |  - Configuration with provided ID was not found  - Test points relevant to provided filters were not found |  -  |
+| **422** |   - Configuration with provided ID was not found    - Test points relevant to provided filters were not found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -2323,7 +2432,7 @@ catch (ApiException e)
 
 Start TestRun
 
- Use case  User sets test run identifier  User runs method execution  System starts test run  System returns no content response
+  Use case    User sets test run identifier    User runs method execution    System starts test run    System returns no content response
 
 ### Example
 ```csharp
@@ -2346,10 +2455,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -2402,7 +2511,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2414,10 +2523,10 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** |  Field is required  the StateName is already InProgress  the StateName is already Stopped  the StateName is already Completed |  -  |
+| **400** |   Field is required    the StateName is already InProgress    the StateName is already Stopped    the StateName is already Completed |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
-| **404** |  Can&#39;t find a TestRun with id! |  -  |
+| **404** |   Can&#39;t find a TestRun with id! |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 
@@ -2429,7 +2538,7 @@ void (empty response body)
 
 Stop TestRun
 
- Use case  User sets test run identifier  User runs method execution  System stops test run  System returns no content response
+  Use case    User sets test run identifier    User runs method execution    System stops test run    System returns no content response
 
 ### Example
 ```csharp
@@ -2452,10 +2561,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -2508,7 +2617,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2520,10 +2629,10 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** |  Field is required  the StateName is already Stopped  the StateName is already Completed |  -  |
+| **400** |   Field is required    the StateName is already Stopped    the StateName is already Completed |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
-| **404** |  Can&#39;t find a TestRun with id! |  -  |
+| **404** |   Can&#39;t find a TestRun with id! |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 
@@ -2535,7 +2644,7 @@ void (empty response body)
 
 Update empty TestRun
 
- Use case  User sets test run properties (listed in the request example)  User runs method execution  System updates test run  System returns returns no content response
+  Use case    User sets test run properties (listed in the request example)    User runs method execution    System updates test run    System returns returns no content response
 
 ### Example
 ```csharp
@@ -2558,10 +2667,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -2614,7 +2723,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2626,10 +2735,10 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** |  Field is required  Name is not valid |  -  |
+| **400** |   Field is required    Name is not valid |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test result required |  -  |
-| **404** |  Can&#39;t find a TestRun with id! |  -  |
+| **404** |   Can&#39;t find a TestRun with id! |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 

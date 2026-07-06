@@ -63,16 +63,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var workItemSelectModel = new WorkItemSelectModel(); // WorkItemSelectModel | Filter object to retrieve work items for test-suite's project (optional) 
 
             try
@@ -112,7 +112,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 | **workItemSelectModel** | [**WorkItemSelectModel**](WorkItemSelectModel.md) | Filter object to retrieve work items for test-suite&#39;s project | [optional]  |
 
 ### Return type
@@ -121,7 +121,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -148,7 +148,7 @@ void (empty response body)
 
 Add WorkItems to TestPlan with Sections as TestSuites
 
- Use case  User sets TestPlan identifier  User sets WorkItem identifiers (listed in request example)  User runs method execution  System added WorkItems and Sections to TestPlan  System returns no content response
+  Use case    User sets TestPlan identifier    User sets WorkItem identifiers (listed in request example)    User runs method execution    System added WorkItems and Sections to TestPlan    System returns no content response
 
 ### Example
 ```csharp
@@ -171,16 +171,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var requestBody = new List<Guid>(); // List<Guid> |  (optional) 
 
             try
@@ -220,7 +220,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 | **requestBody** | [**List&lt;Guid&gt;**](Guid.md) |  | [optional]  |
 
 ### Return type
@@ -229,7 +229,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -241,10 +241,10 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** |  TestPlan is locked  Some of configurations do not exist in the project, or they are not active |  -  |
+| **400** |   TestPlan is locked    Some of configurations do not exist in the project, or they are not active |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for TestPlan required |  -  |
-| **404** |  Can&#39;t find a TestPlan with id  Some of workItems do not exist |  -  |
+| **404** |   Can&#39;t find a TestPlan with id    Some of workItems do not exist |  -  |
 | **409** | Conflict |  -  |
 | **422** | Can&#39;t put a SharedSteps in the TestSuite |  -  |
 
@@ -256,7 +256,7 @@ void (empty response body)
 
 Get analytics by TestPlan
 
- Use case  User sets test plan identifier  User runs method execution  System returns analytics by test plan
+  Use case    User sets test plan identifier    User runs method execution    System returns analytics by test plan
 
 ### Example
 ```csharp
@@ -279,16 +279,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
             {
@@ -331,7 +331,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 
 ### Return type
 
@@ -339,7 +339,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -387,10 +387,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -449,7 +449,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -476,7 +476,7 @@ catch (ApiException e)
 
 Get TestPlan configurations
 
- Use case  User sets test plan identifier  User runs method execution  System return test plan configurations
+  Use case    User sets test plan identifier    User runs method execution    System return test plan configurations
 
 ### Example
 ```csharp
@@ -499,16 +499,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
             {
@@ -551,7 +551,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 
 ### Return type
 
@@ -559,7 +559,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -582,11 +582,11 @@ catch (ApiException e)
 
 <a id="apiv2testplansidexporttestpointsxlsxpost"></a>
 # **ApiV2TestPlansIdExportTestPointsXlsxPost**
-> void ApiV2TestPlansIdExportTestPointsXlsxPost (string id, long? timeZoneOffsetInMinutes = null, GetXlsxTestPointsByTestPlanModel getXlsxTestPointsByTestPlanModel = null)
+> void ApiV2TestPlansIdExportTestPointsXlsxPost (string id, long? timeZoneOffsetInMinutes = null, GetXlsxTestPointsByTestPlanApiModel getXlsxTestPointsByTestPlanApiModel = null)
 
 Export TestPoints from TestPlan in xls format
 
- Use case  User sets test plan identifier  User sets filter model (listed in request example)  User runs method execution  System return export xlsx file
+  Use case    User sets test plan identifier    User sets filter model (listed in request example)    User runs method execution    System return export xlsx file
 
 ### Example
 ```csharp
@@ -609,23 +609,23 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var timeZoneOffsetInMinutes = 789L;  // long? |  (optional) 
-            var getXlsxTestPointsByTestPlanModel = new GetXlsxTestPointsByTestPlanModel(); // GetXlsxTestPointsByTestPlanModel |  (optional) 
+            var getXlsxTestPointsByTestPlanApiModel = new GetXlsxTestPointsByTestPlanApiModel(); // GetXlsxTestPointsByTestPlanApiModel |  (optional) 
 
             try
             {
                 // Export TestPoints from TestPlan in xls format
-                apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPost(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel);
+                apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPost(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanApiModel);
             }
             catch (ApiException  e)
             {
@@ -645,7 +645,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Export TestPoints from TestPlan in xls format
-    apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanModel);
+    apiInstance.ApiV2TestPlansIdExportTestPointsXlsxPostWithHttpInfo(id, timeZoneOffsetInMinutes, getXlsxTestPointsByTestPlanApiModel);
 }
 catch (ApiException e)
 {
@@ -659,9 +659,9 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 | **timeZoneOffsetInMinutes** | **long?** |  | [optional]  |
-| **getXlsxTestPointsByTestPlanModel** | [**GetXlsxTestPointsByTestPlanModel**](GetXlsxTestPointsByTestPlanModel.md) |  | [optional]  |
+| **getXlsxTestPointsByTestPlanApiModel** | [**GetXlsxTestPointsByTestPlanApiModel**](GetXlsxTestPointsByTestPlanApiModel.md) |  | [optional]  |
 
 ### Return type
 
@@ -669,7 +669,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -696,7 +696,7 @@ void (empty response body)
 
 Export TestResults history from TestPlan in xls format
 
- Use case  User sets test plan identifier  User sets filter model (listed in request example)  User runs method execution  System return export xlsx file
+  Use case    User sets test plan identifier    User sets filter model (listed in request example)    User runs method execution    System return export xlsx file
 
 ### Example
 ```csharp
@@ -719,16 +719,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var mustReturnOnlyLastTestResult = true;  // bool? |  (optional) 
             var includeSteps = true;  // bool? |  (optional) 
             var includeDeletedTestSuites = true;  // bool? |  (optional) 
@@ -771,7 +771,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 | **mustReturnOnlyLastTestResult** | **bool?** |  | [optional]  |
 | **includeSteps** | **bool?** |  | [optional]  |
 | **includeDeletedTestSuites** | **bool?** |  | [optional]  |
@@ -783,7 +783,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -810,7 +810,7 @@ void (empty response body)
 
 Get TestPlan history
 
- Use case  User sets test plan identifier  User runs method execution  System return test plan history
+  Use case    User sets test plan identifier    User runs method execution    System return test plan history
 
 ### Example
 ```csharp
@@ -833,16 +833,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
@@ -890,7 +890,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 | **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
 | **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
@@ -903,7 +903,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -930,7 +930,7 @@ catch (ApiException e)
 
 Get Links of TestPlan
 
- Use case  User sets test plan identifier  User sets pagination filter (listed in request example)  User runs method execution  System returns links of TestPlan
+  Use case    User sets test plan identifier    User sets pagination filter (listed in request example)    User runs method execution    System returns links of TestPlan
 
 ### Example
 ```csharp
@@ -953,16 +953,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var skip = 56;  // int? |  (optional) 
             var take = 56;  // int? |  (optional) 
             var orderBy = "orderBy_example";  // string |  (optional) 
@@ -1008,7 +1008,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 | **skip** | **int?** |  | [optional]  |
 | **take** | **int?** |  | [optional]  |
 | **orderBy** | **string** |  | [optional]  |
@@ -1019,7 +1019,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1069,10 +1069,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1127,7 +1127,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1154,7 +1154,7 @@ void (empty response body)
 
 Get summary by TestPlan
 
- Use case  User sets test plan identifier  User runs method execution  System returns summary by test plan
+  Use case    User sets test plan identifier    User runs method execution    System returns summary by test plan
 
 ### Example
 ```csharp
@@ -1177,16 +1177,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
             {
@@ -1229,7 +1229,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 
 ### Return type
 
@@ -1237,7 +1237,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1264,7 +1264,7 @@ catch (ApiException e)
 
 Get TestPoints with last result from TestPlan
 
- Use case  User sets test plan identifier  User sets filter (listed in request example)  User runs method execution  System return test points with last result from test plan
+  Use case    User sets test plan identifier    User sets filter (listed in request example)    User runs method execution    System return test points with last result from test plan
 
 ### Example
 ```csharp
@@ -1287,16 +1287,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var testerId = "testerId_example";  // Guid? |  (optional) 
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
@@ -1345,7 +1345,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 | **testerId** | **Guid?** |  | [optional]  |
 | **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
 | **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
@@ -1359,7 +1359,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1386,7 +1386,7 @@ catch (ApiException e)
 
 Reset TestPoints status of TestPlan
 
- Use case  User sets test plan identifier  User sets test points identifiers  User runs method execution  System reset test points statuses of test plan
+  Use case    User sets test plan identifier    User sets test points identifiers    User runs method execution    System reset test points statuses of test plan
 
 ### Example
 ```csharp
@@ -1409,16 +1409,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var requestBody = new List<Guid>(); // List<Guid> |  (optional) 
 
             try
@@ -1458,7 +1458,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 | **requestBody** | [**List&lt;Guid&gt;**](Guid.md) |  | [optional]  |
 
 ### Return type
@@ -1467,7 +1467,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1515,10 +1515,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1577,7 +1577,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1625,10 +1625,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -1689,7 +1689,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1716,7 +1716,7 @@ catch (ApiException e)
 
 Get TestRuns of TestPlan
 
- Use case  User sets test plan identifier  User sets TestRun status filter (listed in request example)  User runs method execution  System returns TestRuns for TestPlan
+  Use case    User sets test plan identifier    User sets TestRun status filter (listed in request example)    User runs method execution    System returns TestRuns for TestPlan
 
 ### Example
 ```csharp
@@ -1739,16 +1739,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var notStarted = true;  // bool? |  (optional) 
             var inProgress = true;  // bool? |  (optional) 
             var stopped = true;  // bool? |  (optional) 
@@ -1800,7 +1800,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 | **notStarted** | **bool?** |  | [optional]  |
 | **inProgress** | **bool?** |  | [optional]  |
 | **stopped** | **bool?** |  | [optional]  |
@@ -1817,7 +1817,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1844,7 +1844,7 @@ catch (ApiException e)
 
 Search TestRuns of TestPlan
 
- Use case  User sets test plan identifier  User sets TestRuns filter (listed in request example)  User runs method execution  System returns TestRuns for TestPlan
+  Use case    User sets test plan identifier    User sets TestRuns filter (listed in request example)    User runs method execution    System returns TestRuns for TestPlan
 
 ### Example
 ```csharp
@@ -1867,16 +1867,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
             var skip = 56;  // int? | Amount of items to be skipped (offset) (optional) 
             var take = 56;  // int? | Amount of items to be taken (limit) (optional) 
             var orderBy = "orderBy_example";  // string | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional) 
@@ -1925,7 +1925,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 | **skip** | **int?** | Amount of items to be skipped (offset) | [optional]  |
 | **take** | **int?** | Amount of items to be taken (limit) | [optional]  |
 | **orderBy** | **string** | SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) | [optional]  |
@@ -1939,7 +1939,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -1987,10 +1987,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -2043,7 +2043,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2070,7 +2070,7 @@ void (empty response body)
 
 Send unlock TestPlan notification
 
- Use case  User sets test plan identifier  User runs method execution  System send unlock test plan notification
+  Use case    User sets test plan identifier    User runs method execution    System send unlock test plan notification
 
 ### Example
 ```csharp
@@ -2093,16 +2093,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
             {
@@ -2141,7 +2141,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 
 ### Return type
 
@@ -2149,7 +2149,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2176,7 +2176,7 @@ void (empty response body)
 
 Get TestPlans short models by Project identifiers
 
- Use case  User sets projects identifiers  User runs method execution  System return test plans short models (listed in response example)
+  Use case    User sets projects identifiers    User runs method execution    System return test plans short models (listed in response example)
 
 ### Example
 ```csharp
@@ -2199,10 +2199,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -2261,7 +2261,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2288,7 +2288,7 @@ catch (ApiException e)
 
 Clone TestPlan
 
- Use case  User sets test plan identifier  User runs method execution  System clones test plan  System returns test plan (listed in response example)
+  Use case    User sets test plan identifier    User runs method execution    System clones test plan    System returns test plan (listed in response example)
 
 ### Example
 ```csharp
@@ -2311,16 +2311,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
             {
@@ -2363,7 +2363,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 
 ### Return type
 
@@ -2371,7 +2371,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2398,7 +2398,7 @@ catch (ApiException e)
 
 Complete TestPlan
 
- Use case  User sets test plan identifier  User runs method execution  System completes the test plan and updates test plan status  System returns no content response
+  Use case    User sets test plan identifier    User runs method execution    System completes the test plan and updates test plan status    System returns no content response
 
 ### Example
 ```csharp
@@ -2421,16 +2421,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
             {
@@ -2469,7 +2469,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 
 ### Return type
 
@@ -2477,7 +2477,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2489,7 +2489,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** |  Execute status from New to Completed forbidden  Execute status from Completed to Completed forbidden |  -  |
+| **400** |   Execute status from New to Completed forbidden    Execute status from Completed to Completed forbidden |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
@@ -2504,7 +2504,7 @@ void (empty response body)
 
 Create TestPlan
 
- Use case  User sets test plan properties (listed in request example)  User runs method execution  System creates test plan  System returns test plan (listed in response example)
+  Use case    User sets test plan properties (listed in request example)    User runs method execution    System creates test plan    System returns test plan (listed in response example)
 
 ### Example
 ```csharp
@@ -2527,10 +2527,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -2587,7 +2587,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2599,7 +2599,7 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Successful operation |  -  |
-| **400** |  Field is required  Tags must be no more than 10! |  -  |
+| **400** |   Field is required    Tags must be no more than 10! |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | Not Found |  -  |
@@ -2614,7 +2614,7 @@ catch (ApiException e)
 
 Delete TestPlan
 
- Use case  User sets test plan identifier  User runs method execution  System delete test plan  System returns no content response
+  Use case    User sets test plan identifier    User runs method execution    System delete test plan    System returns no content response
 
 ### Example
 ```csharp
@@ -2637,16 +2637,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
             {
@@ -2685,7 +2685,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 
 ### Return type
 
@@ -2693,7 +2693,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2720,7 +2720,7 @@ void (empty response body)
 
 Get TestPlan by Id
 
- Use case  User sets test plan identifier  User runs method execution  System search  test plan by the identifier  System returns test plan
+  Use case    User sets test plan identifier    User runs method execution    System search  test plan by the identifier    System returns test plan
 
 ### Example
 ```csharp
@@ -2743,16 +2743,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
             {
@@ -2795,7 +2795,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 
 ### Return type
 
@@ -2803,7 +2803,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2830,7 +2830,7 @@ catch (ApiException e)
 
 Get TestSuites Tree By Id
 
- Use case  User sets test plan identifier  User runs method execution  System finds test suites related to the test plan  System returns test suites as a tree model (listed in response example)
+  Use case    User sets test plan identifier    User runs method execution    System finds test suites related to the test plan    System returns test suites as a tree model (listed in response example)
 
 ### Example
 ```csharp
@@ -2853,16 +2853,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
             {
@@ -2905,7 +2905,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 
 ### Return type
 
@@ -2913,7 +2913,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -2940,7 +2940,7 @@ catch (ApiException e)
 
 Pause TestPlan
 
- Use case  User sets test plan identifier  User runs method execution  System pauses the test plan and updates test plan status  System returns no content response
+  Use case    User sets test plan identifier    User runs method execution    System pauses the test plan and updates test plan status    System returns no content response
 
 ### Example
 ```csharp
@@ -2963,16 +2963,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
             {
@@ -3011,7 +3011,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 
 ### Return type
 
@@ -3019,7 +3019,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -3031,7 +3031,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** |  Execute status from New to Paused forbidden  Execute status from Paused to Paused forbidden  Execute status from Completed to Paused forbidden |  -  |
+| **400** |   Execute status from New to Paused forbidden    Execute status from Paused to Paused forbidden    Execute status from Completed to Paused forbidden |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |
@@ -3067,10 +3067,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -3123,7 +3123,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -3150,7 +3150,7 @@ void (empty response body)
 
 Restore TestPlan
 
- Use case  User sets test plan identifier  User runs method execution  System restores test plan  System returns no content response
+  Use case    User sets test plan identifier    User runs method execution    System restores test plan    System returns no content response
 
 ### Example
 ```csharp
@@ -3173,16 +3173,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
             {
@@ -3221,7 +3221,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 
 ### Return type
 
@@ -3229,7 +3229,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -3256,7 +3256,7 @@ void (empty response body)
 
 Start TestPlan
 
- Use case  User sets test plan identifier  User runs method execution  System starts the test plan and updates test plan status  System returns no content response
+  Use case    User sets test plan identifier    User runs method execution    System starts the test plan and updates test plan status    System returns no content response
 
 ### Example
 ```csharp
@@ -3279,16 +3279,16 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
             HttpClientHandler httpClientHandler = new HttpClientHandler();
             var apiInstance = new TestPlansApi(httpClient, config, httpClientHandler);
-            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int format) identifier
+            var id = 3fa85f64-5717-4562-b3fc-2c963f66afa6;  // string | Test plan internal (guid format) or global (int  format) identifier
 
             try
             {
@@ -3327,7 +3327,7 @@ catch (ApiException e)
 
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
-| **id** | **string** | Test plan internal (guid format) or global (int format) identifier |  |
+| **id** | **string** | Test plan internal (guid format) or global (int  format) identifier |  |
 
 ### Return type
 
@@ -3335,7 +3335,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -3362,7 +3362,7 @@ void (empty response body)
 
 Update TestPlan
 
- Use case  User sets test plan properties(listed in request example)  User runs method execution  System updates test plan  System returns no content response
+  Use case    User sets test plan properties(listed in request example)    User runs method execution    System updates test plan    System returns no content response
 
 ### Example
 ```csharp
@@ -3385,10 +3385,10 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
-            config.AddApiKey("backoffice", "YOUR_API_KEY");
+            // Configure API key authorization: Cookies
+            config.AddApiKey("session", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // config.AddApiKeyPrefix("backoffice", "Bearer");
+            // config.AddApiKeyPrefix("session", "Bearer");
 
             // create instances of HttpClient, HttpClientHandler to be reused later with different Api classes
             HttpClient httpClient = new HttpClient();
@@ -3441,7 +3441,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Cookies](../README.md#Cookies)
 
 ### HTTP request headers
 
@@ -3453,7 +3453,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** |  Field is required  Tags must be no more than 10!  StartDate can&#39;t be more than EndDate! |  -  |
+| **400** |   Field is required    Tags must be no more than 10!    StartDate can&#39;t be more than EndDate! |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for test plan required |  -  |
 | **404** | Can&#39;t find a TestPlan with id! |  -  |

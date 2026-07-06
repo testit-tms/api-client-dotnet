@@ -122,7 +122,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Set when test plan is starter (status changed to: In Progress)</value>
         /*
-        <example>2026-01-27T05:43:09.577447900Z</example>
+        <example>2026-01-27T08:43:09.577447900+03:00</example>
         */
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
@@ -132,7 +132,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>set when test plan status is completed (status changed to: Completed)</value>
         /*
-        <example>2026-01-27T05:43:09.577447900Z</example>
+        <example>2026-01-27T08:43:09.577447900+03:00</example>
         */
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }
@@ -141,7 +141,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         /*
-        <example>2026-01-27T05:43:09.577447900Z</example>
+        <example>2026-01-27T08:43:09.577447900+03:00</example>
         */
         [DataMember(Name = "createdDate", EmitDefaultValue = true)]
         public DateTime? CreatedDate { get; set; }
@@ -150,7 +150,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2026-01-27T05:43:09.577447900Z</example>
+        <example>2026-01-27T08:43:09.577447900+03:00</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
@@ -196,7 +196,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets LockedDate
         /// </summary>
         /*
-        <example>2026-01-27T05:43:09.577447900Z</example>
+        <example>2026-01-27T08:43:09.577447900+03:00</example>
         */
         [DataMember(Name = "lockedDate", EmitDefaultValue = true)]
         public DateTime? LockedDate { get; set; }
@@ -236,7 +236,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Used for analytics</value>
         /*
-        <example>2026-01-27T05:43:09.577447900Z</example>
+        <example>2026-01-27T08:43:09.577447900+03:00</example>
         */
         [DataMember(Name = "startDate", EmitDefaultValue = true)]
         public DateTime? StartDate { get; set; }
@@ -246,7 +246,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Used for analytics</value>
         /*
-        <example>2026-01-27T05:43:09.577447900Z</example>
+        <example>2026-01-27T08:43:09.577447900+03:00</example>
         */
         [DataMember(Name = "endDate", EmitDefaultValue = true)]
         public DateTime? EndDate { get; set; }

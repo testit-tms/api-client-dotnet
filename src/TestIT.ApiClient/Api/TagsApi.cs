@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Delete tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+        ///   Use case    User sets collection of tags internal (guid format) identifiers    System searches and deletes a collection of tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectTagsApiModel"> (optional)</param>
@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Api
         /// Delete tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+        ///   Use case    User sets collection of tags internal (guid format) identifiers    System searches and deletes a collection of tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectTagsApiModel"> (optional)</param>
@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Api
         /// Delete tag
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets tag internal (guid format) identifier  System search and delete tag
+        ///   Use case    User sets tag internal (guid format) identifier    System search and delete tag
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Tag internal (UUID) identifier</param>
@@ -63,7 +63,7 @@ namespace TestIT.ApiClient.Api
         /// Delete tag
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets tag internal (guid format) identifier  System search and delete tag
+        ///   Use case    User sets tag internal (guid format) identifier    System search and delete tag
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Tag internal (UUID) identifier</param>
@@ -73,7 +73,7 @@ namespace TestIT.ApiClient.Api
         /// Create tag
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+        ///   Use case    User sets tag model (listed in the request example)    User runs method execution    System creates tag    System returns tag model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTagApiModel"> (optional)</param>
@@ -84,7 +84,7 @@ namespace TestIT.ApiClient.Api
         /// Create tag
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+        ///   Use case    User sets tag model (listed in the request example)    User runs method execution    System creates tag    System returns tag model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTagApiModel"> (optional)</param>
@@ -94,7 +94,7 @@ namespace TestIT.ApiClient.Api
         /// Update tag
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
+        ///   Use case    User sets tag ID and model (listed in the request example)    User runs method execution    System updates tag    System returns tag model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -106,7 +106,7 @@ namespace TestIT.ApiClient.Api
         /// Update tag
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
+        ///   Use case    User sets tag ID and model (listed in the request example)    User runs method execution    System updates tag    System returns tag model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -117,7 +117,7 @@ namespace TestIT.ApiClient.Api
         /// Search tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns collection of tags (listed in the response example)
+        ///   Use case    User runs method execution    System returns collection of tags (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -132,7 +132,7 @@ namespace TestIT.ApiClient.Api
         /// Search tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns collection of tags (listed in the response example)
+        ///   Use case    User runs method execution    System returns collection of tags (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -146,7 +146,7 @@ namespace TestIT.ApiClient.Api
         /// Get all Tags that are used in TestPlans
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns tags (listed in the response example)
+        ///   Use case    User runs method execution    System returns tags (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -161,7 +161,7 @@ namespace TestIT.ApiClient.Api
         /// Get all Tags that are used in TestPlans
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns tags (listed in the response example)
+        ///   Use case    User runs method execution    System returns tags (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -184,7 +184,7 @@ namespace TestIT.ApiClient.Api
         /// Delete tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+        ///   Use case    User sets collection of tags internal (guid format) identifiers    System searches and deletes a collection of tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectTagsApiModel"> (optional)</param>
@@ -196,7 +196,7 @@ namespace TestIT.ApiClient.Api
         /// Delete tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+        ///   Use case    User sets collection of tags internal (guid format) identifiers    System searches and deletes a collection of tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectTagsApiModel"> (optional)</param>
@@ -207,7 +207,7 @@ namespace TestIT.ApiClient.Api
         /// Delete tag
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets tag internal (guid format) identifier  System search and delete tag
+        ///   Use case    User sets tag internal (guid format) identifier    System search and delete tag
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Tag internal (UUID) identifier</param>
@@ -219,7 +219,7 @@ namespace TestIT.ApiClient.Api
         /// Delete tag
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets tag internal (guid format) identifier  System search and delete tag
+        ///   Use case    User sets tag internal (guid format) identifier    System search and delete tag
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Tag internal (UUID) identifier</param>
@@ -230,7 +230,7 @@ namespace TestIT.ApiClient.Api
         /// Create tag
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+        ///   Use case    User sets tag model (listed in the request example)    User runs method execution    System creates tag    System returns tag model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTagApiModel"> (optional)</param>
@@ -242,7 +242,7 @@ namespace TestIT.ApiClient.Api
         /// Create tag
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+        ///   Use case    User sets tag model (listed in the request example)    User runs method execution    System creates tag    System returns tag model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTagApiModel"> (optional)</param>
@@ -253,7 +253,7 @@ namespace TestIT.ApiClient.Api
         /// Update tag
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
+        ///   Use case    User sets tag ID and model (listed in the request example)    User runs method execution    System updates tag    System returns tag model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -266,7 +266,7 @@ namespace TestIT.ApiClient.Api
         /// Update tag
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
+        ///   Use case    User sets tag ID and model (listed in the request example)    User runs method execution    System updates tag    System returns tag model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -278,7 +278,7 @@ namespace TestIT.ApiClient.Api
         /// Search tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns collection of tags (listed in the response example)
+        ///   Use case    User runs method execution    System returns collection of tags (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -294,7 +294,7 @@ namespace TestIT.ApiClient.Api
         /// Search tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns collection of tags (listed in the response example)
+        ///   Use case    User runs method execution    System returns collection of tags (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -309,7 +309,7 @@ namespace TestIT.ApiClient.Api
         /// Get all Tags that are used in TestPlans
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns tags (listed in the response example)
+        ///   Use case    User runs method execution    System returns tags (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -325,7 +325,7 @@ namespace TestIT.ApiClient.Api
         /// Get all Tags that are used in TestPlans
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System returns tags (listed in the response example)
+        ///   Use case    User runs method execution    System returns tags (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -550,7 +550,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete tags  Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+        /// Delete tags   Use case    User sets collection of tags internal (guid format) identifiers    System searches and deletes a collection of tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectTagsApiModel"> (optional)</param>
@@ -561,7 +561,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete tags  Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+        /// Delete tags   Use case    User sets collection of tags internal (guid format) identifiers    System searches and deletes a collection of tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectTagsApiModel"> (optional)</param>
@@ -595,11 +595,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -615,7 +615,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete tags  Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+        /// Delete tags   Use case    User sets collection of tags internal (guid format) identifiers    System searches and deletes a collection of tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectTagsApiModel"> (optional)</param>
@@ -627,7 +627,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete tags  Use case  User sets collection of tags internal (guid format) identifiers  System searches and deletes a collection of tags
+        /// Delete tags   Use case    User sets collection of tags internal (guid format) identifiers    System searches and deletes a collection of tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="selectTagsApiModel"> (optional)</param>
@@ -664,11 +664,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -685,7 +685,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete tag  Use case  User sets tag internal (guid format) identifier  System search and delete tag
+        /// Delete tag   Use case    User sets tag internal (guid format) identifier    System search and delete tag
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Tag internal (UUID) identifier</param>
@@ -696,7 +696,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete tag  Use case  User sets tag internal (guid format) identifier  System search and delete tag
+        /// Delete tag   Use case    User sets tag internal (guid format) identifier    System search and delete tag
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Tag internal (UUID) identifier</param>
@@ -726,11 +726,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -746,7 +746,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete tag  Use case  User sets tag internal (guid format) identifier  System search and delete tag
+        /// Delete tag   Use case    User sets tag internal (guid format) identifier    System search and delete tag
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Tag internal (UUID) identifier</param>
@@ -758,7 +758,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete tag  Use case  User sets tag internal (guid format) identifier  System search and delete tag
+        /// Delete tag   Use case    User sets tag internal (guid format) identifier    System search and delete tag
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Tag internal (UUID) identifier</param>
@@ -791,11 +791,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -812,7 +812,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create tag  Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+        /// Create tag   Use case    User sets tag model (listed in the request example)    User runs method execution    System creates tag    System returns tag model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTagApiModel"> (optional)</param>
@@ -824,7 +824,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create tag  Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+        /// Create tag   Use case    User sets tag model (listed in the request example)    User runs method execution    System creates tag    System returns tag model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTagApiModel"> (optional)</param>
@@ -858,11 +858,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -878,7 +878,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create tag  Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+        /// Create tag   Use case    User sets tag model (listed in the request example)    User runs method execution    System creates tag    System returns tag model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTagApiModel"> (optional)</param>
@@ -891,7 +891,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create tag  Use case  User sets tag model (listed in the request example)  User runs method execution  System creates tag  System returns tag model (listed in the response example)
+        /// Create tag   Use case    User sets tag model (listed in the request example)    User runs method execution    System creates tag    System returns tag model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTagApiModel"> (optional)</param>
@@ -928,11 +928,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -949,7 +949,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update tag  Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
+        /// Update tag   Use case    User sets tag ID and model (listed in the request example)    User runs method execution    System updates tag    System returns tag model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -962,7 +962,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update tag  Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
+        /// Update tag   Use case    User sets tag ID and model (listed in the request example)    User runs method execution    System updates tag    System returns tag model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1001,11 +1001,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1021,7 +1021,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update tag  Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
+        /// Update tag   Use case    User sets tag ID and model (listed in the request example)    User runs method execution    System updates tag    System returns tag model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1035,7 +1035,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update tag  Use case  User sets tag ID and model (listed in the request example)  User runs method execution  System updates tag  System returns tag model (listed in the response example)
+        /// Update tag   Use case    User sets tag ID and model (listed in the request example)    User runs method execution    System updates tag    System returns tag model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"> (optional)</param>
@@ -1077,11 +1077,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1098,7 +1098,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search tags  Use case  User runs method execution  System returns collection of tags (listed in the response example)
+        /// Search tags   Use case    User runs method execution    System returns collection of tags (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1114,7 +1114,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search tags  Use case  User runs method execution  System returns collection of tags (listed in the response example)
+        /// Search tags   Use case    User runs method execution    System returns collection of tags (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1167,11 +1167,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1187,7 +1187,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search tags  Use case  User runs method execution  System returns collection of tags (listed in the response example)
+        /// Search tags   Use case    User runs method execution    System returns collection of tags (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1204,7 +1204,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search tags  Use case  User runs method execution  System returns collection of tags (listed in the response example)
+        /// Search tags   Use case    User runs method execution    System returns collection of tags (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1260,11 +1260,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1281,7 +1281,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all Tags that are used in TestPlans  Use case  User runs method execution  System returns tags (listed in the response example)
+        /// Get all Tags that are used in TestPlans   Use case    User runs method execution    System returns tags (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1297,7 +1297,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all Tags that are used in TestPlans  Use case  User runs method execution  System returns tags (listed in the response example)
+        /// Get all Tags that are used in TestPlans   Use case    User runs method execution    System returns tags (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1350,11 +1350,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1370,7 +1370,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all Tags that are used in TestPlans  Use case  User runs method execution  System returns tags (listed in the response example)
+        /// Get all Tags that are used in TestPlans   Use case    User runs method execution    System returns tags (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1387,7 +1387,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all Tags that are used in TestPlans  Use case  User runs method execution  System returns tags (listed in the response example)
+        /// Get all Tags that are used in TestPlans   Use case    User runs method execution    System returns tags (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1443,11 +1443,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request

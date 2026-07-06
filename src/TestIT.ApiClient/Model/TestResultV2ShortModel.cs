@@ -145,7 +145,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets StartedOn
         /// </summary>
         /*
-        <example>2026-01-27T05:43:09.577447900Z</example>
+        <example>2026-01-27T08:43:09.577447900+03:00</example>
         */
         [DataMember(Name = "startedOn", EmitDefaultValue = true)]
         public DateTime? StartedOn { get; set; }
@@ -154,7 +154,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CompletedOn
         /// </summary>
         /*
-        <example>2026-01-27T05:43:09.577447900Z</example>
+        <example>2026-01-27T08:43:09.577447900+03:00</example>
         */
         [DataMember(Name = "completedOn", EmitDefaultValue = true)]
         public DateTime? CompletedOn { get; set; }

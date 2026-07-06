@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="id">Test run unique identifier (required).</param>
         /// <param name="name">Test run name (required).</param>
         /// <param name="description">Test run description.</param>
-        /// <param name="launchSource">Test run launch source              Once launch source is specified it cannot be updated.</param>
+        /// <param name="launchSource">Test run launch source                Once launch source is specified it cannot be updated.</param>
         /// <param name="attachments">Collection of attachments related to the test run.</param>
         /// <param name="links">Collection of links related to the test run.</param>
         /// <param name="tags">Collection of tags to assign to the test run.</param>
@@ -85,9 +85,9 @@ namespace TestIT.ApiClient.Model
         public string Description { get; set; }
 
         /// <summary>
-        /// Test run launch source              Once launch source is specified it cannot be updated
+        /// Test run launch source                Once launch source is specified it cannot be updated
         /// </summary>
-        /// <value>Test run launch source              Once launch source is specified it cannot be updated</value>
+        /// <value>Test run launch source                Once launch source is specified it cannot be updated</value>
         [DataMember(Name = "launchSource", EmitDefaultValue = true)]
         public string LaunchSource { get; set; }
 

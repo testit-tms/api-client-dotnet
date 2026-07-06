@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Upload and link attachment to WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
+        ///   Use case    User sets workItemId    User attaches a file    System creates attachment and links it to the work item    System returns attachment identifier
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Work item internal identifier (guid format)</param>
@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Api
         /// Upload and link attachment to WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
+        ///   Use case    User sets workItemId    User attaches a file    System creates attachment and links it to the work item    System returns attachment identifier
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Work item internal identifier (guid format)</param>
@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Api
         /// Transform CheckList to TestCase
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
+        ///   Use case    User sets checklist identifier    User runs method execution    System transform CheckList to TestCase
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -65,7 +65,7 @@ namespace TestIT.ApiClient.Api
         /// Transform CheckList to TestCase
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
+        ///   Use case    User sets checklist identifier    User runs method execution    System transform CheckList to TestCase
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -75,7 +75,7 @@ namespace TestIT.ApiClient.Api
         /// Get change history of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
+        ///   Use case    User sets work item identifier    User runs method execution    System return change history of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -91,7 +91,7 @@ namespace TestIT.ApiClient.Api
         /// Get change history of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
+        ///   Use case    User sets work item identifier    User runs method execution    System return change history of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -106,7 +106,7 @@ namespace TestIT.ApiClient.Api
         /// Delete like from WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System delete like from WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -117,7 +117,7 @@ namespace TestIT.ApiClient.Api
         /// Delete like from WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System delete like from WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -127,7 +127,7 @@ namespace TestIT.ApiClient.Api
         /// Set like to WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System set like to WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -138,7 +138,7 @@ namespace TestIT.ApiClient.Api
         /// Set like to WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System set like to WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -148,7 +148,7 @@ namespace TestIT.ApiClient.Api
         /// Get likes count of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System return likes count of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -159,7 +159,7 @@ namespace TestIT.ApiClient.Api
         /// Get likes count of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System return likes count of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -169,7 +169,7 @@ namespace TestIT.ApiClient.Api
         /// Get likes of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System return likes of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -180,17 +180,40 @@ namespace TestIT.ApiClient.Api
         /// Get likes of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System return likes of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <returns>ApiResponse of List&lt;WorkItemLikeModel&gt;</returns>
         ApiResponse<List<WorkItemLikeModel>> ApiV2WorkItemsIdLikesGetWithHttpInfo(Guid id);
         /// <summary>
+        /// Patch Test Case, Checklist or Shared Step
+        /// </summary>
+        /// <remarks>
+        /// See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="operation"> (optional)</param>
+        /// <returns></returns>
+        void ApiV2WorkItemsIdPatch(string id, List<Operation> operation = default);
+
+        /// <summary>
+        /// Patch Test Case, Checklist or Shared Step
+        /// </summary>
+        /// <remarks>
+        /// See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="operation"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2WorkItemsIdPatchWithHttpInfo(string id, List<Operation> operation = default);
+        /// <summary>
         /// Get test results history of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System return test results history of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -216,7 +239,7 @@ namespace TestIT.ApiClient.Api
         /// Get test results history of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System return test results history of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -241,7 +264,7 @@ namespace TestIT.ApiClient.Api
         /// Set WorkItem as actual
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
+        ///   Use case    User sets work item identifier    User runs method execution    System set WorkItem as actual
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -253,7 +276,7 @@ namespace TestIT.ApiClient.Api
         /// Set WorkItem as actual
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
+        ///   Use case    User sets work item identifier    User runs method execution    System set WorkItem as actual
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -292,7 +315,7 @@ namespace TestIT.ApiClient.Api
         /// Move WorkItem to another section
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System move WorkItem to another section
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemMovePostModel"> (optional)</param>
@@ -303,7 +326,7 @@ namespace TestIT.ApiClient.Api
         /// Move WorkItem to another section
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System move WorkItem to another section
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemMovePostModel"> (optional)</param>
@@ -327,6 +350,27 @@ namespace TestIT.ApiClient.Api
         /// <param name="createWorkItemApiModel"> (optional)</param>
         /// <returns>ApiResponse of WorkItemApiResult</returns>
         ApiResponse<WorkItemApiResult> ApiV2WorkItemsPostWithHttpInfo(CreateWorkItemApiModel createWorkItemApiModel = default);
+        /// <summary>
+        /// Update Test Case, Checklist or Shared Step
+        /// </summary>
+        /// <remarks>
+        ///   Use case    User sets work item properties (listed in request parameters)    User runs method execution    System updates work item by identifier    System returns updated work item model (listed in response parameters)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updateWorkItemApiModel"> (optional)</param>
+        /// <returns></returns>
+        void ApiV2WorkItemsPut(UpdateWorkItemApiModel updateWorkItemApiModel = default);
+
+        /// <summary>
+        /// Update Test Case, Checklist or Shared Step
+        /// </summary>
+        /// <remarks>
+        ///   Use case    User sets work item properties (listed in request parameters)    User runs method execution    System updates work item by identifier    System returns updated work item model (listed in response parameters)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updateWorkItemApiModel"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2WorkItemsPutWithHttpInfo(UpdateWorkItemApiModel updateWorkItemApiModel = default);
         /// <summary>
         /// Search for work items
         /// </summary>
@@ -359,7 +403,7 @@ namespace TestIT.ApiClient.Api
         /// Get SharedStep references in sections
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        ///   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -376,7 +420,7 @@ namespace TestIT.ApiClient.Api
         /// Get SharedStep references in sections
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        ///   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -392,7 +436,7 @@ namespace TestIT.ApiClient.Api
         /// Get SharedStep references in work items
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        ///   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -409,7 +453,7 @@ namespace TestIT.ApiClient.Api
         /// Get SharedStep references in work items
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        ///   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -425,7 +469,7 @@ namespace TestIT.ApiClient.Api
         /// Get SharedStep references
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        ///   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -437,7 +481,7 @@ namespace TestIT.ApiClient.Api
         /// Get SharedStep references
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        ///   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -448,10 +492,10 @@ namespace TestIT.ApiClient.Api
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
+        ///   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search and delete all autotests, related to found work item    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns></returns>
         void DeleteAllWorkItemsFromAutoTest(string id);
 
@@ -459,20 +503,20 @@ namespace TestIT.ApiClient.Api
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
+        ///   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search and delete all autotests, related to found work item    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteAllWorkItemsFromAutoTestWithHttpInfo(string id);
         /// <summary>
         /// Delete Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
+        ///   Use case    User sets work item identifier    User runs method execution    System deletes work item    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns></returns>
         void DeleteWorkItem(string id);
 
@@ -480,20 +524,20 @@ namespace TestIT.ApiClient.Api
         /// Delete Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
+        ///   Use case    User sets work item identifier    User runs method execution    System deletes work item    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> DeleteWorkItemWithHttpInfo(string id);
         /// <summary>
         /// Get all AutoTests linked to WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
+        ///   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search all autotests, related to found work item    System returns list of found autotests
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns>List&lt;AutoTestModel&gt;</returns>
         List<AutoTestModel> GetAutoTestsForWorkItem(string id);
 
@@ -501,17 +545,17 @@ namespace TestIT.ApiClient.Api
         /// Get all AutoTests linked to WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
+        ///   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search all autotests, related to found work item    System returns list of found autotests
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
         ApiResponse<List<AutoTestModel>> GetAutoTestsForWorkItemWithHttpInfo(string id);
         /// <summary>
         /// Get iterations by work item Id or GlobalId
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <returns>List&lt;IterationModel&gt;</returns>
@@ -524,7 +568,7 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <returns>ApiResponse of List&lt;IterationModel&gt;</returns>
@@ -533,10 +577,10 @@ namespace TestIT.ApiClient.Api
         /// Get Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
+        ///   Use case    User sets work item identifier    [Optional] User sets work item version identifier    [Optional] User sets work item version number    User runs method execution    System search work item by identifier    [Optional] if User sets work item version identifier, system search work item version by identifier.    [Optional] if user sets work item version number, system search work item version by number    Otherwise, system search last work item version    System returns work item
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <returns>WorkItemApiResult</returns>
@@ -546,10 +590,10 @@ namespace TestIT.ApiClient.Api
         /// Get Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
+        ///   Use case    User sets work item identifier    [Optional] User sets work item version identifier    [Optional] User sets work item version number    User runs method execution    System search work item by identifier    [Optional] if User sets work item version identifier, system search work item version by identifier.    [Optional] if user sets work item version number, system search work item version by number    Otherwise, system search last work item version    System returns work item
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <returns>ApiResponse of WorkItemApiResult</returns>
@@ -558,7 +602,7 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItem chronology by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
+        ///   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search test results of all autotests, related to found work item    System sort results by CompletedOn ascending, then by CreatedDate ascending    System returns sorted collection of test results
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Internal (UUID) or global (integer) identifier</param>
@@ -570,7 +614,7 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItem chronology by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
+        ///   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search test results of all autotests, related to found work item    System sort results by CompletedOn ascending, then by CreatedDate ascending    System returns sorted collection of test results
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Internal (UUID) or global (integer) identifier</param>
@@ -581,12 +625,12 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItem versions
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
+        ///   Use case    User sets work item identifier    [Optional] User sets work item version identifier    User runs method execution    System search work item by identifier    [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item    System returns array of work item version models (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
-        /// <param name="workItemVersionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
-        /// <param name="versionNumber">WorkItem version (integer format) number\&quot; (optional)</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="workItemVersionId">WorkItem version (guid format)  identifier\&quot; (optional)</param>
+        /// <param name="versionNumber">WorkItem version (integer format)  number\&quot; (optional)</param>
         /// <returns>List&lt;WorkItemVersionModel&gt;</returns>
         List<WorkItemVersionModel> GetWorkItemVersions(string id, Guid? workItemVersionId = default, int? versionNumber = default);
 
@@ -594,12 +638,12 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItem versions
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
+        ///   Use case    User sets work item identifier    [Optional] User sets work item version identifier    User runs method execution    System search work item by identifier    [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item    System returns array of work item version models (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
-        /// <param name="workItemVersionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
-        /// <param name="versionNumber">WorkItem version (integer format) number\&quot; (optional)</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="workItemVersionId">WorkItem version (guid format)  identifier\&quot; (optional)</param>
+        /// <param name="versionNumber">WorkItem version (integer format)  number\&quot; (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemVersionModel&gt;</returns>
         ApiResponse<List<WorkItemVersionModel>> GetWorkItemVersionsWithHttpInfo(string id, Guid? workItemVersionId = default, int? versionNumber = default);
         /// <summary>
@@ -638,27 +682,6 @@ namespace TestIT.ApiClient.Api
         /// <param name="id">Unique or global ID of the work item</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> RestoreWorkItemWithHttpInfo(string id);
-        /// <summary>
-        /// Update Test Case, Checklist or Shared Step
-        /// </summary>
-        /// <remarks>
-        ///  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
-        /// </remarks>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemApiModel"> (optional)</param>
-        /// <returns></returns>
-        void UpdateWorkItem(UpdateWorkItemApiModel updateWorkItemApiModel = default);
-
-        /// <summary>
-        /// Update Test Case, Checklist or Shared Step
-        /// </summary>
-        /// <remarks>
-        ///  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
-        /// </remarks>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemApiModel"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> UpdateWorkItemWithHttpInfo(UpdateWorkItemApiModel updateWorkItemApiModel = default);
         #endregion Synchronous Operations
     }
 
@@ -672,7 +695,7 @@ namespace TestIT.ApiClient.Api
         /// Upload and link attachment to WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
+        ///   Use case    User sets workItemId    User attaches a file    System creates attachment and links it to the work item    System returns attachment identifier
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Work item internal identifier (guid format)</param>
@@ -685,7 +708,7 @@ namespace TestIT.ApiClient.Api
         /// Upload and link attachment to WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
+        ///   Use case    User sets workItemId    User attaches a file    System creates attachment and links it to the work item    System returns attachment identifier
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Work item internal identifier (guid format)</param>
@@ -697,7 +720,7 @@ namespace TestIT.ApiClient.Api
         /// Transform CheckList to TestCase
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
+        ///   Use case    User sets checklist identifier    User runs method execution    System transform CheckList to TestCase
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -709,7 +732,7 @@ namespace TestIT.ApiClient.Api
         /// Transform CheckList to TestCase
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
+        ///   Use case    User sets checklist identifier    User runs method execution    System transform CheckList to TestCase
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -720,7 +743,7 @@ namespace TestIT.ApiClient.Api
         /// Get change history of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
+        ///   Use case    User sets work item identifier    User runs method execution    System return change history of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -737,7 +760,7 @@ namespace TestIT.ApiClient.Api
         /// Get change history of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
+        ///   Use case    User sets work item identifier    User runs method execution    System return change history of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -753,7 +776,7 @@ namespace TestIT.ApiClient.Api
         /// Delete like from WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System delete like from WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -765,7 +788,7 @@ namespace TestIT.ApiClient.Api
         /// Delete like from WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System delete like from WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -776,7 +799,7 @@ namespace TestIT.ApiClient.Api
         /// Set like to WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System set like to WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -788,7 +811,7 @@ namespace TestIT.ApiClient.Api
         /// Set like to WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System set like to WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -799,7 +822,7 @@ namespace TestIT.ApiClient.Api
         /// Get likes count of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System return likes count of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -811,7 +834,7 @@ namespace TestIT.ApiClient.Api
         /// Get likes count of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System return likes count of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -822,7 +845,7 @@ namespace TestIT.ApiClient.Api
         /// Get likes of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System return likes of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -834,7 +857,7 @@ namespace TestIT.ApiClient.Api
         /// Get likes of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System return likes of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -842,10 +865,35 @@ namespace TestIT.ApiClient.Api
         /// <returns>Task of ApiResponse (List&lt;WorkItemLikeModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<WorkItemLikeModel>>> ApiV2WorkItemsIdLikesGetWithHttpInfoAsync(Guid id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
+        /// Patch Test Case, Checklist or Shared Step
+        /// </summary>
+        /// <remarks>
+        /// See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="operation"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2WorkItemsIdPatchAsync(string id, List<Operation> operation = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Patch Test Case, Checklist or Shared Step
+        /// </summary>
+        /// <remarks>
+        /// See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="operation"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WorkItemsIdPatchWithHttpInfoAsync(string id, List<Operation> operation = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
         /// Get test results history of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System return test results history of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -872,7 +920,7 @@ namespace TestIT.ApiClient.Api
         /// Get test results history of WorkItem
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System return test results history of WorkItem
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -898,7 +946,7 @@ namespace TestIT.ApiClient.Api
         /// Set WorkItem as actual
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
+        ///   Use case    User sets work item identifier    User runs method execution    System set WorkItem as actual
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -911,7 +959,7 @@ namespace TestIT.ApiClient.Api
         /// Set WorkItem as actual
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
+        ///   Use case    User sets work item identifier    User runs method execution    System set WorkItem as actual
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -956,7 +1004,7 @@ namespace TestIT.ApiClient.Api
         /// Move WorkItem to another section
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System move WorkItem to another section
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemMovePostModel"> (optional)</param>
@@ -968,7 +1016,7 @@ namespace TestIT.ApiClient.Api
         /// Move WorkItem to another section
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
+        ///   Use case    User sets WorkItem identifier    User runs method execution    System move WorkItem to another section
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemMovePostModel"> (optional)</param>
@@ -998,6 +1046,29 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (WorkItemApiResult)</returns>
         System.Threading.Tasks.Task<ApiResponse<WorkItemApiResult>> ApiV2WorkItemsPostWithHttpInfoAsync(CreateWorkItemApiModel createWorkItemApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Update Test Case, Checklist or Shared Step
+        /// </summary>
+        /// <remarks>
+        ///   Use case    User sets work item properties (listed in request parameters)    User runs method execution    System updates work item by identifier    System returns updated work item model (listed in response parameters)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updateWorkItemApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2WorkItemsPutAsync(UpdateWorkItemApiModel updateWorkItemApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Update Test Case, Checklist or Shared Step
+        /// </summary>
+        /// <remarks>
+        ///   Use case    User sets work item properties (listed in request parameters)    User runs method execution    System updates work item by identifier    System returns updated work item model (listed in response parameters)
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updateWorkItemApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2WorkItemsPutWithHttpInfoAsync(UpdateWorkItemApiModel updateWorkItemApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search for work items
         /// </summary>
@@ -1035,7 +1106,7 @@ namespace TestIT.ApiClient.Api
         /// Get SharedStep references in sections
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        ///   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -1053,7 +1124,7 @@ namespace TestIT.ApiClient.Api
         /// Get SharedStep references in sections
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        ///   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -1070,7 +1141,7 @@ namespace TestIT.ApiClient.Api
         /// Get SharedStep references in work items
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        ///   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -1088,7 +1159,7 @@ namespace TestIT.ApiClient.Api
         /// Get SharedStep references in work items
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        ///   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -1105,7 +1176,7 @@ namespace TestIT.ApiClient.Api
         /// Get SharedStep references
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        ///   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -1118,7 +1189,7 @@ namespace TestIT.ApiClient.Api
         /// Get SharedStep references
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        ///   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -1130,10 +1201,10 @@ namespace TestIT.ApiClient.Api
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
+        ///   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search and delete all autotests, related to found work item    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task DeleteAllWorkItemsFromAutoTestAsync(string id, System.Threading.CancellationToken cancellationToken = default);
@@ -1142,10 +1213,10 @@ namespace TestIT.ApiClient.Api
         /// Delete all links AutoTests from WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
+        ///   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search and delete all autotests, related to found work item    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteAllWorkItemsFromAutoTestWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
@@ -1153,10 +1224,10 @@ namespace TestIT.ApiClient.Api
         /// Delete Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
+        ///   Use case    User sets work item identifier    User runs method execution    System deletes work item    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task DeleteWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default);
@@ -1165,10 +1236,10 @@ namespace TestIT.ApiClient.Api
         /// Delete Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
+        ///   Use case    User sets work item identifier    User runs method execution    System deletes work item    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
@@ -1176,10 +1247,10 @@ namespace TestIT.ApiClient.Api
         /// Get all AutoTests linked to WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
+        ///   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search all autotests, related to found work item    System returns list of found autotests
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
         System.Threading.Tasks.Task<List<AutoTestModel>> GetAutoTestsForWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default);
@@ -1188,10 +1259,10 @@ namespace TestIT.ApiClient.Api
         /// Get all AutoTests linked to WorkItem by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
+        ///   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search all autotests, related to found work item    System returns list of found autotests
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<AutoTestModel>>> GetAutoTestsForWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
@@ -1202,7 +1273,7 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1216,7 +1287,7 @@ namespace TestIT.ApiClient.Api
         /// 
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1226,10 +1297,10 @@ namespace TestIT.ApiClient.Api
         /// Get Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
+        ///   Use case    User sets work item identifier    [Optional] User sets work item version identifier    [Optional] User sets work item version number    User runs method execution    System search work item by identifier    [Optional] if User sets work item version identifier, system search work item version by identifier.    [Optional] if user sets work item version number, system search work item version by number    Otherwise, system search last work item version    System returns work item
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1240,10 +1311,10 @@ namespace TestIT.ApiClient.Api
         /// Get Test Case, Checklist or Shared Step by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
+        ///   Use case    User sets work item identifier    [Optional] User sets work item version identifier    [Optional] User sets work item version number    User runs method execution    System search work item by identifier    [Optional] if User sets work item version identifier, system search work item version by identifier.    [Optional] if user sets work item version number, system search work item version by number    Otherwise, system search last work item version    System returns work item
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -1253,7 +1324,7 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItem chronology by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
+        ///   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search test results of all autotests, related to found work item    System sort results by CompletedOn ascending, then by CreatedDate ascending    System returns sorted collection of test results
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Internal (UUID) or global (integer) identifier</param>
@@ -1266,7 +1337,7 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItem chronology by Id or GlobalId
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
+        ///   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search test results of all autotests, related to found work item    System sort results by CompletedOn ascending, then by CreatedDate ascending    System returns sorted collection of test results
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Internal (UUID) or global (integer) identifier</param>
@@ -1278,12 +1349,12 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItem versions
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
+        ///   Use case    User sets work item identifier    [Optional] User sets work item version identifier    User runs method execution    System search work item by identifier    [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item    System returns array of work item version models (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
-        /// <param name="workItemVersionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
-        /// <param name="versionNumber">WorkItem version (integer format) number\&quot; (optional)</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="workItemVersionId">WorkItem version (guid format)  identifier\&quot; (optional)</param>
+        /// <param name="versionNumber">WorkItem version (integer format)  number\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemVersionModel&gt;</returns>
         System.Threading.Tasks.Task<List<WorkItemVersionModel>> GetWorkItemVersionsAsync(string id, Guid? workItemVersionId = default, int? versionNumber = default, System.Threading.CancellationToken cancellationToken = default);
@@ -1292,12 +1363,12 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItem versions
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
+        ///   Use case    User sets work item identifier    [Optional] User sets work item version identifier    User runs method execution    System search work item by identifier    [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item    System returns array of work item version models (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
-        /// <param name="workItemVersionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
-        /// <param name="versionNumber">WorkItem version (integer format) number\&quot; (optional)</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="workItemVersionId">WorkItem version (guid format)  identifier\&quot; (optional)</param>
+        /// <param name="versionNumber">WorkItem version (integer format)  number\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemVersionModel&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<WorkItemVersionModel>>> GetWorkItemVersionsWithHttpInfoAsync(string id, Guid? workItemVersionId = default, int? versionNumber = default, System.Threading.CancellationToken cancellationToken = default);
@@ -1347,29 +1418,6 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> RestoreWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// Update Test Case, Checklist or Shared Step
-        /// </summary>
-        /// <remarks>
-        ///  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
-        /// </remarks>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemApiModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task UpdateWorkItemAsync(UpdateWorkItemApiModel updateWorkItemApiModel = default, System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// Update Test Case, Checklist or Shared Step
-        /// </summary>
-        /// <remarks>
-        ///  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
-        /// </remarks>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemApiModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> UpdateWorkItemWithHttpInfoAsync(UpdateWorkItemApiModel updateWorkItemApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -1584,7 +1632,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Upload and link attachment to WorkItem  Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
+        /// Upload and link attachment to WorkItem   Use case    User sets workItemId    User attaches a file    System creates attachment and links it to the work item    System returns attachment identifier
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Work item internal identifier (guid format)</param>
@@ -1596,7 +1644,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Upload and link attachment to WorkItem  Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
+        /// Upload and link attachment to WorkItem   Use case    User sets workItemId    User attaches a file    System creates attachment and links it to the work item    System returns attachment identifier
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Work item internal identifier (guid format)</param>
@@ -1632,11 +1680,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1652,7 +1700,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Upload and link attachment to WorkItem  Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
+        /// Upload and link attachment to WorkItem   Use case    User sets workItemId    User attaches a file    System creates attachment and links it to the work item    System returns attachment identifier
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Work item internal identifier (guid format)</param>
@@ -1665,7 +1713,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Upload and link attachment to WorkItem  Use case  User sets workItemId  User attaches a file  System creates attachment and links it to the work item  System returns attachment identifier
+        /// Upload and link attachment to WorkItem   Use case    User sets workItemId    User attaches a file    System creates attachment and links it to the work item    System returns attachment identifier
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Work item internal identifier (guid format)</param>
@@ -1704,11 +1752,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1725,7 +1773,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Transform CheckList to TestCase  Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
+        /// Transform CheckList to TestCase   Use case    User sets checklist identifier    User runs method execution    System transform CheckList to TestCase
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1737,7 +1785,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Transform CheckList to TestCase  Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
+        /// Transform CheckList to TestCase   Use case    User sets checklist identifier    User runs method execution    System transform CheckList to TestCase
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1767,11 +1815,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1787,7 +1835,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Transform CheckList to TestCase  Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
+        /// Transform CheckList to TestCase   Use case    User sets checklist identifier    User runs method execution    System transform CheckList to TestCase
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1800,7 +1848,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Transform CheckList to TestCase  Use case  User sets checklist identifier  User runs method execution  System transform CheckList to TestCase
+        /// Transform CheckList to TestCase   Use case    User sets checklist identifier    User runs method execution    System transform CheckList to TestCase
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1833,11 +1881,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1854,7 +1902,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get change history of WorkItem  Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
+        /// Get change history of WorkItem   Use case    User sets work item identifier    User runs method execution    System return change history of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1871,7 +1919,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get change history of WorkItem  Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
+        /// Get change history of WorkItem   Use case    User sets work item identifier    User runs method execution    System return change history of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1926,11 +1974,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1946,7 +1994,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get change history of WorkItem  Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
+        /// Get change history of WorkItem   Use case    User sets work item identifier    User runs method execution    System return change history of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -1964,7 +2012,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get change history of WorkItem  Use case  User sets work item identifier  User runs method execution  System return change history of WorkItem
+        /// Get change history of WorkItem   Use case    User sets work item identifier    User runs method execution    System return change history of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2022,11 +2070,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2043,7 +2091,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete like from WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
+        /// Delete like from WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System delete like from WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2054,7 +2102,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete like from WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
+        /// Delete like from WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System delete like from WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2084,11 +2132,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2104,7 +2152,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete like from WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
+        /// Delete like from WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System delete like from WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2116,7 +2164,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete like from WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System delete like from WorkItem
+        /// Delete like from WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System delete like from WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2149,11 +2197,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2170,7 +2218,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set like to WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
+        /// Set like to WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System set like to WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2181,7 +2229,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set like to WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
+        /// Set like to WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System set like to WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2211,11 +2259,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2231,7 +2279,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set like to WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
+        /// Set like to WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System set like to WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2243,7 +2291,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set like to WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System set like to WorkItem
+        /// Set like to WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System set like to WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2276,11 +2324,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2297,7 +2345,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get likes count of WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
+        /// Get likes count of WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System return likes count of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2309,7 +2357,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get likes count of WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
+        /// Get likes count of WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System return likes count of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2339,11 +2387,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2359,7 +2407,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get likes count of WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
+        /// Get likes count of WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System return likes count of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2372,7 +2420,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get likes count of WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System return likes count of WorkItem
+        /// Get likes count of WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System return likes count of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2405,11 +2453,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2426,7 +2474,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get likes of WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
+        /// Get likes of WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System return likes of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2438,7 +2486,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get likes of WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
+        /// Get likes of WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System return likes of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2468,11 +2516,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2488,7 +2536,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get likes of WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
+        /// Get likes of WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System return likes of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2501,7 +2549,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get likes of WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System return likes of WorkItem
+        /// Get likes of WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System return likes of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2534,11 +2582,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2555,7 +2603,150 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test results history of WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
+        /// Patch Test Case, Checklist or Shared Step See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="operation"> (optional)</param>
+        /// <returns></returns>
+        public void ApiV2WorkItemsIdPatch(string id, List<Operation> operation = default)
+        {
+            ApiV2WorkItemsIdPatchWithHttpInfo(id, operation);
+        }
+
+        /// <summary>
+        /// Patch Test Case, Checklist or Shared Step See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="operation"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2WorkItemsIdPatchWithHttpInfo(string id, List<Operation> operation = default)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'id' when calling WorkItemsApi->ApiV2WorkItemsIdPatch");
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = operation;
+
+            // authentication (PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Cookies) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Patch<Object>("/api/v2/workItems/{id}", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WorkItemsIdPatch", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Patch Test Case, Checklist or Shared Step See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="operation"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2WorkItemsIdPatchAsync(string id, List<Operation> operation = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            await ApiV2WorkItemsIdPatchWithHttpInfoAsync(id, operation, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Patch Test Case, Checklist or Shared Step See &lt;a href&#x3D;\&quot;https://www.rfc-editor.org/rfc/rfc6902\&quot; target&#x3D;\&quot;_blank\&quot;&gt;RFC 6902: JavaScript Object Notation (JSON) Patch&lt;/a&gt; for details
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="operation"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2WorkItemsIdPatchWithHttpInfoAsync(string id, List<Operation> operation = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'id' when calling WorkItemsApi->ApiV2WorkItemsIdPatch");
+
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("id", TestIT.ApiClient.Client.ClientUtils.ParameterToString(id)); // path parameter
+            localVarRequestOptions.Data = operation;
+
+            // authentication (PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Cookies) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PatchAsync<Object>("/api/v2/workItems/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WorkItemsIdPatch", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Get test results history of WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System return test results history of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2582,7 +2773,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test results history of WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
+        /// Get test results history of WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System return test results history of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2687,11 +2878,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2707,7 +2898,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test results history of WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
+        /// Get test results history of WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System return test results history of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2735,7 +2926,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get test results history of WorkItem  Use case  User sets WorkItem identifier  User runs method execution  System return test results history of WorkItem
+        /// Get test results history of WorkItem   Use case    User sets WorkItem identifier    User runs method execution    System return test results history of WorkItem
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2843,11 +3034,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2864,7 +3055,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set WorkItem as actual  Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
+        /// Set WorkItem as actual   Use case    User sets work item identifier    User runs method execution    System set WorkItem as actual
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2877,7 +3068,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set WorkItem as actual  Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
+        /// Set WorkItem as actual   Use case    User sets work item identifier    User runs method execution    System set WorkItem as actual
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2909,11 +3100,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2929,7 +3120,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set WorkItem as actual  Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
+        /// Set WorkItem as actual   Use case    User sets work item identifier    User runs method execution    System set WorkItem as actual
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2943,7 +3134,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Set WorkItem as actual  Use case  User sets work item identifier  User runs method execution  System set WorkItem as actual
+        /// Set WorkItem as actual   Use case    User sets work item identifier    User runs method execution    System set WorkItem as actual
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -2978,11 +3169,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3072,11 +3263,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3169,11 +3360,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3190,7 +3381,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Move WorkItem to another section  Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
+        /// Move WorkItem to another section   Use case    User sets WorkItem identifier    User runs method execution    System move WorkItem to another section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemMovePostModel"> (optional)</param>
@@ -3202,7 +3393,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Move WorkItem to another section  Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
+        /// Move WorkItem to another section   Use case    User sets WorkItem identifier    User runs method execution    System move WorkItem to another section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemMovePostModel"> (optional)</param>
@@ -3233,11 +3424,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3253,7 +3444,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Move WorkItem to another section  Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
+        /// Move WorkItem to another section   Use case    User sets WorkItem identifier    User runs method execution    System move WorkItem to another section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemMovePostModel"> (optional)</param>
@@ -3266,7 +3457,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Move WorkItem to another section  Use case  User sets WorkItem identifier  User runs method execution  System move WorkItem to another section
+        /// Move WorkItem to another section   Use case    User sets WorkItem identifier    User runs method execution    System move WorkItem to another section
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="workItemMovePostModel"> (optional)</param>
@@ -3300,11 +3491,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3364,11 +3555,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3431,11 +3622,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3445,6 +3636,135 @@ namespace TestIT.ApiClient.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("ApiV2WorkItemsPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update Test Case, Checklist or Shared Step   Use case    User sets work item properties (listed in request parameters)    User runs method execution    System updates work item by identifier    System returns updated work item model (listed in response parameters)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updateWorkItemApiModel"> (optional)</param>
+        /// <returns></returns>
+        public void ApiV2WorkItemsPut(UpdateWorkItemApiModel updateWorkItemApiModel = default)
+        {
+            ApiV2WorkItemsPutWithHttpInfo(updateWorkItemApiModel);
+        }
+
+        /// <summary>
+        /// Update Test Case, Checklist or Shared Step   Use case    User sets work item properties (listed in request parameters)    User runs method execution    System updates work item by identifier    System returns updated work item model (listed in response parameters)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updateWorkItemApiModel"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2WorkItemsPutWithHttpInfo(UpdateWorkItemApiModel updateWorkItemApiModel = default)
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = updateWorkItemApiModel;
+
+            // authentication (PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Cookies) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Put<Object>("/api/v2/workItems", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WorkItemsPut", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Update Test Case, Checklist or Shared Step   Use case    User sets work item properties (listed in request parameters)    User runs method execution    System updates work item by identifier    System returns updated work item model (listed in response parameters)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updateWorkItemApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2WorkItemsPutAsync(UpdateWorkItemApiModel updateWorkItemApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            await ApiV2WorkItemsPutWithHttpInfoAsync(updateWorkItemApiModel, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// Update Test Case, Checklist or Shared Step   Use case    User sets work item properties (listed in request parameters)    User runs method execution    System updates work item by identifier    System returns updated work item model (listed in response parameters)
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="updateWorkItemApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2WorkItemsPutWithHttpInfoAsync(UpdateWorkItemApiModel updateWorkItemApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = updateWorkItemApiModel;
+
+            // authentication (PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Cookies) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/api/v2/workItems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2WorkItemsPut", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -3525,11 +3845,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3622,11 +3942,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3643,7 +3963,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get SharedStep references in sections  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        /// Get SharedStep references in sections   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -3661,7 +3981,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get SharedStep references in sections  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        /// Get SharedStep references in sections   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -3719,11 +4039,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3739,7 +4059,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get SharedStep references in sections  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        /// Get SharedStep references in sections   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -3758,7 +4078,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get SharedStep references in sections  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        /// Get SharedStep references in sections   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -3819,11 +4139,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3840,7 +4160,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get SharedStep references in work items  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        /// Get SharedStep references in work items   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -3858,7 +4178,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get SharedStep references in work items  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        /// Get SharedStep references in work items   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -3916,11 +4236,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3936,7 +4256,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get SharedStep references in work items  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        /// Get SharedStep references in work items   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -3955,7 +4275,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get SharedStep references in work items  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        /// Get SharedStep references in work items   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -4016,11 +4336,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4037,7 +4357,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get SharedStep references  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        /// Get SharedStep references   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -4050,7 +4370,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get SharedStep references  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        /// Get SharedStep references   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -4081,11 +4401,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4101,7 +4421,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get SharedStep references  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        /// Get SharedStep references   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -4115,7 +4435,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get SharedStep references  Use case  User sets SharedStep identifier  User runs method execution  System return SharedStep references
+        /// Get SharedStep references   Use case    User sets SharedStep identifier    User runs method execution    System return SharedStep references
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="sharedStepId"></param>
@@ -4149,11 +4469,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4170,10 +4490,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete all links AutoTests from WorkItem by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
+        /// Delete all links AutoTests from WorkItem by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search and delete all autotests, related to found work item    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns></returns>
         public void DeleteAllWorkItemsFromAutoTest(string id)
         {
@@ -4181,10 +4501,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete all links AutoTests from WorkItem by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
+        /// Delete all links AutoTests from WorkItem by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search and delete all autotests, related to found work item    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public TestIT.ApiClient.Client.ApiResponse<Object> DeleteAllWorkItemsFromAutoTestWithHttpInfo(string id)
         {
@@ -4215,11 +4535,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4235,10 +4555,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete all links AutoTests from WorkItem by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
+        /// Delete all links AutoTests from WorkItem by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search and delete all autotests, related to found work item    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DeleteAllWorkItemsFromAutoTestAsync(string id, System.Threading.CancellationToken cancellationToken = default)
@@ -4247,10 +4567,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete all links AutoTests from WorkItem by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search and delete all autotests, related to found work item  System returns no content response
+        /// Delete all links AutoTests from WorkItem by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search and delete all autotests, related to found work item    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteAllWorkItemsFromAutoTestWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default)
@@ -4284,11 +4604,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4305,10 +4625,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
+        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System deletes work item    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns></returns>
         public void DeleteWorkItem(string id)
         {
@@ -4316,10 +4636,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
+        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System deletes work item    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns>ApiResponse of Object(void)</returns>
         public TestIT.ApiClient.Client.ApiResponse<Object> DeleteWorkItemWithHttpInfo(string id)
         {
@@ -4350,11 +4670,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4370,10 +4690,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
+        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System deletes work item    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of void</returns>
         public async System.Threading.Tasks.Task DeleteWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default)
@@ -4382,10 +4702,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System deletes work item  System returns no content response
+        /// Delete Test Case, Checklist or Shared Step by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System deletes work item    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> DeleteWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default)
@@ -4419,11 +4739,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4440,10 +4760,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all AutoTests linked to WorkItem by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
+        /// Get all AutoTests linked to WorkItem by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search all autotests, related to found work item    System returns list of found autotests
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns>List&lt;AutoTestModel&gt;</returns>
         public List<AutoTestModel> GetAutoTestsForWorkItem(string id)
         {
@@ -4452,10 +4772,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all AutoTests linked to WorkItem by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
+        /// Get all AutoTests linked to WorkItem by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search all autotests, related to found work item    System returns list of found autotests
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <returns>ApiResponse of List&lt;AutoTestModel&gt;</returns>
         public TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>> GetAutoTestsForWorkItemWithHttpInfo(string id)
         {
@@ -4486,11 +4806,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4506,10 +4826,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all AutoTests linked to WorkItem by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
+        /// Get all AutoTests linked to WorkItem by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search all autotests, related to found work item    System returns list of found autotests
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;AutoTestModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<AutoTestModel>> GetAutoTestsForWorkItemAsync(string id, System.Threading.CancellationToken cancellationToken = default)
@@ -4519,10 +4839,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all AutoTests linked to WorkItem by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search all autotests, related to found work item  System returns list of found autotests
+        /// Get all AutoTests linked to WorkItem by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search all autotests, related to found work item    System returns list of found autotests
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;AutoTestModel&gt;)</returns>
         public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<AutoTestModel>>> GetAutoTestsForWorkItemWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default)
@@ -4556,11 +4876,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4580,7 +4900,7 @@ namespace TestIT.ApiClient.Api
         /// Get iterations by work item Id or GlobalId 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <returns>List&lt;IterationModel&gt;</returns>
@@ -4594,7 +4914,7 @@ namespace TestIT.ApiClient.Api
         /// Get iterations by work item Id or GlobalId 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <returns>ApiResponse of List&lt;IterationModel&gt;</returns>
@@ -4635,11 +4955,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4658,7 +4978,7 @@ namespace TestIT.ApiClient.Api
         /// Get iterations by work item Id or GlobalId 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -4673,7 +4993,7 @@ namespace TestIT.ApiClient.Api
         /// Get iterations by work item Id or GlobalId 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -4717,11 +5037,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4738,10 +5058,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Test Case, Checklist or Shared Step by Id or GlobalId  Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
+        /// Get Test Case, Checklist or Shared Step by Id or GlobalId   Use case    User sets work item identifier    [Optional] User sets work item version identifier    [Optional] User sets work item version number    User runs method execution    System search work item by identifier    [Optional] if User sets work item version identifier, system search work item version by identifier.    [Optional] if user sets work item version number, system search work item version by number    Otherwise, system search last work item version    System returns work item
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <returns>WorkItemApiResult</returns>
@@ -4752,10 +5072,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Test Case, Checklist or Shared Step by Id or GlobalId  Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
+        /// Get Test Case, Checklist or Shared Step by Id or GlobalId   Use case    User sets work item identifier    [Optional] User sets work item version identifier    [Optional] User sets work item version number    User runs method execution    System search work item by identifier    [Optional] if User sets work item version identifier, system search work item version by identifier.    [Optional] if user sets work item version number, system search work item version by number    Otherwise, system search last work item version    System returns work item
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <returns>ApiResponse of WorkItemApiResult</returns>
@@ -4796,11 +5116,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4816,10 +5136,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Test Case, Checklist or Shared Step by Id or GlobalId  Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
+        /// Get Test Case, Checklist or Shared Step by Id or GlobalId   Use case    User sets work item identifier    [Optional] User sets work item version identifier    [Optional] User sets work item version number    User runs method execution    System search work item by identifier    [Optional] if User sets work item version identifier, system search work item version by identifier.    [Optional] if user sets work item version number, system search work item version by number    Otherwise, system search last work item version    System returns work item
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -4831,10 +5151,10 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Test Case, Checklist or Shared Step by Id or GlobalId  Use case  User sets work item identifier  [Optional] User sets work item version identifier  [Optional] User sets work item version number  User runs method execution  System search work item by identifier  [Optional] if User sets work item version identifier, system search work item version by identifier.  [Optional] if user sets work item version number, system search work item version by number  Otherwise, system search last work item version  System returns work item
+        /// Get Test Case, Checklist or Shared Step by Id or GlobalId   Use case    User sets work item identifier    [Optional] User sets work item version identifier    [Optional] User sets work item version number    User runs method execution    System search work item by identifier    [Optional] if User sets work item version identifier, system search work item version by identifier.    [Optional] if user sets work item version number, system search work item version by number    Otherwise, system search last work item version    System returns work item
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
         /// <param name="versionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
         /// <param name="versionNumber">WorkItem version number (0 is the last version)\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
@@ -4878,11 +5198,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4899,7 +5219,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItem chronology by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
+        /// Get WorkItem chronology by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search test results of all autotests, related to found work item    System sort results by CompletedOn ascending, then by CreatedDate ascending    System returns sorted collection of test results
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Internal (UUID) or global (integer) identifier</param>
@@ -4912,7 +5232,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItem chronology by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
+        /// Get WorkItem chronology by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search test results of all autotests, related to found work item    System sort results by CompletedOn ascending, then by CreatedDate ascending    System returns sorted collection of test results
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Internal (UUID) or global (integer) identifier</param>
@@ -4947,11 +5267,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4967,7 +5287,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItem chronology by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
+        /// Get WorkItem chronology by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search test results of all autotests, related to found work item    System sort results by CompletedOn ascending, then by CreatedDate ascending    System returns sorted collection of test results
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Internal (UUID) or global (integer) identifier</param>
@@ -4981,7 +5301,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItem chronology by Id or GlobalId  Use case  User sets work item identifier  User runs method execution  System search work item by identifier  System search test results of all autotests, related to found work item  System sort results by CompletedOn ascending, then by CreatedDate ascending  System returns sorted collection of test results
+        /// Get WorkItem chronology by Id or GlobalId   Use case    User sets work item identifier    User runs method execution    System search work item by identifier    System search test results of all autotests, related to found work item    System sort results by CompletedOn ascending, then by CreatedDate ascending    System returns sorted collection of test results
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Internal (UUID) or global (integer) identifier</param>
@@ -5019,11 +5339,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -5040,12 +5360,12 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItem versions  Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
+        /// Get WorkItem versions   Use case    User sets work item identifier    [Optional] User sets work item version identifier    User runs method execution    System search work item by identifier    [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item    System returns array of work item version models (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
-        /// <param name="workItemVersionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
-        /// <param name="versionNumber">WorkItem version (integer format) number\&quot; (optional)</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="workItemVersionId">WorkItem version (guid format)  identifier\&quot; (optional)</param>
+        /// <param name="versionNumber">WorkItem version (integer format)  number\&quot; (optional)</param>
         /// <returns>List&lt;WorkItemVersionModel&gt;</returns>
         public List<WorkItemVersionModel> GetWorkItemVersions(string id, Guid? workItemVersionId = default, int? versionNumber = default)
         {
@@ -5054,12 +5374,12 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItem versions  Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
+        /// Get WorkItem versions   Use case    User sets work item identifier    [Optional] User sets work item version identifier    User runs method execution    System search work item by identifier    [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item    System returns array of work item version models (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
-        /// <param name="workItemVersionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
-        /// <param name="versionNumber">WorkItem version (integer format) number\&quot; (optional)</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="workItemVersionId">WorkItem version (guid format)  identifier\&quot; (optional)</param>
+        /// <param name="versionNumber">WorkItem version (integer format)  number\&quot; (optional)</param>
         /// <returns>ApiResponse of List&lt;WorkItemVersionModel&gt;</returns>
         public TestIT.ApiClient.Client.ApiResponse<List<WorkItemVersionModel>> GetWorkItemVersionsWithHttpInfo(string id, Guid? workItemVersionId = default, int? versionNumber = default)
         {
@@ -5098,11 +5418,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -5118,12 +5438,12 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItem versions  Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
+        /// Get WorkItem versions   Use case    User sets work item identifier    [Optional] User sets work item version identifier    User runs method execution    System search work item by identifier    [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item    System returns array of work item version models (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
-        /// <param name="workItemVersionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
-        /// <param name="versionNumber">WorkItem version (integer format) number\&quot; (optional)</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="workItemVersionId">WorkItem version (guid format)  identifier\&quot; (optional)</param>
+        /// <param name="versionNumber">WorkItem version (integer format)  number\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of List&lt;WorkItemVersionModel&gt;</returns>
         public async System.Threading.Tasks.Task<List<WorkItemVersionModel>> GetWorkItemVersionsAsync(string id, Guid? workItemVersionId = default, int? versionNumber = default, System.Threading.CancellationToken cancellationToken = default)
@@ -5133,12 +5453,12 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItem versions  Use case  User sets work item identifier  [Optional] User sets work item version identifier  User runs method execution  System search work item by identifier  [Optional] If User set work item version identifier, System search work item version by version identifier                     Otherwise, system search all version of work item  System returns array of work item version models (listed in response example)
+        /// Get WorkItem versions   Use case    User sets work item identifier    [Optional] User sets work item version identifier    User runs method execution    System search work item by identifier    [Optional] If User set work item version identifier, System search work item version by version identifier                      Otherwise, system search all version of work item    System returns array of work item version models (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="id">WorkItem internal (guid format) or global(integer format) identifier\&quot;</param>
-        /// <param name="workItemVersionId">WorkItem version (guid format) identifier\&quot; (optional)</param>
-        /// <param name="versionNumber">WorkItem version (integer format) number\&quot; (optional)</param>
+        /// <param name="id">WorkItem internal (guid format) or  global(integer format) identifier\&quot;</param>
+        /// <param name="workItemVersionId">WorkItem version (guid format)  identifier\&quot; (optional)</param>
+        /// <param name="versionNumber">WorkItem version (integer format)  number\&quot; (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (List&lt;WorkItemVersionModel&gt;)</returns>
         public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<WorkItemVersionModel>>> GetWorkItemVersionsWithHttpInfoAsync(string id, Guid? workItemVersionId = default, int? versionNumber = default, System.Threading.CancellationToken cancellationToken = default)
@@ -5180,11 +5500,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -5246,11 +5566,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -5315,11 +5635,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -5381,11 +5701,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -5450,11 +5770,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -5464,135 +5784,6 @@ namespace TestIT.ApiClient.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("RestoreWorkItem", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Update Test Case, Checklist or Shared Step  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemApiModel"> (optional)</param>
-        /// <returns></returns>
-        public void UpdateWorkItem(UpdateWorkItemApiModel updateWorkItemApiModel = default)
-        {
-            UpdateWorkItemWithHttpInfo(updateWorkItemApiModel);
-        }
-
-        /// <summary>
-        /// Update Test Case, Checklist or Shared Step  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemApiModel"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public TestIT.ApiClient.Client.ApiResponse<Object> UpdateWorkItemWithHttpInfo(UpdateWorkItemApiModel updateWorkItemApiModel = default)
-        {
-            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = updateWorkItemApiModel;
-
-            // authentication (PrivateToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (Session Cookie) required
-            // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
-            {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Put<Object>("/api/v2/workItems", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdateWorkItem", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        /// Update Test Case, Checklist or Shared Step  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemApiModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task UpdateWorkItemAsync(UpdateWorkItemApiModel updateWorkItemApiModel = default, System.Threading.CancellationToken cancellationToken = default)
-        {
-            await UpdateWorkItemWithHttpInfoAsync(updateWorkItemApiModel, cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// Update Test Case, Checklist or Shared Step  Use case  User sets work item properties (listed in request parameters)  User runs method execution  System updates work item by identifier  System returns updated work item model (listed in response parameters)
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="updateWorkItemApiModel"> (optional)</param>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> UpdateWorkItemWithHttpInfoAsync(UpdateWorkItemApiModel updateWorkItemApiModel = default, System.Threading.CancellationToken cancellationToken = default)
-        {
-
-            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-                "application/json"
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-            localVarRequestOptions.Data = updateWorkItemApiModel;
-
-            // authentication (PrivateToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (Session Cookie) required
-            // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
-            {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PutAsync<Object>("/api/v2/workItems", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("UpdateWorkItem", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 

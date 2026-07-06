@@ -60,7 +60,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="globalId">globalId (required).</param>
         /// <param name="versionNumber">versionNumber (required).</param>
         /// <param name="entityTypeName">entityTypeName (required).</param>
-        public WorkItemChangedFieldsViewModel(StringChangedFieldWithDiffsViewModel name = default, BooleanChangedFieldViewModel isDeleted = default, GuidChangedFieldViewModel projectId = default, BooleanChangedFieldViewModel isAutomated = default, GuidChangedFieldViewModel sectionId = default, StringChangedFieldWithDiffsViewModel description = default, StringChangedFieldViewModel state = default, StringChangedFieldViewModel priority = default, Int32ChangedFieldViewModel duration = default, Dictionary<string, WorkItemChangedAttributeViewModel> attributes = default, WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel steps = default, WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel preconditionSteps = default, WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel postconditionSteps = default, AutoTestChangeViewModelArrayChangedFieldViewModel autoTests = default, AttachmentChangeViewModelArrayChangedFieldViewModel attachments = default, StringArrayChangedFieldViewModel tags = default, WorkItemLinkChangeViewModelArrayChangedFieldViewModel links = default, Int64ChangedFieldViewModel globalId = default, Int32ChangedFieldViewModel versionNumber = default, StringChangedFieldViewModel entityTypeName = default)
+        /// <param name="parentId">parentId (required).</param>
+        public WorkItemChangedFieldsViewModel(StringChangedFieldWithDiffsViewModel name = default, BooleanChangedFieldViewModel isDeleted = default, GuidChangedFieldViewModel projectId = default, BooleanChangedFieldViewModel isAutomated = default, GuidChangedFieldViewModel sectionId = default, StringChangedFieldWithDiffsViewModel description = default, StringChangedFieldViewModel state = default, StringChangedFieldViewModel priority = default, Int32ChangedFieldViewModel duration = default, Dictionary<string, WorkItemChangedAttributeViewModel> attributes = default, WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel steps = default, WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel preconditionSteps = default, WorkItemStepChangeViewModelArrayChangedFieldWithDiffsViewModel postconditionSteps = default, AutoTestChangeViewModelArrayChangedFieldViewModel autoTests = default, AttachmentChangeViewModelArrayChangedFieldViewModel attachments = default, StringArrayChangedFieldViewModel tags = default, WorkItemLinkChangeViewModelArrayChangedFieldViewModel links = default, Int64ChangedFieldViewModel globalId = default, Int32ChangedFieldViewModel versionNumber = default, StringChangedFieldViewModel entityTypeName = default, GuidNullableChangedFieldViewModel parentId = default)
         {
             // to ensure "isDeleted" is required (not null)
             if (isDeleted == null)
@@ -170,6 +171,12 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("entityTypeName is a required property for WorkItemChangedFieldsViewModel and cannot be null");
             }
             this.EntityTypeName = entityTypeName;
+            // to ensure "parentId" is required (not null)
+            if (parentId == null)
+            {
+                throw new ArgumentNullException("parentId is a required property for WorkItemChangedFieldsViewModel and cannot be null");
+            }
+            this.ParentId = parentId;
             this.Name = name;
             this.Description = description;
         }
@@ -295,6 +302,12 @@ namespace TestIT.ApiClient.Model
         public StringChangedFieldViewModel EntityTypeName { get; set; }
 
         /// <summary>
+        /// Gets or Sets ParentId
+        /// </summary>
+        [DataMember(Name = "parentId", IsRequired = true, EmitDefaultValue = true)]
+        public GuidNullableChangedFieldViewModel ParentId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -322,6 +335,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
             sb.Append("  VersionNumber: ").Append(VersionNumber).Append("\n");
             sb.Append("  EntityTypeName: ").Append(EntityTypeName).Append("\n");
+            sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

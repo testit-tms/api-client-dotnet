@@ -142,8 +142,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchTestStatusesApiModel"> (optional)</param>
-        /// <returns>TestStatusApiResultReply</returns>
-        TestStatusApiResultReply ApiV2TestStatusesSearchPost(SearchTestStatusesApiModel searchTestStatusesApiModel = default);
+        /// <returns>TestStatusApiResultIReply</returns>
+        TestStatusApiResultIReply ApiV2TestStatusesSearchPost(SearchTestStatusesApiModel searchTestStatusesApiModel = default);
 
         /// <summary>
         /// 
@@ -153,8 +153,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchTestStatusesApiModel"> (optional)</param>
-        /// <returns>ApiResponse of TestStatusApiResultReply</returns>
-        ApiResponse<TestStatusApiResultReply> ApiV2TestStatusesSearchPostWithHttpInfo(SearchTestStatusesApiModel searchTestStatusesApiModel = default);
+        /// <returns>ApiResponse of TestStatusApiResultIReply</returns>
+        ApiResponse<TestStatusApiResultIReply> ApiV2TestStatusesSearchPostWithHttpInfo(SearchTestStatusesApiModel searchTestStatusesApiModel = default);
         #endregion Synchronous Operations
     }
 
@@ -313,8 +313,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchTestStatusesApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestStatusApiResultReply</returns>
-        System.Threading.Tasks.Task<TestStatusApiResultReply> ApiV2TestStatusesSearchPostAsync(SearchTestStatusesApiModel searchTestStatusesApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of TestStatusApiResultIReply</returns>
+        System.Threading.Tasks.Task<TestStatusApiResultIReply> ApiV2TestStatusesSearchPostAsync(SearchTestStatusesApiModel searchTestStatusesApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -325,8 +325,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchTestStatusesApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestStatusApiResultReply)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TestStatusApiResultReply>> ApiV2TestStatusesSearchPostWithHttpInfoAsync(SearchTestStatusesApiModel searchTestStatusesApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (TestStatusApiResultIReply)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TestStatusApiResultIReply>> ApiV2TestStatusesSearchPostWithHttpInfoAsync(SearchTestStatusesApiModel searchTestStatusesApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -589,11 +589,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -661,11 +661,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -723,11 +723,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -788,11 +788,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -853,11 +853,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -921,11 +921,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -990,11 +990,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1062,11 +1062,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1131,11 +1131,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1203,11 +1203,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1272,11 +1272,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1344,11 +1344,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1369,10 +1369,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchTestStatusesApiModel"> (optional)</param>
-        /// <returns>TestStatusApiResultReply</returns>
-        public TestStatusApiResultReply ApiV2TestStatusesSearchPost(SearchTestStatusesApiModel searchTestStatusesApiModel = default)
+        /// <returns>TestStatusApiResultIReply</returns>
+        public TestStatusApiResultIReply ApiV2TestStatusesSearchPost(SearchTestStatusesApiModel searchTestStatusesApiModel = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<TestStatusApiResultReply> localVarResponse = ApiV2TestStatusesSearchPostWithHttpInfo(searchTestStatusesApiModel);
+            TestIT.ApiClient.Client.ApiResponse<TestStatusApiResultIReply> localVarResponse = ApiV2TestStatusesSearchPostWithHttpInfo(searchTestStatusesApiModel);
             return localVarResponse.Data;
         }
 
@@ -1381,8 +1381,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchTestStatusesApiModel"> (optional)</param>
-        /// <returns>ApiResponse of TestStatusApiResultReply</returns>
-        public TestIT.ApiClient.Client.ApiResponse<TestStatusApiResultReply> ApiV2TestStatusesSearchPostWithHttpInfo(SearchTestStatusesApiModel searchTestStatusesApiModel = default)
+        /// <returns>ApiResponse of TestStatusApiResultIReply</returns>
+        public TestIT.ApiClient.Client.ApiResponse<TestStatusApiResultIReply> ApiV2TestStatusesSearchPostWithHttpInfo(SearchTestStatusesApiModel searchTestStatusesApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1413,15 +1413,15 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<TestStatusApiResultReply>("/api/v2/testStatuses/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<TestStatusApiResultIReply>("/api/v2/testStatuses/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1438,10 +1438,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchTestStatusesApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of TestStatusApiResultReply</returns>
-        public async System.Threading.Tasks.Task<TestStatusApiResultReply> ApiV2TestStatusesSearchPostAsync(SearchTestStatusesApiModel searchTestStatusesApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of TestStatusApiResultIReply</returns>
+        public async System.Threading.Tasks.Task<TestStatusApiResultIReply> ApiV2TestStatusesSearchPostAsync(SearchTestStatusesApiModel searchTestStatusesApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<TestStatusApiResultReply> localVarResponse = await ApiV2TestStatusesSearchPostWithHttpInfoAsync(searchTestStatusesApiModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<TestStatusApiResultIReply> localVarResponse = await ApiV2TestStatusesSearchPostWithHttpInfoAsync(searchTestStatusesApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1451,8 +1451,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchTestStatusesApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (TestStatusApiResultReply)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestStatusApiResultReply>> ApiV2TestStatusesSearchPostWithHttpInfoAsync(SearchTestStatusesApiModel searchTestStatusesApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (TestStatusApiResultIReply)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestStatusApiResultIReply>> ApiV2TestStatusesSearchPostWithHttpInfoAsync(SearchTestStatusesApiModel searchTestStatusesApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1485,16 +1485,16 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<TestStatusApiResultReply>("/api/v2/testStatuses/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TestStatusApiResultIReply>("/api/v2/testStatuses/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

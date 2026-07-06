@@ -282,7 +282,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         /*
-        <example>2026-01-27T05:43:09.577447900Z</example>
+        <example>2026-01-27T08:43:09.577447900+03:00</example>
         */
         [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
@@ -291,7 +291,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2026-01-27T05:43:09.577447900Z</example>
+        <example>2026-01-27T08:43:09.577447900+03:00</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }

@@ -47,7 +47,7 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributePostModel" /> class.
         /// </summary>
-        /// <param name="options">Collection of attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
+        /// <param name="options">Collection of attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only.</param>
         /// <param name="type">Type of attribute (required).</param>
         /// <param name="name">Name of the attribute (required).</param>
         /// <param name="isEnabled">Indicates if the attribute is enabled (required).</param>
@@ -69,9 +69,9 @@ namespace TestIT.ApiClient.Model
         }
 
         /// <summary>
-        /// Collection of attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
+        /// Collection of attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
         /// </summary>
-        /// <value>Collection of attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
+        /// <value>Collection of attribute options      Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
         [DataMember(Name = "options", EmitDefaultValue = true)]
         public List<CustomAttributeOptionPostModel> Options { get; set; }
 

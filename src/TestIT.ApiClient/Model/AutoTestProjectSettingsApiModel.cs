@@ -47,7 +47,11 @@ namespace TestIT.ApiClient.Model
         /// <param name="rerunAttemptsCount">Auto rerun attempt count (required).</param>
         /// <param name="workItemUpdatingEnabled">Autotest to work item updating enabled (default to false).</param>
         /// <param name="workItemUpdatingFields">Autotest to work item updating fields (required).</param>
-        public AutoTestProjectSettingsApiModel(bool isFlakyAuto = false, int flakyStabilityPercentage = 100, int flakyTestRunCount = 100, bool rerunEnabled = default, int rerunAttemptsCount = default, bool workItemUpdatingEnabled = false, WorkItemUpdatingFieldsApiModel workItemUpdatingFields = default)
+        /// <param name="archiveOutdatedTestRunsEnabled">Indicates whether archiving of outdated test runs is enabled for the project. (required).</param>
+        /// <param name="testRunsArchiveLimitEnabled">Indicates whether a limit is enforced on the number of archived test runs. (required).</param>
+        /// <param name="testRunsRetentionPeriodDays"> The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings (default to 180).</param>
+        /// <param name="maxActiveTestRunsCount">Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived (default to 500).</param>
+        public AutoTestProjectSettingsApiModel(bool isFlakyAuto = false, int flakyStabilityPercentage = 100, int flakyTestRunCount = 100, bool rerunEnabled = default, int rerunAttemptsCount = default, bool workItemUpdatingEnabled = false, WorkItemUpdatingFieldsApiModel workItemUpdatingFields = default, bool archiveOutdatedTestRunsEnabled = default, bool testRunsArchiveLimitEnabled = default, int testRunsRetentionPeriodDays = 180, int maxActiveTestRunsCount = 500)
         {
             this.RerunEnabled = rerunEnabled;
             this.RerunAttemptsCount = rerunAttemptsCount;
@@ -57,10 +61,14 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("workItemUpdatingFields is a required property for AutoTestProjectSettingsApiModel and cannot be null");
             }
             this.WorkItemUpdatingFields = workItemUpdatingFields;
+            this.ArchiveOutdatedTestRunsEnabled = archiveOutdatedTestRunsEnabled;
+            this.TestRunsArchiveLimitEnabled = testRunsArchiveLimitEnabled;
             this.IsFlakyAuto = isFlakyAuto;
             this.FlakyStabilityPercentage = flakyStabilityPercentage;
             this.FlakyTestRunCount = flakyTestRunCount;
             this.WorkItemUpdatingEnabled = workItemUpdatingEnabled;
+            this.TestRunsRetentionPeriodDays = testRunsRetentionPeriodDays;
+            this.MaxActiveTestRunsCount = maxActiveTestRunsCount;
         }
 
         /// <summary>
@@ -113,6 +121,34 @@ namespace TestIT.ApiClient.Model
         public WorkItemUpdatingFieldsApiModel WorkItemUpdatingFields { get; set; }
 
         /// <summary>
+        /// Indicates whether archiving of outdated test runs is enabled for the project.
+        /// </summary>
+        /// <value>Indicates whether archiving of outdated test runs is enabled for the project.</value>
+        [DataMember(Name = "archiveOutdatedTestRunsEnabled", IsRequired = true, EmitDefaultValue = true)]
+        public bool ArchiveOutdatedTestRunsEnabled { get; set; }
+
+        /// <summary>
+        /// Indicates whether a limit is enforced on the number of archived test runs.
+        /// </summary>
+        /// <value>Indicates whether a limit is enforced on the number of archived test runs.</value>
+        [DataMember(Name = "testRunsArchiveLimitEnabled", IsRequired = true, EmitDefaultValue = true)]
+        public bool TestRunsArchiveLimitEnabled { get; set; }
+
+        /// <summary>
+        ///  The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings
+        /// </summary>
+        /// <value> The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings</value>
+        [DataMember(Name = "testRunsRetentionPeriodDays", EmitDefaultValue = false)]
+        public int TestRunsRetentionPeriodDays { get; set; }
+
+        /// <summary>
+        /// Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived
+        /// </summary>
+        /// <value>Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived</value>
+        [DataMember(Name = "maxActiveTestRunsCount", EmitDefaultValue = false)]
+        public int MaxActiveTestRunsCount { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -127,6 +163,10 @@ namespace TestIT.ApiClient.Model
             sb.Append("  RerunAttemptsCount: ").Append(RerunAttemptsCount).Append("\n");
             sb.Append("  WorkItemUpdatingEnabled: ").Append(WorkItemUpdatingEnabled).Append("\n");
             sb.Append("  WorkItemUpdatingFields: ").Append(WorkItemUpdatingFields).Append("\n");
+            sb.Append("  ArchiveOutdatedTestRunsEnabled: ").Append(ArchiveOutdatedTestRunsEnabled).Append("\n");
+            sb.Append("  TestRunsArchiveLimitEnabled: ").Append(TestRunsArchiveLimitEnabled).Append("\n");
+            sb.Append("  TestRunsRetentionPeriodDays: ").Append(TestRunsRetentionPeriodDays).Append("\n");
+            sb.Append("  MaxActiveTestRunsCount: ").Append(MaxActiveTestRunsCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -181,6 +221,30 @@ namespace TestIT.ApiClient.Model
             if (this.RerunAttemptsCount < (int)1)
             {
                 yield return new ValidationResult("Invalid value for RerunAttemptsCount, must be a value greater than or equal to 1.", new [] { "RerunAttemptsCount" });
+            }
+
+            // TestRunsRetentionPeriodDays (int) maximum
+            if (this.TestRunsRetentionPeriodDays > (int)1000)
+            {
+                yield return new ValidationResult("Invalid value for TestRunsRetentionPeriodDays, must be a value less than or equal to 1000.", new [] { "TestRunsRetentionPeriodDays" });
+            }
+
+            // TestRunsRetentionPeriodDays (int) minimum
+            if (this.TestRunsRetentionPeriodDays < (int)0)
+            {
+                yield return new ValidationResult("Invalid value for TestRunsRetentionPeriodDays, must be a value greater than or equal to 0.", new [] { "TestRunsRetentionPeriodDays" });
+            }
+
+            // MaxActiveTestRunsCount (int) maximum
+            if (this.MaxActiveTestRunsCount > (int)10000)
+            {
+                yield return new ValidationResult("Invalid value for MaxActiveTestRunsCount, must be a value less than or equal to 10000.", new [] { "MaxActiveTestRunsCount" });
+            }
+
+            // MaxActiveTestRunsCount (int) minimum
+            if (this.MaxActiveTestRunsCount < (int)0)
+            {
+                yield return new ValidationResult("Invalid value for MaxActiveTestRunsCount, must be a value greater than or equal to 0.", new [] { "MaxActiveTestRunsCount" });
             }
 
             yield break;

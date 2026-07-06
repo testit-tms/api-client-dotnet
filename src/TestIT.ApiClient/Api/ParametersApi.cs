@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Create multiple parameters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System creates parameters  System returns list of parameter model (listed in the response example)
+        ///   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System creates parameters    System returns list of parameter model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Api
         /// Create multiple parameters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System creates parameters  System returns list of parameter model (listed in the response example)
+        ///   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System creates parameters    System returns list of parameter model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Api
         /// Update multiple parameters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System updates parameters
+        ///   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System updates parameters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -66,7 +66,7 @@ namespace TestIT.ApiClient.Api
         /// Update multiple parameters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System updates parameters
+        ///   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System updates parameters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -77,7 +77,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameters as group
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System search parameters  System returns parameters models as groups (listed in the response example)
+        ///   Use case    User runs method execution    System search parameters    System returns parameters models as groups (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterKeyIds"> (optional)</param>
@@ -97,7 +97,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameters as group
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System search parameters  System returns parameters models as groups (listed in the response example)
+        ///   Use case    User runs method execution    System search parameters    System returns parameters models as groups (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterKeyIds"> (optional)</param>
@@ -116,7 +116,7 @@ namespace TestIT.ApiClient.Api
         /// Check existence parameter key in system
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets name of parameter key  User runs method execution  System search parameter key  System returns the flag for the existence of the parameter key in the system
+        ///   Use case    User sets name of parameter key    User runs method execution    System search parameter key    System returns the flag for the existence of the parameter key in the system
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -128,7 +128,7 @@ namespace TestIT.ApiClient.Api
         /// Check existence parameter key in system
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets name of parameter key  User runs method execution  System search parameter key  System returns the flag for the existence of the parameter key in the system
+        ///   Use case    User sets name of parameter key    User runs method execution    System search parameter key    System returns the flag for the existence of the parameter key in the system
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -139,7 +139,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter key values
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter key (string format)  User runs method execution  System search parameter values using the key  System returns parameter
+        ///   Use case    User sets parameter key (string format)    User runs method execution    System search parameter values using the key    System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -151,7 +151,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter key values
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter key (string format)  User runs method execution  System search parameter values using the key  System returns parameter
+        ///   Use case    User sets parameter key (string format)    User runs method execution    System search parameter values using the key    System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -162,7 +162,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter keys
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
+        ///   Use case    User runs method execution    System search all parameter keys    System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectIds"> (optional)</param>
@@ -179,7 +179,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter keys
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
+        ///   Use case    User runs method execution    System search all parameter keys    System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectIds"> (optional)</param>
@@ -255,7 +255,7 @@ namespace TestIT.ApiClient.Api
         /// Create parameter
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter model (listed in the request example)  User runs method execution  System creates parameter  System returns parameter model
+        ///   Use case    User sets parameter model (listed in the request example)    User runs method execution    System creates parameter    System returns parameter model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -267,7 +267,7 @@ namespace TestIT.ApiClient.Api
         /// Create parameter
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter model (listed in the request example)  User runs method execution  System creates parameter  System returns parameter model
+        ///   Use case    User sets parameter model (listed in the request example)    User runs method execution    System creates parameter    System returns parameter model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -324,7 +324,7 @@ namespace TestIT.ApiClient.Api
         /// Delete parameter
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter internal (guid format) identifier  System search and delete parameter  System returns deleted parameter
+        ///   Use case    User sets parameter internal (guid format) identifier    System search and delete parameter    System returns deleted parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -336,7 +336,7 @@ namespace TestIT.ApiClient.Api
         /// Delete parameter
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter internal (guid format) identifier  System search and delete parameter  System returns deleted parameter
+        ///   Use case    User sets parameter internal (guid format) identifier    System search and delete parameter    System returns deleted parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -347,7 +347,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameters
         /// </summary>
         /// <remarks>
-        ///  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted parameters  [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  If User did not set isDeleted field value, System search all parameters  System returns array of all found parameters(listed in response model)
+        ///   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted parameters    [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted    If User did not set isDeleted field value, System search all parameters    System returns array of all found parameters(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -364,7 +364,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameters
         /// </summary>
         /// <remarks>
-        ///  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted parameters  [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  If User did not set isDeleted field value, System search all parameters  System returns array of all found parameters(listed in response model)
+        ///   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted parameters    [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted    If User did not set isDeleted field value, System search all parameters    System returns array of all found parameters(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -380,7 +380,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameter by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter internal (guid format) identifier  User runs method execution  System search parameter using the identifier  System returns parameter
+        ///   Use case    User sets parameter internal (guid format) identifier    User runs method execution    System search parameter using the identifier    System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -392,7 +392,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameter by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter internal (guid format) identifier  User runs method execution  System search parameter using the identifier  System returns parameter
+        ///   Use case    User sets parameter internal (guid format) identifier    User runs method execution    System search parameter using the identifier    System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -403,7 +403,7 @@ namespace TestIT.ApiClient.Api
         /// Update parameter
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter updated properties(listed in the request example)  User runs method execution  System updated parameter using updated properties  System returns no content response
+        ///   Use case    User sets parameter updated properties(listed in the request example)    User runs method execution    System updated parameter using updated properties    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -415,7 +415,7 @@ namespace TestIT.ApiClient.Api
         /// Update parameter
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter updated properties(listed in the request example)  User runs method execution  System updated parameter using updated properties  System returns no content response
+        ///   Use case    User sets parameter updated properties(listed in the request example)    User runs method execution    System updated parameter using updated properties    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -435,7 +435,7 @@ namespace TestIT.ApiClient.Api
         /// Create multiple parameters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System creates parameters  System returns list of parameter model (listed in the response example)
+        ///   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System creates parameters    System returns list of parameter model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -448,7 +448,7 @@ namespace TestIT.ApiClient.Api
         /// Create multiple parameters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System creates parameters  System returns list of parameter model (listed in the response example)
+        ///   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System creates parameters    System returns list of parameter model (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -460,7 +460,7 @@ namespace TestIT.ApiClient.Api
         /// Update multiple parameters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System updates parameters
+        ///   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System updates parameters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -473,7 +473,7 @@ namespace TestIT.ApiClient.Api
         /// Update multiple parameters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System updates parameters
+        ///   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System updates parameters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -485,7 +485,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameters as group
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System search parameters  System returns parameters models as groups (listed in the response example)
+        ///   Use case    User runs method execution    System search parameters    System returns parameters models as groups (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterKeyIds"> (optional)</param>
@@ -506,7 +506,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameters as group
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System search parameters  System returns parameters models as groups (listed in the response example)
+        ///   Use case    User runs method execution    System search parameters    System returns parameters models as groups (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterKeyIds"> (optional)</param>
@@ -526,7 +526,7 @@ namespace TestIT.ApiClient.Api
         /// Check existence parameter key in system
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets name of parameter key  User runs method execution  System search parameter key  System returns the flag for the existence of the parameter key in the system
+        ///   Use case    User sets name of parameter key    User runs method execution    System search parameter key    System returns the flag for the existence of the parameter key in the system
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -539,7 +539,7 @@ namespace TestIT.ApiClient.Api
         /// Check existence parameter key in system
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets name of parameter key  User runs method execution  System search parameter key  System returns the flag for the existence of the parameter key in the system
+        ///   Use case    User sets name of parameter key    User runs method execution    System search parameter key    System returns the flag for the existence of the parameter key in the system
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -551,7 +551,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter key values
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter key (string format)  User runs method execution  System search parameter values using the key  System returns parameter
+        ///   Use case    User sets parameter key (string format)    User runs method execution    System search parameter values using the key    System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -564,7 +564,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter key values
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter key (string format)  User runs method execution  System search parameter values using the key  System returns parameter
+        ///   Use case    User sets parameter key (string format)    User runs method execution    System search parameter values using the key    System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -576,7 +576,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter keys
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
+        ///   Use case    User runs method execution    System search all parameter keys    System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectIds"> (optional)</param>
@@ -594,7 +594,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameter keys
         /// </summary>
         /// <remarks>
-        ///  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
+        ///   Use case    User runs method execution    System search all parameter keys    System returns parameter keys
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectIds"> (optional)</param>
@@ -681,7 +681,7 @@ namespace TestIT.ApiClient.Api
         /// Create parameter
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter model (listed in the request example)  User runs method execution  System creates parameter  System returns parameter model
+        ///   Use case    User sets parameter model (listed in the request example)    User runs method execution    System creates parameter    System returns parameter model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -694,7 +694,7 @@ namespace TestIT.ApiClient.Api
         /// Create parameter
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter model (listed in the request example)  User runs method execution  System creates parameter  System returns parameter model
+        ///   Use case    User sets parameter model (listed in the request example)    User runs method execution    System creates parameter    System returns parameter model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -756,7 +756,7 @@ namespace TestIT.ApiClient.Api
         /// Delete parameter
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter internal (guid format) identifier  System search and delete parameter  System returns deleted parameter
+        ///   Use case    User sets parameter internal (guid format) identifier    System search and delete parameter    System returns deleted parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -769,7 +769,7 @@ namespace TestIT.ApiClient.Api
         /// Delete parameter
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter internal (guid format) identifier  System search and delete parameter  System returns deleted parameter
+        ///   Use case    User sets parameter internal (guid format) identifier    System search and delete parameter    System returns deleted parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -781,7 +781,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameters
         /// </summary>
         /// <remarks>
-        ///  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted parameters  [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  If User did not set isDeleted field value, System search all parameters  System returns array of all found parameters(listed in response model)
+        ///   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted parameters    [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted    If User did not set isDeleted field value, System search all parameters    System returns array of all found parameters(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -799,7 +799,7 @@ namespace TestIT.ApiClient.Api
         /// Get all parameters
         /// </summary>
         /// <remarks>
-        ///  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted parameters  [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  If User did not set isDeleted field value, System search all parameters  System returns array of all found parameters(listed in response model)
+        ///   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted parameters    [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted    If User did not set isDeleted field value, System search all parameters    System returns array of all found parameters(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -816,7 +816,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameter by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter internal (guid format) identifier  User runs method execution  System search parameter using the identifier  System returns parameter
+        ///   Use case    User sets parameter internal (guid format) identifier    User runs method execution    System search parameter using the identifier    System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -829,7 +829,7 @@ namespace TestIT.ApiClient.Api
         /// Get parameter by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter internal (guid format) identifier  User runs method execution  System search parameter using the identifier  System returns parameter
+        ///   Use case    User sets parameter internal (guid format) identifier    User runs method execution    System search parameter using the identifier    System returns parameter
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -841,7 +841,7 @@ namespace TestIT.ApiClient.Api
         /// Update parameter
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter updated properties(listed in the request example)  User runs method execution  System updated parameter using updated properties  System returns no content response
+        ///   Use case    User sets parameter updated properties(listed in the request example)    User runs method execution    System updated parameter using updated properties    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -854,7 +854,7 @@ namespace TestIT.ApiClient.Api
         /// Update parameter
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets parameter updated properties(listed in the request example)  User runs method execution  System updated parameter using updated properties  System returns no content response
+        ///   Use case    User sets parameter updated properties(listed in the request example)    User runs method execution    System updated parameter using updated properties    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -1076,7 +1076,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create multiple parameters  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System creates parameters  System returns list of parameter model (listed in the response example)
+        /// Create multiple parameters   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System creates parameters    System returns list of parameter model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -1089,7 +1089,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create multiple parameters  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System creates parameters  System returns list of parameter model (listed in the response example)
+        /// Create multiple parameters   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System creates parameters    System returns list of parameter model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -1121,11 +1121,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1141,7 +1141,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create multiple parameters  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System creates parameters  System returns list of parameter model (listed in the response example)
+        /// Create multiple parameters   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System creates parameters    System returns list of parameter model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -1155,7 +1155,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create multiple parameters  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System creates parameters  System returns list of parameter model (listed in the response example)
+        /// Create multiple parameters   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System creates parameters    System returns list of parameter model (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -1190,11 +1190,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1211,7 +1211,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update multiple parameters  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System updates parameters
+        /// Update multiple parameters   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System updates parameters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -1223,7 +1223,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update multiple parameters  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System updates parameters
+        /// Update multiple parameters   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System updates parameters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -1255,11 +1255,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1275,7 +1275,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update multiple parameters  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System updates parameters
+        /// Update multiple parameters   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System updates parameters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -1288,7 +1288,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update multiple parameters  Use case  User sets list of parameter model (listed in the request example)  User runs method execution  System updates parameters
+        /// Update multiple parameters   Use case    User sets list of parameter model (listed in the request example)    User runs method execution    System updates parameters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -1323,11 +1323,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1344,7 +1344,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameters as group  Use case  User runs method execution  System search parameters  System returns parameters models as groups (listed in the response example)
+        /// Get parameters as group   Use case    User runs method execution    System search parameters    System returns parameters models as groups (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterKeyIds"> (optional)</param>
@@ -1365,7 +1365,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameters as group  Use case  User runs method execution  System search parameters  System returns parameters models as groups (listed in the response example)
+        /// Get parameters as group   Use case    User runs method execution    System search parameters    System returns parameters models as groups (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterKeyIds"> (optional)</param>
@@ -1439,11 +1439,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1459,7 +1459,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameters as group  Use case  User runs method execution  System search parameters  System returns parameters models as groups (listed in the response example)
+        /// Get parameters as group   Use case    User runs method execution    System search parameters    System returns parameters models as groups (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterKeyIds"> (optional)</param>
@@ -1481,7 +1481,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameters as group  Use case  User runs method execution  System search parameters  System returns parameters models as groups (listed in the response example)
+        /// Get parameters as group   Use case    User runs method execution    System search parameters    System returns parameters models as groups (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="parameterKeyIds"> (optional)</param>
@@ -1558,11 +1558,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1579,7 +1579,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Check existence parameter key in system  Use case  User sets name of parameter key  User runs method execution  System search parameter key  System returns the flag for the existence of the parameter key in the system
+        /// Check existence parameter key in system   Use case    User sets name of parameter key    User runs method execution    System search parameter key    System returns the flag for the existence of the parameter key in the system
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -1592,7 +1592,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Check existence parameter key in system  Use case  User sets name of parameter key  User runs method execution  System search parameter key  System returns the flag for the existence of the parameter key in the system
+        /// Check existence parameter key in system   Use case    User sets name of parameter key    User runs method execution    System search parameter key    System returns the flag for the existence of the parameter key in the system
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -1627,11 +1627,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1647,7 +1647,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Check existence parameter key in system  Use case  User sets name of parameter key  User runs method execution  System search parameter key  System returns the flag for the existence of the parameter key in the system
+        /// Check existence parameter key in system   Use case    User sets name of parameter key    User runs method execution    System search parameter key    System returns the flag for the existence of the parameter key in the system
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -1661,7 +1661,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Check existence parameter key in system  Use case  User sets name of parameter key  User runs method execution  System search parameter key  System returns the flag for the existence of the parameter key in the system
+        /// Check existence parameter key in system   Use case    User sets name of parameter key    User runs method execution    System search parameter key    System returns the flag for the existence of the parameter key in the system
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name"></param>
@@ -1699,11 +1699,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1720,7 +1720,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter key values  Use case  User sets parameter key (string format)  User runs method execution  System search parameter values using the key  System returns parameter
+        /// Get all parameter key values   Use case    User sets parameter key (string format)    User runs method execution    System search parameter values using the key    System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -1733,7 +1733,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter key values  Use case  User sets parameter key (string format)  User runs method execution  System search parameter values using the key  System returns parameter
+        /// Get all parameter key values   Use case    User sets parameter key (string format)    User runs method execution    System search parameter values using the key    System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -1768,11 +1768,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1788,7 +1788,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter key values  Use case  User sets parameter key (string format)  User runs method execution  System search parameter values using the key  System returns parameter
+        /// Get all parameter key values   Use case    User sets parameter key (string format)    User runs method execution    System search parameter values using the key    System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -1802,7 +1802,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter key values  Use case  User sets parameter key (string format)  User runs method execution  System search parameter values using the key  System returns parameter
+        /// Get all parameter key values   Use case    User sets parameter key (string format)    User runs method execution    System search parameter values using the key    System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="key">Parameter key (string format)</param>
@@ -1840,11 +1840,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1861,7 +1861,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter keys  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
+        /// Get all parameter keys   Use case    User runs method execution    System search all parameter keys    System returns parameter keys
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectIds"> (optional)</param>
@@ -1879,7 +1879,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter keys  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
+        /// Get all parameter keys   Use case    User runs method execution    System search all parameter keys    System returns parameter keys
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectIds"> (optional)</param>
@@ -1938,11 +1938,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1958,7 +1958,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter keys  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
+        /// Get all parameter keys   Use case    User runs method execution    System search all parameter keys    System returns parameter keys
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectIds"> (optional)</param>
@@ -1977,7 +1977,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameter keys  Use case  User runs method execution  System search all parameter keys  System returns parameter keys
+        /// Get all parameter keys   Use case    User runs method execution    System search all parameter keys    System returns parameter keys
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectIds"> (optional)</param>
@@ -2039,11 +2039,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2135,11 +2135,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2234,11 +2234,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2330,11 +2330,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2429,11 +2429,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2450,7 +2450,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create parameter  Use case  User sets parameter model (listed in the request example)  User runs method execution  System creates parameter  System returns parameter model
+        /// Create parameter   Use case    User sets parameter model (listed in the request example)    User runs method execution    System creates parameter    System returns parameter model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -2463,7 +2463,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create parameter  Use case  User sets parameter model (listed in the request example)  User runs method execution  System creates parameter  System returns parameter model
+        /// Create parameter   Use case    User sets parameter model (listed in the request example)    User runs method execution    System creates parameter    System returns parameter model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -2495,11 +2495,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2515,7 +2515,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create parameter  Use case  User sets parameter model (listed in the request example)  User runs method execution  System creates parameter  System returns parameter model
+        /// Create parameter   Use case    User sets parameter model (listed in the request example)    User runs method execution    System creates parameter    System returns parameter model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -2529,7 +2529,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create parameter  Use case  User sets parameter model (listed in the request example)  User runs method execution  System creates parameter  System returns parameter model
+        /// Create parameter   Use case    User sets parameter model (listed in the request example)    User runs method execution    System creates parameter    System returns parameter model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createParameterApiModel"> (optional)</param>
@@ -2564,11 +2564,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2632,11 +2632,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2703,11 +2703,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2767,11 +2767,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2834,11 +2834,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2855,7 +2855,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete parameter  Use case  User sets parameter internal (guid format) identifier  System search and delete parameter  System returns deleted parameter
+        /// Delete parameter   Use case    User sets parameter internal (guid format) identifier    System search and delete parameter    System returns deleted parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -2867,7 +2867,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete parameter  Use case  User sets parameter internal (guid format) identifier  System search and delete parameter  System returns deleted parameter
+        /// Delete parameter   Use case    User sets parameter internal (guid format) identifier    System search and delete parameter    System returns deleted parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -2898,11 +2898,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2918,7 +2918,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete parameter  Use case  User sets parameter internal (guid format) identifier  System search and delete parameter  System returns deleted parameter
+        /// Delete parameter   Use case    User sets parameter internal (guid format) identifier    System search and delete parameter    System returns deleted parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -2931,7 +2931,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete parameter  Use case  User sets parameter internal (guid format) identifier  System search and delete parameter  System returns deleted parameter
+        /// Delete parameter   Use case    User sets parameter internal (guid format) identifier    System search and delete parameter    System returns deleted parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -2965,11 +2965,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2986,7 +2986,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameters  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted parameters  [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  If User did not set isDeleted field value, System search all parameters  System returns array of all found parameters(listed in response model)
+        /// Get all parameters   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted parameters    [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted    If User did not set isDeleted field value, System search all parameters    System returns array of all found parameters(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -3004,7 +3004,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameters  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted parameters  [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  If User did not set isDeleted field value, System search all parameters  System returns array of all found parameters(listed in response model)
+        /// Get all parameters   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted parameters    [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted    If User did not set isDeleted field value, System search all parameters    System returns array of all found parameters(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -3063,11 +3063,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3083,7 +3083,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameters  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted parameters  [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  If User did not set isDeleted field value, System search all parameters  System returns array of all found parameters(listed in response model)
+        /// Get all parameters   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted parameters    [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted    If User did not set isDeleted field value, System search all parameters    System returns array of all found parameters(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -3102,7 +3102,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all parameters  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted parameters  [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted  If User did not set isDeleted field value, System search all parameters  System returns array of all found parameters(listed in response model)
+        /// Get all parameters   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted parameters    [Optional] If User sets isDeleted field value as false, System search all parameters which are not deleted    If User did not set isDeleted field value, System search all parameters    System returns array of all found parameters(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -3164,11 +3164,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3185,7 +3185,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameter by ID  Use case  User sets parameter internal (guid format) identifier  User runs method execution  System search parameter using the identifier  System returns parameter
+        /// Get parameter by ID   Use case    User sets parameter internal (guid format) identifier    User runs method execution    System search parameter using the identifier    System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -3198,7 +3198,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameter by ID  Use case  User sets parameter internal (guid format) identifier  User runs method execution  System search parameter using the identifier  System returns parameter
+        /// Get parameter by ID   Use case    User sets parameter internal (guid format) identifier    User runs method execution    System search parameter using the identifier    System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -3229,11 +3229,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3249,7 +3249,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameter by ID  Use case  User sets parameter internal (guid format) identifier  User runs method execution  System search parameter using the identifier  System returns parameter
+        /// Get parameter by ID   Use case    User sets parameter internal (guid format) identifier    User runs method execution    System search parameter using the identifier    System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -3263,7 +3263,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get parameter by ID  Use case  User sets parameter internal (guid format) identifier  User runs method execution  System search parameter using the identifier  System returns parameter
+        /// Get parameter by ID   Use case    User sets parameter internal (guid format) identifier    User runs method execution    System search parameter using the identifier    System returns parameter
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Parameter internal (UUID) identifier</param>
@@ -3297,11 +3297,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3318,7 +3318,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update parameter  Use case  User sets parameter updated properties(listed in the request example)  User runs method execution  System updated parameter using updated properties  System returns no content response
+        /// Update parameter   Use case    User sets parameter updated properties(listed in the request example)    User runs method execution    System updated parameter using updated properties    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -3330,7 +3330,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update parameter  Use case  User sets parameter updated properties(listed in the request example)  User runs method execution  System updated parameter using updated properties  System returns no content response
+        /// Update parameter   Use case    User sets parameter updated properties(listed in the request example)    User runs method execution    System updated parameter using updated properties    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -3362,11 +3362,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3382,7 +3382,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update parameter  Use case  User sets parameter updated properties(listed in the request example)  User runs method execution  System updated parameter using updated properties  System returns no content response
+        /// Update parameter   Use case    User sets parameter updated properties(listed in the request example)    User runs method execution    System updated parameter using updated properties    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -3395,7 +3395,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update parameter  Use case  User sets parameter updated properties(listed in the request example)  User runs method execution  System updated parameter using updated properties  System returns no content response
+        /// Update parameter   Use case    User sets parameter updated properties(listed in the request example)    User runs method execution    System updated parameter using updated properties    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateParameterApiModel"> (optional)</param>
@@ -3430,11 +3430,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request

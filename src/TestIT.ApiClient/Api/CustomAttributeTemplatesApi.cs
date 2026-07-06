@@ -49,7 +49,7 @@ namespace TestIT.ApiClient.Api
         /// Exclude CustomAttributes from CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System delete attributes from attributes tempalte
+        ///   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System delete attributes from attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -61,7 +61,7 @@ namespace TestIT.ApiClient.Api
         /// Exclude CustomAttributes from CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System delete attributes from attributes tempalte
+        ///   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System delete attributes from attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -72,7 +72,7 @@ namespace TestIT.ApiClient.Api
         /// Include CustomAttributes to CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System add attributes to attributes tempalte
+        ///   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System add attributes to attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -84,7 +84,7 @@ namespace TestIT.ApiClient.Api
         /// Include CustomAttributes to CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System add attributes to attributes tempalte
+        ///   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System add attributes to attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -95,7 +95,7 @@ namespace TestIT.ApiClient.Api
         /// Delete CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User runs method execution  System search and delete attribute template  System returns no content response
+        ///   Use case    User sets attribute template internal identifier    User runs method execution    System search and delete attribute template    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -106,7 +106,7 @@ namespace TestIT.ApiClient.Api
         /// Delete CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User runs method execution  System search and delete attribute template  System returns no content response
+        ///   Use case    User sets attribute template internal identifier    User runs method execution    System search and delete attribute template    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -116,7 +116,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User runs method execution  System return attribute template (listed in response example)
+        ///   Use case    User sets attribute template internal identifier    User runs method execution    System return attribute template (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -127,7 +127,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User runs method execution  System return attribute template (listed in response example)
+        ///   Use case    User sets attribute template internal identifier    User runs method execution    System return attribute template (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -137,7 +137,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by name
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template name  User runs method execution  System search and return list of attribute templates (listed in response example)
+        ///   Use case    User sets attribute template name    User runs method execution    System search and return list of attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -148,7 +148,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by name
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template name  User runs method execution  System search and return list of attribute templates (listed in response example)
+        ///   Use case    User sets attribute template name    User runs method execution    System search and return list of attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -158,7 +158,7 @@ namespace TestIT.ApiClient.Api
         /// Create CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template parameters (listed in request example)  User runs method execution  System creates attribute template  System returns attribute template model (example listed in response parameters)
+        ///   Use case    User sets attribute template parameters (listed in request example)    User runs method execution    System creates attribute template    System returns attribute template model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
@@ -169,7 +169,7 @@ namespace TestIT.ApiClient.Api
         /// Create CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template parameters (listed in request example)  User runs method execution  System creates attribute template  System returns attribute template model (example listed in response parameters)
+        ///   Use case    User sets attribute template parameters (listed in request example)    User runs method execution    System creates attribute template    System returns attribute template model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
@@ -197,7 +197,7 @@ namespace TestIT.ApiClient.Api
         /// Search CustomAttributeTemplates
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets search params model (listed in request example)  User runs method execution  System return attribute templates (listed in response example)
+        ///   Use case    User sets search params model (listed in request example)    User runs method execution    System return attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -213,7 +213,7 @@ namespace TestIT.ApiClient.Api
         /// Search CustomAttributeTemplates
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets search params model (listed in request example)  User runs method execution  System return attribute templates (listed in response example)
+        ///   Use case    User sets search params model (listed in request example)    User runs method execution    System return attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -260,7 +260,7 @@ namespace TestIT.ApiClient.Api
         /// Exclude CustomAttributes from CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System delete attributes from attributes tempalte
+        ///   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System delete attributes from attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -273,7 +273,7 @@ namespace TestIT.ApiClient.Api
         /// Exclude CustomAttributes from CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System delete attributes from attributes tempalte
+        ///   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System delete attributes from attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -285,7 +285,7 @@ namespace TestIT.ApiClient.Api
         /// Include CustomAttributes to CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System add attributes to attributes tempalte
+        ///   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System add attributes to attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -298,7 +298,7 @@ namespace TestIT.ApiClient.Api
         /// Include CustomAttributes to CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System add attributes to attributes tempalte
+        ///   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System add attributes to attributes tempalte
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -310,7 +310,7 @@ namespace TestIT.ApiClient.Api
         /// Delete CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User runs method execution  System search and delete attribute template  System returns no content response
+        ///   Use case    User sets attribute template internal identifier    User runs method execution    System search and delete attribute template    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -322,7 +322,7 @@ namespace TestIT.ApiClient.Api
         /// Delete CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User runs method execution  System search and delete attribute template  System returns no content response
+        ///   Use case    User sets attribute template internal identifier    User runs method execution    System search and delete attribute template    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -333,7 +333,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User runs method execution  System return attribute template (listed in response example)
+        ///   Use case    User sets attribute template internal identifier    User runs method execution    System return attribute template (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -345,7 +345,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template internal identifier  User runs method execution  System return attribute template (listed in response example)
+        ///   Use case    User sets attribute template internal identifier    User runs method execution    System return attribute template (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -356,7 +356,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by name
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template name  User runs method execution  System search and return list of attribute templates (listed in response example)
+        ///   Use case    User sets attribute template name    User runs method execution    System search and return list of attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -368,7 +368,7 @@ namespace TestIT.ApiClient.Api
         /// Get CustomAttributeTemplate by name
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template name  User runs method execution  System search and return list of attribute templates (listed in response example)
+        ///   Use case    User sets attribute template name    User runs method execution    System search and return list of attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -379,7 +379,7 @@ namespace TestIT.ApiClient.Api
         /// Create CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template parameters (listed in request example)  User runs method execution  System creates attribute template  System returns attribute template model (example listed in response parameters)
+        ///   Use case    User sets attribute template parameters (listed in request example)    User runs method execution    System creates attribute template    System returns attribute template model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
@@ -391,7 +391,7 @@ namespace TestIT.ApiClient.Api
         /// Create CustomAttributeTemplate
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets attribute template parameters (listed in request example)  User runs method execution  System creates attribute template  System returns attribute template model (example listed in response parameters)
+        ///   Use case    User sets attribute template parameters (listed in request example)    User runs method execution    System creates attribute template    System returns attribute template model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
@@ -425,7 +425,7 @@ namespace TestIT.ApiClient.Api
         /// Search CustomAttributeTemplates
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets search params model (listed in request example)  User runs method execution  System return attribute templates (listed in response example)
+        ///   Use case    User sets search params model (listed in request example)    User runs method execution    System return attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -442,7 +442,7 @@ namespace TestIT.ApiClient.Api
         /// Search CustomAttributeTemplates
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets search params model (listed in request example)  User runs method execution  System return attribute templates (listed in response example)
+        ///   Use case    User sets search params model (listed in request example)    User runs method execution    System return attribute templates (listed in response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -713,11 +713,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -782,11 +782,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -803,7 +803,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Exclude CustomAttributes from CustomAttributeTemplate  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System delete attributes from attributes tempalte
+        /// Exclude CustomAttributes from CustomAttributeTemplate   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System delete attributes from attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -815,7 +815,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Exclude CustomAttributes from CustomAttributeTemplate  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System delete attributes from attributes tempalte
+        /// Exclude CustomAttributes from CustomAttributeTemplate   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System delete attributes from attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -848,11 +848,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -868,7 +868,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Exclude CustomAttributes from CustomAttributeTemplate  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System delete attributes from attributes tempalte
+        /// Exclude CustomAttributes from CustomAttributeTemplate   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System delete attributes from attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -881,7 +881,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Exclude CustomAttributes from CustomAttributeTemplate  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System delete attributes from attributes tempalte
+        /// Exclude CustomAttributes from CustomAttributeTemplate   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System delete attributes from attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -917,11 +917,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -938,7 +938,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Include CustomAttributes to CustomAttributeTemplate  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System add attributes to attributes tempalte
+        /// Include CustomAttributes to CustomAttributeTemplate   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System add attributes to attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -950,7 +950,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Include CustomAttributes to CustomAttributeTemplate  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System add attributes to attributes tempalte
+        /// Include CustomAttributes to CustomAttributeTemplate   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System add attributes to attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -983,11 +983,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1003,7 +1003,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Include CustomAttributes to CustomAttributeTemplate  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System add attributes to attributes tempalte
+        /// Include CustomAttributes to CustomAttributeTemplate   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System add attributes to attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -1016,7 +1016,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Include CustomAttributes to CustomAttributeTemplate  Use case  User sets attribute template internal identifier  User sets attribute internal identifiers  User runs method execution  System add attributes to attributes tempalte
+        /// Include CustomAttributes to CustomAttributeTemplate   Use case    User sets attribute template internal identifier    User sets attribute internal identifiers    User runs method execution    System add attributes to attributes tempalte
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -1052,11 +1052,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1073,7 +1073,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate  Use case  User sets attribute template internal identifier  User runs method execution  System search and delete attribute template  System returns no content response
+        /// Delete CustomAttributeTemplate   Use case    User sets attribute template internal identifier    User runs method execution    System search and delete attribute template    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -1084,7 +1084,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate  Use case  User sets attribute template internal identifier  User runs method execution  System search and delete attribute template  System returns no content response
+        /// Delete CustomAttributeTemplate   Use case    User sets attribute template internal identifier    User runs method execution    System search and delete attribute template    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -1114,11 +1114,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1134,7 +1134,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate  Use case  User sets attribute template internal identifier  User runs method execution  System search and delete attribute template  System returns no content response
+        /// Delete CustomAttributeTemplate   Use case    User sets attribute template internal identifier    User runs method execution    System search and delete attribute template    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -1146,7 +1146,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate  Use case  User sets attribute template internal identifier  User runs method execution  System search and delete attribute template  System returns no content response
+        /// Delete CustomAttributeTemplate   Use case    User sets attribute template internal identifier    User runs method execution    System search and delete attribute template    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Attribute template internal (UUID) identifier</param>
@@ -1179,11 +1179,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1200,7 +1200,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by ID  Use case  User sets attribute template internal identifier  User runs method execution  System return attribute template (listed in response example)
+        /// Get CustomAttributeTemplate by ID   Use case    User sets attribute template internal identifier    User runs method execution    System return attribute template (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -1212,7 +1212,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by ID  Use case  User sets attribute template internal identifier  User runs method execution  System return attribute template (listed in response example)
+        /// Get CustomAttributeTemplate by ID   Use case    User sets attribute template internal identifier    User runs method execution    System return attribute template (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -1242,11 +1242,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1262,7 +1262,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by ID  Use case  User sets attribute template internal identifier  User runs method execution  System return attribute template (listed in response example)
+        /// Get CustomAttributeTemplate by ID   Use case    User sets attribute template internal identifier    User runs method execution    System return attribute template (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -1275,7 +1275,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by ID  Use case  User sets attribute template internal identifier  User runs method execution  System return attribute template (listed in response example)
+        /// Get CustomAttributeTemplate by ID   Use case    User sets attribute template internal identifier    User runs method execution    System return attribute template (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">CustomAttributeTemplate internal (UUID) identifier</param>
@@ -1308,11 +1308,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1329,7 +1329,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by name  Use case  User sets attribute template name  User runs method execution  System search and return list of attribute templates (listed in response example)
+        /// Get CustomAttributeTemplate by name   Use case    User sets attribute template name    User runs method execution    System search and return list of attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -1341,7 +1341,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by name  Use case  User sets attribute template name  User runs method execution  System search and return list of attribute templates (listed in response example)
+        /// Get CustomAttributeTemplate by name   Use case    User sets attribute template name    User runs method execution    System search and return list of attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -1375,11 +1375,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1395,7 +1395,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by name  Use case  User sets attribute template name  User runs method execution  System search and return list of attribute templates (listed in response example)
+        /// Get CustomAttributeTemplate by name   Use case    User sets attribute template name    User runs method execution    System search and return list of attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -1408,7 +1408,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get CustomAttributeTemplate by name  Use case  User sets attribute template name  User runs method execution  System search and return list of attribute templates (listed in response example)
+        /// Get CustomAttributeTemplate by name   Use case    User sets attribute template name    User runs method execution    System search and return list of attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="name">CustomAttributeTemplate name for search</param>
@@ -1445,11 +1445,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1466,7 +1466,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create CustomAttributeTemplate  Use case  User sets attribute template parameters (listed in request example)  User runs method execution  System creates attribute template  System returns attribute template model (example listed in response parameters)
+        /// Create CustomAttributeTemplate   Use case    User sets attribute template parameters (listed in request example)    User runs method execution    System creates attribute template    System returns attribute template model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
@@ -1478,7 +1478,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create CustomAttributeTemplate  Use case  User sets attribute template parameters (listed in request example)  User runs method execution  System creates attribute template  System returns attribute template model (example listed in response parameters)
+        /// Create CustomAttributeTemplate   Use case    User sets attribute template parameters (listed in request example)    User runs method execution    System creates attribute template    System returns attribute template model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
@@ -1509,11 +1509,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1529,7 +1529,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create CustomAttributeTemplate  Use case  User sets attribute template parameters (listed in request example)  User runs method execution  System creates attribute template  System returns attribute template model (example listed in response parameters)
+        /// Create CustomAttributeTemplate   Use case    User sets attribute template parameters (listed in request example)    User runs method execution    System creates attribute template    System returns attribute template model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
@@ -1542,7 +1542,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create CustomAttributeTemplate  Use case  User sets attribute template parameters (listed in request example)  User runs method execution  System creates attribute template  System returns attribute template model (example listed in response parameters)
+        /// Create CustomAttributeTemplate   Use case    User sets attribute template parameters (listed in request example)    User runs method execution    System creates attribute template    System returns attribute template model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="customAttributeTemplatePostModel"> (optional)</param>
@@ -1576,11 +1576,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1639,11 +1639,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1705,11 +1705,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1726,7 +1726,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search CustomAttributeTemplates  Use case  User sets search params model (listed in request example)  User runs method execution  System return attribute templates (listed in response example)
+        /// Search CustomAttributeTemplates   Use case    User sets search params model (listed in request example)    User runs method execution    System return attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1743,7 +1743,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search CustomAttributeTemplates  Use case  User sets search params model (listed in request example)  User runs method execution  System return attribute templates (listed in response example)
+        /// Search CustomAttributeTemplates   Use case    User sets search params model (listed in request example)    User runs method execution    System return attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1799,11 +1799,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1819,7 +1819,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search CustomAttributeTemplates  Use case  User sets search params model (listed in request example)  User runs method execution  System return attribute templates (listed in response example)
+        /// Search CustomAttributeTemplates   Use case    User sets search params model (listed in request example)    User runs method execution    System return attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1837,7 +1837,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Search CustomAttributeTemplates  Use case  User sets search params model (listed in request example)  User runs method execution  System return attribute templates (listed in response example)
+        /// Search CustomAttributeTemplates   Use case    User sets search params model (listed in request example)    User runs method execution    System return attribute templates (listed in response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="skip">Amount of items to be skipped (offset) (optional)</param>
@@ -1896,11 +1896,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request

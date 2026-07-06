@@ -61,7 +61,7 @@ namespace TestIT.ApiClient.Api
         /// Delete CustomAttributeTemplate from Project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
+        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -73,7 +73,7 @@ namespace TestIT.ApiClient.Api
         /// Delete CustomAttributeTemplate from Project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
+        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -84,7 +84,7 @@ namespace TestIT.ApiClient.Api
         /// Add CustomAttributeTemplate to Project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
+        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -96,7 +96,7 @@ namespace TestIT.ApiClient.Api
         /// Add CustomAttributeTemplate to Project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
+        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -151,7 +151,7 @@ namespace TestIT.ApiClient.Api
         /// Delete CustomAttributeTemplate from Project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
+        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -164,7 +164,7 @@ namespace TestIT.ApiClient.Api
         /// Delete CustomAttributeTemplate from Project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
+        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -176,7 +176,7 @@ namespace TestIT.ApiClient.Api
         /// Add CustomAttributeTemplate to Project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
+        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -189,7 +189,7 @@ namespace TestIT.ApiClient.Api
         /// Add CustomAttributeTemplate to Project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
+        ///   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -491,11 +491,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -595,11 +595,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -616,7 +616,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate from Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
+        /// Delete CustomAttributeTemplate from Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -628,7 +628,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate from Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
+        /// Delete CustomAttributeTemplate from Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -664,11 +664,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -684,7 +684,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate from Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
+        /// Delete CustomAttributeTemplate from Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -697,7 +697,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete CustomAttributeTemplate from Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System delete attribute template from project
+        /// Delete CustomAttributeTemplate from Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System delete attribute template from project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -736,11 +736,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -757,7 +757,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add CustomAttributeTemplate to Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
+        /// Add CustomAttributeTemplate to Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -769,7 +769,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add CustomAttributeTemplate to Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
+        /// Add CustomAttributeTemplate to Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -805,11 +805,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -825,7 +825,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add CustomAttributeTemplate to Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
+        /// Add CustomAttributeTemplate to Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -838,7 +838,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add CustomAttributeTemplate to Project  Use case  User sets project internal or global identifier  User sets attribute template internal identifier  User runs method execution  System add attribute template to project
+        /// Add CustomAttributeTemplate to Project   Use case    User sets project internal or global identifier    User sets attribute template internal identifier    User runs method execution    System add attribute template to project
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -877,11 +877,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request

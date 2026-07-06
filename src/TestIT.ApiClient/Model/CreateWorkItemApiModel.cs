@@ -41,16 +41,16 @@ namespace TestIT.ApiClient.Model
         public WorkItemEntityTypeApiModel EntityTypeName { get; set; }
 
         /// <summary>
-        /// State of the work item
+        /// Current state of the work item
         /// </summary>
-        /// <value>State of the work item</value>
+        /// <value>Current state of the work item</value>
         [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemStateApiModel State { get; set; }
 
         /// <summary>
-        /// Priority level of the work item
+        /// Priority level assigned to the work item
         /// </summary>
-        /// <value>Priority level of the work item</value>
+        /// <value>Priority level assigned to the work item</value>
         [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemPriorityApiModel Priority { get; set; }
         /// <summary>
@@ -67,18 +67,18 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">Description of the work item.</param>
         /// <param name="entityTypeName">Type of entity associated with this work item (required).</param>
         /// <param name="duration">Duration of the work item in milliseconds (required).</param>
-        /// <param name="state">State of the work item (required).</param>
-        /// <param name="priority">Priority level of the work item (required).</param>
-        /// <param name="attributes">Set of custom attributes associated with the work item (required).</param>
-        /// <param name="tags">Set of tags applied to the work item (required).</param>
-        /// <param name="preconditionSteps">Set of precondition steps that need to be executed before starting the main steps (required).</param>
-        /// <param name="steps">Main steps or actions defined for the work item (required).</param>
-        /// <param name="postconditionSteps">Set of postcondition steps that are executed after completing the main steps (required).</param>
-        /// <param name="iterations">Associated iterations linked to the work item.</param>
-        /// <param name="autoTests">Automated tests associated with the work item.</param>
-        /// <param name="attachments">Files attached to the work item.</param>
-        /// <param name="links">Set of links related to the work item (required).</param>
-        /// <param name="parameters">Set of parameter keys related to the work item.</param>
+        /// <param name="state">Current state of the work item (required).</param>
+        /// <param name="priority">Priority level assigned to the work item (required).</param>
+        /// <param name="attributes">Set of custom attributes associated with the work item.</param>
+        /// <param name="tags">Set of tags applied to the work item.</param>
+        /// <param name="preconditionSteps">Set of precondition steps that must be executed before the main steps.</param>
+        /// <param name="steps">Set of main steps or actions defined for the work item.</param>
+        /// <param name="postconditionSteps">Set of postcondition steps that are executed after completing the main steps.</param>
+        /// <param name="iterations">Set of iterations associated with the work item.</param>
+        /// <param name="autoTests">Set of automated tests linked to the work item.</param>
+        /// <param name="attachments">Set of files attached to the work item.</param>
+        /// <param name="links">Set of links related to the work item.</param>
+        /// <param name="parameters">Set of parameter keys associated with the work item.</param>
         public CreateWorkItemApiModel(Guid projectId = default, Guid? sectionId = default, string name = default, string description = default, WorkItemEntityTypeApiModel entityTypeName = default, long duration = default, WorkItemStateApiModel state = default, WorkItemPriorityApiModel priority = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<CreateStepApiModel> preconditionSteps = default, List<CreateStepApiModel> steps = default, List<CreateStepApiModel> postconditionSteps = default, List<AssignIterationApiModel> iterations = default, List<AutoTestIdModel> autoTests = default, List<AssignAttachmentApiModel> attachments = default, List<CreateLinkApiModel> links = default, List<WorkItemParameterKeyApiModel> parameters = default)
         {
             this.ProjectId = projectId;
@@ -92,47 +92,17 @@ namespace TestIT.ApiClient.Model
             this.Duration = duration;
             this.State = state;
             this.Priority = priority;
-            // to ensure "attributes" is required (not null)
-            if (attributes == null)
-            {
-                throw new ArgumentNullException("attributes is a required property for CreateWorkItemApiModel and cannot be null");
-            }
-            this.Attributes = attributes;
-            // to ensure "tags" is required (not null)
-            if (tags == null)
-            {
-                throw new ArgumentNullException("tags is a required property for CreateWorkItemApiModel and cannot be null");
-            }
-            this.Tags = tags;
-            // to ensure "preconditionSteps" is required (not null)
-            if (preconditionSteps == null)
-            {
-                throw new ArgumentNullException("preconditionSteps is a required property for CreateWorkItemApiModel and cannot be null");
-            }
-            this.PreconditionSteps = preconditionSteps;
-            // to ensure "steps" is required (not null)
-            if (steps == null)
-            {
-                throw new ArgumentNullException("steps is a required property for CreateWorkItemApiModel and cannot be null");
-            }
-            this.Steps = steps;
-            // to ensure "postconditionSteps" is required (not null)
-            if (postconditionSteps == null)
-            {
-                throw new ArgumentNullException("postconditionSteps is a required property for CreateWorkItemApiModel and cannot be null");
-            }
-            this.PostconditionSteps = postconditionSteps;
-            // to ensure "links" is required (not null)
-            if (links == null)
-            {
-                throw new ArgumentNullException("links is a required property for CreateWorkItemApiModel and cannot be null");
-            }
-            this.Links = links;
             this.SectionId = sectionId;
             this.Description = description;
+            this.Attributes = attributes;
+            this.Tags = tags;
+            this.PreconditionSteps = preconditionSteps;
+            this.Steps = steps;
+            this.PostconditionSteps = postconditionSteps;
             this.Iterations = iterations;
             this.AutoTests = autoTests;
             this.Attachments = attachments;
+            this.Links = links;
             this.Parameters = parameters;
         }
 
@@ -175,55 +145,55 @@ namespace TestIT.ApiClient.Model
         /// Set of custom attributes associated with the work item
         /// </summary>
         /// <value>Set of custom attributes associated with the work item</value>
-        [DataMember(Name = "attributes", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "attributes", EmitDefaultValue = true)]
         public Dictionary<string, Object> Attributes { get; set; }
 
         /// <summary>
         /// Set of tags applied to the work item
         /// </summary>
         /// <value>Set of tags applied to the work item</value>
-        [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
         public List<TagModel> Tags { get; set; }
 
         /// <summary>
-        /// Set of precondition steps that need to be executed before starting the main steps
+        /// Set of precondition steps that must be executed before the main steps
         /// </summary>
-        /// <value>Set of precondition steps that need to be executed before starting the main steps</value>
-        [DataMember(Name = "preconditionSteps", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>Set of precondition steps that must be executed before the main steps</value>
+        [DataMember(Name = "preconditionSteps", EmitDefaultValue = true)]
         public List<CreateStepApiModel> PreconditionSteps { get; set; }
 
         /// <summary>
-        /// Main steps or actions defined for the work item
+        /// Set of main steps or actions defined for the work item
         /// </summary>
-        /// <value>Main steps or actions defined for the work item</value>
-        [DataMember(Name = "steps", IsRequired = true, EmitDefaultValue = true)]
+        /// <value>Set of main steps or actions defined for the work item</value>
+        [DataMember(Name = "steps", EmitDefaultValue = true)]
         public List<CreateStepApiModel> Steps { get; set; }
 
         /// <summary>
         /// Set of postcondition steps that are executed after completing the main steps
         /// </summary>
         /// <value>Set of postcondition steps that are executed after completing the main steps</value>
-        [DataMember(Name = "postconditionSteps", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "postconditionSteps", EmitDefaultValue = true)]
         public List<CreateStepApiModel> PostconditionSteps { get; set; }
 
         /// <summary>
-        /// Associated iterations linked to the work item
+        /// Set of iterations associated with the work item
         /// </summary>
-        /// <value>Associated iterations linked to the work item</value>
+        /// <value>Set of iterations associated with the work item</value>
         [DataMember(Name = "iterations", EmitDefaultValue = true)]
         public List<AssignIterationApiModel> Iterations { get; set; }
 
         /// <summary>
-        /// Automated tests associated with the work item
+        /// Set of automated tests linked to the work item
         /// </summary>
-        /// <value>Automated tests associated with the work item</value>
+        /// <value>Set of automated tests linked to the work item</value>
         [DataMember(Name = "autoTests", EmitDefaultValue = true)]
         public List<AutoTestIdModel> AutoTests { get; set; }
 
         /// <summary>
-        /// Files attached to the work item
+        /// Set of files attached to the work item
         /// </summary>
-        /// <value>Files attached to the work item</value>
+        /// <value>Set of files attached to the work item</value>
         [DataMember(Name = "attachments", EmitDefaultValue = true)]
         public List<AssignAttachmentApiModel> Attachments { get; set; }
 
@@ -231,13 +201,13 @@ namespace TestIT.ApiClient.Model
         /// Set of links related to the work item
         /// </summary>
         /// <value>Set of links related to the work item</value>
-        [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = true)]
+        [DataMember(Name = "links", EmitDefaultValue = true)]
         public List<CreateLinkApiModel> Links { get; set; }
 
         /// <summary>
-        /// Set of parameter keys related to the work item
+        /// Set of parameter keys associated with the work item
         /// </summary>
-        /// <value>Set of parameter keys related to the work item</value>
+        /// <value>Set of parameter keys associated with the work item</value>
         [DataMember(Name = "parameters", EmitDefaultValue = true)]
         public List<WorkItemParameterKeyApiModel> Parameters { get; set; }
 

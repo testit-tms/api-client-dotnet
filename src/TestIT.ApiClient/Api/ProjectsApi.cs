@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Add global attributes to project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -43,29 +43,13 @@ namespace TestIT.ApiClient.Api
         /// Add global attributes to project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="requestBody"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> AddGlobalAttributesToProjectWithHttpInfo(string id, List<Guid> requestBody = default);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>DemoProjectApiResult</returns>
-        DemoProjectApiResult ApiV2ProjectsDemoPost();
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of DemoProjectApiResult</returns>
-        ApiResponse<DemoProjectApiResult> ApiV2ProjectsDemoPostWithHttpInfo();
         /// <summary>
         /// Archive project
         /// </summary>
@@ -128,7 +112,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project filters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -139,7 +123,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project filters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -208,7 +192,7 @@ namespace TestIT.ApiClient.Api
         /// Delete attribute from project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -221,7 +205,7 @@ namespace TestIT.ApiClient.Api
         /// Delete attribute from project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -233,7 +217,7 @@ namespace TestIT.ApiClient.Api
         /// Update attribute of project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -246,7 +230,7 @@ namespace TestIT.ApiClient.Api
         /// Update attribute of project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -258,7 +242,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestRuns full models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        ///   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -283,7 +267,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestRuns full models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        ///   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -367,8 +351,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectsFilterModel"> (optional)</param>
-        /// <returns>List&lt;ProjectShortModel&gt;</returns>
-        List<ProjectShortModel> ApiV2ProjectsSearchPost(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default);
+        /// <returns>List&lt;ProjectApiResult&gt;</returns>
+        List<ProjectApiResult> ApiV2ProjectsSearchPost(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default);
 
         /// <summary>
         /// Search for projects
@@ -383,34 +367,34 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectsFilterModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;ProjectShortModel&gt;</returns>
-        ApiResponse<List<ProjectShortModel>> ApiV2ProjectsSearchPostWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default);
+        /// <returns>ApiResponse of List&lt;ProjectApiResult&gt;</returns>
+        ApiResponse<List<ProjectApiResult>> ApiV2ProjectsSearchPostWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default);
         /// <summary>
         /// Get projects short models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets query params  User runs method execution  System return projects short models
+        ///   Use case    User sets query params    User runs method execution    System return projects short models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
-        /// <returns>ProjectShortApiResultReply</returns>
-        ProjectShortApiResultReply ApiV2ProjectsShortsPost(GetShortProjectsApiModel getShortProjectsApiModel = default);
+        /// <returns>ProjectShortApiResultIReply</returns>
+        ProjectShortApiResultIReply ApiV2ProjectsShortsPost(GetShortProjectsApiModel getShortProjectsApiModel = default);
 
         /// <summary>
         /// Get projects short models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets query params  User runs method execution  System return projects short models
+        ///   Use case    User sets query params    User runs method execution    System return projects short models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
-        /// <returns>ApiResponse of ProjectShortApiResultReply</returns>
-        ApiResponse<ProjectShortApiResultReply> ApiV2ProjectsShortsPostWithHttpInfo(GetShortProjectsApiModel getShortProjectsApiModel = default);
+        /// <returns>ApiResponse of ProjectShortApiResultIReply</returns>
+        ApiResponse<ProjectShortApiResultIReply> ApiV2ProjectsShortsPostWithHttpInfo(GetShortProjectsApiModel getShortProjectsApiModel = default);
         /// <summary>
         /// Create project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -421,7 +405,7 @@ namespace TestIT.ApiClient.Api
         /// Create project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -449,7 +433,7 @@ namespace TestIT.ApiClient.Api
         /// Get all projects
         /// </summary>
         /// <remarks>
-        ///  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        ///   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -459,15 +443,15 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>List&lt;ProjectShortModel&gt;</returns>
+        /// <returns>List&lt;ProjectApiResult&gt;</returns>
         [Obsolete]
-        List<ProjectShortModel> GetAllProjects(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
+        List<ProjectApiResult> GetAllProjects(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
 
         /// <summary>
         /// Get all projects
         /// </summary>
         /// <remarks>
-        ///  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        ///   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -477,14 +461,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>ApiResponse of List&lt;ProjectShortModel&gt;</returns>
+        /// <returns>ApiResponse of List&lt;ProjectApiResult&gt;</returns>
         [Obsolete]
-        ApiResponse<List<ProjectShortModel>> GetAllProjectsWithHttpInfo(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
+        ApiResponse<List<ProjectApiResult>> GetAllProjectsWithHttpInfo(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default);
         /// <summary>
         /// Get namespaces of autotests in project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -495,7 +479,7 @@ namespace TestIT.ApiClient.Api
         /// Get namespaces of autotests in project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -505,28 +489,28 @@ namespace TestIT.ApiClient.Api
         /// Get project by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <returns>ProjectModel</returns>
-        ProjectModel GetProjectById(string id);
+        /// <returns>DetailedProjectApiResult</returns>
+        DetailedProjectApiResult GetProjectById(string id);
 
         /// <summary>
         /// Get project by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <returns>ApiResponse of ProjectModel</returns>
-        ApiResponse<ProjectModel> GetProjectByIdWithHttpInfo(string id);
+        /// <returns>ApiResponse of DetailedProjectApiResult</returns>
+        ApiResponse<DetailedProjectApiResult> GetProjectByIdWithHttpInfo(string id);
         /// <summary>
         /// Get project test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to                      project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which                      are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -538,7 +522,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to                      project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which                      are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -549,7 +533,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test runs
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -572,7 +556,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test runs
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -594,7 +578,7 @@ namespace TestIT.ApiClient.Api
         /// Update project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -605,7 +589,7 @@ namespace TestIT.ApiClient.Api
         /// Update project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -624,7 +608,7 @@ namespace TestIT.ApiClient.Api
         /// Add global attributes to project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -637,7 +621,7 @@ namespace TestIT.ApiClient.Api
         /// Add global attributes to project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -645,27 +629,6 @@ namespace TestIT.ApiClient.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> AddGlobalAttributesToProjectWithHttpInfoAsync(string id, List<Guid> requestBody = default, System.Threading.CancellationToken cancellationToken = default);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DemoProjectApiResult</returns>
-        System.Threading.Tasks.Task<DemoProjectApiResult> ApiV2ProjectsDemoPostAsync(System.Threading.CancellationToken cancellationToken = default);
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DemoProjectApiResult)</returns>
-        System.Threading.Tasks.Task<ApiResponse<DemoProjectApiResult>> ApiV2ProjectsDemoPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Archive project
         /// </summary>
@@ -743,7 +706,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project filters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -755,7 +718,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project filters
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -837,7 +800,7 @@ namespace TestIT.ApiClient.Api
         /// Delete attribute from project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -851,7 +814,7 @@ namespace TestIT.ApiClient.Api
         /// Delete attribute from project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -864,7 +827,7 @@ namespace TestIT.ApiClient.Api
         /// Update attribute of project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -878,7 +841,7 @@ namespace TestIT.ApiClient.Api
         /// Update attribute of project&#39;s test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        ///   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -891,7 +854,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestRuns full models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        ///   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -917,7 +880,7 @@ namespace TestIT.ApiClient.Api
         /// Get Project TestRuns full models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        ///   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1021,8 +984,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectsFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;ProjectShortModel&gt;</returns>
-        System.Threading.Tasks.Task<List<ProjectShortModel>> ApiV2ProjectsSearchPostAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of List&lt;ProjectApiResult&gt;</returns>
+        System.Threading.Tasks.Task<List<ProjectApiResult>> ApiV2ProjectsSearchPostAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Search for projects
@@ -1038,36 +1001,36 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectsFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;ProjectShortModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ProjectShortModel>>> ApiV2ProjectsSearchPostWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (List&lt;ProjectApiResult&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<ProjectApiResult>>> ApiV2ProjectsSearchPostWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get projects short models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets query params  User runs method execution  System return projects short models
+        ///   Use case    User sets query params    User runs method execution    System return projects short models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ProjectShortApiResultReply</returns>
-        System.Threading.Tasks.Task<ProjectShortApiResultReply> ApiV2ProjectsShortsPostAsync(GetShortProjectsApiModel getShortProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ProjectShortApiResultIReply</returns>
+        System.Threading.Tasks.Task<ProjectShortApiResultIReply> ApiV2ProjectsShortsPostAsync(GetShortProjectsApiModel getShortProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get projects short models
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets query params  User runs method execution  System return projects short models
+        ///   Use case    User sets query params    User runs method execution    System return projects short models
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ProjectShortApiResultReply)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProjectShortApiResultReply>> ApiV2ProjectsShortsPostWithHttpInfoAsync(GetShortProjectsApiModel getShortProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ProjectShortApiResultIReply)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ProjectShortApiResultIReply>> ApiV2ProjectsShortsPostWithHttpInfoAsync(GetShortProjectsApiModel getShortProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Create project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -1079,7 +1042,7 @@ namespace TestIT.ApiClient.Api
         /// Create project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -1113,7 +1076,7 @@ namespace TestIT.ApiClient.Api
         /// Get all projects
         /// </summary>
         /// <remarks>
-        ///  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        ///   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -1124,15 +1087,15 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;ProjectShortModel&gt;</returns>
+        /// <returns>Task of List&lt;ProjectApiResult&gt;</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<List<ProjectShortModel>> GetAllProjectsAsync(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<List<ProjectApiResult>> GetAllProjectsAsync(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get all projects
         /// </summary>
         /// <remarks>
-        ///  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        ///   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -1143,14 +1106,14 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;ProjectShortModel&gt;)</returns>
+        /// <returns>Task of ApiResponse (List&lt;ProjectApiResult&gt;)</returns>
         [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<List<ProjectShortModel>>> GetAllProjectsWithHttpInfoAsync(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
+        System.Threading.Tasks.Task<ApiResponse<List<ProjectApiResult>>> GetAllProjectsWithHttpInfoAsync(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get namespaces of autotests in project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1162,7 +1125,7 @@ namespace TestIT.ApiClient.Api
         /// Get namespaces of autotests in project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1173,30 +1136,30 @@ namespace TestIT.ApiClient.Api
         /// Get project by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ProjectModel</returns>
-        System.Threading.Tasks.Task<ProjectModel> GetProjectByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of DetailedProjectApiResult</returns>
+        System.Threading.Tasks.Task<DetailedProjectApiResult> GetProjectByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Get project by ID
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        ///   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ProjectModel)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProjectModel>> GetProjectByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (DetailedProjectApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<DetailedProjectApiResult>> GetProjectByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Get project test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to                      project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which                      are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1209,7 +1172,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test plans
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to                      project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which                      are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1221,7 +1184,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test runs
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1245,7 +1208,7 @@ namespace TestIT.ApiClient.Api
         /// Get project test runs
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        ///   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1268,7 +1231,7 @@ namespace TestIT.ApiClient.Api
         /// Update project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -1280,7 +1243,7 @@ namespace TestIT.ApiClient.Api
         /// Update project
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        ///   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -1501,7 +1464,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add global attributes to project  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        /// Add global attributes to project   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1513,7 +1476,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add global attributes to project  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        /// Add global attributes to project   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1550,11 +1513,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1570,7 +1533,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add global attributes to project  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        /// Add global attributes to project   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1583,7 +1546,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Add global attributes to project  Use case  User sets project internal or global identifier and attributes identifiers  System search project  System relates global attributes with project  System returns no content response
+        /// Add global attributes to project   Use case    User sets project internal or global identifier and attributes identifiers    System search project    System relates global attributes with project    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -1623,11 +1586,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1637,129 +1600,6 @@ namespace TestIT.ApiClient.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("AddGlobalAttributesToProject", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>DemoProjectApiResult</returns>
-        public DemoProjectApiResult ApiV2ProjectsDemoPost()
-        {
-            TestIT.ApiClient.Client.ApiResponse<DemoProjectApiResult> localVarResponse = ApiV2ProjectsDemoPostWithHttpInfo();
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of DemoProjectApiResult</returns>
-        public TestIT.ApiClient.Client.ApiResponse<DemoProjectApiResult> ApiV2ProjectsDemoPostWithHttpInfo()
-        {
-            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-            // authentication (PrivateToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (Session Cookie) required
-            // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
-            {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
-            }
-
-            // make the HTTP request
-            var localVarResponse = this.Client.Post<DemoProjectApiResult>("/api/v2/projects/demo", localVarRequestOptions, this.Configuration);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ApiV2ProjectsDemoPost", localVarResponse);
-                if (_exception != null) throw _exception;
-            }
-
-            return localVarResponse;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of DemoProjectApiResult</returns>
-        public async System.Threading.Tasks.Task<DemoProjectApiResult> ApiV2ProjectsDemoPostAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-            TestIT.ApiClient.Client.ApiResponse<DemoProjectApiResult> localVarResponse = await ApiV2ProjectsDemoPostWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
-            return localVarResponse.Data;
-        }
-
-        /// <summary>
-        ///  
-        /// </summary>
-        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (DemoProjectApiResult)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<DemoProjectApiResult>> ApiV2ProjectsDemoPostWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default)
-        {
-
-            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
-
-            string[] _contentTypes = new string[] {
-            };
-
-            // to determine the Accept header
-            string[] _accepts = new string[] {
-                "application/json"
-            };
-
-
-            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
-            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
-
-            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
-            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
-
-
-            // authentication (PrivateToken) required
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
-            {
-                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
-            }
-            // authentication (Session Cookie) required
-            // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
-            {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
-            }
-
-            // make the HTTP request
-
-            var localVarResponse = await this.AsynchronousClient.PostAsync<DemoProjectApiResult>("/api/v2/projects/demo", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
-
-            if (this.ExceptionFactory != null)
-            {
-                Exception _exception = this.ExceptionFactory("ApiV2ProjectsDemoPost", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -1812,11 +1652,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1881,11 +1721,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1956,11 +1796,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2034,11 +1874,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2100,11 +1940,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2169,11 +2009,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2190,7 +2030,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project filters  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        /// Get Project filters   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2202,7 +2042,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project filters  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        /// Get Project filters   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2236,11 +2076,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2256,7 +2096,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project filters  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        /// Get Project filters   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2269,7 +2109,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project filters  Use case  User sets project internal or global identifier  User runs method execution  System returns project filters
+        /// Get Project filters   Use case    User sets project internal or global identifier    User runs method execution    System returns project filters
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2306,11 +2146,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2372,11 +2212,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2441,11 +2281,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2507,11 +2347,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2576,11 +2416,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2642,11 +2482,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2711,11 +2551,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2732,7 +2572,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete attribute from project&#39;s test plans  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        /// Delete attribute from project&#39;s test plans   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2745,7 +2585,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete attribute from project&#39;s test plans  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        /// Delete attribute from project&#39;s test plans   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2782,11 +2622,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2802,7 +2642,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete attribute from project&#39;s test plans  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        /// Delete attribute from project&#39;s test plans   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2816,7 +2656,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete attribute from project&#39;s test plans  Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
+        /// Delete attribute from project&#39;s test plans   Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2856,11 +2696,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2877,7 +2717,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update attribute of project&#39;s test plans  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        /// Update attribute of project&#39;s test plans   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2890,7 +2730,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update attribute of project&#39;s test plans  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        /// Update attribute of project&#39;s test plans   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2928,11 +2768,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -2948,7 +2788,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update attribute of project&#39;s test plans  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        /// Update attribute of project&#39;s test plans   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -2962,7 +2802,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update attribute of project&#39;s test plans  Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
+        /// Update attribute of project&#39;s test plans   Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -3003,11 +2843,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3024,7 +2864,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestRuns full models  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        /// Get Project TestRuns full models   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -3050,7 +2890,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestRuns full models  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        /// Get Project TestRuns full models   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -3154,11 +2994,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3174,7 +3014,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestRuns full models  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        /// Get Project TestRuns full models   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -3201,7 +3041,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get Project TestRuns full models  Use case  User sets project internal or global identifier  User sets query params  User runs method execution  System returns project test runs full models
+        /// Get Project TestRuns full models   Use case    User sets project internal or global identifier    User sets query params    User runs method execution    System returns project test runs full models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -3308,11 +3148,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3375,11 +3215,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3445,11 +3285,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3509,11 +3349,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3576,11 +3416,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3640,11 +3480,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3707,11 +3547,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -3737,10 +3577,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectsFilterModel"> (optional)</param>
-        /// <returns>List&lt;ProjectShortModel&gt;</returns>
-        public List<ProjectShortModel> ApiV2ProjectsSearchPost(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default)
+        /// <returns>List&lt;ProjectApiResult&gt;</returns>
+        public List<ProjectApiResult> ApiV2ProjectsSearchPost(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ProjectShortModel>> localVarResponse = ApiV2ProjectsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, projectsFilterModel);
+            TestIT.ApiClient.Client.ApiResponse<List<ProjectApiResult>> localVarResponse = ApiV2ProjectsSearchPostWithHttpInfo(skip, take, orderBy, searchField, searchValue, projectsFilterModel);
             return localVarResponse.Data;
         }
 
@@ -3754,8 +3594,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectsFilterModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;ProjectShortModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<ProjectShortModel>> ApiV2ProjectsSearchPostWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default)
+        /// <returns>ApiResponse of List&lt;ProjectApiResult&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<ProjectApiResult>> ApiV2ProjectsSearchPostWithHttpInfo(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -3801,15 +3641,15 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<ProjectShortModel>>("/api/v2/projects/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<ProjectApiResult>>("/api/v2/projects/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3831,10 +3671,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectsFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;ProjectShortModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ProjectShortModel>> ApiV2ProjectsSearchPostAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of List&lt;ProjectApiResult&gt;</returns>
+        public async System.Threading.Tasks.Task<List<ProjectApiResult>> ApiV2ProjectsSearchPostAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ProjectShortModel>> localVarResponse = await ApiV2ProjectsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, projectsFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<ProjectApiResult>> localVarResponse = await ApiV2ProjectsSearchPostWithHttpInfoAsync(skip, take, orderBy, searchField, searchValue, projectsFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -3849,8 +3689,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectsFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;ProjectShortModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ProjectShortModel>>> ApiV2ProjectsSearchPostWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (List&lt;ProjectApiResult&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ProjectApiResult>>> ApiV2ProjectsSearchPostWithHttpInfoAsync(int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectsFilterModel projectsFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -3898,16 +3738,16 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ProjectShortModel>>("/api/v2/projects/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<ProjectApiResult>>("/api/v2/projects/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -3919,24 +3759,24 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get projects short models  Use case  User sets query params  User runs method execution  System return projects short models
+        /// Get projects short models   Use case    User sets query params    User runs method execution    System return projects short models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
-        /// <returns>ProjectShortApiResultReply</returns>
-        public ProjectShortApiResultReply ApiV2ProjectsShortsPost(GetShortProjectsApiModel getShortProjectsApiModel = default)
+        /// <returns>ProjectShortApiResultIReply</returns>
+        public ProjectShortApiResultIReply ApiV2ProjectsShortsPost(GetShortProjectsApiModel getShortProjectsApiModel = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<ProjectShortApiResultReply> localVarResponse = ApiV2ProjectsShortsPostWithHttpInfo(getShortProjectsApiModel);
+            TestIT.ApiClient.Client.ApiResponse<ProjectShortApiResultIReply> localVarResponse = ApiV2ProjectsShortsPostWithHttpInfo(getShortProjectsApiModel);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get projects short models  Use case  User sets query params  User runs method execution  System return projects short models
+        /// Get projects short models   Use case    User sets query params    User runs method execution    System return projects short models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
-        /// <returns>ApiResponse of ProjectShortApiResultReply</returns>
-        public TestIT.ApiClient.Client.ApiResponse<ProjectShortApiResultReply> ApiV2ProjectsShortsPostWithHttpInfo(GetShortProjectsApiModel getShortProjectsApiModel = default)
+        /// <returns>ApiResponse of ProjectShortApiResultIReply</returns>
+        public TestIT.ApiClient.Client.ApiResponse<ProjectShortApiResultIReply> ApiV2ProjectsShortsPostWithHttpInfo(GetShortProjectsApiModel getShortProjectsApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -3962,15 +3802,15 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<ProjectShortApiResultReply>("/api/v2/projects/shorts", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ProjectShortApiResultIReply>("/api/v2/projects/shorts", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -3982,26 +3822,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get projects short models  Use case  User sets query params  User runs method execution  System return projects short models
+        /// Get projects short models   Use case    User sets query params    User runs method execution    System return projects short models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ProjectShortApiResultReply</returns>
-        public async System.Threading.Tasks.Task<ProjectShortApiResultReply> ApiV2ProjectsShortsPostAsync(GetShortProjectsApiModel getShortProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ProjectShortApiResultIReply</returns>
+        public async System.Threading.Tasks.Task<ProjectShortApiResultIReply> ApiV2ProjectsShortsPostAsync(GetShortProjectsApiModel getShortProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<ProjectShortApiResultReply> localVarResponse = await ApiV2ProjectsShortsPostWithHttpInfoAsync(getShortProjectsApiModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<ProjectShortApiResultIReply> localVarResponse = await ApiV2ProjectsShortsPostWithHttpInfoAsync(getShortProjectsApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get projects short models  Use case  User sets query params  User runs method execution  System return projects short models
+        /// Get projects short models   Use case    User sets query params    User runs method execution    System return projects short models
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getShortProjectsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ProjectShortApiResultReply)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ProjectShortApiResultReply>> ApiV2ProjectsShortsPostWithHttpInfoAsync(GetShortProjectsApiModel getShortProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ProjectShortApiResultIReply)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ProjectShortApiResultIReply>> ApiV2ProjectsShortsPostWithHttpInfoAsync(GetShortProjectsApiModel getShortProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -4029,16 +3869,16 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<ProjectShortApiResultReply>("/api/v2/projects/shorts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ProjectShortApiResultIReply>("/api/v2/projects/shorts", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -4050,7 +3890,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create project  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        /// Create project   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -4062,7 +3902,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create project  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        /// Create project   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -4093,11 +3933,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4113,7 +3953,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create project  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        /// Create project   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -4126,7 +3966,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create project  Use case  User sets project parameters (listed in request example) and runs method execution  System creates project  System returns project model (example listed in response parameters)
+        /// Create project   Use case    User sets project parameters (listed in request example) and runs method execution    System creates project    System returns project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createProjectApiModel"> (optional)</param>
@@ -4160,11 +4000,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4226,11 +4066,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4295,11 +4135,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4316,7 +4156,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all projects  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        /// Get all projects   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -4326,16 +4166,16 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>List&lt;ProjectShortModel&gt;</returns>
+        /// <returns>List&lt;ProjectApiResult&gt;</returns>
         [Obsolete]
-        public List<ProjectShortModel> GetAllProjects(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
+        public List<ProjectApiResult> GetAllProjects(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ProjectShortModel>> localVarResponse = GetAllProjectsWithHttpInfo(isDeleted, projectName, skip, take, orderBy, searchField, searchValue);
+            TestIT.ApiClient.Client.ApiResponse<List<ProjectApiResult>> localVarResponse = GetAllProjectsWithHttpInfo(isDeleted, projectName, skip, take, orderBy, searchField, searchValue);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get all projects  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        /// Get all projects   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -4345,9 +4185,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="orderBy">SQL-like  ORDER BY statement (column1 ASC|DESC , column2 ASC|DESC) (optional)</param>
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
-        /// <returns>ApiResponse of List&lt;ProjectShortModel&gt;</returns>
+        /// <returns>ApiResponse of List&lt;ProjectApiResult&gt;</returns>
         [Obsolete]
-        public TestIT.ApiClient.Client.ApiResponse<List<ProjectShortModel>> GetAllProjectsWithHttpInfo(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
+        public TestIT.ApiClient.Client.ApiResponse<List<ProjectApiResult>> GetAllProjectsWithHttpInfo(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -4399,15 +4239,15 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<List<ProjectShortModel>>("/api/v2/projects", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<List<ProjectApiResult>>("/api/v2/projects", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -4419,7 +4259,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get all projects  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        /// Get all projects   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -4430,16 +4270,16 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;ProjectShortModel&gt;</returns>
+        /// <returns>Task of List&lt;ProjectApiResult&gt;</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<List<ProjectShortModel>> GetAllProjectsAsync(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<List<ProjectApiResult>> GetAllProjectsAsync(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<ProjectShortModel>> localVarResponse = await GetAllProjectsWithHttpInfoAsync(isDeleted, projectName, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<ProjectApiResult>> localVarResponse = await GetAllProjectsWithHttpInfoAsync(isDeleted, projectName, skip, take, orderBy, searchField, searchValue, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get all projects  Use case  [Optional] User sets isDeleted field value  [Optional] If User sets isDeleted field value as true, System search all deleted projects  [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted  If User did not set isDeleted field value, System search all projects  System returns array of all found projects(listed in response model)
+        /// Get all projects   Use case    [Optional] User sets isDeleted field value    [Optional] If User sets isDeleted field value as true, System search all deleted projects    [Optional] If User sets isDeleted field value as false, System search all projects which are not deleted    If User did not set isDeleted field value, System search all projects    System returns array of all found projects(listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isDeleted">If result must consist of only actual/deleted parameters (optional)</param>
@@ -4450,9 +4290,9 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;ProjectShortModel&gt;)</returns>
+        /// <returns>Task of ApiResponse (List&lt;ProjectApiResult&gt;)</returns>
         [Obsolete]
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ProjectShortModel>>> GetAllProjectsWithHttpInfoAsync(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<ProjectApiResult>>> GetAllProjectsWithHttpInfoAsync(bool? isDeleted = default, string projectName = default, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -4506,16 +4346,16 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ProjectShortModel>>("/api/v2/projects", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<List<ProjectApiResult>>("/api/v2/projects", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -4527,7 +4367,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get namespaces of autotests in project  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        /// Get namespaces of autotests in project   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4539,7 +4379,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get namespaces of autotests in project  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        /// Get namespaces of autotests in project   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4573,11 +4413,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4593,7 +4433,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get namespaces of autotests in project  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        /// Get namespaces of autotests in project   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4606,7 +4446,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get namespaces of autotests in project  Use case  User sets project internal or global identifier and runs method execution  System search project  System search all autotest related to the project  System returns array of autotest with namespaces and classnames (listed in response)
+        /// Get namespaces of autotests in project   Use case    User sets project internal or global identifier and runs method execution    System search project    System search all autotest related to the project    System returns array of autotest with namespaces and classnames (listed in response)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4643,11 +4483,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4664,24 +4504,24 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project by ID  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        /// Get project by ID   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <returns>ProjectModel</returns>
-        public ProjectModel GetProjectById(string id)
+        /// <returns>DetailedProjectApiResult</returns>
+        public DetailedProjectApiResult GetProjectById(string id)
         {
-            TestIT.ApiClient.Client.ApiResponse<ProjectModel> localVarResponse = GetProjectByIdWithHttpInfo(id);
+            TestIT.ApiClient.Client.ApiResponse<DetailedProjectApiResult> localVarResponse = GetProjectByIdWithHttpInfo(id);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get project by ID  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        /// Get project by ID   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
-        /// <returns>ApiResponse of ProjectModel</returns>
-        public TestIT.ApiClient.Client.ApiResponse<ProjectModel> GetProjectByIdWithHttpInfo(string id)
+        /// <returns>ApiResponse of DetailedProjectApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<DetailedProjectApiResult> GetProjectByIdWithHttpInfo(string id)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4710,15 +4550,15 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<ProjectModel>("/api/v2/projects/{id}", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<DetailedProjectApiResult>("/api/v2/projects/{id}", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -4730,26 +4570,26 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project by ID  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        /// Get project by ID   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ProjectModel</returns>
-        public async System.Threading.Tasks.Task<ProjectModel> GetProjectByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of DetailedProjectApiResult</returns>
+        public async System.Threading.Tasks.Task<DetailedProjectApiResult> GetProjectByIdAsync(string id, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<ProjectModel> localVarResponse = await GetProjectByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<DetailedProjectApiResult> localVarResponse = await GetProjectByIdWithHttpInfoAsync(id, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get project by ID  Use case  User sets project internal or global identifier and runs method execution  System search project  System returns project (example listed in response parameters)
+        /// Get project by ID   Use case    User sets project internal or global identifier and runs method execution    System search project    System returns project (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ProjectModel)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ProjectModel>> GetProjectByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (DetailedProjectApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<DetailedProjectApiResult>> GetProjectByIdWithHttpInfoAsync(string id, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'id' is set
             if (id == null)
@@ -4780,16 +4620,16 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ProjectModel>("/api/v2/projects/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<DetailedProjectApiResult>("/api/v2/projects/{id}", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -4801,7 +4641,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test plans  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        /// Get project test plans   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to                      project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which                      are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4814,7 +4654,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test plans  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        /// Get project test plans   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to                      project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which                      are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4853,11 +4693,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4873,7 +4713,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test plans  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        /// Get project test plans   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to                      project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which                      are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4887,7 +4727,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test plans  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to project  [Optional] If User sets isDeleted field value as false, System search all test plans related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all v related to project  System returns array of found test plans (listed in response model)
+        /// Get project test plans   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted test plans related to                      project    [Optional] If User sets isDeleted field value as false, System search all test plans related to project which                      are not deleted    [Optional] If User did not set isDeleted field value, System search all v related to project    System returns array of found test plans (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4929,11 +4769,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -4950,7 +4790,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test runs  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        /// Get project test runs   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -4974,7 +4814,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test runs  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        /// Get project test runs   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -5056,11 +4896,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -5076,7 +4916,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test runs  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        /// Get project test runs   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -5101,7 +4941,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project test runs  Use case  User sets project internal or global identifier  User runs method execution  System search project  System search all test runs related to project  System returns array of found test runs (listed in response model)
+        /// Get project test runs   Use case    User sets project internal or global identifier    User runs method execution    System search project    System search all test runs related to project    System returns array of found test runs (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Project internal (UUID) or global (integer) identifier</param>
@@ -5186,11 +5026,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -5207,7 +5047,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update project  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        /// Update project   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -5218,7 +5058,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update project  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        /// Update project   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -5249,11 +5089,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -5269,7 +5109,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update project  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        /// Update project   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -5281,7 +5121,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update project  Use case  User sets project parameters (listed in request example) and runs method execution  System updates project  System returns updated project model (example listed in response parameters)
+        /// Update project   Use case    User sets project parameters (listed in request example) and runs method execution    System updates project    System returns updated project model (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateProjectApiModel"> (optional)</param>
@@ -5315,11 +5155,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request

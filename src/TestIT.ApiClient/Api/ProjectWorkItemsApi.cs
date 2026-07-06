@@ -28,6 +28,46 @@ namespace TestIT.ApiClient.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="createWorkItemPreviewsApiModel"> (optional)</param>
+        /// <returns></returns>
+        void ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPost(string projectId, CreateWorkItemPreviewsApiModel createWorkItemPreviewsApiModel = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="createWorkItemPreviewsApiModel"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPostWithHttpInfo(string projectId, CreateWorkItemPreviewsApiModel createWorkItemPreviewsApiModel = default);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="generateWorkItemPreviewsApiModel"> (optional)</param>
+        /// <returns>GenerateWorkItemPreviewsApiResult</returns>
+        GenerateWorkItemPreviewsApiResult ApiV2ProjectsProjectIdWorkItemsPreviewsPost(string projectId, GenerateWorkItemPreviewsApiModel generateWorkItemPreviewsApiModel = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="generateWorkItemPreviewsApiModel"> (optional)</param>
+        /// <returns>ApiResponse of GenerateWorkItemPreviewsApiResult</returns>
+        ApiResponse<GenerateWorkItemPreviewsApiResult> ApiV2ProjectsProjectIdWorkItemsPreviewsPostWithHttpInfo(string projectId, GenerateWorkItemPreviewsApiModel generateWorkItemPreviewsApiModel = default);
+        /// <summary>
         /// Search for work items and group results by attribute
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
@@ -153,7 +193,7 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItems Tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        ///   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -165,7 +205,7 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItems Tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        ///   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -176,7 +216,7 @@ namespace TestIT.ApiClient.Api
         /// Get project work items
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -196,7 +236,7 @@ namespace TestIT.ApiClient.Api
         /// Get project work items
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -220,6 +260,56 @@ namespace TestIT.ApiClient.Api
     public interface IProjectWorkItemsApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="createWorkItemPreviewsApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPostAsync(string projectId, CreateWorkItemPreviewsApiModel createWorkItemPreviewsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="createWorkItemPreviewsApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPostWithHttpInfoAsync(string projectId, CreateWorkItemPreviewsApiModel createWorkItemPreviewsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="generateWorkItemPreviewsApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GenerateWorkItemPreviewsApiResult</returns>
+        System.Threading.Tasks.Task<GenerateWorkItemPreviewsApiResult> ApiV2ProjectsProjectIdWorkItemsPreviewsPostAsync(string projectId, GenerateWorkItemPreviewsApiModel generateWorkItemPreviewsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="generateWorkItemPreviewsApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GenerateWorkItemPreviewsApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<GenerateWorkItemPreviewsApiResult>> ApiV2ProjectsProjectIdWorkItemsPreviewsPostWithHttpInfoAsync(string projectId, GenerateWorkItemPreviewsApiModel generateWorkItemPreviewsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Search for work items and group results by attribute
         /// </summary>
@@ -366,7 +456,7 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItems Tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        ///   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -379,7 +469,7 @@ namespace TestIT.ApiClient.Api
         /// Get WorkItems Tags
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        ///   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -391,7 +481,7 @@ namespace TestIT.ApiClient.Api
         /// Get project work items
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -412,7 +502,7 @@ namespace TestIT.ApiClient.Api
         /// Get project work items
         /// </summary>
         /// <remarks>
-        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -642,6 +732,294 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="createWorkItemPreviewsApiModel"> (optional)</param>
+        /// <returns></returns>
+        public void ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPost(string projectId, CreateWorkItemPreviewsApiModel createWorkItemPreviewsApiModel = default)
+        {
+            ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPostWithHttpInfo(projectId, createWorkItemPreviewsApiModel);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="createWorkItemPreviewsApiModel"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public TestIT.ApiClient.Client.ApiResponse<Object> ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPostWithHttpInfo(string projectId, CreateWorkItemPreviewsApiModel createWorkItemPreviewsApiModel = default)
+        {
+            // verify the required parameter 'projectId' is set
+            if (projectId == null)
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectWorkItemsApi->ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPost");
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.Data = createWorkItemPreviewsApiModel;
+
+            // authentication (PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Cookies) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<Object>("/api/v2/projects/{projectId}/work-items/previews/bulk", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="createWorkItemPreviewsApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPostAsync(string projectId, CreateWorkItemPreviewsApiModel createWorkItemPreviewsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            await ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPostWithHttpInfoAsync(projectId, createWorkItemPreviewsApiModel, cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="createWorkItemPreviewsApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<Object>> ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPostWithHttpInfoAsync(string projectId, CreateWorkItemPreviewsApiModel createWorkItemPreviewsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'projectId' is set
+            if (projectId == null)
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectWorkItemsApi->ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPost");
+
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.Data = createWorkItemPreviewsApiModel;
+
+            // authentication (PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Cookies) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<Object>("/api/v2/projects/{projectId}/work-items/previews/bulk", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdWorkItemsPreviewsBulkPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="generateWorkItemPreviewsApiModel"> (optional)</param>
+        /// <returns>GenerateWorkItemPreviewsApiResult</returns>
+        public GenerateWorkItemPreviewsApiResult ApiV2ProjectsProjectIdWorkItemsPreviewsPost(string projectId, GenerateWorkItemPreviewsApiModel generateWorkItemPreviewsApiModel = default)
+        {
+            TestIT.ApiClient.Client.ApiResponse<GenerateWorkItemPreviewsApiResult> localVarResponse = ApiV2ProjectsProjectIdWorkItemsPreviewsPostWithHttpInfo(projectId, generateWorkItemPreviewsApiModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="generateWorkItemPreviewsApiModel"> (optional)</param>
+        /// <returns>ApiResponse of GenerateWorkItemPreviewsApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<GenerateWorkItemPreviewsApiResult> ApiV2ProjectsProjectIdWorkItemsPreviewsPostWithHttpInfo(string projectId, GenerateWorkItemPreviewsApiModel generateWorkItemPreviewsApiModel = default)
+        {
+            // verify the required parameter 'projectId' is set
+            if (projectId == null)
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectWorkItemsApi->ApiV2ProjectsProjectIdWorkItemsPreviewsPost");
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.Data = generateWorkItemPreviewsApiModel;
+
+            // authentication (PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Cookies) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<GenerateWorkItemPreviewsApiResult>("/api/v2/projects/{projectId}/work-items/previews", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdWorkItemsPreviewsPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="generateWorkItemPreviewsApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of GenerateWorkItemPreviewsApiResult</returns>
+        public async System.Threading.Tasks.Task<GenerateWorkItemPreviewsApiResult> ApiV2ProjectsProjectIdWorkItemsPreviewsPostAsync(string projectId, GenerateWorkItemPreviewsApiModel generateWorkItemPreviewsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            TestIT.ApiClient.Client.ApiResponse<GenerateWorkItemPreviewsApiResult> localVarResponse = await ApiV2ProjectsProjectIdWorkItemsPreviewsPostWithHttpInfoAsync(projectId, generateWorkItemPreviewsApiModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        ///  
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="projectId">Internal (UUID) or global (integer) identifier</param>
+        /// <param name="generateWorkItemPreviewsApiModel"> (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (GenerateWorkItemPreviewsApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<GenerateWorkItemPreviewsApiResult>> ApiV2ProjectsProjectIdWorkItemsPreviewsPostWithHttpInfoAsync(string projectId, GenerateWorkItemPreviewsApiModel generateWorkItemPreviewsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            // verify the required parameter 'projectId' is set
+            if (projectId == null)
+                throw new TestIT.ApiClient.Client.ApiException(400, "Missing required parameter 'projectId' when calling ProjectWorkItemsApi->ApiV2ProjectsProjectIdWorkItemsPreviewsPost");
+
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.PathParameters.Add("projectId", TestIT.ApiClient.Client.ClientUtils.ParameterToString(projectId)); // path parameter
+            localVarRequestOptions.Data = generateWorkItemPreviewsApiModel;
+
+            // authentication (PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Cookies) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<GenerateWorkItemPreviewsApiResult>("/api/v2/projects/{projectId}/work-items/previews", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2ProjectsProjectIdWorkItemsPreviewsPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
         /// Search for work items and group results by attribute 
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
@@ -722,11 +1100,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -826,11 +1204,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -927,11 +1305,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1031,11 +1409,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1132,11 +1510,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1236,11 +1614,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1340,11 +1718,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1447,11 +1825,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1468,7 +1846,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItems Tags  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        /// Get WorkItems Tags   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -1481,7 +1859,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItems Tags  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        /// Get WorkItems Tags   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -1516,11 +1894,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1536,7 +1914,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItems Tags  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        /// Get WorkItems Tags   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -1550,7 +1928,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get WorkItems Tags  Use case  User sets project internal identifier  User runs method execution  System returns work items tags
+        /// Get WorkItems Tags   Use case    User sets project internal identifier    User runs method execution    System returns work items tags
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) identifier</param>
@@ -1588,11 +1966,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1609,7 +1987,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project work items  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        /// Get project work items   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1630,7 +2008,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project work items  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        /// Get project work items   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1705,11 +2083,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request
@@ -1725,7 +2103,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project work items  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        /// Get project work items   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1747,7 +2125,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project work items  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project  [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted  If User did not set isDeleted field value, System search all  workitems related to project  System returns array of found workitems (listed in response model)
+        /// Get project work items   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted workitems related to project    [Optional] If User sets isDeleted field value as false, System search all workitems related to project which are not deleted    If User did not set isDeleted field value, System search all  workitems related to project    System returns array of found workitems (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1825,11 +2203,11 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Cookies) required
             // cookie parameter support
-            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
             {
-                localVarRequestOptions.Cookies.Add(new Cookie("backoffice", this.Configuration.GetApiKeyWithPrefix("backoffice")));
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
             }
 
             // make the HTTP request

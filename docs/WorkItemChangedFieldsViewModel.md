@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **GlobalId** | [**Int64ChangedFieldViewModel**](Int64ChangedFieldViewModel.md) |  | 
 **VersionNumber** | [**Int32ChangedFieldViewModel**](Int32ChangedFieldViewModel.md) |  | 
 **EntityTypeName** | [**StringChangedFieldViewModel**](StringChangedFieldViewModel.md) |  | 
+**ParentId** | [**GuidNullableChangedFieldViewModel**](GuidNullableChangedFieldViewModel.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
