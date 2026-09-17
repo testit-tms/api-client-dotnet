@@ -32,8 +32,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
-        /// <returns>ExternalIssueApiFieldSuggestionReply</returns>
-        ExternalIssueApiFieldSuggestionReply ApiV2ExternalIssuesSuggestionsPost(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default);
+        /// <returns>ExternalIssueApiFieldSuggestionIReply</returns>
+        ExternalIssueApiFieldSuggestionIReply ApiV2ExternalIssuesSuggestionsPost(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default);
 
         /// <summary>
         /// Returns list of suggestions from available external issues
@@ -43,8 +43,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
-        /// <returns>ApiResponse of ExternalIssueApiFieldSuggestionReply</returns>
-        ApiResponse<ExternalIssueApiFieldSuggestionReply> ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default);
+        /// <returns>ApiResponse of ExternalIssueApiFieldSuggestionIReply</returns>
+        ApiResponse<ExternalIssueApiFieldSuggestionIReply> ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default);
         #endregion Synchronous Operations
     }
 
@@ -63,8 +63,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ExternalIssueApiFieldSuggestionReply</returns>
-        System.Threading.Tasks.Task<ExternalIssueApiFieldSuggestionReply> ApiV2ExternalIssuesSuggestionsPostAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ExternalIssueApiFieldSuggestionIReply</returns>
+        System.Threading.Tasks.Task<ExternalIssueApiFieldSuggestionIReply> ApiV2ExternalIssuesSuggestionsPostAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Returns list of suggestions from available external issues
@@ -75,8 +75,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ExternalIssueApiFieldSuggestionReply)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ExternalIssueApiFieldSuggestionReply>> ApiV2ExternalIssuesSuggestionsPostWithHttpInfoAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (ExternalIssueApiFieldSuggestionIReply)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ExternalIssueApiFieldSuggestionIReply>> ApiV2ExternalIssuesSuggestionsPostWithHttpInfoAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -295,10 +295,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
-        /// <returns>ExternalIssueApiFieldSuggestionReply</returns>
-        public ExternalIssueApiFieldSuggestionReply ApiV2ExternalIssuesSuggestionsPost(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default)
+        /// <returns>ExternalIssueApiFieldSuggestionIReply</returns>
+        public ExternalIssueApiFieldSuggestionIReply ApiV2ExternalIssuesSuggestionsPost(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionReply> localVarResponse = ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(getExternalIssueSuggestionsApiModel);
+            TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionIReply> localVarResponse = ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(getExternalIssueSuggestionsApiModel);
             return localVarResponse.Data;
         }
 
@@ -307,8 +307,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
-        /// <returns>ApiResponse of ExternalIssueApiFieldSuggestionReply</returns>
-        public TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionReply> ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default)
+        /// <returns>ApiResponse of ExternalIssueApiFieldSuggestionIReply</returns>
+        public TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionIReply> ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -334,7 +334,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -342,7 +342,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<ExternalIssueApiFieldSuggestionReply>("/api/v2/external-issues/suggestions", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<ExternalIssueApiFieldSuggestionIReply>("/api/v2/external-issues/suggestions", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -359,10 +359,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ExternalIssueApiFieldSuggestionReply</returns>
-        public async System.Threading.Tasks.Task<ExternalIssueApiFieldSuggestionReply> ApiV2ExternalIssuesSuggestionsPostAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ExternalIssueApiFieldSuggestionIReply</returns>
+        public async System.Threading.Tasks.Task<ExternalIssueApiFieldSuggestionIReply> ApiV2ExternalIssuesSuggestionsPostAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionReply> localVarResponse = await ApiV2ExternalIssuesSuggestionsPostWithHttpInfoAsync(getExternalIssueSuggestionsApiModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionIReply> localVarResponse = await ApiV2ExternalIssuesSuggestionsPostWithHttpInfoAsync(getExternalIssueSuggestionsApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -372,8 +372,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="getExternalIssueSuggestionsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ExternalIssueApiFieldSuggestionReply)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionReply>> ApiV2ExternalIssuesSuggestionsPostWithHttpInfoAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (ExternalIssueApiFieldSuggestionIReply)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<ExternalIssueApiFieldSuggestionIReply>> ApiV2ExternalIssuesSuggestionsPostWithHttpInfoAsync(GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -401,7 +401,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -410,7 +410,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<ExternalIssueApiFieldSuggestionReply>("/api/v2/external-issues/suggestions", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<ExternalIssueApiFieldSuggestionIReply>("/api/v2/external-issues/suggestions", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

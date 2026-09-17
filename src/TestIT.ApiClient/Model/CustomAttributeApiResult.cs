@@ -54,8 +54,11 @@ namespace TestIT.ApiClient.Model
         /// <param name="name">Name of the attribute (required).</param>
         /// <param name="isEnabled">Indicates if the attribute is enabled (required).</param>
         /// <param name="isRequired">Indicates if the attribute value is mandatory to specify (required).</param>
+        /// <param name="isReadOnly">Indicates if the attribute value is read-only (required).</param>
         /// <param name="isGlobal">Indicates if the attribute is available across all projects (required).</param>
-        public CustomAttributeApiResult(Guid id = default, List<CustomAttributeOptionApiResult> options = default, CustomAttributeType type = default, bool isDeleted = default, string name = default, bool isEnabled = default, bool isRequired = default, bool isGlobal = default)
+        /// <param name="isSystem">Indicates if the attribute is system (required).</param>
+        /// <param name="targets">Collection of the attribute targets   Defines where the attribute can be used (e.g., TestCases, AutoTestCases, TestPlans) (required).</param>
+        public CustomAttributeApiResult(Guid id = default, List<CustomAttributeOptionApiResult> options = default, CustomAttributeType type = default, bool isDeleted = default, string name = default, bool isEnabled = default, bool isRequired = default, bool isReadOnly = default, bool isGlobal = default, bool isSystem = default, List<string> targets = default)
         {
             this.Id = id;
             // to ensure "options" is required (not null)
@@ -74,7 +77,15 @@ namespace TestIT.ApiClient.Model
             this.Name = name;
             this.IsEnabled = isEnabled;
             this.IsRequired = isRequired;
+            this.IsReadOnly = isReadOnly;
             this.IsGlobal = isGlobal;
+            this.IsSystem = isSystem;
+            // to ensure "targets" is required (not null)
+            if (targets == null)
+            {
+                throw new ArgumentNullException("targets is a required property for CustomAttributeApiResult and cannot be null");
+            }
+            this.Targets = targets;
         }
 
         /// <summary>
@@ -120,11 +131,32 @@ namespace TestIT.ApiClient.Model
         public bool IsRequired { get; set; }
 
         /// <summary>
+        /// Indicates if the attribute value is read-only
+        /// </summary>
+        /// <value>Indicates if the attribute value is read-only</value>
+        [DataMember(Name = "isReadOnly", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsReadOnly { get; set; }
+
+        /// <summary>
         /// Indicates if the attribute is available across all projects
         /// </summary>
         /// <value>Indicates if the attribute is available across all projects</value>
         [DataMember(Name = "isGlobal", IsRequired = true, EmitDefaultValue = true)]
         public bool IsGlobal { get; set; }
+
+        /// <summary>
+        /// Indicates if the attribute is system
+        /// </summary>
+        /// <value>Indicates if the attribute is system</value>
+        [DataMember(Name = "isSystem", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsSystem { get; set; }
+
+        /// <summary>
+        /// Collection of the attribute targets   Defines where the attribute can be used (e.g., TestCases, AutoTestCases, TestPlans)
+        /// </summary>
+        /// <value>Collection of the attribute targets   Defines where the attribute can be used (e.g., TestCases, AutoTestCases, TestPlans)</value>
+        [DataMember(Name = "targets", IsRequired = true, EmitDefaultValue = true)]
+        public List<string> Targets { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -141,7 +173,10 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsEnabled: ").Append(IsEnabled).Append("\n");
             sb.Append("  IsRequired: ").Append(IsRequired).Append("\n");
+            sb.Append("  IsReadOnly: ").Append(IsReadOnly).Append("\n");
             sb.Append("  IsGlobal: ").Append(IsGlobal).Append("\n");
+            sb.Append("  IsSystem: ").Append(IsSystem).Append("\n");
+            sb.Append("  Targets: ").Append(Targets).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

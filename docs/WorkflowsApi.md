@@ -40,7 +40,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -94,7 +94,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 
@@ -142,7 +142,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -200,7 +200,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 
@@ -250,7 +250,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -306,7 +306,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 
@@ -329,7 +329,7 @@ void (empty response body)
 
 <a id="apiv2workflowsidprojectssearchpost"></a>
 # **ApiV2WorkflowsIdProjectsSearchPost**
-> WorkflowProjectApiResultReply ApiV2WorkflowsIdProjectsSearchPost (Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = null)
+> WorkflowProjectApiResultIReply ApiV2WorkflowsIdProjectsSearchPost (Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = null)
 
 
 
@@ -354,7 +354,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -368,7 +368,7 @@ namespace Example
 
             try
             {
-                WorkflowProjectApiResultReply result = apiInstance.ApiV2WorkflowsIdProjectsSearchPost(id, searchWorkflowProjectsApiModel);
+                WorkflowProjectApiResultIReply result = apiInstance.ApiV2WorkflowsIdProjectsSearchPost(id, searchWorkflowProjectsApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -388,7 +388,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<WorkflowProjectApiResultReply> response = apiInstance.ApiV2WorkflowsIdProjectsSearchPostWithHttpInfo(id, searchWorkflowProjectsApiModel);
+    ApiResponse<WorkflowProjectApiResultIReply> response = apiInstance.ApiV2WorkflowsIdProjectsSearchPostWithHttpInfo(id, searchWorkflowProjectsApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -410,11 +410,11 @@ catch (ApiException e)
 
 ### Return type
 
-[**WorkflowProjectApiResultReply**](WorkflowProjectApiResultReply.md)
+[**WorkflowProjectApiResultIReply**](WorkflowProjectApiResultIReply.md)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 
@@ -462,7 +462,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -518,7 +518,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 
@@ -566,7 +566,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -624,7 +624,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 
@@ -672,7 +672,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -730,7 +730,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 
@@ -753,7 +753,7 @@ catch (ApiException e)
 
 <a id="apiv2workflowssearchpost"></a>
 # **ApiV2WorkflowsSearchPost**
-> WorkflowShortApiResultReply ApiV2WorkflowsSearchPost (SearchWorkflowsApiModel searchWorkflowsApiModel = null)
+> WorkflowShortApiResultIReply ApiV2WorkflowsSearchPost (SearchWorkflowsApiModel searchWorkflowsApiModel = null)
 
 
 
@@ -778,7 +778,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -791,7 +791,7 @@ namespace Example
 
             try
             {
-                WorkflowShortApiResultReply result = apiInstance.ApiV2WorkflowsSearchPost(searchWorkflowsApiModel);
+                WorkflowShortApiResultIReply result = apiInstance.ApiV2WorkflowsSearchPost(searchWorkflowsApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -811,7 +811,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    ApiResponse<WorkflowShortApiResultReply> response = apiInstance.ApiV2WorkflowsSearchPostWithHttpInfo(searchWorkflowsApiModel);
+    ApiResponse<WorkflowShortApiResultIReply> response = apiInstance.ApiV2WorkflowsSearchPostWithHttpInfo(searchWorkflowsApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -832,11 +832,11 @@ catch (ApiException e)
 
 ### Return type
 
-[**WorkflowShortApiResultReply**](WorkflowShortApiResultReply.md)
+[**WorkflowShortApiResultIReply**](WorkflowShortApiResultIReply.md)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 

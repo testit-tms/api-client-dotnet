@@ -46,7 +46,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdDate">Specifies a project range of creation date to search for.</param>
         /// <param name="createdByIds">Specifies an autotest creator IDs to search for.</param>
         /// <param name="types">Collection of project types to search for.</param>
-        public ProjectsFilterModel(string name = default, bool? isFavorite = default, bool? isDeleted = default, Int32RangeSelectorModel testCasesCount = default, Int32RangeSelectorModel checklistsCount = default, Int32RangeSelectorModel sharedStepsCount = default, Int32RangeSelectorModel autotestsCount = default, List<long> globalIds = default, DateTimeRangeSelectorModel createdDate = default, List<Guid> createdByIds = default, List<ProjectTypeModel> types = default)
+        public ProjectsFilterModel(string name = default, bool? isFavorite = default, bool? isDeleted = default, Int64RangeSelectorModel testCasesCount = default, Int64RangeSelectorModel checklistsCount = default, Int64RangeSelectorModel sharedStepsCount = default, Int64RangeSelectorModel autotestsCount = default, List<long> globalIds = default, DateTimeRangeSelectorModel createdDate = default, List<Guid> createdByIds = default, List<ProjectTypeModel> types = default)
         {
             this.Name = name;
             this.IsFavorite = isFavorite;
@@ -87,28 +87,28 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Specifies a project range of test cases count to search for</value>
         [DataMember(Name = "testCasesCount", EmitDefaultValue = true)]
-        public Int32RangeSelectorModel TestCasesCount { get; set; }
+        public Int64RangeSelectorModel TestCasesCount { get; set; }
 
         /// <summary>
         /// Specifies a project range of checklists count to search for
         /// </summary>
         /// <value>Specifies a project range of checklists count to search for</value>
         [DataMember(Name = "checklistsCount", EmitDefaultValue = true)]
-        public Int32RangeSelectorModel ChecklistsCount { get; set; }
+        public Int64RangeSelectorModel ChecklistsCount { get; set; }
 
         /// <summary>
         /// Specifies a project range of shared steps count to search for
         /// </summary>
         /// <value>Specifies a project range of shared steps count to search for</value>
         [DataMember(Name = "sharedStepsCount", EmitDefaultValue = true)]
-        public Int32RangeSelectorModel SharedStepsCount { get; set; }
+        public Int64RangeSelectorModel SharedStepsCount { get; set; }
 
         /// <summary>
         /// Specifies a project range of autotests count to search for
         /// </summary>
         /// <value>Specifies a project range of autotests count to search for</value>
         [DataMember(Name = "autotestsCount", EmitDefaultValue = true)]
-        public Int32RangeSelectorModel AutotestsCount { get; set; }
+        public Int64RangeSelectorModel AutotestsCount { get; set; }
 
         /// <summary>
         /// Specifies a project global IDs to search for

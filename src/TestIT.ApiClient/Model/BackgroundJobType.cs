@@ -144,7 +144,13 @@ namespace TestIT.ApiClient.Model
         /// Enum DeleteSection for value: DeleteSection
         /// </summary>
         [EnumMember(Value = "DeleteSection")]
-        DeleteSection = 19
+        DeleteSection = 19,
+
+        /// <summary>
+        /// Enum ImportAutoTestsReport for value: ImportAutoTestsReport
+        /// </summary>
+        [EnumMember(Value = "ImportAutoTestsReport")]
+        ImportAutoTestsReport = 20
     }
 
 }

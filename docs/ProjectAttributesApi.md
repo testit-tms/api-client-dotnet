@@ -40,7 +40,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -102,7 +102,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 
@@ -152,7 +152,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -210,7 +210,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 
@@ -260,7 +260,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -322,7 +322,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 
@@ -372,7 +372,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -434,7 +434,7 @@ catch (ApiException e)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 
@@ -457,7 +457,7 @@ catch (ApiException e)
 
 <a id="searchattributesinproject"></a>
 # **SearchAttributesInProject**
-> List&lt;CustomAttributeGetModel&gt; SearchAttributesInProject (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectAttributesFilterModel projectAttributesFilterModel = null)
+> List&lt;CustomAttributeModel&gt; SearchAttributesInProject (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectAttributesFilterModel projectAttributesFilterModel = null)
 
 Search for attributes used in the project
 
@@ -482,7 +482,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -502,7 +502,7 @@ namespace Example
             try
             {
                 // Search for attributes used in the project
-                List<CustomAttributeGetModel> result = apiInstance.SearchAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+                List<CustomAttributeModel> result = apiInstance.SearchAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -523,7 +523,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for attributes used in the project
-    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+    ApiResponse<List<CustomAttributeModel>> response = apiInstance.SearchAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -550,11 +550,11 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;CustomAttributeGetModel&gt;**](CustomAttributeGetModel.md)
+[**List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 
@@ -602,7 +602,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -660,7 +660,7 @@ void (empty response body)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 

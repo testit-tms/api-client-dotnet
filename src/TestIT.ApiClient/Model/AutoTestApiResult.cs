@@ -67,10 +67,11 @@ namespace TestIT.ApiClient.Model
         /// <param name="lastTestResultOutcome">lastTestResultOutcome.</param>
         /// <param name="lastTestResultStatus">lastTestResultStatus.</param>
         /// <param name="stabilityPercentage">stabilityPercentage.</param>
+        /// <param name="layer">Model of auto test layer for use in responses..</param>
         /// <param name="links">links.</param>
         /// <param name="labels">labels.</param>
         /// <param name="tags">tags.</param>
-        public AutoTestApiResult(Guid id = default, Guid projectId = default, string externalId = default, string name = default, string varNamespace = default, string classname = default, List<AutoTestStepApiResult> steps = default, List<AutoTestStepApiResult> setup = default, List<AutoTestStepApiResult> teardown = default, string title = default, string description = default, bool isFlaky = default, string externalKey = default, long globalId = default, bool isDeleted = default, bool mustBeApproved = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, Guid? lastTestRunId = default, string lastTestRunName = default, Guid? lastTestResultId = default, ConfigurationShortApiResult lastTestResultConfiguration = default, string lastTestResultOutcome = default, TestStatusApiResult lastTestResultStatus = default, long? stabilityPercentage = default, List<LinkApiResult> links = default, List<LabelApiResult> labels = default, List<string> tags = default)
+        public AutoTestApiResult(Guid id = default, Guid projectId = default, string externalId = default, string name = default, string varNamespace = default, string classname = default, List<AutoTestStepApiResult> steps = default, List<AutoTestStepApiResult> setup = default, List<AutoTestStepApiResult> teardown = default, string title = default, string description = default, bool isFlaky = default, string externalKey = default, long globalId = default, bool isDeleted = default, bool mustBeApproved = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, Guid? lastTestRunId = default, string lastTestRunName = default, Guid? lastTestResultId = default, ConfigurationShortApiResult lastTestResultConfiguration = default, string lastTestResultOutcome = default, TestStatusApiResult lastTestResultStatus = default, long? stabilityPercentage = default, LayerApiResult layer = default, List<LinkApiResult> links = default, List<LabelApiResult> labels = default, List<string> tags = default)
         {
             this.Id = id;
             this.ProjectId = projectId;
@@ -104,6 +105,7 @@ namespace TestIT.ApiClient.Model
             this.LastTestResultOutcome = lastTestResultOutcome;
             this.LastTestResultStatus = lastTestResultStatus;
             this.StabilityPercentage = stabilityPercentage;
+            this.Layer = layer;
             this.Links = links;
             this.Labels = labels;
             this.Tags = tags;
@@ -272,6 +274,13 @@ namespace TestIT.ApiClient.Model
         public long? StabilityPercentage { get; set; }
 
         /// <summary>
+        /// Model of auto test layer for use in responses.
+        /// </summary>
+        /// <value>Model of auto test layer for use in responses.</value>
+        [DataMember(Name = "layer", EmitDefaultValue = true)]
+        public LayerApiResult Layer { get; set; }
+
+        /// <summary>
         /// Gets or Sets Links
         /// </summary>
         [DataMember(Name = "links", EmitDefaultValue = true)]
@@ -324,6 +333,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  LastTestResultOutcome: ").Append(LastTestResultOutcome).Append("\n");
             sb.Append("  LastTestResultStatus: ").Append(LastTestResultStatus).Append("\n");
             sb.Append("  StabilityPercentage: ").Append(StabilityPercentage).Append("\n");
+            sb.Append("  Layer: ").Append(Layer).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");

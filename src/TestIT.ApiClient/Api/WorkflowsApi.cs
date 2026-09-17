@@ -92,8 +92,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="searchWorkflowProjectsApiModel"> (optional)</param>
-        /// <returns>WorkflowProjectApiResultReply</returns>
-        WorkflowProjectApiResultReply ApiV2WorkflowsIdProjectsSearchPost(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default);
+        /// <returns>WorkflowProjectApiResultIReply</returns>
+        WorkflowProjectApiResultIReply ApiV2WorkflowsIdProjectsSearchPost(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default);
 
         /// <summary>
         /// 
@@ -104,8 +104,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="searchWorkflowProjectsApiModel"> (optional)</param>
-        /// <returns>ApiResponse of WorkflowProjectApiResultReply</returns>
-        ApiResponse<WorkflowProjectApiResultReply> ApiV2WorkflowsIdProjectsSearchPostWithHttpInfo(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default);
+        /// <returns>ApiResponse of WorkflowProjectApiResultIReply</returns>
+        ApiResponse<WorkflowProjectApiResultIReply> ApiV2WorkflowsIdProjectsSearchPostWithHttpInfo(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default);
         /// <summary>
         /// 
         /// </summary>
@@ -167,8 +167,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchWorkflowsApiModel"> (optional)</param>
-        /// <returns>WorkflowShortApiResultReply</returns>
-        WorkflowShortApiResultReply ApiV2WorkflowsSearchPost(SearchWorkflowsApiModel searchWorkflowsApiModel = default);
+        /// <returns>WorkflowShortApiResultIReply</returns>
+        WorkflowShortApiResultIReply ApiV2WorkflowsSearchPost(SearchWorkflowsApiModel searchWorkflowsApiModel = default);
 
         /// <summary>
         /// 
@@ -178,8 +178,8 @@ namespace TestIT.ApiClient.Api
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchWorkflowsApiModel"> (optional)</param>
-        /// <returns>ApiResponse of WorkflowShortApiResultReply</returns>
-        ApiResponse<WorkflowShortApiResultReply> ApiV2WorkflowsSearchPostWithHttpInfo(SearchWorkflowsApiModel searchWorkflowsApiModel = default);
+        /// <returns>ApiResponse of WorkflowShortApiResultIReply</returns>
+        ApiResponse<WorkflowShortApiResultIReply> ApiV2WorkflowsSearchPostWithHttpInfo(SearchWorkflowsApiModel searchWorkflowsApiModel = default);
         #endregion Synchronous Operations
     }
 
@@ -270,8 +270,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="searchWorkflowProjectsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowProjectApiResultReply</returns>
-        System.Threading.Tasks.Task<WorkflowProjectApiResultReply> ApiV2WorkflowsIdProjectsSearchPostAsync(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of WorkflowProjectApiResultIReply</returns>
+        System.Threading.Tasks.Task<WorkflowProjectApiResultIReply> ApiV2WorkflowsIdProjectsSearchPostAsync(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -283,8 +283,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="searchWorkflowProjectsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowProjectApiResultReply)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkflowProjectApiResultReply>> ApiV2WorkflowsIdProjectsSearchPostWithHttpInfoAsync(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (WorkflowProjectApiResultIReply)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WorkflowProjectApiResultIReply>> ApiV2WorkflowsIdProjectsSearchPostWithHttpInfoAsync(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// 
         /// </summary>
@@ -365,8 +365,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchWorkflowsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowShortApiResultReply</returns>
-        System.Threading.Tasks.Task<WorkflowShortApiResultReply> ApiV2WorkflowsSearchPostAsync(SearchWorkflowsApiModel searchWorkflowsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of WorkflowShortApiResultIReply</returns>
+        System.Threading.Tasks.Task<WorkflowShortApiResultIReply> ApiV2WorkflowsSearchPostAsync(SearchWorkflowsApiModel searchWorkflowsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// 
@@ -377,8 +377,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchWorkflowsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowShortApiResultReply)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorkflowShortApiResultReply>> ApiV2WorkflowsSearchPostWithHttpInfoAsync(SearchWorkflowsApiModel searchWorkflowsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (WorkflowShortApiResultIReply)</returns>
+        System.Threading.Tasks.Task<ApiResponse<WorkflowShortApiResultIReply>> ApiV2WorkflowsSearchPostWithHttpInfoAsync(SearchWorkflowsApiModel searchWorkflowsApiModel = default, System.Threading.CancellationToken cancellationToken = default);
         #endregion Asynchronous Operations
     }
 
@@ -634,7 +634,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -699,7 +699,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -762,7 +762,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -828,7 +828,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -894,7 +894,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -963,7 +963,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -989,10 +989,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="searchWorkflowProjectsApiModel"> (optional)</param>
-        /// <returns>WorkflowProjectApiResultReply</returns>
-        public WorkflowProjectApiResultReply ApiV2WorkflowsIdProjectsSearchPost(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default)
+        /// <returns>WorkflowProjectApiResultIReply</returns>
+        public WorkflowProjectApiResultIReply ApiV2WorkflowsIdProjectsSearchPost(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<WorkflowProjectApiResultReply> localVarResponse = ApiV2WorkflowsIdProjectsSearchPostWithHttpInfo(id, searchWorkflowProjectsApiModel);
+            TestIT.ApiClient.Client.ApiResponse<WorkflowProjectApiResultIReply> localVarResponse = ApiV2WorkflowsIdProjectsSearchPostWithHttpInfo(id, searchWorkflowProjectsApiModel);
             return localVarResponse.Data;
         }
 
@@ -1002,8 +1002,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
         /// <param name="searchWorkflowProjectsApiModel"> (optional)</param>
-        /// <returns>ApiResponse of WorkflowProjectApiResultReply</returns>
-        public TestIT.ApiClient.Client.ApiResponse<WorkflowProjectApiResultReply> ApiV2WorkflowsIdProjectsSearchPostWithHttpInfo(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default)
+        /// <returns>ApiResponse of WorkflowProjectApiResultIReply</returns>
+        public TestIT.ApiClient.Client.ApiResponse<WorkflowProjectApiResultIReply> ApiV2WorkflowsIdProjectsSearchPostWithHttpInfo(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1030,7 +1030,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1038,7 +1038,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<WorkflowProjectApiResultReply>("/api/v2/workflows/{id}/projects/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<WorkflowProjectApiResultIReply>("/api/v2/workflows/{id}/projects/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1056,10 +1056,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="searchWorkflowProjectsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowProjectApiResultReply</returns>
-        public async System.Threading.Tasks.Task<WorkflowProjectApiResultReply> ApiV2WorkflowsIdProjectsSearchPostAsync(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of WorkflowProjectApiResultIReply</returns>
+        public async System.Threading.Tasks.Task<WorkflowProjectApiResultIReply> ApiV2WorkflowsIdProjectsSearchPostAsync(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<WorkflowProjectApiResultReply> localVarResponse = await ApiV2WorkflowsIdProjectsSearchPostWithHttpInfoAsync(id, searchWorkflowProjectsApiModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<WorkflowProjectApiResultIReply> localVarResponse = await ApiV2WorkflowsIdProjectsSearchPostWithHttpInfoAsync(id, searchWorkflowProjectsApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1070,8 +1070,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="id"></param>
         /// <param name="searchWorkflowProjectsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowProjectApiResultReply)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkflowProjectApiResultReply>> ApiV2WorkflowsIdProjectsSearchPostWithHttpInfoAsync(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (WorkflowProjectApiResultIReply)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkflowProjectApiResultIReply>> ApiV2WorkflowsIdProjectsSearchPostWithHttpInfoAsync(Guid id, SearchWorkflowProjectsApiModel searchWorkflowProjectsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1100,7 +1100,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1109,7 +1109,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<WorkflowProjectApiResultReply>("/api/v2/workflows/{id}/projects/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WorkflowProjectApiResultIReply>("/api/v2/workflows/{id}/projects/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1166,7 +1166,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1235,7 +1235,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1302,7 +1302,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1372,7 +1372,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1436,7 +1436,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1503,7 +1503,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1528,10 +1528,10 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchWorkflowsApiModel"> (optional)</param>
-        /// <returns>WorkflowShortApiResultReply</returns>
-        public WorkflowShortApiResultReply ApiV2WorkflowsSearchPost(SearchWorkflowsApiModel searchWorkflowsApiModel = default)
+        /// <returns>WorkflowShortApiResultIReply</returns>
+        public WorkflowShortApiResultIReply ApiV2WorkflowsSearchPost(SearchWorkflowsApiModel searchWorkflowsApiModel = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<WorkflowShortApiResultReply> localVarResponse = ApiV2WorkflowsSearchPostWithHttpInfo(searchWorkflowsApiModel);
+            TestIT.ApiClient.Client.ApiResponse<WorkflowShortApiResultIReply> localVarResponse = ApiV2WorkflowsSearchPostWithHttpInfo(searchWorkflowsApiModel);
             return localVarResponse.Data;
         }
 
@@ -1540,8 +1540,8 @@ namespace TestIT.ApiClient.Api
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchWorkflowsApiModel"> (optional)</param>
-        /// <returns>ApiResponse of WorkflowShortApiResultReply</returns>
-        public TestIT.ApiClient.Client.ApiResponse<WorkflowShortApiResultReply> ApiV2WorkflowsSearchPostWithHttpInfo(SearchWorkflowsApiModel searchWorkflowsApiModel = default)
+        /// <returns>ApiResponse of WorkflowShortApiResultIReply</returns>
+        public TestIT.ApiClient.Client.ApiResponse<WorkflowShortApiResultIReply> ApiV2WorkflowsSearchPostWithHttpInfo(SearchWorkflowsApiModel searchWorkflowsApiModel = default)
         {
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
 
@@ -1567,7 +1567,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1575,7 +1575,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<WorkflowShortApiResultReply>("/api/v2/workflows/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<WorkflowShortApiResultIReply>("/api/v2/workflows/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1592,10 +1592,10 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchWorkflowsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of WorkflowShortApiResultReply</returns>
-        public async System.Threading.Tasks.Task<WorkflowShortApiResultReply> ApiV2WorkflowsSearchPostAsync(SearchWorkflowsApiModel searchWorkflowsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of WorkflowShortApiResultIReply</returns>
+        public async System.Threading.Tasks.Task<WorkflowShortApiResultIReply> ApiV2WorkflowsSearchPostAsync(SearchWorkflowsApiModel searchWorkflowsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<WorkflowShortApiResultReply> localVarResponse = await ApiV2WorkflowsSearchPostWithHttpInfoAsync(searchWorkflowsApiModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<WorkflowShortApiResultIReply> localVarResponse = await ApiV2WorkflowsSearchPostWithHttpInfoAsync(searchWorkflowsApiModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1605,8 +1605,8 @@ namespace TestIT.ApiClient.Api
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="searchWorkflowsApiModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (WorkflowShortApiResultReply)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkflowShortApiResultReply>> ApiV2WorkflowsSearchPostWithHttpInfoAsync(SearchWorkflowsApiModel searchWorkflowsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (WorkflowShortApiResultIReply)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<WorkflowShortApiResultIReply>> ApiV2WorkflowsSearchPostWithHttpInfoAsync(SearchWorkflowsApiModel searchWorkflowsApiModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
 
             TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
@@ -1634,7 +1634,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1643,7 +1643,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<WorkflowShortApiResultReply>("/api/v2/workflows/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<WorkflowShortApiResultIReply>("/api/v2/workflows/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

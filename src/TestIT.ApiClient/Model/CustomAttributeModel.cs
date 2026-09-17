@@ -34,9 +34,9 @@ namespace TestIT.ApiClient.Model
     {
 
         /// <summary>
-        /// Type of the attribute
+        /// Type of the attribute.
         /// </summary>
-        /// <value>Type of the attribute</value>
+        /// <value>Type of the attribute.</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public CustomAttributeTypesEnum Type { get; set; }
         /// <summary>
@@ -47,25 +47,37 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomAttributeModel" /> class.
         /// </summary>
-        /// <param name="id">Unique ID of the attribute (required).</param>
-        /// <param name="options">Collection of the attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only (required).</param>
-        /// <param name="type">Type of the attribute (required).</param>
-        /// <param name="isDeleted">Indicates if the attribute is deleted (required).</param>
+        /// <param name="id">Unique ID of the attribute. (required).</param>
+        /// <param name="code">Optional code identifier for the attribute..</param>
+        /// <param name="type">Type of the attribute. (required).</param>
+        /// <param name="options">Collection of the attribute options. (required).</param>
+        /// <param name="targets">Collection of the attribute targets.   Defines where the attribute can be used (e.g., TestCases, AutoTestCases, TestPlans). (required).</param>
+        /// <param name="isReadOnly">Indicates if the attribute is read-only. (required).</param>
+        /// <param name="isDeleted">Indicates if the attribute is deleted. (required).</param>
+        /// <param name="isSystem">Indicates if the attribute is system. (required).</param>
         /// <param name="name">Name of the attribute (required).</param>
         /// <param name="isEnabled">Indicates if the attribute is enabled (required).</param>
         /// <param name="isRequired">Indicates if the attribute value is mandatory to specify (required).</param>
         /// <param name="isGlobal">Indicates if the attribute is available across all projects (required).</param>
-        public CustomAttributeModel(Guid id = default, List<CustomAttributeOptionModel> options = default, CustomAttributeTypesEnum type = default, bool isDeleted = default, string name = default, bool isEnabled = default, bool isRequired = default, bool isGlobal = default)
+        public CustomAttributeModel(Guid id = default, string code = default, CustomAttributeTypesEnum type = default, List<CustomAttributeOptionModel> options = default, List<string> targets = default, bool isReadOnly = default, bool isDeleted = default, bool isSystem = default, string name = default, bool isEnabled = default, bool isRequired = default, bool isGlobal = default)
         {
             this.Id = id;
+            this.Type = type;
             // to ensure "options" is required (not null)
             if (options == null)
             {
                 throw new ArgumentNullException("options is a required property for CustomAttributeModel and cannot be null");
             }
             this.Options = options;
-            this.Type = type;
+            // to ensure "targets" is required (not null)
+            if (targets == null)
+            {
+                throw new ArgumentNullException("targets is a required property for CustomAttributeModel and cannot be null");
+            }
+            this.Targets = targets;
+            this.IsReadOnly = isReadOnly;
             this.IsDeleted = isDeleted;
+            this.IsSystem = isSystem;
             // to ensure "name" is required (not null)
             if (name == null)
             {
@@ -75,28 +87,57 @@ namespace TestIT.ApiClient.Model
             this.IsEnabled = isEnabled;
             this.IsRequired = isRequired;
             this.IsGlobal = isGlobal;
+            this.Code = code;
         }
 
         /// <summary>
-        /// Unique ID of the attribute
+        /// Unique ID of the attribute.
         /// </summary>
-        /// <value>Unique ID of the attribute</value>
+        /// <value>Unique ID of the attribute.</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Collection of the attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only
+        /// Optional code identifier for the attribute.
         /// </summary>
-        /// <value>Collection of the attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only</value>
+        /// <value>Optional code identifier for the attribute.</value>
+        [DataMember(Name = "code", EmitDefaultValue = true)]
+        public string Code { get; set; }
+
+        /// <summary>
+        /// Collection of the attribute options.
+        /// </summary>
+        /// <value>Collection of the attribute options.</value>
         [DataMember(Name = "options", IsRequired = true, EmitDefaultValue = true)]
         public List<CustomAttributeOptionModel> Options { get; set; }
 
         /// <summary>
-        /// Indicates if the attribute is deleted
+        /// Collection of the attribute targets.   Defines where the attribute can be used (e.g., TestCases, AutoTestCases, TestPlans).
         /// </summary>
-        /// <value>Indicates if the attribute is deleted</value>
+        /// <value>Collection of the attribute targets.   Defines where the attribute can be used (e.g., TestCases, AutoTestCases, TestPlans).</value>
+        [DataMember(Name = "targets", IsRequired = true, EmitDefaultValue = true)]
+        public List<string> Targets { get; set; }
+
+        /// <summary>
+        /// Indicates if the attribute is read-only.
+        /// </summary>
+        /// <value>Indicates if the attribute is read-only.</value>
+        [DataMember(Name = "isReadOnly", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsReadOnly { get; set; }
+
+        /// <summary>
+        /// Indicates if the attribute is deleted.
+        /// </summary>
+        /// <value>Indicates if the attribute is deleted.</value>
         [DataMember(Name = "isDeleted", IsRequired = true, EmitDefaultValue = true)]
         public bool IsDeleted { get; set; }
+
+        /// <summary>
+        /// Indicates if the attribute is system.
+        /// </summary>
+        /// <value>Indicates if the attribute is system.</value>
+        [DataMember(Name = "isSystem", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsSystem { get; set; }
 
         /// <summary>
         /// Name of the attribute
@@ -135,9 +176,13 @@ namespace TestIT.ApiClient.Model
             StringBuilder sb = new StringBuilder();
             sb.Append("class CustomAttributeModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Options: ").Append(Options).Append("\n");
+            sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  Options: ").Append(Options).Append("\n");
+            sb.Append("  Targets: ").Append(Targets).Append("\n");
+            sb.Append("  IsReadOnly: ").Append(IsReadOnly).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
+            sb.Append("  IsSystem: ").Append(IsSystem).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsEnabled: ").Append(IsEnabled).Append("\n");
             sb.Append("  IsRequired: ").Append(IsRequired).Append("\n");

@@ -34,22 +34,18 @@ namespace TestIT.ApiClient.Model
     {
 
         /// <summary>
-        /// Gets or Sets State
+        /// Current state of the work item
         /// </summary>
+        /// <value>Current state of the work item</value>
         [DataMember(Name = "state", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemStates State { get; set; }
+        public WorkItemStateApiModel State { get; set; }
 
         /// <summary>
-        /// Gets or Sets Priority
+        /// Priority level assigned to the work item
         /// </summary>
+        /// <value>Priority level assigned to the work item</value>
         [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
-        public WorkItemPriorityModel Priority { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SourceType
-        /// </summary>
-        [DataMember(Name = "sourceType", EmitDefaultValue = true)]
-        public WorkItemSourceTypeModel? SourceType { get; set; }
+        public WorkItemPriorityApiModel Priority { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateWorkItemApiModel" /> class.
         /// </summary>
@@ -58,187 +54,151 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateWorkItemApiModel" /> class.
         /// </summary>
-        /// <param name="id">Workitem internal identifier (required).</param>
-        /// <param name="sectionId">Internal identifier of section where workitem is located (required).</param>
-        /// <param name="description">Workitem description.</param>
-        /// <param name="state">state (required).</param>
-        /// <param name="priority">priority (required).</param>
-        /// <param name="sourceType">sourceType.</param>
-        /// <param name="steps">Collection of workitem steps (required).</param>
-        /// <param name="preconditionSteps">Collection of workitem precondtion steps (required).</param>
-        /// <param name="postconditionSteps">Collection of workitem postcondition steps (required).</param>
-        /// <param name="duration">Workitem duration in milliseconds (required).</param>
-        /// <param name="attributes">Key value pair of custom workitem attributes (required).</param>
-        /// <param name="tags">Collection of workitem tags (required).</param>
-        /// <param name="links">Collection of workitem links (required).</param>
-        /// <param name="name">Workitem name (required).</param>
-        /// <param name="attachments">attachments (required).</param>
-        /// <param name="iterations">Collection of parameter id sets.</param>
-        /// <param name="autoTests">Collection of autotest internal ids.</param>
-        /// <param name="parameters">Set of parameter keys related to the work item.</param>
-        public UpdateWorkItemApiModel(Guid id = default, Guid sectionId = default, string description = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel? sourceType = default, List<UpdateStepApiModel> steps = default, List<UpdateStepApiModel> preconditionSteps = default, List<UpdateStepApiModel> postconditionSteps = default, long duration = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<UpdateLinkApiModel> links = default, string name = default, List<AssignAttachmentApiModel> attachments = default, List<AssignIterationApiModel> iterations = default, List<AutoTestIdModel> autoTests = default, List<WorkItemParameterKeyApiModel> parameters = default)
+        /// <param name="id">Unique identifier of the work item (required).</param>
+        /// <param name="sectionId">Unique identifier of the section within a project (required).</param>
+        /// <param name="name">Name of the work item (required).</param>
+        /// <param name="description">Description of the work item.</param>
+        /// <param name="duration">Duration of the work item in milliseconds (required).</param>
+        /// <param name="state">Current state of the work item (required).</param>
+        /// <param name="priority">Priority level assigned to the work item (required).</param>
+        /// <param name="attributes">Set of custom attributes associated with the work item.</param>
+        /// <param name="tags">Set of tags applied to the work item.</param>
+        /// <param name="preconditionSteps">Set of precondition steps that must be executed before the main steps.</param>
+        /// <param name="steps">Set of main steps or actions defined for the work item.</param>
+        /// <param name="postconditionSteps">Set of postcondition steps that are executed after completing the main steps.</param>
+        /// <param name="iterations">Set of iterations associated with the work item.</param>
+        /// <param name="autoTests">Set of automated tests linked to the work item.</param>
+        /// <param name="attachments">Set of files attached to the work item.</param>
+        /// <param name="links">Set of links related to the work item.</param>
+        /// <param name="parameters">Set of parameter keys associated with the work item.</param>
+        public UpdateWorkItemApiModel(Guid id = default, Guid sectionId = default, string name = default, string description = default, long duration = default, WorkItemStateApiModel state = default, WorkItemPriorityApiModel priority = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<UpdateStepApiModel> preconditionSteps = default, List<UpdateStepApiModel> steps = default, List<UpdateStepApiModel> postconditionSteps = default, List<AssignIterationApiModel> iterations = default, List<AutoTestIdModel> autoTests = default, List<AssignAttachmentApiModel> attachments = default, List<UpdateLinkApiModel> links = default, List<WorkItemParameterKeyApiModel> parameters = default)
         {
             this.Id = id;
             this.SectionId = sectionId;
-            this.State = state;
-            this.Priority = priority;
-            // to ensure "steps" is required (not null)
-            if (steps == null)
-            {
-                throw new ArgumentNullException("steps is a required property for UpdateWorkItemApiModel and cannot be null");
-            }
-            this.Steps = steps;
-            // to ensure "preconditionSteps" is required (not null)
-            if (preconditionSteps == null)
-            {
-                throw new ArgumentNullException("preconditionSteps is a required property for UpdateWorkItemApiModel and cannot be null");
-            }
-            this.PreconditionSteps = preconditionSteps;
-            // to ensure "postconditionSteps" is required (not null)
-            if (postconditionSteps == null)
-            {
-                throw new ArgumentNullException("postconditionSteps is a required property for UpdateWorkItemApiModel and cannot be null");
-            }
-            this.PostconditionSteps = postconditionSteps;
-            this.Duration = duration;
-            // to ensure "attributes" is required (not null)
-            if (attributes == null)
-            {
-                throw new ArgumentNullException("attributes is a required property for UpdateWorkItemApiModel and cannot be null");
-            }
-            this.Attributes = attributes;
-            // to ensure "tags" is required (not null)
-            if (tags == null)
-            {
-                throw new ArgumentNullException("tags is a required property for UpdateWorkItemApiModel and cannot be null");
-            }
-            this.Tags = tags;
-            // to ensure "links" is required (not null)
-            if (links == null)
-            {
-                throw new ArgumentNullException("links is a required property for UpdateWorkItemApiModel and cannot be null");
-            }
-            this.Links = links;
             // to ensure "name" is required (not null)
             if (name == null)
             {
                 throw new ArgumentNullException("name is a required property for UpdateWorkItemApiModel and cannot be null");
             }
             this.Name = name;
-            // to ensure "attachments" is required (not null)
-            if (attachments == null)
-            {
-                throw new ArgumentNullException("attachments is a required property for UpdateWorkItemApiModel and cannot be null");
-            }
-            this.Attachments = attachments;
+            this.Duration = duration;
+            this.State = state;
+            this.Priority = priority;
             this.Description = description;
-            this.SourceType = sourceType;
+            this.Attributes = attributes;
+            this.Tags = tags;
+            this.PreconditionSteps = preconditionSteps;
+            this.Steps = steps;
+            this.PostconditionSteps = postconditionSteps;
             this.Iterations = iterations;
             this.AutoTests = autoTests;
+            this.Attachments = attachments;
+            this.Links = links;
             this.Parameters = parameters;
         }
 
         /// <summary>
-        /// Workitem internal identifier
+        /// Unique identifier of the work item
         /// </summary>
-        /// <value>Workitem internal identifier</value>
+        /// <value>Unique identifier of the work item</value>
         [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
         public Guid Id { get; set; }
 
         /// <summary>
-        /// Internal identifier of section where workitem is located
+        /// Unique identifier of the section within a project
         /// </summary>
-        /// <value>Internal identifier of section where workitem is located</value>
+        /// <value>Unique identifier of the section within a project</value>
         [DataMember(Name = "sectionId", IsRequired = true, EmitDefaultValue = true)]
         public Guid SectionId { get; set; }
 
         /// <summary>
-        /// Workitem description
+        /// Name of the work item
         /// </summary>
-        /// <value>Workitem description</value>
-        [DataMember(Name = "description", EmitDefaultValue = true)]
-        public string Description { get; set; }
-
-        /// <summary>
-        /// Collection of workitem steps
-        /// </summary>
-        /// <value>Collection of workitem steps</value>
-        [DataMember(Name = "steps", IsRequired = true, EmitDefaultValue = true)]
-        public List<UpdateStepApiModel> Steps { get; set; }
-
-        /// <summary>
-        /// Collection of workitem precondtion steps
-        /// </summary>
-        /// <value>Collection of workitem precondtion steps</value>
-        [DataMember(Name = "preconditionSteps", IsRequired = true, EmitDefaultValue = true)]
-        public List<UpdateStepApiModel> PreconditionSteps { get; set; }
-
-        /// <summary>
-        /// Collection of workitem postcondition steps
-        /// </summary>
-        /// <value>Collection of workitem postcondition steps</value>
-        [DataMember(Name = "postconditionSteps", IsRequired = true, EmitDefaultValue = true)]
-        public List<UpdateStepApiModel> PostconditionSteps { get; set; }
-
-        /// <summary>
-        /// Workitem duration in milliseconds
-        /// </summary>
-        /// <value>Workitem duration in milliseconds</value>
-        [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
-        public long Duration { get; set; }
-
-        /// <summary>
-        /// Key value pair of custom workitem attributes
-        /// </summary>
-        /// <value>Key value pair of custom workitem attributes</value>
-        [DataMember(Name = "attributes", IsRequired = true, EmitDefaultValue = true)]
-        public Dictionary<string, Object> Attributes { get; set; }
-
-        /// <summary>
-        /// Collection of workitem tags
-        /// </summary>
-        /// <value>Collection of workitem tags</value>
-        [DataMember(Name = "tags", IsRequired = true, EmitDefaultValue = true)]
-        public List<TagModel> Tags { get; set; }
-
-        /// <summary>
-        /// Collection of workitem links
-        /// </summary>
-        /// <value>Collection of workitem links</value>
-        [DataMember(Name = "links", IsRequired = true, EmitDefaultValue = true)]
-        public List<UpdateLinkApiModel> Links { get; set; }
-
-        /// <summary>
-        /// Workitem name
-        /// </summary>
-        /// <value>Workitem name</value>
+        /// <value>Name of the work item</value>
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Attachments
+        /// Description of the work item
         /// </summary>
-        [DataMember(Name = "attachments", IsRequired = true, EmitDefaultValue = true)]
-        public List<AssignAttachmentApiModel> Attachments { get; set; }
+        /// <value>Description of the work item</value>
+        [DataMember(Name = "description", EmitDefaultValue = true)]
+        public string Description { get; set; }
 
         /// <summary>
-        /// Collection of parameter id sets
+        /// Duration of the work item in milliseconds
         /// </summary>
-        /// <value>Collection of parameter id sets</value>
+        /// <value>Duration of the work item in milliseconds</value>
+        [DataMember(Name = "duration", IsRequired = true, EmitDefaultValue = true)]
+        public long Duration { get; set; }
+
+        /// <summary>
+        /// Set of custom attributes associated with the work item
+        /// </summary>
+        /// <value>Set of custom attributes associated with the work item</value>
+        [DataMember(Name = "attributes", EmitDefaultValue = true)]
+        public Dictionary<string, Object> Attributes { get; set; }
+
+        /// <summary>
+        /// Set of tags applied to the work item
+        /// </summary>
+        /// <value>Set of tags applied to the work item</value>
+        [DataMember(Name = "tags", EmitDefaultValue = true)]
+        public List<TagModel> Tags { get; set; }
+
+        /// <summary>
+        /// Set of precondition steps that must be executed before the main steps
+        /// </summary>
+        /// <value>Set of precondition steps that must be executed before the main steps</value>
+        [DataMember(Name = "preconditionSteps", EmitDefaultValue = true)]
+        public List<UpdateStepApiModel> PreconditionSteps { get; set; }
+
+        /// <summary>
+        /// Set of main steps or actions defined for the work item
+        /// </summary>
+        /// <value>Set of main steps or actions defined for the work item</value>
+        [DataMember(Name = "steps", EmitDefaultValue = true)]
+        public List<UpdateStepApiModel> Steps { get; set; }
+
+        /// <summary>
+        /// Set of postcondition steps that are executed after completing the main steps
+        /// </summary>
+        /// <value>Set of postcondition steps that are executed after completing the main steps</value>
+        [DataMember(Name = "postconditionSteps", EmitDefaultValue = true)]
+        public List<UpdateStepApiModel> PostconditionSteps { get; set; }
+
+        /// <summary>
+        /// Set of iterations associated with the work item
+        /// </summary>
+        /// <value>Set of iterations associated with the work item</value>
         [DataMember(Name = "iterations", EmitDefaultValue = true)]
         public List<AssignIterationApiModel> Iterations { get; set; }
 
         /// <summary>
-        /// Collection of autotest internal ids
+        /// Set of automated tests linked to the work item
         /// </summary>
-        /// <value>Collection of autotest internal ids</value>
+        /// <value>Set of automated tests linked to the work item</value>
         [DataMember(Name = "autoTests", EmitDefaultValue = true)]
         public List<AutoTestIdModel> AutoTests { get; set; }
 
         /// <summary>
-        /// Set of parameter keys related to the work item
+        /// Set of files attached to the work item
         /// </summary>
-        /// <value>Set of parameter keys related to the work item</value>
+        /// <value>Set of files attached to the work item</value>
+        [DataMember(Name = "attachments", EmitDefaultValue = true)]
+        public List<AssignAttachmentApiModel> Attachments { get; set; }
+
+        /// <summary>
+        /// Set of links related to the work item
+        /// </summary>
+        /// <value>Set of links related to the work item</value>
+        [DataMember(Name = "links", EmitDefaultValue = true)]
+        public List<UpdateLinkApiModel> Links { get; set; }
+
+        /// <summary>
+        /// Set of parameter keys associated with the work item
+        /// </summary>
+        /// <value>Set of parameter keys associated with the work item</value>
         [DataMember(Name = "parameters", EmitDefaultValue = true)]
         public List<WorkItemParameterKeyApiModel> Parameters { get; set; }
 
@@ -252,21 +212,20 @@ namespace TestIT.ApiClient.Model
             sb.Append("class UpdateWorkItemApiModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  SectionId: ").Append(SectionId).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
+            sb.Append("  Duration: ").Append(Duration).Append("\n");
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Priority: ").Append(Priority).Append("\n");
-            sb.Append("  SourceType: ").Append(SourceType).Append("\n");
-            sb.Append("  Steps: ").Append(Steps).Append("\n");
-            sb.Append("  PreconditionSteps: ").Append(PreconditionSteps).Append("\n");
-            sb.Append("  PostconditionSteps: ").Append(PostconditionSteps).Append("\n");
-            sb.Append("  Duration: ").Append(Duration).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
-            sb.Append("  Links: ").Append(Links).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
+            sb.Append("  PreconditionSteps: ").Append(PreconditionSteps).Append("\n");
+            sb.Append("  Steps: ").Append(Steps).Append("\n");
+            sb.Append("  PostconditionSteps: ").Append(PostconditionSteps).Append("\n");
             sb.Append("  Iterations: ").Append(Iterations).Append("\n");
             sb.Append("  AutoTests: ").Append(AutoTests).Append("\n");
+            sb.Append("  Attachments: ").Append(Attachments).Append("\n");
+            sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Parameters: ").Append(Parameters).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -288,6 +247,18 @@ namespace TestIT.ApiClient.Model
         /// <returns>Validation Result</returns>
         IEnumerable<ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
         {
+            // Name (string) maxLength
+            if (this.Name != null && this.Name.Length > 255)
+            {
+                yield return new ValidationResult("Invalid value for Name, length must be less than 255.", new [] { "Name" });
+            }
+
+            // Name (string) minLength
+            if (this.Name != null && this.Name.Length < 0)
+            {
+                yield return new ValidationResult("Invalid value for Name, length must be greater than 0.", new [] { "Name" });
+            }
+
             // Duration (long) maximum
             if (this.Duration > (long)86400000)
             {
@@ -298,12 +269,6 @@ namespace TestIT.ApiClient.Model
             if (this.Duration < (long)0)
             {
                 yield return new ValidationResult("Invalid value for Duration, must be a value greater than or equal to 0.", new [] { "Duration" });
-            }
-
-            // Name (string) minLength
-            if (this.Name != null && this.Name.Length < 1)
-            {
-                yield return new ValidationResult("Invalid value for Name, length must be greater than 1.", new [] { "Name" });
             }
 
             yield break;

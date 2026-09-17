@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Title** | **string** | Link name. | [optional] 
 **Url** | **string** | Address can be specified without protocol, but necessarily with the domain. | 
 **Description** | **string** | Link description. | [optional] 
-**Type** | **LinkType** | Specifies the type of the link. | [optional] 
+**Type** | **LinkType** | Specifies the type of the link. | 
 **HasInfo** | **bool** | Flag defines if link relates to integrated jira service | 
 **Name** | **string** | Link name. Backward compatibility. | [optional] [readonly] 
 
