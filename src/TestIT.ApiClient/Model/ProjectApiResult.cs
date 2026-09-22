@@ -51,8 +51,6 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">Description of the project.</param>
         /// <param name="name">Name of the project (required).</param>
         /// <param name="isFavorite">Indicates if the project is marked as favorite (required).</param>
-        /// <param name="attributesScheme">Collection of the project attributes.</param>
-        /// <param name="testPlansAttributesScheme">Collection of the project test plans attributes.</param>
         /// <param name="workItemsCount">Number of work items in the project (required).</param>
         /// <param name="testCasesCount">Number of test cases in the project.</param>
         /// <param name="sharedStepsCount">Number of shared steps in the project.</param>
@@ -65,9 +63,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedById">Unique ID of the project last editor.</param>
         /// <param name="globalId">Global ID of the project (required).</param>
         /// <param name="type">Type of the project (required).</param>
-        /// <param name="isFlakyAuto">Indicates if the status \&quot;Flaky/Stable\&quot; inits automatically.</param>
         /// <param name="workflowId">ID of the workflow used in project (required).</param>
-        public ProjectApiResult(Guid id = default, string description = default, string name = default, bool isFavorite = default, List<CustomAttributeApiResult> attributesScheme = default, List<CustomAttributeApiResult> testPlansAttributesScheme = default, int workItemsCount = default, int? testCasesCount = default, int? sharedStepsCount = default, int? checkListsCount = default, int? autoTestsCount = default, bool isDeleted = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, ProjectType type = default, bool? isFlakyAuto = default, Guid workflowId = default)
+        public ProjectApiResult(Guid id = default, string description = default, string name = default, bool isFavorite = default, long workItemsCount = default, long? testCasesCount = default, long? sharedStepsCount = default, long? checkListsCount = default, long? autoTestsCount = default, bool isDeleted = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, ProjectType type = default, Guid workflowId = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -85,15 +82,12 @@ namespace TestIT.ApiClient.Model
             this.Type = type;
             this.WorkflowId = workflowId;
             this.Description = description;
-            this.AttributesScheme = attributesScheme;
-            this.TestPlansAttributesScheme = testPlansAttributesScheme;
             this.TestCasesCount = testCasesCount;
             this.SharedStepsCount = sharedStepsCount;
             this.CheckListsCount = checkListsCount;
             this.AutoTestsCount = autoTestsCount;
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
-            this.IsFlakyAuto = isFlakyAuto;
         }
 
         /// <summary>
@@ -125,53 +119,39 @@ namespace TestIT.ApiClient.Model
         public bool IsFavorite { get; set; }
 
         /// <summary>
-        /// Collection of the project attributes
-        /// </summary>
-        /// <value>Collection of the project attributes</value>
-        [DataMember(Name = "attributesScheme", EmitDefaultValue = true)]
-        public List<CustomAttributeApiResult> AttributesScheme { get; set; }
-
-        /// <summary>
-        /// Collection of the project test plans attributes
-        /// </summary>
-        /// <value>Collection of the project test plans attributes</value>
-        [DataMember(Name = "testPlansAttributesScheme", EmitDefaultValue = true)]
-        public List<CustomAttributeApiResult> TestPlansAttributesScheme { get; set; }
-
-        /// <summary>
         /// Number of work items in the project
         /// </summary>
         /// <value>Number of work items in the project</value>
         [DataMember(Name = "workItemsCount", IsRequired = true, EmitDefaultValue = true)]
-        public int WorkItemsCount { get; set; }
+        public long WorkItemsCount { get; set; }
 
         /// <summary>
         /// Number of test cases in the project
         /// </summary>
         /// <value>Number of test cases in the project</value>
         [DataMember(Name = "testCasesCount", EmitDefaultValue = true)]
-        public int? TestCasesCount { get; set; }
+        public long? TestCasesCount { get; set; }
 
         /// <summary>
         /// Number of shared steps in the project
         /// </summary>
         /// <value>Number of shared steps in the project</value>
         [DataMember(Name = "sharedStepsCount", EmitDefaultValue = true)]
-        public int? SharedStepsCount { get; set; }
+        public long? SharedStepsCount { get; set; }
 
         /// <summary>
         /// Number of checklists in the project
         /// </summary>
         /// <value>Number of checklists in the project</value>
         [DataMember(Name = "checkListsCount", EmitDefaultValue = true)]
-        public int? CheckListsCount { get; set; }
+        public long? CheckListsCount { get; set; }
 
         /// <summary>
         /// Number of autotests in the project
         /// </summary>
         /// <value>Number of autotests in the project</value>
         [DataMember(Name = "autoTestsCount", EmitDefaultValue = true)]
-        public int? AutoTestsCount { get; set; }
+        public long? AutoTestsCount { get; set; }
 
         /// <summary>
         /// Indicates if the project is deleted
@@ -216,14 +196,6 @@ namespace TestIT.ApiClient.Model
         public long GlobalId { get; set; }
 
         /// <summary>
-        /// Indicates if the status \&quot;Flaky/Stable\&quot; inits automatically
-        /// </summary>
-        /// <value>Indicates if the status \&quot;Flaky/Stable\&quot; inits automatically</value>
-        [DataMember(Name = "isFlakyAuto", EmitDefaultValue = true)]
-        [Obsolete]
-        public bool? IsFlakyAuto { get; set; }
-
-        /// <summary>
         /// ID of the workflow used in project
         /// </summary>
         /// <value>ID of the workflow used in project</value>
@@ -242,8 +214,6 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  IsFavorite: ").Append(IsFavorite).Append("\n");
-            sb.Append("  AttributesScheme: ").Append(AttributesScheme).Append("\n");
-            sb.Append("  TestPlansAttributesScheme: ").Append(TestPlansAttributesScheme).Append("\n");
             sb.Append("  WorkItemsCount: ").Append(WorkItemsCount).Append("\n");
             sb.Append("  TestCasesCount: ").Append(TestCasesCount).Append("\n");
             sb.Append("  SharedStepsCount: ").Append(SharedStepsCount).Append("\n");
@@ -256,7 +226,6 @@ namespace TestIT.ApiClient.Model
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  IsFlakyAuto: ").Append(IsFlakyAuto).Append("\n");
             sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

@@ -62,7 +62,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
         /// <param name="links">Specifies a work item filter by its links.</param>
         /// <param name="externalMetadata">Specifies work item filter by its external metadata.</param>
-        public WorkItemFilterApiModel(string nameOrId = default, List<Guid> includeIds = default, List<Guid> excludeIds = default, List<Guid> projectIds = default, string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemTypeModel> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int32RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default, WorkItemLinkFilterApiModel links = default, WorkItemExternalMetadataFilterApiModel externalMetadata = default)
+        /// <param name="layers">Specifies auto test case layers to search for.</param>
+        public WorkItemFilterApiModel(string nameOrId = default, List<Guid> includeIds = default, List<Guid> excludeIds = default, List<Guid> projectIds = default, string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemTypeModel> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int32RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default, WorkItemLinkFilterApiModel links = default, WorkItemExternalMetadataFilterApiModel externalMetadata = default, List<string> layers = default)
         {
             this.NameOrId = nameOrId;
             this.IncludeIds = includeIds;
@@ -91,6 +92,7 @@ namespace TestIT.ApiClient.Model
             this.WorkItemVersionIds = workItemVersionIds;
             this.Links = links;
             this.ExternalMetadata = externalMetadata;
+            this.Layers = layers;
         }
 
         /// <summary>
@@ -283,6 +285,13 @@ namespace TestIT.ApiClient.Model
         public WorkItemExternalMetadataFilterApiModel ExternalMetadata { get; set; }
 
         /// <summary>
+        /// Specifies auto test case layers to search for
+        /// </summary>
+        /// <value>Specifies auto test case layers to search for</value>
+        [DataMember(Name = "layers", EmitDefaultValue = true)]
+        public List<string> Layers { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -317,6 +326,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  WorkItemVersionIds: ").Append(WorkItemVersionIds).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  ExternalMetadata: ").Append(ExternalMetadata).Append("\n");
+            sb.Append("  Layers: ").Append(Layers).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

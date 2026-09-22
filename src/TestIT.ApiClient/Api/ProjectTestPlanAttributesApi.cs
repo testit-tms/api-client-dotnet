@@ -105,8 +105,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
-        /// <returns>List&lt;CustomAttributeGetModel&gt;</returns>
-        List<CustomAttributeGetModel> SearchTestPlanAttributesInProject(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default);
+        /// <returns>List&lt;CustomAttributeModel&gt;</returns>
+        List<CustomAttributeModel> SearchTestPlanAttributesInProject(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default);
 
         /// <summary>
         /// Search for attributes used in the project test plans
@@ -122,8 +122,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;CustomAttributeGetModel&gt;</returns>
-        ApiResponse<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectWithHttpInfo(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default);
+        /// <returns>ApiResponse of List&lt;CustomAttributeModel&gt;</returns>
+        ApiResponse<List<CustomAttributeModel>> SearchTestPlanAttributesInProjectWithHttpInfo(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default);
         /// <summary>
         /// Update attribute of project&#39;s test plans
         /// </summary>
@@ -244,8 +244,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;CustomAttributeGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of List&lt;CustomAttributeModel&gt;</returns>
+        System.Threading.Tasks.Task<List<CustomAttributeModel>> SearchTestPlanAttributesInProjectAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Search for attributes used in the project test plans
@@ -262,8 +262,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;CustomAttributeGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeGetModel>>> SearchTestPlanAttributesInProjectWithHttpInfoAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (List&lt;CustomAttributeModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeModel>>> SearchTestPlanAttributesInProjectWithHttpInfoAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Update attribute of project&#39;s test plans
         /// </summary>
@@ -552,7 +552,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -625,7 +625,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -694,7 +694,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -766,7 +766,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -833,7 +833,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -903,7 +903,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -934,10 +934,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
-        /// <returns>List&lt;CustomAttributeGetModel&gt;</returns>
-        public List<CustomAttributeGetModel> SearchTestPlanAttributesInProject(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default)
+        /// <returns>List&lt;CustomAttributeModel&gt;</returns>
+        public List<CustomAttributeModel> SearchTestPlanAttributesInProject(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = SearchTestPlanAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = SearchTestPlanAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
             return localVarResponse.Data;
         }
 
@@ -952,8 +952,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;CustomAttributeGetModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectWithHttpInfo(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default)
+        /// <returns>ApiResponse of List&lt;CustomAttributeModel&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>> SearchTestPlanAttributesInProjectWithHttpInfo(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1004,7 +1004,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1012,7 +1012,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<CustomAttributeGetModel>>("/api/v2/projects/{projectId}/testPlans/attributes/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<CustomAttributeModel>>("/api/v2/projects/{projectId}/testPlans/attributes/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1035,10 +1035,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;CustomAttributeGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchTestPlanAttributesInProjectAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of List&lt;CustomAttributeModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<CustomAttributeModel>> SearchTestPlanAttributesInProjectAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = await SearchTestPlanAttributesInProjectWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = await SearchTestPlanAttributesInProjectWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1054,8 +1054,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;CustomAttributeGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>>> SearchTestPlanAttributesInProjectWithHttpInfoAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (List&lt;CustomAttributeModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>>> SearchTestPlanAttributesInProjectWithHttpInfoAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1108,7 +1108,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1117,7 +1117,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<CustomAttributeGetModel>>("/api/v2/projects/{projectId}/testPlans/attributes/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<CustomAttributeModel>>("/api/v2/projects/{projectId}/testPlans/attributes/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
@@ -1178,7 +1178,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {
@@ -1251,7 +1251,7 @@ namespace TestIT.ApiClient.Api
             {
                 localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
             }
-            // authentication (Session Cookie) required
+            // authentication (Identity.Application) required
             // cookie parameter support
             if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("backoffice")))
             {

@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **TagNames** | **List&lt;string&gt;** | Array of tag names of Work Item | [optional] 
 **Iterations** | [**List&lt;IterationApiResult&gt;**](IterationApiResult.md) | Set of iterations related to Work Item | 
 **Links** | [**List&lt;LinkShortApiResult&gt;**](LinkShortApiResult.md) | Set of links related to Work Item | 
+**Layer** | [**WorkItemLayerApiResult**](WorkItemLayerApiResult.md) | Test pyramid layer of Work Item | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

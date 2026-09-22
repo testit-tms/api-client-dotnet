@@ -32,6 +32,12 @@ namespace TestIT.ApiClient.Model
     [DataContract(Name = "LinkShortModel")]
     public partial class LinkShortModel : IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Type
+        /// </summary>
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
+        public LinkType Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="LinkShortModel" /> class.
         /// </summary>
@@ -42,11 +48,12 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="title">title.</param>
-        /// <param name="type">type.</param>
+        /// <param name="type">type (required).</param>
         /// <param name="url">url (required).</param>
-        public LinkShortModel(Guid id = default, string title = default, string type = default, string url = default)
+        public LinkShortModel(Guid id = default, string title = default, LinkType type = default, string url = default)
         {
             this.Id = id;
+            this.Type = type;
             // to ensure "url" is required (not null)
             if (url == null)
             {
@@ -54,7 +61,6 @@ namespace TestIT.ApiClient.Model
             }
             this.Url = url;
             this.Title = title;
-            this.Type = type;
         }
 
         /// <summary>
@@ -68,12 +74,6 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         [DataMember(Name = "title", EmitDefaultValue = true)]
         public string Title { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Type
-        /// </summary>
-        [DataMember(Name = "type", EmitDefaultValue = true)]
-        public string Type { get; set; }
 
         /// <summary>
         /// Gets or Sets Url

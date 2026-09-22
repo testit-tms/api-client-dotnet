@@ -4,10 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **Guid** | Unique ID of the attribute | 
-**Options** | [**List&lt;CustomAttributeOptionModel&gt;**](CustomAttributeOptionModel.md) | Collection of the attribute options   Available for attributes of type &#x60;options&#x60; and &#x60;multiple options&#x60; only | 
-**Type** | **CustomAttributeTypesEnum** | Type of the attribute | 
-**IsDeleted** | **bool** | Indicates if the attribute is deleted | 
+**Id** | **Guid** | Unique ID of the attribute. | 
+**Code** | **string** | Optional code identifier for the attribute. | [optional] 
+**Type** | **CustomAttributeTypesEnum** | Type of the attribute. | 
+**Options** | [**List&lt;CustomAttributeOptionModel&gt;**](CustomAttributeOptionModel.md) | Collection of the attribute options. | 
+**Targets** | **List&lt;string&gt;** | Collection of the attribute targets.   Defines where the attribute can be used (e.g., TestCases, AutoTestCases, TestPlans). | 
+**IsReadOnly** | **bool** | Indicates if the attribute is read-only. | 
+**IsDeleted** | **bool** | Indicates if the attribute is deleted. | 
+**IsSystem** | **bool** | Indicates if the attribute is system. | 
 **Name** | **string** | Name of the attribute | 
 **IsEnabled** | **bool** | Indicates if the attribute is enabled | 
 **IsRequired** | **bool** | Indicates if the attribute value is mandatory to specify | 

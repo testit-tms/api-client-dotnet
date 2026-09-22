@@ -8,7 +8,7 @@ All URIs are relative to *http://localhost*
 
 <a id="apiv2externalissuessuggestionspost"></a>
 # **ApiV2ExternalIssuesSuggestionsPost**
-> ExternalIssueApiFieldSuggestionReply ApiV2ExternalIssuesSuggestionsPost (GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = null)
+> ExternalIssueApiFieldSuggestionIReply ApiV2ExternalIssuesSuggestionsPost (GetExternalIssueSuggestionsApiModel getExternalIssueSuggestionsApiModel = null)
 
 Returns list of suggestions from available external issues
 
@@ -33,7 +33,7 @@ namespace Example
             config.AddApiKey("Authorization", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("Authorization", "Bearer");
-            // Configure API key authorization: Session Cookie
+            // Configure API key authorization: Identity.Application
             config.AddApiKey("backoffice", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
             // config.AddApiKeyPrefix("backoffice", "Bearer");
@@ -47,7 +47,7 @@ namespace Example
             try
             {
                 // Returns list of suggestions from available external issues
-                ExternalIssueApiFieldSuggestionReply result = apiInstance.ApiV2ExternalIssuesSuggestionsPost(getExternalIssueSuggestionsApiModel);
+                ExternalIssueApiFieldSuggestionIReply result = apiInstance.ApiV2ExternalIssuesSuggestionsPost(getExternalIssueSuggestionsApiModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -68,7 +68,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Returns list of suggestions from available external issues
-    ApiResponse<ExternalIssueApiFieldSuggestionReply> response = apiInstance.ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(getExternalIssueSuggestionsApiModel);
+    ApiResponse<ExternalIssueApiFieldSuggestionIReply> response = apiInstance.ApiV2ExternalIssuesSuggestionsPostWithHttpInfo(getExternalIssueSuggestionsApiModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -89,11 +89,11 @@ catch (ApiException e)
 
 ### Return type
 
-[**ExternalIssueApiFieldSuggestionReply**](ExternalIssueApiFieldSuggestionReply.md)
+[**ExternalIssueApiFieldSuggestionIReply**](ExternalIssueApiFieldSuggestionIReply.md)
 
 ### Authorization
 
-[PrivateToken](../README.md#PrivateToken), [Session Cookie](../README.md#Session Cookie)
+[PrivateToken](../README.md#PrivateToken), [Identity.Application](../README.md#Identity.Application)
 
 ### HTTP request headers
 

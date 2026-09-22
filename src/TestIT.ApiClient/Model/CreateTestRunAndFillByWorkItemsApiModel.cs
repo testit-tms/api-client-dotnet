@@ -50,7 +50,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="tags">Collection of tags to assign to the test run.</param>
         /// <param name="configurationIds">Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs. (required).</param>
         /// <param name="workItemIds">Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs. (required).</param>
-        public CreateTestRunAndFillByWorkItemsApiModel(Guid projectId = default, Guid testPlanId = default, string name = default, string description = default, string launchSource = default, List<AssignAttachmentApiModel> attachments = default, List<CreateLinkApiModel> links = default, List<string> tags = default, List<Guid> configurationIds = default, List<Guid> workItemIds = default)
+        /// <param name="option">Test run launching options..</param>
+        public CreateTestRunAndFillByWorkItemsApiModel(Guid projectId = default, Guid testPlanId = default, string name = default, string description = default, string launchSource = default, List<AssignAttachmentApiModel> attachments = default, List<CreateLinkApiModel> links = default, List<string> tags = default, List<Guid> configurationIds = default, List<Guid> workItemIds = default, TestRunLaunchOptionApiModel option = default)
         {
             this.ProjectId = projectId;
             this.TestPlanId = testPlanId;
@@ -72,6 +73,7 @@ namespace TestIT.ApiClient.Model
             this.Attachments = attachments;
             this.Links = links;
             this.Tags = tags;
+            this.Option = option;
         }
 
         /// <summary>
@@ -145,6 +147,13 @@ namespace TestIT.ApiClient.Model
         public List<Guid> WorkItemIds { get; set; }
 
         /// <summary>
+        /// Test run launching options.
+        /// </summary>
+        /// <value>Test run launching options.</value>
+        [DataMember(Name = "option", EmitDefaultValue = true)]
+        public TestRunLaunchOptionApiModel Option { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -162,6 +171,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ConfigurationIds: ").Append(ConfigurationIds).Append("\n");
             sb.Append("  WorkItemIds: ").Append(WorkItemIds).Append("\n");
+            sb.Append("  Option: ").Append(Option).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
