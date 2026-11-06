@@ -55,6 +55,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="lastTestResultOutcome">Outcome of the autotest last test result.</param>
         /// <param name="lastTestResultStatus">Status of the autotest last test result.</param>
         /// <param name="stabilityPercentage">Stability percentage of the autotest.</param>
+        /// <param name="autoTestCase">Auto test case linked with the autotest.</param>
         /// <param name="externalId">External ID of the autotest (required).</param>
         /// <param name="links">Collection of the autotest links.</param>
         /// <param name="projectId">Unique ID of the autotest project (required).</param>
@@ -69,7 +70,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="labels">Collection of the autotest labels.</param>
         /// <param name="isFlaky">Indicates if the autotest is marked as flaky.</param>
         /// <param name="externalKey">External key of the autotest.</param>
-        public AutoTestModel(long globalId = default, bool isDeleted = default, bool mustBeApproved = default, Guid id = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, Guid? lastTestRunId = default, string lastTestRunName = default, Guid? lastTestResultId = default, ConfigurationShortModel lastTestResultConfiguration = default, string lastTestResultOutcome = default, TestStatusModel lastTestResultStatus = default, int? stabilityPercentage = default, string externalId = default, List<LinkPutModel> links = default, Guid projectId = default, string name = default, string varNamespace = default, string classname = default, List<AutoTestStepModel> steps = default, List<AutoTestStepModel> setup = default, List<AutoTestStepModel> teardown = default, string title = default, string description = default, List<LabelShortModel> labels = default, bool? isFlaky = default, string externalKey = default)
+        public AutoTestModel(long globalId = default, bool isDeleted = default, bool mustBeApproved = default, Guid id = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, Guid? lastTestRunId = default, string lastTestRunName = default, Guid? lastTestResultId = default, ConfigurationShortModel lastTestResultConfiguration = default, string lastTestResultOutcome = default, TestStatusModel lastTestResultStatus = default, int? stabilityPercentage = default, AutoTestCaseModel autoTestCase = default, string externalId = default, List<LinkPutModel> links = default, Guid projectId = default, string name = default, string varNamespace = default, string classname = default, List<AutoTestStepModel> steps = default, List<AutoTestStepModel> setup = default, List<AutoTestStepModel> teardown = default, string title = default, string description = default, List<LabelShortModel> labels = default, bool? isFlaky = default, string externalKey = default)
         {
             this.GlobalId = globalId;
             this.IsDeleted = isDeleted;
@@ -99,6 +100,7 @@ namespace TestIT.ApiClient.Model
             this.LastTestResultOutcome = lastTestResultOutcome;
             this.LastTestResultStatus = lastTestResultStatus;
             this.StabilityPercentage = stabilityPercentage;
+            this.AutoTestCase = autoTestCase;
             this.Links = links;
             this.Namespace = varNamespace;
             this.Classname = classname;
@@ -217,6 +219,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Stability percentage of the autotest</value>
         [DataMember(Name = "stabilityPercentage", EmitDefaultValue = true)]
         public int? StabilityPercentage { get; set; }
+
+        /// <summary>
+        /// Auto test case linked with the autotest
+        /// </summary>
+        /// <value>Auto test case linked with the autotest</value>
+        [DataMember(Name = "autoTestCase", EmitDefaultValue = true)]
+        public AutoTestCaseModel AutoTestCase { get; set; }
 
         /// <summary>
         /// External ID of the autotest
@@ -339,6 +348,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  LastTestResultOutcome: ").Append(LastTestResultOutcome).Append("\n");
             sb.Append("  LastTestResultStatus: ").Append(LastTestResultStatus).Append("\n");
             sb.Append("  StabilityPercentage: ").Append(StabilityPercentage).Append("\n");
+            sb.Append("  AutoTestCase: ").Append(AutoTestCase).Append("\n");
             sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");

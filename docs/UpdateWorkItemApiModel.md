@@ -18,9 +18,14 @@ Name | Type | Description | Notes
 **PostconditionSteps** | [**List&lt;UpdateStepApiModel&gt;**](UpdateStepApiModel.md) | Set of postcondition steps that are executed after completing the main steps | [optional] 
 **Iterations** | [**List&lt;AssignIterationApiModel&gt;**](AssignIterationApiModel.md) | Set of iterations associated with the work item | [optional] 
 **AutoTests** | [**List&lt;AutoTestIdModel&gt;**](AutoTestIdModel.md) | Set of automated tests linked to the work item | [optional] 
+**ManualTestId** | **Guid?** | Identifier of the linked manual test | [optional] 
+**AutoTestCases** | [**List&lt;AssignAutoTestCaseIdApiModel&gt;**](AssignAutoTestCaseIdApiModel.md) | Set of automated test cases linked to the work item | [optional] 
 **Attachments** | [**List&lt;AssignAttachmentApiModel&gt;**](AssignAttachmentApiModel.md) | Set of files attached to the work item | [optional] 
 **Links** | [**List&lt;UpdateLinkApiModel&gt;**](UpdateLinkApiModel.md) | Set of links related to the work item | [optional] 
 **Parameters** | [**List&lt;WorkItemParameterKeyApiModel&gt;**](WorkItemParameterKeyApiModel.md) | Set of parameter keys associated with the work item | [optional] 
+**LayerName** | **string** | Name of test pyramid layer associated with the work item | [optional] 
+**LayerSource** | **LayerSource** | Source of test pyramid layer associated with the work item | [optional] 
+**ResetLayer** | **bool?** | Reset current test pyramid layer associated with the work item and re-evaluates it | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

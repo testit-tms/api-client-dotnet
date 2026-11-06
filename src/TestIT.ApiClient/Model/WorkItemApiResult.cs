@@ -83,6 +83,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="state">State of the work item (required).</param>
         /// <param name="priority">Priority level of the work item (required).</param>
         /// <param name="isAutomated">isAutomated (required).</param>
+        /// <param name="externalId">External identifier of the work item from external systems.</param>
         /// <param name="attributes">Set of custom attributes associated with the work item (required).</param>
         /// <param name="tags">Set of tags applied to the work item (required).</param>
         /// <param name="sectionPreconditionSteps">Set of section precondition steps that need to be executed before starting the work item steps (required).</param>
@@ -92,6 +93,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="postconditionSteps">Set of postcondition steps that are executed after completing the main steps (required).</param>
         /// <param name="iterations">Associated iterations linked to the work item (required).</param>
         /// <param name="autoTests">Automated tests associated with the work item (required).</param>
+        /// <param name="manualTestId">Identifier of the linked manual test.</param>
+        /// <param name="autoTestCases">Set of automated test cases linked to the work item (required).</param>
+        /// <param name="layer">Test pyramid layer of the work item.</param>
         /// <param name="attachments">Files attached to the work item (required).</param>
         /// <param name="links">Set of links related to the work item (required).</param>
         /// <param name="externalIssues">Set of external issues related to the work item (required).</param>
@@ -101,7 +105,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="modifiedDate">Modification date of the work item.</param>
         /// <param name="modifiedById">Unique identifier of the work item modifier.</param>
         /// <param name="isDeleted">Indicates whether the work item is marked as deleted (required).</param>
-        public WorkItemApiResult(Guid id = default, long globalId = default, Guid versionId = default, int versionNumber = default, Guid projectId = default, Guid sectionId = default, string name = default, string description = default, WorkItemSourceTypeApiModel sourceType = default, WorkItemEntityTypeApiModel entityTypeName = default, int duration = default, long medianDuration = default, WorkItemStateApiModel state = default, WorkItemPriorityApiModel priority = default, bool isAutomated = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<StepModel> sectionPreconditionSteps = default, List<StepModel> sectionPostconditionSteps = default, List<StepModel> preconditionSteps = default, List<StepModel> steps = default, List<StepModel> postconditionSteps = default, List<IterationModel> iterations = default, List<AutoTestModel> autoTests = default, List<AttachmentModel> attachments = default, List<LinkModel> links = default, List<ExternalIssueApiResult> externalIssues = default, List<WorkItemParameterKeyApiResult> parameters = default, DateTime createdDate = default, Guid createdById = default, DateTime? modifiedDate = default, Guid? modifiedById = default, bool isDeleted = default)
+        public WorkItemApiResult(Guid id = default, long globalId = default, Guid versionId = default, int versionNumber = default, Guid projectId = default, Guid sectionId = default, string name = default, string description = default, WorkItemSourceTypeApiModel sourceType = default, WorkItemEntityTypeApiModel entityTypeName = default, int duration = default, long medianDuration = default, WorkItemStateApiModel state = default, WorkItemPriorityApiModel priority = default, bool isAutomated = default, string externalId = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<StepModel> sectionPreconditionSteps = default, List<StepModel> sectionPostconditionSteps = default, List<StepModel> preconditionSteps = default, List<StepModel> steps = default, List<StepModel> postconditionSteps = default, List<IterationModel> iterations = default, List<AutoTestModel> autoTests = default, Guid? manualTestId = default, List<AutoTestCaseApiModel> autoTestCases = default, WorkItemLayerApiResult layer = default, List<AttachmentModel> attachments = default, List<LinkModel> links = default, List<ExternalIssueApiResult> externalIssues = default, List<WorkItemParameterKeyApiResult> parameters = default, DateTime createdDate = default, Guid createdById = default, DateTime? modifiedDate = default, Guid? modifiedById = default, bool isDeleted = default)
         {
             this.Id = id;
             this.GlobalId = globalId;
@@ -176,6 +180,12 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("autoTests is a required property for WorkItemApiResult and cannot be null");
             }
             this.AutoTests = autoTests;
+            // to ensure "autoTestCases" is required (not null)
+            if (autoTestCases == null)
+            {
+                throw new ArgumentNullException("autoTestCases is a required property for WorkItemApiResult and cannot be null");
+            }
+            this.AutoTestCases = autoTestCases;
             // to ensure "attachments" is required (not null)
             if (attachments == null)
             {
@@ -204,6 +214,9 @@ namespace TestIT.ApiClient.Model
             this.CreatedById = createdById;
             this.IsDeleted = isDeleted;
             this.Description = description;
+            this.ExternalId = externalId;
+            this.ManualTestId = manualTestId;
+            this.Layer = layer;
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
         }
@@ -285,6 +298,13 @@ namespace TestIT.ApiClient.Model
         public bool IsAutomated { get; set; }
 
         /// <summary>
+        /// External identifier of the work item from external systems
+        /// </summary>
+        /// <value>External identifier of the work item from external systems</value>
+        [DataMember(Name = "externalId", EmitDefaultValue = true)]
+        public string ExternalId { get; set; }
+
+        /// <summary>
         /// Set of custom attributes associated with the work item
         /// </summary>
         /// <value>Set of custom attributes associated with the work item</value>
@@ -346,6 +366,27 @@ namespace TestIT.ApiClient.Model
         /// <value>Automated tests associated with the work item</value>
         [DataMember(Name = "autoTests", IsRequired = true, EmitDefaultValue = true)]
         public List<AutoTestModel> AutoTests { get; set; }
+
+        /// <summary>
+        /// Identifier of the linked manual test
+        /// </summary>
+        /// <value>Identifier of the linked manual test</value>
+        [DataMember(Name = "manualTestId", EmitDefaultValue = true)]
+        public Guid? ManualTestId { get; set; }
+
+        /// <summary>
+        /// Set of automated test cases linked to the work item
+        /// </summary>
+        /// <value>Set of automated test cases linked to the work item</value>
+        [DataMember(Name = "autoTestCases", IsRequired = true, EmitDefaultValue = true)]
+        public List<AutoTestCaseApiModel> AutoTestCases { get; set; }
+
+        /// <summary>
+        /// Test pyramid layer of the work item
+        /// </summary>
+        /// <value>Test pyramid layer of the work item</value>
+        [DataMember(Name = "layer", EmitDefaultValue = true)]
+        public WorkItemLayerApiResult Layer { get; set; }
 
         /// <summary>
         /// Files attached to the work item
@@ -433,6 +474,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  State: ").Append(State).Append("\n");
             sb.Append("  Priority: ").Append(Priority).Append("\n");
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
+            sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  SectionPreconditionSteps: ").Append(SectionPreconditionSteps).Append("\n");
@@ -442,6 +484,9 @@ namespace TestIT.ApiClient.Model
             sb.Append("  PostconditionSteps: ").Append(PostconditionSteps).Append("\n");
             sb.Append("  Iterations: ").Append(Iterations).Append("\n");
             sb.Append("  AutoTests: ").Append(AutoTests).Append("\n");
+            sb.Append("  ManualTestId: ").Append(ManualTestId).Append("\n");
+            sb.Append("  AutoTestCases: ").Append(AutoTestCases).Append("\n");
+            sb.Append("  Layer: ").Append(Layer).Append("\n");
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  ExternalIssues: ").Append(ExternalIssues).Append("\n");

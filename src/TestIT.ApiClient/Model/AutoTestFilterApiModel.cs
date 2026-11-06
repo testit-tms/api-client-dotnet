@@ -64,7 +64,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="lastTestResultConfigurationIds">Specifies an autotest configuration IDs of the last test result to search for.</param>
         /// <param name="tags">Specifies an autotest tags to search for.</param>
         /// <param name="excludeTags">Specifies an autotest tags to exclude.</param>
-        public AutoTestFilterApiModel(List<Guid> projectIds = default, List<string> externalIds = default, List<long> globalIds = default, string name = default, bool? isFlaky = default, bool? mustBeApproved = default, Int64RangeSelectorModel stabilityPercentage = default, DateTimeRangeSelectorModel createdDate = default, List<Guid> createdByIds = default, DateTimeRangeSelectorModel modifiedDate = default, List<Guid> modifiedByIds = default, bool? isDeleted = default, string varNamespace = default, bool? isEmptyNamespace = default, string className = default, bool? isEmptyClassName = default, AutotestResultOutcome? lastTestResultOutcome = default, List<string> lastTestResultStatusCodes = default, string externalKey = default, List<Guid> lastTestResultConfigurationIds = default, List<string> tags = default, List<string> excludeTags = default)
+        /// <param name="layers">Specifies auto test layers to search for.</param>
+        /// <param name="layerSources">Specifies list of auto test layer sources to search for.</param>
+        public AutoTestFilterApiModel(List<Guid> projectIds = default, List<string> externalIds = default, List<long> globalIds = default, string name = default, bool? isFlaky = default, bool? mustBeApproved = default, Int64RangeSelectorModel stabilityPercentage = default, DateTimeRangeSelectorModel createdDate = default, List<Guid> createdByIds = default, DateTimeRangeSelectorModel modifiedDate = default, List<Guid> modifiedByIds = default, bool? isDeleted = default, string varNamespace = default, bool? isEmptyNamespace = default, string className = default, bool? isEmptyClassName = default, AutotestResultOutcome? lastTestResultOutcome = default, List<string> lastTestResultStatusCodes = default, string externalKey = default, List<Guid> lastTestResultConfigurationIds = default, List<string> tags = default, List<string> excludeTags = default, List<string> layers = default, List<LayerSource> layerSources = default)
         {
             this.ProjectIds = projectIds;
             this.ExternalIds = externalIds;
@@ -88,6 +90,8 @@ namespace TestIT.ApiClient.Model
             this.LastTestResultConfigurationIds = lastTestResultConfigurationIds;
             this.Tags = tags;
             this.ExcludeTags = excludeTags;
+            this.Layers = layers;
+            this.LayerSources = layerSources;
         }
 
         /// <summary>
@@ -238,6 +242,20 @@ namespace TestIT.ApiClient.Model
         public List<string> ExcludeTags { get; set; }
 
         /// <summary>
+        /// Specifies auto test layers to search for
+        /// </summary>
+        /// <value>Specifies auto test layers to search for</value>
+        [DataMember(Name = "layers", EmitDefaultValue = true)]
+        public List<string> Layers { get; set; }
+
+        /// <summary>
+        /// Specifies list of auto test layer sources to search for
+        /// </summary>
+        /// <value>Specifies list of auto test layer sources to search for</value>
+        [DataMember(Name = "layerSources", EmitDefaultValue = true)]
+        public List<LayerSource> LayerSources { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -267,6 +285,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  LastTestResultConfigurationIds: ").Append(LastTestResultConfigurationIds).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  ExcludeTags: ").Append(ExcludeTags).Append("\n");
+            sb.Append("  Layers: ").Append(Layers).Append("\n");
+            sb.Append("  LayerSources: ").Append(LayerSources).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

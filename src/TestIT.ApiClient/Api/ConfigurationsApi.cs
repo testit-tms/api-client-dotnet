@@ -226,7 +226,7 @@ namespace TestIT.ApiClient.Api
         /// Create Configuration
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
+        ///  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -237,7 +237,7 @@ namespace TestIT.ApiClient.Api
         /// Create Configuration
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
+        ///  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -247,7 +247,7 @@ namespace TestIT.ApiClient.Api
         /// Get configuration by internal or global ID
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
+        ///  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -258,7 +258,7 @@ namespace TestIT.ApiClient.Api
         /// Get configuration by internal or global ID
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
+        ///  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -519,7 +519,7 @@ namespace TestIT.ApiClient.Api
         /// Create Configuration
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
+        ///  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -531,7 +531,7 @@ namespace TestIT.ApiClient.Api
         /// Create Configuration
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
+        ///  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -542,7 +542,7 @@ namespace TestIT.ApiClient.Api
         /// Get configuration by internal or global ID
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
+        ///  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -554,7 +554,7 @@ namespace TestIT.ApiClient.Api
         /// Get configuration by internal or global ID
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
+        ///  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -2159,7 +2159,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create Configuration   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
+        /// Create Configuration  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -2171,7 +2171,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create Configuration   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
+        /// Create Configuration  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -2222,7 +2222,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create Configuration   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
+        /// Create Configuration  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -2235,7 +2235,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create Configuration   Use case    User sets configuration model (listed in the request example)    User runs method execution    System creates configuration    System returns created configuration (listed in the response example)
+        /// Create Configuration  Use case  User sets configuration model (listed in the request example)  User runs method execution  System creates configuration  System returns created configuration (listed in the response example)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="configurationPostModel"> (optional)</param>
@@ -2290,7 +2290,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get configuration by internal or global ID   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
+        /// Get configuration by internal or global ID  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -2302,7 +2302,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get configuration by internal or global ID   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
+        /// Get configuration by internal or global ID  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -2356,7 +2356,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get configuration by internal or global ID   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
+        /// Get configuration by internal or global ID  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>
@@ -2369,7 +2369,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get configuration by internal or global ID   Use case    User sets configuration internal (guid format) or global (integer format) identifier    User runs method execution    System search configuration using the identifier    System returns configuration
+        /// Get configuration by internal or global ID  Use case  User sets configuration internal (guid format) or global (integer format) identifier  User runs method execution  System search configuration using the identifier  System returns configuration
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Configuration internal (guid format) or global (integer format) identifier</param>

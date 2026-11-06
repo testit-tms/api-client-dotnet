@@ -4,11 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**GlobalId** | **long** |  | 
 **Id** | **Guid** |  | 
 **ProjectId** | **Guid** |  | 
-**Name** | **string** |  | 
 **ExternalId** | **string** |  | 
-**GlobalId** | **long** |  | 
+**Name** | **string** |  | 
+**AutoTestCaseGlobalId** | **long?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

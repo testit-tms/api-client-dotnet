@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **EntityTypeName** | **WorkItemTypeModel** |  | 
 **IsAutomated** | **bool** |  | 
 **AutoTests** | [**List&lt;AutoTestModel&gt;**](AutoTestModel.md) |  | [optional] 
+**ManualTestId** | **Guid?** |  | [optional] 
+**AutoTestCases** | [**List&lt;AutoTestCaseResult&gt;**](AutoTestCaseResult.md) |  | [optional] 
 **Attachments** | [**List&lt;AttachmentModel&gt;**](AttachmentModel.md) |  | [optional] 
 **SectionPreconditionSteps** | [**List&lt;StepModel&gt;**](StepModel.md) |  | [optional] 
 **SectionPostconditionSteps** | [**List&lt;StepModel&gt;**](StepModel.md) |  | [optional] 
@@ -23,6 +25,7 @@ Name | Type | Description | Notes
 **CreatedById** | **Guid** |  | 
 **ModifiedById** | **Guid?** |  | [optional] 
 **GlobalId** | **long** |  | 
+**ExternalId** | **string** |  | [optional] 
 **Id** | **Guid** |  | 
 **SectionId** | **Guid** |  | 
 **Description** | **string** |  | [optional] 

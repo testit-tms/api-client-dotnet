@@ -58,6 +58,18 @@ namespace TestIT.ApiClient.Model
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ProjectShortApiResultIReply" /> class
+        /// with the <see cref="ProjectShortApiResultCountReply" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of ProjectShortApiResultCountReply.</param>
+        public ProjectShortApiResultIReply(ProjectShortApiResultCountReply actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
 
         private Object _actualInstance;
 
@@ -72,7 +84,11 @@ namespace TestIT.ApiClient.Model
             }
             set
             {
-                if (value.GetType() == typeof(ProjectShortApiResultGroupedReply) || value is ProjectShortApiResultGroupedReply)
+                if (value.GetType() == typeof(ProjectShortApiResultCountReply) || value is ProjectShortApiResultCountReply)
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(ProjectShortApiResultGroupedReply) || value is ProjectShortApiResultGroupedReply)
                 {
                     this._actualInstance = value;
                 }
@@ -82,7 +98,7 @@ namespace TestIT.ApiClient.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: ProjectShortApiResultGroupedReply, ProjectShortApiResultReply");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: ProjectShortApiResultCountReply, ProjectShortApiResultGroupedReply, ProjectShortApiResultReply");
                 }
             }
         }
@@ -105,6 +121,16 @@ namespace TestIT.ApiClient.Model
         public ProjectShortApiResultGroupedReply GetProjectShortApiResultGroupedReply()
         {
             return (ProjectShortApiResultGroupedReply)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `ProjectShortApiResultCountReply`. If the actual instance is not `ProjectShortApiResultCountReply`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of ProjectShortApiResultCountReply</returns>
+        public ProjectShortApiResultCountReply GetProjectShortApiResultCountReply()
+        {
+            return (ProjectShortApiResultCountReply)this.ActualInstance;
         }
 
         /// <summary>
@@ -144,6 +170,26 @@ namespace TestIT.ApiClient.Model
             }
             int match = 0;
             List<string> matchedTypes = new List<string>();
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(ProjectShortApiResultCountReply).GetProperty("AdditionalProperties") == null)
+                {
+                    newProjectShortApiResultIReply = new ProjectShortApiResultIReply(JsonConvert.DeserializeObject<ProjectShortApiResultCountReply>(jsonString, ProjectShortApiResultIReply.SerializerSettings));
+                }
+                else
+                {
+                    newProjectShortApiResultIReply = new ProjectShortApiResultIReply(JsonConvert.DeserializeObject<ProjectShortApiResultCountReply>(jsonString, ProjectShortApiResultIReply.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("ProjectShortApiResultCountReply");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into ProjectShortApiResultCountReply: {1}", jsonString, exception.ToString()));
+            }
 
             try
             {

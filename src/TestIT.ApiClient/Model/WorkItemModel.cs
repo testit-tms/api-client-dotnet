@@ -71,6 +71,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="entityTypeName">entityTypeName (required).</param>
         /// <param name="isAutomated">isAutomated (required).</param>
         /// <param name="autoTests">autoTests.</param>
+        /// <param name="manualTestId">manualTestId.</param>
+        /// <param name="autoTestCases">autoTestCases.</param>
         /// <param name="attachments">attachments.</param>
         /// <param name="sectionPreconditionSteps">sectionPreconditionSteps.</param>
         /// <param name="sectionPostconditionSteps">sectionPostconditionSteps.</param>
@@ -83,6 +85,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="createdById">createdById (required).</param>
         /// <param name="modifiedById">modifiedById.</param>
         /// <param name="globalId">globalId (required).</param>
+        /// <param name="externalId">externalId.</param>
         /// <param name="id">id (required).</param>
         /// <param name="sectionId">sectionId (required).</param>
         /// <param name="description">description.</param>
@@ -97,7 +100,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="tags">tags (required).</param>
         /// <param name="links">links (required).</param>
         /// <param name="name">name (required).</param>
-        public WorkItemModel(Guid versionId = default, long medianDuration = default, bool isDeleted = default, Guid projectId = default, WorkItemTypeModel entityTypeName = default, bool isAutomated = default, List<AutoTestModel> autoTests = default, List<AttachmentModel> attachments = default, List<StepModel> sectionPreconditionSteps = default, List<StepModel> sectionPostconditionSteps = default, int versionNumber = default, List<IterationModel> iterations = default, List<ExternalIssueModel> externalIssues = default, List<WorkItemParameterKeyModel> parameters = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, Guid id = default, Guid sectionId = default, string description = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, List<StepModel> steps = default, List<StepModel> preconditionSteps = default, List<StepModel> postconditionSteps = default, long duration = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<LinkModel> links = default, string name = default)
+        public WorkItemModel(Guid versionId = default, long medianDuration = default, bool isDeleted = default, Guid projectId = default, WorkItemTypeModel entityTypeName = default, bool isAutomated = default, List<AutoTestModel> autoTests = default, Guid? manualTestId = default, List<AutoTestCaseResult> autoTestCases = default, List<AttachmentModel> attachments = default, List<StepModel> sectionPreconditionSteps = default, List<StepModel> sectionPostconditionSteps = default, int versionNumber = default, List<IterationModel> iterations = default, List<ExternalIssueModel> externalIssues = default, List<WorkItemParameterKeyModel> parameters = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, string externalId = default, Guid id = default, Guid sectionId = default, string description = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, List<StepModel> steps = default, List<StepModel> preconditionSteps = default, List<StepModel> postconditionSteps = default, long duration = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<LinkModel> links = default, string name = default)
         {
             this.VersionId = versionId;
             this.MedianDuration = medianDuration;
@@ -170,12 +173,15 @@ namespace TestIT.ApiClient.Model
             }
             this.Name = name;
             this.AutoTests = autoTests;
+            this.ManualTestId = manualTestId;
+            this.AutoTestCases = autoTestCases;
             this.Attachments = attachments;
             this.SectionPreconditionSteps = sectionPreconditionSteps;
             this.SectionPostconditionSteps = sectionPostconditionSteps;
             this.Iterations = iterations;
             this.ModifiedDate = modifiedDate;
             this.ModifiedById = modifiedById;
+            this.ExternalId = externalId;
             this.Description = description;
         }
 
@@ -233,6 +239,18 @@ namespace TestIT.ApiClient.Model
         public List<AutoTestModel> AutoTests { get; set; }
 
         /// <summary>
+        /// Gets or Sets ManualTestId
+        /// </summary>
+        [DataMember(Name = "manualTestId", EmitDefaultValue = true)]
+        public Guid? ManualTestId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AutoTestCases
+        /// </summary>
+        [DataMember(Name = "autoTestCases", EmitDefaultValue = true)]
+        public List<AutoTestCaseResult> AutoTestCases { get; set; }
+
+        /// <summary>
         /// Gets or Sets Attachments
         /// </summary>
         [DataMember(Name = "attachments", EmitDefaultValue = true)]
@@ -282,7 +300,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets CreatedDate
         /// </summary>
         /*
-        <example>2026-01-27T08:43:09.577447900+03:00</example>
+        <example>2026-01-27T05:43:09.577447900Z</example>
         */
         [DataMember(Name = "createdDate", IsRequired = true, EmitDefaultValue = true)]
         public DateTime CreatedDate { get; set; }
@@ -291,7 +309,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets ModifiedDate
         /// </summary>
         /*
-        <example>2026-01-27T08:43:09.577447900+03:00</example>
+        <example>2026-01-27T05:43:09.577447900Z</example>
         */
         [DataMember(Name = "modifiedDate", EmitDefaultValue = true)]
         public DateTime? ModifiedDate { get; set; }
@@ -322,6 +340,12 @@ namespace TestIT.ApiClient.Model
         */
         [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
         public long GlobalId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets ExternalId
+        /// </summary>
+        [DataMember(Name = "externalId", EmitDefaultValue = true)]
+        public string ExternalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -419,6 +443,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  EntityTypeName: ").Append(EntityTypeName).Append("\n");
             sb.Append("  IsAutomated: ").Append(IsAutomated).Append("\n");
             sb.Append("  AutoTests: ").Append(AutoTests).Append("\n");
+            sb.Append("  ManualTestId: ").Append(ManualTestId).Append("\n");
+            sb.Append("  AutoTestCases: ").Append(AutoTestCases).Append("\n");
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  SectionPreconditionSteps: ").Append(SectionPreconditionSteps).Append("\n");
             sb.Append("  SectionPostconditionSteps: ").Append(SectionPostconditionSteps).Append("\n");
@@ -431,6 +457,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  ModifiedById: ").Append(ModifiedById).Append("\n");
             sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
+            sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  SectionId: ").Append(SectionId).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");

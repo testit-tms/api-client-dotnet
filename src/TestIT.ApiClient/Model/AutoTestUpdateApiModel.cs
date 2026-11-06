@@ -50,15 +50,18 @@ namespace TestIT.ApiClient.Model
         /// <param name="title">Name of the autotest in autotest&#39;s card.</param>
         /// <param name="description">Description of the autotest in autotest&#39;s card.</param>
         /// <param name="isFlaky">Indicates if the autotest is marked as flaky.</param>
+        /// <param name="layer">Layer of the autotest. Assigns layer by rules if omitted..</param>
+        /// <param name="resetLayer">Indicates if the autotest layer should be reset..</param>
         /// <param name="steps">Collection of the autotest steps.</param>
         /// <param name="setup">Collection of the autotest setup steps.</param>
         /// <param name="teardown">Collection of the autotest teardown steps.</param>
+        /// <param name="manualTestId">ID of the manual test to be linked with the autotest.</param>
         /// <param name="workItemIds">Specifies the IDs of work items to link your autotest to. You can specify several IDs..</param>
         /// <param name="workItemIdsForLinkWithAutoTest">Specifies the IDs of work items to link your autotest to. You can specify several IDs..</param>
         /// <param name="labels">Collection of the autotest labels.</param>
         /// <param name="links">Collection of the autotest links.</param>
         /// <param name="tags">Collection of the autotest tags.</param>
-        public AutoTestUpdateApiModel(Guid? id = default, Guid projectId = default, string externalId = default, string externalKey = default, string name = default, string varNamespace = default, string classname = default, string title = default, string description = default, bool? isFlaky = default, List<AutoTestStepApiModel> steps = default, List<AutoTestStepApiModel> setup = default, List<AutoTestStepApiModel> teardown = default, List<Guid> workItemIds = default, List<Guid> workItemIdsForLinkWithAutoTest = default, List<LabelApiModel> labels = default, List<LinkUpdateApiModel> links = default, List<string> tags = default)
+        public AutoTestUpdateApiModel(Guid? id = default, Guid projectId = default, string externalId = default, string externalKey = default, string name = default, string varNamespace = default, string classname = default, string title = default, string description = default, bool? isFlaky = default, LayerApiModel layer = default, bool? resetLayer = default, List<AutoTestStepApiModel> steps = default, List<AutoTestStepApiModel> setup = default, List<AutoTestStepApiModel> teardown = default, Guid? manualTestId = default, List<Guid> workItemIds = default, List<Guid> workItemIdsForLinkWithAutoTest = default, List<LabelApiModel> labels = default, List<LinkUpdateApiModel> links = default, List<string> tags = default)
         {
             this.ProjectId = projectId;
             // to ensure "externalId" is required (not null)
@@ -80,9 +83,12 @@ namespace TestIT.ApiClient.Model
             this.Title = title;
             this.Description = description;
             this.IsFlaky = isFlaky;
+            this.Layer = layer;
+            this.ResetLayer = resetLayer;
             this.Steps = steps;
             this.Setup = setup;
             this.Teardown = teardown;
+            this.ManualTestId = manualTestId;
             this.WorkItemIds = workItemIds;
             this.WorkItemIdsForLinkWithAutoTest = workItemIdsForLinkWithAutoTest;
             this.Labels = labels;
@@ -161,6 +167,20 @@ namespace TestIT.ApiClient.Model
         public bool? IsFlaky { get; set; }
 
         /// <summary>
+        /// Layer of the autotest. Assigns layer by rules if omitted.
+        /// </summary>
+        /// <value>Layer of the autotest. Assigns layer by rules if omitted.</value>
+        [DataMember(Name = "layer", EmitDefaultValue = true)]
+        public LayerApiModel Layer { get; set; }
+
+        /// <summary>
+        /// Indicates if the autotest layer should be reset.
+        /// </summary>
+        /// <value>Indicates if the autotest layer should be reset.</value>
+        [DataMember(Name = "resetLayer", EmitDefaultValue = true)]
+        public bool? ResetLayer { get; set; }
+
+        /// <summary>
         /// Collection of the autotest steps
         /// </summary>
         /// <value>Collection of the autotest steps</value>
@@ -180,6 +200,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Collection of the autotest teardown steps</value>
         [DataMember(Name = "teardown", EmitDefaultValue = true)]
         public List<AutoTestStepApiModel> Teardown { get; set; }
+
+        /// <summary>
+        /// ID of the manual test to be linked with the autotest
+        /// </summary>
+        /// <value>ID of the manual test to be linked with the autotest</value>
+        [DataMember(Name = "manualTestId", EmitDefaultValue = true)]
+        public Guid? ManualTestId { get; set; }
 
         /// <summary>
         /// Specifies the IDs of work items to link your autotest to. You can specify several IDs.
@@ -235,9 +262,12 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  IsFlaky: ").Append(IsFlaky).Append("\n");
+            sb.Append("  Layer: ").Append(Layer).Append("\n");
+            sb.Append("  ResetLayer: ").Append(ResetLayer).Append("\n");
             sb.Append("  Steps: ").Append(Steps).Append("\n");
             sb.Append("  Setup: ").Append(Setup).Append("\n");
             sb.Append("  Teardown: ").Append(Teardown).Append("\n");
+            sb.Append("  ManualTestId: ").Append(ManualTestId).Append("\n");
             sb.Append("  WorkItemIds: ").Append(WorkItemIds).Append("\n");
             sb.Append("  WorkItemIdsForLinkWithAutoTest: ").Append(WorkItemIdsForLinkWithAutoTest).Append("\n");
             sb.Append("  Labels: ").Append(Labels).Append("\n");

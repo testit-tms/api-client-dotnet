@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **State** | **WorkItemStateApiModel** | State of the work item | 
 **Priority** | **WorkItemPriorityApiModel** | Priority level of the work item | 
 **IsAutomated** | **bool** |  | 
+**ExternalId** | **string** | External identifier of the work item from external systems | [optional] 
 **Attributes** | **Dictionary&lt;string, Object&gt;** | Set of custom attributes associated with the work item | 
 **Tags** | [**List&lt;TagModel&gt;**](TagModel.md) | Set of tags applied to the work item | 
 **SectionPreconditionSteps** | [**List&lt;StepModel&gt;**](StepModel.md) | Set of section precondition steps that need to be executed before starting the work item steps | 
@@ -28,6 +29,9 @@ Name | Type | Description | Notes
 **PostconditionSteps** | [**List&lt;StepModel&gt;**](StepModel.md) | Set of postcondition steps that are executed after completing the main steps | 
 **Iterations** | [**List&lt;IterationModel&gt;**](IterationModel.md) | Associated iterations linked to the work item | 
 **AutoTests** | [**List&lt;AutoTestModel&gt;**](AutoTestModel.md) | Automated tests associated with the work item | 
+**ManualTestId** | **Guid?** | Identifier of the linked manual test | [optional] 
+**AutoTestCases** | [**List&lt;AutoTestCaseApiModel&gt;**](AutoTestCaseApiModel.md) | Set of automated test cases linked to the work item | 
+**Layer** | [**WorkItemLayerApiResult**](WorkItemLayerApiResult.md) | Test pyramid layer of the work item | [optional] 
 **Attachments** | [**List&lt;AttachmentModel&gt;**](AttachmentModel.md) | Files attached to the work item | 
 **Links** | [**List&lt;LinkModel&gt;**](LinkModel.md) | Set of links related to the work item | 
 **ExternalIssues** | [**List&lt;ExternalIssueApiResult&gt;**](ExternalIssueApiResult.md) | Set of external issues related to the work item | 

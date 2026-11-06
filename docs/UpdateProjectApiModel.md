@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **Description** | **string** | Description of the project | [optional] 
 **IsFavorite** | **bool?** | Indicates if the project is marked as favorite | [optional] 
 **WorkflowId** | **Guid?** | Identifier of the workflow project should use | [optional] 
+**TestStrategy** | **TestStrategy** |  | 
+**TestCaseCoverageMode** | **TestCaseCoverageMode** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

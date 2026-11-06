@@ -58,6 +58,18 @@ namespace TestIT.ApiClient.Model
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="ExternalIssueApiFieldSuggestionIReply" /> class
+        /// with the <see cref="ExternalIssueApiFieldSuggestionCountReply" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of ExternalIssueApiFieldSuggestionCountReply.</param>
+        public ExternalIssueApiFieldSuggestionIReply(ExternalIssueApiFieldSuggestionCountReply actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
 
         private Object _actualInstance;
 
@@ -72,7 +84,11 @@ namespace TestIT.ApiClient.Model
             }
             set
             {
-                if (value.GetType() == typeof(ExternalIssueApiFieldSuggestionGroupedReply) || value is ExternalIssueApiFieldSuggestionGroupedReply)
+                if (value.GetType() == typeof(ExternalIssueApiFieldSuggestionCountReply) || value is ExternalIssueApiFieldSuggestionCountReply)
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(ExternalIssueApiFieldSuggestionGroupedReply) || value is ExternalIssueApiFieldSuggestionGroupedReply)
                 {
                     this._actualInstance = value;
                 }
@@ -82,7 +98,7 @@ namespace TestIT.ApiClient.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: ExternalIssueApiFieldSuggestionGroupedReply, ExternalIssueApiFieldSuggestionReply");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: ExternalIssueApiFieldSuggestionCountReply, ExternalIssueApiFieldSuggestionGroupedReply, ExternalIssueApiFieldSuggestionReply");
                 }
             }
         }
@@ -105,6 +121,16 @@ namespace TestIT.ApiClient.Model
         public ExternalIssueApiFieldSuggestionGroupedReply GetExternalIssueApiFieldSuggestionGroupedReply()
         {
             return (ExternalIssueApiFieldSuggestionGroupedReply)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `ExternalIssueApiFieldSuggestionCountReply`. If the actual instance is not `ExternalIssueApiFieldSuggestionCountReply`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of ExternalIssueApiFieldSuggestionCountReply</returns>
+        public ExternalIssueApiFieldSuggestionCountReply GetExternalIssueApiFieldSuggestionCountReply()
+        {
+            return (ExternalIssueApiFieldSuggestionCountReply)this.ActualInstance;
         }
 
         /// <summary>
@@ -144,6 +170,26 @@ namespace TestIT.ApiClient.Model
             }
             int match = 0;
             List<string> matchedTypes = new List<string>();
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(ExternalIssueApiFieldSuggestionCountReply).GetProperty("AdditionalProperties") == null)
+                {
+                    newExternalIssueApiFieldSuggestionIReply = new ExternalIssueApiFieldSuggestionIReply(JsonConvert.DeserializeObject<ExternalIssueApiFieldSuggestionCountReply>(jsonString, ExternalIssueApiFieldSuggestionIReply.SerializerSettings));
+                }
+                else
+                {
+                    newExternalIssueApiFieldSuggestionIReply = new ExternalIssueApiFieldSuggestionIReply(JsonConvert.DeserializeObject<ExternalIssueApiFieldSuggestionCountReply>(jsonString, ExternalIssueApiFieldSuggestionIReply.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("ExternalIssueApiFieldSuggestionCountReply");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into ExternalIssueApiFieldSuggestionCountReply: {1}", jsonString, exception.ToString()));
+            }
 
             try
             {

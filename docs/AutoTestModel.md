@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **LastTestResultOutcome** | **string** | Outcome of the autotest last test result | [optional] 
 **LastTestResultStatus** | [**TestStatusModel**](TestStatusModel.md) | Status of the autotest last test result | [optional] 
 **StabilityPercentage** | **int?** | Stability percentage of the autotest | [optional] 
+**AutoTestCase** | [**AutoTestCaseModel**](AutoTestCaseModel.md) | Auto test case linked with the autotest | [optional] 
 **ExternalId** | **string** | External ID of the autotest | 
 **Links** | [**List&lt;LinkPutModel&gt;**](LinkPutModel.md) | Collection of the autotest links | [optional] 
 **ProjectId** | **Guid** | Unique ID of the autotest project | 

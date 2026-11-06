@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Delete WorkItem comment
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
+        ///  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Api
         /// Delete WorkItem comment
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
+        ///  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -52,7 +52,7 @@ namespace TestIT.ApiClient.Api
         /// Create WorkItem comment
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
+        ///  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -63,7 +63,7 @@ namespace TestIT.ApiClient.Api
         /// Create WorkItem comment
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
+        ///  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -136,7 +136,7 @@ namespace TestIT.ApiClient.Api
         /// Delete WorkItem comment
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
+        ///  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -148,7 +148,7 @@ namespace TestIT.ApiClient.Api
         /// Delete WorkItem comment
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
+        ///  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -159,7 +159,7 @@ namespace TestIT.ApiClient.Api
         /// Create WorkItem comment
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
+        ///  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -171,7 +171,7 @@ namespace TestIT.ApiClient.Api
         /// Create WorkItem comment
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
+        ///  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -461,7 +461,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete WorkItem comment   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
+        /// Delete WorkItem comment  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -472,7 +472,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete WorkItem comment   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
+        /// Delete WorkItem comment  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -522,7 +522,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete WorkItem comment   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
+        /// Delete WorkItem comment  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -534,7 +534,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete WorkItem comment   Use case    User sets comment identifier    User runs method execution    System delete comment    System returns success status code
+        /// Delete WorkItem comment  Use case  User sets comment identifier  User runs method execution  System delete comment  System returns success status code
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="commentId">Comment internal (guid format) identifier</param>
@@ -588,7 +588,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create WorkItem comment   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
+        /// Create WorkItem comment  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -600,7 +600,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create WorkItem comment   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
+        /// Create WorkItem comment  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -651,7 +651,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create WorkItem comment   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
+        /// Create WorkItem comment  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>
@@ -664,7 +664,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create WorkItem comment   Use case    User sets comment properties (listed in request parameters)    User runs method execution    System creates comment    System returns comment model (listed in response parameters)
+        /// Create WorkItem comment  Use case  User sets comment properties (listed in request parameters)  User runs method execution  System creates comment  System returns comment model (listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createWorkItemCommentApiModel"> (optional)</param>

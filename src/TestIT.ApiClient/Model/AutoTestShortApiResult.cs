@@ -40,29 +40,37 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestShortApiResult" /> class.
         /// </summary>
+        /// <param name="globalId">globalId (required).</param>
         /// <param name="id">id (required).</param>
         /// <param name="projectId">projectId (required).</param>
-        /// <param name="name">name (required).</param>
         /// <param name="externalId">externalId (required).</param>
-        /// <param name="globalId">globalId (required).</param>
-        public AutoTestShortApiResult(Guid id = default, Guid projectId = default, string name = default, string externalId = default, long globalId = default)
+        /// <param name="name">name (required).</param>
+        /// <param name="autoTestCaseGlobalId">autoTestCaseGlobalId.</param>
+        public AutoTestShortApiResult(long globalId = default, Guid id = default, Guid projectId = default, string externalId = default, string name = default, long? autoTestCaseGlobalId = default)
         {
+            this.GlobalId = globalId;
             this.Id = id;
             this.ProjectId = projectId;
-            // to ensure "name" is required (not null)
-            if (name == null)
-            {
-                throw new ArgumentNullException("name is a required property for AutoTestShortApiResult and cannot be null");
-            }
-            this.Name = name;
             // to ensure "externalId" is required (not null)
             if (externalId == null)
             {
                 throw new ArgumentNullException("externalId is a required property for AutoTestShortApiResult and cannot be null");
             }
             this.ExternalId = externalId;
-            this.GlobalId = globalId;
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new ArgumentNullException("name is a required property for AutoTestShortApiResult and cannot be null");
+            }
+            this.Name = name;
+            this.AutoTestCaseGlobalId = autoTestCaseGlobalId;
         }
+
+        /// <summary>
+        /// Gets or Sets GlobalId
+        /// </summary>
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
+        public long GlobalId { get; set; }
 
         /// <summary>
         /// Gets or Sets Id
@@ -77,22 +85,22 @@ namespace TestIT.ApiClient.Model
         public Guid ProjectId { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
-        /// </summary>
-        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
-        public string Name { get; set; }
-
-        /// <summary>
         /// Gets or Sets ExternalId
         /// </summary>
         [DataMember(Name = "externalId", IsRequired = true, EmitDefaultValue = true)]
         public string ExternalId { get; set; }
 
         /// <summary>
-        /// Gets or Sets GlobalId
+        /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
-        public long GlobalId { get; set; }
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets AutoTestCaseGlobalId
+        /// </summary>
+        [DataMember(Name = "autoTestCaseGlobalId", EmitDefaultValue = true)]
+        public long? AutoTestCaseGlobalId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -102,11 +110,12 @@ namespace TestIT.ApiClient.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AutoTestShortApiResult {\n");
+            sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
-            sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  AutoTestCaseGlobalId: ").Append(AutoTestCaseGlobalId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

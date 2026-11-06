@@ -46,6 +46,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Priority level assigned to the work item</value>
         [DataMember(Name = "priority", IsRequired = true, EmitDefaultValue = true)]
         public WorkItemPriorityApiModel Priority { get; set; }
+
+        /// <summary>
+        /// Source of test pyramid layer associated with the work item
+        /// </summary>
+        /// <value>Source of test pyramid layer associated with the work item</value>
+        [DataMember(Name = "layerSource", EmitDefaultValue = true)]
+        public LayerSource? LayerSource { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateWorkItemApiModel" /> class.
         /// </summary>
@@ -68,10 +75,15 @@ namespace TestIT.ApiClient.Model
         /// <param name="postconditionSteps">Set of postcondition steps that are executed after completing the main steps.</param>
         /// <param name="iterations">Set of iterations associated with the work item.</param>
         /// <param name="autoTests">Set of automated tests linked to the work item.</param>
+        /// <param name="manualTestId">Identifier of the linked manual test.</param>
+        /// <param name="autoTestCases">Set of automated test cases linked to the work item.</param>
         /// <param name="attachments">Set of files attached to the work item.</param>
         /// <param name="links">Set of links related to the work item.</param>
         /// <param name="parameters">Set of parameter keys associated with the work item.</param>
-        public UpdateWorkItemApiModel(Guid id = default, Guid sectionId = default, string name = default, string description = default, long duration = default, WorkItemStateApiModel state = default, WorkItemPriorityApiModel priority = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<UpdateStepApiModel> preconditionSteps = default, List<UpdateStepApiModel> steps = default, List<UpdateStepApiModel> postconditionSteps = default, List<AssignIterationApiModel> iterations = default, List<AutoTestIdModel> autoTests = default, List<AssignAttachmentApiModel> attachments = default, List<UpdateLinkApiModel> links = default, List<WorkItemParameterKeyApiModel> parameters = default)
+        /// <param name="layerName">Name of test pyramid layer associated with the work item.</param>
+        /// <param name="layerSource">Source of test pyramid layer associated with the work item.</param>
+        /// <param name="resetLayer">Reset current test pyramid layer associated with the work item and re-evaluates it.</param>
+        public UpdateWorkItemApiModel(Guid id = default, Guid sectionId = default, string name = default, string description = default, long duration = default, WorkItemStateApiModel state = default, WorkItemPriorityApiModel priority = default, Dictionary<string, Object> attributes = default, List<TagModel> tags = default, List<UpdateStepApiModel> preconditionSteps = default, List<UpdateStepApiModel> steps = default, List<UpdateStepApiModel> postconditionSteps = default, List<AssignIterationApiModel> iterations = default, List<AutoTestIdModel> autoTests = default, Guid? manualTestId = default, List<AssignAutoTestCaseIdApiModel> autoTestCases = default, List<AssignAttachmentApiModel> attachments = default, List<UpdateLinkApiModel> links = default, List<WorkItemParameterKeyApiModel> parameters = default, string layerName = default, LayerSource? layerSource = default, bool? resetLayer = default)
         {
             this.Id = id;
             this.SectionId = sectionId;
@@ -92,9 +104,14 @@ namespace TestIT.ApiClient.Model
             this.PostconditionSteps = postconditionSteps;
             this.Iterations = iterations;
             this.AutoTests = autoTests;
+            this.ManualTestId = manualTestId;
+            this.AutoTestCases = autoTestCases;
             this.Attachments = attachments;
             this.Links = links;
             this.Parameters = parameters;
+            this.LayerName = layerName;
+            this.LayerSource = layerSource;
+            this.ResetLayer = resetLayer;
         }
 
         /// <summary>
@@ -182,6 +199,20 @@ namespace TestIT.ApiClient.Model
         public List<AutoTestIdModel> AutoTests { get; set; }
 
         /// <summary>
+        /// Identifier of the linked manual test
+        /// </summary>
+        /// <value>Identifier of the linked manual test</value>
+        [DataMember(Name = "manualTestId", EmitDefaultValue = true)]
+        public Guid? ManualTestId { get; set; }
+
+        /// <summary>
+        /// Set of automated test cases linked to the work item
+        /// </summary>
+        /// <value>Set of automated test cases linked to the work item</value>
+        [DataMember(Name = "autoTestCases", EmitDefaultValue = true)]
+        public List<AssignAutoTestCaseIdApiModel> AutoTestCases { get; set; }
+
+        /// <summary>
         /// Set of files attached to the work item
         /// </summary>
         /// <value>Set of files attached to the work item</value>
@@ -201,6 +232,20 @@ namespace TestIT.ApiClient.Model
         /// <value>Set of parameter keys associated with the work item</value>
         [DataMember(Name = "parameters", EmitDefaultValue = true)]
         public List<WorkItemParameterKeyApiModel> Parameters { get; set; }
+
+        /// <summary>
+        /// Name of test pyramid layer associated with the work item
+        /// </summary>
+        /// <value>Name of test pyramid layer associated with the work item</value>
+        [DataMember(Name = "layerName", EmitDefaultValue = true)]
+        public string LayerName { get; set; }
+
+        /// <summary>
+        /// Reset current test pyramid layer associated with the work item and re-evaluates it
+        /// </summary>
+        /// <value>Reset current test pyramid layer associated with the work item and re-evaluates it</value>
+        [DataMember(Name = "resetLayer", EmitDefaultValue = true)]
+        public bool? ResetLayer { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -224,9 +269,14 @@ namespace TestIT.ApiClient.Model
             sb.Append("  PostconditionSteps: ").Append(PostconditionSteps).Append("\n");
             sb.Append("  Iterations: ").Append(Iterations).Append("\n");
             sb.Append("  AutoTests: ").Append(AutoTests).Append("\n");
+            sb.Append("  ManualTestId: ").Append(ManualTestId).Append("\n");
+            sb.Append("  AutoTestCases: ").Append(AutoTestCases).Append("\n");
             sb.Append("  Attachments: ").Append(Attachments).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Parameters: ").Append(Parameters).Append("\n");
+            sb.Append("  LayerName: ").Append(LayerName).Append("\n");
+            sb.Append("  LayerSource: ").Append(LayerSource).Append("\n");
+            sb.Append("  ResetLayer: ").Append(ResetLayer).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

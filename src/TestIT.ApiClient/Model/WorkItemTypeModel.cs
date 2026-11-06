@@ -48,7 +48,13 @@ namespace TestIT.ApiClient.Model
         /// Enum SharedSteps for value: SharedSteps
         /// </summary>
         [EnumMember(Value = "SharedSteps")]
-        SharedSteps = 3
+        SharedSteps = 3,
+
+        /// <summary>
+        /// Enum AutoTestCases for value: AutoTestCases
+        /// </summary>
+        [EnumMember(Value = "AutoTestCases")]
+        AutoTestCases = 4
     }
 
 }

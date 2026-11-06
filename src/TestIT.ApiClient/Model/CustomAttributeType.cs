@@ -66,7 +66,13 @@ namespace TestIT.ApiClient.Model
         /// Enum Checkbox for value: checkbox
         /// </summary>
         [EnumMember(Value = "checkbox")]
-        Checkbox = 6
+        Checkbox = 6,
+
+        /// <summary>
+        /// Enum Numeric for value: numeric
+        /// </summary>
+        [EnumMember(Value = "numeric")]
+        Numeric = 7
     }
 
 }

@@ -58,6 +58,18 @@ namespace TestIT.ApiClient.Model
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowProjectApiResultIReply" /> class
+        /// with the <see cref="WorkflowProjectApiResultCountReply" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of WorkflowProjectApiResultCountReply.</param>
+        public WorkflowProjectApiResultIReply(WorkflowProjectApiResultCountReply actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
 
         private Object _actualInstance;
 
@@ -72,7 +84,11 @@ namespace TestIT.ApiClient.Model
             }
             set
             {
-                if (value.GetType() == typeof(WorkflowProjectApiResultGroupedReply) || value is WorkflowProjectApiResultGroupedReply)
+                if (value.GetType() == typeof(WorkflowProjectApiResultCountReply) || value is WorkflowProjectApiResultCountReply)
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(WorkflowProjectApiResultGroupedReply) || value is WorkflowProjectApiResultGroupedReply)
                 {
                     this._actualInstance = value;
                 }
@@ -82,7 +98,7 @@ namespace TestIT.ApiClient.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: WorkflowProjectApiResultGroupedReply, WorkflowProjectApiResultReply");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: WorkflowProjectApiResultCountReply, WorkflowProjectApiResultGroupedReply, WorkflowProjectApiResultReply");
                 }
             }
         }
@@ -105,6 +121,16 @@ namespace TestIT.ApiClient.Model
         public WorkflowProjectApiResultGroupedReply GetWorkflowProjectApiResultGroupedReply()
         {
             return (WorkflowProjectApiResultGroupedReply)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `WorkflowProjectApiResultCountReply`. If the actual instance is not `WorkflowProjectApiResultCountReply`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of WorkflowProjectApiResultCountReply</returns>
+        public WorkflowProjectApiResultCountReply GetWorkflowProjectApiResultCountReply()
+        {
+            return (WorkflowProjectApiResultCountReply)this.ActualInstance;
         }
 
         /// <summary>
@@ -144,6 +170,26 @@ namespace TestIT.ApiClient.Model
             }
             int match = 0;
             List<string> matchedTypes = new List<string>();
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(WorkflowProjectApiResultCountReply).GetProperty("AdditionalProperties") == null)
+                {
+                    newWorkflowProjectApiResultIReply = new WorkflowProjectApiResultIReply(JsonConvert.DeserializeObject<WorkflowProjectApiResultCountReply>(jsonString, WorkflowProjectApiResultIReply.SerializerSettings));
+                }
+                else
+                {
+                    newWorkflowProjectApiResultIReply = new WorkflowProjectApiResultIReply(JsonConvert.DeserializeObject<WorkflowProjectApiResultCountReply>(jsonString, WorkflowProjectApiResultIReply.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("WorkflowProjectApiResultCountReply");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into WorkflowProjectApiResultCountReply: {1}", jsonString, exception.ToString()));
+            }
 
             try
             {

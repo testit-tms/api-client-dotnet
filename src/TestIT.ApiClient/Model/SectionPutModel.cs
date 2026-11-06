@@ -42,12 +42,11 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="id">id (required).</param>
         /// <param name="name">name (required).</param>
-        /// <param name="projectId">projectId (required).</param>
         /// <param name="parentId">parentId.</param>
         /// <param name="preconditionSteps">preconditionSteps.</param>
         /// <param name="postconditionSteps">postconditionSteps.</param>
         /// <param name="attachments">attachments (required).</param>
-        public SectionPutModel(Guid id = default, string name = default, Guid projectId = default, Guid? parentId = default, List<StepPutModel> preconditionSteps = default, List<StepPutModel> postconditionSteps = default, List<AttachmentPutModel> attachments = default)
+        public SectionPutModel(Guid id = default, string name = default, Guid? parentId = default, List<StepPutModel> preconditionSteps = default, List<StepPutModel> postconditionSteps = default, List<AttachmentPutModel> attachments = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -56,7 +55,6 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("name is a required property for SectionPutModel and cannot be null");
             }
             this.Name = name;
-            this.ProjectId = projectId;
             // to ensure "attachments" is required (not null)
             if (attachments == null)
             {
@@ -82,15 +80,6 @@ namespace TestIT.ApiClient.Model
         */
         [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = true)]
         public string Name { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ProjectId
-        /// </summary>
-        /*
-        <example>39d127a1-a511-473f-8b21-f75b747a9420</example>
-        */
-        [DataMember(Name = "projectId", IsRequired = true, EmitDefaultValue = true)]
-        public Guid ProjectId { get; set; }
 
         /// <summary>
         /// Gets or Sets ParentId
@@ -129,7 +118,6 @@ namespace TestIT.ApiClient.Model
             sb.Append("class SectionPutModel {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  ProjectId: ").Append(ProjectId).Append("\n");
             sb.Append("  ParentId: ").Append(ParentId).Append("\n");
             sb.Append("  PreconditionSteps: ").Append(PreconditionSteps).Append("\n");
             sb.Append("  PostconditionSteps: ").Append(PostconditionSteps).Append("\n");

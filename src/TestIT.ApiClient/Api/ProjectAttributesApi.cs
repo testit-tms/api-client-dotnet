@@ -31,7 +31,7 @@ namespace TestIT.ApiClient.Api
         /// Create project attribute
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets attribute parameters (listed in request example) and runs method execution    System search project    System creates attribute and relates it to the project    System returns project attribute properties (example listed in response parameters)
+        ///  Use case  User sets attribute parameters (listed in request example) and runs method execution  System search project  System creates attribute and relates it to the project  System returns project attribute properties (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -43,7 +43,7 @@ namespace TestIT.ApiClient.Api
         /// Create project attribute
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets attribute parameters (listed in request example) and runs method execution    System search project    System creates attribute and relates it to the project    System returns project attribute properties (example listed in response parameters)
+        ///  Use case  User sets attribute parameters (listed in request example) and runs method execution  System search project  System creates attribute and relates it to the project  System returns project attribute properties (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -54,7 +54,7 @@ namespace TestIT.ApiClient.Api
         /// Delete project attribute
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project identifier and runs method execution    User sets attribute identifier    User runs method execution    System search project    System search and delete attribute    System returns no content response
+        ///  Use case  User sets project identifier and runs method execution  User sets attribute identifier  User runs method execution  System search project  System search and delete attribute  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -66,7 +66,7 @@ namespace TestIT.ApiClient.Api
         /// Delete project attribute
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project identifier and runs method execution    User sets attribute identifier    User runs method execution    System search project    System search and delete attribute    System returns no content response
+        ///  Use case  User sets project identifier and runs method execution  User sets attribute identifier  User runs method execution  System search project  System search and delete attribute  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -77,7 +77,7 @@ namespace TestIT.ApiClient.Api
         /// Get project attribute
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User sets project attribute identifier    User runs method execution    System search project    System search project attribute    System returns project attribute (listed in response model)
+        ///  Use case  User sets project internal or global identifier  User sets project attribute identifier  User runs method execution  System search project  System search project attribute  System returns project attribute (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -89,7 +89,7 @@ namespace TestIT.ApiClient.Api
         /// Get project attribute
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User sets project attribute identifier    User runs method execution    System search project    System search project attribute    System returns project attribute (listed in response model)
+        ///  Use case  User sets project internal or global identifier  User sets project attribute identifier  User runs method execution  System search project  System search project attribute  System returns project attribute (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -100,7 +100,7 @@ namespace TestIT.ApiClient.Api
         /// Get project attributes
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project    [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all attributes related to project    System returns array of found attributes (listed in response model)
+        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project  [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all attributes related to project  System returns array of found attributes (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -112,7 +112,7 @@ namespace TestIT.ApiClient.Api
         /// Get project attributes
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project    [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all attributes related to project    System returns array of found attributes (listed in response model)
+        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project  [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all attributes related to project  System returns array of found attributes (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -130,8 +130,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
-        /// <returns>List&lt;CustomAttributeGetModel&gt;</returns>
-        List<CustomAttributeGetModel> SearchAttributesInProject(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default);
+        /// <returns>List&lt;CustomAttributeModel&gt;</returns>
+        List<CustomAttributeModel> SearchAttributesInProject(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default);
 
         /// <summary>
         /// Search for attributes used in the project
@@ -147,8 +147,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;CustomAttributeGetModel&gt;</returns>
-        ApiResponse<List<CustomAttributeGetModel>> SearchAttributesInProjectWithHttpInfo(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default);
+        /// <returns>ApiResponse of List&lt;CustomAttributeModel&gt;</returns>
+        ApiResponse<List<CustomAttributeModel>> SearchAttributesInProjectWithHttpInfo(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default);
         /// <summary>
         /// Edit attribute of the project
         /// </summary>
@@ -182,7 +182,7 @@ namespace TestIT.ApiClient.Api
         /// Create project attribute
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets attribute parameters (listed in request example) and runs method execution    System search project    System creates attribute and relates it to the project    System returns project attribute properties (example listed in response parameters)
+        ///  Use case  User sets attribute parameters (listed in request example) and runs method execution  System search project  System creates attribute and relates it to the project  System returns project attribute properties (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -195,7 +195,7 @@ namespace TestIT.ApiClient.Api
         /// Create project attribute
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets attribute parameters (listed in request example) and runs method execution    System search project    System creates attribute and relates it to the project    System returns project attribute properties (example listed in response parameters)
+        ///  Use case  User sets attribute parameters (listed in request example) and runs method execution  System search project  System creates attribute and relates it to the project  System returns project attribute properties (example listed in response parameters)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -207,7 +207,7 @@ namespace TestIT.ApiClient.Api
         /// Delete project attribute
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project identifier and runs method execution    User sets attribute identifier    User runs method execution    System search project    System search and delete attribute    System returns no content response
+        ///  Use case  User sets project identifier and runs method execution  User sets attribute identifier  User runs method execution  System search project  System search and delete attribute  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -220,7 +220,7 @@ namespace TestIT.ApiClient.Api
         /// Delete project attribute
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project identifier and runs method execution    User sets attribute identifier    User runs method execution    System search project    System search and delete attribute    System returns no content response
+        ///  Use case  User sets project identifier and runs method execution  User sets attribute identifier  User runs method execution  System search project  System search and delete attribute  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -232,7 +232,7 @@ namespace TestIT.ApiClient.Api
         /// Get project attribute
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User sets project attribute identifier    User runs method execution    System search project    System search project attribute    System returns project attribute (listed in response model)
+        ///  Use case  User sets project internal or global identifier  User sets project attribute identifier  User runs method execution  System search project  System search project attribute  System returns project attribute (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -245,7 +245,7 @@ namespace TestIT.ApiClient.Api
         /// Get project attribute
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    User sets project attribute identifier    User runs method execution    System search project    System search project attribute    System returns project attribute (listed in response model)
+        ///  Use case  User sets project internal or global identifier  User sets project attribute identifier  User runs method execution  System search project  System search project attribute  System returns project attribute (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -257,7 +257,7 @@ namespace TestIT.ApiClient.Api
         /// Get project attributes
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project    [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all attributes related to project    System returns array of found attributes (listed in response model)
+        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project  [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all attributes related to project  System returns array of found attributes (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -270,7 +270,7 @@ namespace TestIT.ApiClient.Api
         /// Get project attributes
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project    [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all attributes related to project    System returns array of found attributes (listed in response model)
+        ///  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project  [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all attributes related to project  System returns array of found attributes (listed in response model)
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -293,8 +293,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;CustomAttributeGetModel&gt;</returns>
-        System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchAttributesInProjectAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of List&lt;CustomAttributeModel&gt;</returns>
+        System.Threading.Tasks.Task<List<CustomAttributeModel>> SearchAttributesInProjectAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
 
         /// <summary>
         /// Search for attributes used in the project
@@ -311,8 +311,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;CustomAttributeGetModel&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeGetModel>>> SearchAttributesInProjectWithHttpInfoAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <returns>Task of ApiResponse (List&lt;CustomAttributeModel&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<CustomAttributeModel>>> SearchAttributesInProjectWithHttpInfoAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// Edit attribute of the project
         /// </summary>
@@ -552,7 +552,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create project attribute   Use case    User sets attribute parameters (listed in request example) and runs method execution    System search project    System creates attribute and relates it to the project    System returns project attribute properties (example listed in response parameters)
+        /// Create project attribute  Use case  User sets attribute parameters (listed in request example) and runs method execution  System search project  System creates attribute and relates it to the project  System returns project attribute properties (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -565,7 +565,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create project attribute   Use case    User sets attribute parameters (listed in request example) and runs method execution    System search project    System creates attribute and relates it to the project    System returns project attribute properties (example listed in response parameters)
+        /// Create project attribute  Use case  User sets attribute parameters (listed in request example) and runs method execution  System search project  System creates attribute and relates it to the project  System returns project attribute properties (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -622,7 +622,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create project attribute   Use case    User sets attribute parameters (listed in request example) and runs method execution    System search project    System creates attribute and relates it to the project    System returns project attribute properties (example listed in response parameters)
+        /// Create project attribute  Use case  User sets attribute parameters (listed in request example) and runs method execution  System search project  System creates attribute and relates it to the project  System returns project attribute properties (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -636,7 +636,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create project attribute   Use case    User sets attribute parameters (listed in request example) and runs method execution    System search project    System creates attribute and relates it to the project    System returns project attribute properties (example listed in response parameters)
+        /// Create project attribute  Use case  User sets attribute parameters (listed in request example) and runs method execution  System search project  System creates attribute and relates it to the project  System returns project attribute properties (example listed in response parameters)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -697,7 +697,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete project attribute   Use case    User sets project identifier and runs method execution    User sets attribute identifier    User runs method execution    System search project    System search and delete attribute    System returns no content response
+        /// Delete project attribute  Use case  User sets project identifier and runs method execution  User sets attribute identifier  User runs method execution  System search project  System search and delete attribute  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -709,7 +709,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete project attribute   Use case    User sets project identifier and runs method execution    User sets attribute identifier    User runs method execution    System search project    System search and delete attribute    System returns no content response
+        /// Delete project attribute  Use case  User sets project identifier and runs method execution  User sets attribute identifier  User runs method execution  System search project  System search and delete attribute  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -765,7 +765,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete project attribute   Use case    User sets project identifier and runs method execution    User sets attribute identifier    User runs method execution    System search project    System search and delete attribute    System returns no content response
+        /// Delete project attribute  Use case  User sets project identifier and runs method execution  User sets attribute identifier  User runs method execution  System search project  System search and delete attribute  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -778,7 +778,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete project attribute   Use case    User sets project identifier and runs method execution    User sets attribute identifier    User runs method execution    System search project    System search and delete attribute    System returns no content response
+        /// Delete project attribute  Use case  User sets project identifier and runs method execution  User sets attribute identifier  User runs method execution  System search project  System search and delete attribute  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -838,7 +838,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project attribute   Use case    User sets project internal or global identifier    User sets project attribute identifier    User runs method execution    System search project    System search project attribute    System returns project attribute (listed in response model)
+        /// Get project attribute  Use case  User sets project internal or global identifier  User sets project attribute identifier  User runs method execution  System search project  System search project attribute  System returns project attribute (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -851,7 +851,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project attribute   Use case    User sets project internal or global identifier    User sets project attribute identifier    User runs method execution    System search project    System search project attribute    System returns project attribute (listed in response model)
+        /// Get project attribute  Use case  User sets project internal or global identifier  User sets project attribute identifier  User runs method execution  System search project  System search project attribute  System returns project attribute (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -907,7 +907,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project attribute   Use case    User sets project internal or global identifier    User sets project attribute identifier    User runs method execution    System search project    System search project attribute    System returns project attribute (listed in response model)
+        /// Get project attribute  Use case  User sets project internal or global identifier  User sets project attribute identifier  User runs method execution  System search project  System search project attribute  System returns project attribute (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -921,7 +921,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project attribute   Use case    User sets project internal or global identifier    User sets project attribute identifier    User runs method execution    System search project    System search project attribute    System returns project attribute (listed in response model)
+        /// Get project attribute  Use case  User sets project internal or global identifier  User sets project attribute identifier  User runs method execution  System search project  System search project attribute  System returns project attribute (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -981,7 +981,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project attributes   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project    [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all attributes related to project    System returns array of found attributes (listed in response model)
+        /// Get project attributes  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project  [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all attributes related to project  System returns array of found attributes (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -994,7 +994,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project attributes   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project    [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all attributes related to project    System returns array of found attributes (listed in response model)
+        /// Get project attributes  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project  [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all attributes related to project  System returns array of found attributes (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1053,7 +1053,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project attributes   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project    [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all attributes related to project    System returns array of found attributes (listed in response model)
+        /// Get project attributes  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project  [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all attributes related to project  System returns array of found attributes (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1067,7 +1067,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get project attributes   Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project    [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all attributes related to project    System returns array of found attributes (listed in response model)
+        /// Get project attributes  Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project  [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all attributes related to project  System returns array of found attributes (listed in response model)
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectId">Project internal (UUID) or global (integer) identifier</param>
@@ -1140,10 +1140,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
-        /// <returns>List&lt;CustomAttributeGetModel&gt;</returns>
-        public List<CustomAttributeGetModel> SearchAttributesInProject(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default)
+        /// <returns>List&lt;CustomAttributeModel&gt;</returns>
+        public List<CustomAttributeModel> SearchAttributesInProject(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = SearchAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = SearchAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
             return localVarResponse.Data;
         }
 
@@ -1158,8 +1158,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchField">Property name for searching (optional)</param>
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;CustomAttributeGetModel&gt;</returns>
-        public TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>> SearchAttributesInProjectWithHttpInfo(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default)
+        /// <returns>ApiResponse of List&lt;CustomAttributeModel&gt;</returns>
+        public TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>> SearchAttributesInProjectWithHttpInfo(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1218,7 +1218,7 @@ namespace TestIT.ApiClient.Api
             }
 
             // make the HTTP request
-            var localVarResponse = this.Client.Post<List<CustomAttributeGetModel>>("/api/v2/projects/{projectId}/attributes/search", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Post<List<CustomAttributeModel>>("/api/v2/projects/{projectId}/attributes/search", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
@@ -1241,10 +1241,10 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of List&lt;CustomAttributeGetModel&gt;</returns>
-        public async System.Threading.Tasks.Task<List<CustomAttributeGetModel>> SearchAttributesInProjectAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of List&lt;CustomAttributeModel&gt;</returns>
+        public async System.Threading.Tasks.Task<List<CustomAttributeModel>> SearchAttributesInProjectAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
-            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>> localVarResponse = await SearchAttributesInProjectWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel, cancellationToken).ConfigureAwait(false);
+            TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>> localVarResponse = await SearchAttributesInProjectWithHttpInfoAsync(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
@@ -1260,8 +1260,8 @@ namespace TestIT.ApiClient.Api
         /// <param name="searchValue">Value for searching (optional)</param>
         /// <param name="projectAttributesFilterModel"> (optional)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (List&lt;CustomAttributeGetModel&gt;)</returns>
-        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeGetModel>>> SearchAttributesInProjectWithHttpInfoAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
+        /// <returns>Task of ApiResponse (List&lt;CustomAttributeModel&gt;)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<List<CustomAttributeModel>>> SearchAttributesInProjectWithHttpInfoAsync(string projectId, int? skip = default, int? take = default, string orderBy = default, string searchField = default, string searchValue = default, ProjectAttributesFilterModel projectAttributesFilterModel = default, System.Threading.CancellationToken cancellationToken = default)
         {
             // verify the required parameter 'projectId' is set
             if (projectId == null)
@@ -1323,7 +1323,7 @@ namespace TestIT.ApiClient.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.PostAsync<List<CustomAttributeGetModel>>("/api/v2/projects/{projectId}/attributes/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.PostAsync<List<CustomAttributeModel>>("/api/v2/projects/{projectId}/attributes/search", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {

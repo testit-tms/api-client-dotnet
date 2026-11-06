@@ -42,6 +42,7 @@ namespace TestIT.ApiClient.Model
         /// <param name="attributes">Custom attributes of work item.</param>
         /// <param name="isDeleted">Is result must consist of only actual/deleted work items.</param>
         /// <param name="sectionIds">Collection of section identifiers.</param>
+        /// <param name="namespaceIds">Collection of namespace identifiers.</param>
         /// <param name="createdByIds">Collection of identifiers of users who created work item.</param>
         /// <param name="modifiedByIds">Collection of identifiers of users who applied last modification to work item.</param>
         /// <param name="states">Collection of states of work item.</param>
@@ -59,7 +60,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemVersionIds">Collection of identifiers work items versions..</param>
         /// <param name="links">Specifies a work item filter by its links.</param>
         /// <param name="externalMetadata">Specifies work item filter by its external metadata.</param>
-        public WorkItemSearchQueryModel(List<Guid> projectIds = default, string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemTypeModel> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int64RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default, WorkItemLinkFilterModel links = default, WorkItemExternalMetadataFilterModel externalMetadata = default)
+        /// <param name="externalId">External identifier of the work item.</param>
+        public WorkItemSearchQueryModel(List<Guid> projectIds = default, string name = default, List<Guid> ids = default, List<long> globalIds = default, Dictionary<string, List<string>> attributes = default, bool? isDeleted = default, List<Guid> sectionIds = default, List<Guid> namespaceIds = default, List<Guid> createdByIds = default, List<Guid> modifiedByIds = default, List<WorkItemStates> states = default, List<WorkItemPriorityModel> priorities = default, List<WorkItemSourceTypeModel> sourceTypes = default, List<WorkItemTypeModel> types = default, DateTimeRangeSelectorModel createdDate = default, DateTimeRangeSelectorModel modifiedDate = default, Int64RangeSelectorModel duration = default, Int64RangeSelectorModel medianDuration = default, bool? isAutomated = default, List<string> tags = default, List<string> excludeTags = default, List<Guid> autoTestIds = default, List<Guid> workItemVersionIds = default, WorkItemLinkFilterModel links = default, WorkItemExternalMetadataFilterModel externalMetadata = default, string externalId = default)
         {
             this.ProjectIds = projectIds;
             this.Name = name;
@@ -68,6 +70,7 @@ namespace TestIT.ApiClient.Model
             this.Attributes = attributes;
             this.IsDeleted = isDeleted;
             this.SectionIds = sectionIds;
+            this.NamespaceIds = namespaceIds;
             this.CreatedByIds = createdByIds;
             this.ModifiedByIds = modifiedByIds;
             this.States = states;
@@ -85,6 +88,7 @@ namespace TestIT.ApiClient.Model
             this.WorkItemVersionIds = workItemVersionIds;
             this.Links = links;
             this.ExternalMetadata = externalMetadata;
+            this.ExternalId = externalId;
         }
 
         /// <summary>
@@ -135,6 +139,13 @@ namespace TestIT.ApiClient.Model
         /// <value>Collection of section identifiers</value>
         [DataMember(Name = "sectionIds", EmitDefaultValue = true)]
         public List<Guid> SectionIds { get; set; }
+
+        /// <summary>
+        /// Collection of namespace identifiers
+        /// </summary>
+        /// <value>Collection of namespace identifiers</value>
+        [DataMember(Name = "namespaceIds", EmitDefaultValue = true)]
+        public List<Guid> NamespaceIds { get; set; }
 
         /// <summary>
         /// Collection of identifiers of users who created work item
@@ -256,6 +267,13 @@ namespace TestIT.ApiClient.Model
         public WorkItemExternalMetadataFilterModel ExternalMetadata { get; set; }
 
         /// <summary>
+        /// External identifier of the work item
+        /// </summary>
+        /// <value>External identifier of the work item</value>
+        [DataMember(Name = "externalId", EmitDefaultValue = true)]
+        public string ExternalId { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -270,6 +288,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Attributes: ").Append(Attributes).Append("\n");
             sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("  SectionIds: ").Append(SectionIds).Append("\n");
+            sb.Append("  NamespaceIds: ").Append(NamespaceIds).Append("\n");
             sb.Append("  CreatedByIds: ").Append(CreatedByIds).Append("\n");
             sb.Append("  ModifiedByIds: ").Append(ModifiedByIds).Append("\n");
             sb.Append("  States: ").Append(States).Append("\n");
@@ -287,6 +306,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  WorkItemVersionIds: ").Append(WorkItemVersionIds).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  ExternalMetadata: ").Append(ExternalMetadata).Append("\n");
+            sb.Append("  ExternalId: ").Append(ExternalId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

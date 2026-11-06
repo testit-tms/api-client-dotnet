@@ -26,6 +26,8 @@ Name | Type | Description | Notes
 **LastTestResultConfigurationIds** | **List&lt;Guid&gt;** | Specifies an autotest configuration IDs of the last test result to search for | [optional] 
 **Tags** | **List&lt;string&gt;** | Specifies an autotest tags to search for | [optional] 
 **ExcludeTags** | **List&lt;string&gt;** | Specifies an autotest tags to exclude | [optional] 
+**Layers** | **List&lt;string&gt;** | Specifies auto test layers to search for | [optional] 
+**LayerSources** | [**List&lt;LayerSource&gt;**](LayerSource.md) | Specifies list of auto test layer sources to search for | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

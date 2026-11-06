@@ -85,7 +85,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="tagNames">Array of tag names of Work Item.</param>
         /// <param name="iterations">Set of iterations related to Work Item (required).</param>
         /// <param name="links">Set of links related to Work Item (required).</param>
-        public WorkItemShortApiResult(Guid id = default, Guid versionId = default, int versionNumber = default, string name = default, string entityTypeName = default, Guid projectId = default, Guid sectionId = default, string sectionName = default, bool isAutomated = default, long globalId = default, long duration = default, long? medianDuration = default, Dictionary<string, Object> attributes = default, Guid createdById = default, Guid? modifiedById = default, DateTime? createdDate = default, DateTime? modifiedDate = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, bool isDeleted = default, List<string> tagNames = default, List<IterationApiResult> iterations = default, List<LinkShortApiResult> links = default)
+        /// <param name="layer">Test pyramid layer of Work Item.</param>
+        public WorkItemShortApiResult(Guid id = default, Guid versionId = default, int versionNumber = default, string name = default, string entityTypeName = default, Guid projectId = default, Guid sectionId = default, string sectionName = default, bool isAutomated = default, long globalId = default, long duration = default, long? medianDuration = default, Dictionary<string, Object> attributes = default, Guid createdById = default, Guid? modifiedById = default, DateTime? createdDate = default, DateTime? modifiedDate = default, WorkItemStates state = default, WorkItemPriorityModel priority = default, WorkItemSourceTypeModel sourceType = default, bool isDeleted = default, List<string> tagNames = default, List<IterationApiResult> iterations = default, List<LinkShortApiResult> links = default, WorkItemLayerApiResult layer = default)
         {
             this.Id = id;
             this.VersionId = versionId;
@@ -136,6 +137,7 @@ namespace TestIT.ApiClient.Model
             this.CreatedDate = createdDate;
             this.ModifiedDate = modifiedDate;
             this.TagNames = tagNames;
+            this.Layer = layer;
         }
 
         /// <summary>
@@ -295,6 +297,13 @@ namespace TestIT.ApiClient.Model
         public List<LinkShortApiResult> Links { get; set; }
 
         /// <summary>
+        /// Test pyramid layer of Work Item
+        /// </summary>
+        /// <value>Test pyramid layer of Work Item</value>
+        [DataMember(Name = "layer", EmitDefaultValue = true)]
+        public WorkItemLayerApiResult Layer { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -326,6 +335,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  TagNames: ").Append(TagNames).Append("\n");
             sb.Append("  Iterations: ").Append(Iterations).Append("\n");
             sb.Append("  Links: ").Append(Links).Append("\n");
+            sb.Append("  Layer: ").Append(Layer).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

@@ -68,7 +68,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="lastTestResultConfiguration">Configuration of the autotest last test result.</param>
         /// <param name="lastTestResultOutcome">Outcome of the autotest last test result.</param>
         /// <param name="stabilityPercentage">Stability percentage of the autotest.</param>
-        public AutoTest(string externalId = default, List<LinkApiResult> links = default, Guid projectId = default, string name = default, string varNamespace = default, string classname = default, List<AutoTestStep> steps = default, List<AutoTestStep> setup = default, List<AutoTestStep> teardown = default, string title = default, string description = default, List<Label> labels = default, bool? isFlaky = default, string externalKey = default, long globalId = default, bool isDeleted = default, bool mustBeApproved = default, Guid id = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, Guid? lastTestRunId = default, string lastTestRunName = default, Guid? lastTestResultId = default, ConfigurationShort lastTestResultConfiguration = default, string lastTestResultOutcome = default, int? stabilityPercentage = default)
+        /// <param name="autoTestCase">Auto test case linked with the autotest.</param>
+        public AutoTest(string externalId = default, List<LinkApiResult> links = default, Guid projectId = default, string name = default, string varNamespace = default, string classname = default, List<AutoTestStep> steps = default, List<AutoTestStep> setup = default, List<AutoTestStep> teardown = default, string title = default, string description = default, List<Label> labels = default, bool? isFlaky = default, string externalKey = default, long globalId = default, bool isDeleted = default, bool mustBeApproved = default, Guid id = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, Guid? lastTestRunId = default, string lastTestRunName = default, Guid? lastTestResultId = default, ConfigurationShort lastTestResultConfiguration = default, string lastTestResultOutcome = default, int? stabilityPercentage = default, AutoTestCase autoTestCase = default)
         {
             // to ensure "externalId" is required (not null)
             if (externalId == null)
@@ -108,6 +109,7 @@ namespace TestIT.ApiClient.Model
             this.LastTestResultConfiguration = lastTestResultConfiguration;
             this.LastTestResultOutcome = lastTestResultOutcome;
             this.StabilityPercentage = stabilityPercentage;
+            this.AutoTestCase = autoTestCase;
         }
 
         /// <summary>
@@ -307,6 +309,13 @@ namespace TestIT.ApiClient.Model
         public int? StabilityPercentage { get; set; }
 
         /// <summary>
+        /// Auto test case linked with the autotest
+        /// </summary>
+        /// <value>Auto test case linked with the autotest</value>
+        [DataMember(Name = "autoTestCase", EmitDefaultValue = true)]
+        public AutoTestCase AutoTestCase { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -342,6 +351,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  LastTestResultConfiguration: ").Append(LastTestResultConfiguration).Append("\n");
             sb.Append("  LastTestResultOutcome: ").Append(LastTestResultOutcome).Append("\n");
             sb.Append("  StabilityPercentage: ").Append(StabilityPercentage).Append("\n");
+            sb.Append("  AutoTestCase: ").Append(AutoTestCase).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

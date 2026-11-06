@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Filters** | [**List&lt;IFilter&gt;**](IFilter.md) |  | 
 **Operator** | **CollectionOperator** |  | 
-**Value** | **string** |  | [optional] 
+**Value** | [**JsonElement**](JsonElement.md) |  | 
 **Field** | **string** |  | [readonly] 
 **Filter** | [**IFilter**](IFilter.md) |  | 
 

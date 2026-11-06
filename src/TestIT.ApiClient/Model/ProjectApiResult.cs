@@ -39,6 +39,20 @@ namespace TestIT.ApiClient.Model
         /// <value>Type of the project</value>
         [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = true)]
         public ProjectType Type { get; set; }
+
+        /// <summary>
+        /// Test strategy of the project
+        /// </summary>
+        /// <value>Test strategy of the project</value>
+        [DataMember(Name = "testStrategy", IsRequired = true, EmitDefaultValue = true)]
+        public TestStrategy TestStrategy { get; set; }
+
+        /// <summary>
+        /// Coverage mode of test cases of the project
+        /// </summary>
+        /// <value>Coverage mode of test cases of the project</value>
+        [DataMember(Name = "testCaseCoverageMode", IsRequired = true, EmitDefaultValue = true)]
+        public TestCaseCoverageMode TestCaseCoverageMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ProjectApiResult" /> class.
         /// </summary>
@@ -64,7 +78,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="globalId">Global ID of the project (required).</param>
         /// <param name="type">Type of the project (required).</param>
         /// <param name="workflowId">ID of the workflow used in project (required).</param>
-        public ProjectApiResult(Guid id = default, string description = default, string name = default, bool isFavorite = default, int workItemsCount = default, int? testCasesCount = default, int? sharedStepsCount = default, int? checkListsCount = default, int? autoTestsCount = default, bool isDeleted = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, ProjectType type = default, Guid workflowId = default)
+        /// <param name="testStrategy">Test strategy of the project (required).</param>
+        /// <param name="testCaseCoverageMode">Coverage mode of test cases of the project (required).</param>
+        public ProjectApiResult(Guid id = default, string description = default, string name = default, bool isFavorite = default, long workItemsCount = default, long? testCasesCount = default, long? sharedStepsCount = default, long? checkListsCount = default, long? autoTestsCount = default, bool isDeleted = default, DateTime createdDate = default, DateTime? modifiedDate = default, Guid createdById = default, Guid? modifiedById = default, long globalId = default, ProjectType type = default, Guid workflowId = default, TestStrategy testStrategy = default, TestCaseCoverageMode testCaseCoverageMode = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -81,6 +97,8 @@ namespace TestIT.ApiClient.Model
             this.GlobalId = globalId;
             this.Type = type;
             this.WorkflowId = workflowId;
+            this.TestStrategy = testStrategy;
+            this.TestCaseCoverageMode = testCaseCoverageMode;
             this.Description = description;
             this.TestCasesCount = testCasesCount;
             this.SharedStepsCount = sharedStepsCount;
@@ -123,35 +141,35 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <value>Number of work items in the project</value>
         [DataMember(Name = "workItemsCount", IsRequired = true, EmitDefaultValue = true)]
-        public int WorkItemsCount { get; set; }
+        public long WorkItemsCount { get; set; }
 
         /// <summary>
         /// Number of test cases in the project
         /// </summary>
         /// <value>Number of test cases in the project</value>
         [DataMember(Name = "testCasesCount", EmitDefaultValue = true)]
-        public int? TestCasesCount { get; set; }
+        public long? TestCasesCount { get; set; }
 
         /// <summary>
         /// Number of shared steps in the project
         /// </summary>
         /// <value>Number of shared steps in the project</value>
         [DataMember(Name = "sharedStepsCount", EmitDefaultValue = true)]
-        public int? SharedStepsCount { get; set; }
+        public long? SharedStepsCount { get; set; }
 
         /// <summary>
         /// Number of checklists in the project
         /// </summary>
         /// <value>Number of checklists in the project</value>
         [DataMember(Name = "checkListsCount", EmitDefaultValue = true)]
-        public int? CheckListsCount { get; set; }
+        public long? CheckListsCount { get; set; }
 
         /// <summary>
         /// Number of autotests in the project
         /// </summary>
         /// <value>Number of autotests in the project</value>
         [DataMember(Name = "autoTestsCount", EmitDefaultValue = true)]
-        public int? AutoTestsCount { get; set; }
+        public long? AutoTestsCount { get; set; }
 
         /// <summary>
         /// Indicates if the project is deleted
@@ -227,6 +245,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
+            sb.Append("  TestStrategy: ").Append(TestStrategy).Append("\n");
+            sb.Append("  TestCaseCoverageMode: ").Append(TestCaseCoverageMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

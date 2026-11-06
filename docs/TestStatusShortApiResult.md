@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Code** | **string** | Code representing the test status. | 
 **Name** | **string** | Name of the test status. | 
 **Type** | **TestStatusApiType** | Type of the test status (e.g., Passed, Failed). | 
+**IsSystem** | **bool** | Identifies test status as system. | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

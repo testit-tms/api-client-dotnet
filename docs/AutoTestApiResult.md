@@ -31,9 +31,11 @@ Name | Type | Description | Notes
 **LastTestResultOutcome** | **string** |  | [optional] 
 **LastTestResultStatus** | [**TestStatusApiResult**](TestStatusApiResult.md) |  | [optional] 
 **StabilityPercentage** | **long?** |  | [optional] 
+**Layer** | [**LayerApiResult**](LayerApiResult.md) | Model of auto test layer for use in responses. | [optional] 
 **Links** | [**List&lt;LinkApiResult&gt;**](LinkApiResult.md) |  | [optional] 
 **Labels** | [**List&lt;LabelApiResult&gt;**](LabelApiResult.md) |  | [optional] 
 **Tags** | **List&lt;string&gt;** |  | [optional] 
+**ManualTestId** | **Guid?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

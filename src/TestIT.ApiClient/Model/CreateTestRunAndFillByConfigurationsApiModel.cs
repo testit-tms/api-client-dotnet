@@ -49,7 +49,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="links">Collection of links to relate to the test run.</param>
         /// <param name="tags">Collection of tags to assign to the test run.</param>
         /// <param name="testPointSelectors">Specifies an array of work items and configuration to create a test run for. (required).</param>
-        public CreateTestRunAndFillByConfigurationsApiModel(Guid projectId = default, Guid testPlanId = default, string name = default, string description = default, string launchSource = default, List<AssignAttachmentApiModel> attachments = default, List<CreateLinkApiModel> links = default, List<string> tags = default, List<TestPointSelector> testPointSelectors = default)
+        /// <param name="option">Test run launching options..</param>
+        public CreateTestRunAndFillByConfigurationsApiModel(Guid projectId = default, Guid testPlanId = default, string name = default, string description = default, string launchSource = default, List<AssignAttachmentApiModel> attachments = default, List<CreateLinkApiModel> links = default, List<string> tags = default, List<TestPointSelector> testPointSelectors = default, TestRunLaunchOptionApiModel option = default)
         {
             this.ProjectId = projectId;
             this.TestPlanId = testPlanId;
@@ -65,6 +66,7 @@ namespace TestIT.ApiClient.Model
             this.Attachments = attachments;
             this.Links = links;
             this.Tags = tags;
+            this.Option = option;
         }
 
         /// <summary>
@@ -131,6 +133,13 @@ namespace TestIT.ApiClient.Model
         public List<TestPointSelector> TestPointSelectors { get; set; }
 
         /// <summary>
+        /// Test run launching options.
+        /// </summary>
+        /// <value>Test run launching options.</value>
+        [DataMember(Name = "option", EmitDefaultValue = true)]
+        public TestRunLaunchOptionApiModel Option { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -147,6 +156,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Links: ").Append(Links).Append("\n");
             sb.Append("  Tags: ").Append(Tags).Append("\n");
             sb.Append("  TestPointSelectors: ").Append(TestPointSelectors).Append("\n");
+            sb.Append("  Option: ").Append(Option).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

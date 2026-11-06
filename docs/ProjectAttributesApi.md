@@ -17,7 +17,7 @@ All URIs are relative to *http://localhost*
 
 Create project attribute
 
-  Use case    User sets attribute parameters (listed in request example) and runs method execution    System search project    System creates attribute and relates it to the project    System returns project attribute properties (example listed in response parameters)
+ Use case  User sets attribute parameters (listed in request example) and runs method execution  System search project  System creates attribute and relates it to the project  System returns project attribute properties (example listed in response parameters)
 
 ### Example
 ```csharp
@@ -114,11 +114,11 @@ catch (ApiException e)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Created |  -  |
-| **400** |   - Attribute is &#x60;null&#x60;    - Priority is invalid    - Attribute with &#x60;Options&#x60; type must have an options    - ID is not &#x60;null&#x60;    - Option ID is not &#x60;null&#x60; |  -  |
+| **400** |  - Attribute is &#x60;null&#x60;  - Priority is invalid  - Attribute with &#x60;Options&#x60; type must have an options  - ID is not &#x60;null&#x60;  - Option ID is not &#x60;null&#x60; |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for project settings is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
-| **409** |   &#x60;CustomAttribute.Name&#x60; or &#x60;CustomAttribute.Id&#x60; are not unique in attributes schemes    &#x60;CustomAttributeOptionModel.Id&#x60; or &#x60;CustomAttributeOptionModel.Value&#x60; are not unique in &#x60;attributesScheme.Options&#x60; |  -  |
+| **409** |  &#x60;CustomAttribute.Name&#x60; or &#x60;CustomAttribute.Id&#x60; are not unique in attributes schemes  &#x60;CustomAttributeOptionModel.Id&#x60; or &#x60;CustomAttributeOptionModel.Value&#x60; are not unique in &#x60;attributesScheme.Options&#x60; |  -  |
 | **422** | Cannot add new attribute from template which is in use |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -129,7 +129,7 @@ catch (ApiException e)
 
 Delete project attribute
 
-  Use case    User sets project identifier and runs method execution    User sets attribute identifier    User runs method execution    System search project    System search and delete attribute    System returns no content response
+ Use case  User sets project identifier and runs method execution  User sets attribute identifier  User runs method execution  System search project  System search and delete attribute  System returns no content response
 
 ### Example
 ```csharp
@@ -222,7 +222,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | Successful operation |  -  |
-| **400** |   - Project ID is invalid    - Project attribute ID is invalid    - Attribute is empty |  -  |
+| **400** |  - Project ID is invalid  - Project attribute ID is invalid  - Attribute is empty |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for project settings is required |  -  |
 | **404** | Project with provided ID was not found |  -  |
@@ -237,7 +237,7 @@ void (empty response body)
 
 Get project attribute
 
-  Use case    User sets project internal or global identifier    User sets project attribute identifier    User runs method execution    System search project    System search project attribute    System returns project attribute (listed in response model)
+ Use case  User sets project internal or global identifier  User sets project attribute identifier  User runs method execution  System search project  System search project attribute  System returns project attribute (listed in response model)
 
 ### Example
 ```csharp
@@ -337,7 +337,7 @@ catch (ApiException e)
 | **400** | Bad Request |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Read permission for test library is required |  -  |
-| **404** |   - Project with provided ID was not found    - Project attribute with provided ID was not found |  -  |
+| **404** |  - Project with provided ID was not found  - Project attribute with provided ID was not found |  -  |
 | **409** | Conflict |  -  |
 | **422** | Unprocessable Entity |  -  |
 
@@ -349,7 +349,7 @@ catch (ApiException e)
 
 Get project attributes
 
-  Use case    User sets project internal or global identifier    [Optional] User sets isDeleted field value    User runs method execution    System search project    [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project    [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted    [Optional] If User did not set isDeleted field value, System search all attributes related to project    System returns array of found attributes (listed in response model)
+ Use case  User sets project internal or global identifier  [Optional] User sets isDeleted field value  User runs method execution  System search project  [Optional] If User sets isDeleted field value as true, System search all deleted attributes related to project  [Optional] If User sets isDeleted field value as false, System search all attributes related to project which are not deleted  [Optional] If User did not set isDeleted field value, System search all attributes related to project  System returns array of found attributes (listed in response model)
 
 ### Example
 ```csharp
@@ -457,7 +457,7 @@ catch (ApiException e)
 
 <a id="searchattributesinproject"></a>
 # **SearchAttributesInProject**
-> List&lt;CustomAttributeGetModel&gt; SearchAttributesInProject (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectAttributesFilterModel projectAttributesFilterModel = null)
+> List&lt;CustomAttributeModel&gt; SearchAttributesInProject (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectAttributesFilterModel projectAttributesFilterModel = null)
 
 Search for attributes used in the project
 
@@ -502,7 +502,7 @@ namespace Example
             try
             {
                 // Search for attributes used in the project
-                List<CustomAttributeGetModel> result = apiInstance.SearchAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+                List<CustomAttributeModel> result = apiInstance.SearchAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -523,7 +523,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for attributes used in the project
-    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+    ApiResponse<List<CustomAttributeModel>> response = apiInstance.SearchAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -550,7 +550,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;CustomAttributeGetModel&gt;**](CustomAttributeGetModel.md)
+[**List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md)
 
 ### Authorization
 

@@ -58,6 +58,18 @@ namespace TestIT.ApiClient.Model
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WorkflowShortApiResultIReply" /> class
+        /// with the <see cref="WorkflowShortApiResultCountReply" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of WorkflowShortApiResultCountReply.</param>
+        public WorkflowShortApiResultIReply(WorkflowShortApiResultCountReply actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
 
         private Object _actualInstance;
 
@@ -72,7 +84,11 @@ namespace TestIT.ApiClient.Model
             }
             set
             {
-                if (value.GetType() == typeof(WorkflowShortApiResultGroupedReply) || value is WorkflowShortApiResultGroupedReply)
+                if (value.GetType() == typeof(WorkflowShortApiResultCountReply) || value is WorkflowShortApiResultCountReply)
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(WorkflowShortApiResultGroupedReply) || value is WorkflowShortApiResultGroupedReply)
                 {
                     this._actualInstance = value;
                 }
@@ -82,7 +98,7 @@ namespace TestIT.ApiClient.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: WorkflowShortApiResultGroupedReply, WorkflowShortApiResultReply");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: WorkflowShortApiResultCountReply, WorkflowShortApiResultGroupedReply, WorkflowShortApiResultReply");
                 }
             }
         }
@@ -105,6 +121,16 @@ namespace TestIT.ApiClient.Model
         public WorkflowShortApiResultGroupedReply GetWorkflowShortApiResultGroupedReply()
         {
             return (WorkflowShortApiResultGroupedReply)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `WorkflowShortApiResultCountReply`. If the actual instance is not `WorkflowShortApiResultCountReply`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of WorkflowShortApiResultCountReply</returns>
+        public WorkflowShortApiResultCountReply GetWorkflowShortApiResultCountReply()
+        {
+            return (WorkflowShortApiResultCountReply)this.ActualInstance;
         }
 
         /// <summary>
@@ -144,6 +170,26 @@ namespace TestIT.ApiClient.Model
             }
             int match = 0;
             List<string> matchedTypes = new List<string>();
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(WorkflowShortApiResultCountReply).GetProperty("AdditionalProperties") == null)
+                {
+                    newWorkflowShortApiResultIReply = new WorkflowShortApiResultIReply(JsonConvert.DeserializeObject<WorkflowShortApiResultCountReply>(jsonString, WorkflowShortApiResultIReply.SerializerSettings));
+                }
+                else
+                {
+                    newWorkflowShortApiResultIReply = new WorkflowShortApiResultIReply(JsonConvert.DeserializeObject<WorkflowShortApiResultCountReply>(jsonString, WorkflowShortApiResultIReply.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("WorkflowShortApiResultCountReply");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into WorkflowShortApiResultCountReply: {1}", jsonString, exception.ToString()));
+            }
 
             try
             {

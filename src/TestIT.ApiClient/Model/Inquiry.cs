@@ -32,6 +32,12 @@ namespace TestIT.ApiClient.Model
     [DataContract(Name = "Inquiry")]
     public partial class Inquiry : IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets Mode
+        /// </summary>
+        [DataMember(Name = "mode", IsRequired = true, EmitDefaultValue = true)]
+        public Mode Mode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Inquiry" /> class.
         /// </summary>
@@ -44,7 +50,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="filter">filter.</param>
         /// <param name="order">order (required).</param>
         /// <param name="page">page.</param>
-        public Inquiry(Group group = default, CompositeFilter filter = default, List<Order> order = default, Page page = default)
+        /// <param name="mode">mode (required).</param>
+        public Inquiry(Group group = default, CompositeFilter filter = default, List<Order> order = default, Page page = default, Mode mode = default)
         {
             // to ensure "order" is required (not null)
             if (order == null)
@@ -52,6 +59,7 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("order is a required property for Inquiry and cannot be null");
             }
             this.Order = order;
+            this.Mode = mode;
             this.Group = group;
             this.Filter = filter;
             this.Page = page;
@@ -93,6 +101,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Filter: ").Append(Filter).Append("\n");
             sb.Append("  Order: ").Append(Order).Append("\n");
             sb.Append("  Page: ").Append(Page).Append("\n");
+            sb.Append("  Mode: ").Append(Mode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

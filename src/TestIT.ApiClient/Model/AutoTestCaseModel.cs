@@ -40,17 +40,18 @@ namespace TestIT.ApiClient.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AutoTestCaseModel" /> class.
         /// </summary>
-        /// <param name="id">id (required).</param>
-        public AutoTestCaseModel(Guid id = default)
+        /// <param name="globalId">Global ID of the auto test case (required).</param>
+        public AutoTestCaseModel(long globalId = default)
         {
-            this.Id = id;
+            this.GlobalId = globalId;
         }
 
         /// <summary>
-        /// Gets or Sets Id
+        /// Global ID of the auto test case
         /// </summary>
-        [DataMember(Name = "id", IsRequired = true, EmitDefaultValue = true)]
-        public Guid Id { get; set; }
+        /// <value>Global ID of the auto test case</value>
+        [DataMember(Name = "globalId", IsRequired = true, EmitDefaultValue = true)]
+        public long GlobalId { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,7 +61,7 @@ namespace TestIT.ApiClient.Model
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("class AutoTestCaseModel {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  GlobalId: ").Append(GlobalId).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

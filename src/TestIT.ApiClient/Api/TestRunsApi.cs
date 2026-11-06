@@ -28,10 +28,28 @@ namespace TestIT.ApiClient.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Create TestRun filled with autotests linked to work items of type \&quot;AutoTestCases\&quot; selected by the filter
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTestRunAndFillByAutoTestCasesApiModel">Test run model with a filter for work items of type \&quot;AutoTestCases\&quot; and configuration IDs (optional)</param>
+        /// <returns>TestRunV2ApiResult</returns>
+        TestRunV2ApiResult ApiV2TestRunsByAutoTestCasesPost(CreateTestRunAndFillByAutoTestCasesApiModel createTestRunAndFillByAutoTestCasesApiModel = default);
+
+        /// <summary>
+        /// Create TestRun filled with autotests linked to work items of type \&quot;AutoTestCases\&quot; selected by the filter
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTestRunAndFillByAutoTestCasesApiModel">Test run model with a filter for work items of type \&quot;AutoTestCases\&quot; and configuration IDs (optional)</param>
+        /// <returns>ApiResponse of TestRunV2ApiResult</returns>
+        ApiResponse<TestRunV2ApiResult> ApiV2TestRunsByAutoTestCasesPostWithHttpInfo(CreateTestRunAndFillByAutoTestCasesApiModel createTestRunAndFillByAutoTestCasesApiModel = default);
+        /// <summary>
         /// Delete multiple test runs
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets selection parameters of test runs    System search and delete collection of test runs    System returns the number of deleted test runs
+        ///  Use case  User sets selection parameters of test runs  System search and delete collection of test runs  System returns the number of deleted test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -42,7 +60,7 @@ namespace TestIT.ApiClient.Api
         /// Delete multiple test runs
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets selection parameters of test runs    System search and delete collection of test runs    System returns the number of deleted test runs
+        ///  Use case  User sets selection parameters of test runs  System search and delete collection of test runs  System returns the number of deleted test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -70,7 +88,7 @@ namespace TestIT.ApiClient.Api
         /// Delete test run
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run internal (guid format) identifier    System search and delete test run
+        ///  Use case  User sets test run internal (guid format) identifier  System search and delete test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -81,7 +99,7 @@ namespace TestIT.ApiClient.Api
         /// Delete test run
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run internal (guid format) identifier    System search and delete test run
+        ///  Use case  User sets test run internal (guid format) identifier  System search and delete test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -114,7 +132,7 @@ namespace TestIT.ApiClient.Api
         /// Permanently delete test run from archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets archived test run internal (guid format) identifier    System search and purge archived test run
+        ///  Use case  User sets archived test run internal (guid format) identifier  System search and purge archived test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -125,7 +143,7 @@ namespace TestIT.ApiClient.Api
         /// Permanently delete test run from archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets archived test run internal (guid format) identifier    System search and purge archived test run
+        ///  Use case  User sets archived test run internal (guid format) identifier  System search and purge archived test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -155,7 +173,7 @@ namespace TestIT.ApiClient.Api
         /// Restore test run from the archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets archived test run internal (guid format) identifier    System search and restore test run
+        ///  Use case  User sets archived test run internal (guid format) identifier  System search and restore test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the test run</param>
@@ -166,7 +184,7 @@ namespace TestIT.ApiClient.Api
         /// Restore test run from the archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets archived test run internal (guid format) identifier    System search and restore test run
+        ///  Use case  User sets archived test run internal (guid format) identifier  System search and restore test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the test run</param>
@@ -252,7 +270,7 @@ namespace TestIT.ApiClient.Api
         /// Permanently delete multiple test runs from archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets selection parameters of archived test runs    System search and delete collection of archived test runs    System returns the number of deleted archived test runs
+        ///  Use case  User sets selection parameters of archived test runs  System search and delete collection of archived test runs  System returns the number of deleted archived test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -263,7 +281,7 @@ namespace TestIT.ApiClient.Api
         /// Permanently delete multiple test runs from archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets selection parameters of archived test runs    System search and delete collection of archived test runs    System returns the number of deleted archived test runs
+        ///  Use case  User sets selection parameters of archived test runs  System search and delete collection of archived test runs  System returns the number of deleted archived test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -273,7 +291,7 @@ namespace TestIT.ApiClient.Api
         /// Restore multiple test runs from the archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets selection parameters of archived test runs    System search and restore collection of archived test runs    System returns the number of restored test runs
+        ///  Use case  User sets selection parameters of archived test runs  System search and restore collection of archived test runs  System returns the number of restored test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -284,7 +302,7 @@ namespace TestIT.ApiClient.Api
         /// Restore multiple test runs from the archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets selection parameters of archived test runs    System search and restore collection of archived test runs    System returns the number of restored test runs
+        ///  Use case  User sets selection parameters of archived test runs  System search and restore collection of archived test runs  System returns the number of restored test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -340,7 +358,7 @@ namespace TestIT.ApiClient.Api
         /// Complete TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System completes test run    System returns no content response
+        ///  Use case  User sets test run identifier  User runs method execution  System completes test run  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -351,7 +369,7 @@ namespace TestIT.ApiClient.Api
         /// Complete TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System completes test run    System returns no content response
+        ///  Use case  User sets test run identifier  User runs method execution  System completes test run  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -361,7 +379,7 @@ namespace TestIT.ApiClient.Api
         /// Create test runs based on autotests and configurations
         /// </summary>
         /// <remarks>
-        /// This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
+        /// This method creates a test run based on an autotest and a configuration. The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is that in this method there is no need to create a test plan and work items (test cases and checklists).
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByAutoTestsApiModel"> (optional)</param>
@@ -372,7 +390,7 @@ namespace TestIT.ApiClient.Api
         /// Create test runs based on autotests and configurations
         /// </summary>
         /// <remarks>
-        /// This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
+        /// This method creates a test run based on an autotest and a configuration. The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is that in this method there is no need to create a test plan and work items (test cases and checklists).
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByAutoTestsApiModel"> (optional)</param>
@@ -382,7 +400,7 @@ namespace TestIT.ApiClient.Api
         /// Create test runs picking the needed test points
         /// </summary>
         /// <remarks>
-        /// This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
+        /// This method creates a test run based on a combination of a configuration and a work item(test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated. This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByConfigurationsApiModel"> (optional)</param>
@@ -393,7 +411,7 @@ namespace TestIT.ApiClient.Api
         /// Create test runs picking the needed test points
         /// </summary>
         /// <remarks>
-        /// This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
+        /// This method creates a test run based on a combination of a configuration and a work item(test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated. This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByConfigurationsApiModel"> (optional)</param>
@@ -403,7 +421,7 @@ namespace TestIT.ApiClient.Api
         /// Create test run based on configurations and work items
         /// </summary>
         /// <remarks>
-        /// This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
+        /// This method creates a test run based on a combination of configuration and work item (test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByWorkItemsApiModel"> (optional)</param>
@@ -414,7 +432,7 @@ namespace TestIT.ApiClient.Api
         /// Create test run based on configurations and work items
         /// </summary>
         /// <remarks>
-        /// This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
+        /// This method creates a test run based on a combination of configuration and work item (test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByWorkItemsApiModel"> (optional)</param>
@@ -424,7 +442,7 @@ namespace TestIT.ApiClient.Api
         /// Create empty TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run model (listed in the request example)    User runs method execution    System creates test run    System returns test run model
+        ///  Use case  User sets test run model (listed in the request example)  User runs method execution  System creates test run  System returns test run model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createEmptyTestRunApiModel"> (optional)</param>
@@ -435,7 +453,7 @@ namespace TestIT.ApiClient.Api
         /// Create empty TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run model (listed in the request example)    User runs method execution    System creates test run    System returns test run model
+        ///  Use case  User sets test run model (listed in the request example)  User runs method execution  System creates test run  System returns test run model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createEmptyTestRunApiModel"> (optional)</param>
@@ -445,7 +463,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestRun by Id
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System finds test run    System returns test run
+        ///  Use case  User sets test run identifier  User runs method execution  System finds test run  System returns test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -456,7 +474,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestRun by Id
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System finds test run    System returns test run
+        ///  Use case  User sets test run identifier  User runs method execution  System finds test run  System returns test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -489,7 +507,7 @@ namespace TestIT.ApiClient.Api
         /// Start TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System starts test run    System returns no content response
+        ///  Use case  User sets test run identifier  User runs method execution  System starts test run  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -500,7 +518,7 @@ namespace TestIT.ApiClient.Api
         /// Start TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System starts test run    System returns no content response
+        ///  Use case  User sets test run identifier  User runs method execution  System starts test run  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -510,7 +528,7 @@ namespace TestIT.ApiClient.Api
         /// Stop TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System stops test run    System returns no content response
+        ///  Use case  User sets test run identifier  User runs method execution  System stops test run  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -521,7 +539,7 @@ namespace TestIT.ApiClient.Api
         /// Stop TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System stops test run    System returns no content response
+        ///  Use case  User sets test run identifier  User runs method execution  System stops test run  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -531,7 +549,7 @@ namespace TestIT.ApiClient.Api
         /// Update empty TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run properties (listed in the request example)    User runs method execution    System updates test run    System returns returns no content response
+        ///  Use case  User sets test run properties (listed in the request example)  User runs method execution  System updates test run  System returns returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateEmptyTestRunApiModel"> (optional)</param>
@@ -542,7 +560,7 @@ namespace TestIT.ApiClient.Api
         /// Update empty TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run properties (listed in the request example)    User runs method execution    System updates test run    System returns returns no content response
+        ///  Use case  User sets test run properties (listed in the request example)  User runs method execution  System updates test run  System returns returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateEmptyTestRunApiModel"> (optional)</param>
@@ -558,10 +576,33 @@ namespace TestIT.ApiClient.Api
     {
         #region Asynchronous Operations
         /// <summary>
+        /// Create TestRun filled with autotests linked to work items of type \&quot;AutoTestCases\&quot; selected by the filter
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTestRunAndFillByAutoTestCasesApiModel">Test run model with a filter for work items of type \&quot;AutoTestCases\&quot; and configuration IDs (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TestRunV2ApiResult</returns>
+        System.Threading.Tasks.Task<TestRunV2ApiResult> ApiV2TestRunsByAutoTestCasesPostAsync(CreateTestRunAndFillByAutoTestCasesApiModel createTestRunAndFillByAutoTestCasesApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Create TestRun filled with autotests linked to work items of type \&quot;AutoTestCases\&quot; selected by the filter
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTestRunAndFillByAutoTestCasesApiModel">Test run model with a filter for work items of type \&quot;AutoTestCases\&quot; and configuration IDs (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TestRunV2ApiResult)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TestRunV2ApiResult>> ApiV2TestRunsByAutoTestCasesPostWithHttpInfoAsync(CreateTestRunAndFillByAutoTestCasesApiModel createTestRunAndFillByAutoTestCasesApiModel = default, System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
         /// Delete multiple test runs
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets selection parameters of test runs    System search and delete collection of test runs    System returns the number of deleted test runs
+        ///  Use case  User sets selection parameters of test runs  System search and delete collection of test runs  System returns the number of deleted test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -573,7 +614,7 @@ namespace TestIT.ApiClient.Api
         /// Delete multiple test runs
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets selection parameters of test runs    System search and delete collection of test runs    System returns the number of deleted test runs
+        ///  Use case  User sets selection parameters of test runs  System search and delete collection of test runs  System returns the number of deleted test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -607,7 +648,7 @@ namespace TestIT.ApiClient.Api
         /// Delete test run
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run internal (guid format) identifier    System search and delete test run
+        ///  Use case  User sets test run internal (guid format) identifier  System search and delete test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -619,7 +660,7 @@ namespace TestIT.ApiClient.Api
         /// Delete test run
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run internal (guid format) identifier    System search and delete test run
+        ///  Use case  User sets test run internal (guid format) identifier  System search and delete test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -655,7 +696,7 @@ namespace TestIT.ApiClient.Api
         /// Permanently delete test run from archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets archived test run internal (guid format) identifier    System search and purge archived test run
+        ///  Use case  User sets archived test run internal (guid format) identifier  System search and purge archived test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -667,7 +708,7 @@ namespace TestIT.ApiClient.Api
         /// Permanently delete test run from archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets archived test run internal (guid format) identifier    System search and purge archived test run
+        ///  Use case  User sets archived test run internal (guid format) identifier  System search and purge archived test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -703,7 +744,7 @@ namespace TestIT.ApiClient.Api
         /// Restore test run from the archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets archived test run internal (guid format) identifier    System search and restore test run
+        ///  Use case  User sets archived test run internal (guid format) identifier  System search and restore test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the test run</param>
@@ -715,7 +756,7 @@ namespace TestIT.ApiClient.Api
         /// Restore test run from the archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets archived test run internal (guid format) identifier    System search and restore test run
+        ///  Use case  User sets archived test run internal (guid format) identifier  System search and restore test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the test run</param>
@@ -822,7 +863,7 @@ namespace TestIT.ApiClient.Api
         /// Permanently delete multiple test runs from archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets selection parameters of archived test runs    System search and delete collection of archived test runs    System returns the number of deleted archived test runs
+        ///  Use case  User sets selection parameters of archived test runs  System search and delete collection of archived test runs  System returns the number of deleted archived test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -834,7 +875,7 @@ namespace TestIT.ApiClient.Api
         /// Permanently delete multiple test runs from archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets selection parameters of archived test runs    System search and delete collection of archived test runs    System returns the number of deleted archived test runs
+        ///  Use case  User sets selection parameters of archived test runs  System search and delete collection of archived test runs  System returns the number of deleted archived test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -845,7 +886,7 @@ namespace TestIT.ApiClient.Api
         /// Restore multiple test runs from the archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets selection parameters of archived test runs    System search and restore collection of archived test runs    System returns the number of restored test runs
+        ///  Use case  User sets selection parameters of archived test runs  System search and restore collection of archived test runs  System returns the number of restored test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -857,7 +898,7 @@ namespace TestIT.ApiClient.Api
         /// Restore multiple test runs from the archive
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets selection parameters of archived test runs    System search and restore collection of archived test runs    System returns the number of restored test runs
+        ///  Use case  User sets selection parameters of archived test runs  System search and restore collection of archived test runs  System returns the number of restored test runs
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -924,7 +965,7 @@ namespace TestIT.ApiClient.Api
         /// Complete TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System completes test run    System returns no content response
+        ///  Use case  User sets test run identifier  User runs method execution  System completes test run  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -936,7 +977,7 @@ namespace TestIT.ApiClient.Api
         /// Complete TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System completes test run    System returns no content response
+        ///  Use case  User sets test run identifier  User runs method execution  System completes test run  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -947,7 +988,7 @@ namespace TestIT.ApiClient.Api
         /// Create test runs based on autotests and configurations
         /// </summary>
         /// <remarks>
-        /// This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
+        /// This method creates a test run based on an autotest and a configuration. The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is that in this method there is no need to create a test plan and work items (test cases and checklists).
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByAutoTestsApiModel"> (optional)</param>
@@ -959,7 +1000,7 @@ namespace TestIT.ApiClient.Api
         /// Create test runs based on autotests and configurations
         /// </summary>
         /// <remarks>
-        /// This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
+        /// This method creates a test run based on an autotest and a configuration. The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is that in this method there is no need to create a test plan and work items (test cases and checklists).
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByAutoTestsApiModel"> (optional)</param>
@@ -970,7 +1011,7 @@ namespace TestIT.ApiClient.Api
         /// Create test runs picking the needed test points
         /// </summary>
         /// <remarks>
-        /// This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
+        /// This method creates a test run based on a combination of a configuration and a work item(test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated. This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByConfigurationsApiModel"> (optional)</param>
@@ -982,7 +1023,7 @@ namespace TestIT.ApiClient.Api
         /// Create test runs picking the needed test points
         /// </summary>
         /// <remarks>
-        /// This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
+        /// This method creates a test run based on a combination of a configuration and a work item(test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated. This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByConfigurationsApiModel"> (optional)</param>
@@ -993,7 +1034,7 @@ namespace TestIT.ApiClient.Api
         /// Create test run based on configurations and work items
         /// </summary>
         /// <remarks>
-        /// This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
+        /// This method creates a test run based on a combination of configuration and work item (test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByWorkItemsApiModel"> (optional)</param>
@@ -1005,7 +1046,7 @@ namespace TestIT.ApiClient.Api
         /// Create test run based on configurations and work items
         /// </summary>
         /// <remarks>
-        /// This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
+        /// This method creates a test run based on a combination of configuration and work item (test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated.
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByWorkItemsApiModel"> (optional)</param>
@@ -1016,7 +1057,7 @@ namespace TestIT.ApiClient.Api
         /// Create empty TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run model (listed in the request example)    User runs method execution    System creates test run    System returns test run model
+        ///  Use case  User sets test run model (listed in the request example)  User runs method execution  System creates test run  System returns test run model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createEmptyTestRunApiModel"> (optional)</param>
@@ -1028,7 +1069,7 @@ namespace TestIT.ApiClient.Api
         /// Create empty TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run model (listed in the request example)    User runs method execution    System creates test run    System returns test run model
+        ///  Use case  User sets test run model (listed in the request example)  User runs method execution  System creates test run  System returns test run model
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createEmptyTestRunApiModel"> (optional)</param>
@@ -1039,7 +1080,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestRun by Id
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System finds test run    System returns test run
+        ///  Use case  User sets test run identifier  User runs method execution  System finds test run  System returns test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -1051,7 +1092,7 @@ namespace TestIT.ApiClient.Api
         /// Get TestRun by Id
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System finds test run    System returns test run
+        ///  Use case  User sets test run identifier  User runs method execution  System finds test run  System returns test run
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -1087,7 +1128,7 @@ namespace TestIT.ApiClient.Api
         /// Start TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System starts test run    System returns no content response
+        ///  Use case  User sets test run identifier  User runs method execution  System starts test run  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -1099,7 +1140,7 @@ namespace TestIT.ApiClient.Api
         /// Start TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System starts test run    System returns no content response
+        ///  Use case  User sets test run identifier  User runs method execution  System starts test run  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -1110,7 +1151,7 @@ namespace TestIT.ApiClient.Api
         /// Stop TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System stops test run    System returns no content response
+        ///  Use case  User sets test run identifier  User runs method execution  System stops test run  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -1122,7 +1163,7 @@ namespace TestIT.ApiClient.Api
         /// Stop TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run identifier    User runs method execution    System stops test run    System returns no content response
+        ///  Use case  User sets test run identifier  User runs method execution  System stops test run  System returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -1133,7 +1174,7 @@ namespace TestIT.ApiClient.Api
         /// Update empty TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run properties (listed in the request example)    User runs method execution    System updates test run    System returns returns no content response
+        ///  Use case  User sets test run properties (listed in the request example)  User runs method execution  System updates test run  System returns returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateEmptyTestRunApiModel"> (optional)</param>
@@ -1145,7 +1186,7 @@ namespace TestIT.ApiClient.Api
         /// Update empty TestRun
         /// </summary>
         /// <remarks>
-        ///   Use case    User sets test run properties (listed in the request example)    User runs method execution    System updates test run    System returns returns no content response
+        ///  Use case  User sets test run properties (listed in the request example)  User runs method execution  System updates test run  System returns returns no content response
         /// </remarks>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateEmptyTestRunApiModel"> (optional)</param>
@@ -1366,7 +1407,138 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete multiple test runs   Use case    User sets selection parameters of test runs    System search and delete collection of test runs    System returns the number of deleted test runs
+        /// Create TestRun filled with autotests linked to work items of type \&quot;AutoTestCases\&quot; selected by the filter 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTestRunAndFillByAutoTestCasesApiModel">Test run model with a filter for work items of type \&quot;AutoTestCases\&quot; and configuration IDs (optional)</param>
+        /// <returns>TestRunV2ApiResult</returns>
+        public TestRunV2ApiResult ApiV2TestRunsByAutoTestCasesPost(CreateTestRunAndFillByAutoTestCasesApiModel createTestRunAndFillByAutoTestCasesApiModel = default)
+        {
+            TestIT.ApiClient.Client.ApiResponse<TestRunV2ApiResult> localVarResponse = ApiV2TestRunsByAutoTestCasesPostWithHttpInfo(createTestRunAndFillByAutoTestCasesApiModel);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create TestRun filled with autotests linked to work items of type \&quot;AutoTestCases\&quot; selected by the filter 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTestRunAndFillByAutoTestCasesApiModel">Test run model with a filter for work items of type \&quot;AutoTestCases\&quot; and configuration IDs (optional)</param>
+        /// <returns>ApiResponse of TestRunV2ApiResult</returns>
+        public TestIT.ApiClient.Client.ApiResponse<TestRunV2ApiResult> ApiV2TestRunsByAutoTestCasesPostWithHttpInfo(CreateTestRunAndFillByAutoTestCasesApiModel createTestRunAndFillByAutoTestCasesApiModel = default)
+        {
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = createTestRunAndFillByAutoTestCasesApiModel;
+
+            // authentication (PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Cookies) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<TestRunV2ApiResult>("/api/v2/testRuns/byAutoTestCases", localVarRequestOptions, this.Configuration);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsByAutoTestCasesPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Create TestRun filled with autotests linked to work items of type \&quot;AutoTestCases\&quot; selected by the filter 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTestRunAndFillByAutoTestCasesApiModel">Test run model with a filter for work items of type \&quot;AutoTestCases\&quot; and configuration IDs (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of TestRunV2ApiResult</returns>
+        public async System.Threading.Tasks.Task<TestRunV2ApiResult> ApiV2TestRunsByAutoTestCasesPostAsync(CreateTestRunAndFillByAutoTestCasesApiModel createTestRunAndFillByAutoTestCasesApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+            TestIT.ApiClient.Client.ApiResponse<TestRunV2ApiResult> localVarResponse = await ApiV2TestRunsByAutoTestCasesPostWithHttpInfoAsync(createTestRunAndFillByAutoTestCasesApiModel, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create TestRun filled with autotests linked to work items of type \&quot;AutoTestCases\&quot; selected by the filter 
+        /// </summary>
+        /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="createTestRunAndFillByAutoTestCasesApiModel">Test run model with a filter for work items of type \&quot;AutoTestCases\&quot; and configuration IDs (optional)</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (TestRunV2ApiResult)</returns>
+        public async System.Threading.Tasks.Task<TestIT.ApiClient.Client.ApiResponse<TestRunV2ApiResult>> ApiV2TestRunsByAutoTestCasesPostWithHttpInfoAsync(CreateTestRunAndFillByAutoTestCasesApiModel createTestRunAndFillByAutoTestCasesApiModel = default, System.Threading.CancellationToken cancellationToken = default)
+        {
+
+            TestIT.ApiClient.Client.RequestOptions localVarRequestOptions = new TestIT.ApiClient.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "application/json"
+            };
+
+
+            var localVarContentType = TestIT.ApiClient.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null) localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+
+            var localVarAccept = TestIT.ApiClient.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+
+            localVarRequestOptions.Data = createTestRunAndFillByAutoTestCasesApiModel;
+
+            // authentication (PrivateToken) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Authorization")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Authorization", this.Configuration.GetApiKeyWithPrefix("Authorization"));
+            }
+            // authentication (Cookies) required
+            // cookie parameter support
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("session")))
+            {
+                localVarRequestOptions.Cookies.Add(new Cookie("session", this.Configuration.GetApiKeyWithPrefix("session")));
+            }
+
+            // make the HTTP request
+
+            var localVarResponse = await this.AsynchronousClient.PostAsync<TestRunV2ApiResult>("/api/v2/testRuns/byAutoTestCases", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("ApiV2TestRunsByAutoTestCasesPost", localVarResponse);
+                if (_exception != null) throw _exception;
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Delete multiple test runs  Use case  User sets selection parameters of test runs  System search and delete collection of test runs  System returns the number of deleted test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -1378,7 +1550,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete multiple test runs   Use case    User sets selection parameters of test runs    System search and delete collection of test runs    System returns the number of deleted test runs
+        /// Delete multiple test runs  Use case  User sets selection parameters of test runs  System search and delete collection of test runs  System returns the number of deleted test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -1429,7 +1601,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete multiple test runs   Use case    User sets selection parameters of test runs    System search and delete collection of test runs    System returns the number of deleted test runs
+        /// Delete multiple test runs  Use case  User sets selection parameters of test runs  System search and delete collection of test runs  System returns the number of deleted test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -1442,7 +1614,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete multiple test runs   Use case    User sets selection parameters of test runs    System search and delete collection of test runs    System returns the number of deleted test runs
+        /// Delete multiple test runs  Use case  User sets selection parameters of test runs  System search and delete collection of test runs  System returns the number of deleted test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -1626,7 +1798,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete test run   Use case    User sets test run internal (guid format) identifier    System search and delete test run
+        /// Delete test run  Use case  User sets test run internal (guid format) identifier  System search and delete test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -1637,7 +1809,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete test run   Use case    User sets test run internal (guid format) identifier    System search and delete test run
+        /// Delete test run  Use case  User sets test run internal (guid format) identifier  System search and delete test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -1687,7 +1859,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete test run   Use case    User sets test run internal (guid format) identifier    System search and delete test run
+        /// Delete test run  Use case  User sets test run internal (guid format) identifier  System search and delete test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -1699,7 +1871,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Delete test run   Use case    User sets test run internal (guid format) identifier    System search and delete test run
+        /// Delete test run  Use case  User sets test run internal (guid format) identifier  System search and delete test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -1888,7 +2060,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Permanently delete test run from archive   Use case    User sets archived test run internal (guid format) identifier    System search and purge archived test run
+        /// Permanently delete test run from archive  Use case  User sets archived test run internal (guid format) identifier  System search and purge archived test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -1899,7 +2071,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Permanently delete test run from archive   Use case    User sets archived test run internal (guid format) identifier    System search and purge archived test run
+        /// Permanently delete test run from archive  Use case  User sets archived test run internal (guid format) identifier  System search and purge archived test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -1949,7 +2121,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Permanently delete test run from archive   Use case    User sets archived test run internal (guid format) identifier    System search and purge archived test run
+        /// Permanently delete test run from archive  Use case  User sets archived test run internal (guid format) identifier  System search and purge archived test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -1961,7 +2133,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Permanently delete test run from archive   Use case    User sets archived test run internal (guid format) identifier    System search and purge archived test run
+        /// Permanently delete test run from archive  Use case  User sets archived test run internal (guid format) identifier  System search and purge archived test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test run internal (UUID) identifier</param>
@@ -2152,7 +2324,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Restore test run from the archive   Use case    User sets archived test run internal (guid format) identifier    System search and restore test run
+        /// Restore test run from the archive  Use case  User sets archived test run internal (guid format) identifier  System search and restore test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the test run</param>
@@ -2163,7 +2335,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Restore test run from the archive   Use case    User sets archived test run internal (guid format) identifier    System search and restore test run
+        /// Restore test run from the archive  Use case  User sets archived test run internal (guid format) identifier  System search and restore test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the test run</param>
@@ -2213,7 +2385,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Restore test run from the archive   Use case    User sets archived test run internal (guid format) identifier    System search and restore test run
+        /// Restore test run from the archive  Use case  User sets archived test run internal (guid format) identifier  System search and restore test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the test run</param>
@@ -2225,7 +2397,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Restore test run from the archive   Use case    User sets archived test run internal (guid format) identifier    System search and restore test run
+        /// Restore test run from the archive  Use case  User sets archived test run internal (guid format) identifier  System search and restore test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Unique ID of the test run</param>
@@ -2809,7 +2981,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Permanently delete multiple test runs from archive   Use case    User sets selection parameters of archived test runs    System search and delete collection of archived test runs    System returns the number of deleted archived test runs
+        /// Permanently delete multiple test runs from archive  Use case  User sets selection parameters of archived test runs  System search and delete collection of archived test runs  System returns the number of deleted archived test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -2821,7 +2993,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Permanently delete multiple test runs from archive   Use case    User sets selection parameters of archived test runs    System search and delete collection of archived test runs    System returns the number of deleted archived test runs
+        /// Permanently delete multiple test runs from archive  Use case  User sets selection parameters of archived test runs  System search and delete collection of archived test runs  System returns the number of deleted archived test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -2872,7 +3044,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Permanently delete multiple test runs from archive   Use case    User sets selection parameters of archived test runs    System search and delete collection of archived test runs    System returns the number of deleted archived test runs
+        /// Permanently delete multiple test runs from archive  Use case  User sets selection parameters of archived test runs  System search and delete collection of archived test runs  System returns the number of deleted archived test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -2885,7 +3057,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Permanently delete multiple test runs from archive   Use case    User sets selection parameters of archived test runs    System search and delete collection of archived test runs    System returns the number of deleted archived test runs
+        /// Permanently delete multiple test runs from archive  Use case  User sets selection parameters of archived test runs  System search and delete collection of archived test runs  System returns the number of deleted archived test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -2940,7 +3112,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Restore multiple test runs from the archive   Use case    User sets selection parameters of archived test runs    System search and restore collection of archived test runs    System returns the number of restored test runs
+        /// Restore multiple test runs from the archive  Use case  User sets selection parameters of archived test runs  System search and restore collection of archived test runs  System returns the number of restored test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -2952,7 +3124,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Restore multiple test runs from the archive   Use case    User sets selection parameters of archived test runs    System search and restore collection of archived test runs    System returns the number of restored test runs
+        /// Restore multiple test runs from the archive  Use case  User sets selection parameters of archived test runs  System search and restore collection of archived test runs  System returns the number of restored test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -3003,7 +3175,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Restore multiple test runs from the archive   Use case    User sets selection parameters of archived test runs    System search and restore collection of archived test runs    System returns the number of restored test runs
+        /// Restore multiple test runs from the archive  Use case  User sets selection parameters of archived test runs  System search and restore collection of archived test runs  System returns the number of restored test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -3016,7 +3188,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Restore multiple test runs from the archive   Use case    User sets selection parameters of archived test runs    System search and restore collection of archived test runs    System returns the number of restored test runs
+        /// Restore multiple test runs from the archive  Use case  User sets selection parameters of archived test runs  System search and restore collection of archived test runs  System returns the number of restored test runs
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="testRunSelectApiModel"> (optional)</param>
@@ -3391,7 +3563,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Complete TestRun   Use case    User sets test run identifier    User runs method execution    System completes test run    System returns no content response
+        /// Complete TestRun  Use case  User sets test run identifier  User runs method execution  System completes test run  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -3402,7 +3574,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Complete TestRun   Use case    User sets test run identifier    User runs method execution    System completes test run    System returns no content response
+        /// Complete TestRun  Use case  User sets test run identifier  User runs method execution  System completes test run  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -3452,7 +3624,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Complete TestRun   Use case    User sets test run identifier    User runs method execution    System completes test run    System returns no content response
+        /// Complete TestRun  Use case  User sets test run identifier  User runs method execution  System completes test run  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -3464,7 +3636,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Complete TestRun   Use case    User sets test run identifier    User runs method execution    System completes test run    System returns no content response
+        /// Complete TestRun  Use case  User sets test run identifier  User runs method execution  System completes test run  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -3518,7 +3690,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create test runs based on autotests and configurations This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
+        /// Create test runs based on autotests and configurations This method creates a test run based on an autotest and a configuration. The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is that in this method there is no need to create a test plan and work items (test cases and checklists).
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByAutoTestsApiModel"> (optional)</param>
@@ -3530,7 +3702,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create test runs based on autotests and configurations This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
+        /// Create test runs based on autotests and configurations This method creates a test run based on an autotest and a configuration. The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is that in this method there is no need to create a test plan and work items (test cases and checklists).
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByAutoTestsApiModel"> (optional)</param>
@@ -3581,7 +3753,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create test runs based on autotests and configurations This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
+        /// Create test runs based on autotests and configurations This method creates a test run based on an autotest and a configuration. The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is that in this method there is no need to create a test plan and work items (test cases and checklists).
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByAutoTestsApiModel"> (optional)</param>
@@ -3594,7 +3766,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create test runs based on autotests and configurations This method creates a test run based on an autotest and a configuration.  The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is  that in this method there is no need to create a test plan and work items (test cases and checklists).
+        /// Create test runs based on autotests and configurations This method creates a test run based on an autotest and a configuration. The difference between the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; and &#x60;POST /api/v2/testRuns/byConfigurations&#x60; methods is that in this method there is no need to create a test plan and work items (test cases and checklists).
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByAutoTestsApiModel"> (optional)</param>
@@ -3649,7 +3821,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create test runs picking the needed test points This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
+        /// Create test runs picking the needed test points This method creates a test run based on a combination of a configuration and a work item(test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated. This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByConfigurationsApiModel"> (optional)</param>
@@ -3661,7 +3833,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create test runs picking the needed test points This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
+        /// Create test runs picking the needed test points This method creates a test run based on a combination of a configuration and a work item(test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated. This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByConfigurationsApiModel"> (optional)</param>
@@ -3712,7 +3884,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create test runs picking the needed test points This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
+        /// Create test runs picking the needed test points This method creates a test run based on a combination of a configuration and a work item(test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated. This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByConfigurationsApiModel"> (optional)</param>
@@ -3725,7 +3897,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create test runs picking the needed test points This method creates a test run based on a combination of a configuration and a work item(test case or checklist).  Before you create a test run using this method, make sure to create a test plan. Work items must be automated.  This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a  jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
+        /// Create test runs picking the needed test points This method creates a test run based on a combination of a configuration and a work item(test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated. This method is different from the &#x60;POST /api/v2/testRuns/byWorkItems&#x60; method because of the ability to send a jagged array within the \&quot;&lt;b&gt;testPointSelectors&lt;/b&gt;\&quot; parameter.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByConfigurationsApiModel"> (optional)</param>
@@ -3780,7 +3952,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create test run based on configurations and work items This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
+        /// Create test run based on configurations and work items This method creates a test run based on a combination of configuration and work item (test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByWorkItemsApiModel"> (optional)</param>
@@ -3792,7 +3964,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create test run based on configurations and work items This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
+        /// Create test run based on configurations and work items This method creates a test run based on a combination of configuration and work item (test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByWorkItemsApiModel"> (optional)</param>
@@ -3843,7 +4015,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create test run based on configurations and work items This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
+        /// Create test run based on configurations and work items This method creates a test run based on a combination of configuration and work item (test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByWorkItemsApiModel"> (optional)</param>
@@ -3856,7 +4028,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create test run based on configurations and work items This method creates a test run based on a combination of configuration and work item (test case or checklist).  Before you create a test run using this method, make sure to create a test plan.  Work items must be automated.
+        /// Create test run based on configurations and work items This method creates a test run based on a combination of configuration and work item (test case or checklist). Before you create a test run using this method, make sure to create a test plan. Work items must be automated.
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createTestRunAndFillByWorkItemsApiModel"> (optional)</param>
@@ -3911,7 +4083,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create empty TestRun   Use case    User sets test run model (listed in the request example)    User runs method execution    System creates test run    System returns test run model
+        /// Create empty TestRun  Use case  User sets test run model (listed in the request example)  User runs method execution  System creates test run  System returns test run model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createEmptyTestRunApiModel"> (optional)</param>
@@ -3923,7 +4095,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create empty TestRun   Use case    User sets test run model (listed in the request example)    User runs method execution    System creates test run    System returns test run model
+        /// Create empty TestRun  Use case  User sets test run model (listed in the request example)  User runs method execution  System creates test run  System returns test run model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createEmptyTestRunApiModel"> (optional)</param>
@@ -3974,7 +4146,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create empty TestRun   Use case    User sets test run model (listed in the request example)    User runs method execution    System creates test run    System returns test run model
+        /// Create empty TestRun  Use case  User sets test run model (listed in the request example)  User runs method execution  System creates test run  System returns test run model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createEmptyTestRunApiModel"> (optional)</param>
@@ -3987,7 +4159,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Create empty TestRun   Use case    User sets test run model (listed in the request example)    User runs method execution    System creates test run    System returns test run model
+        /// Create empty TestRun  Use case  User sets test run model (listed in the request example)  User runs method execution  System creates test run  System returns test run model
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="createEmptyTestRunApiModel"> (optional)</param>
@@ -4042,7 +4214,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestRun by Id   Use case    User sets test run identifier    User runs method execution    System finds test run    System returns test run
+        /// Get TestRun by Id  Use case  User sets test run identifier  User runs method execution  System finds test run  System returns test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -4054,7 +4226,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestRun by Id   Use case    User sets test run identifier    User runs method execution    System finds test run    System returns test run
+        /// Get TestRun by Id  Use case  User sets test run identifier  User runs method execution  System finds test run  System returns test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -4104,7 +4276,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestRun by Id   Use case    User sets test run identifier    User runs method execution    System finds test run    System returns test run
+        /// Get TestRun by Id  Use case  User sets test run identifier  User runs method execution  System finds test run  System returns test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -4117,7 +4289,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Get TestRun by Id   Use case    User sets test run identifier    User runs method execution    System finds test run    System returns test run
+        /// Get TestRun by Id  Use case  User sets test run identifier  User runs method execution  System finds test run  System returns test run
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -4308,7 +4480,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Start TestRun   Use case    User sets test run identifier    User runs method execution    System starts test run    System returns no content response
+        /// Start TestRun  Use case  User sets test run identifier  User runs method execution  System starts test run  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -4319,7 +4491,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Start TestRun   Use case    User sets test run identifier    User runs method execution    System starts test run    System returns no content response
+        /// Start TestRun  Use case  User sets test run identifier  User runs method execution  System starts test run  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -4369,7 +4541,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Start TestRun   Use case    User sets test run identifier    User runs method execution    System starts test run    System returns no content response
+        /// Start TestRun  Use case  User sets test run identifier  User runs method execution  System starts test run  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -4381,7 +4553,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Start TestRun   Use case    User sets test run identifier    User runs method execution    System starts test run    System returns no content response
+        /// Start TestRun  Use case  User sets test run identifier  User runs method execution  System starts test run  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -4435,7 +4607,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Stop TestRun   Use case    User sets test run identifier    User runs method execution    System stops test run    System returns no content response
+        /// Stop TestRun  Use case  User sets test run identifier  User runs method execution  System stops test run  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -4446,7 +4618,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Stop TestRun   Use case    User sets test run identifier    User runs method execution    System stops test run    System returns no content response
+        /// Stop TestRun  Use case  User sets test run identifier  User runs method execution  System stops test run  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -4496,7 +4668,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Stop TestRun   Use case    User sets test run identifier    User runs method execution    System stops test run    System returns no content response
+        /// Stop TestRun  Use case  User sets test run identifier  User runs method execution  System stops test run  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -4508,7 +4680,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Stop TestRun   Use case    User sets test run identifier    User runs method execution    System stops test run    System returns no content response
+        /// Stop TestRun  Use case  User sets test run identifier  User runs method execution  System stops test run  System returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id">Test Run internal identifier (GUID format)</param>
@@ -4562,7 +4734,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update empty TestRun   Use case    User sets test run properties (listed in the request example)    User runs method execution    System updates test run    System returns returns no content response
+        /// Update empty TestRun  Use case  User sets test run properties (listed in the request example)  User runs method execution  System updates test run  System returns returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateEmptyTestRunApiModel"> (optional)</param>
@@ -4573,7 +4745,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update empty TestRun   Use case    User sets test run properties (listed in the request example)    User runs method execution    System updates test run    System returns returns no content response
+        /// Update empty TestRun  Use case  User sets test run properties (listed in the request example)  User runs method execution  System updates test run  System returns returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateEmptyTestRunApiModel"> (optional)</param>
@@ -4624,7 +4796,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update empty TestRun   Use case    User sets test run properties (listed in the request example)    User runs method execution    System updates test run    System returns returns no content response
+        /// Update empty TestRun  Use case  User sets test run properties (listed in the request example)  User runs method execution  System updates test run  System returns returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateEmptyTestRunApiModel"> (optional)</param>
@@ -4636,7 +4808,7 @@ namespace TestIT.ApiClient.Api
         }
 
         /// <summary>
-        /// Update empty TestRun   Use case    User sets test run properties (listed in the request example)    User runs method execution    System updates test run    System returns returns no content response
+        /// Update empty TestRun  Use case  User sets test run properties (listed in the request example)  User runs method execution  System updates test run  System returns returns no content response
         /// </summary>
         /// <exception cref="TestIT.ApiClient.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="updateEmptyTestRunApiModel"> (optional)</param>

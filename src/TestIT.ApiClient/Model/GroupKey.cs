@@ -42,7 +42,7 @@ namespace TestIT.ApiClient.Model
         /// </summary>
         /// <param name="value">value (required).</param>
         /// <param name="displayValue">displayValue.</param>
-        public GroupKey(string value = default, string displayValue = default)
+        public GroupKey(JsonElement value = default, string displayValue = default)
         {
             // to ensure "value" is required (not null)
             if (value == null)
@@ -57,7 +57,7 @@ namespace TestIT.ApiClient.Model
         /// Gets or Sets Value
         /// </summary>
         [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
-        public string Value { get; set; }
+        public JsonElement Value { get; set; }
 
         /// <summary>
         /// Gets or Sets DisplayValue

@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **Guid** |  | 
 **Name** | **string** |  | 
-**ProjectId** | **Guid** |  | 
 **ParentId** | **Guid?** |  | [optional] 
 **PreconditionSteps** | [**List&lt;StepPutModel&gt;**](StepPutModel.md) |  | [optional] 
 **PostconditionSteps** | [**List&lt;StepPutModel&gt;**](StepPutModel.md) |  | [optional] 

@@ -51,7 +51,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="code">Code representing the test status. (required).</param>
         /// <param name="name">Name of the test status. (required).</param>
         /// <param name="type">Type of the test status (e.g., Passed, Failed). (required).</param>
-        public TestStatusShortApiResult(Guid id = default, string code = default, string name = default, TestStatusApiType type = default)
+        /// <param name="isSystem">Identifies test status as system. (required).</param>
+        public TestStatusShortApiResult(Guid id = default, string code = default, string name = default, TestStatusApiType type = default, bool isSystem = default)
         {
             this.Id = id;
             // to ensure "code" is required (not null)
@@ -67,6 +68,7 @@ namespace TestIT.ApiClient.Model
             }
             this.Name = name;
             this.Type = type;
+            this.IsSystem = isSystem;
         }
 
         /// <summary>
@@ -91,6 +93,13 @@ namespace TestIT.ApiClient.Model
         public string Name { get; set; }
 
         /// <summary>
+        /// Identifies test status as system.
+        /// </summary>
+        /// <value>Identifies test status as system.</value>
+        [DataMember(Name = "isSystem", IsRequired = true, EmitDefaultValue = true)]
+        public bool IsSystem { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -102,6 +111,7 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Code: ").Append(Code).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("  IsSystem: ").Append(IsSystem).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }

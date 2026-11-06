@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Tags** | **List&lt;string&gt;** | Collection of tags to assign to the test run | [optional] 
 **ConfigurationIds** | **List&lt;Guid&gt;** | Specifies the configuration GUIDs, from which test points are created. You can specify several GUIDs. | 
 **WorkItemIds** | **List&lt;Guid&gt;** | Specifies the work item GUIDs, from which test points are created. You can specify several GUIDs. | 
+**Option** | [**TestRunLaunchOptionApiModel**](TestRunLaunchOptionApiModel.md) | Test run launching options. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

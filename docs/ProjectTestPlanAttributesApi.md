@@ -16,7 +16,7 @@ All URIs are relative to *http://localhost*
 
 Add attributes to project's test plans
 
-  Use case    User sets project internal or global identifier and attributes identifiers    User runs method execution    System updates project and add attributes to project for test plans    System returns no content response
+ Use case  User sets project internal or global identifier and attributes identifiers  User runs method execution  System updates project and add attributes to project for test plans  System returns no content response
 
 ### Example
 ```csharp
@@ -109,7 +109,7 @@ void (empty response body)
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **204** | No Content |  -  |
-| **400** |   Attributes must be global |  -  |
+| **400** |  Attributes must be global |  -  |
 | **401** | Unauthorized |  -  |
 | **403** | Update permission for project settings is required |  -  |
 | **404** | Not Found |  -  |
@@ -124,7 +124,7 @@ void (empty response body)
 
 Delete attribute from project's test plans
 
-  Use case    User sets project internal or global identifier and attribute identifier    User runs method execution    System updates project and delete attribute from project for test plans    System returns no content response
+ Use case  User sets project internal or global identifier and attribute identifier  User runs method execution  System updates project and delete attribute from project for test plans  System returns no content response
 
 ### Example
 ```csharp
@@ -232,7 +232,7 @@ void (empty response body)
 
 Get project's test plan attributes
 
-  Use case    User runs method execution    System returns project for test plans attributes by project identifier
+ Use case  User runs method execution  System returns project for test plans attributes by project identifier
 
 ### Example
 ```csharp
@@ -338,7 +338,7 @@ catch (ApiException e)
 
 <a id="searchtestplanattributesinproject"></a>
 # **SearchTestPlanAttributesInProject**
-> List&lt;CustomAttributeGetModel&gt; SearchTestPlanAttributesInProject (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectAttributesFilterModel projectAttributesFilterModel = null)
+> List&lt;CustomAttributeModel&gt; SearchTestPlanAttributesInProject (string projectId, int? skip = null, int? take = null, string orderBy = null, string searchField = null, string searchValue = null, ProjectAttributesFilterModel projectAttributesFilterModel = null)
 
 Search for attributes used in the project test plans
 
@@ -383,7 +383,7 @@ namespace Example
             try
             {
                 // Search for attributes used in the project test plans
-                List<CustomAttributeGetModel> result = apiInstance.SearchTestPlanAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+                List<CustomAttributeModel> result = apiInstance.SearchTestPlanAttributesInProject(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -404,7 +404,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Search for attributes used in the project test plans
-    ApiResponse<List<CustomAttributeGetModel>> response = apiInstance.SearchTestPlanAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
+    ApiResponse<List<CustomAttributeModel>> response = apiInstance.SearchTestPlanAttributesInProjectWithHttpInfo(projectId, skip, take, orderBy, searchField, searchValue, projectAttributesFilterModel);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -431,7 +431,7 @@ catch (ApiException e)
 
 ### Return type
 
-[**List&lt;CustomAttributeGetModel&gt;**](CustomAttributeGetModel.md)
+[**List&lt;CustomAttributeModel&gt;**](CustomAttributeModel.md)
 
 ### Authorization
 
@@ -462,7 +462,7 @@ catch (ApiException e)
 
 Update attribute of project's test plans
 
-  Use case    User sets project internal or global identifier and attribute model    User runs method execution    System updates project and project attribute for test plan    System returns no content response
+ Use case  User sets project internal or global identifier and attribute model  User runs method execution  System updates project and project attribute for test plan  System returns no content response
 
 ### Example
 ```csharp

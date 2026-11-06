@@ -47,18 +47,23 @@ namespace TestIT.ApiClient.Model
         /// Initializes a new instance of the <see cref="Filter" /> class.
         /// </summary>
         /// <param name="varOperator">varOperator (required).</param>
-        /// <param name="value">value.</param>
-        public Filter(FilterOperator varOperator = default, string value = default)
+        /// <param name="value">value (required).</param>
+        public Filter(FilterOperator varOperator = default, JsonElement value = default)
         {
             this.Operator = varOperator;
+            // to ensure "value" is required (not null)
+            if (value == null)
+            {
+                throw new ArgumentNullException("value is a required property for Filter and cannot be null");
+            }
             this.Value = value;
         }
 
         /// <summary>
         /// Gets or Sets Value
         /// </summary>
-        [DataMember(Name = "value", EmitDefaultValue = true)]
-        public string Value { get; set; }
+        [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = true)]
+        public JsonElement Value { get; set; }
 
         /// <summary>
         /// Gets or Sets Field

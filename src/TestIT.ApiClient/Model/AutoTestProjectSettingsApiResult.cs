@@ -50,8 +50,8 @@ namespace TestIT.ApiClient.Model
         /// <param name="workItemUpdatingFields">Autotest to work item updating fields (required).</param>
         /// <param name="archiveOutdatedTestRunsEnabled">Indicates whether archiving of outdated test runs is enabled for the project. (required).</param>
         /// <param name="testRunsArchiveLimitEnabled">Indicates whether a limit is enforced on the number of archived test runs. (required).</param>
-        /// <param name="testRunsRetentionPeriodDays"> The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings (required).</param>
-        /// <param name="maxActiveTestRunsCount">Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived (required).</param>
+        /// <param name="testRunsRetentionPeriodDays"> The retention period in days for test runs. After this period, outdated test runs may be archived based on project settings (required).</param>
+        /// <param name="maxActiveTestRunsCount">Maximum number of active test runs to keep. When this limit is exceeded, older test runs are automatically archived (required).</param>
         public AutoTestProjectSettingsApiResult(Guid projectId = default, bool isFlakyAuto = default, int flakyStabilityPercentage = default, int flakyTestRunCount = default, bool rerunEnabled = default, int rerunAttemptsCount = default, bool workItemUpdatingEnabled = default, WorkItemUpdatingFieldsApiResult workItemUpdatingFields = default, bool archiveOutdatedTestRunsEnabled = default, bool testRunsArchiveLimitEnabled = default, int testRunsRetentionPeriodDays = default, int maxActiveTestRunsCount = default)
         {
             this.ProjectId = projectId;
@@ -144,16 +144,16 @@ namespace TestIT.ApiClient.Model
         public bool TestRunsArchiveLimitEnabled { get; set; }
 
         /// <summary>
-        ///  The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings
+        ///  The retention period in days for test runs. After this period, outdated test runs may be archived based on project settings
         /// </summary>
-        /// <value> The retention period in days for test runs. After this period,  outdated test runs may be archived based on project settings</value>
+        /// <value> The retention period in days for test runs. After this period, outdated test runs may be archived based on project settings</value>
         [DataMember(Name = "testRunsRetentionPeriodDays", IsRequired = true, EmitDefaultValue = true)]
         public int TestRunsRetentionPeriodDays { get; set; }
 
         /// <summary>
-        /// Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived
+        /// Maximum number of active test runs to keep. When this limit is exceeded, older test runs are automatically archived
         /// </summary>
-        /// <value>Maximum number of active test runs to keep. When this limit is exceeded,  older test runs are automatically archived</value>
+        /// <value>Maximum number of active test runs to keep. When this limit is exceeded, older test runs are automatically archived</value>
         [DataMember(Name = "maxActiveTestRunsCount", IsRequired = true, EmitDefaultValue = true)]
         public int MaxActiveTestRunsCount { get; set; }
 

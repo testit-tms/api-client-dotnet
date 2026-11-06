@@ -58,6 +58,18 @@ namespace TestIT.ApiClient.Model
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="TestStatusApiResultIReply" /> class
+        /// with the <see cref="TestStatusApiResultCountReply" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of TestStatusApiResultCountReply.</param>
+        public TestStatusApiResultIReply(TestStatusApiResultCountReply actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
 
         private Object _actualInstance;
 
@@ -72,7 +84,11 @@ namespace TestIT.ApiClient.Model
             }
             set
             {
-                if (value.GetType() == typeof(TestStatusApiResultGroupedReply) || value is TestStatusApiResultGroupedReply)
+                if (value.GetType() == typeof(TestStatusApiResultCountReply) || value is TestStatusApiResultCountReply)
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(TestStatusApiResultGroupedReply) || value is TestStatusApiResultGroupedReply)
                 {
                     this._actualInstance = value;
                 }
@@ -82,7 +98,7 @@ namespace TestIT.ApiClient.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: TestStatusApiResultGroupedReply, TestStatusApiResultReply");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: TestStatusApiResultCountReply, TestStatusApiResultGroupedReply, TestStatusApiResultReply");
                 }
             }
         }
@@ -105,6 +121,16 @@ namespace TestIT.ApiClient.Model
         public TestStatusApiResultGroupedReply GetTestStatusApiResultGroupedReply()
         {
             return (TestStatusApiResultGroupedReply)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `TestStatusApiResultCountReply`. If the actual instance is not `TestStatusApiResultCountReply`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of TestStatusApiResultCountReply</returns>
+        public TestStatusApiResultCountReply GetTestStatusApiResultCountReply()
+        {
+            return (TestStatusApiResultCountReply)this.ActualInstance;
         }
 
         /// <summary>
@@ -144,6 +170,26 @@ namespace TestIT.ApiClient.Model
             }
             int match = 0;
             List<string> matchedTypes = new List<string>();
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(TestStatusApiResultCountReply).GetProperty("AdditionalProperties") == null)
+                {
+                    newTestStatusApiResultIReply = new TestStatusApiResultIReply(JsonConvert.DeserializeObject<TestStatusApiResultCountReply>(jsonString, TestStatusApiResultIReply.SerializerSettings));
+                }
+                else
+                {
+                    newTestStatusApiResultIReply = new TestStatusApiResultIReply(JsonConvert.DeserializeObject<TestStatusApiResultCountReply>(jsonString, TestStatusApiResultIReply.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("TestStatusApiResultCountReply");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into TestStatusApiResultCountReply: {1}", jsonString, exception.ToString()));
+            }
 
             try
             {

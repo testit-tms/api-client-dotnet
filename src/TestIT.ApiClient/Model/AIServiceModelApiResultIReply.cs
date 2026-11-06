@@ -58,6 +58,18 @@ namespace TestIT.ApiClient.Model
             this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AIServiceModelApiResultIReply" /> class
+        /// with the <see cref="AIServiceModelApiResultCountReply" /> class
+        /// </summary>
+        /// <param name="actualInstance">An instance of AIServiceModelApiResultCountReply.</param>
+        public AIServiceModelApiResultIReply(AIServiceModelApiResultCountReply actualInstance)
+        {
+            this.IsNullable = false;
+            this.SchemaType= "oneOf";
+            this.ActualInstance = actualInstance ?? throw new ArgumentException("Invalid instance found. Must not be null.");
+        }
+
 
         private Object _actualInstance;
 
@@ -72,7 +84,11 @@ namespace TestIT.ApiClient.Model
             }
             set
             {
-                if (value.GetType() == typeof(AIServiceModelApiResultGroupedReply) || value is AIServiceModelApiResultGroupedReply)
+                if (value.GetType() == typeof(AIServiceModelApiResultCountReply) || value is AIServiceModelApiResultCountReply)
+                {
+                    this._actualInstance = value;
+                }
+                else if (value.GetType() == typeof(AIServiceModelApiResultGroupedReply) || value is AIServiceModelApiResultGroupedReply)
                 {
                     this._actualInstance = value;
                 }
@@ -82,7 +98,7 @@ namespace TestIT.ApiClient.Model
                 }
                 else
                 {
-                    throw new ArgumentException("Invalid instance found. Must be the following types: AIServiceModelApiResultGroupedReply, AIServiceModelApiResultReply");
+                    throw new ArgumentException("Invalid instance found. Must be the following types: AIServiceModelApiResultCountReply, AIServiceModelApiResultGroupedReply, AIServiceModelApiResultReply");
                 }
             }
         }
@@ -105,6 +121,16 @@ namespace TestIT.ApiClient.Model
         public AIServiceModelApiResultGroupedReply GetAIServiceModelApiResultGroupedReply()
         {
             return (AIServiceModelApiResultGroupedReply)this.ActualInstance;
+        }
+
+        /// <summary>
+        /// Get the actual instance of `AIServiceModelApiResultCountReply`. If the actual instance is not `AIServiceModelApiResultCountReply`,
+        /// the InvalidClassException will be thrown
+        /// </summary>
+        /// <returns>An instance of AIServiceModelApiResultCountReply</returns>
+        public AIServiceModelApiResultCountReply GetAIServiceModelApiResultCountReply()
+        {
+            return (AIServiceModelApiResultCountReply)this.ActualInstance;
         }
 
         /// <summary>
@@ -144,6 +170,26 @@ namespace TestIT.ApiClient.Model
             }
             int match = 0;
             List<string> matchedTypes = new List<string>();
+
+            try
+            {
+                // if it does not contains "AdditionalProperties", use SerializerSettings to deserialize
+                if (typeof(AIServiceModelApiResultCountReply).GetProperty("AdditionalProperties") == null)
+                {
+                    newAIServiceModelApiResultIReply = new AIServiceModelApiResultIReply(JsonConvert.DeserializeObject<AIServiceModelApiResultCountReply>(jsonString, AIServiceModelApiResultIReply.SerializerSettings));
+                }
+                else
+                {
+                    newAIServiceModelApiResultIReply = new AIServiceModelApiResultIReply(JsonConvert.DeserializeObject<AIServiceModelApiResultCountReply>(jsonString, AIServiceModelApiResultIReply.AdditionalPropertiesSerializerSettings));
+                }
+                matchedTypes.Add("AIServiceModelApiResultCountReply");
+                match++;
+            }
+            catch (Exception exception)
+            {
+                // deserialization failed, try the next one
+                System.Diagnostics.Debug.WriteLine(string.Format("Failed to deserialize `{0}` into AIServiceModelApiResultCountReply: {1}", jsonString, exception.ToString()));
+            }
 
             try
             {

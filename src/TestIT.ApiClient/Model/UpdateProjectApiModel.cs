@@ -32,6 +32,18 @@ namespace TestIT.ApiClient.Model
     [DataContract(Name = "UpdateProjectApiModel")]
     public partial class UpdateProjectApiModel : IValidatableObject
     {
+
+        /// <summary>
+        /// Gets or Sets TestStrategy
+        /// </summary>
+        [DataMember(Name = "testStrategy", IsRequired = true, EmitDefaultValue = true)]
+        public TestStrategy TestStrategy { get; set; }
+
+        /// <summary>
+        /// Gets or Sets TestCaseCoverageMode
+        /// </summary>
+        [DataMember(Name = "testCaseCoverageMode", IsRequired = true, EmitDefaultValue = true)]
+        public TestCaseCoverageMode TestCaseCoverageMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateProjectApiModel" /> class.
         /// </summary>
@@ -45,7 +57,9 @@ namespace TestIT.ApiClient.Model
         /// <param name="description">Description of the project.</param>
         /// <param name="isFavorite">Indicates if the project is marked as favorite.</param>
         /// <param name="workflowId">Identifier of the workflow project should use.</param>
-        public UpdateProjectApiModel(Guid id = default, string name = default, string description = default, bool? isFavorite = default, Guid? workflowId = default)
+        /// <param name="testStrategy">testStrategy (required).</param>
+        /// <param name="testCaseCoverageMode">testCaseCoverageMode (required).</param>
+        public UpdateProjectApiModel(Guid id = default, string name = default, string description = default, bool? isFavorite = default, Guid? workflowId = default, TestStrategy testStrategy = default, TestCaseCoverageMode testCaseCoverageMode = default)
         {
             this.Id = id;
             // to ensure "name" is required (not null)
@@ -54,6 +68,8 @@ namespace TestIT.ApiClient.Model
                 throw new ArgumentNullException("name is a required property for UpdateProjectApiModel and cannot be null");
             }
             this.Name = name;
+            this.TestStrategy = testStrategy;
+            this.TestCaseCoverageMode = testCaseCoverageMode;
             this.Description = description;
             this.IsFavorite = isFavorite;
             this.WorkflowId = workflowId;
@@ -107,6 +123,8 @@ namespace TestIT.ApiClient.Model
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  IsFavorite: ").Append(IsFavorite).Append("\n");
             sb.Append("  WorkflowId: ").Append(WorkflowId).Append("\n");
+            sb.Append("  TestStrategy: ").Append(TestStrategy).Append("\n");
+            sb.Append("  TestCaseCoverageMode: ").Append(TestCaseCoverageMode).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
