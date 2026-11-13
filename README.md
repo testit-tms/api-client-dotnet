@@ -26,6 +26,7 @@
 | 5.6     | 5.4.0-TMS-5.6   |
 | 5.7     | 5.5.6-TMS-5.7   |
 | 5.8     | 5.6.0-TMS-5.8   |
+| 6.0     | 5.6.1-TMS-6.0   |
 | Cloud   | 5.5.0 +         |
 
 1. For current versions, see the releases tab.
